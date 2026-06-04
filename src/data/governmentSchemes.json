@@ -1,0 +1,14 @@
+[
+  {
+    "name": "National Health Insurance Scheme",
+    "description": "Provides free primary and emergency care coverage for citizens below the income threshold.",
+    "eligibility": "Low-income households, seniors above 60",
+    "coverage": "Up to $5,000 annually per family"
+  },
+  {
+    "name": "Maternal and Child Protection Program",
+    "description": "Covers prenatal, childbirth, and postnatal care expenses along with essential vaccine schedules.",
+    "eligibility": "Pregnant women and children under 5 years",
+    "coverage": "Fully covered vaccines and maternity checkups"
+  }
+]

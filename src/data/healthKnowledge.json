@@ -1,0 +1,69 @@
+[
+  {
+    "id": "cold",
+    "category": "Common Cold",
+    "symptoms": ["runny nose", "congestion", "sneezing", "sore throat", "cough", "mild headache"],
+    "guidance": "Rest well and stay hydrated. Warm fluids like tea or soup can soothe a sore throat. Standard supportive care resolves this within 7-10 days.",
+    "precautions": [
+      "Wash hands frequently",
+      "Avoid close contact with others",
+      "Cover mouth when coughing or sneezing"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "fever",
+    "category": "Fever",
+    "symptoms": ["high temperature", "chills", "sweating", "headache", "muscle aches", "weakness"],
+    "guidance": "Monitor temperature. Stay hydrated, rest, and keep room ventilated. Consult a physician if fever goes above 103°F (39.4°C) or lasts more than 3 days.",
+    "precautions": [
+      "Do not self-prescribe antibiotics",
+      "Avoid cold baths which can trigger shivering and raise internal temperature"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "influenza",
+    "category": "Influenza (Flu)",
+    "symptoms": ["sudden fever", "dry cough", "fatigue", "body ache", "sweats", "chills", "stuffy nose"],
+    "guidance": "Rest completely. Drink plenty of water and warm teas. Use throat lozenges. Watch for breathing issues or chest pain.",
+    "precautions": [
+      "Isolate to prevent spreading",
+      "Wash hands and sanitize frequently touched surfaces"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "dengue",
+    "category": "Dengue",
+    "symptoms": ["high fever", "severe headache", "pain behind eyes", "joint pain", "muscle pain", "rash", "nausea"],
+    "guidance": "Requires professional medical monitoring. Focus on hydration. Avoid pain relievers like aspirin or ibuprofen as they can worsen bleeding risks. Seek emergency care if warning signs (bleeding, persistent vomiting, severe belly pain) appear.",
+    "precautions": [
+      "Avoid NSAIDs (aspirin, ibuprofen) - use only doctor recommended fever reducers",
+      "Use mosquito nets and repellents to prevent transmission"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "malaria",
+    "category": "Malaria",
+    "symptoms": ["shaking chills", "high fever", "profuse sweating", "headache", "nausea", "vomiting", "diarrhea"],
+    "guidance": "Consult a doctor immediately for blood testing and antimalarial prescription. Recovery requires specific antiparasitic drug courses. Keep hydrated and rest.",
+    "precautions": [
+      "Strict compliance with prescribed medication",
+      "Prevent mosquito bites using repellents and protective clothing"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "typhoid",
+    "category": "Typhoid Fever",
+    "symptoms": ["gradual high fever", "weakness", "stomach pain", "constipation", "diarrhea", "dry cough", "loss of appetite"],
+    "guidance": "Consult a healthcare provider for antibiotic prescription. Drink boiled or purified water. Eat plain, easy-to-digest cooked meals.",
+    "precautions": [
+      "Maintain strict hand hygiene before eating and after using washrooms",
+      "Avoid raw foods, unpasteurized milk, and ice made from untreated water"
+    ],
+    "urgency": "high"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "City General Hospital",
+    "city": "Downtown",
+    "district": "Central District",
+    "state": "",
+    "location": "Downtown",
+    "type": "General Hospital",
+    "contact": "+1-555-0199",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Aayu Community Health Clinic",
+    "city": "Northside",
+    "district": "North District",
+    "state": "",
+    "location": "Northside",
+    "type": "Clinic",
+    "contact": "+1-555-0144",
+    "hours": "8 AM - 8 PM",
+    "emergency": false
+  },
+  {
+    "name": "Metro Family & Pediatric Clinic",
+    "city": "West End",
+    "district": "West District",
+    "state": "",
+    "location": "West End",
+    "type": "Specialty Clinic",
+    "contact": "+1-555-0188",
+    "hours": "9 AM - 6 PM",
+    "emergency": false
+  },
+  {
+    "name": "SCB Medical College & Hospital",
+    "city": "Cuttack",
+    "district": "Cuttack",
+    "state": "Odisha",
+    "location": "Cuttack",
+    "type": "Government Hospital",
+    "contact": "0671-2413000",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Shri Ram Chandra Bhanj Medical College",
+    "city": "Cuttack",
+    "district": "Cuttack",
+    "state": "Odisha",
+    "location": "Cuttack",
+    "type": "Government Hospital",
+    "contact": "0671-2412005",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Cuttack District Headquarters Hospital",
+    "city": "Cuttack",
+    "district": "Cuttack",
+    "state": "Odisha",
+    "location": "Cuttack",
+    "type": "District Hospital",
+    "contact": "0671-2300711",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "AIIMS Bhubaneswar",
+    "city": "Bhubaneswar",
+    "district": "Khurda",
+    "state": "Odisha",
+    "location": "Bhubaneswar",
+    "type": "Government Hospital",
+    "contact": "0674-2476789",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Capital Hospital Bhubaneswar",
+    "city": "Bhubaneswar",
+    "district": "Khurda",
+    "state": "Odisha",
+    "location": "Bhubaneswar",
+    "type": "Government Hospital",
+    "contact": "0674-2393497",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Kar Clinic & Hospital",
+    "city": "Bhubaneswar",
+    "district": "Khurda",
+    "state": "Odisha",
+    "location": "Bhubaneswar",
+    "type": "Private Hospital",
+    "contact": "0674-2396552",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Kalinga Hospital",
+    "city": "Bhubaneswar",
+    "district": "Khurda",
+    "state": "Odisha",
+    "location": "Bhubaneswar",
+    "type": "Private Hospital",
+    "contact": "0674-6660000",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "MKCG Medical College & Hospital",
+    "city": "Berhampur",
+    "district": "Ganjam",
+    "state": "Odisha",
+    "location": "Berhampur",
+    "type": "Government Hospital",
+    "contact": "0680-2202054",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Burla VSS Medical College",
+    "city": "Burla",
+    "district": "Sambalpur",
+    "state": "Odisha",
+    "location": "Burla",
+    "type": "Government Hospital",
+    "contact": "0663-2400014",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Sambalpur District Headquarters Hospital",
+    "city": "Sambalpur",
+    "district": "Sambalpur",
+    "state": "Odisha",
+    "location": "Sambalpur",
+    "type": "District Hospital",
+    "contact": "0663-2400135",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Puri District Headquarters Hospital",
+    "city": "Puri",
+    "district": "Puri",
+    "state": "Odisha",
+    "location": "Puri",
+    "type": "District Hospital",
+    "contact": "06752-223744",
+    "hours": "24/7",
+    "emergency": true
+  },
+  {
+    "name": "Balasore District Headquarters Hospital",
+    "city": "Balasore",
+    "district": "Balasore",
+    "state": "Odisha",
+    "location": "Balasore",
+    "type": "District Hospital",
+    "contact": "06782-262390",
+    "hours": "24/7",
+    "emergency": true
+  }
+]
