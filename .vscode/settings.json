@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/aayu/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend"
+  ],
+  "code-runner.executorMap": {
+    "python": "\"${workspaceFolder}/aayu/Scripts/python.exe\" -u"
+  },
+  "code-runner.runInTerminal": true,
+  "files.autoSave": "onWindowChange"
+}
