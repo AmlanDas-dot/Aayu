@@ -5,9 +5,20 @@ import { InputArea } from "./components/Chat/InputArea";
 import { HealthSummary } from "./components/HealthPanel/HealthSummary";
 import { useChat } from "./hooks/useChat";
 import { APP_CONFIG } from "./config/app";
+import type { LanguageCode } from "./constants/languages";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  /**
+   * Active transcription/TTS language — hoisted here so it persists across
+   * re-renders of InputArea and can be read by any future top-level component
+   * (e.g. a settings panel).
+   *
+   * Default: English ("en")
+   */
+  const [language, setLanguage] = useState<LanguageCode>("en");
+
   const chat = useChat();
 
   return (
@@ -47,6 +58,8 @@ export default function App() {
                 setInput={chat.setInput}
                 onSend={chat.handleSend}
                 isProcessing={chat.isProcessing}
+                language={language}
+                setLanguage={setLanguage}
               />
             </div>
 

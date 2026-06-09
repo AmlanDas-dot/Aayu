@@ -82,3 +82,22 @@ export interface MemoryVector {
   id: string;
   vector: Record<string, number>;
 }
+
+// ---------------------------------------------------------------------------
+// Speech / Transcription
+// ---------------------------------------------------------------------------
+
+/**
+ * Response shape from the FastAPI /transcribe endpoint.
+ * Must stay in sync with backend/app/routers/transcribe.py.
+ */
+export interface TranscriptionResponse {
+  /** Language code that was requested by the frontend (e.g. "hi") */
+  selected_language: string;
+  /** Language code that Whisper inferred from the audio content */
+  detected_language: string;
+  /** The transcribed text */
+  text: string;
+  /** Wall-clock time taken by faster-whisper, in milliseconds */
+  processing_time_ms: number;
+}

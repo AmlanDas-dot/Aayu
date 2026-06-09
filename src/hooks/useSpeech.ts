@@ -1,91 +1,192 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
+import type { LanguageCode } from "../constants/languages";
+import { TTS_LANG_MAP } from "../constants/ttsLanguages";
+import { API_BASE_URL } from "../config/api";
 
-interface IWindow extends Window {
-  webkitSpeechRecognition?: any;
-  SpeechRecognition?: any;
+/**
+ * Shape of the /transcribe response from the FastAPI backend.
+ *
+ * This interface is intentionally shared so any future service that calls
+ * /transcribe can import it from here.
+ */
+export interface TranscriptionResponse {
+  selected_language: string;
+  detected_language: string;
+  text: string;
+  processing_time_ms: number;
 }
 
-export function useSpeech(onResultCallback?: (result: string) => void) {
+/**
+ * useSpeech — server-side transcription hook using MediaRecorder + Whisper.
+ *
+ * Pipeline:
+ *   User Voice
+ *     → MediaRecorder (webm blob)
+ *     → POST /transcribe  { file, language }
+ *     → TranscriptionResponse
+ *     → transcript state
+ *
+ * TODO (IndicTrans2 — Phase 2):
+ *   After receiving transcript, insert a translation step before passing text
+ *   to the medical LLM:
+ *
+ *   Voice → Whisper (language) → IndicTrans2 (→ English)
+ *         → Medical LLM
+ *         → IndicTrans2 (← user language) → TTS (TTS_LANG_MAP[language])
+ *
+ *   The recommended extension point is right after the `onTranscribed` callback
+ *   below, before the text is written to `transcript`.
+ */
+export function useSpeech(
+  language: LanguageCode = "en",
+  onTranscribed?: (result: TranscriptionResponse) => void
+) {
   const [isListening, setIsListening] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const recognitionRef = useRef<any>(null);
-  const [isSupported, setIsSupported] = useState(false);
 
-  useEffect(() => {
-    const W = window as IWindow;
-    const SpeechRecognitionClass = W.SpeechRecognition || W.webkitSpeechRecognition;
-    
-    if (SpeechRecognitionClass) {
-      setIsSupported(true);
-      const rec = new SpeechRecognitionClass();
-      rec.continuous = true;
-      rec.interimResults = true;
-      
-      // Auto-detect lang defaults, let user speak English or native language
-      rec.lang = "en-US"; 
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+  const streamRef = useRef<MediaStream | null>(null);
 
-      rec.onresult = (event: any) => {
-        let finalTranscript = "";
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            finalTranscript += event.results[i][0].transcript;
-          }
-        }
-        if (finalTranscript) {
-          setTranscript(finalTranscript);
-          if (onResultCallback) {
-            onResultCallback(finalTranscript);
-          }
-        }
-      };
-
-      rec.onerror = (event: any) => {
-        console.error("Speech Recognition Error:", event.error);
-        setError(event.error);
-        setIsListening(false);
-      };
-
-      rec.onend = () => {
-        setIsListening(false);
-      };
-
-      recognitionRef.current = rec;
-    }
-  }, [onResultCallback]);
-
-  const startListening = () => {
-    if (!isSupported || !recognitionRef.current) return;
+  // -------------------------------------------------------------------------
+  // startListening — request microphone access and start recording
+  // -------------------------------------------------------------------------
+  const startListening = useCallback(async () => {
     setError(null);
     setTranscript("");
+    chunksRef.current = [];
+
     try {
-      recognitionRef.current.start();
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+
+      // Pick the best supported MIME type
+      const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
+        ? "audio/webm;codecs=opus"
+        : MediaRecorder.isTypeSupported("audio/webm")
+        ? "audio/webm"
+        : "audio/ogg";
+
+      const recorder = new MediaRecorder(stream, { mimeType });
+      mediaRecorderRef.current = recorder;
+
+      recorder.ondataavailable = (e) => {
+        if (e.data.size > 0) chunksRef.current.push(e.data);
+      };
+
+      recorder.onstop = () => {
+        // Fire-and-forget; errors handled inside
+        void _sendToWhisper();
+      };
+
+      recorder.onerror = () => {
+        _handleError("Recording failed unexpectedly. Please try again.");
+      };
+
+      recorder.start();
       setIsListening(true);
-    } catch (e: any) {
-      console.error("Failed to start speech recognition:", e);
-      setError(e.message || "Failed to start recognition");
+    } catch (err) {
+      console.error("[useSpeech] Failed to start recording:", err);
+      _handleError(
+        "Microphone access denied or not available. Please check your browser settings."
+      );
     }
-  };
+  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const stopListening = () => {
-    if (!isSupported || !recognitionRef.current) return;
+  // -------------------------------------------------------------------------
+  // stopListening — stop the recorder (triggers onstop → _sendToWhisper)
+  // -------------------------------------------------------------------------
+  const stopListening = useCallback(() => {
     try {
-      recognitionRef.current.stop();
+      if (
+        mediaRecorderRef.current &&
+        mediaRecorderRef.current.state !== "inactive"
+      ) {
+        mediaRecorderRef.current.stop();
+      }
+      // Stop all microphone tracks to release the browser indicator
+      streamRef.current?.getTracks().forEach((t) => t.stop());
+    } catch (err) {
+      console.error("[useSpeech] Failed to stop recording:", err);
+    } finally {
       setIsListening(false);
-    } catch (e: any) {
-      console.error("Failed to stop speech recognition:", e);
     }
-  };
+  }, []);
 
-  const speak = (text: string) => {
-    if (typeof window === "undefined" || !window.speechSynthesis) {
-      console.warn("Speech Synthesis is not supported in this browser.");
+  // -------------------------------------------------------------------------
+  // _sendToWhisper — POST audio blob to /transcribe
+  // -------------------------------------------------------------------------
+  const _sendToWhisper = async () => {
+    if (chunksRef.current.length === 0) {
+      _handleError("No audio captured. Please try again.");
       return;
     }
-    // Cancel ongoing speech to prevent overlapping
+
+    setIsLoading(true);
+
+    try {
+      const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+      const formData = new FormData();
+      formData.append("file", blob, "recording.webm");
+      formData.append("language", language);
+
+      const response = await fetch(`${API_BASE_URL}/transcribe`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
+      }
+
+      const data: TranscriptionResponse = await response.json();
+
+      console.log(
+        `[useSpeech] Transcription complete in ${data.processing_time_ms}ms`,
+        data
+      );
+
+      setTranscript(data.text);
+
+      // TODO (IndicTrans2): translate data.text here before passing to callback
+      onTranscribed?.(data);
+    } catch (err) {
+      console.error("[useSpeech] Transcription request failed:", err);
+      _handleError("Voice transcription failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+      chunksRef.current = [];
+    }
+  };
+
+  // -------------------------------------------------------------------------
+  // _handleError — stop everything and surface a user-friendly message
+  // -------------------------------------------------------------------------
+  const _handleError = (message: string) => {
+    setError(message);
+    setIsListening(false);
+    setIsLoading(false);
+    // Stop tracks so the browser mic indicator goes away
+    streamRef.current?.getTracks().forEach((t) => t.stop());
+  };
+
+  // -------------------------------------------------------------------------
+  // speak — synthesise text in the active user language
+  //
+  // TODO (IndicTrans2): if IndicTrans2 is integrated, the `text` argument
+  // will already be in the user's language and no change is needed here.
+  // -------------------------------------------------------------------------
+  const speak = (text: string) => {
+    if (!window.speechSynthesis) {
+      console.warn("[useSpeech] Speech Synthesis not supported.");
+      return;
+    }
     window.speechSynthesis.cancel();
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = TTS_LANG_MAP[language] ?? "en-IN";
     window.speechSynthesis.speak(utterance);
   };
 
@@ -94,8 +195,10 @@ export function useSpeech(onResultCallback?: (result: string) => void) {
     stopListening,
     speak,
     isListening,
+    isLoading,
     transcript,
     error,
-    isSupported,
+    /** Always true — MediaRecorder is available in all modern browsers */
+    isSupported: typeof MediaRecorder !== "undefined",
   };
 }
