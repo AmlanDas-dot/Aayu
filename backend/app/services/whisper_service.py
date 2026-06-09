@@ -37,7 +37,8 @@ def _load_model() -> WhisperModel:
     compute_type = "float16" if device == "cuda" else "int8"
 
     # Easily switch between small / medium
-    model_size = os.getenv("WHISPER_MODEL", "medium")
+    #model_size = os.getenv("WHISPER_MODEL", "medium")
+    model_size = "medium"
 
     print(
         f"[Whisper] Loading Whisper {model_size} "

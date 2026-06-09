@@ -1,3 +1,4 @@
+from app.services.translation_service import translate_to_english
 from fastapi import APIRouter, UploadFile, File, Form
 from fastapi.responses import JSONResponse
 from app.services.whisper_service import get_whisper_model
@@ -71,20 +72,31 @@ async def transcribe_audio(
         # Materialise lazy generator before measuring time
         text = " ".join(seg.text for seg in segments).strip()
 
+        english_text = translate_to_english(
+            text,
+            language
+        )
+
         processing_time_ms = round((time.time() - start_time) * 1000)
 
         print("Detected language:", info.language)
+        print("Detected language probability:", info.language_probability)
+        print("Whisper detected:", text)
         print("Language probability:", info.language_probability)
 
         if info.language_probability < 0.7:
             print("Warning: low language confidence — transcription may be inaccurate")
 
         print("Final text:", text)
+        print("English text:", english_text)
 
         return {
             "selected_language": language,
             "detected_language": info.language,
-            "text": text,
+
+            "original_text": text,
+            "english_text": english_text,
+
             "processing_time_ms": processing_time_ms,
         }
 
