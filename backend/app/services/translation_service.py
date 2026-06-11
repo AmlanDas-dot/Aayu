@@ -3,19 +3,22 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 
 MODEL_NAME = "ai4bharat/indictrans2-indic-en-1B"
+MODEL_PATH = r"D:\AI_Models\hub\models--ai4bharat--indictrans2-indic-en-1B\snapshots\ac3daf0ecd37be3b6957764a9179ab2b07fa9d6a"
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 ip = IndicProcessor(inference=True)
 
 tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME,
-    trust_remote_code=True
+    MODEL_PATH,
+    trust_remote_code=True,
+    local_files_only=True
 )
 
 model = AutoModelForSeq2SeqLM.from_pretrained(
-    MODEL_NAME,
-    trust_remote_code=True
+    MODEL_PATH,
+    trust_remote_code=True,
+    local_files_only=True
 ).to(device)
 
 LANGUAGE_MAP = {

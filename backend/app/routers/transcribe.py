@@ -13,6 +13,16 @@ router = APIRouter()
 # ---------------------------------------------------------------------------
 SUPPORTED_LANGUAGES: set[str] = {"en", "hi", "gu", "or"}
 
+WHISPER_LANGUAGE_MAP = {
+    "en": "en",
+    "hi": "hi",
+    "gu": "gu",
+
+    # Whisper doesn't officially support Odia.
+    # Let Whisper auto-detect instead.
+    "or": None,
+}
+
 
 @router.post("/transcribe")
 async def transcribe_audio(
@@ -62,9 +72,11 @@ async def transcribe_audio(
         model = get_whisper_model()
         start_time = time.time()
 
+        whisper_language = WHISPER_LANGUAGE_MAP.get(language)
+
         segments, info = model.transcribe(
             temp_path,
-            language=language,
+            language=whisper_language,
             task="transcribe",
             beam_size=5
         )

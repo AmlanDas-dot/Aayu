@@ -12,7 +12,10 @@ import { API_BASE_URL } from "../config/api";
 export interface TranscriptionResponse {
   selected_language: string;
   detected_language: string;
-  text: string;
+
+  original_text: string;
+  english_text: string;
+
   processing_time_ms: number;
 }
 
@@ -66,8 +69,8 @@ export function useSpeech(
       const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
         ? "audio/webm;codecs=opus"
         : MediaRecorder.isTypeSupported("audio/webm")
-        ? "audio/webm"
-        : "audio/ogg";
+          ? "audio/webm"
+          : "audio/ogg";
 
       const recorder = new MediaRecorder(stream, { mimeType });
       mediaRecorderRef.current = recorder;
@@ -148,9 +151,10 @@ export function useSpeech(
         data
       );
 
-      setTranscript(data.text);
+      setTranscript(data.english_text);
 
-      // TODO (IndicTrans2): translate data.text here before passing to callback
+      // Backend already returns translated English text.
+      // transcript now contains english_text.
       onTranscribed?.(data);
     } catch (err) {
       console.error("[useSpeech] Transcription request failed:", err);
