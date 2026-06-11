@@ -1,0 +1,66 @@
+[
+  {
+    "id": "eg_001",
+    "title": "When to Call an Ambulance",
+    "category": "emergency",
+    "content": "Call emergency services (ambulance) immediately for: chest pain or pressure, difficulty breathing, severe allergic reaction (anaphylaxis), loss of consciousness, stroke symptoms (face drooping, arm weakness, speech difficulty — FAST test), uncontrolled bleeding, major trauma, seizures lasting more than 5 minutes, suspected poisoning or overdose. In India, dial 108 for EMRI ambulance or 112 for national emergency.",
+    "tags": ["ambulance", "emergency", "108", "stroke", "chest pain", "call help"],
+    "source": "Indian Emergency Response Guidelines"
+  },
+  {
+    "id": "eg_002",
+    "title": "Stroke — FAST Recognition",
+    "category": "stroke",
+    "content": "Stroke is a medical emergency — every minute matters. Use the FAST test: F — Face drooping (ask to smile, is one side drooping?), A — Arm weakness (can they raise both arms?), S — Speech difficulty (is speech slurred or strange?), T — Time to call emergency services immediately. Also watch for: sudden vision loss, severe headache with no known cause, sudden loss of balance. Do not give anything by mouth. Do not let the person sleep it off.",
+    "tags": ["stroke", "fast test", "brain", "emergency", "paralysis", "face drooping"],
+    "source": "Stroke Foundation FAST Campaign"
+  },
+  {
+    "id": "eg_003",
+    "title": "Heart Attack — Recognition and Response",
+    "category": "cardiac_emergency",
+    "content": "Heart attack symptoms: chest pain or pressure (may spread to left arm, jaw, back), shortness of breath, cold sweat, nausea, lightheadedness. Women may have atypical symptoms: jaw pain, unusual fatigue, upper back pain. Action: Call emergency services immediately. Have the person sit or lie down in a comfortable position. If available and not allergic, give aspirin 325mg to chew (not swallow whole). Begin CPR if the person becomes unresponsive and stops breathing normally.",
+    "tags": ["heart attack", "myocardial infarction", "chest pain", "cardiac", "aspirin", "emergency"],
+    "source": "AHA Heart Attack Guidelines"
+  },
+  {
+    "id": "eg_004",
+    "title": "Severe Allergic Reaction (Anaphylaxis)",
+    "category": "allergy",
+    "content": "Anaphylaxis is a life-threatening allergic reaction. Symptoms: skin rash/hives, swelling of face, lips, throat, difficulty breathing, wheezing, rapid pulse, dizziness, vomiting. Triggers: bee stings, certain foods (peanuts, shellfish), medications. Action: Call emergency services immediately. If person carries an epinephrine auto-injector (EpiPen), use it immediately in the outer thigh. Lay the person flat with legs elevated (unless difficulty breathing — then sit up). Give a second dose after 5–15 minutes if needed.",
+    "tags": ["anaphylaxis", "allergy", "epinephrine", "epipen", "swelling", "throat"],
+    "source": "WHO Anaphylaxis Management"
+  },
+  {
+    "id": "eg_005",
+    "title": "Seizures — What to Do",
+    "category": "seizure",
+    "content": "During a seizure: Stay calm. Protect the person from injury — clear the area, cushion the head. Do NOT restrain movements. Do NOT put anything in the mouth. Time the seizure. Gently turn on their side (recovery position) after shaking stops. Call emergency services if: seizure lasts more than 5 minutes, person does not regain consciousness, second seizure follows quickly, person is pregnant, injured, or diabetic, or it is their first known seizure.",
+    "tags": ["seizure", "epilepsy", "convulsion", "emergency", "first aid"],
+    "source": "Epilepsy Foundation Seizure First Aid"
+  },
+  {
+    "id": "eg_006",
+    "title": "Poisoning and Overdose",
+    "category": "poisoning",
+    "content": "If poisoning is suspected: Call Poison Control or emergency services. Do NOT induce vomiting unless instructed by medical professionals. If the person is conscious, keep them calm. Bring the substance container to hospital. For pesticide exposure on skin: remove contaminated clothing, wash skin thoroughly with soap and water. For eye exposure: flush with water for 15–20 minutes. For unconscious persons: place in recovery position, call emergency services. In India, AIIMS Poison Information Centre: 1800-116-117.",
+    "tags": ["poisoning", "overdose", "poison control", "pesticide", "emergency"],
+    "source": "WHO Poisoning Guidelines"
+  },
+  {
+    "id": "eg_007",
+    "title": "Pregnancy Danger Signs — When to Go to Hospital",
+    "category": "obstetric_emergency",
+    "content": "Seek immediate medical care during pregnancy for: heavy vaginal bleeding at any stage, severe abdominal pain, loss of fluid (possible water breaking before 37 weeks), severe headache with visual disturbance (eclampsia warning), high fever, absence of baby movements after 28 weeks, swelling of face and hands with headache, fits or convulsions. These are obstetric emergencies. Go to the nearest hospital with maternity facilities immediately.",
+    "tags": ["pregnancy", "obstetric", "eclampsia", "bleeding", "emergency", "maternal"],
+    "source": "WHO Maternal Health Guidelines"
+  },
+  {
+    "id": "eg_008",
+    "title": "Child — High Fever with Danger Signs",
+    "category": "paediatric_emergency",
+    "content": "Take a child to hospital IMMEDIATELY for: very high fever (above 40°C), fever with stiff neck or sensitivity to light (meningitis signs), fever with a rash that does not fade when pressed (meningococcal disease), fever with seizures, child under 3 months with any fever, child unable to drink fluids, persistent vomiting, child is unusually drowsy or difficult to wake, breathing faster than normal. For children under 5, use IMCI guidelines — never dismiss high fever.",
+    "tags": ["child", "paediatric", "fever", "meningitis", "emergency", "infant"],
+    "source": "WHO IMCI Guidelines"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "mg_001",
+    "title": "Fever — Assessment and Management",
+    "category": "fever",
+    "content": "Fever (body temperature above 38°C / 100.4°F) is commonly caused by viral or bacterial infections. Management: rest, adequate fluid intake (water, ORS, soups). Paracetamol (acetaminophen) can reduce fever in adults: 500–1000 mg every 4–6 hours, max 4g/day. Do not use aspirin in children. Seek medical care for: fever above 39.5°C, fever lasting more than 3 days, fever with stiff neck, rash, or confusion.",
+    "tags": ["fever", "temperature", "paracetamol", "viral", "infection"],
+    "source": "WHO Essential Medicines Guidelines"
+  },
+  {
+    "id": "mg_002",
+    "title": "Diarrhoea and Oral Rehydration",
+    "category": "diarrhoea",
+    "content": "Diarrhoea causes fluid and electrolyte loss. Key intervention: Oral Rehydration Salt (ORS) solution. Preparation: dissolve 1 ORS sachet in 1 litre of clean water. Give small sips frequently. Continue breastfeeding in infants. Continue eating soft foods. Avoid sugary drinks and fruit juices. Seek care if: blood in stool, child under 2 years, no urine for 8 hours, or signs of severe dehydration (sunken eyes, dry mouth).",
+    "tags": ["diarrhoea", "ors", "dehydration", "gastroenteritis", "rehydration"],
+    "source": "WHO Integrated Management of Childhood Illness"
+  },
+  {
+    "id": "mg_003",
+    "title": "Malaria — Symptoms and Prevention",
+    "category": "malaria",
+    "content": "Malaria symptoms: cyclical fever, chills, sweating, headache, muscle pain, nausea. In endemic areas, malaria should be suspected in any person with fever. Prevention: use insecticide-treated bed nets, avoid mosquito bites (long sleeves at dusk), eliminate standing water near homes, take prophylaxis if recommended. Testing: rapid diagnostic test (RDT) available at health centres. Treatment must be prescribed by a healthcare provider.",
+    "tags": ["malaria", "mosquito", "fever", "chills", "plasmodium", "prevention"],
+    "source": "WHO Malaria Programme"
+  },
+  {
+    "id": "mg_004",
+    "title": "Diabetes — Monitoring and Warning Signs",
+    "category": "diabetes",
+    "content": "Type 2 diabetes warning signs: excessive thirst, frequent urination, unexplained weight loss, blurred vision, slow-healing wounds. Management: regular blood glucose monitoring, prescribed medications (do not stop without consulting a doctor), dietary changes (reduce sugar and refined carbohydrates, increase fibre), regular physical activity. Seek immediate care for: blood sugar below 3.9 mmol/L (hypoglycemia symptoms: shakiness, sweating, confusion) or above 16 mmol/L.",
+    "tags": ["diabetes", "blood sugar", "insulin", "glucose", "type 2", "hypoglycemia"],
+    "source": "WHO Diabetes Programme"
+  },
+  {
+    "id": "mg_005",
+    "title": "Hypertension — High Blood Pressure",
+    "category": "hypertension",
+    "content": "Hypertension (BP ≥140/90 mmHg) is often asymptomatic. Regular monitoring is essential. Risk factors: obesity, high salt diet, sedentary lifestyle, smoking, family history. Lifestyle changes: reduce salt intake to less than 5g/day, increase physical activity, limit alcohol, quit smoking, maintain healthy weight. Medications: must be taken daily as prescribed — do not stop without doctor advice. Warning signs of hypertensive emergency: severe headache, vision changes, chest pain, difficulty breathing.",
+    "tags": ["hypertension", "blood pressure", "heart", "stroke", "lifestyle"],
+    "source": "WHO Cardiovascular Disease Guidelines"
+  },
+  {
+    "id": "mg_006",
+    "title": "Tuberculosis — Symptoms and Care",
+    "category": "tuberculosis",
+    "content": "Tuberculosis (TB) symptoms: persistent cough for more than 2 weeks, blood in sputum, night sweats, unexplained weight loss, fever, fatigue. TB spreads through air when infected persons cough or sneeze. Free diagnosis and treatment is available through government DOTS (Directly Observed Treatment, Short-Course) programmes. Never stop TB medications early — completing the full course (6 months) is essential to prevent drug resistance.",
+    "tags": ["tuberculosis", "tb", "cough", "dots", "chest", "lung"],
+    "source": "WHO TB Programme"
+  },
+  {
+    "id": "mg_007",
+    "title": "Anaemia — Iron Deficiency",
+    "category": "anaemia",
+    "content": "Iron deficiency anaemia symptoms: fatigue, pallor (pale skin/gums/eyelids), shortness of breath on exertion, dizziness, cold hands and feet, brittle nails. Common causes: poor diet, heavy menstrual periods, pregnancy, internal bleeding. Management: increase iron-rich foods (dark leafy greens, lentils, meat, fortified cereals), take iron supplements as prescribed (take with vitamin C for better absorption, avoid tea/coffee within 1 hour of taking). Seek care if symptoms are severe.",
+    "tags": ["anaemia", "iron", "fatigue", "haemoglobin", "nutrition", "pregnancy"],
+    "source": "WHO Anaemia Prevention Guidelines"
+  },
+  {
+    "id": "mg_008",
+    "title": "Dengue Fever — Recognition and Care",
+    "category": "dengue",
+    "content": "Dengue symptoms: sudden high fever (39–40°C), severe headache, pain behind the eyes, muscle and joint pain, nausea, rash appearing 2–5 days after fever onset. Warning signs of severe dengue (seek immediate care): abdominal pain, persistent vomiting, bleeding gums, blood in vomit or urine, difficulty breathing. Management: rest, paracetamol for fever (NOT ibuprofen or aspirin — they increase bleeding risk), increase fluid intake. No specific antiviral treatment — prevention via mosquito control.",
+    "tags": ["dengue", "fever", "mosquito", "aedes", "rash", "platelet"],
+    "source": "WHO Dengue Guidelines"
+  }
+]

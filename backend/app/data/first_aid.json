@@ -1,0 +1,66 @@
+[
+  {
+    "id": "fa_001",
+    "title": "Managing Burns and Scalds",
+    "category": "burns",
+    "content": "For minor burns: cool the burn under cool (not cold) running water for at least 20 minutes. Do not use ice, butter, or toothpaste. Remove jewellery near the burn area. Cover with a sterile non-adhesive dressing. Seek medical help for burns larger than a palm size, deep burns, facial burns, or burns in children.",
+    "tags": ["burn", "scald", "wound", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_002",
+    "title": "Choking — Adult and Child",
+    "category": "choking",
+    "content": "If someone is choking and cannot cough, speak, or breathe: For adults — perform 5 back blows between shoulder blades with heel of hand, then 5 abdominal thrusts (Heimlich maneuver). For infants under 1 year — hold face-down, give 5 back blows, then 5 chest thrusts. Call emergency services immediately if obstruction not cleared.",
+    "tags": ["choking", "airway", "emergency", "infant", "heimlich"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_003",
+    "title": "CPR — Cardiopulmonary Resuscitation",
+    "category": "cardiac",
+    "content": "If a person is unresponsive and not breathing normally: Call emergency services first. Place hands on centre of chest. Push down hard and fast — at least 5 cm deep at 100–120 compressions per minute. Give 2 rescue breaths after every 30 compressions if trained. Continue until help arrives or person recovers. Use an AED if available.",
+    "tags": ["cpr", "cardiac arrest", "heart", "emergency", "resuscitation"],
+    "source": "AHA CPR Guidelines 2023"
+  },
+  {
+    "id": "fa_004",
+    "title": "Bleeding — Controlling Severe Bleeding",
+    "category": "bleeding",
+    "content": "To control severe bleeding: Apply firm direct pressure with a clean cloth or bandage. Do not remove the cloth — add more material on top if soaked. Elevate the injured limb above heart level if possible. Maintain pressure for at least 15 minutes. Apply a tourniquet 5 cm above the wound for life-threatening limb bleeding. Seek emergency care immediately.",
+    "tags": ["bleeding", "wound", "hemorrhage", "first aid", "tourniquet"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_005",
+    "title": "Snake Bite First Aid",
+    "category": "snake_bite",
+    "content": "If bitten by a snake: Keep calm and keep the bitten limb still and below heart level. Remove watches, rings, and tight clothing near the bite. Do NOT cut the wound, suck venom, apply tourniquet, or apply ice. Mark the swelling edge with a pen and note the time. Go to the nearest hospital with anti-venom immediately. Try to note the snake's appearance — do not try to catch it.",
+    "tags": ["snake", "bite", "venom", "poison", "emergency"],
+    "source": "WHO Guidelines on Snake Bite Management"
+  },
+  {
+    "id": "fa_006",
+    "title": "Heat Stroke and Heat Exhaustion",
+    "category": "heat",
+    "content": "Heat exhaustion: heavy sweating, weakness, cold pale skin. Treatment: move to a cool place, loosen clothing, apply cool wet cloths, sip water. Heat stroke (emergency): high body temp (>103°F), hot dry skin, confusion, no sweating. Call emergency services immediately. Cool the person rapidly with any means available — ice packs, wet sheets, fan. This is life threatening.",
+    "tags": ["heat stroke", "heat exhaustion", "dehydration", "summer", "emergency"],
+    "source": "CDC Heat Illness Guidelines"
+  },
+  {
+    "id": "fa_007",
+    "title": "Fractures and Broken Bones",
+    "category": "fracture",
+    "content": "If a fracture is suspected: Do not try to straighten the bone. Immobilise the injured area in the position found. Apply ice packs wrapped in cloth to reduce swelling. Elevate the injured limb if possible. Seek medical care promptly. For open fractures (bone visible), cover with a clean bandage and go to hospital immediately. Do not press on the bone.",
+    "tags": ["fracture", "broken bone", "injury", "splint", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_008",
+    "title": "Drowning and Water Rescue",
+    "category": "drowning",
+    "content": "If someone is drowning: Call emergency services. If safe, throw a rope, lifejacket, or extend a pole — do not enter water unless trained. Once rescued, check for breathing. If not breathing, begin CPR. Turn the person on their side if vomiting. Keep them warm. All drowning victims need medical evaluation even if they appear recovered.",
+    "tags": ["drowning", "water", "emergency", "cpr", "rescue"],
+    "source": "WHO Drowning Prevention"
+  }
+]
