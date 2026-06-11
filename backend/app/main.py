@@ -7,11 +7,19 @@ Startup pipeline:
   3. Generate embeddings with all-MiniLM-L6-v2
   4. Upsert into ChromaDB (idempotent — safe for restarts)
 
+GPU memory note — lazy-loaded services (zero VRAM at startup):
+  • Whisper:     loaded on first POST /transcribe
+  • IndicTrans2: loaded on first non-English transcription
+
+Services loaded at startup (minimal VRAM):
+  • all-MiniLM-L6-v2 embedding model (≈0.1 GB — runs on CPU)
+
 Future architecture plug-in points:
-  Whisper → IndicTrans2 → ChromaDB → Triage Engine → Ollama → Response
+  Voice → Whisper → IndicTrans2 → ChromaDB → Triage Engine → Ollama → Response
 """
 
 import logging
+import time
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -34,28 +42,57 @@ async def lifespan(app: FastAPI):
     Startup: initialise ChromaDB and index knowledge base.
     Shutdown: nothing to clean up (ChromaDB handles persistence).
     """
-    logger.info("=" * 60)
-    logger.info("AAYU Backend starting up...")
-    logger.info("=" * 60)
+    _banner("AAYU Backend Starting")
 
+    t_start = time.time()
+
+    # ── Vector DB + Embedding Model ─────────────────────────────────────────
+    logger.info("┌─ Vector Database")
+    try:
+        from app.services.vector_db_service import VectorDBService
+        VectorDBService.get_instance()  # triggers ChromaDB init + model load
+        logger.info("│  ✓ ChromaDB initialised")
+        logger.info("│  ✓ all-MiniLM-L6-v2 embedding model loaded")
+    except Exception as exc:
+        logger.error("│  ✗ Vector DB init failed: %s", exc)
+    logger.info("└──────────────────────────────")
+
+    # ── Knowledge Base Indexing ──────────────────────────────────────────────
+    logger.info("┌─ Knowledge Base")
     try:
         from app.services.indexer import index_knowledge_base
         indexed = index_knowledge_base(force_reindex=False)
         total = sum(indexed.values())
-        logger.info("[Startup] Knowledge base indexed: %d documents total.", total)
         for col, count in indexed.items():
-            logger.info("  ✓ %s — %d documents", col, count)
+            logger.info("│  ✓ %-28s %d docs", col, count)
+        logger.info("│  ─────────────────────────────")
+        logger.info("│  Total documents indexed: %d", total)
     except Exception as exc:
-        # Non-fatal — server starts even if indexing fails
-        logger.error("[Startup] Knowledge base indexing failed: %s", exc)
+        logger.error("│  ✗ Indexing failed: %s", exc)
+    logger.info("└──────────────────────────────")
 
-    logger.info("=" * 60)
-    logger.info("AAYU Backend ready.")
-    logger.info("=" * 60)
+    # ── Lazy-Loaded Services ─────────────────────────────────────────────────
+    logger.info("┌─ Lazy-Loaded Services (zero VRAM until first request)")
+    logger.info("│  ◌ Whisper .............. loads on POST /transcribe")
+    logger.info("│  ◌ IndicTrans2 .......... loads on first non-English audio")
+    logger.info("└──────────────────────────────")
+
+    elapsed = round(time.time() - t_start, 2)
+    _banner(f"AAYU Backend Ready  ({elapsed}s)")
 
     yield
 
-    logger.info("AAYU Backend shutting down.")
+    logger.info("=" * 44)
+    logger.info("  AAYU Backend shutting down.")
+    logger.info("=" * 44)
+
+
+def _banner(title: str) -> None:
+    """Print a clean section banner to the log."""
+    bar = "=" * 44
+    logger.info(bar)
+    logger.info("  %s", title)
+    logger.info(bar)
 
 
 # --------------------------------------------------------------------------- #
@@ -121,9 +158,23 @@ def root():
 
 @app.get("/health", tags=["health"])
 def health_check():
-    """Detailed health check including ChromaDB status."""
+    """Detailed health check including ChromaDB and model status."""
     from app.services.indexer import get_index_status
+    from app.services.translation_service import get_model_status, is_model_loaded
+    from app.services.whisper_service import get_whisper_status
+
+    whisper = get_whisper_status()
     return {
         "status": "healthy",
         "knowledge_base": get_index_status(),
+        "whisper": {
+            "loaded": whisper["loaded"],
+            "model_size": whisper["model_size"],
+            "note": "Lazy — loads on first /transcribe request",
+        },
+        "translation": {
+            "state": get_model_status(),
+            "loaded": is_model_loaded(),
+            "note": "Lazy — loads on first non-English transcription",
+        },
     }

@@ -4,13 +4,14 @@ Search API Router.
 Endpoints:
     GET  /search?q=<query>&collection=<name>&top_k=<n>
     POST /search
-
-Both return ranked documents with similarity scores and metadata.
+    GET  /search/collections  — collection metadata
+    GET  /search/status       — vector DB health + diagnostics
 """
 
 from __future__ import annotations
 
 import logging
+import os
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query
@@ -97,10 +98,56 @@ async def list_collections() -> dict[str, Any]:
     }
 
 
-@router.get("/status", summary="Index status for all collections")
-async def index_status() -> dict[str, Any]:
-    """Return document counts for all indexed collections."""
-    return get_index_status()
+@router.get("/status", summary="Vector database health and diagnostics")
+async def vector_db_status() -> dict[str, Any]:
+    """
+    GET /search/status
+
+    Returns comprehensive diagnostics for the vector database:
+      - Collection names and document counts
+      - Embedding model in use
+      - ChromaDB storage path
+      - Overall health status
+    """
+    from app.services.vector_db_service import VectorDBService, _CHROMA_PATH, _EMBEDDING_MODEL
+
+    status = "ok"
+    collections_info: dict[str, Any] = {}
+    document_counts: dict[str, int] = {}
+    total_docs = 0
+
+    try:
+        db = VectorDBService.get_instance()
+        index_status = get_index_status()
+
+        for col_name, col_info in index_status.items():
+            count = col_info.get("document_count", 0)
+            document_counts[col_name] = count
+            total_docs += count
+            collections_info[col_name] = {
+                "indexed": col_info.get("indexed", False),
+                "document_count": count,
+                "status": "ready" if count > 0 else "empty",
+            }
+
+        chroma_path = os.path.abspath(_CHROMA_PATH)
+
+    except Exception as exc:
+        logger.error("[Search Status] Failed to retrieve status: %s", exc)
+        status = "error"
+        chroma_path = "unknown"
+        collections_info = {}
+        document_counts = {}
+
+    return {
+        "status": status,
+        "collections": collections_info,
+        "document_counts": document_counts,
+        "total_documents": total_docs,
+        "embedding_model": _EMBEDDING_MODEL,
+        "database_path": chroma_path,
+        "available_collections": list(AVAILABLE_COLLECTIONS.keys()),
+    }
 
 
 # --------------------------------------------------------------------------- #
