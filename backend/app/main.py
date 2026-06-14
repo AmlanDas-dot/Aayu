@@ -27,6 +27,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers.transcribe import router as transcribe_router
 from app.routers.search import router as search_router
+from app.routers.chat import router as chat_router
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -105,7 +106,7 @@ app = FastAPI(
         "Multilingual rural healthcare assistant API. "
         "Provides voice transcription, semantic search, and health guidance."
     ),
-    version="0.2.0",
+    version="0.3.0",
     lifespan=lifespan,
 )
 
@@ -134,6 +135,7 @@ app.add_middleware(
 
 app.include_router(transcribe_router)
 app.include_router(search_router)
+app.include_router(chat_router)
 
 
 # --------------------------------------------------------------------------- #
@@ -145,8 +147,9 @@ def root():
     return {
         "status": "running",
         "service": "AAYU Backend",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "endpoints": {
+            "chat": "POST /chat",
             "transcribe": "POST /transcribe",
             "search_get": "GET /search?q=",
             "search_post": "POST /search",

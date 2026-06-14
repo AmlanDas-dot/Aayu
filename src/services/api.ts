@@ -1,6 +1,13 @@
 const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
-import type { SearchResponse, CollectionName } from "../types/search";
+import type {
+  SearchResponse,
+  CollectionName,
+  ChatRequest,
+  ChatApiResponse,
+} from "../types/search";
+
+// ── Search ──────────────────────────────────────────────────────────────────
 
 export async function searchKnowledgeBase(
   query: string,
@@ -13,6 +20,8 @@ export async function searchKnowledgeBase(
   return res.json();
 }
 
+// ── Health check ─────────────────────────────────────────────────────────────
+
 export async function checkBackendHealth(): Promise<boolean> {
   try {
     const res = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(3000) });
@@ -21,6 +30,31 @@ export async function checkBackendHealth(): Promise<boolean> {
     return false;
   }
 }
+
+// ── Chat pipeline (Sprint 2) ─────────────────────────────────────────────────
+// Calls POST /chat — full pipeline: translate → search → triage → response
+
+export async function sendChatMessage(
+  req: ChatRequest
+): Promise<ChatApiResponse> {
+  const res = await fetch(`${API_BASE}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: req.message,
+      language: req.language ?? "en",
+      top_k: req.top_k ?? 5,
+      collection: req.collection ?? "all",
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Unknown error" }));
+    throw new Error(err.detail ?? "Chat request failed");
+  }
+  return res.json();
+}
+
+// ── Fallback mock (kept for offline/dev use) ──────────────────────────────────
 
 export async function getMockChatResponse(
   userMessage: string,

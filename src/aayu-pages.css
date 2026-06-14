@@ -471,3 +471,220 @@
   .hero-headline { font-size: 1.8rem; }
   .hero-mascot { display: none; }
 }
+
+/* ============================================================
+   Sprint 2 — Risk Badges
+   ============================================================ */
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+}
+
+.risk-emergency {
+  background: #fff1f1;
+  color: #b91c1c;
+  border-color: #fca5a5;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.12);
+  animation: riskyPulse 2s ease-in-out infinite;
+}
+
+.risk-urgent {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: #fdba74;
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+}
+
+.risk-routine {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+@keyframes riskyPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(239,68,68,0.12); }
+  50%       { box-shadow: 0 0 0 6px rgba(239,68,68,0.22); }
+}
+
+/* ============================================================
+   Sprint 2 — Retrieved Document Cards
+   ============================================================ */
+.retrieved-docs {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.retrieved-docs-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.doc-card {
+  background: #f8fafc;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.doc-card:hover {
+  border-color: var(--teal);
+  background: var(--teal-bg);
+  box-shadow: 0 2px 10px rgba(13,148,136,0.1);
+}
+
+.doc-card.expanded {
+  border-color: var(--teal);
+}
+
+.doc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  gap: 10px;
+}
+
+.doc-card-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.doc-card-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.doc-score {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: white;
+  border-radius: 6px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+}
+
+.doc-title {
+  font-size: 0.8rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px;
+}
+
+.doc-collection {
+  font-size: 0.65rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.doc-toggle {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.doc-card-body {
+  padding: 0 12px 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+.doc-category {
+  display: inline-block;
+  font-size: 0.65rem;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  border-radius: 5px;
+  padding: 1px 7px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.doc-content {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* ============================================================
+   Sprint 2 — Language selector
+   ============================================================ */
+.chat-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.lang-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lang-select {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.lang-select:focus { border-color: var(--teal); }
+.lang-select:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ============================================================
+   Sprint 2 — Bubble disclaimer + processing time
+   ============================================================ */
+.bubble-disclaimer {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+  padding-top: 8px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.processing-time {
+  opacity: 0.4;
+  font-style: italic;
+}
+

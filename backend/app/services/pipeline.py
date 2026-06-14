@@ -161,18 +161,16 @@ class _ResponseFormatterStage:
         search_results: list[dict[str, Any]],
         llm_response: str,
     ) -> dict[str, Any]:
+        from app.services.rule_based_triage import get_triage_engine
         from app.services.response_service import get_response_service
-        from app.services.triage_service import get_triage_service
 
-        triage_svc = get_triage_service()
-        triage_result = triage_svc.assess(
-            symptoms=query, context_chunks=search_results
-        )
+        triage_engine = get_triage_engine()
+        triage_result = triage_engine.assess(query)
 
         response_svc = get_response_service()
         health_resp = response_svc.format_response(
             query=query,
-            triage_result=triage_result.to_dict(),
+            triage=triage_result.to_dict(),
             context_chunks=search_results,
         )
         return health_resp.to_dict()
