@@ -1,0 +1,600 @@
+[
+  {
+    "name": "Rice (Bhatta)",
+    "category": "Grains",
+    "calories": 130,
+    "protein": 2.7,
+    "carbs": 28.0,
+    "fat": 0.3,
+    "fiber": 0.4,
+    "serving_size": "100g cooked",
+    "rich_in": [
+      "Energy",
+      "Carbohydrates"
+    ],
+    "good_for": [
+      "Instant energy",
+      "Easy digestion",
+      "Diarrhea recovery",
+      "Weakness"
+    ],
+    "avoid_if": [
+      "Diabetes",
+      "Obesity"
+    ]
+  },
+  {
+    "name": "Roti (Chapati)",
+    "category": "Grains",
+    "calories": 120,
+    "protein": 3.5,
+    "carbs": 24.0,
+    "fat": 0.5,
+    "fiber": 3.0,
+    "serving_size": "1 medium roti (40g)",
+    "rich_in": [
+      "Fiber",
+      "B Vitamins",
+      "Iron",
+      "Magnesium"
+    ],
+    "good_for": [
+      "Digestion",
+      "Weight loss",
+      "Sustained energy",
+      "Diabetes"
+    ],
+    "avoid_if": [
+      "Gluten allergy",
+      "Celiac disease"
+    ]
+  },
+  {
+    "name": "Harada Dal (Arhar/Pigeon Pea)",
+    "category": "Legumes",
+    "calories": 116,
+    "protein": 8.0,
+    "carbs": 20.0,
+    "fat": 0.6,
+    "fiber": 3.5,
+    "serving_size": "100g cooked",
+    "rich_in": [
+      "Protein",
+      "Folic Acid",
+      "Iron",
+      "Potassium"
+    ],
+    "good_for": [
+      "Muscle growth",
+      "Pregnancy",
+      "Anemia",
+      "Weakness"
+    ],
+    "avoid_if": [
+      "Gout",
+      "High uric acid"
+    ]
+  },
+  {
+    "name": "Moong Dal (Split Green Gram)",
+    "category": "Legumes",
+    "calories": 105,
+    "protein": 7.0,
+    "carbs": 19.0,
+    "fat": 0.3,
+    "fiber": 2.5,
+    "serving_size": "100g cooked",
+    "rich_in": [
+      "Protein",
+      "Iron",
+      "Potassium",
+      "Vitamin B"
+    ],
+    "good_for": [
+      "Easy digestion",
+      "Fever recovery",
+      "Weight loss",
+      "Weakness",
+      "Anemia"
+    ],
+    "avoid_if": []
+  },
+  {
+    "name": "Paneer (Cottage Cheese)",
+    "category": "Dairy",
+    "calories": 265,
+    "protein": 18.0,
+    "carbs": 3.0,
+    "fat": 20.0,
+    "fiber": 0.0,
+    "serving_size": "100g",
+    "rich_in": [
+      "Protein",
+      "Calcium",
+      "Phosphorus",
+      "Vitamin D"
+    ],
+    "good_for": [
+      "Bone health",
+      "Muscle growth",
+      "Weight gain",
+      "Pregnancy",
+      "Diabetes"
+    ],
+    "avoid_if": [
+      "Lactose intolerance",
+      "High cholesterol"
+    ]
+  },
+  {
+    "name": "Spinach (Palanga Saga)",
+    "category": "Vegetables",
+    "calories": 23,
+    "protein": 2.9,
+    "carbs": 3.6,
+    "fat": 0.4,
+    "fiber": 2.2,
+    "serving_size": "100g raw",
+    "rich_in": [
+      "Iron",
+      "Vitamin A",
+      "Vitamin C",
+      "Folate",
+      "Calcium"
+    ],
+    "good_for": [
+      "Anemia",
+      "Vision health",
+      "Immunity",
+      "Pregnancy",
+      "Constipation"
+    ],
+    "avoid_if": [
+      "Kidney stones",
+      "Gout"
+    ]
+  },
+  {
+    "name": "Banana (Kela/Kadali)",
+    "category": "Fruits",
+    "calories": 89,
+    "protein": 1.1,
+    "carbs": 23.0,
+    "fat": 0.3,
+    "fiber": 2.6,
+    "serving_size": "1 medium (100g)",
+    "rich_in": [
+      "Potassium",
+      "Vitamin B6",
+      "Vitamin C",
+      "Energy"
+    ],
+    "good_for": [
+      "High blood pressure",
+      "Instant energy",
+      "Digestion",
+      "Diarrhea",
+      "Weight gain"
+    ],
+    "avoid_if": [
+      "Diabetes",
+      "Late-stage kidney disease"
+    ]
+  },
+  {
+    "name": "Mango (Aam/Amba)",
+    "category": "Fruits",
+    "calories": 60,
+    "protein": 0.8,
+    "carbs": 15.0,
+    "fat": 0.4,
+    "fiber": 1.6,
+    "serving_size": "100g",
+    "rich_in": [
+      "Vitamin A",
+      "Vitamin C",
+      "Potassium",
+      "Beta-carotene"
+    ],
+    "good_for": [
+      "Immunity",
+      "Eye health",
+      "Skin health",
+      "Digestion"
+    ],
+    "avoid_if": [
+      "Diabetes",
+      "Weight loss"
+    ]
+  },
+  {
+    "name": "Curd (Dahi)",
+    "category": "Dairy",
+    "calories": 98,
+    "protein": 3.4,
+    "carbs": 4.7,
+    "fat": 4.3,
+    "fiber": 0.0,
+    "serving_size": "100g (whole milk)",
+    "rich_in": [
+      "Calcium",
+      "Probiotics",
+      "Vitamin B12",
+      "Protein"
+    ],
+    "good_for": [
+      "Digestion",
+      "Gut health",
+      "Bone health",
+      "Immunity",
+      "Diarrhea recovery"
+    ],
+    "avoid_if": [
+      "Severe lactose intolerance"
+    ]
+  },
+  {
+    "name": "Egg (Anda)",
+    "category": "Poultry/Eggs",
+    "calories": 78,
+    "protein": 6.3,
+    "carbs": 0.6,
+    "fat": 5.3,
+    "fiber": 0.0,
+    "serving_size": "1 large egg (50g)",
+    "rich_in": [
+      "Protein",
+      "Vitamin D",
+      "Vitamin B12",
+      "Choline",
+      "Iron"
+    ],
+    "good_for": [
+      "Muscle growth",
+      "Brain health",
+      "Anemia",
+      "Pregnancy",
+      "Weakness",
+      "Malnutrition"
+    ],
+    "avoid_if": [
+      "High cholesterol (limit yolk)"
+    ]
+  },
+  {
+    "name": "Chicken (Kukuda Mansa)",
+    "category": "Meat",
+    "calories": 165,
+    "protein": 31.0,
+    "carbs": 0.0,
+    "fat": 3.6,
+    "fiber": 0.0,
+    "serving_size": "100g cooked breast",
+    "rich_in": [
+      "Protein",
+      "Vitamin B6",
+      "Niacin",
+      "Phosphorus",
+      "Selenium"
+    ],
+    "good_for": [
+      "Muscle growth",
+      "Weight gain",
+      "Weakness",
+      "Malnutrition"
+    ],
+    "avoid_if": [
+      "High cholesterol",
+      "Gout"
+    ]
+  },
+  {
+    "name": "Potato (Alu)",
+    "category": "Vegetables",
+    "calories": 87,
+    "protein": 1.9,
+    "carbs": 20.0,
+    "fat": 0.1,
+    "fiber": 1.8,
+    "serving_size": "100g boiled",
+    "rich_in": [
+      "Carbohydrates",
+      "Potassium",
+      "Vitamin C",
+      "Vitamin B6"
+    ],
+    "good_for": [
+      "Weight gain",
+      "Easy energy",
+      "High blood pressure"
+    ],
+    "avoid_if": [
+      "Diabetes",
+      "Obesity"
+    ]
+  },
+  {
+    "name": "Moringa (Sajana Chhuin / Drumstick)",
+    "category": "Vegetables",
+    "calories": 64,
+    "protein": 9.4,
+    "carbs": 8.2,
+    "fat": 1.4,
+    "fiber": 2.0,
+    "serving_size": "100g leaves/pods",
+    "rich_in": [
+      "Calcium",
+      "Iron",
+      "Vitamin C",
+      "Vitamin A",
+      "Protein"
+    ],
+    "good_for": [
+      "Malnutrition",
+      "Anemia",
+      "Immunity",
+      "Bone health",
+      "Pregnancy",
+      "High blood pressure"
+    ],
+    "avoid_if": []
+  },
+  {
+    "name": "Ragi (Mandia / Finger Millet)",
+    "category": "Grains",
+    "calories": 125,
+    "protein": 3.2,
+    "carbs": 25.0,
+    "fat": 0.6,
+    "fiber": 3.6,
+    "serving_size": "100g cooked",
+    "rich_in": [
+      "Calcium",
+      "Iron",
+      "Fiber",
+      "Amino acids"
+    ],
+    "good_for": [
+      "Bone health",
+      "Anemia",
+      "Diabetes",
+      "Weight loss",
+      "Pregnancy",
+      "Malnutrition"
+    ],
+    "avoid_if": [
+      "Kidney stones"
+    ]
+  },
+  {
+    "name": "Milk (Khira)",
+    "category": "Dairy",
+    "calories": 62,
+    "protein": 3.2,
+    "carbs": 4.8,
+    "fat": 3.3,
+    "fiber": 0.0,
+    "serving_size": "100ml (cow milk)",
+    "rich_in": [
+      "Calcium",
+      "Vitamin D",
+      "Protein",
+      "Vitamin B12"
+    ],
+    "good_for": [
+      "Bone health",
+      "Growth",
+      "Weakness",
+      "Malnutrition",
+      "Pregnancy"
+    ],
+    "avoid_if": [
+      "Lactose intolerance"
+    ]
+  },
+  {
+    "name": "Papaya (Amrutabhanda)",
+    "category": "Fruits",
+    "calories": 43,
+    "protein": 0.5,
+    "carbs": 11.0,
+    "fat": 0.3,
+    "fiber": 1.7,
+    "serving_size": "100g",
+    "rich_in": [
+      "Vitamin C",
+      "Vitamin A",
+      "Folate",
+      "Papain enzyme"
+    ],
+    "good_for": [
+      "Digestion",
+      "Immunity",
+      "Constipation",
+      "Skin health",
+      "Vitamin C deficiency"
+    ],
+    "avoid_if": [
+      "Pregnancy (avoid unripe papaya)"
+    ]
+  },
+  {
+    "name": "Fish (Macha)",
+    "category": "Meat/Fish",
+    "calories": 110,
+    "protein": 19.0,
+    "carbs": 0.0,
+    "fat": 3.0,
+    "fiber": 0.0,
+    "serving_size": "100g cooked (Rohu/Katla)",
+    "rich_in": [
+      "Protein",
+      "Omega-3 Fatty Acids",
+      "Vitamin D",
+      "Vitamin B2",
+      "Calcium"
+    ],
+    "good_for": [
+      "Heart health",
+      "Brain health",
+      "Vision health",
+      "Protein deficiency",
+      "Weakness"
+    ],
+    "avoid_if": [
+      "Gout"
+    ]
+  },
+  {
+    "name": "Chickpeas (Kala Chana / Bengal Gram)",
+    "category": "Legumes",
+    "calories": 164,
+    "protein": 8.9,
+    "carbs": 27.0,
+    "fat": 2.6,
+    "fiber": 7.6,
+    "serving_size": "100g boiled",
+    "rich_in": [
+      "Protein",
+      "Fiber",
+      "Iron",
+      "Folate"
+    ],
+    "good_for": [
+      "Diabetes",
+      "Weight loss",
+      "Anemia",
+      "Digestion",
+      "Sustained energy"
+    ],
+    "avoid_if": [
+      "Gout",
+      "Severe gas/indigestion"
+    ]
+  },
+  {
+    "name": "Lemon (Lembu)",
+    "category": "Fruits",
+    "calories": 29,
+    "protein": 1.1,
+    "carbs": 9.0,
+    "fat": 0.3,
+    "fiber": 2.8,
+    "serving_size": "100g",
+    "rich_in": [
+      "Vitamin C",
+      "Citric Acid",
+      "Antioxidants"
+    ],
+    "good_for": [
+      "Immunity",
+      "Vitamin C deficiency",
+      "Iron absorption",
+      "Digestion",
+      "Scurvy"
+    ],
+    "avoid_if": [
+      "Severe acid reflux"
+    ]
+  },
+  {
+    "name": "Guava (Pijuli)",
+    "category": "Fruits",
+    "calories": 68,
+    "protein": 2.6,
+    "carbs": 14.0,
+    "fat": 1.0,
+    "fiber": 5.4,
+    "serving_size": "100g",
+    "rich_in": [
+      "Vitamin C",
+      "Fiber",
+      "Vitamin A",
+      "Potassium"
+    ],
+    "good_for": [
+      "Constipation",
+      "Diabetes",
+      "Immunity",
+      "Heart health",
+      "Vitamin C deficiency"
+    ],
+    "avoid_if": []
+  },
+  {
+    "name": "Coconut Water (Ladia Pani / Dabha)",
+    "category": "Fruits",
+    "calories": 19,
+    "protein": 0.7,
+    "carbs": 3.7,
+    "fat": 0.2,
+    "fiber": 1.1,
+    "serving_size": "100ml",
+    "rich_in": [
+      "Potassium",
+      "Sodium",
+      "Magnesium",
+      "Calcium"
+    ],
+    "good_for": [
+      "Dehydration",
+      "High blood pressure",
+      "Diarrhea recovery",
+      "Fever recovery"
+    ],
+    "avoid_if": [
+      "Severe kidney disease"
+    ]
+  },
+  {
+    "name": "Mustard Greens (Sorisa Saga)",
+    "category": "Vegetables",
+    "calories": 27,
+    "protein": 2.8,
+    "carbs": 4.7,
+    "fat": 0.4,
+    "fiber": 3.2,
+    "serving_size": "100g raw",
+    "rich_in": [
+      "Vitamin K",
+      "Vitamin A",
+      "Vitamin C",
+      "Calcium",
+      "Iron"
+    ],
+    "good_for": [
+      "Bone health",
+      "Anemia",
+      "Immunity",
+      "Eye health"
+    ],
+    "avoid_if": [
+      "Taking blood thinners (due to Vitamin K)"
+    ]
+  },
+  {
+    "name": "Sweet Potato (Kanda Alu)",
+    "category": "Vegetables",
+    "calories": 86,
+    "protein": 1.6,
+    "carbs": 20.0,
+    "fat": 0.1,
+    "fiber": 3.0,
+    "serving_size": "100g boiled",
+    "rich_in": [
+      "Vitamin A (Beta-carotene)",
+      "Vitamin C",
+      "Potassium",
+      "Fiber"
+    ],
+    "good_for": [
+      "Vision health",
+      "Immunity",
+      "Digestion",
+      "Healthy skin"
+    ],
+    "avoid_if": [
+      "Kidney stones"
+    ]
+  }
+]

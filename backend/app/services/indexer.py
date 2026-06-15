@@ -125,11 +125,131 @@ def index_knowledge_base(force_reindex: bool = False) -> dict[str, int]:
     return indexed
 
 
+def index_nutrition_and_schemes(force_reindex: bool = False) -> dict[str, int]:
+    """
+    Index nutrition foods and government schemes into ChromaDB.
+
+    Nutrition foods -> collection 'nutrition'
+    Government schemes -> collection 'schemes'
+
+    Both datasets use a different schema from the medical knowledge base,
+    so they are handled separately from index_knowledge_base().
+    """
+    import os as _os
+    db = VectorDBService.get_instance()
+    indexed: dict[str, int] = {}
+
+    # ── Nutrition ──────────────────────────────────────────────────────────
+    nutrition_path = _os.path.join(_DATA_DIR, "nutrition", "foods.json")
+    try:
+        with open(nutrition_path, encoding="utf-8") as f:
+            import json as _json
+            foods = _json.load(f)
+
+        if force_reindex:
+            try:
+                db.delete_collection("nutrition")
+            except Exception:
+                pass
+
+        documents: list[str] = []
+        ids: list[str] = []
+        metadatas: list[dict] = []
+
+        for food in foods:
+            name = food.get("name", "")
+            if not name:
+                continue
+            # Build a rich text document for embedding
+            good_for = ", ".join(food.get("good_for", []))
+            rich_in  = ", ".join(food.get("rich_in", []))
+            doc_text = (
+                f"{name}. Category: {food.get('category', '')}. "
+                f"Rich in: {rich_in}. Good for: {good_for}. "
+                f"Avoid if: {', '.join(food.get('avoid_if', []))}."
+            )
+            doc_id = f"nutrition_{name.lower().replace(' ', '_').replace('(', '').replace(')', '')[:40]}"
+            documents.append(doc_text)
+            ids.append(doc_id)
+            metadatas.append({
+                "title": name,
+                "category": food.get("category", ""),
+                "source": "AAYU Nutrition Database",
+                "tags": rich_in,
+                "collection": "nutrition",
+            })
+
+        if documents:
+            db.upsert_documents("nutrition", documents, ids, metadatas)
+            logger.info("[Indexer] Upserted %d food items into 'nutrition'.", len(documents))
+        indexed["nutrition"] = len(documents)
+
+    except FileNotFoundError:
+        logger.warning("[Indexer] Nutrition data not found at %s — skipping.", nutrition_path)
+        indexed["nutrition"] = 0
+    except Exception as exc:
+        logger.error("[Indexer] Failed to index nutrition: %s", exc)
+        indexed["nutrition"] = 0
+
+    # ── Schemes ────────────────────────────────────────────────────────────
+    schemes_path = _os.path.join(_DATA_DIR, "schemes", "schemes.json")
+    try:
+        with open(schemes_path, encoding="utf-8") as f:
+            import json as _json
+            schemes = _json.load(f)
+
+        if force_reindex:
+            try:
+                db.delete_collection("schemes")
+            except Exception:
+                pass
+
+        documents = []
+        ids = []
+        metadatas = []
+
+        for scheme in schemes:
+            name = scheme.get("name", "")
+            if not name:
+                continue
+            doc_text = (
+                f"{name}. State: {scheme.get('state', '')}. "
+                f"{scheme.get('description', '')} "
+                f"Eligibility: {scheme.get('eligibility', '')}. "
+                f"Benefits: {scheme.get('benefits', '')}."
+            )
+            doc_id = f"scheme_{name.lower().replace(' ', '_').replace('(', '').replace(')', '')[:40]}"
+            documents.append(doc_text)
+            ids.append(doc_id)
+            metadatas.append({
+                "title": name,
+                "category": scheme.get("state", ""),
+                "source": "AAYU Government Schemes Database",
+                "tags": scheme.get("state", ""),
+                "collection": "schemes",
+            })
+
+        if documents:
+            db.upsert_documents("schemes", documents, ids, metadatas)
+            logger.info("[Indexer] Upserted %d schemes into 'schemes'.", len(documents))
+        indexed["schemes"] = len(documents)
+
+    except FileNotFoundError:
+        logger.warning("[Indexer] Schemes data not found at %s — skipping.", schemes_path)
+        indexed["schemes"] = 0
+    except Exception as exc:
+        logger.error("[Indexer] Failed to index schemes: %s", exc)
+        indexed["schemes"] = 0
+
+    return indexed
+
+
 def get_index_status() -> dict[str, Any]:
-    """Return current document counts for all collections."""
+    """Return current document counts for all collections (medical KB + nutrition + schemes)."""
     db = VectorDBService.get_instance()
     status: dict[str, Any] = {}
-    for collection_name in DATA_FILES:
+    all_collections = list(DATA_FILES.keys()) + ["nutrition", "schemes"]
+    for collection_name in all_collections:
         try:
             count = db.collection_count(collection_name)
             status[collection_name] = {"indexed": True, "document_count": count}

@@ -13,6 +13,8 @@ GPU memory note — lazy-loaded services (zero VRAM at startup):
 
 Services loaded at startup (minimal VRAM):
   • all-MiniLM-L6-v2 embedding model (≈0.1 GB — runs on CPU)
+  • NutritionService (JSON file — negligible RAM)
+  • SchemesService   (JSON file — negligible RAM)
 
 Future architecture plug-in points:
   Voice → Whisper → IndicTrans2 → ChromaDB → Triage Engine → Ollama → Response
@@ -28,6 +30,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.transcribe import router as transcribe_router
 from app.routers.search import router as search_router
 from app.routers.chat import router as chat_router
+from app.routers.nutrition import router as nutrition_router
+from app.routers.schemes import router as schemes_router
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -70,6 +74,22 @@ async def lifespan(app: FastAPI):
         logger.info("│  Total documents indexed: %d", total)
     except Exception as exc:
         logger.error("│  ✗ Indexing failed: %s", exc)
+    logger.info("└──────────────────────────────")
+
+    # ── Nutrition & Schemes Indexing ─────────────────────────────────────────
+    logger.info("┌─ Nutrition & Schemes")
+    try:
+        from app.services.indexer import index_nutrition_and_schemes
+        from app.services.nutrition_service import NutritionService
+        from app.services.schemes_service import SchemesService
+        ns_indexed = index_nutrition_and_schemes(force_reindex=False)
+        for col, count in ns_indexed.items():
+            logger.info("│  ✓ %-28s %d docs", col, count)
+        n_svc = NutritionService.get_instance()
+        s_svc = SchemesService.get_instance()
+        logger.info("│  ✓ NutritionService (%d foods) SchemesService (%d schemes)", n_svc.count, s_svc.count)
+    except Exception as exc:
+        logger.error("│  ✗ Nutrition/Schemes init failed: %s", exc)
     logger.info("└──────────────────────────────")
 
     # ── Lazy-Loaded Services ─────────────────────────────────────────────────
@@ -136,6 +156,8 @@ app.add_middleware(
 app.include_router(transcribe_router)
 app.include_router(search_router)
 app.include_router(chat_router)
+app.include_router(nutrition_router)
+app.include_router(schemes_router)
 
 
 # --------------------------------------------------------------------------- #
@@ -147,7 +169,7 @@ def root():
     return {
         "status": "running",
         "service": "AAYU Backend",
-        "version": "0.3.0",
+        "version": "0.4.0",
         "endpoints": {
             "chat": "POST /chat",
             "transcribe": "POST /transcribe",
@@ -155,6 +177,13 @@ def root():
             "search_post": "POST /search",
             "search_collections": "GET /search/collections",
             "search_status": "GET /search/status",
+            "nutrition_all": "GET /nutrition",
+            "nutrition_search": "GET /nutrition/search?q=",
+            "nutrition_food": "GET /nutrition/food/{name}",
+            "nutrition_diet": "GET /nutrition/diet-plan/{goal}",
+            "schemes_all": "GET /schemes",
+            "schemes_search": "GET /schemes/search?q=",
+            "schemes_by_name": "GET /schemes/{name}",
         },
     }
 
@@ -165,6 +194,8 @@ def health_check():
     from app.services.indexer import get_index_status
     from app.services.translation_service import get_model_status, is_model_loaded
     from app.services.whisper_service import get_whisper_status
+    from app.services.nutrition_service import NutritionService
+    from app.services.schemes_service import SchemesService
 
     whisper = get_whisper_status()
     return {
@@ -179,5 +210,13 @@ def health_check():
             "state": get_model_status(),
             "loaded": is_model_loaded(),
             "note": "Lazy — loads on first non-English transcription",
+        },
+        "nutrition": {
+            "loaded": True,
+            "food_items": NutritionService.get_instance().count,
+        },
+        "schemes": {
+            "loaded": True,
+            "scheme_count": SchemesService.get_instance().count,
         },
     }

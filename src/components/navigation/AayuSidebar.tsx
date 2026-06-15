@@ -4,6 +4,8 @@ const NAV_ITEMS = [
   { path: "/", label: "Home", icon: "🏠" },
   { path: "/chat", label: "Chat with AAYU", icon: "💬" },
   { path: "/search", label: "Search", icon: "🔍" },
+  { path: "/nutrition", label: "Nutrition", icon: "🥗" },
+  { path: "/schemes", label: "Gov. Schemes", icon: "🏛️" },
   { path: "/settings", label: "Settings", icon: "⚙️" },
 ];
 
