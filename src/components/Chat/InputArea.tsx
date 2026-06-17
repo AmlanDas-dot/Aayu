@@ -45,6 +45,9 @@ export function InputArea({
   };
 
   const handleToggleSpeech = () => {
+    console.log("MIC CLICKED");
+    console.log("isListening:", isListening);
+
     if (isListening) {
       stopListening();
     } else {
@@ -56,8 +59,8 @@ export function InputArea({
   const micLabel = isListening
     ? "🛑 Stop"
     : isLoading
-    ? "⏳ Processing…"
-    : "🎙️ Speak";
+      ? "⏳ Processing…"
+      : "🎙️ Speak";
 
   const micDisabled = isLoading || isProcessing;
 
@@ -108,8 +111,8 @@ export function InputArea({
             isListening
               ? "Listening… Speak now."
               : isLoading
-              ? "Transcribing audio…"
-              : "Describe your symptoms or ask Aayu…"
+                ? "Transcribing audio…"
+                : "Describe your symptoms or ask Aayu…"
           }
           disabled={isProcessing}
           style={{ flex: 1 }}
@@ -127,19 +130,19 @@ export function InputArea({
               background: isListening
                 ? "rgba(239, 68, 68, 0.15)"
                 : isLoading
-                ? "rgba(250, 204, 21, 0.12)"
-                : "rgba(0, 0, 0, 0.05)",
+                  ? "rgba(250, 204, 21, 0.12)"
+                  : "rgba(0, 0, 0, 0.05)",
               color: isListening
                 ? "#ef4444"
                 : isLoading
-                ? "#ca8a04"
-                : "inherit",
+                  ? "#ca8a04"
+                  : "inherit",
               borderRadius: "8px",
               border: isListening
                 ? "1px solid #ef4444"
                 : isLoading
-                ? "1px solid #ca8a04"
-                : "1px solid rgba(0, 0, 0, 0.06)",
+                  ? "1px solid #ca8a04"
+                  : "1px solid rgba(0, 0, 0, 0.06)",
               cursor: micDisabled ? "not-allowed" : "pointer",
               fontSize: "0.85rem",
               fontWeight: 500,

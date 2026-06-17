@@ -6,6 +6,7 @@ import { SearchPage } from "./pages/SearchPage";
 import { SettingsPage } from "./pages/SettingsPage";
 import { NutritionPage } from "./pages/NutritionPage";
 import { SchemesPage } from "./pages/SchemesPage";
+import { AdminPage } from "./pages/AdminPage";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/nutrition" element={<NutritionPage />} />
           <Route path="/schemes" element={<SchemesPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </AppShell>
     </BrowserRouter>
