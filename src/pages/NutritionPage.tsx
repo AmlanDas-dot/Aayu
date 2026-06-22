@@ -191,7 +191,7 @@ export function NutritionPage() {
             aria-label="Search nutrition database"
           />
           {query && (
-            <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600" aria-label="Clear">
+            <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600 cursor-pointer" aria-label="Clear">
               <X size={16} />
             </button>
           )}
@@ -202,7 +202,7 @@ export function NutritionPage() {
             <button
               key={c}
               onClick={() => { setQuery(c); setDietMode("all"); }}
-              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-xs text-slate-600 font-medium transition-colors capitalize whitespace-nowrap"
+              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-xs text-slate-600 font-medium transition-colors capitalize whitespace-nowrap cursor-pointer"
             >
               {c}
             </button>
@@ -233,7 +233,7 @@ export function NutritionPage() {
           <button
             key={cat}
             onClick={() => setCategoryFilter(cat)}
-            className={`shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+            className={`shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
               categoryFilter === cat
                 ? "bg-teal-600 text-slate-900 shadow-md"
                 : "bg-white text-slate-600 border border-slate-200 hover:border-teal-300 hover:text-teal-700"

@@ -22,6 +22,7 @@ import {
   X,
 } from "lucide-react";
 import { sendChatMessage } from "../services/api";
+import { useSpeech } from "../hooks/useSpeech";
 import type { RiskLevel, RetrievedDocument, ChatApiResponse } from "../types/search";
 
 /* ── Types ─────────────────────────────────────────────────────── */
@@ -101,6 +102,8 @@ export function ChatPage() {
   const [ttsEnabled, setTtsEnabled] = useState(false);
   const [fontSize, setFontSize] = useState(14);
 
+  const { startListening, stopListening, isListening, isLoading, transcript, error, isSupported } = useSpeech(language as any);
+
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -116,6 +119,13 @@ export function ChatPage() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Sync transcription
+  useEffect(() => {
+    if (transcript) {
+      setInput((prev) => (prev ? prev + " " + transcript : transcript));
+    }
+  }, [transcript]);
 
   // Save conversations to localStorage
   useEffect(() => {
@@ -224,14 +234,14 @@ export function ChatPage() {
           <div className="flex gap-1">
             <button
               onClick={startNewChat}
-              className="w-8 h-8 rounded-lg bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition-colors"
+              className="w-8 h-8 rounded-lg bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition-colors cursor-pointer"
               aria-label="New chat"
             >
               <Plus size={16} />
             </button>
             <button
               onClick={() => setShowHistory(false)}
-              className="lg:hidden w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500"
+              className="lg:hidden w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 cursor-pointer"
               aria-label="Close history"
             >
               <X size={16} />
@@ -259,7 +269,7 @@ export function ChatPage() {
                 </div>
                 <button
                   onClick={(e) => { e.stopPropagation(); deleteConversation(convo.id); }}
-                  className="hidden group-hover:flex w-6 h-6 rounded items-center justify-center text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors"
+                  className="hidden group-hover:flex w-6 h-6 rounded items-center justify-center text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
                   aria-label="Delete conversation"
                 >
                   <Trash2 size={12} />
@@ -283,7 +293,7 @@ export function ChatPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowHistory(true)}
-              className="lg:hidden w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors"
+              className="lg:hidden w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer"
               aria-label="Show history"
             >
               <Clock size={16} />
@@ -299,7 +309,7 @@ export function ChatPage() {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setFontSize((s) => Math.max(12, s - 1))}
-              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors"
+              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer"
               aria-label="Decrease text size"
               title="Decrease text size"
             >
@@ -307,7 +317,7 @@ export function ChatPage() {
             </button>
             <button
               onClick={() => setFontSize((s) => Math.min(22, s + 1))}
-              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors"
+              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer"
               aria-label="Increase text size"
               title="Increase text size"
             >
@@ -319,7 +329,7 @@ export function ChatPage() {
                 const current = html.getAttribute("data-contrast");
                 html.setAttribute("data-contrast", current === "high" ? "" : "high");
               }}
-              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors"
+              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer"
               aria-label="Toggle high contrast"
               title="High contrast"
             >
@@ -327,7 +337,7 @@ export function ChatPage() {
             </button>
             <button
               onClick={() => setTtsEnabled((t) => !t)}
-              className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors ${ttsEnabled ? "bg-teal-100 text-teal-600" : "bg-slate-100 hover:bg-slate-200 text-slate-500"}`}
+              className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors cursor-pointer ${ttsEnabled ? "bg-teal-100 text-teal-600" : "bg-slate-100 hover:bg-slate-200 text-slate-500"}`}
               aria-label={ttsEnabled ? "Disable text-to-speech" : "Enable text-to-speech"}
               title="Text-to-speech"
             >
@@ -405,7 +415,7 @@ export function ChatPage() {
                             <button
                               key={key}
                               onClick={() => toggleDoc(key)}
-                              className="w-full text-left bg-white rounded-xl p-3 border border-slate-200/80 hover:border-teal-200 transition-colors"
+                              className="w-full text-left bg-white rounded-xl p-3 border border-slate-200/80 hover:border-teal-200 transition-colors cursor-pointer"
                             >
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
@@ -460,23 +470,38 @@ export function ChatPage() {
                 key={q}
                 onClick={() => handleSend(q)}
                 disabled={isProcessing}
-                className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-xs text-slate-600 font-medium transition-colors whitespace-nowrap disabled:opacity-50"
+                className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-xs text-slate-600 font-medium transition-colors whitespace-nowrap disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
               >
                 {q}
               </button>
             ))}
           </div>
 
+          {/* Error display */}
+          {error && (
+            <p className="text-xs font-medium text-red-500 bg-red-50 p-2 rounded-lg border border-red-100">{error}</p>
+          )}
+
           {/* Input row */}
           <div className="flex items-end gap-2">
+            {isSupported && (
+              <button
+                onClick={() => isListening ? stopListening() : startListening()}
+                disabled={isLoading || isProcessing}
+                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors shrink-0 cursor-pointer disabled:cursor-not-allowed ${
+                  isListening
+                    ? "bg-red-100 hover:bg-red-200 text-red-600 animate-pulse"
+                    : isLoading
+                    ? "bg-amber-100 text-amber-600"
+                    : "bg-slate-100 hover:bg-slate-200 text-slate-500"
+                }`}
+                aria-label={isListening ? "Stop recording" : "Voice input"}
+              >
+                <Mic size={18} />
+              </button>
+            )}
             <button
-              className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors shrink-0"
-              aria-label="Voice input"
-            >
-              <Mic size={18} />
-            </button>
-            <button
-              className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors shrink-0"
+              className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors shrink-0 cursor-pointer"
               aria-label="Upload image"
             >
               <Camera size={18} />
@@ -499,7 +524,7 @@ export function ChatPage() {
               id="chat-send-btn"
               onClick={() => handleSend()}
               disabled={isProcessing || !input.trim()}
-              className="w-10 h-10 rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-slate-200 disabled:text-slate-400 text-slate-900 flex items-center justify-center transition-all shrink-0 shadow-md hover:shadow-lg active:scale-95 disabled:shadow-none"
+              className="w-10 h-10 rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-slate-200 disabled:text-slate-400 text-white flex items-center justify-center transition-all shrink-0 shadow-md hover:shadow-lg active:scale-95 disabled:shadow-none cursor-pointer disabled:cursor-not-allowed"
               aria-label="Send message"
             >
               {isProcessing ? (

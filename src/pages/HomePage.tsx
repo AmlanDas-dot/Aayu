@@ -167,7 +167,7 @@ export function HomePage() {
           <div className="flex flex-col gap-2">
             <button
               onClick={handleQuickChat}
-              className="flex-1 w-12 rounded-xl bg-teal-500 hover:bg-teal-600 text-white flex items-center justify-center transition-colors shadow-md hover:shadow-lg active:scale-95"
+              className="flex-1 w-12 rounded-xl bg-teal-500 hover:bg-teal-600 text-white flex items-center justify-center transition-colors shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
               aria-label="Send message"
             >
               <Send size={18} />
@@ -178,14 +178,14 @@ export function HomePage() {
         <div className="flex gap-2 mt-3">
           <button
             onClick={() => navigate("/chat")}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors cursor-pointer"
           >
             <Mic size={14} />
             <span>Speak</span>
           </button>
           <button
             onClick={() => navigate("/chat")}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors cursor-pointer"
           >
             <Camera size={14} />
             <span>Scan / Upload</span>
@@ -205,7 +205,7 @@ export function HomePage() {
                 <button
                   key={action.title}
                   onClick={() => navigate(action.path)}
-                  className="group bg-white rounded-xl p-4 shadow-md border border-slate-200/60 hover:shadow-lg hover:border-teal-200 transition-all text-left active:scale-[0.98]"
+                  className="group bg-white rounded-xl p-4 shadow-md border border-slate-200/60 hover:shadow-lg hover:border-teal-200 transition-all text-left active:scale-[0.98] cursor-pointer"
                 >
                   <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${action.color} flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow`}>
                     <Icon size={20} className="text-white" />
@@ -223,7 +223,7 @@ export function HomePage() {
         <aside className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-semibold text-slate-800">Health Alerts</h2>
-            <button className="text-xs text-teal-600 font-medium hover:text-teal-700">View All</button>
+            <button className="text-xs text-teal-600 font-medium hover:text-teal-700 cursor-pointer">View All</button>
           </div>
 
           {HEALTH_ALERTS.map((alert) => (
@@ -244,7 +244,7 @@ export function HomePage() {
               </div>
               <h4 className="text-sm font-semibold text-slate-800 mb-1">{alert.title}</h4>
               <p className="text-xs text-slate-600 leading-relaxed">{alert.desc}</p>
-              <button className="mt-2 text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1">
+              <button className="mt-2 text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1 cursor-pointer">
                 Learn more <ArrowRight size={12} />
               </button>
             </div>
@@ -253,7 +253,7 @@ export function HomePage() {
           <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-xl p-4 border border-teal-200/50">
             <h4 className="text-sm font-semibold text-teal-800 mb-1">🌟 Stay Healthy!</h4>
             <p className="text-xs text-teal-700/70 mb-2">Real-time health updates and disease advisories for your region.</p>
-            <button className="text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1">
+            <button className="text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1 cursor-pointer">
               View All Updates <ArrowRight size={12} />
             </button>
           </div>

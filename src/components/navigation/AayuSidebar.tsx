@@ -8,6 +8,7 @@ import {
   Settings,
   Activity,
   ChevronLeft,
+  ChevronRight,
   ServerCrash
 } from "lucide-react";
 
@@ -41,7 +42,7 @@ export function AayuSidebar({ isOpen, onToggle }: SidebarProps) {
       aria-label="Sidebar Navigation"
     >
       {/* Logo Area */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-100 shrink-0">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-100 shrink-0 relative">
         <div className={`flex items-center gap-3 overflow-hidden ${!isOpen && "justify-center w-full"}`}>
           <div className="w-10 h-10 rounded-xl bg-teal-500 flex items-center justify-center shrink-0 shadow-sm">
             <span className="text-white font-bold text-xl">A</span>
@@ -53,16 +54,15 @@ export function AayuSidebar({ isOpen, onToggle }: SidebarProps) {
             </div>
           )}
         </div>
-        
-        {isOpen && (
-          <button 
-            onClick={onToggle}
-            className="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors hidden lg:block"
-            aria-label="Collapse sidebar"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-        )}
+
+        {/* Persistent Toggle Button */}
+        <button 
+          onClick={onToggle}
+          className="absolute -right-3.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white border border-slate-200 text-slate-400 hover:text-teal-600 hover:border-teal-200 shadow-sm z-50 cursor-pointer hidden lg:flex items-center justify-center transition-all hover:scale-110"
+          aria-label={isOpen ? "Collapse sidebar" : "Expand sidebar"}
+        >
+          {isOpen ? <ChevronLeft className="w-4 h-4 pointer-events-none" /> : <ChevronRight className="w-4 h-4 pointer-events-none" />}
+        </button>
       </div>
 
       {/* Navigation Links */}

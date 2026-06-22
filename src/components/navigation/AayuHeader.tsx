@@ -6,9 +6,10 @@ interface AayuHeaderProps {
   language: string;
   onLanguageChange: (lang: string) => void;
   onMenuToggle: () => void;
+  isOpen: boolean;
 }
 
-export function AayuHeader({ language, onLanguageChange, onMenuToggle }: AayuHeaderProps) {
+export function AayuHeader({ language, onLanguageChange, onMenuToggle, isOpen }: AayuHeaderProps) {
   const location = useLocation();
 
   const getPageTitle = () => {
@@ -29,10 +30,11 @@ export function AayuHeader({ language, onLanguageChange, onMenuToggle }: AayuHea
       <div className="flex items-center gap-3">
         <button
           onClick={onMenuToggle}
-          className="p-2 -ml-2 rounded-lg text-slate-600 hover:bg-slate-100 lg:hidden"
-          aria-label="Toggle menu"
+          className="p-2 -ml-2 rounded-lg text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors lg:hidden"
+          aria-label={isOpen ? "Collapse menu" : "Expand menu"}
+          aria-expanded={isOpen}
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="w-5 h-5 pointer-events-none" />
         </button>
         
         <h1 className="text-lg font-semibold text-slate-800 hidden sm:block">
@@ -77,14 +79,14 @@ export function AayuHeader({ language, onLanguageChange, onMenuToggle }: AayuHea
         </div>
 
         {/* Notifications */}
-        <button className="relative p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Notifications">
-          <Bell className="w-5 h-5" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+        <button className="relative p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer" aria-label="Notifications">
+          <Bell className="w-5 h-5 pointer-events-none" />
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white pointer-events-none"></span>
         </button>
 
         {/* User Profile */}
-        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 text-teal-700 hover:bg-teal-200 transition-colors" aria-label="Profile">
-          <User className="w-4 h-4" />
+        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 text-teal-700 hover:bg-teal-200 transition-colors cursor-pointer" aria-label="Profile">
+          <User className="w-4 h-4 pointer-events-none" />
         </button>
       </div>
     </header>

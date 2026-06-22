@@ -384,7 +384,7 @@ export function AdminPage() {
         <div className="space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-semibold text-slate-800">Health Alerts</h3>
-            <button className="flex items-center gap-1.5 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-slate-900 text-xs font-semibold rounded-xl transition-colors shadow-md">
+            <button className="flex items-center gap-1.5 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-md cursor-pointer">
               <Plus size={14} />
               Add Alert
             </button>
@@ -413,10 +413,10 @@ export function AdminPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <button className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors" aria-label="Edit">
+                  <button className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer" aria-label="Edit">
                     <Edit size={14} />
                   </button>
-                  <button className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 flex items-center justify-center text-slate-500 hover:text-red-500 transition-colors" aria-label="Delete">
+                  <button className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 flex items-center justify-center text-slate-500 hover:text-red-500 transition-colors cursor-pointer" aria-label="Delete">
                     <Trash2 size={14} />
                   </button>
                 </div>

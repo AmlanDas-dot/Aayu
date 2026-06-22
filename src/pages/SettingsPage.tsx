@@ -69,7 +69,7 @@ function AccordionSection({ section, isOpen, onToggle }: {
     <div className="bg-white rounded-2xl shadow-md border border-slate-200/60 overflow-hidden transition-all">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors text-left"
+        className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors text-left cursor-pointer"
         aria-expanded={isOpen}
       >
         <div className="flex items-center gap-3">
@@ -160,25 +160,25 @@ export function SettingsPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setTextSize("small")}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${textSize === "small" ? "bg-teal-600 text-slate-900" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${textSize === "small" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                 >
                   A<sup>-</sup>
                 </button>
                 <button
                   onClick={() => setTextSize("normal")}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${textSize === "normal" ? "bg-teal-600 text-slate-900" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${textSize === "normal" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                 >
                   A
                 </button>
                 <button
                   onClick={() => setTextSize("large")}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${textSize === "large" ? "bg-teal-600 text-slate-900" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${textSize === "large" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                 >
                   A<sup>+</sup>
                 </button>
                 <button
                   onClick={() => setTextSize("xl")}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${textSize === "xl" ? "bg-teal-600 text-slate-900" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${textSize === "xl" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                 >
                   A<sup>++</sup>
                 </button>

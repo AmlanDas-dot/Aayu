@@ -7,7 +7,10 @@ interface AppShellProps {
 }
 
 export function AppShell({ children }: AppShellProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    const saved = localStorage.getItem("aayu_sidebar_open");
+    return saved !== null ? saved === "true" : true;
+  });
   const [language, setLanguage] = useState("en");
   const [isMobile, setIsMobile] = useState(false);
 
@@ -17,6 +20,10 @@ export function AppShell({ children }: AppShellProps) {
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("aayu_sidebar_open", String(sidebarOpen));
+  }, [sidebarOpen]);
 
   const marginLeft = isMobile ? 0 : sidebarOpen ? 260 : 72;
 
@@ -32,6 +39,7 @@ export function AppShell({ children }: AppShellProps) {
           language={language}
           onLanguageChange={setLanguage}
           onMenuToggle={() => setSidebarOpen((o) => !o)}
+          isOpen={sidebarOpen}
         />
 
         {/* Disclaimer */}

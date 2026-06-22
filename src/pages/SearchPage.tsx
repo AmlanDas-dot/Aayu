@@ -115,7 +115,7 @@ export function SearchPage() {
               aria-label="Search health knowledge base"
             />
             {query && (
-              <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600" aria-label="Clear">
+              <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600 cursor-pointer" aria-label="Clear">
                 <X size={16} />
               </button>
             )}
@@ -135,7 +135,7 @@ export function SearchPage() {
           <button
             onClick={handleSearch}
             disabled={loading || !query.trim()}
-            className="px-5 py-2.5 bg-teal-600 hover:bg-teal-700 disabled:bg-slate-200 disabled:text-slate-400 text-slate-900 text-sm font-semibold rounded-xl transition-all shadow-md active:scale-[0.98] disabled:shadow-none"
+            className="px-5 py-2.5 bg-teal-600 hover:bg-teal-700 disabled:bg-slate-200 disabled:text-slate-400 text-slate-900 text-sm font-semibold rounded-xl transition-all shadow-md active:scale-[0.98] disabled:shadow-none cursor-pointer"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -153,7 +153,7 @@ export function SearchPage() {
               <button
                 key={c.value}
                 onClick={() => setCollection(c.value)}
-                className={`shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                className={`shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   collection === c.value
                     ? "bg-teal-600 text-slate-900"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -172,7 +172,7 @@ export function SearchPage() {
             <button
               key={s}
               onClick={() => setQuery(s)}
-              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-xs text-slate-600 font-medium transition-colors whitespace-nowrap"
+              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-xs text-slate-600 font-medium transition-colors cursor-pointer whitespace-nowrap"
             >
               {s}
             </button>

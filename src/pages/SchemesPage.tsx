@@ -12,6 +12,7 @@ import {
   Users,
   CheckCircle2,
   MapPin,
+  BookmarkPlus,
 } from "lucide-react";
 import {
   getAllSchemes,
@@ -108,7 +109,7 @@ function EligibilityChecker() {
       </div>
       <button
         onClick={checkEligibility}
-        className="w-full bg-teal-600 hover:bg-teal-700 text-slate-900 text-sm font-semibold py-2.5 rounded-xl transition-colors shadow-md active:scale-[0.98]"
+        className="w-full bg-teal-600 hover:bg-teal-700 text-slate-900 text-sm font-semibold py-2.5 rounded-xl transition-colors shadow-md active:scale-[0.98] cursor-pointer"
       >
         Check Eligibility
       </button>
@@ -147,7 +148,7 @@ function SchemeCard({ scheme }: { scheme: GovernmentScheme }) {
           <button
             id={`scheme-expand-${scheme.name.replace(/\s+/g, "-").toLowerCase()}`}
             onClick={() => setExpanded((e) => !e)}
-            className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors shrink-0"
+            className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors shrink-0 cursor-pointer"
             aria-label={expanded ? "Collapse" : "Expand"}
           >
             {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -163,7 +164,7 @@ function SchemeCard({ scheme }: { scheme: GovernmentScheme }) {
               <span className="text-2xs font-bold text-emerald-700 uppercase">Benefits</span>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              {scheme.benefits.slice(0, 120)}{scheme.benefits.length > 120 ? "…" : ""}
+              {(scheme.benefits || "").slice(0, 120)}{(scheme.benefits || "").length > 120 ? "…" : ""}
             </p>
           </div>
           <div className="bg-blue-50 rounded-xl p-3 border border-blue-100">
@@ -172,19 +173,19 @@ function SchemeCard({ scheme }: { scheme: GovernmentScheme }) {
               <span className="text-2xs font-bold text-blue-700 uppercase">Eligibility</span>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              {scheme.eligibility.slice(0, 120)}{scheme.eligibility.length > 120 ? "…" : ""}
+              {(scheme.eligibility || "").slice(0, 120)}{(scheme.eligibility || "").length > 120 ? "…" : ""}
             </p>
           </div>
         </div>
 
-        {expanded && scheme.documents_required.length > 0 && (
+        {expanded && scheme.documents_required?.length > 0 && (
           <div className="bg-amber-50 rounded-xl p-3 border border-amber-100 animate-slide-up">
             <div className="flex items-center gap-1 mb-2">
               <FileText size={12} className="text-amber-600" />
               <span className="text-2xs font-bold text-amber-700 uppercase">Documents Required</span>
             </div>
             <ul className="space-y-1">
-              {scheme.documents_required.map((d) => (
+              {scheme.documents_required?.map((d) => (
                 <li key={d} className="text-xs text-slate-600 flex items-start gap-1.5">
                   <span className="text-amber-500 mt-0.5">•</span>
                   {d}
@@ -194,17 +195,21 @@ function SchemeCard({ scheme }: { scheme: GovernmentScheme }) {
           </div>
         )}
 
-        {expanded && scheme.official_link && (
-          <a
-            href={scheme.official_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-600 hover:text-teal-700 transition-colors"
-          >
-            <ExternalLink size={12} />
-            Official Website
-          </a>
-        )}
+        <div className="flex gap-2 pt-2">
+          {expanded && scheme.official_link && (
+            <a
+              href={scheme.official_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold rounded-xl transition-colors cursor-pointer"
+            >
+              Official Website
+            </a>
+          )}
+          <button className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-slate-600 text-xs font-semibold rounded-xl border border-slate-200 transition-colors cursor-pointer" aria-label="Save Scheme">
+            <BookmarkPlus size={16} />
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -231,7 +236,7 @@ export function SchemesPage() {
       <section className="bg-gradient-to-br from-violet-600 via-violet-700 to-purple-800 rounded-2xl p-6 lg:p-8 text-slate-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
         <div className="relative z-10">
-          <h1 className="text-2xl lg:text-3xl font-bold mb-2">🏛️ Government Schemes</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold mb-2 text-white">🏛️ Government Schemes</h1>
           <p className="text-violet-100/80 max-w-lg text-sm">
             National, Odisha, and Gujarat welfare schemes — health, housing, farming, women empowerment, and more.
           </p>
@@ -252,7 +257,7 @@ export function SchemesPage() {
             aria-label="Search schemes"
           />
           {query && (
-            <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600" aria-label="Clear">
+            <button onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600 cursor-pointer" aria-label="Clear">
               <X size={16} />
             </button>
           )}
@@ -263,7 +268,7 @@ export function SchemesPage() {
             <button
               key={s}
               onClick={() => { setQuery(s); setStateFilter("all"); }}
-              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-violet-50 hover:text-violet-700 text-xs text-slate-600 font-medium transition-colors capitalize whitespace-nowrap"
+              className="shrink-0 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-violet-50 hover:text-violet-700 text-xs text-slate-600 font-medium transition-colors capitalize whitespace-nowrap cursor-pointer"
             >
               {s}
             </button>
@@ -282,9 +287,9 @@ export function SchemesPage() {
               key={f.id}
               id={`state-filter-${f.id}`}
               onClick={() => setStateFilter(f.id)}
-              className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                 stateFilter === f.id
-                  ? "bg-violet-600 text-slate-900 shadow-md"
+                  ? "bg-violet-600 text-white shadow-md"
                   : "bg-white text-slate-600 border border-slate-200 hover:border-violet-300 hover:text-violet-700"
               }`}
             >
@@ -298,13 +303,13 @@ export function SchemesPage() {
       {/* Results count */}
       <p className="text-xs text-slate-500 font-medium">
         {query.trim()
-          ? `${displayed.length} scheme${displayed.length !== 1 ? "s" : ""} matching "${query}"`
-          : `Showing ${displayed.length} of ${allSchemes.length} schemes`
+          ? `${displayed?.length || 0} scheme${displayed?.length !== 1 ? "s" : ""} matching "${query}"`
+          : `Showing ${displayed?.length || 0} of ${allSchemes?.length || 0} schemes`
         }
       </p>
 
       {/* Results */}
-      {displayed.length === 0 ? (
+      {!displayed || displayed.length === 0 ? (
         <div className="text-center py-16">
           <span className="text-4xl">📭</span>
           <h3 className="text-base font-semibold text-slate-700 mt-3">No schemes found</h3>
