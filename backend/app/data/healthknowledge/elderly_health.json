@@ -1,0 +1,802 @@
+[
+  {
+    "id": "elder_001",
+    "category": "Osteoarthritis (Knee/Hip)",
+    "symptoms": ["joint pain that worsens with movement", "morning stiffness lasting <30 minutes", "crepitus (grating sound) on movement", "reduced range of motion", "bony enlargement of joints", "pain improves with rest"],
+    "guidance": "Maintain a healthy weight (reduces joint load). Low‑impact exercises (walking, swimming, cycling) improve function. Use assistive devices (cane, walker). For pain: paracetamol, topical NSAIDs; avoid long‑term oral NSAIDs (GI/renal risk). If severe, joint replacement is available free under PMJAY. Physiotherapy is essential.",
+    "precautions": ["Avoid high‑impact activities (jumping, running)", "Use walking aids if needed", "Do not exceed recommended doses of painkillers", "If you have kidney disease, avoid NSAIDs", "Attend physiotherapy sessions regularly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_002",
+    "category": "Osteoporotic Fracture (Hip/Vertebral)",
+    "symptoms": ["sudden severe pain in the hip or back after a fall or minor trauma", "inability to bear weight", "shortening or rotation of the leg (hip fracture)", "loss of height, kyphosis (vertebral fracture)", "may occur without obvious trauma (fragility fracture)"],
+    "guidance": "Any fall or sudden back pain in an elderly person should raise suspicion of a fracture. Seek emergency care immediately. Hip fracture requires surgical fixation; vertebral fracture may be managed conservatively or with vertebroplasty. Prevention: calcium (1200 mg/day), vitamin D (800 IU/day), bisphosphonates, and fall prevention strategies.",
+    "precautions": ["Remove fall hazards at home (rugs, clutter)", "Install grab bars in bathrooms", "Ensure adequate lighting", "If you have osteoporosis, take prescribed medications", "Get a DEXA scan to assess bone density"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_003",
+    "category": "Sarcopenia (Age‑Related Muscle Loss)",
+    "symptoms": ["progressive loss of muscle mass and strength", "difficulty climbing stairs, rising from a chair", "slow walking speed", "unintentional weight loss", "frequent falls", "fatigue"],
+    "guidance": "Protein intake is crucial – aim for 1.2–1.5 g/kg body weight per day (egg, fish, poultry, dairy, legumes). Resistance exercises (light weights, elastic bands) at least 2‑3 times weekly. Vitamin D and calcium supplementation. If severe, consider oral nutritional supplements. Early intervention prevents disability.",
+    "precautions": ["Eat protein‑rich foods at every meal", "Engage in strength training exercises", "Maintain adequate hydration", "Monitor weight monthly", "If you have poor appetite, see a nutritionist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_004",
+    "category": "Frailty (Geriatric Syndrome)",
+    "symptoms": ["unexplained weight loss (≥5% in 1 year)", "weakness (reduced grip strength)", "slowness (walking speed <0.8 m/s)", "low physical activity", "exhaustion (self‑reported)"],
+    "guidance": "Frailty is a state of vulnerability. Comprehensive geriatric assessment is needed. Interventions: nutritional support (high‑protein, high‑calorie), progressive resistance training, fall prevention, medication review (polypharmacy), and social support. Early detection helps prevent disability.",
+    "precautions": ["Monitor weight regularly", "If you feel weak, speak to your doctor", "Do not stop activity – start slow", "Review all medications (some can cause weakness)", "If you are losing weight, seek nutritional advice"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_005",
+    "category": "Delirium (Acute Confusional State)",
+    "symptoms": ["acute onset of confusion (hours to days)", "fluctuating level of consciousness", "inattention, disorganised thinking", "hallucinations (visual), agitation or lethargy", "often precipitated by infection, dehydration, or medication"],
+    "guidance": "Delirium is a medical emergency – seek care immediately. Identify and treat the underlying cause (UTI, pneumonia, electrolyte imbalance, drug effect). Environmental measures: reorient patient, provide familiar objects, calm environment. Avoid restraints. Family presence helps. Use low‑dose antipsychotics only if agitation is severe.",
+    "precautions": ["If a loved one suddenly becomes confused, seek emergency care", "Do not assume it is dementia – delirium is reversible", "Keep the environment calm and familiar", "Ensure adequate hydration and nutrition", "Review all medications for offending drugs"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_006",
+    "category": "Vascular Dementia",
+    "symptoms": ["stepwise decline in cognitive function", "memory loss, executive dysfunction", "slower processing, difficulty planning", "focal neurological deficits (from previous strokes)", "gait disturbance, urinary incontinence early", "history of hypertension, diabetes, or stroke"],
+    "guidance": "Management: control vascular risk factors (blood pressure, lipids, diabetes). Antiplatelet therapy (aspirin) if indicated. Cognitive rehabilitation and supportive care. Prevention: lifestyle (diet, exercise, smoking cessation). Free medications at NCD clinics.",
+    "precautions": ["Strictly control BP, blood sugar, and cholesterol", "Take antiplatelet medications as prescribed", "Maintain a healthy diet and exercise", "If you have a stroke, get immediate care", "Do not ignore new cognitive changes – see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_007",
+    "category": "Lewy Body Dementia",
+    "symptoms": ["dementia with prominent visual hallucinations", "fluctuating cognition (alertness varies)", "Parkinsonian motor symptoms (rigidity, bradykinesia, tremor)", "REM sleep behaviour disorder (acting out dreams)", "autonomic dysfunction (orthostatic hypotension)"],
+    "guidance": "Cholinesterase inhibitors (donepezil) may help hallucinations. Avoid antipsychotics (severe sensitivity). Manage Parkinsonism with levodopa cautiously (may worsen psychosis). Non‑pharmacological: routine, safety measures, caregiver support. Specialist referral is essential.",
+    "precautions": ["Avoid typical antipsychotics – they can be fatal", "Use cholinesterase inhibitors as prescribed", "Fall prevention is crucial (gait impairment)", "If you have hallucinations, do not argue – redirect", "Monitor for orthostatic hypotension (dizziness on standing)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_008",
+    "category": "Frontotemporal Dementia",
+    "symptoms": ["personality and behaviour changes (apathy, disinhibition, loss of empathy)", "compulsive behaviours (eating, repetitive actions)", "language difficulties (fluent aphasia, word‑finding problems)", "early onset (usually 40‑65 years)", "relatively preserved memory in early stages"],
+    "guidance": "Behavioural management is key: structured routines, caregiver education. Speech therapy for language. Medications for agitation (antipsychotics used cautiously). Genetic counselling if familial. Free care at government psychiatry/neurology departments.",
+    "precautions": ["Behavioural strategies are essential", "If you have changes in personality, see a neurologist", "Caregiver support is crucial", "Monitor for compulsive eating – regulate diet", "If aggression, discuss medications with a psychiatrist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_009",
+    "category": "Mild Cognitive Impairment (MCI)",
+    "symptoms": ["subjective memory complaints", "objective cognitive decline (on testing)", "preserved functional abilities (independent in daily activities)", "not meeting dementia criteria", "increased risk of progression to Alzheimer's"],
+    "guidance": "MCI is a transitional state. Management: cognitive stimulation (games, reading), physical exercise, social engagement. Control vascular risk factors. Medications are not routinely recommended. Regular follow‑up to monitor progression. Free cognitive screening at government hospitals.",
+    "precautions": ["Engage in mentally stimulating activities", "Maintain a healthy lifestyle", "If you have memory concerns, see a doctor", "Manage blood pressure and diabetes", "Do not ignore – early intervention may slow progression"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_010",
+    "category": "Polypharmacy (Medication Overload)",
+    "symptoms": ["taking ≥5 medications", "increased risk of adverse drug reactions", "drug‑drug interactions", "cognitive impairment, falls, incontinence", "often associated with multiple chronic conditions"],
+    "guidance": "Regular medication review by a geriatrician or pharmacist is essential. Use the STOPP/START criteria to deprescribe inappropriate medications. Simplify dosing schedules. Use non‑drug alternatives where possible. Always bring all medications (including OTC) to each doctor visit.",
+    "precautions": ["Do not stop medications abruptly without advice", "Keep an updated medication list", "Ask your doctor if any medication can be reduced or stopped", "Avoid OTC drugs without consulting", "If you have side effects, discuss with your doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_011",
+    "category": "Geriatric Depression",
+    "symptoms": ["persistent low mood, anhedonia", "sleep disturbances (early morning awakening)", "appetite changes, weight loss", "fatigue, physical complaints (aches, pain)", "social withdrawal, cognitive slowing", "suicidal ideation (higher risk in elderly men)"],
+    "guidance": "Depression is not a normal part of ageing. Treatment: SSRIs (sertraline, escitalopram) are first‑line – avoid TCAs (anticholinergic). Psychotherapy (CBT) and social support are effective. Screen annually. If suicidal, seek emergency care. Free mental health services at DMHP centers.",
+    "precautions": ["If you feel persistently sad, talk to a doctor", "Engage in social activities", "Do not self‑medicate with alcohol", "If you have thoughts of harming yourself, call helpline", "Medications may take 4‑6 weeks to work – be patient"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_012",
+    "category": "Anxiety in the Elderly",
+    "symptoms": ["excessive worry, restlessness, irritability", "sleep problems", "muscle tension, fatigue", "palpitations, sweating", "fear of falling or health catastrophizing"],
+    "guidance": "Anxiety is common and treatable. CBT, relaxation techniques, and SSRIs (sertraline). Avoid benzodiazepines (risk of falls and cognitive impairment). Free counseling at government hospitals. Address underlying causes (pain, social isolation).",
+    "precautions": ["Avoid benzodiazepines – they increase fall risk", "Practice deep breathing", "Stay connected with loved ones", "If you have physical symptoms, get evaluated", "Do not ignore anxiety – it is treatable"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_013",
+    "category": "Hypochondriasis (Illness Anxiety Disorder) in Elderly",
+    "symptoms": ["preoccupation with having a serious illness", "normal bodily sensations are interpreted as disease signs", "repeated doctor visits, excessive testing", "anxiety persists despite reassurance"],
+    "guidance": "CBT is effective. Set a regular follow‑up schedule with a trusted physician (avoid excessive testing). Address anxiety and depression. Avoid over‑investigation. Free counselling available.",
+    "precautions": ["Avoid frequent self‑diagnosis on the internet", "Stick to one primary care doctor", "Do not demand unnecessary tests", "If you have health anxiety, seek therapy", "Limit checking behaviour (e.g., pulse, BP)"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_014",
+    "category": "Social Isolation and Loneliness",
+    "symptoms": ["withdrawal from social contacts", "loss of interest in activities", "feelings of emptiness, sadness", "poor sleep, physical decline", "may worsen depression and dementia"],
+    "guidance": "Combat loneliness: community groups, senior citizen clubs, telephone check‑ins, and volunteer work. Technology training for video calls. Family involvement is crucial. Government programs have community outreach. Mental health support if needed.",
+    "precautions": ["If you feel isolated, reach out to family or friends", "Join a local senior group", "Use technology to connect", "If you have no one to talk to, call a helpline", "Do not stay alone if you feel depressed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_015",
+    "category": "Elder Abuse and Neglect",
+    "symptoms": ["unexplained bruises, burns, or fractures", "fearful behaviour, withdrawal", "poor hygiene, malnutrition", "unpaid bills, missing medication", "caregiver preventing access to the elder"],
+    "guidance": "Elder abuse is a crime. Report to local police or helpline (1091, 181, or senior helplines). Ensure safety – move to a safe place if needed. Medical care for injuries. Legal aid and shelter options are available. Raise awareness.",
+    "precautions": ["If you suspect abuse, report it immediately", "Do not confront the abuser alone", "If you are being abused, talk to a trusted person", "Keep important documents and phone numbers handy", "Know the local helpline numbers"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_016",
+    "category": "Falls – Risk Assessment and Prevention",
+    "symptoms": ["history of falls", "unsteady gait", "dizziness on standing", "fear of falling", "use of walking aids", "muscle weakness"],
+    "guidance": "Comprehensive fall risk assessment: vision, hearing, muscle strength, balance, and home safety. Interventions: strength and balance exercises (tai chi), home hazard modification, medication review (especially benzodiazepines, antihypertensives), and vitamin D supplementation. If you have a fall, get medical evaluation.",
+    "precautions": ["Remove rugs and clutter", "Install grab bars in bathroom", "Wear non‑slip shoes", "Do not rush when getting up", "If you feel dizzy, sit down immediately"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_017",
+    "category": "Postural Hypotension (Orthostatic Hypotension)",
+    "symptoms": ["dizziness, lightheadedness on standing", "fainting or near‑fainting", "blurred vision", "weakness, confusion", "often due to medications (antihypertensives, diuretics) or autonomic dysfunction"],
+    "guidance": "Prevent: rise slowly, sit on the edge of the bed for 1‑2 minutes before standing. Avoid dehydration – drink adequate fluids. If medication‑induced, adjust dose (under doctor's supervision). Wear compression stockings. If falls occur, get reviewed.",
+    "precautions": ["Do not stand up suddenly", "Drink enough water (unless fluid‑restricted)", "If you feel lightheaded, sit down immediately", "Avoid hot baths", "If you are on BP medication, check BP before and after standing"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_018",
+    "category": "Urinary Incontinence (Stress and Urge)",
+    "symptoms": ["leakage of urine with cough, sneeze, laugh (stress)", "sudden strong urge to urinate with leakage (urge)", "frequency, nocturia", "may be associated with prostate issues (men) or pelvic floor weakness"],
+    "guidance": "Pelvic floor exercises (Kegel) are effective for both sexes. Bladder training: timed voiding, double voiding. Medications: anticholinergics (oxybutynin) or mirabegron – avoid if contraindicated. If severe, urological evaluation. Avoid caffeine and alcohol. Incontinence is not normal – seek help.",
+    "precautions": ["Do pelvic floor exercises daily", "Limit caffeine and alcohol", "Avoid constipation (straining worsens)", "If you have diabetes, control blood sugar", "If you have blood in urine, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_019",
+    "category": "Fecal Incontinence (Bowel Incontinence)",
+    "symptoms": ["involuntary passage of stool", "urgency", "soiling", "often due to muscle weakness, nerve damage, or chronic constipation (overflow)"],
+    "guidance": "Rule out constipation (impaction). Use fibre and fluids to achieve soft, formed stool. Pelvic floor physiotherapy. Medications: loperamide for urgency. If persistent, gastroenterology referral. Protect skin with barrier creams. Free physiotherapy at government hospitals.",
+    "precautions": ["Maintain a high‑fibre diet", "Stay hydrated", "Do not ignore – it is treatable", "If you have diabetes, control it", "Use protective underwear if needed"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_020",
+    "category": "Constipation (Chronic) in Elderly",
+    "symptoms": ["infrequent stools (<3 per week)", "hard, dry stools", "straining", "feeling of incomplete evacuation", "abdominal bloating, discomfort"],
+    "guidance": "Increase dietary fibre (fruits, vegetables, whole grains) and fluids (unless fluid‑restricted). Regular exercise. Laxatives: bulk‑forming (psyllium), osmotic (lactulose), or stimulant (senna) – use with caution. Avoid laxative dependence. If symptoms persist, rule out obstruction or medication side effects.",
+    "precautions": ["Do not use stimulant laxatives daily", "If you are on opioids, use stool softeners", "Increase fibre gradually to avoid bloating", "If you have blood in stool, see a doctor", "Adequate hydration is key"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_021",
+    "category": "Age‑Related Hearing Loss (Presbycusis)",
+    "symptoms": ["difficulty hearing high‑pitched sounds (women's/children's voices)", "trouble understanding speech in noisy places", "people seem to mumble", "ringing in ears (tinnitus)", "social withdrawal"],
+    "guidance": "Get a hearing assessment – free at government ENT clinics. Hearing aids improve quality of life and reduce cognitive decline. Communication strategies: face the speaker, reduce background noise, speak slowly. Avoid loud noise. If sudden hearing loss, seek emergency (steroids).",
+    "precautions": ["Avoid loud noise (use earplugs)", "If you have hearing loss, get hearing aids", "When speaking, ask people to face you", "If you have sudden hearing loss, see a doctor immediately", "Do not ignore – hearing loss is treatable"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_022",
+    "category": "Age‑Related Macular Degeneration (Wet and Dry)",
+    "symptoms": ["central vision loss (blurry or distorted spot in the centre)", "straight lines appear wavy (metamorphopsia)", "difficulty reading, recognising faces", "dark spots in central vision", "Amsler grid changes"],
+    "guidance": "Dry AMD: nutritional supplements (AREDS2 vitamins C, E, zinc, lutein, zeaxanthin) may slow progression. Wet AMD: anti‑VEGF injections (ranibizumab, aflibercept) – available free at government hospitals. Early detection is key. Monitor with Amsler grid daily.",
+    "precautions": ["Check vision daily with the Amsler grid", "If you see new distortions, see an ophthalmologist immediately", "Do not smoke – worsens AMD", "Wear sunglasses", "Take AREDS2 supplements if recommended"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_023",
+    "category": "Cataract (Senile)",
+    "symptoms": ["painless, gradual blurring of vision", "glare (sensitivity to bright light)", "halos around lights", "dulling of colours (yellowing/browning)", "frequent change in glasses prescription"],
+    "guidance": "Cataract surgery is the only effective treatment – available free under the National Blindness Control Programme. Surgery is safe and highly effective. Do not wait until 'ripe' – if vision affects daily activities, consult an ophthalmologist. Post‑surgery: use prescribed drops and avoid rubbing.",
+    "precautions": ["Get an annual eye examination", "If vision is affecting daily life, consider surgery", "Wear sunglasses to reduce glare", "Control diabetes if present", "Post‑surgery, avoid heavy lifting and rubbing the eye"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_024",
+    "category": "Glaucoma (Primary Open‑Angle)",
+    "symptoms": ["often asymptomatic in early stages", "gradual loss of peripheral vision (tunnel vision)", "optic disc cupping on examination", "elevated intraocular pressure (IOP)"],
+    "guidance": "Glaucoma is a leading cause of irreversible blindness. Screening: annual eye exam for those >40, especially with family history. Treatment: topical eye drops (prostaglandins, beta‑blockers, carbonic anhydrase inhibitors) – available free. Laser trabeculoplasty or surgery if needed. Adherence is critical to prevent progression.",
+    "precautions": ["Get annual eye checkups", "Use eye drops consistently – do not skip", "If you have eye pain or redness, seek care (acute glaucoma)", "Do not stop drops without consulting", "If you have a family history, get screened early"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_025",
+    "category": "Dry Eye Syndrome (Keratoconjunctivitis Sicca)",
+    "symptoms": ["burning, gritty, or scratchy sensation in the eyes", "redness", "excessive tearing (reflex)", "blurred vision (intermittent)", "sensitivity to light"],
+    "guidance": "Use preservative‑free artificial tears regularly. Warm compresses and eyelid hygiene. Omega‑3 supplements may help. If severe, consider punctal plugs or topical cyclosporine. Avoid smoky, windy environments. Free consultations at government ophthalmology clinics.",
+    "precautions": ["Use artificial tears as needed", "Avoid smoke and wind", "Take breaks from screens", "If you have autoimmune disease, treat it", "Do not use over‑the‑counter drops with preservatives more than 4 times daily"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_026",
+    "category": "Dry Mouth (Xerostomia) – Age‑Related",
+    "symptoms": ["dryness of the mouth", "difficulty chewing, swallowing, or speaking", "sore throat, hoarseness", "increased dental caries", "associated with medications (anticholinergics, diuretics)"],
+    "guidance": "Sip water frequently, suck on sugar‑free lozenges. Use artificial saliva or mouthwashes for dryness. Avoid caffeine, alcohol, and tobacco. Good oral hygiene is essential. If medication‑induced, discuss alternatives. Regular dental checkups.",
+    "precautions": ["Stay hydrated – sip water often", "Avoid mouthwashes containing alcohol", "If you have dentures, use moisturising gel", "Chew sugar‑free gum to stimulate saliva", "If you have difficulty swallowing, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_027",
+    "category": "Taste and Smell Impairment",
+    "symptoms": ["loss of appetite", "reduced enjoyment of food", "inability to smell odours", "increased salt/sugar use (compensation)", "safety risk (gas leaks, spoiled food)"],
+    "guidance": "Common with ageing. Provide flavourful, well‑seasoned foods (use herbs and spices). Ensure safety: check gas appliances regularly, label foods with dates. Consider zinc supplements if deficient. If sudden loss, rule out infection or neurological cause.",
+    "precautions": ["If you lose smell suddenly, see a doctor", "Use spices instead of salt to enhance taste", "Check expiration dates on food", "Install a gas alarm", "Eat with others to make meals more enjoyable"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_028",
+    "category": "Chewing/Dentition Problems (Tooth Loss, Ill‑fitting Dentures)",
+    "symptoms": ["difficulty chewing hard foods", "pain on chewing", "ill‑fitting dentures", "prefer soft foods", "nutritional deficiencies due to avoidance"],
+    "guidance": "Regular dental checkups – free at government dental clinics. Denture adjustments. If missing teeth, consider dental implants or dentures. Diet: choose soft, nutrient‑dense foods (eggs, fish, well‑cooked vegetables, dal). If chewing is painful, see a dentist.",
+    "precautions": ["Brush and floss daily", "Remove and clean dentures at night", "Eat soft, nutritious foods", "If you have tooth pain, see a dentist", "Do not ignore dental problems – they affect nutrition"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_029",
+    "category": "Malnutrition (Undernutrition) in Elderly",
+    "symptoms": ["unintentional weight loss (>5% in 3 months)", "loss of appetite", "weakness, fatigue", "muscle wasting", "poor wound healing, frequent infections"],
+    "guidance": "Nutritional assessment: weight, BMI, serum albumin. Causes: poor dentition, depression, medications, social isolation. Interventions: high‑protein, high‑calorie supplements; frequent small meals; social support (eating with others); treat underlying causes. Free nutritional supplements at government hospitals.",
+    "precautions": ["Weigh yourself monthly", "If you are losing weight, see a doctor", "Eat small frequent meals", "Include protein at every meal", "If you have poor appetite, ask about appetite stimulants"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_030",
+    "category": "Vitamin B12 Deficiency in Elderly",
+    "symptoms": ["fatigue, weakness, pallor", "numbness/tingling in hands and feet", "balance problems, unsteady gait", "cognitive impairment, memory loss", "glossitis (sore tongue)"],
+    "guidance": "Elderly are at risk due to gastric atrophy (reduced intrinsic factor) or vegetarian diets. Testing: serum B12, methylmalonic acid if needed. Treatment: oral B12 supplements (high dose) or IM injections. Neurological symptoms may be partially reversible. Free B12 injections at government hospitals.",
+    "precautions": ["If you are vegetarian, take B12 supplements", "If you have neuropathy, check B12", "Take B12 as prescribed – do not stop", "If you have gastric surgery, you may need lifelong B12", "Monitor for anaemia"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_031",
+    "category": "Iron Deficiency Anaemia in Elderly",
+    "symptoms": ["fatigue, weakness", "pale skin, shortness of breath", "dizziness, cold hands", "brittle nails, pica (rare)"],
+    "guidance": "Evaluate for blood loss (GI bleed, malignancy). Treatment: oral iron (ferrous sulfate) with vitamin C. If anemia is severe, blood transfusion. Investigate the cause – colonoscopy if GI bleed suspected. Free ferritin and haemoglobin testing at PHCs.",
+    "precautions": ["Do not take iron without a doctor's advice", "If you have black stools, see a doctor", "Take iron with vitamin C for absorption", "Avoid tea/coffee with iron", "If you have chronic kidney disease, anaemia may need erythropoietin"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_032",
+    "category": "Chronic Kidney Disease – Elderly",
+    "symptoms": ["often asymptomatic", "fatigue, swelling (edema)", "decreased urine output", "hypertension", "nausea, metallic taste", "itching, confusion (uraemia)"],
+    "guidance": "CKD is common with ageing (diabetic nephropathy, hypertensive nephrosclerosis). Management: BP control (<130/80), ACE inhibitors/ARBs, low‑salt/protein diet, avoid NSAIDs. Monitor eGFR and urine albumin. Free dialysis under PMNDP. Early detection prevents progression.",
+    "precautions": ["Avoid NSAIDs (ibuprofen, diclofenac)", "Control BP and blood sugar", "Reduce salt intake", "If you have oedema, restrict fluids as advised", "Take medications (BP, phosphate binders) consistently"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_033",
+    "category": "Chronic Obstructive Pulmonary Disease (COPD) – Elderly",
+    "symptoms": ["chronic cough with sputum", "shortness of breath on exertion", "wheezing, chest tightness", "frequent respiratory infections", "fatigue", "cyanosis (late)"],
+    "guidance": "Smoking cessation is the most important. Use inhalers (bronchodilators, corticosteroids) correctly – teach technique. Pulmonary rehabilitation. Annual flu and pneumococcal vaccines. Avoid air pollution. Free inhalers and oxygen at government hospitals.",
+    "precautions": ["Stop smoking", "Use a spacer with inhalers", "Get annual flu and pneumococcal vaccines", "Avoid cold air and pollution", "If you have increased breathlessness, seek care"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_034",
+    "category": "Heart Failure (Congestive) in Elderly",
+    "symptoms": ["shortness of breath (dyspnoea) on exertion or at rest", "orthopnoea (can't lie flat)", "peripheral oedema", "fatigue, reduced exercise tolerance", "weight gain (fluid retention)", "paroxysmal nocturnal dyspnoea"],
+    "guidance": "Management: salt and fluid restriction, daily weight monitoring. Medications: ACE inhibitors, beta‑blockers, diuretics. Avoid NSAIDs. Monitor for worsening (increasing oedema, breathlessness). Free cardiac care under PMJAY. If sudden worsening, call 108.",
+    "precautions": ["Weigh yourself daily – report weight gain >2 kg in 3 days", "Restrict salt intake", "Take diuretics as prescribed", "Avoid NSAIDs", "If you have increased breathlessness, seek emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_035",
+    "category": "Atrial Fibrillation – Elderly",
+    "symptoms": ["palpitations (irregular, fast heartbeat)", "dizziness, lightheadedness", "shortness of breath", "fatigue, chest discomfort", "often asymptomatic, discovered incidentally"],
+    "guidance": "Atrial fibrillation increases stroke risk – anticoagulation (warfarin or DOACs) is essential. Rate control (beta‑blockers) or rhythm control (antiarrhythmics). Fall risk must be assessed before anticoagulation. Free anticoagulants at government hospitals.",
+    "precautions": ["Take anticoagulants consistently – do not skip", "If you have bruising or bleeding, inform your doctor", "Monitor heart rate", "Avoid alcohol (can trigger AF)", "If you have palpitations with chest pain, seek emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_036",
+    "category": "Hypertension – Elderly (Systolic Hypertension)",
+    "symptoms": ["often asymptomatic", "systolic BP ≥140 mmHg", "diastolic may be low (isolated systolic hypertension)", "headache, dizziness (if severe)"],
+    "guidance": "Goal BP in elderly: <140/90 (or <130/80 if high risk). Lifestyle: salt restriction (<5g/day), exercise, weight loss. Medications: start low and go slow (risk of hypotension). Calcium channel blockers, diuretics, and ARBs are first‑line. Monitor for postural hypotension.",
+    "precautions": ["Take BP medications at the same time daily", "If you feel dizzy on standing, report it", "Reduce salt intake", "Do not skip medications – even if you feel well", "Check BP at home regularly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_037",
+    "category": "Diabetes Mellitus – Elderly (T2DM)",
+    "symptoms": ["often asymptomatic", "polyuria, polydipsia (may be less noticeable)", "fatigue, blurred vision", "slow‑healing wounds", "frequent infections"],
+    "guidance": "Goal: HbA1c <7.5‑8% (individualised). Avoid hypoglycaemia (greater risk). Medications: metformin first‑line; others (SU, DPP‑4, SGLT‑2) as needed. Avoid sulfonylureas if risk of hypoglycaemia. Regular foot and eye checks. Free diabetes care at NCD clinics.",
+    "precautions": ["Monitor blood sugar regularly", "Avoid skipping meals (risk of hypoglycaemia)", "Check feet daily for wounds", "If you have hypoglycaemia symptoms, treat with glucose", "Do not stop medications without consultation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_038",
+    "category": "Hypothyroidism – Elderly (Atypical Presentation)",
+    "symptoms": ["fatigue, weakness", "cold intolerance", "constipation", "weight gain (may be minimal)", "depression, cognitive slowing", "dry skin, hair loss", "bradycardia"],
+    "guidance": "Symptoms may be subtle. Screening: TSH. Treatment: levothyroxine – start low (25 mcg) and titrate slowly. Over‐treatment can cause atrial fibrillation and osteoporosis. Free levothyroxine at government hospitals.",
+    "precautions": ["Take thyroxine on an empty stomach", "Do not stop medication – even if you feel well", "If you have palpitations, check TSH", "If you are on iron/calcium, separate by 4 hours", "Regular TSH monitoring"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_039",
+    "category": "Hyperthyroidism – Elderly (Apatic Hyperthyroidism)",
+    "symptoms": ["weight loss with no appetite increase", "fatigue, weakness", "atrial fibrillation", "depression, apathy", "heat intolerance, sweating (less common)"],
+    "guidance": "Often presents atypically. Treatment: antithyroid drugs (methimazole), radioactive iodine, or surgery. Beta‑blockers for tachycardia. Monitor for atrial fibrillation and osteoporosis. Free medications.",
+    "precautions": ["If you have unexplained weight loss, check thyroid", "Take medications as prescribed", "Monitor pulse – if palpitations, report", "If you have eye symptoms, see an ophthalmologist", "Do not stop antithyroid drugs abruptly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_040",
+    "category": "Benign Prostatic Hyperplasia (BPH) – Elderly Men",
+    "symptoms": ["hesitancy, weak stream", "frequency, urgency, nocturia", "incomplete emptying, dribbling", "acute retention (inability to void)"],
+    "guidance": "Lifestyle: reduce fluids before bed, limit caffeine/alcohol. Medications: alpha‑blockers (tamsulosin) and 5‑alpha reductase inhibitors (finasteride). Surgery (TURP) for severe symptoms. Free urology care. If acute retention occurs, immediate catheterisation.",
+    "precautions": ["Avoid caffeine and alcohol", "Do not delay urination", "Take medications consistently", "If you cannot urinate, go to emergency", "Monitor for blood in urine (rule out cancer)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_041",
+    "category": "Prostate Cancer – Elderly (Screening and Management)",
+    "symptoms": ["early stages asymptomatic", "later: weak stream, blood in urine", "bone pain (if metastatic)", "weight loss, fatigue"],
+    "guidance": "Screening with PSA and DRE is controversial in elderly >75. Discuss risks/benefits. If diagnosed, treatment depends on life expectancy and comorbidity: active surveillance, radiotherapy, or androgen deprivation. Free treatment under PMJAY. Shared decision‑making is key.",
+    "precautions": ["Discuss screening with your doctor", "If you have urinary symptoms, do not ignore", "If you are diagnosed, discuss all treatment options", "Monitor PSA as advised", "Maintain a healthy diet"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_042",
+    "category": "Erectile Dysfunction – Elderly Men",
+    "symptoms": ["difficulty achieving or maintaining erection", "reduced libido", "may be associated with vascular disease, diabetes, or medications"],
+    "guidance": "Evaluate for cardiovascular risk. Lifestyle: exercise, weight loss, smoking cessation. PDE5 inhibitors (sildenafil, tadalafil) are safe if not on nitrates. If no response, consider penile implants or vacuum devices. Free urology consultation.",
+    "precautions": ["Do not use PDE5 inhibitors with nitrates", "If you have heart disease, consult a cardiologist", "Do not take more than prescribed", "If you have sudden vision loss, stop and see a doctor", "Address relationship issues"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_043",
+    "category": "Osteoporosis – Elderly (Fracture Prevention)",
+    "symptoms": ["often asymptomatic until fracture", "back pain (vertebral fracture)", "loss of height, stooped posture", "fractures with minimal trauma"],
+    "guidance": "Diagnosis: DEXA scan (T‑score ≤‑2.5). Treatment: calcium (1200 mg), vitamin D (800 IU), and bisphosphonates (alendronate, zoledronic acid) for high risk. Fall prevention is as important as medication. Free DEXA and bisphosphonates at government hospitals.",
+    "precautions": ["Take calcium and vitamin D daily", "If on bisphosphonates, take correctly (with water, upright)", "Prevent falls – remove home hazards", "Do not smoke or drink excessively", "Do weight‑bearing exercises (walking, dancing)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_044",
+    "category": "Paget's Disease of Bone (Elderly)",
+    "symptoms": ["bone pain (often in pelvis, spine, skull, long bones)", "enlarged skull, bowed legs", "hearing loss (if skull involved)", "increased alkaline phosphatase"],
+    "guidance": "Treatment: bisphosphonates (pamidronate, zoledronic acid) to reduce pain and prevent progression. Regular monitoring of alkaline phosphatase. If neurological symptoms (spinal cord compression), urgent referral. Free bisphosphonates at government hospitals.",
+    "precautions": ["If you have unexplained bone pain, get tested", "Take bisphosphonates as prescribed", "If you have hearing loss, see an ENT", "Monitor alkaline phosphatase", "Do not ignore new bone deformities"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_045",
+    "category": "Gout – Elderly (Comorbidities)",
+    "symptoms": ["acute joint pain (classic first MTP joint, but also other joints)", "redness, swelling, warmth", "chronic tophaceous gout", "often associated with chronic kidney disease, diuretic use"],
+    "guidance": "Acute: NSAIDs (avoid if renal), colchicine, or corticosteroids. Chronic: allopurinol – start low (50‑100 mg) and titrate; monitor for hypersensitivity. Avoid diuretics if possible. Diet: limit purines, alcohol. Free allopurinol.",
+    "precautions": ["Do not start allopurinol during an acute attack", "Drink plenty of water", "Avoid alcohol (especially beer)", "If you have renal impairment, adjust allopurinol dose", "If you have a rash, stop allopurinol and seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_046",
+    "category": "Herpes Zoster (Shingles) – Elderly",
+    "symptoms": ["painful, vesicular rash in a dermatome", "burning, tingling before rash", "post‑herpetic neuralgia (pain after healing) is common in elderly"],
+    "guidance": "Antiviral (acyclovir, valacyclovir) within 72 hours of rash onset reduces severity and duration. Pain management: gabapentin, pregabalin, or antidepressants. Vaccination (Zostavax/Shingrix) is recommended for adults >50 to prevent shingles and PHN. Free antivirals at government hospitals.",
+    "precautions": ["If you have a rash, see a doctor quickly", "Keep rash covered to prevent transmission", "If you have post‑herpetic pain, treat it", "Get vaccinated (Shingrix) – available at some centres", "Avoid contact with pregnant/immunocompromised"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_047",
+    "category": "Cellulitis – Elderly (Recurrent)",
+    "symptoms": ["red, warm, swollen, tender area of skin", "fever, chills", "rapidly spreading erythema", "often on legs (after trauma, ulcers)"],
+    "guidance": "Antibiotics (cephalexin, clindamycin) – oral or IV depending on severity. Elevate the affected limb. If recurrent, treat the portal of entry (tinea pedis, venous ulcers). Good foot hygiene. If you have oedema, compression stockings may help. Monitor for sepsis.",
+    "precautions": ["Keep skin clean and moisturized", "Treat any cuts or cracks promptly", "If you have diabetes, control blood sugar", "If redness spreads, seek medical care", "Do not stop antibiotics early"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_048",
+    "category": "Pressure Ulcers (Bedsores) – Prevention and Staging",
+    "symptoms": ["non‑blanchable erythema (stage I)", "partial‑ or full‑thickness skin loss (stages II‑IV)", "pain, exudate, necrosis", "often over bony prominences (sacrum, heels)"],
+    "guidance": "Prevention: reposition every 2 hours, use pressure‑relieving mattresses, keep skin clean and dry. Nutrition: high‑protein, zinc, vitamin C. Wound care: debridement, dressings, treat infection. Stage III/IV require surgical consultation. Free wound care at government hospitals.",
+    "precautions": ["Turn immobile patients regularly", "Keep skin dry and clean", "Use soft bedding", "If you are immobile, use pressure‑relieving devices", "If you have a red area, avoid lying on it"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_049",
+    "category": "Skin Tear (Elderly – Fragile Skin)",
+    "symptoms": ["flap of skin torn, often on arms or hands", "bleeding, pain", "occurs with minor trauma (e.g., bumping into furniture, dressing)"],
+    "guidance": "Clean with normal saline, approximate the skin flap, and cover with a non‑adherent dressing. If the flap is lost, treat as a wound. Prevention: wear long sleeves, padding on furniture, and gentle handling. Use moisturizers to improve skin elasticity.",
+    "precautions": ["Handle fragile skin gently", "Wear protective clothing", "Keep skin well‑moisturized", "If you have a tear, clean and cover", "If signs of infection, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_050",
+    "category": "Xerosis (Dry Skin) – Elderly",
+    "symptoms": ["rough, scaly, cracked skin", "itching (pruritus)", "worse in winter", "may lead to eczema or skin tears"],
+    "guidance": "Use thick moisturizers (petrolatum, ceramide‑based creams) after bathing. Avoid harsh soaps and hot water. Use a humidifier. If itchy, antihistamines may help. If associated with hypothyroidism, treat. Free emollients at government hospitals.",
+    "precautions": ["Moisturize immediately after bathing", "Use mild, fragrance‑free cleansers", "Avoid long, hot baths", "If you have itching, do not scratch – can break skin", "If symptoms persist, see a dermatologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_051",
+    "category": "Pruritus (Generalized Itching) in Elderly",
+    "symptoms": ["generalized itching without a primary rash", "often worse at night", "associated with dry skin, liver disease, renal failure, or medications"],
+    "guidance": "Treat underlying cause. For dry skin: emollients. Avoid scratching. Oral antihistamines may help. If renal failure, manage with dialysis and antipruritics (gabapentin). If liver disease, cholestyramine. Free dermatology consultation.",
+    "precautions": ["Do not scratch – can cause skin damage", "Keep skin moisturized", "If you have jaundice, see a doctor", "Review medications – some cause itching", "If itching is severe, seek medical help"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_052",
+    "category": "Benign Prostatic Hypertrophy – Acute Urinary Retention",
+    "symptoms": ["sudden inability to urinate", "severe suprapubic pain", "distended bladder", "restlessness, diaphoresis"],
+    "guidance": "This is a urological emergency – immediate catheterization is needed. Do not delay. Causes: BPH, medication (decongestants), or constipation. After catheterization, start alpha‑blockers. If recurrent, surgery (TURP). Free emergency care.",
+    "precautions": ["If you cannot urinate, go to emergency immediately", "Do not take over‑the‑counter decongestants (can cause retention)", "If you have BPH, take your medications", "Avoid alcohol (can worsen)", "If you have a catheter, follow care instructions"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_053",
+    "category": "Urinary Tract Infection (UTI) – Elderly (Atypical)",
+    "symptoms": ["fever, confusion (delirium) – the classic presentation", "incontinence, falls", "lethargy, poor appetite", "dysuria, frequency may be absent"],
+    "guidance": "Suspect UTI in any elderly patient with acute confusion. Urine culture is needed. Antibiotics (nitrofurantoin, cephalexin, or fosfomycin) based on sensitivity. Avoid unnecessary antibiotics in asymptomatic bacteriuria (common). Free antibiotics at government hospitals.",
+    "precautions": ["If an elderly person suddenly becomes confused, check for UTI", "Drink plenty of fluids", "Practice good hygiene", "If you have a catheter, be vigilant for infection", "Do not use antibiotics without culture"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_054",
+    "category": "Pneumonia – Elderly (Community‑Acquired)",
+    "symptoms": ["fever (may be absent)", "cough (productive or not)", "shortness of breath", "confusion", "anorexia, falls", "crackles on auscultation"],
+    "guidance": "Pneumonia is a leading cause of death in elderly. Hospitalise if respiratory rate >30, hypoxia, or confusion. Antibiotics (azithromycin, ceftriaxone) are free. Vaccination (pneumococcal, influenza) is preventive. Early mobilisation and hydration.",
+    "precautions": ["Get annual flu and pneumococcal vaccines", "If you have cough and fever, see a doctor", "Stay hydrated", "If you have difficulty breathing, seek emergency", "Do not smoke"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_055",
+    "category": "Influenza – Elderly (Severe Course)",
+    "symptoms": ["sudden fever, cough, sore throat, myalgia", "fatigue, headache", "can progress to pneumonia or exacerbation of comorbidities"],
+    "guidance": "Antiviral (oseltamivir) within 48 hours of symptom onset reduces severity. Annual flu vaccine is the best prevention. Supportive care: hydration, rest. Hospitalise if hypoxia. Free antiviral and vaccine at government hospitals.",
+    "precautions": ["Get annual flu vaccine", "Wash hands frequently", "Avoid sick contacts", "If you have flu symptoms, see a doctor early", "If you have breathing difficulty, seek emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_056",
+    "category": "Tuberculosis – Elderly (Reactivation)",
+    "symptoms": ["chronic cough (>3 weeks)", "weight loss, anorexia", "fever, night sweats", "haemoptysis", "may be asymptomatic with an incidental finding"],
+    "guidance": "TB in the elderly is often underdiagnosed. Sputum microscopy and GeneXpert are free. Treatment: DOTS for 6‑9 months – free. Monitor for drug interactions (especially rifampicin). Nutritional support. Contact screening.",
+    "precautions": ["If you have a persistent cough, get tested for TB", "Do not stop TB treatment early", "Cover your mouth when coughing", "Ensure good ventilation", "If you have weight loss, seek care"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_057",
+    "category": "COVID‑19 – Elderly (Severe Risk)",
+    "symptoms": ["fever, dry cough, loss of taste/smell", "shortness of breath", "fatigue, confusion", "diarrhoea, chest pain"],
+    "guidance": "Elderly are at higher risk for severe disease. Vaccination is critical (boosters). Antivirals (Paxlovid) and monoclonal antibodies for high‑risk if early. Oxygen if needed. Monitor SpO2 with pulse oximeter. If SpO2 <94%, seek emergency. Free vaccination and treatment.",
+    "precautions": ["Get vaccinated and boosted", "Wear masks in crowded places", "If you have symptoms, test and isolate", "Monitor oxygen levels", "If you have difficulty breathing, seek emergency"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_058",
+    "category": "Gastroesophageal Reflux Disease (GERD) – Elderly",
+    "symptoms": ["heartburn, regurgitation", "atypical: hoarseness, cough, chest pain", "worse after meals or lying down"],
+    "guidance": "Lifestyle: weight loss, small meals, elevate head of bed. PPIs (omeprazole) are effective. Long‑term PPIs may increase risk of fractures and B12 deficiency – monitor. Free PPIs at government hospitals. If alarm symptoms (dysphagia, bleeding), endoscopy.",
+    "precautions": ["Avoid large meals and lying down after eating", "Elevate the head of your bed", "Do not smoke or consume alcohol", "If you have trouble swallowing, see a doctor", "If you are on PPIs long‑term, monitor B12"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_059",
+    "category": "Peptic Ulcer Disease – Elderly (NSAID‑Induced)",
+    "symptoms": ["epigastric pain (may be dull or no pain)", "gastrointestinal bleeding (melena, haematemesis)", "anaemia, fatigue", "history of NSAID use"],
+    "guidance": "Stop NSAIDs. PPIs are first‑line. Test for H. pylori and treat if positive. If bleeding, urgent endoscopy. Prevention: use NSAIDs with PPIs for elderly patients. Free PPIs and H. pylori testing.",
+    "precautions": ["Avoid NSAIDs if possible", "If you need NSAIDs, take with a PPI", "If you have black stools, seek emergency", "Do not take aspirin without a doctor's advice", "If you have anaemia, check for bleeding"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_060",
+    "category": "Constipation – Opioid‑Induced",
+    "symptoms": ["hard, dry stools", "difficulty passing", "nausea, bloating", "abdominal pain", "in elderly on opioids"],
+    "guidance": "Preventative: stool softeners (docusate) and osmotic laxatives (lactulose) when starting opioids. If already present, use stimulant laxatives (senna). Ensure adequate fluid and fibre. If severe, subcutaneous methylnaltrexone may be needed. Free laxatives.",
+    "precautions": ["If you are on opioids, start stool softeners early", "Drink adequate water", "Increase fibre gradually", "Do not use stimulants daily without advice", "If you have severe pain, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_061",
+    "category": "Sleep Disturbances (Insomnia) – Elderly",
+    "symptoms": ["difficulty falling asleep, frequent awakenings", "early morning awakening", "daytime fatigue", "irritability, cognitive slowing"],
+    "guidance": "Sleep hygiene: regular schedule, avoid caffeine/alcohol, reduce daytime naps, and get morning sunlight. Treat underlying causes (pain, nocturia). Use CBT‑I. Medications: melatonin, low‑dose doxepin; avoid benzodiazepines (risk of falls and cognitive decline). Free counselling.",
+    "precautions": ["Maintain a regular sleep schedule", "Avoid caffeine and alcohol before bed", "Get sunlight during the day", "Do not use benzodiazepines for sleep", "If you have sleep apnea, treat it"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_062",
+    "category": "Obstructive Sleep Apnea – Elderly",
+    "symptoms": ["loud snoring, gasping during sleep", "daytime sleepiness", "morning headache, cognitive decline", "hypertension", "nocturia"],
+    "guidance": "Risk increases with age. Home sleep apnea testing or polysomnography. Treatment: CPAP (first‑line), weight loss, positional therapy. Free CPAP at some government sleep clinics. Untreated OSA increases cardiovascular risk.",
+    "precautions": ["If you have daytime sleepiness, get evaluated", "Use CPAP as prescribed", "Lose weight if overweight", "Avoid alcohol and sedatives before sleep", "If you have hypertension, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_063",
+    "category": "Nocturia (Night‑time Urination) – Elderly",
+    "symptoms": ["waking ≥2 times at night to urinate", "sleep disruption", "associated with BPH, OAB, or fluid imbalance"],
+    "guidance": "Manage fluids: reduce evening intake (especially caffeine/alcohol). Treat BPH with alpha‑blockers. If on diuretics, take in the morning. If oedema, elevate legs during the day. If symptoms persist, see a urologist.",
+    "precautions": ["Avoid fluids 2‑3 hours before bed", "Elevate legs in the afternoon to reduce leg oedema", "If you have BPH, take medications", "Do not take caffeine or alcohol in the evening", "If you have frequent nocturia, get evaluated"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_064",
+    "category": "Gait and Balance Disorders – Elderly",
+    "symptoms": ["unsteady walking", "broad‑based gait", "slowness", "reduced stride length", "increased risk of falls"],
+    "guidance": "Comprehensive assessment: neurological, musculoskeletal, and vision. Interventions: physiotherapy (balance and strength training), appropriate footwear, walking aids. Home safety modifications. If acute onset, rule out stroke or Parkinsonism.",
+    "precautions": ["Use walking aids if needed", "Remove fall hazards at home", "Do balance exercises (tai chi)", "If you have a sudden change in gait, see a doctor", "Wear non‑slip shoes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_065",
+    "category": "Dizziness and Vertigo – Elderly",
+    "symptoms": ["spinning sensation (vertigo) or lightheadedness", "unsteadiness, fear of falling", "nausea, vomiting", "associated with postural hypotension, vestibular, or cardiac causes"],
+    "guidance": "Differentiate: vertigo (inner ear) vs. lightheadedness (cardiac/BP). Benign paroxysmal positional vertigo (BPPV) – treat with Epley manoeuvre. If cardiac, treat arrhythmia/hypotension. If acute, rule out stroke. Refer to ENT/neurology if needed.",
+    "precautions": ["If you have spinning, do not drive", "If you have chest pain or palpitations, seek emergency", "If you have BPPV, learn the Epley manoeuvre", "Avoid sudden head movements", "If you have hearing loss, see an ENT"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_066",
+    "category": "Syncope (Fainting) – Elderly",
+    "symptoms": ["sudden transient loss of consciousness", "spontaneous recovery", "often due to vasovagal, cardiac arrhythmia, or orthostatic hypotension"],
+    "guidance": "Evaluate for cardiac causes (ECG, Holter, echocardiography). Check postural BP. Avoid dehydration and overheating. If recurrent, implantable loop recorder. If you have a syncope, sit or lie down. Do not drive until cleared.",
+    "precautions": ["If you feel faint, sit down and put your head between your knees", "Stay hydrated", "Avoid hot environments", "If you have known arrhythmia, treat it", "Do not drive after a syncopal event without medical advice"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_067",
+    "category": "Dental Caries and Periodontitis – Elderly",
+    "symptoms": ["tooth pain, sensitivity", "bleeding gums, loose teeth", "halitosis", "difficulty chewing", "loss of teeth"],
+    "guidance": "Good oral hygiene: brush twice daily with fluoride toothpaste, floss, and use antiseptic mouthwash. Regular dental checkups. If you have xerostomia, use artificial saliva. Free dental care at government hospitals.",
+    "precautions": ["Brush and floss daily", "Visit a dentist twice a year", "If you have dry mouth, use moisturising products", "Avoid sugary foods", "If you have dentures, clean them daily"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_068",
+    "category": "Oral Thrush (Candidiasis) – Elderly",
+    "symptoms": ["white, curd‑like plaques on tongue/buccal mucosa", "pain, difficulty eating", "loss of taste", "often in denture wearers, diabetics, or antibiotic use"],
+    "guidance": "Topical antifungals (nystatin, clotrimazole troches). If severe, oral fluconazole. Clean dentures and soak in antifungal solution. If diabetic, control blood sugar. Free antifungals.",
+    "precautions": ["Clean dentures daily", "If you have white patches, see a dentist/doctor", "If you have diabetes, control it", "Avoid smoking", "If on antibiotics, consider antifungal prophylaxis"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_069",
+    "category": "Dysphagia (Swallowing Difficulty) – Elderly",
+    "symptoms": ["coughing or choking while eating", "feeling of food stuck", "prolonged mealtime", "weight loss, recurrent pneumonia"],
+    "guidance": "Dysphagia increases aspiration risk. Evaluation: swallow assessment (speech therapist). Dietary modifications: thickened liquids, soft foods, small bites. Positioning: sit upright, chin tuck. In severe cases, tube feeding may be needed. Free speech therapy at government hospitals.",
+    "precautions": ["Eat slowly and chew thoroughly", "Sit upright while eating", "Do not talk with food in your mouth", "If you cough frequently while eating, see a speech therapist", "If you have weight loss, get evaluated"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_070",
+    "category": "Malnutrition in Elderly – Refeeding Risk",
+    "symptoms": ["severe weight loss, muscle wasting", "low serum albumin, electrolytes", "history of prolonged starvation or poor intake"],
+    "guidance": "Refeeding syndrome is a risk – start feeding slowly (25% of goal), monitor electrolytes (phosphate, potassium, magnesium). Thiamine before feeding. Nutritional support with oral supplements. Hospitalisation may be needed. Free nutritional therapy.",
+    "precautions": ["Do not start high‑calorie feeds rapidly in malnourished patients", "Monitor electrolytes", "If you have severe malnutrition, seek hospital care", "Use oral nutritional supplements as prescribed", "Follow a slow feeding protocol"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_071",
+    "category": "Constipation – Bowel Impaction",
+    "symptoms": ["severe abdominal pain, cramping", "distended abdomen", "inability to pass stool", "overflow diarrhoea (liquid around impaction)", "confusion (in elderly)"],
+    "guidance": "Manual disimpaction (by a doctor) may be needed. Enemas (phosphate or oil). After clearance, implement a bowel regimen: fibre, fluids, stool softeners, and scheduled toilet time. Prevent recurrence. Free care at hospitals.",
+    "precautions": ["Do not attempt manual disimpaction yourself", "If you have severe pain and no bowel movement, seek care", "Prevent constipation with diet and hydration", "Use stool softeners if on opioids", "If you have overflow soiling, suspect impaction"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_072",
+    "category": "Pneumonia – Aspiration (Elderly)",
+    "symptoms": ["cough, fever, dyspnoea", "decreased consciousness, confusion", "history of swallowing difficulty or stroke", "chest X‑ray shows infiltrates (often dependent lobes)"],
+    "guidance": "Aspiration pneumonia is common in elderly with dysphagia. Antibiotics (ampicillin‑sulbactam, levofloxacin). Prevention: dysphagia management (thickened liquids, upright posture). Oral care reduces risk. Hospitalisation if hypoxic.",
+    "precautions": ["If you have trouble swallowing, use thickened liquids", "Sit upright while eating", "Do not lie down after eating", "If you have a feeding tube, ensure proper positioning", "Good oral hygiene"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_073",
+    "category": "Polypharmacy – Anticholinergic Burden",
+    "symptoms": ["confusion, dry mouth, constipation, urinary retention", "cognitive decline, falls", "medications: antihistamines, antispasmodics, TCAs, oxybutynin"],
+    "guidance": "Review medications and reduce anticholinergic load (use Beers criteria). Substitute with safer alternatives. Educate patients and caregivers. This is a major cause of geriatric syndromes.",
+    "precautions": ["Bring all medications to each visit", "Ask your doctor to check for anticholinergic drugs", "Do not use OTC antihistamines without advice", "If you have constipation or confusion, review your meds", "Use non‑drug alternatives when possible"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_074",
+    "category": "Drug‑Induced Orthostatic Hypotension",
+    "symptoms": ["dizziness, weakness on standing", "falls", "often caused by antihypertensives, diuretics, alpha‑blockers, antidepressants"],
+    "guidance": "Check BP lying and standing. Adjust medications (reduce dose, change timing). Advise: rise slowly, wear compression stockings. If persistent, consider fludrocortisone (with caution). Free monitoring.",
+    "precautions": ["Do not stand up suddenly", "If you feel dizzy, sit down", "If you are on BP medications, ask about timing", "Check BP at home before and after standing", "Avoid dehydration"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_075",
+    "category": "Non‑Adherence to Medications – Elderly",
+    "symptoms": ["forgetting doses", "taking medications at wrong times", "missed appointments", "disease worsening"],
+    "guidance": "Simplify regimens (once‑daily if possible). Use pill organisers, medication reminders (alarms, apps). Involve caregivers. Review barriers (cost, side effects, cognitive issues). Free medication review at geriatric clinics.",
+    "precautions": ["Use a pill box with days of the week", "Set alarms for medication times", "Keep a medication list", "Ask family members to help", "If you have side effects, tell your doctor – do not stop"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_076",
+    "category": "Vision Impairment – Low Vision (Elderly)",
+    "symptoms": ["decreased visual acuity not correctable with glasses", "difficulty reading, recognising faces, moving around", "social isolation, depression"],
+    "guidance": "Comprehensive eye exam. Low‑vision aids: magnifiers, large‑print materials, audio books. Occupational therapy for daily activities. Home safety modifications (bright lighting, colour contrast). Government low‑vision clinics provide aids.",
+    "precautions": ["Use good lighting", "Use magnifiers for reading", "Remove trip hazards", "If you have vision loss, get low‑vision assessment", "Do not drive if vision is inadequate"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_077",
+    "category": "Urinary Retention – Neurogenic Bladder",
+    "symptoms": ["difficulty voiding", "weak stream", "incomplete emptying", "urinary infections, incontinence (overflow)"],
+    "guidance": "Causes: stroke, spinal stenosis, diabetes, or medication. Evaluation: post‑void residual ultrasound. Treatment: timed voiding, double voiding, cholinergic drugs (bethanechol) if indicated, or intermittent self‑catheterisation. Free urological care.",
+    "precautions": ["Do not delay voiding", "If you have diabetes, control it", "If you have neurologic disease, monitor bladder", "If you have recurrent UTIs, check for retention", "Use catheter if prescribed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_078",
+    "category": "Constipation – Neurologic (Parkinson's, Stroke)",
+    "symptoms": ["infrequent, hard stools", "abdominal distension", "straining", "often related to immobility or medication"],
+    "guidance": "High‑fibre diet, adequate fluids, stool softeners (docusate), osmotic laxatives (lactulose). For Parkinson's, treat with bowel regimen. If faecal impaction, manual removal. Avoid stimulants long‑term.",
+    "precautions": ["If you have Parkinson's, start a bowel regimen early", "Drink plenty of water", "Use stool softeners as needed", "Do not delay bowel movements", "If you have abdominal pain, seek care"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_079",
+    "category": "Elder Abuse – Financial Exploitation",
+    "symptoms": ["unexplained bank withdrawals", "change in will or property titles", "caregiver controlling finances", "lack of funds for basic needs"],
+    "guidance": "Report to the police or senior helpline. Involve a social worker. Free legal aid is available. Consider power of attorney if needed. Family mediation. Prevention: financial literacy for elderly.",
+    "precautions": ["Do not share financial details with strangers", "Have a trusted person help with finances", "If you feel coerced, speak to a social worker", "Keep financial documents secure", "Report suspicious activity immediately"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_080",
+    "category": "Elder Neglect – Self‑Neglect",
+    "symptoms": ["poor personal hygiene, malnutrition", "untreated medical conditions", "cluttered/dirty home", "social withdrawal, hoarding"],
+    "guidance": "Self‑neglect is a sign of depression, dementia, or physical disability. Reach out to social services. A home visit by a health worker or family member. Ensure safety and medical care. If capacity is lacking, consider guardianship. Helplines available.",
+    "precautions": ["If you notice a loved one is neglecting themselves, talk to them", "Offer help with daily tasks", "If you are struggling, ask for help", "Do not ignore – it can be life‑threatening", "Contact social services if needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "elder_081",
+    "category": "Palliative Care – Elderly with Chronic Illness",
+    "symptoms": ["advanced disease (cancer, heart failure, COPD)", "pain, breathlessness, fatigue", "anxiety, depression", "functional decline"],
+    "guidance": "Palliative care focuses on quality of life. Pain management (morphine, if needed), symptom control, and advance care planning. Involving family, spiritual support, and home care services. Free palliative care at many government hospitals.",
+    "precautions": ["Discuss goals of care with your doctor", "Do not hesitate to ask for pain relief", "If you have symptoms, palliative care can help", "Involve family in decision‑making", "Ensure advance directives are recorded"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_082",
+    "category": "Advance Care Planning (Elderly)",
+    "symptoms": ["not a disease – proactive planning for future care", "discussing preferences for life‑sustaining treatment, resuscitation, and end‑of‑life care"],
+    "guidance": "Have early discussions with family and doctors. Document wishes in a living will (now legally recognised in India). Appoint a healthcare proxy. This reduces family conflict and ensures dignity.",
+    "precautions": ["Discuss advance care plans with your family", "Document your wishes", "Inform your doctor of your advance directive", "Review periodically as health changes", "Ensure your proxy knows your values"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_083",
+    "category": "Hospice Care – Elderly",
+    "symptoms": ["terminal illness with life expectancy <6 months", "symptom burden (pain, breathlessness, fatigue)", "psychological and spiritual distress"],
+    "guidance": "Hospice focuses on comfort and dignity. Pain and symptom management, emotional support, and spiritual care. Can be provided at home or in a hospice facility. Free hospice care in some government hospitals. Referral by a physician.",
+    "precautions": ["Hospice is not giving up – it is comfort care", "If you have a terminal illness, consider hospice", "Talk to your doctor about referral", "Family support is essential", "Plan for bereavement support"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_084",
+    "category": "Foot Problems – Elderly (Corns, Calluses, Bunions)",
+    "symptoms": ["painful areas on feet", "thickened skin", "deformities (hallux valgus)", "difficulty walking, wearing shoes"],
+    "guidance": "Proper footwear (wide, cushioned). Use padding for corns. Seek podiatry for callus debridement. If diabetic, foot care is critical – daily inspection. Free podiatry at government hospitals.",
+    "precautions": ["Wear well‑fitting shoes", "If you have diabetes, check feet daily", "Do not cut corns yourself", "Use foot creams for dry skin", "If you have an ulcer, see a doctor immediately"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_085",
+    "category": "Onychomycosis (Fungal Nail Infection) – Elderly",
+    "symptoms": ["thick, yellow, brittle nails", "discoloration, debris under nails", "pain, difficulty trimming"],
+    "guidance": "Topical antifungals (ciclopirox) – low efficacy. Oral terbinafine is more effective but monitor liver function. Keep nails trimmed. Treat tinea pedis to prevent spread. Free oral antifungals.",
+    "precautions": ["Keep feet clean and dry", "Wear breathable shoes", "Do not share nail clippers", "If you have diabetes, be careful with trimming", "If nails are painful, see a podiatrist"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_086",
+    "category": "Claudication (Intermittent) – Peripheral Arterial Disease",
+    "symptoms": ["leg pain/cramps with walking, relieved by rest", "cold feet, absent pulses", "pale/bluish skin", "non‑healing ulcers"],
+    "guidance": "Walking exercise program (supervised), smoking cessation, antiplatelet therapy (aspirin), statins. If severe, angioplasty or bypass. Free vascular assessment at government hospitals.",
+    "precautions": ["Stop smoking", "Walk daily (start slowly and increase)", "Check feet for sores", "Take aspirin as prescribed", "If you have pain at rest or ulcers, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_087",
+    "category": "Venous Leg Ulcers – Elderly",
+    "symptoms": ["chronic ulcer over the medial malleolus", "brown pigmentation (haemosiderin)", "oedema, varicose veins", "painful"],
+    "guidance": "Compression therapy (bandages/stockings) is the mainstay. Wound care (moist dressings). Elevate legs. Treat oedema. If infection, antibiotics. Free wound care.",
+    "precautions": ["Wear compression stockings", "Elevate legs when resting", "Keep ulcers clean", "If you have varicose veins, treat them", "Do not smoke"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_088",
+    "category": "Chronic Pain – Non‑Malignant (Elderly)",
+    "symptoms": ["persistent pain (often musculoskeletal, neuropathic)", "interfering with sleep, mobility, mood", "associated with osteoarthritis, neuropathy, or back pain"],
+    "guidance": "Multimodal approach: non‑pharmacological (physiotherapy, heat/cold, exercise), paracetamol, topical NSAIDs, antidepressants (duloxetine), and anticonvulsants (gabapentin) for neuropathic pain. Avoid long‑term opioids. Pain clinics at government hospitals.",
+    "precautions": ["Do not rely solely on opioids", "Use non‑drug therapies", "If you have depression, treat it", "Exercise regularly (within limits)", "If pain changes, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_089",
+    "category": "Neuropathic Pain – Elderly (Post‑herpetic Neuralgia, Diabetic Neuropathy)",
+    "symptoms": ["burning, shooting, tingling pain", "often chronic", "associated with diabetes, shingles, or spinal stenosis"],
+    "guidance": "First‑line: gabapentin, pregabalin, or duloxetine. Topical capsaicin or lidocaine patches. Avoid NSAIDs. Treat underlying cause (control diabetes). Free pregabalin/gabapentin at government hospitals.",
+    "precautions": ["If you have diabetes, control it", "Take neuropathic pain medications as prescribed", "Do not stop suddenly", "If you have shingles, treat early", "If you have numbness, check for ulcers"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_090",
+    "category": "Restless Legs Syndrome – Elderly",
+    "symptoms": ["urge to move legs with uncomfortable sensations", "worse at rest, relieved by movement", "worse in evening/night", "disrupts sleep"],
+    "guidance": "Check ferritin – if low, supplement iron. Medications: dopamine agonists (pramipexole) or gabapentin. Avoid caffeine and alcohol. Exercise regularly. Free ferritin testing.",
+    "precautions": ["If you have restlessness at night, check iron", "Avoid caffeine and alcohol", "Exercise daily", "Do not take dopamine agonists without medical advice", "If you have side effects, report"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_091",
+    "category": "Age‑Related Macular Degeneration – Dry AREDS2",
+    "symptoms": ["gradual central vision loss", "difficulty reading, recognising faces", "drusen on fundoscopy"],
+    "guidance": "AREDS2 supplement (vitamins C, E, zinc, lutein, zeaxanthin) can slow progression. Monitor with Amsler grid. If conversion to wet AMD, anti‑VEGF therapy. Sun protection.",
+    "precautions": ["Take AREDS2 supplements if advised", "Use Amsler grid daily", "If you see new distortions, see an ophthalmologist", "Do not smoke", "Wear sunglasses"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_092",
+    "category": "End‑of‑Life Care – Elderly (Dying Process)",
+    "symptoms": ["progressive weakness, anorexia", "increasing sleep, withdrawal", "cool extremities, mottling", "changes in breathing (Cheyne‑Stokes)"],
+    "guidance": "Focused on comfort: pain and symptom relief (morphine, anti‑emetics), mouth care, and skin care. Family support, spiritual care, and bereavement counselling. Provide a peaceful environment. Free palliative care.",
+    "precautions": ["Do not force food or fluids", "Provide comfort measures", "Talk to the person even if unresponsive", "Support family", "Ensure advance directives are followed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "elder_093",
+    "category": "Bereavement and Grief – Elderly",
+    "symptoms": ["intense sadness, longing for the deceased", "emotional numbness", "sleep and appetite changes", "social withdrawal, physical symptoms"],
+    "guidance": "Normal grief does not need treatment; support from family and community. Complicated grief (persistent >1 year) may need grief‑focused CBT. Encourage expression. Helplines available.",
+    "precautions": ["Do not isolate yourself", "Talk about your feelings", "Join a support group", "If you have suicidal thoughts, seek help", "If grief is interfering with daily life, see a professional"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_094",
+    "category": "Elderly – Driving Cessation Issues",
+    "symptoms": ["recent accidents or near‑misses", "difficulty with night driving or judging distances", "medication effects, cognitive decline", "family concerns"],
+    "guidance": "Assess vision, cognition, and reaction time. Discuss alternative transportation. Gradual transition (e.g., stop night driving first). Involve family. Free driving assessment at some geriatric clinics. Safety is the priority.",
+    "precautions": ["If you have concerns about driving, get assessed", "Do not drive if you feel drowsy or dizzy", "Avoid night driving if vision is poor", "Have a backup transportation plan", "If family suggests stopping, listen"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_095",
+    "category": "Elderly – Legal and Financial Planning",
+    "symptoms": ["not a disease – proactive planning", "will, power of attorney, guardianship, healthcare directives"],
+    "guidance": "Consult a lawyer to draft a will and power of attorney. Discuss with family. Ensure documents are accessible. Update regularly. This prevents disputes and ensures wishes are respected. Legal aid is available.",
+    "precautions": ["Discuss with family", "Draft legal documents early", "Keep documents in a safe place", "If you are concerned about mental capacity, do it early", "Review periodically"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_096",
+    "category": "Elderly – Living Alone (Safety)",
+    "symptoms": ["living alone, no immediate support", "fear of falling, inability to call for help", "social isolation"],
+    "guidance": "Install medical alert systems (pendant/phone). Have a daily check‑in routine (family, neighbours). Use technology (video calls). Emergency contacts posted. Home safety checks. Community support programs.",
+    "precautions": ["Keep your phone within reach", "Have a neighbour check on you daily", "If you have a fall, know how to get help", "Install grab bars and non‑slip mats", "If you feel unsafe, consider moving to assisted living"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_097",
+    "category": "Elderly – Preventing Pressure Ulcers at Home",
+    "symptoms": ["redness over bony areas", "pain, discomfort", "skin breakdown"],
+    "guidance": "Change position frequently (if bedbound, every 2 hours). Use pressure‑relieving cushions and mattresses. Keep skin clean and dry. Good nutrition (protein, vitamins). If you have an ulcer, seek wound care.",
+    "precautions": ["Turn regularly", "Use special cushions", "Keep skin dry", "Eat a nutritious diet", "If you see a red area, do not lie on it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "elder_098",
+    "category": "Elderly – Vision Screening (Home)",
+    "symptoms": ["not a disease – regular screening", "checking near and far vision, reading ability"],
+    "guidance": "Simple home vision test (newspaper reading, distance vision). If you notice changes, get a formal eye exam. Free eye camps and government ophthalmology services. Early detection prevents disability.",
+    "precautions": ["Get annual eye exams", "If you have difficulty reading, see an eye specialist", "Use adequate lighting", "Keep glasses prescription updated", "If you have diabetes, get eye screening"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_099",
+    "category": "Elderly – Hearing Aid Use and Maintenance",
+    "symptoms": ["hearing aid not working effectively", "whistling, poor fitting, ear discomfort"],
+    "guidance": "Regular cleaning (wax removal), proper insertion, and battery checks. If whistling, ensure proper fit. Audiologist for adjustment. Free hearing aid maintenance at government ENT clinics.",
+    "precautions": ["Keep hearing aids dry and clean", "Change batteries regularly", "If you have discomfort, see an audiologist", "Do not leave hearing aids in the sun", "If you have ear wax, get it removed"],
+    "urgency": "low"
+  },
+  {
+    "id": "elder_100",
+    "category": "Elderly – Vaccinations (Pneumococcal, Influenza, Shingles)",
+    "symptoms": ["preventive – not a disease"],
+    "guidance": "Influenza vaccine annually, pneumococcal vaccine (PCV13 and PPSV23) as per schedule, shingles vaccine (Shingrix) for adults >50. These reduce hospitalizations and mortality. Free under government programs.",
+    "precautions": ["Get annual flu vaccine", "Get pneumococcal vaccine if advised", "Get shingles vaccine", "If you have a weakened immune system, consult your doctor", "Keep a vaccine record"],
+    "urgency": "low"
+  }
+]

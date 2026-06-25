@@ -1,0 +1,207 @@
+[
+  {
+    "name": "Biju Swasthya Kalyan Yojana (BSKY)",
+    "state": "Odisha",
+    "category": "Health",
+    "description": "State health assurance scheme providing cashless treatment in empanelled hospitals.",
+    "eligibility": "NFSA and SFSS ration card holders and eligible Odisha residents.",
+    "benefits": "Up to ₹5 lakh annual health coverage per family and higher coverage for women members.",
+    "documents_required": [
+      "BSKY Card",
+      "NFSA/SFSS Ration Card",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://bsky.odisha.gov.in/"
+  },
+  {
+    "name": "KALIA Scheme",
+    "state": "Odisha",
+    "category": "Agriculture",
+    "description": "Krushak Assistance for Livelihood and Income Augmentation for farmers and landless agricultural households.",
+    "eligibility": "Small and marginal farmers, sharecroppers and landless agricultural households.",
+    "benefits": "Financial support for cultivation, livelihood activities and insurance assistance.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "Land Records (if applicable)"
+    ],
+    "official_link": "https://kalia.odisha.gov.in/"
+  },
+  {
+    "name": "CM-KISAN Yojana",
+    "state": "Odisha",
+    "category": "Agriculture",
+    "description": "Farmer income support scheme introduced by the Odisha Government.",
+    "eligibility": "Eligible small and marginal farmers.",
+    "benefits": "Direct financial assistance to farmers in installments.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "Farmer Registration"
+    ],
+    "official_link": "https://cmkisan.odisha.gov.in/"
+  },
+  {
+    "name": "Mission Shakti",
+    "state": "Odisha",
+    "category": "Women Empowerment",
+    "description": "Flagship women empowerment programme through Self Help Groups (SHGs).",
+    "eligibility": "Women Self Help Groups in Odisha.",
+    "benefits": "Interest-free loans, livelihood support, training and market linkage.",
+    "documents_required": [
+      "SHG Registration",
+      "Bank Account",
+      "Aadhaar Cards of Members"
+    ],
+    "official_link": "https://missionshakti.odisha.gov.in/"
+  },
+  {
+    "name": "Subhadra Yojana",
+    "state": "Odisha",
+    "category": "Women Welfare",
+    "description": "Financial assistance scheme for eligible women in Odisha.",
+    "eligibility": "Eligible women beneficiaries as notified by the Government.",
+    "benefits": "Direct financial assistance through DBT.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "Mobile Number"
+    ],
+    "official_link": "https://subhadra.odisha.gov.in/"
+  },
+  {
+    "name": "Mamata Scheme",
+    "state": "Odisha",
+    "category": "Maternal Health",
+    "description": "Conditional cash transfer programme for pregnant and lactating mothers.",
+    "eligibility": "Pregnant and lactating women meeting scheme criteria.",
+    "benefits": "Cash assistance for nutrition and maternal care.",
+    "documents_required": [
+      "MCP Card",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://wcd.odisha.gov.in/"
+  },
+  {
+    "name": "Madhu Babu Pension Yojana",
+    "state": "Odisha",
+    "category": "Social Security",
+    "description": "Pension scheme for elderly, widows, persons with disabilities and other vulnerable groups.",
+    "eligibility": "Senior citizens, widows and eligible persons with disabilities.",
+    "benefits": "Monthly pension assistance.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Age or Disability Proof"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "Mo Ghara Scheme",
+    "state": "Odisha",
+    "category": "Housing",
+    "description": "Housing assistance scheme for rural households not covered under PMAY.",
+    "eligibility": "Eligible rural families without adequate housing.",
+    "benefits": "Financial assistance and housing support.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Residence Proof",
+      "Bank Account"
+    ],
+    "official_link": "https://rhodisha.gov.in/"
+  },
+  {
+    "name": "Biju Pucca Ghar Yojana",
+    "state": "Odisha",
+    "category": "Housing",
+    "description": "Housing scheme for vulnerable rural households.",
+    "eligibility": "Eligible rural families living in unsafe houses.",
+    "benefits": "Financial assistance for pucca house construction.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Residence Proof",
+      "Bank Account"
+    ],
+    "official_link": "https://rhodisha.gov.in/"
+  },
+  {
+    "name": "Banishree Scholarship",
+    "state": "Odisha",
+    "category": "Disability Welfare",
+    "description": "Scholarship support for students with disabilities.",
+    "eligibility": "Students with disabilities studying in recognized institutions.",
+    "benefits": "Educational financial assistance.",
+    "documents_required": [
+      "Disability Certificate",
+      "Student ID",
+      "Bank Account"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "Bhima Bhoi Bhinnakshyama Samarthya Abhiyan (BBSA)",
+    "state": "Odisha",
+    "category": "Disability Welfare",
+    "description": "Support programme for persons with disabilities.",
+    "eligibility": "Persons with disabilities.",
+    "benefits": "Assistive devices, rehabilitation and support services.",
+    "documents_required": [
+      "Disability Certificate",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "SAHAYA",
+    "state": "Odisha",
+    "category": "Social Welfare",
+    "description": "Protection, care and rehabilitation support for destitute persons.",
+    "eligibility": "Destitute and vulnerable individuals.",
+    "benefits": "Shelter, rehabilitation and welfare assistance.",
+    "documents_required": [
+      "Identity Proof (if available)"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "ABADANA",
+    "state": "Odisha",
+    "category": "Senior Citizens",
+    "description": "Welfare and protection scheme for senior citizens.",
+    "eligibility": "Senior citizens of Odisha.",
+    "benefits": "Care, support and welfare services.",
+    "documents_required": [
+      "Age Proof",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "Sweekruti",
+    "state": "Odisha",
+    "category": "Transgender Welfare",
+    "description": "Scheme for promotion of transgender equality and justice.",
+    "eligibility": "Transgender persons residing in Odisha.",
+    "benefits": "Social security and welfare support.",
+    "documents_required": [
+      "Identity Documents",
+      "Transgender Certificate (if applicable)"
+    ],
+    "official_link": "https://ssepd.odisha.gov.in/"
+  },
+  {
+    "name": "Nirman Shramik Kalyan Yojana",
+    "state": "Odisha",
+    "category": "Labour Welfare",
+    "description": "Welfare programme for registered construction workers.",
+    "eligibility": "Registered building and construction workers.",
+    "benefits": "Education assistance, maternity benefits, pension and insurance.",
+    "documents_required": [
+      "Labour Registration Card",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://labour.odisha.gov.in/"
+  }
+]

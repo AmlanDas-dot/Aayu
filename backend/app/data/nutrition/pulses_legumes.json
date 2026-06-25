@@ -1,0 +1,410 @@
+[
+  {
+    "id": "moong_dal",
+    "name": "Moong Dal (Split Green Gram)",
+    "nutrients": ["Protein", "Iron", "Folate", "Fiber"],
+    "benefits": ["Easy to digest", "Supports muscle growth", "Helps prevent anemia"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Children", "Pregnant women", "Elderly"]
+  },
+  {
+    "id": "moong_whole",
+    "name": "Whole Moong (Green Gram)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Weight loss", "General health"]
+  },
+  {
+    "id": "masoor_dal",
+    "name": "Masoor Dal (Red Lentil)",
+    "nutrients": ["Protein", "Iron", "Potassium", "Fiber"],
+    "benefits": ["Supports blood formation", "Good protein source", "Easy to digest"],
+    "best_time": "Lunch",
+    "good_for": ["Anemia", "Vegetarians", "Children"]
+  },
+  {
+    "id": "chickpeas",
+    "name": "Chickpeas (Kabuli Chana)",
+    "nutrients": ["Protein", "Iron", "Fiber", "Magnesium"],
+    "benefits": ["Provides energy", "Improves digestion", "Supports muscle growth"],
+    "best_time": "Breakfast or snacks",
+    "good_for": ["Athletes", "Children", "Diabetes"]
+  },
+  {
+    "id": "kala_chana",
+    "name": "Black Chickpeas (Desi Chana)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports heart health", "Improves digestion", "Helps weight management"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "General health"]
+  },
+  {
+    "id": "rajma",
+    "name": "Rajma (Kidney Beans)",
+    "nutrients": ["Protein", "Iron", "Fiber", "Folate"],
+    "benefits": ["Supports heart health", "Keeps stomach full longer"],
+    "best_time": "Lunch",
+    "good_for": ["Vegetarians", "Diabetes", "Heart health"]
+  },
+  {
+    "id": "soybean",
+    "name": "Soybean",
+    "nutrients": ["Protein", "Calcium", "Iron", "Omega-3 Fats"],
+    "benefits": ["Supports muscle growth", "Good plant-based protein", "Supports bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Vegetarians", "Pregnant women", "Vegans"]
+  },
+  {
+    "id": "toor_dal",
+    "name": "Toor Dal (Pigeon Pea / Arhar Dal)",
+    "nutrients": ["Protein", "Fiber", "Folate", "Iron"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch",
+    "good_for": ["General health", "Pregnant women", "Elderly"]
+  },
+  {
+    "id": "urad_dal",
+    "name": "Urad Dal (Black Gram / Split)",
+    "nutrients": ["Protein", "Iron", "Calcium", "B Vitamins"],
+    "benefits": ["Supports bone health", "Provides energy", "Good for digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Anemia", "General health"]
+  },
+  {
+    "id": "urad_whole",
+    "name": "Whole Urad (Black Gram)",
+    "nutrients": ["Protein", "Iron", "Fiber", "Calcium"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Digestion", "Energy"]
+  },
+  {
+    "id": "lobia",
+    "name": "Lobia (Black-Eyed Peas / Cowpea)",
+    "nutrients": ["Protein", "Fiber", "Potassium", "Iron"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Weight loss"]
+  },
+  {
+    "id": "chawli",
+    "name": "Chawli (Cowpea / Yardlong Bean Seeds)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Energy"]
+  },
+  {
+    "id": "matar",
+    "name": "Matar (Green Peas)",
+    "nutrients": ["Protein", "Fiber", "Vitamin C", "Vitamin A"],
+    "benefits": ["Supports immunity", "Provides energy", "Good for digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Children", "General health", "Immunity"]
+  },
+  {
+    "id": "chana_dal",
+    "name": "Chana Dal (Split Bengal Gram)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports muscle growth", "Improves digestion", "Good for heart health"],
+    "best_time": "Lunch",
+    "good_for": ["Athletes", "Pregnant women", "General health"]
+  },
+  {
+    "id": "besan",
+    "name": "Besan (Chickpea Flour / Gram Flour)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports muscle growth", "Good for digestion", "Gluten-free alternative"],
+    "best_time": "Breakfast, lunch, or snacks",
+    "good_for": ["Vegetarians", "Gluten-free diets", "General health"]
+  },
+  {
+    "id": "lentils_brown",
+    "name": "Brown Lentils",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for blood sugar control"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Heart health", "General health"]
+  },
+  {
+    "id": "lentils_green",
+    "name": "Green Lentils (Puy Lentils)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "lentils_black",
+    "name": "Black Lentils (Beluga Lentils)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Antioxidants"],
+    "benefits": ["Supports heart health", "Improves digestion", "Rich in antioxidants"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Anti-aging", "General health"]
+  },
+  {
+    "id": "lentils_yellow",
+    "name": "Yellow Lentils",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports blood formation", "Easy to digest", "Good for anemia"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Anemia", "Pregnancy", "Elderly"]
+  },
+  {
+    "id": "pinto_beans",
+    "name": "Pinto Beans",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Weight loss"]
+  },
+  {
+    "id": "navy_beans",
+    "name": "Navy Beans (Haricot Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Improves digestion", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "black_beans",
+    "name": "Black Beans (Turtle Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for blood sugar control"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Weight loss"]
+  },
+  {
+    "id": "red_beans",
+    "name": "Red Beans",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good source of protein"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Heart health", "Digestion"]
+  },
+  {
+    "id": "adzuki_beans",
+    "name": "Adzuki Beans",
+    "nutrients": ["Protein", "Fiber", "Potassium", "Iron"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Weight loss", "Digestion"]
+  },
+  {
+    "id": "moth_beans",
+    "name": "Moth Beans (Matki)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Improves digestion", "Good for diabetes"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Bone health", "Weight management"]
+  },
+  {
+    "id": "horse_gram",
+    "name": "Horse Gram (Kulthi)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports weight loss", "Improves digestion", "Good for diabetes"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Weight loss", "Kidney health"]
+  },
+  {
+    "id": "fava_beans",
+    "name": "Fava Beans (Broad Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for pregnancy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Pregnancy", "Heart health", "Anemia"]
+  },
+  {
+    "id": "lima_beans",
+    "name": "Lima Beans (Butter Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Provides sustained energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Energy", "Digestion"]
+  },
+  {
+    "id": "mung_beans",
+    "name": "Mung Beans (Whole Green Gram)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Weight loss", "General health"]
+  },
+  {
+    "id": "sprouted_moong",
+    "name": "Sprouted Moong (Mung Bean Sprouts)",
+    "nutrients": ["Protein", "Fiber", "Vitamin C", "Iron"],
+    "benefits": ["Easy to digest", "Boosts immunity", "Supports weight loss"],
+    "best_time": "Breakfast or as a snack",
+    "good_for": ["Weight loss", "Immunity", "Children"]
+  },
+  {
+    "id": "soy_chunks",
+    "name": "Soy Chunks (Textured Vegetable Protein)",
+    "nutrients": ["Protein", "Iron", "Calcium", "B Vitamins"],
+    "benefits": ["High plant-based protein", "Supports muscle growth", "Good for vegetarians"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Athletes", "Vegetarians", "Vegans"]
+  },
+  {
+    "id": "tofu",
+    "name": "Tofu (Soybean Curd)",
+    "nutrients": ["Protein", "Calcium", "Iron", "Magnesium"],
+    "benefits": ["Supports muscle growth", "Good for bone health", "Versatile in cooking"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Vegetarians", "Vegans", "Pregnant women"]
+  },
+  {
+    "id": "tempeh",
+    "name": "Tempeh (Fermented Soybean)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Good for muscle growth", "Rich in probiotics"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Vegetarians", "Vegans", "Digestive health"]
+  },
+  {
+    "id": "edamame",
+    "name": "Edamame (Green Soybeans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports muscle growth", "Good for heart health", "Snack with protein"],
+    "best_time": "As a snack or appetizer",
+    "good_for": ["Athletes", "Children", "General health"]
+  },
+  {
+    "id": "sprouts_mixed",
+    "name": "Mixed Bean Sprouts",
+    "nutrients": ["Protein", "Fiber", "Vitamin C", "Iron"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Good for weight management"],
+    "best_time": "Breakfast or as a snack",
+    "good_for": ["Weight loss", "Immunity", "General health"]
+  },
+  {
+    "id": "arbor_beans",
+    "name": "Arbor Beans (Orca Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good source of protein"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Heart health", "Digestion"]
+  },
+  {
+    "id": "cranberry_beans",
+    "name": "Cranberry Beans (Borlotti Beans)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for pregnancy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Pregnancy", "Heart health", "Anemia"]
+  },
+  {
+    "id": "great_northern",
+    "name": "Great Northern Beans",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Weight loss", "General health"]
+  },
+  {
+    "id": "split_peas_green",
+    "name": "Green Split Peas",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "split_peas_yellow",
+    "name": "Yellow Split Peas",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for anemia"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Anemia", "General health", "Digestion"]
+  },
+  {
+    "id": "pigeon_pea",
+    "name": "Pigeon Pea (Arhar / Toor)",
+    "nutrients": ["Protein", "Fiber", "Folate", "Iron"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch",
+    "good_for": ["General health", "Pregnant women", "Elderly"]
+  },
+  {
+    "id": "cowpea",
+    "name": "Cowpea (Lobia / Chawli)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Potassium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Weight loss"]
+  },
+  {
+    "id": "field_beans",
+    "name": "Field Beans (Dolichos)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Improves digestion", "Good for diabetes"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Bone health", "Weight management"]
+  },
+  {
+    "id": "jack_beans",
+    "name": "Jack Beans (Canavalia)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Phosphorus"],
+    "benefits": ["Supports bone health", "Improves digestion", "Good for energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Bone health", "General health"]
+  },
+  {
+    "id": "lupin_beans",
+    "name": "Lupin Beans",
+    "nutrients": ["Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for diabetes"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Heart health", "Weight loss"]
+  },
+  {
+    "id": "winged_beans",
+    "name": "Winged Beans (Asparagus Pea)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Vitamin C"],
+    "benefits": ["Supports immunity", "Improves digestion", "Good for general health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "General health"]
+  },
+  {
+    "id": "cluster_beans",
+    "name": "Cluster Beans (Guar)",
+    "nutrients": ["Fiber", "Protein", "Iron", "Calcium"],
+    "benefits": ["Supports digestion", "Good for diabetes", "Helps weight management"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Weight loss", "Digestion"]
+  },
+  {
+    "id": "rice_beans",
+    "name": "Rice Beans (Moth Bean variety)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Improves digestion", "Good for energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Energy", "General health"]
+  },
+  {
+    "id": "snow_beans",
+    "name": "Snow Beans (Yardlong Bean Seeds)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Energy"]
+  },
+  {
+    "id": "vellore_beans",
+    "name": "Vellore Beans (Indian Bean)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Folate"],
+    "benefits": ["Supports blood formation", "Improves digestion", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Anemia", "Heart health", "General health"]
+  },
+  {
+    "id": "garbanzo_beans",
+    "name": "Garbanzo Beans (Chickpeas)",
+    "nutrients": ["Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Provides energy", "Improves digestion", "Supports muscle growth"],
+    "best_time": "Breakfast or snacks",
+    "good_for": ["Athletes", "Children", "Diabetes"]
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "egg",
+    "name": "Egg",
+    "nutrients": ["Protein", "Vitamin B12", "Vitamin D", "Iron"],
+    "benefits": [
+      "Supports muscle growth",
+      "Improves brain function"
+    ],
+    "best_time": "Breakfast",
+    "good_for": ["Children", "Pregnant women", "Athletes"]
+  },
+  {
+    "id": "chicken",
+    "name": "Chicken",
+    "nutrients": ["Protein", "Vitamin B6", "Phosphorus"],
+    "benefits": [
+      "Supports muscle growth",
+      "Provides energy"
+    ],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Athletes", "Growing children"]
+  },
+  {
+    "id": "fish",
+    "name": "Fish",
+    "nutrients": ["Protein", "Omega-3", "Vitamin D"],
+    "benefits": [
+      "Supports brain health",
+      "Improves heart health"
+    ],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Children", "Pregnant women", "Elderly"]
+  },
+  {
+    "id": "liver",
+    "name": "Chicken/Goat Liver",
+    "nutrients": ["Iron", "Vitamin A", "Vitamin B12"],
+    "benefits": [
+      "Excellent for anemia",
+      "Supports blood formation"
+    ],
+    "best_time": "Lunch",
+    "good_for": ["Anemia", "Adults"]
+  },
+  {
+    "id": "prawns",
+    "name": "Prawns",
+    "nutrients": ["Protein", "Zinc", "Selenium"],
+    "benefits": [
+      "Supports immunity",
+      "Supports muscle repair"
+    ],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Adults", "Athletes"]
+  }
+]

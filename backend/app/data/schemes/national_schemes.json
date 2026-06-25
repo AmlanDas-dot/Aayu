@@ -1,0 +1,309 @@
+[
+  {
+    "name": "Ayushman Bharat - PM Jan Arogya Yojana (PM-JAY)",
+    "state": "National",
+    "category": "Health",
+    "description": "Provides cashless health insurance coverage for poor and vulnerable families.",
+    "eligibility": "SECC-listed rural and urban poor households.",
+    "benefits": "Up to ₹5,00,000 per family per year for hospitalization.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Ration Card",
+      "PM-JAY Eligibility ID",
+      "Mobile Number"
+    ],
+    "official_link": "https://pmjay.gov.in/"
+  },
+  {
+    "name": "Ayushman Arogya Mandir",
+    "state": "National",
+    "category": "Health",
+    "description": "Provides comprehensive primary healthcare through upgraded Health and Wellness Centres.",
+    "eligibility": "All citizens.",
+    "benefits": "Free consultations, NCD screening, maternal and child healthcare.",
+    "documents_required": [
+      "Identity Proof"
+    ],
+    "official_link": "https://ab-hwc.nhp.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Jan Aushadhi Pariyojana",
+    "state": "National",
+    "category": "Health",
+    "description": "Provides affordable generic medicines through Jan Aushadhi Kendras.",
+    "eligibility": "All citizens.",
+    "benefits": "Medicines available at 50-90% lower prices.",
+    "documents_required": [],
+    "official_link": "https://janaushadhi.gov.in/"
+  },
+  {
+    "name": "Mission Indradhanush",
+    "state": "National",
+    "category": "Health",
+    "description": "Universal immunization programme for children and pregnant women.",
+    "eligibility": "Children below 5 years and pregnant women.",
+    "benefits": "Free vaccination against preventable diseases.",
+    "documents_required": [
+      "Mother and Child Protection Card"
+    ],
+    "official_link": "https://nhm.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "state": "National",
+    "category": "Women Health",
+    "description": "Maternity benefit scheme for pregnant and lactating mothers.",
+    "eligibility": "Pregnant women and lactating mothers.",
+    "benefits": "Cash incentive of ₹5,000.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "MCP Card"
+    ],
+    "official_link": "https://wcd.gov.in/"
+  },
+  {
+    "name": "POSHAN Abhiyaan",
+    "state": "National",
+    "category": "Nutrition",
+    "description": "National nutrition mission to reduce malnutrition.",
+    "eligibility": "Pregnant women, lactating mothers, adolescents and children.",
+    "benefits": "Nutritional monitoring and support services.",
+    "documents_required": [
+      "Anganwadi Registration"
+    ],
+    "official_link": "https://poshanabhiyaan.gov.in/"
+  },
+  {
+    "name": "Integrated Child Development Services (ICDS)",
+    "state": "National",
+    "category": "Child Welfare",
+    "description": "Provides supplementary nutrition and early childhood care.",
+    "eligibility": "Children under 6 years and pregnant/lactating women.",
+    "benefits": "Nutrition, immunization and preschool education.",
+    "documents_required": [
+      "Birth Certificate",
+      "Anganwadi Registration"
+    ],
+    "official_link": "https://wcd.nic.in/"
+  },
+  {
+    "name": "PM POSHAN (Mid-Day Meal Scheme)",
+    "state": "National",
+    "category": "Education & Nutrition",
+    "description": "Provides nutritious meals to school children.",
+    "eligibility": "Students in government and aided schools.",
+    "benefits": "Free nutritious meals during school days.",
+    "documents_required": [
+      "School Enrollment"
+    ],
+    "official_link": "https://pmposhan.education.gov.in/"
+  },
+  {
+    "name": "Beti Bachao Beti Padhao",
+    "state": "National",
+    "category": "Women Empowerment",
+    "description": "Promotes survival, protection and education of the girl child.",
+    "eligibility": "All citizens.",
+    "benefits": "Awareness and support initiatives for girls.",
+    "documents_required": [],
+    "official_link": "https://wcd.gov.in/"
+  },
+  {
+    "name": "Sukanya Samriddhi Yojana",
+    "state": "National",
+    "category": "Girl Child",
+    "description": "Savings scheme for girl child.",
+    "eligibility": "Girls below 10 years.",
+    "benefits": "High-interest savings account for future education and marriage.",
+    "documents_required": [
+      "Birth Certificate",
+      "Guardian ID Proof"
+    ],
+    "official_link": "https://www.nsiindia.gov.in/"
+  },
+  {
+    "name": "One Stop Centre Scheme",
+    "state": "National",
+    "category": "Women Safety",
+    "description": "Support services for women affected by violence.",
+    "eligibility": "Women facing violence or distress.",
+    "benefits": "Medical, legal and counseling support.",
+    "documents_required": [
+      "Identity Proof (if available)"
+    ],
+    "official_link": "https://sakhi.gov.in/"
+  },
+  {
+    "name": "PM Kisan Samman Nidhi",
+    "state": "National",
+    "category": "Agriculture",
+    "description": "Income support scheme for farmers.",
+    "eligibility": "Eligible landholding farmers.",
+    "benefits": "₹6,000 annually in three installments.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land Records",
+      "Bank Account"
+    ],
+    "official_link": "https://pmkisan.gov.in/"
+  },
+  {
+    "name": "PM Fasal Bima Yojana",
+    "state": "National",
+    "category": "Agriculture",
+    "description": "Crop insurance scheme for farmers.",
+    "eligibility": "Farmers growing notified crops.",
+    "benefits": "Financial protection against crop loss.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land Records",
+      "Bank Account"
+    ],
+    "official_link": "https://pmfby.gov.in/"
+  },
+  {
+    "name": "Kisan Credit Card (KCC)",
+    "state": "National",
+    "category": "Agriculture",
+    "description": "Provides easy access to agricultural credit.",
+    "eligibility": "Farmers and allied sector workers.",
+    "benefits": "Low-interest loans for agriculture.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land Records",
+      "Bank Account"
+    ],
+    "official_link": "https://www.pmkisan.gov.in/"
+  },
+  {
+    "name": "Soil Health Card Scheme",
+    "state": "National",
+    "category": "Agriculture",
+    "description": "Provides information about soil nutrient status.",
+    "eligibility": "All farmers.",
+    "benefits": "Improved crop productivity and fertilizer usage.",
+    "documents_required": [
+      "Farmer Registration"
+    ],
+    "official_link": "https://soilhealth.dac.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Gramin (PMAY-G)",
+    "state": "National",
+    "category": "Housing",
+    "description": "Provides housing assistance for rural poor families.",
+    "eligibility": "Rural families without pucca houses.",
+    "benefits": "Financial support for house construction.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "SECC Record"
+    ],
+    "official_link": "https://pmayg.nic.in/"
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+    "state": "National",
+    "category": "Housing",
+    "description": "Affordable housing scheme for urban families.",
+    "eligibility": "Urban poor and middle-income families.",
+    "benefits": "Housing subsidy and assistance.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Bank Account"
+    ],
+    "official_link": "https://pmaymis.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+    "state": "National",
+    "category": "Financial Inclusion",
+    "description": "Universal banking access scheme.",
+    "eligibility": "All Indian citizens.",
+    "benefits": "Zero-balance account, RuPay card and insurance.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Photo"
+    ],
+    "official_link": "https://pmjdy.gov.in/"
+  },
+  {
+    "name": "Atal Pension Yojana",
+    "state": "National",
+    "category": "Pension",
+    "description": "Pension scheme for unorganized sector workers.",
+    "eligibility": "Citizens aged 18-40 years.",
+    "benefits": "Guaranteed pension after age 60.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://www.npscra.nsdl.co.in/"
+  },
+  {
+    "name": "Swachh Bharat Mission",
+    "state": "National",
+    "category": "Sanitation",
+    "description": "National cleanliness and sanitation initiative.",
+    "eligibility": "All citizens and local bodies.",
+    "benefits": "Toilet construction and sanitation support.",
+    "documents_required": [],
+    "official_link": "https://swachhbharatmission.gov.in/"
+  },
+  {
+    "name": "Jal Jeevan Mission",
+    "state": "National",
+    "category": "Water Supply",
+    "description": "Provides tap water connections to rural households.",
+    "eligibility": "Rural households.",
+    "benefits": "Functional household tap water connection.",
+    "documents_required": [
+      "Household Identification"
+    ],
+    "official_link": "https://jaljeevanmission.gov.in/"
+  },
+  {
+    "name": "Unique Disability ID (UDID)",
+    "state": "National",
+    "category": "Disability Welfare",
+    "description": "Single national disability identity system.",
+    "eligibility": "Persons with disabilities.",
+    "benefits": "Unified disability certificate and easier access to schemes.",
+    "documents_required": [
+      "Disability Certificate",
+      "Aadhaar Card",
+      "Photograph"
+    ],
+    "official_link": "https://www.swavlambancard.gov.in/"
+  },
+  {
+    "name": "ADIP Scheme",
+    "state": "National",
+    "category": "Disability Welfare",
+    "description": "Provides assistive devices to persons with disabilities.",
+    "eligibility": "Eligible persons with disabilities.",
+    "benefits": "Free or subsidized assistive devices.",
+    "documents_required": [
+      "Disability Certificate",
+      "Income Certificate",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://depwd.gov.in/"
+  },
+  {
+    "name": "PM Ujjwala Yojana",
+    "state": "National",
+    "category": "Women Welfare",
+    "description": "Provides LPG connections to poor households.",
+    "eligibility": "Eligible women from poor households.",
+    "benefits": "Free LPG connection and financial support.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Ration Card",
+      "Bank Account"
+    ],
+    "official_link": "https://www.pmuy.gov.in/"
+  }
+]

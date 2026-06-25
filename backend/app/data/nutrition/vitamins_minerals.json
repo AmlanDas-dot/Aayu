@@ -1,0 +1,330 @@
+[
+  {
+    "id": "vitamin_a",
+    "name": "Vitamin A (Retinol)",
+    "functions": ["Supports vision and eye health", "Boosts immune function", "Promotes skin and mucous membrane health", "Supports growth and development"],
+    "sources": ["Carrots", "Sweet Potatoes", "Spinach", "Kale", "Pumpkin", "Liver", "Eggs", "Milk", "Mango"],
+    "deficiency_symptoms": ["Night blindness", "Dry eyes (xerophthalmia)", "Increased infections", "Poor growth", "Skin dryness"],
+    "toxicity_symptoms": ["Headache", "Nausea", "Dizziness", "Liver damage", "Bone pain", "Hair loss"]
+  },
+  {
+    "id": "vitamin_b1",
+    "name": "Vitamin B1 (Thiamine)",
+    "functions": ["Converts food into energy", "Supports nervous system function", "Helps heart function"],
+    "sources": ["Whole Grains", "Legumes", "Nuts", "Pork", "Fish", "Eggs", "Sunflower Seeds"],
+    "deficiency_symptoms": ["Beriberi (nerve damage, muscle weakness)", "Wernicke-Korsakoff syndrome", "Fatigue", "Irritability"],
+    "toxicity_symptoms": ["No known toxicity from food; supplements may cause headaches"]
+  },
+  {
+    "id": "vitamin_b2",
+    "name": "Vitamin B2 (Riboflavin)",
+    "functions": ["Energy production", "Supports skin and eye health", "Antioxidant function"],
+    "sources": ["Milk", "Yogurt", "Eggs", "Lean Meat", "Green Leafy Vegetables", "Nuts", "Fortified Cereals"],
+    "deficiency_symptoms": ["Sore throat", "Cracked lips (cheilosis)", "Inflammation of mouth (stomatitis)", "Scaly skin", "Anemia"],
+    "toxicity_symptoms": ["No known toxicity"]
+  },
+  {
+    "id": "vitamin_b3",
+    "name": "Vitamin B3 (Niacin)",
+    "functions": ["Energy metabolism", "Supports skin health", "Supports nervous system", "Lowers cholesterol (at high doses)"],
+    "sources": ["Chicken", "Turkey", "Fish", "Peanuts", "Legumes", "Whole Grains", "Mushrooms"],
+    "deficiency_symptoms": ["Pellagra (4 Ds: Dermatitis, Diarrhea, Dementia, Death)", "Glossitis", "Fatigue"],
+    "toxicity_symptoms": ["Flushing", "Itching", "Liver damage (high doses)", "Nausea", "Abdominal pain"]
+  },
+  {
+    "id": "vitamin_b5",
+    "name": "Vitamin B5 (Pantothenic Acid)",
+    "functions": ["Energy production", "Synthesis of hormones and neurotransmitters", "Supports skin health"],
+    "sources": ["Meat", "Poultry", "Fish", "Eggs", "Legumes", "Whole Grains", "Avocado", "Broccoli"],
+    "deficiency_symptoms": ["Fatigue", "Numbness", "Muscle cramps", "Insomnia", "GI disturbances (rare)"],
+    "toxicity_symptoms": ["Diarrhea (very high doses)"]
+  },
+  {
+    "id": "vitamin_b6",
+    "name": "Vitamin B6 (Pyridoxine)",
+    "functions": ["Protein metabolism", "Supports brain development", "Helps make neurotransmitters", "Supports immune function"],
+    "sources": ["Chickpeas", "Poultry", "Fish", "Potatoes", "Bananas", "Spinach", "Fortified Cereals"],
+    "deficiency_symptoms": ["Anemia", "Depression", "Confusion", "Weakened immune system", "Nerve damage"],
+    "toxicity_symptoms": ["Nerve damage (high doses)", "Painful skin lesions", "Sensory neuropathy"]
+  },
+  {
+    "id": "vitamin_b7",
+    "name": "Vitamin B7 (Biotin)",
+    "functions": ["Energy metabolism", "Supports hair, skin, and nail health", "Helps break down fats"],
+    "sources": ["Eggs (yolk)", "Liver", "Nuts", "Seeds", "Salmon", "Sweet Potatoes", "Spinach"],
+    "deficiency_symptoms": ["Hair loss", "Scaly skin (seborrheic dermatitis)", "Brittle nails", "Fatigue", "Depression"],
+    "toxicity_symptoms": ["No known toxicity"]
+  },
+  {
+    "id": "vitamin_b9",
+    "name": "Vitamin B9 (Folate / Folic Acid)",
+    "functions": ["DNA synthesis", "Cell division", "Red blood cell formation", "Prevents neural tube defects"],
+    "sources": ["Green Leafy Vegetables", "Legumes", "Citrus Fruits", "Beets", "Fortified Grains", "Avocado"],
+    "deficiency_symptoms": ["Megaloblastic anemia", "Fatigue", "Weakness", "Poor growth", "Neural tube defects in fetus", "Glossitis"],
+    "toxicity_symptoms": ["May mask B12 deficiency", "GI upset at high doses"]
+  },
+  {
+    "id": "vitamin_b12",
+    "name": "Vitamin B12 (Cobalamin)",
+    "functions": ["Red blood cell formation", "Nervous system function", "DNA synthesis", "Energy production"],
+    "sources": ["Meat", "Fish", "Poultry", "Eggs", "Milk", "Fortified Cereals", "Nutritional Yeast"],
+    "deficiency_symptoms": ["Megaloblastic anemia", "Fatigue", "Nerve damage", "Memory problems", "Depression", "Glossitis"],
+    "toxicity_symptoms": ["No known toxicity"]
+  },
+  {
+    "id": "vitamin_c",
+    "name": "Vitamin C (Ascorbic Acid)",
+    "functions": ["Antioxidant", "Supports immune function", "Collagen synthesis", "Wound healing", "Iron absorption"],
+    "sources": ["Citrus Fruits", "Amla (Indian Gooseberry)", "Guava", "Bell Peppers", "Broccoli", "Tomatoes", "Strawberries"],
+    "deficiency_symptoms": ["Scurvy", "Bleeding gums", "Slow wound healing", "Easy bruising", "Joint pain", "Anemia"],
+    "toxicity_symptoms": ["Diarrhea", "Nausea", "Abdominal cramps", "Kidney stones (high doses)"]
+  },
+  {
+    "id": "vitamin_d",
+    "name": "Vitamin D (Calciferol)",
+    "functions": ["Calcium absorption", "Bone health", "Immune function", "Muscle function", "Cell growth"],
+    "sources": ["Sunlight", "Fatty Fish", "Egg Yolks", "Fortified Milk", "Mushrooms", "Cod Liver Oil"],
+    "deficiency_symptoms": ["Rickets (children)", "Osteomalacia (adults)", "Bone pain", "Muscle weakness", "Increased infections"],
+    "toxicity_symptoms": ["Hypercalcemia", "Nausea", "Weakness", "Kidney stones", "Confusion", "Cardiac arrhythmias"]
+  },
+  {
+    "id": "vitamin_e",
+    "name": "Vitamin E (Tocopherol)",
+    "functions": ["Antioxidant", "Protects cell membranes", "Supports immune function", "Skin health"],
+    "sources": ["Nuts", "Seeds", "Spinach", "Broccoli", "Avocado", "Sunflower Oil", "Almonds"],
+    "deficiency_symptoms": ["Neurological problems", "Muscle weakness", "Vision problems", "Weakened immune system (rare)"],
+    "toxicity_symptoms": ["Bleeding risk (high doses)", "GI upset", "Fatigue"]
+  },
+  {
+    "id": "vitamin_k",
+    "name": "Vitamin K (Phylloquinone / Menaquinone)",
+    "functions": ["Blood clotting", "Bone health", "Calcium regulation"],
+    "sources": ["Green Leafy Vegetables", "Broccoli", "Brussels Sprouts", "Fermented Foods", "Fish", "Eggs"],
+    "deficiency_symptoms": ["Easy bruising", "Bleeding", "Excessive bleeding from wounds", "Bone weakness"],
+    "toxicity_symptoms": ["No known toxicity (high doses may interfere with anticoagulants)"]
+  },
+  {
+    "id": "calcium",
+    "name": "Calcium",
+    "functions": ["Bone and tooth health", "Muscle contraction", "Nerve transmission", "Blood clotting", "Enzyme function"],
+    "sources": ["Milk", "Curd", "Cheese", "Ragi (Finger Millet)", "Sesame Seeds", "Green Leafy Vegetables", "Soy", "Sardines"],
+    "deficiency_symptoms": ["Osteoporosis", "Bone pain", "Muscle cramps", "Weak nails", "Dental problems", "Rickets in children"],
+    "toxicity_symptoms": ["Kidney stones", "Constipation", "Nausea", "Hypercalcemia", "Confusion"]
+  },
+  {
+    "id": "phosphorus",
+    "name": "Phosphorus",
+    "functions": ["Bone and tooth formation", "Energy production (ATP)", "Cell membranes", "pH balance"],
+    "sources": ["Dairy", "Meat", "Fish", "Poultry", "Eggs", "Nuts", "Legumes", "Whole Grains"],
+    "deficiency_symptoms": ["Bone pain", "Muscle weakness", "Fatigue", "Anorexia", "Rickets (rare)"],
+    "toxicity_symptoms": ["Diarrhea", "Calcification of tissues", "Low calcium levels"]
+  },
+  {
+    "id": "magnesium",
+    "name": "Magnesium",
+    "functions": ["Muscle function", "Nerve transmission", "Energy production", "Protein synthesis", "Bone health", "Blood sugar regulation"],
+    "sources": ["Spinach", "Nuts", "Seeds", "Legumes", "Whole Grains", "Avocado", "Banana", "Dark Chocolate"],
+    "deficiency_symptoms": ["Muscle cramps", "Fatigue", "Irritability", "Insomnia", "Abnormal heart rhythms"],
+    "toxicity_symptoms": ["Diarrhea", "Nausea", "Low blood pressure", "Cardiac arrest (high IV doses)"]
+  },
+  {
+    "id": "potassium",
+    "name": "Potassium",
+    "functions": ["Fluid balance", "Muscle contraction", "Nerve transmission", "Blood pressure regulation"],
+    "sources": ["Banana", "Coconut Water", "Potato", "Spinach", "Avocado", "Sweet Potato", "Beans", "Tomato"],
+    "deficiency_symptoms": ["Muscle weakness", "Cramps", "Fatigue", "Constipation", "Arrhythmias", "Numbness"],
+    "toxicity_symptoms": ["Nausea", "Muscle paralysis", "Arrhythmias", "Cardiac arrest (high levels)"]
+  },
+  {
+    "id": "sodium",
+    "name": "Sodium",
+    "functions": ["Fluid balance", "Nerve transmission", "Muscle contraction", "Blood pressure regulation"],
+    "sources": ["Table Salt", "Processed Foods", "Cured Meats", "Soups", "Bread"],
+    "deficiency_symptoms": ["Headache", "Nausea", "Fatigue", "Muscle cramps", "Confusion", "Hyponatremia (severe)"],
+    "toxicity_symptoms": ["High blood pressure", "Fluid retention", "Heart disease risk", "Kidney damage"]
+  },
+  {
+    "id": "chloride",
+    "name": "Chloride",
+    "functions": ["Fluid balance", "Stomach acid production (HCl)", "Nerve transmission"],
+    "sources": ["Table Salt", "Seaweed", "Tomatoes", "Lettuce", "Celery"],
+    "deficiency_symptoms": ["Fluid loss", "Metabolic alkalosis", "Hypochloremia (rare)"],
+    "toxicity_symptoms": ["Vomiting", "Dehydration (rare)"]
+  },
+  {
+    "id": "iron",
+    "name": "Iron",
+    "functions": ["Hemoglobin production", "Oxygen transport", "Energy metabolism", "Immune function"],
+    "sources": ["Spinach", "Moringa Leaves", "Lentils", "Eggs", "Red Meat", "Fish", "Fortified Cereals", "Jaggery"],
+    "deficiency_symptoms": ["Fatigue", "Weakness", "Pale skin", "Anemia", "Shortness of breath", "Pica (craving non-food items)"],
+    "toxicity_symptoms": ["Nausea", "Constipation", "Hemochromatosis (iron overload)", "Liver damage", "Joint pain"]
+  },
+  {
+    "id": "zinc",
+    "name": "Zinc",
+    "functions": ["Immune function", "Wound healing", "Cell division", "Taste and smell", "DNA synthesis", "Growth"],
+    "sources": ["Meat", "Shellfish", "Legumes", "Seeds", "Nuts", "Eggs", "Whole Grains"],
+    "deficiency_symptoms": ["Hair loss", "Impaired wound healing", "Loss of appetite", "Impaired immune function", "Growth retardation"],
+    "toxicity_symptoms": ["Nausea", "Vomiting", "Loss of appetite", "Copper deficiency", "Anemia"]
+  },
+  {
+    "id": "iodine",
+    "name": "Iodine",
+    "functions": ["Thyroid hormone synthesis", "Metabolism regulation", "Growth and development", "Fetal brain development"],
+    "sources": ["Iodized Salt", "Seafood", "Seaweed", "Dairy", "Eggs", "Cranberries"],
+    "deficiency_symptoms": ["Goiter", "Hypothyroidism", "Weight gain", "Fatigue", "Cognitive impairment", "Cretinism (in children)"],
+    "toxicity_symptoms": ["Thyroiditis", "Goiter (iodine excess)", "Hyperthyroidism", "Nausea", "Diarrhea"]
+  },
+  {
+    "id": "selenium",
+    "name": "Selenium",
+    "functions": ["Antioxidant (part of enzymes)", "Thyroid hormone metabolism", "Immune function", "Reproductive health"],
+    "sources": ["Brazil Nuts", "Fish", "Eggs", "Sunflower Seeds", "Mushrooms", "Meat", "Garlic"],
+    "deficiency_symptoms": ["Keshan disease (cardiomyopathy)", "Kashin-Beck disease (osteoarthropathy)", "Impaired immunity", "Fatigue"],
+    "toxicity_symptoms": ["Garlic breath", "Hair loss", "Nail brittleness", "Nausea", "Diarrhea"]
+  },
+  {
+    "id": "copper",
+    "name": "Copper",
+    "functions": ["Iron metabolism", "Connective tissue formation", "Nervous system function", "Energy production", "Melanin synthesis"],
+    "sources": ["Shellfish", "Liver", "Nuts", "Seeds", "Legumes", "Whole Grains", "Dark Chocolate"],
+    "deficiency_symptoms": ["Anemia (microcytic)", "Neutropenia", "Osteoporosis", "Neurological problems", "Hair changes"],
+    "toxicity_symptoms": ["Nausea", "Vomiting", "Liver damage", "Wilson's disease (genetic copper overload)"]
+  },
+  {
+    "id": "manganese",
+    "name": "Manganese",
+    "functions": ["Bone formation", "Carbohydrate metabolism", "Enzyme function", "Antioxidant defense"],
+    "sources": ["Nuts", "Seeds", "Whole Grains", "Tea", "Spinach", "Pineapple", "Black Pepper"],
+    "deficiency_symptoms": ["Bone demineralization", "Impaired growth", "Skin problems", "Poor wound healing (rare)"],
+    "toxicity_symptoms": ["Neurotoxicity (manganism)", "Tremors", "Cognitive impairment", "Hallucinations (industrial exposure)"]
+  },
+  {
+    "id": "chromium",
+    "name": "Chromium",
+    "functions": ["Insulin function", "Carbohydrate and lipid metabolism", "Weight management"],
+    "sources": ["Broccoli", "Whole Grains", "Meat", "Liver", "Nuts", "Beer", "Wine"],
+    "deficiency_symptoms": ["Impaired glucose tolerance", "Weight loss", "Nerve problems", "Anxiety (rare)"],
+    "toxicity_symptoms": ["Skin rashes", "Kidney damage", "Respiratory problems (chromium hexavalent)"]
+  },
+  {
+    "id": "molybdenum",
+    "name": "Molybdenum",
+    "functions": ["Enzyme function (oxidation)", "Metabolism of sulfur-containing amino acids", "Uric acid production"],
+    "sources": ["Legumes", "Grains", "Nuts", "Leafy Vegetables", "Liver", "Milk"],
+    "deficiency_symptoms": ["Tachycardia", "Headache", "Nausea", "Confusion (rare)"],
+    "toxicity_symptoms": ["Gout-like symptoms (high uric acid)", "Joint pain", "Diarrhea"]
+  },
+  {
+    "id": "fluoride",
+    "name": "Fluoride",
+    "functions": ["Prevents dental caries", "Bone health"],
+    "sources": ["Fluoridated Water", "Seafood", "Tea", "Fluoride Toothpaste"],
+    "deficiency_symptoms": ["Increased dental cavities", "Bone weakness (rare)"],
+    "toxicity_symptoms": ["Dental fluorosis (white/brown stains)", "Skeletal fluorosis", "Joint pain", "Calcification"]
+  },
+  {
+    "id": "boron",
+    "name": "Boron",
+    "functions": ["Bone health", "Wound healing", "Vitamin D metabolism", "Cognitive function"],
+    "sources": ["Fruits (apples, pears)", "Legumes", "Nuts", "Broccoli", "Avocado", "Grapes"],
+    "deficiency_symptoms": ["Impaired bone health", "Poor wound healing (research limited)"],
+    "toxicity_symptoms": ["Nausea", "Vomiting", "Diarrhea", "Dermatitis (high doses)"]
+  },
+  {
+    "id": "cobalt",
+    "name": "Cobalt",
+    "functions": ["Component of Vitamin B12", "Red blood cell production"],
+    "sources": ["Fish", "Meat", "Milk", "Liver", "Nuts"],
+    "deficiency_symptoms": ["B12 deficiency symptoms (e.g., pernicious anemia)"],
+    "toxicity_symptoms": ["Cardiomyopathy", "Hearing loss", "Nerve problems (industrial exposure)"]
+  },
+  {
+    "id": "nickel",
+    "name": "Nickel",
+    "functions": ["Trace mineral, role in enzyme function (limited evidence)"],
+    "sources": ["Nuts", "Dried Beans", "Whole Grains", "Cocoa", "Green Vegetables"],
+    "deficiency_symptoms": ["Unclear; possibly impaired growth and reproduction (animal studies)"],
+    "toxicity_symptoms": ["Nickel dermatitis", "Respiratory problems (industrial exposure)"]
+  },
+  {
+    "id": "silicon",
+    "name": "Silicon",
+    "functions": ["Bone health", "Connective tissue formation", "Skin and nail health"],
+    "sources": ["Whole Grains", "Horsetail Herb", "Beer", "Drinking Water", "Bananas"],
+    "deficiency_symptoms": ["Bone abnormalities", "Poor skin quality (limited evidence)"],
+    "toxicity_symptoms": ["Silicon dioxide (as dust) may cause respiratory issues"]
+  },
+  {
+    "id": "vanadium",
+    "name": "Vanadium",
+    "functions": ["Trace mineral; potential role in insulin action and bone health (research ongoing)"],
+    "sources": ["Mushrooms", "Shellfish", "Parsley", "Oats", "Whole Grains"],
+    "deficiency_symptoms": ["Impaired glucose metabolism (animal studies)"],
+    "toxicity_symptoms": ["GI upset", "Nausea", "Decreased appetite (high doses)"]
+  },
+  {
+    "id": "sulfur",
+    "name": "Sulfur",
+    "functions": ["Part of amino acids (methionine, cysteine)", "Connective tissue and collagen formation", "Detoxification"],
+    "sources": ["Meat", "Poultry", "Fish", "Eggs", "Legumes", "Cruciferous Vegetables", "Onions", "Garlic"],
+    "deficiency_symptoms": ["Impaired protein synthesis (rare)"],
+    "toxicity_symptoms": ["Diarrhea (if excess sulfur amino acids)", "Can worsen kidney disease"]
+  },
+  {
+    "id": "choline",
+    "name": "Choline",
+    "functions": ["Brain development", "Cell membrane formation", "Liver function", "Neurotransmitter synthesis"],
+    "sources": ["Eggs", "Liver", "Peanuts", "Soybeans", "Broccoli", "Milk"],
+    "deficiency_symptoms": ["Fatty liver", "Memory problems", "Cognitive decline", "Muscle damage"],
+    "toxicity_symptoms": ["Fishy body odor", "Sweating", "Low blood pressure", "GI distress (high doses)"]
+  },
+  {
+    "id": "coenzyme_q10",
+    "name": "Coenzyme Q10 (Ubiquinone)",
+    "functions": ["Energy production (mitochondria)", "Antioxidant", "Supports heart health"],
+    "sources": ["Meat", "Fish", "Soybeans", "Nuts", "Spinach", "Broccoli"],
+    "deficiency_symptoms": ["Fatigue", "Muscle weakness", "Statins may deplete it"],
+    "toxicity_symptoms": ["Mild GI upset (rare)"]
+  },
+  {
+    "id": "lutein",
+    "name": "Lutein",
+    "functions": ["Eye health (macular protection)", "Antioxidant", "Skin health"],
+    "sources": ["Spinach", "Kale", "Corn", "Egg Yolks", "Orange Peppers"],
+    "deficiency_symptoms": ["Macular degeneration risk", "Poor vision health"],
+    "toxicity_symptoms": ["None significant; may cause carotenemia (yellowing of skin)"]
+  },
+  {
+    "id": "zeaxanthin",
+    "name": "Zeaxanthin",
+    "functions": ["Eye health (macular protection)", "Antioxidant"],
+    "sources": ["Spinach", "Kale", "Corn", "Orange Peppers", "Egg Yolks"],
+    "deficiency_symptoms": ["Macular degeneration risk", "Poor vision health"],
+    "toxicity_symptoms": ["None significant"]
+  },
+  {
+    "id": "lycopene",
+    "name": "Lycopene",
+    "functions": ["Antioxidant", "Supports heart health", "May reduce prostate cancer risk"],
+    "sources": ["Tomatoes", "Watermelon", "Papaya", "Grapefruit", "Guava"],
+    "deficiency_symptoms": ["No specific deficiency symptoms; low intake linked to higher oxidative stress"],
+    "toxicity_symptoms": ["None significant"]
+  },
+  {
+    "id": "omega_3",
+    "name": "Omega-3 Fatty Acids (EPA/DHA)",
+    "functions": ["Anti-inflammatory", "Brain health", "Heart health", "Joint health"],
+    "sources": ["Fatty Fish", "Fish Oil", "Flaxseeds", "Chia Seeds", "Walnuts", "Algae Oil"],
+    "deficiency_symptoms": ["Dry skin", "Joint pain", "Cognitive decline", "Impaired vision (research limited)"],
+    "toxicity_symptoms": ["Bleeding risk at high doses (interaction with blood thinners)", "Fishy burps"]
+  },
+  {
+    "id": "omega_6",
+    "name": "Omega-6 Fatty Acids (Linoleic Acid)",
+    "functions": ["Skin health", "Hormone production", "Inflammatory response"],
+    "sources": ["Vegetable Oils", "Nuts", "Seeds", "Meat", "Eggs"],
+    "deficiency_symptoms": ["Dry skin", "Poor wound healing", "Hair loss"],
+    "toxicity_symptoms": ["Excess may promote inflammation if imbalanced with omega-3"]
+  }
+]

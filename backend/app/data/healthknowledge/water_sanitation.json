@@ -1,0 +1,802 @@
+[
+  {
+    "id": "ws_001",
+    "category": "Safe Drinking Water – General Principles",
+    "symptoms": ["not applicable"],
+    "guidance": "Always drink clean, treated water. Boil water for at least 1 minute (at high altitudes, boil for 3 minutes) or use certified water purification methods (filter, chlorinate, or UV). Store drinking water in clean, covered containers. Use a clean ladle to draw water.",
+    "precautions": ["Store drinking water in covered containers", "Do not use contaminated sources", "Clean water storage containers weekly", "Avoid dipping hands or cups into stored water", "If unsure, treat water before drinking"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_002",
+    "category": "Water Source Protection – Wells and Borewells",
+    "symptoms": ["not applicable"],
+    "guidance": "Protect wells and borewells from surface contamination. Ensure proper lining and a concrete apron. Keep the area clean, avoid stagnant water nearby, and test water quality periodically. Cover the well to prevent debris and animals from entering.",
+    "precautions": ["Keep wells at least 15 metres from latrines", "Construct a raised platform with drainage", "Do not allow animals near the well", "Test for coliform bacteria regularly", "Chlorinate if contamination is detected"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_003",
+    "category": "Household Water Storage – Best Practices",
+    "symptoms": ["not applicable"],
+    "guidance": "Store water in narrow‑necked, clean, covered containers. Use a tap or ladle to draw water. Clean containers weekly with soap and water, and allow to dry in the sun. Keep storage away from animals and waste.",
+    "precautions": ["Do not store water in open containers", "Clean containers regularly with bleach solution", "Do not touch water with hands – use a ladle", "Keep water containers off the floor", "If water is untreated, treat before storage"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_004",
+    "category": "Boiling Water – Effective Purification",
+    "symptoms": ["not applicable"],
+    "guidance": "Boiling is the most reliable way to kill pathogens. Bring water to a rolling boil and keep it there for at least 1 minute (3 minutes at altitudes >2000m). Allow to cool in the same container, covered. Boiled water can be stored for 24 hours in a clean covered container.",
+    "precautions": ["Do not overboil – wastes fuel", "Use boiled water within 24 hours", "Store boiled water in a clean container", "If water is cloudy, filter before boiling", "Boiling does not remove chemical contaminants – use additional treatment if needed"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_005",
+    "category": "Chlorination of Drinking Water",
+    "symptoms": ["not applicable"],
+    "guidance": "Use chlorine tablets or liquid bleach (sodium hypochlorite) to disinfect water. Follow the manufacturer's instructions for dosage – typically 1–2 drops of 1% bleach per litre of clear water, or 2–4 drops for cloudy water. Wait 30 minutes before drinking. A slight chlorine smell indicates adequate disinfection.",
+    "precautions": ["Do not use scented or colour‑safe bleach", "Store chlorine tablets in a cool, dark place", "If water has a strong chlorine smell, let it stand for a few hours", "Do not over‑chlorinate – can cause gastrointestinal irritation", "Test chlorine residual if possible (0.2–0.5 mg/L is safe)"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_006",
+    "category": "Water Filtration (Ceramic / Biosand / Gravity)",
+    "symptoms": ["not applicable"],
+    "guidance": "Ceramic filters, biosand filters, and gravity filters remove bacteria, protozoa, and suspended particles. Clean the filter regularly as per manufacturer instructions. Biosand filters require a slow flow rate – do not rush water through. Replace filter cartridges when needed.",
+    "precautions": ["Do not use filters that are cracked or damaged", "Clean the filter surface regularly", "Do not use with water that is heavily turbid – pre‑settle or pre‑filter", "Follow maintenance schedule", "If filter is new, run a few litres of water through and discard"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_007",
+    "category": "Solar Water Disinfection (SODIS)",
+    "symptoms": ["not applicable"],
+    "guidance": "Fill clear PET plastic bottles with water, shake to aerate, and place in direct sunlight for 6 hours (or 2 days if cloudy). The UV rays kill pathogens. Suitable for small quantities. Do not use bottles that are scratched or old. After treatment, store away from light.",
+    "precautions": ["Use clear, colourless PET bottles (not glass)", "Do not use bottles larger than 2 litres", "If water is turbid, filter first", "Do not drink water that has been in sunlight for more than 2 days", "SODIS does not remove chemicals – only biological contaminants"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_008",
+    "category": "Household Water Treatment – Multiple Barriers",
+    "symptoms": ["not applicable"],
+    "guidance": "The most effective approach is to use multiple barriers: pre‑settlement (let water stand to settle sediment), filtration, and then disinfection (chlorine, UV, or boiling). This ensures safe drinking water even from questionable sources.",
+    "precautions": ["Do not rely on a single method if water quality is poor", "Combine physical and chemical treatment for best results", "Store treated water safely", "Monitor water quality visually (clarity, odour)", "If in doubt, boil the water"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_009",
+    "category": "Handwashing – Why, When, and How",
+    "symptoms": ["not applicable"],
+    "guidance": "Wash hands with soap and clean water for at least 20 seconds: before eating, after using the toilet, after handling waste, after coughing/sneezing, before and after caring for a sick person, and before preparing food. Scrub all surfaces (palms, backs, between fingers, under nails).",
+    "precautions": ["Use soap (or ash if soap is unavailable)", "Rinse well with clean running water", "Dry hands with a clean cloth or air dry", "If water is scarce, use alcohol‑based hand sanitiser (≥60% alcohol)", "Teach children proper handwashing technique"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_010",
+    "category": "Handwashing Facilities in Schools and Communities",
+    "symptoms": ["not applicable"],
+    "guidance": "Install handwashing stations with soap and water at schools, health centres, and public places. Ensure they are accessible to all (including children and people with disabilities). Provide regular maintenance and soap refills. Promote handwashing through school hygiene clubs.",
+    "precautions": ["Ensure soap is always available", "Provide a water source (tap or bucket with a tap)", "Build stations at a height accessible to children", "Place near toilets and eating areas", "Conduct regular hygiene promotion sessions"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_011",
+    "category": "Sanitary Toilets – Types and Maintenance",
+    "symptoms": ["not applicable"],
+    "guidance": "Use sanitary toilets (flush, pour‑flush, pit latrines, or composting toilets) to prevent open defecation. Keep them clean and well‑maintained. Regularly empty pits safely, and ensure handwashing facilities are nearby.",
+    "precautions": ["Do not use toilets that are broken or overflowing", "Clean the toilet daily with disinfectant", "Keep the toilet area well‑lit", "Ensure proper ventilation", "If using a pit latrine, cover the pit when it is ¾ full"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_012",
+    "category": "Open Defecation – Health and Social Risks",
+    "symptoms": ["increased risk of diarrhoea, worm infections, and environmental contamination"],
+    "guidance": "Open defecation spreads diseases (cholera, typhoid, hepatitis A, helminths) and affects community dignity. Use a toilet every time. If toilets are not available, build a simple pit latrine. Community education and motivation are key to ending open defecation.",
+    "precautions": ["Do not defecate in open – it contaminates water sources", "Encourage neighbours to use toilets", "If you have no toilet, build a temporary pit with a cover", "Wash hands thoroughly after defecation", "Participate in community sanitation drives"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_013",
+    "category": "Safe Disposal of Human Faeces (For Rural Areas)",
+    "symptoms": ["not applicable"],
+    "guidance": "Faeces should be contained in a pit latrine or septic tank. If no toilet, use a shallow pit (1–2 metres deep) that is covered after each use. When the pit is nearly full, fill with soil and mark it. Do not use faeces as fertiliser without proper composting. Ensure pits are at least 30 metres from water sources.",
+    "precautions": ["Keep toilet pits away from wells", "Do not allow children to play near pits", "Cover pit after use to prevent fly breeding", "Empty pits only by trained personnel", "Use protective gear when handling faeces"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_014",
+    "category": "Septic Tank Maintenance and Safety",
+    "symptoms": ["not applicable"],
+    "guidance": "Septic tanks should be desludged every 2–5 years by a licensed operator. Do not put grease, chemicals, or non‑biodegradable items down the drain. Ensure soak pits are functioning and not blocked. Check for leaks and odours.",
+    "precautions": ["Do not dispose of cooking oil or solvents into the septic tank", "Use biodegradable toilet paper", "Do not park vehicles over the tank", "Keep the manhole cover secure", "If you smell gas, ventilate and call a professional"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_015",
+    "category": "Food Safety – Storage, Preparation, and Handling",
+    "symptoms": ["food poisoning, vomiting, diarrhoea, abdominal cramps"],
+    "guidance": "Keep raw and cooked foods separate. Store perishable foods in a cool place (below 5°C if possible). Cook food thoroughly (internal temperature >70°C). Reheat leftovers to at least 75°C. Avoid keeping cooked food at room temperature for more than 2 hours.",
+    "precautions": ["Wash hands before and after handling food", "Use separate chopping boards for raw meat and vegetables", "Do not thaw food at room temperature – use a refrigerator or cold water", "Cover food to protect from flies and dust", "Discard any food that smells or looks spoiled"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_016",
+    "category": "Fruit and Vegetable Washing",
+    "symptoms": ["not applicable"],
+    "guidance": "Wash fruits and vegetables under clean running water before eating or cooking. For root vegetables, scrub with a brush. For leafy greens, soak in clean water for a few minutes and rinse. Do not use soap or detergent on produce. Peel fruits if skin is damaged.",
+    "precautions": ["Do not wash produce with contaminated water", "If water is unsafe, use boiled or chlorinated water", "Remove outer leaves of leafy vegetables", "Use a clean brush for scrubbing", "Wash produce just before eating – not in advance"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_017",
+    "category": "Food Storage – Preventing Contamination",
+    "symptoms": ["not applicable"],
+    "guidance": "Store dry foods (grains, pulses) in airtight containers in a cool, dry place. Keep them off the floor and away from pests. Store perishables in a refrigerator (if available) or a cool, dark, ventilated place. Check for signs of spoilage.",
+    "precautions": ["Do not store food near chemicals or pesticides", "Cover food to protect from flies and rodents", "Use older food first (first‑in, first‑out)", "If there are signs of mould, discard the food", "Do not store cooked food for more than 2 days without refrigeration"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_018",
+    "category": "Kitchen Hygiene – Cleaning and Disinfection",
+    "symptoms": ["not applicable"],
+    "guidance": "Clean kitchen surfaces with soap and water, then disinfect with a diluted bleach solution (1 tablespoon bleach in 1 litre water). Wash dishes with hot water and detergent, and allow to air dry. Change dishcloths and sponges regularly.",
+    "precautions": ["Do not use the same cloth for raw meat and clean dishes", "Replace sponges weekly", "Let dishes air dry – do not use a communal cloth", "Clean the sink and drains regularly", "Use separate cutting boards for meat and vegetables"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_019",
+    "category": "Solid Waste Management – Household Practices",
+    "symptoms": ["not applicable"],
+    "guidance": "Separate waste into biodegradable (kitchen waste, garden waste) and non‑biodegradable (plastics, glass, metal). Compost biodegradable waste in a covered bin. Dispose of non‑biodegradable waste in designated collection points. Reduce, reuse, and recycle.",
+    "precautions": ["Do not burn waste – causes air pollution", "Keep waste bins covered", "Do not dump waste in water sources", "Wash recyclables before disposal", "Participate in community waste segregation programs"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_020",
+    "category": "Composting – Safe and Effective",
+    "symptoms": ["not applicable"],
+    "guidance": "Compost kitchen scraps, garden waste, and manure in a bin or pit. Mix with dry leaves and soil. Turn regularly to aerate. Keep the compost moist but not wet. It should be ready in 2–3 months. Use finished compost as fertiliser.",
+    "precautions": ["Do not add meat, dairy, or diseased plants to compost", "Keep the compost covered to prevent rodents", "Do not use fresh manure – must be fully composted", "If the compost smells bad, add dry material", "Wash hands after handling compost"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_021",
+    "category": "Plastic Waste – Reduction and Disposal",
+    "symptoms": ["not applicable"],
+    "guidance": "Reduce plastic use – carry reusable bags, bottles, and containers. Avoid single‑use plastics. Recycle plastic waste through local collection systems. Never burn plastic. Participate in clean‑up drives.",
+    "precautions": ["Do not litter plastic in the environment", "Do not burn plastic – releases toxic fumes", "Do not use plastic for storing hot food (leaches chemicals)", "Recycle if possible", "Support bans on single‑use plastics"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_022",
+    "category": "Community Cleanliness – Role and Participation",
+    "symptoms": ["not applicable"],
+    "guidance": "Clean surroundings prevent disease. Participate in community clean‑up events. Keep streets, drains, and public spaces clean. Report overflowing garbage bins. Educate neighbours about hygiene. Volunteer for local sanitation committees.",
+    "precautions": ["Do not throw garbage in public spaces", "Encourage neighbours to maintain cleanliness", "If you see a blocked drain, report it", "Keep your own premises clean", "Lead by example"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_023",
+    "category": "Drainage and Stagnant Water – Mosquito Breeding",
+    "symptoms": ["not applicable"],
+    "guidance": "Remove stagnant water to prevent mosquito breeding (malaria, dengue, chikungunya). Cover water storage containers, clear blocked drains, fill puddles, and dispose of old tyres and containers. Use larvicides in water that cannot be removed.",
+    "precautions": ["Do not allow water to stagnate in plant pots, tyres, or buckets", "Clean water tanks and gutters regularly", "If you have a pond, stock with fish that eat mosquito larvae", "Report stagnant water to local authorities", "Use mosquito nets and repellents"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_024",
+    "category": "Vector Control – Mosquito Prevention",
+    "symptoms": ["not applicable"],
+    "guidance": "Use insecticide‑treated bed nets (ITNs), apply mosquito repellent, wear long sleeves and trousers, and use window screens. Eliminate breeding sites. In outbreak areas, indoor residual spraying (IRS) is effective. Free nets and sprays are available under government programs.",
+    "precautions": ["Use bed nets correctly – tuck them under the mattress", "Apply repellent on exposed skin (not on cuts)", "Avoid outdoor activities at peak mosquito times (dusk and dawn)", "If you have dengue, use netting around the bed", "Educate children about mosquito bite prevention"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_025",
+    "category": "Fly Control – Disease Prevention",
+    "symptoms": ["not applicable"],
+    "guidance": "Flies transmit diseases (cholera, typhoid, dysentery, eye infections). Keep food covered, dispose of waste properly, use fly screens on windows, and use fly traps or insecticides. Maintain clean surroundings.",
+    "precautions": ["Do not leave uncovered food outside", "Keep garbage bins tightly closed", "Clean up animal faeces", "Use fly swatters or sticky traps", "Screen windows and doors"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_026",
+    "category": "Rat Control – Preventing Rodent‑Borne Diseases",
+    "symptoms": ["not applicable"],
+    "guidance": "Rats spread leptospirosis, plague, and rat‑bite fever. Prevent access: seal holes, store food in rodent‑proof containers, remove clutter. Use traps or poison (with caution, keep away from children and pets). Maintain cleanliness.",
+    "precautions": ["Do not leave food scraps accessible", "Seal entry points (gaps in walls, doors)", "Do not handle dead rats without gloves", "Use traps safely", "Report heavy infestations to authorities"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_027",
+    "category": "Household Pest Control (Cockroaches, Ants)",
+    "symptoms": ["not applicable"],
+    "guidance": "Keep food sealed, clean surfaces, fix leaks, and seal cracks. Use baits or boric acid for cockroaches and ants. Do not use excessive pesticides – may be harmful to health. Regular cleaning is the best prevention.",
+    "precautions": ["Do not leave dirty dishes overnight", "Store food in airtight containers", "Fix plumbing leaks", "If you have an allergy, avoid pesticides", "Use non‑toxic methods if possible"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_028",
+    "category": "Personal Hygiene – Bathing and Clothing",
+    "symptoms": ["skin infections, body odour, fungal infections"],
+    "guidance": "Bathe daily with soap and water. Wash your hair regularly. Wear clean clothes and change underwear daily. Keep nails short and clean. Use a clean towel and do not share personal items. Good hygiene prevents skin and respiratory infections.",
+    "precautions": ["Do not share towels or razors", "Wash clothes after each wear", "If you have a skin infection, avoid scratching", "Use soap that does not irritate your skin", "Bathe children frequently"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_029",
+    "category": "Nail and Foot Hygiene",
+    "symptoms": ["fungal infections, ingrown toenails, skin infections"],
+    "guidance": "Keep nails trimmed short and clean. Wash feet daily and dry between toes. Wear clean, breathable footwear. Change socks daily. If you have diabetes, inspect your feet daily for cuts or sores.",
+    "precautions": ["Do not walk barefoot in public places", "Do not share nail clippers", "If you have athlete's foot, treat it promptly", "Use moisturiser on dry feet (but not between toes)", "If you have a cut, clean and cover it"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_030",
+    "category": "Oral Hygiene – Toothbrushing and Mouth Care",
+    "symptoms": ["dental caries, gum disease, bad breath"],
+    "guidance": "Brush teeth twice daily (morning and night) with fluoride toothpaste. Floss daily. Replace toothbrush every 3 months. Rinse with mouthwash if desired. Visit a dentist twice a year. Avoid sugary foods and drinks.",
+    "precautions": ["Do not share toothbrushes", "Do not use excessive pressure when brushing", "If your gums bleed, see a dentist", "Avoid tobacco – causes gum disease and oral cancer", "If you have dry mouth, chew sugar‑free gum"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_031",
+    "category": "Menstrual Hygiene – Safe Practices",
+    "symptoms": ["not applicable"],
+    "guidance": "Change sanitary pads/tampons every 4–6 hours. Wash hands before and after changing. Dispose of used pads in a bin (do not flush). Use clean cloth pads and wash them with soap, rinse, and dry in sunlight. Menstrual cups are eco‑friendly – clean with soap and boil between cycles.",
+    "precautions": ["Do not use unsafe materials (ash, sand, leaves)", "Do not flush sanitary products", "If you have irritation, change products or brand", "Maintain good genital hygiene with plain water", "Seek medical help for unusual discharge or pain"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_032",
+    "category": "Infant and Child Hygiene – Diapering",
+    "symptoms": ["diaper rash, infections"],
+    "guidance": "Change diapers frequently. Clean the baby's genital area with warm water and mild soap. Apply a barrier cream (zinc oxide). Wash reusable diapers with hot water and soap, and dry in the sun. Dispose of soiled diapers hygienically.",
+    "precautions": ["Do not let baby sit in a wet diaper", "Wash hands before and after changing diaper", "If using cloth diapers, change them immediately after soiling", "Watch for signs of infection (redness, discharge)", "If rash persists, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_033",
+    "category": "Laundry Hygiene – Washing Clothes",
+    "symptoms": ["skin infections, fungal infections"],
+    "guidance": "Wash clothes with soap or detergent and clean water. Dry them in direct sunlight – UV rays kill germs. Wash underwear and towels in hot water if possible. Do not share used towels or clothes.",
+    "precautions": ["Do not use the same water for multiple loads", "If someone is sick, wash their clothes separately", "Dry clothes completely (damp clothes breed fungus)", "Use bleach for white clothes if needed", "Ironing can help kill pathogens"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_034",
+    "category": "Cleaning and Disinfection of Surfaces",
+    "symptoms": ["not applicable"],
+    "guidance": "Clean surfaces with soap and water, then disinfect with a bleach solution (1 part bleach to 9 parts water) or alcohol (>70%). Pay attention to high‑touch surfaces: door handles, light switches, tables, and toilets. Ventilate the area after disinfection.",
+    "precautions": ["Do not mix bleach with acid or ammonia (toxic gas)", "Wear gloves when using bleach", "Rinse food contact surfaces after disinfection", "Keep cleaning products out of children's reach", "If using alcohol, keep away from flames"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_035",
+    "category": "Water Quality Testing – Basic Indicators",
+    "symptoms": ["not applicable"],
+    "guidance": "Simple tests for water quality: clarity (turbidity), colour, odour, and taste. For microbiological safety, test for coliform bacteria (available at PHCs and municipal labs). Test wells and tanks regularly, especially after floods.",
+    "precautions": ["If water is cloudy, filter or let it settle", "If water has a foul smell, do not drink", "If you have a private well, test annually", "If water is saline, it may cause health issues", "Seek professional testing for chemical contaminants (fluoride, arsenic)"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_036",
+    "category": "Fluoride in Drinking Water – Health Effects",
+    "symptoms": ["dental fluorosis (mottled teeth)", "skeletal fluorosis (bone pain, stiffness, deformity)"],
+    "guidance": "If your water has high fluoride (>1.5 mg/L), use alternative water sources or install a defluoridation system (activated alumina, reverse osmosis). Avoid using high‑fluoride water for children under 8 years (dental fluorosis). Government provides defluoridation units in affected areas.",
+    "precautions": ["Test water for fluoride if you are in an endemic area", "Do not use fluoride toothpaste in large amounts for children", "If you have bone pain, see a doctor", "Use rainwater harvesting for drinking if possible", "Follow local health department advice"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_037",
+    "category": "Arsenic in Drinking Water – Health Risks",
+    "symptoms": ["skin lesions (hyperkeratosis, pigmentation changes)", "peripheral neuropathy", "cancer (skin, lung, bladder)"],
+    "guidance": "If your water has high arsenic (>10 µg/L), use alternative sources (deep wells, rainwater) or install arsenic removal filters (oxidation, co‑precipitation, reverse osmosis). Long‑term exposure is harmful. Government provides testing and mitigation in affected areas.",
+    "precautions": ["Do not use water from known arsenic‑contaminated sources for drinking", "If you have skin changes, see a doctor", "Use filtered water for cooking as well", "Monitor arsenic levels regularly", "Educate community about risks"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_038",
+    "category": "Iron and Manganese in Water – Aesthetic and Health",
+    "symptoms": ["water discolouration (red/brown), metallic taste, staining of clothes and fixtures"],
+    "guidance": "Iron and manganese are generally not harmful to health but can affect taste and appearance. Use oxidation filters or ion exchange to remove. Let water settle and use the clear portion. If high levels, consult a water treatment specialist.",
+    "precautions": ["Do not drink water that is visibly rusty", "If you have a metallic taste, test the water", "Clean plumbing fixtures regularly", "If you have a well, check for iron bacteria", "Iron can cause gastrointestinal irritation in high doses"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_039",
+    "category": "Salinity in Drinking Water – Health Concerns",
+    "symptoms": ["high sodium intake – hypertension risk", "water may taste salty, cause dehydration"],
+    "guidance": "Saline water (high total dissolved solids) is not recommended for drinking. If you have hypertension, avoid high‑sodium water. Use reverse osmosis or distillation to remove salts. Rainwater harvesting is a good alternative in coastal areas.",
+    "precautions": ["Do not drink water with a salty taste", "If you have high BP, use low‑sodium water", "Check TDS (total dissolved solids) – should be <500 mg/L", "Collect rainwater for drinking", "Use a water softener if needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_040",
+    "category": "Rainwater Harvesting – Collection and Safety",
+    "symptoms": ["not applicable"],
+    "guidance": "Collect rainwater from clean roofs into storage tanks. Fit gutters and filters to remove debris. First‑flush diverters remove the initial contaminated water. Store in covered tanks. Treat water (boil, chlorinate, or filter) before drinking. Rainwater is soft and safe if properly managed.",
+    "precautions": ["Keep the roof clean – free from bird droppings and dust", "Use a first‑flush diverter", "Store water in clean, covered tanks", "Do not drink rainwater without treatment", "Clean the tank regularly"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_041",
+    "category": "Groundwater Recharge – Community Efforts",
+    "symptoms": ["not applicable"],
+    "guidance": "Recharge groundwater by constructing percolation pits, recharge wells, and check dams. Prevent over‑extraction. Community participation is essential. Proper recharge improves water quality and availability.",
+    "precautions": ["Do not recharge near septic tanks or garbage dumps", "Use recharge pits away from contamination sources", "Monitor water levels", "Participate in watershed management programs", "Follow local guidelines"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_042",
+    "category": "Flood and Water Contamination – Post‑Disaster",
+    "symptoms": ["increased diarrhoea, leptospirosis, skin infections"],
+    "guidance": "After floods, assume all water is contaminated. Drink only bottled or boiled water. Use ORS for diarrhoea. Clean houses and utensils with bleach. Drain stagnant water. Boil water for 3 minutes. Wash hands frequently. Seek medical care for fever or diarrhoea.",
+    "precautions": ["Do not drink floodwater", "Do not wade in floodwater without boots", "If you have a wound, protect it from water", "Boil drinking water", "Dispose of dead animals properly"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ws_043",
+    "category": "Drought and Water Scarcity – Hygiene Adaptation",
+    "symptoms": ["not applicable"],
+    "guidance": "During drought, conserve water: use bucket baths instead of showers, reuse water for plants, fix leaks, and collect greywater. Use hand sanitiser when water is limited. Prioritise drinking water. Store water safely.",
+    "precautions": ["Do not waste water", "Use water sparingly", "If you have water, share it with neighbours", "Use efficient irrigation", "Monitor water quality during scarcity"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_044",
+    "category": "Emergency Water Purification – Disasters",
+    "symptoms": ["not applicable"],
+    "guidance": "In emergencies, use simple methods: boil water, add chlorine tablets, use solar disinfection, or use household bleach (2 drops per litre). If no treatment is possible, let water stand for a few hours and use the clear top layer. Prioritise drinking and cooking water.",
+    "precautions": ["Do not drink untreated water", "If in doubt, boil", "Use clean containers", "If water is muddy, strain through cloth first", "Keep emergency water treatment supplies at home"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_045",
+    "category": "Safe Drinking Water in Schools",
+    "symptoms": ["not applicable"],
+    "guidance": "Provide access to safe drinking water in schools. Install water points with taps, and ensure they are clean and functional. Teach children about water hygiene. Monitor water quality regularly. Encourage children to bring their own bottles.",
+    "precautions": ["Keep water points clean and covered", "Test water for contamination periodically", "Ensure drainage away from water points", "Provide cups or water fountains", "Educate children on safe water handling"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_046",
+    "category": "Water and Sanitation in Healthcare Facilities",
+    "symptoms": ["not applicable"],
+    "guidance": "Healthcare facilities must have safe water, toilets, and handwashing stations. Separate areas for waste disposal. Ensure regular cleaning and disinfection. Provide staff training on infection prevention. Government guidelines are available.",
+    "precautions": ["Do not allow waste accumulation", "Ensure handwashing soap is always available", "Keep water storage clean", "Dispose of medical waste safely", "Train staff on WASH protocols"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_047",
+    "category": "Community Led Total Sanitation (CLTS)",
+    "symptoms": ["not applicable"],
+    "guidance": "CLTS is a community‑driven approach to end open defecation. It triggers collective behaviour change through participatory activities. Communities build their own toilets. Government supports with subsidies. Sustain with regular follow‑up and hygiene promotion.",
+    "precautions": ["Encourage community participation", "Do not impose – facilitate", "Monitor toilet usage, not just construction", "Celebrate successes", "Address challenges (water availability, cultural beliefs)"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_048",
+    "category": "School Sanitation – Separate Toilets for Girls",
+    "symptoms": ["not applicable"],
+    "guidance": "Provide separate, safe, and private toilets for girls and boys in schools. Ensure they are clean and have water and soap. This improves attendance, especially for adolescent girls. Government schemes support this.",
+    "precautions": ["Keep toilets clean and lockable", "Provide sanitary pad disposal facilities", "Ensure adequate lighting", "Educate students about usage", "Monitor maintenance regularly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_049",
+    "category": "Household Wastewater Management (Greywater)",
+    "symptoms": ["not applicable"],
+    "guidance": "Greywater (from bathing, laundry, kitchen) should be safely disposed of or reused. Direct it to soak pits or gardens (not into open drains). Avoid using greywater for vegetables eaten raw. Do not mix with blackwater (toilet waste).",
+    "precautions": ["Do not let greywater stagnate", "Use for gardening only if safe", "Keep greywater away from water sources", "Do not allow children to play in greywater", "If you have a septic tank, ensure greywater does not overload it"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_050",
+    "category": "Industrial Waste and Water Contamination",
+    "symptoms": ["not applicable"],
+    "guidance": "Industries should treat wastewater before discharge. Communities near industrial areas should monitor water quality. Report illegal dumping to authorities. Advocate for environmental regulations. Protect water sources from industrial pollutants (heavy metals, chemicals).",
+    "precautions": ["Do not drink water near industrial areas", "Test water for heavy metals", "If you suspect contamination, report it", "Avoid fishing or swimming in polluted water", "Support clean water initiatives"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_051",
+    "category": "Agricultural Runoff and Water Pollution",
+    "symptoms": ["not applicable"],
+    "guidance": "Excessive use of fertilizers and pesticides contaminates water. Use organic farming practices, buffer zones along water bodies, and controlled use of chemicals. Avoid applying manure near water sources. Monitor nitrate levels in drinking water.",
+    "precautions": ["Do not use pesticides near wells", "Maintain a buffer zone of vegetation", "Use integrated pest management", "Test water for nitrates", "If nitrate is high, use alternative water for infants"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_052",
+    "category": "Water Conservation – Practical Tips",
+    "symptoms": ["not applicable"],
+    "guidance": "Fix leaks, use water‑efficient fixtures, collect rainwater, and reuse water for gardens. Take shorter showers, turn off taps while brushing, and use a bucket instead of a hose. Educate others about conservation.",
+    "precautions": ["Do not leave taps running", "Report leaks to authorities", "Use water wisely", "Install water meters", "Participate in community conservation programs"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_053",
+    "category": "Water Safety Plans – Community Preparedness",
+    "symptoms": ["not applicable"],
+    "guidance": "Water Safety Plans (WSPs) are comprehensive risk assessments for water supply systems. They include source protection, treatment, storage, and distribution. Communities can develop simple WSPs with help from local health departments.",
+    "precautions": ["Assess risks to water sources", "Implement control measures", "Monitor regularly", "Document and review", "Engage the community"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_054",
+    "category": "Behaviour Change Communication for Hygiene",
+    "symptoms": ["not applicable"],
+    "guidance": "Use education, social marketing, and community engagement to promote hygiene behaviours (handwashing, toilet use, safe water). Target messages to different groups (children, women, men). Use folk media, radio, and social media.",
+    "precautions": ["Use culturally appropriate messages", "Involve community leaders", "Make messages simple and actionable", "Reinforce through repeated exposure", "Monitor behaviour change"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_055",
+    "category": "Water, Sanitation, and Hygiene (WASH) in Schools",
+    "symptoms": ["not applicable"],
+    "guidance": "WASH in schools includes safe water, toilets, handwashing facilities, and hygiene education. This improves attendance and health. Government programs provide support. Involve teachers, students, and parents.",
+    "precautions": ["Ensure water points are functional", "Keep toilets clean", "Teach hygiene lessons", "Provide menstrual hygiene management", "Monitor and maintain facilities"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_056",
+    "category": "WASH in Emergencies – First Response",
+    "symptoms": ["not applicable"],
+    "guidance": "In emergencies (floods, earthquakes, outbreaks), provide safe water (bottled or treated), sanitation (temporary latrines), and hygiene supplies (soap, ORS). Establish handwashing stations. Train volunteers in hygiene promotion.",
+    "precautions": ["Do not delay – water is life", "Prioritise vulnerable groups", "Coordinate with authorities", "Monitor disease outbreaks", "Engage the community in response"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ws_057",
+    "category": "Disinfection of Wells after Contamination",
+    "symptoms": ["not applicable"],
+    "guidance": "If a well is contaminated, disinfect with chlorine. Remove debris, pump out contaminated water, then add chlorine (bleach) to achieve 5‑10 mg/L residual. Wait 24 hours, then test water. If still contaminated, repeat. Protect the well from future contamination.",
+    "precautions": ["Wear gloves when handling chlorine", "Do not over‑chlorinate", "Test water before drinking", "If you have a septic tank nearby, relocate the well", "Regularly monitor the well"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_058",
+    "category": "Household Water Storage – Preventing Contamination",
+    "symptoms": ["not applicable"],
+    "guidance": "Use clean, covered containers with a narrow neck. Keep them off the floor and away from animals. Draw water with a clean ladle. Clean the container weekly. Do not store water for more than 24 hours (if untreated).",
+    "precautions": ["Do not dip hands into the water", "Keep the lid on at all times", "Store water in a cool, dark place", "Clean containers with a brush", "If you use a tap, keep it clean"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_059",
+    "category": "Safe Transport of Drinking Water",
+    "symptoms": ["not applicable"],
+    "guidance": "When carrying water from a source, use clean, covered containers. Do not use containers that previously held chemicals. Keep the container closed during transport. Avoid touching the water. Wash the outside of the container.",
+    "precautions": ["Use dedicated water containers", "Do not use containers that are cracked", "Cover the container while carrying", "Do not let children play with water containers", "If water is contaminated, treat it before transport"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_060",
+    "category": "Hygiene Promotion – Community Champions",
+    "symptoms": ["not applicable"],
+    "guidance": "Train community health workers (ASHAs, Anganwadi workers) and local leaders to promote hygiene. Use demonstrations, home visits, and group discussions. Focus on handwashing, safe water, and toilet use. Celebrate successes.",
+    "precautions": ["Involve trusted community members", "Use simple, clear messages", "Provide practical demonstrations", "Monitor progress", "Recognise and reward champions"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_061",
+    "category": "Handwashing with Soap – Critical Times",
+    "symptoms": ["not applicable"],
+    "guidance": "Always wash hands: after using the toilet, before eating, before preparing food, after handling raw meat, after coughing/sneezing, after touching animals, and after caring for a sick person. Use soap and water for at least 20 seconds.",
+    "precautions": ["Do not just rinse – use soap", "If soap is unavailable, use ash", "Wash both hands thoroughly", "Dry hands with a clean cloth", "Teach children the critical times"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_062",
+    "category": "Sanitation – Construction of Low‑Cost Toilets",
+    "symptoms": ["not applicable"],
+    "guidance": "Low‑cost options include twin‑pit pour‑flush toilets, composting toilets, and ventilated improved pit (VIP) latrines. They are affordable and environmentally friendly. Ensure proper construction to prevent groundwater contamination. Government subsidies are available.",
+    "precautions": ["Build at least 30 metres from water sources", "Ensure proper ventilation", "Keep the superstructure clean", "Empty pits safely", "Use local materials to reduce cost"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_063",
+    "category": "Use of Ash for Handwashing",
+    "symptoms": ["not applicable"],
+    "guidance": "If soap is not available, ash from wood or plant material can be used as a substitute. It has antibacterial properties. Rub ash between hands with water, then rinse. Ensure ash is clean (not from plastics or chemicals).",
+    "precautions": ["Do not use ash from plastic or treated wood", "Rinse thoroughly to avoid skin irritation", "Use ash only as a temporary measure", "Store ash in a dry place", "Promote soap as the primary option"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_064",
+    "category": "Waterless Hand Sanitiser – Correct Use",
+    "symptoms": ["not applicable"],
+    "guidance": "Use alcohol‑based hand sanitiser (≥60% alcohol) when soap and water are unavailable. Apply a palmful, rub all surfaces of hands until dry. Sanitiser is not effective on visibly dirty hands – wash with soap first if possible.",
+    "precautions": ["Do not use sanitiser with less than 60% alcohol", "Keep away from flames", "Do not ingest", "If hands are dirty, wash with soap", "Use regularly in healthcare settings"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_065",
+    "category": "Cleaning and Maintenance of Community Toilets",
+    "symptoms": ["not applicable"],
+    "guidance": "Community toilets should be cleaned daily with disinfectant. Provide cleaning supplies (bleach, mops, brushes). Assign a caretaker. Ensure proper ventilation and lighting. Encourage users to keep them clean.",
+    "precautions": ["Do not allow toilets to become dirty", "Ensure water supply for flushing", "Repair broken fixtures promptly", "Provide handwashing soap", "Monitor usage and cleanliness"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_066",
+    "category": "Solid Waste Segregation at Source",
+    "symptoms": ["not applicable"],
+    "guidance": "Separate waste at home: organic (kitchen waste) in one bin, recyclable (paper, plastic, glass) in another, and hazardous (batteries, bulbs) separately. This reduces landfill burden and enables recycling.",
+    "precautions": ["Do not mix wet and dry waste", "Wash recyclables before disposal", "Use different coloured bins", "Compost organic waste", "Support local segregation programs"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_067",
+    "category": "Reducing Single‑Use Plastic Use",
+    "symptoms": ["not applicable"],
+    "guidance": "Avoid single‑use plastics (bags, bottles, straws, cutlery). Carry reusable bags, bottles, and containers. Choose products with minimal packaging. Support policies that ban single‑use plastics.",
+    "precautions": ["Do not accept plastic bags", "Use cloth or jute bags", "Refuse plastic straws", "Bring your own container for takeaway", "Spread awareness"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_068",
+    "category": "Safe Disposal of Medical Waste (Home)",
+    "symptoms": ["not applicable"],
+    "guidance": "Used syringes, diabetic lancets, and other sharps should be placed in a puncture‑proof container (e.g., thick plastic bottle), sealed, and labelled. Dispose of through community medical waste collection programs. Do not put in regular trash.",
+    "precautions": ["Do not recap needles", "Use a sealed container", "Do not recycle sharps containers", "If you are a diabetic, use safe disposal", "Check with your local health centre for disposal options"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_069",
+    "category": "Pesticide and Chemical Storage Safety",
+    "symptoms": ["not applicable"],
+    "guidance": "Store pesticides and household chemicals in original containers, locked away from children and food. Keep in a cool, dry place. Do not use food containers for storage. Dispose of empty containers safely – do not burn or leave in the open.",
+    "precautions": ["Do not store chemicals near food", "Keep out of children's reach", "Use protective gear when handling", "Dispose of empty containers properly", "Do not use empty pesticide containers for water storage"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_070",
+    "category": "Community Participation in Sanitation",
+    "symptoms": ["not applicable"],
+    "guidance": "Community involvement is crucial for sustainable sanitation. Form village water and sanitation committees (VWSCs). Mobilise resources, monitor progress, and ensure maintenance. Involve women and marginalised groups.",
+    "precautions": ["Include all community members", "Hold regular meetings", "Monitor and evaluate", "Celebrate achievements", "Link to government schemes"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_071",
+    "category": "School Hygiene Clubs – Peer Education",
+    "symptoms": ["not applicable"],
+    "guidance": "Form hygiene clubs in schools where students learn and teach about hygiene. Activities: handwashing demonstrations, cleanliness drives, and awareness campaigns. This builds lifelong hygiene habits.",
+    "precautions": ["Make activities fun and engaging", "Provide incentives for participation", "Involve teachers and parents", "Monitor progress", "Use peer‑to‑peer learning"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_072",
+    "category": "Water and Sanitation for Persons with Disabilities",
+    "symptoms": ["not applicable"],
+    "guidance": "Ensure WASH facilities are accessible: ramps, handrails, wide doors, and accessible toilets. Provide handwashing stations at accessible heights. Include persons with disabilities in planning.",
+    "precautions": ["Design for accessibility", "Consult with persons with disabilities", "Provide assistive devices if needed", "Ensure maintenance", "Promote inclusive hygiene practices"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_073",
+    "category": "Menstrual Hygiene Management in Communities",
+    "symptoms": ["not applicable"],
+    "guidance": "Promote use of sanitary pads, menstrual cups, or clean cloths. Provide disposal facilities. Educate girls and boys about menstruation. Ensure access to clean water and private toilets in schools and workplaces.",
+    "precautions": ["Do not stigmatise menstruation", "Provide private disposal bins", "Promote reusable options with proper washing", "Ensure hygiene education", "Support girls' attendance in school during periods"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_074",
+    "category": "Safe Water for Livestock",
+    "symptoms": ["not applicable"],
+    "guidance": "Provide clean water for animals to prevent diseases that can be transmitted to humans. Keep animal watering points separate from human drinking water sources. Clean troughs regularly.",
+    "precautions": ["Do not allow animals to drink from wells", "Provide separate water sources", "Maintain cleanliness around troughs", "Monitor animal health", "If animals are sick, get veterinary help"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_075",
+    "category": "Food Handling by Street Vendors – Hygiene",
+    "symptoms": ["food poisoning, diarrhoea, typhoid"],
+    "guidance": "Street vendors should use clean water, wash hands frequently, keep food covered, and avoid touching food with bare hands. Encourage vendors to use gloves and utensils. Consumers should choose vendors who practice good hygiene.",
+    "precautions": ["Do not buy uncovered food", "Watch for cleanliness of vendor", "If possible, choose cooked hot food", "Avoid raw salads from street vendors", "Support vendor hygiene training"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_076",
+    "category": "Handwashing in Food Establishments",
+    "symptoms": ["not applicable"],
+    "guidance": "Restaurants and food stalls must have handwashing facilities with soap and water. Staff should wash hands before and after handling food, after using the toilet, and after handling raw meat. Display handwashing reminders.",
+    "precautions": ["Ensure soap and water are available", "Provide hand drying facilities", "Train staff in food hygiene", "Monitor compliance", "Encourage customers to report poor hygiene"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_077",
+    "category": "Cleaning Vegetables with Potassium Permanganate",
+    "symptoms": ["not applicable"],
+    "guidance": "Soak vegetables in water with a few crystals of potassium permanganate (to a light pink colour) for 15 minutes, then rinse thoroughly with clean water. This helps remove pesticide residues and bacteria. Use caution – do not make the water too dark.",
+    "precautions": ["Use only a tiny amount – just enough to colour the water pink", "Do not use with all vegetables – test on a small batch", "Rinse well after soaking", "Keep potassium permanganate out of children's reach", "If in doubt, wash thoroughly with plain water"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_078",
+    "category": "Vegetable Washing with Salt Water",
+    "symptoms": ["not applicable"],
+    "guidance": "Soak vegetables in salt water (1 tablespoon salt per litre) for 10–15 minutes, then rinse with clean water. This can help remove dirt and some pesticides. Not a substitute for thorough washing. Use for leafy greens and fruits.",
+    "precautions": ["Do not use too much salt", "Rinse thoroughly after soaking", "Do not use salt water for prolonged soaking", "Use only if water is safe", "Combine with regular washing"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_079",
+    "category": "Insect‑Repellent Plants – Natural Control",
+    "symptoms": ["not applicable"],
+    "guidance": "Plant lemongrass, citronella, neem, tulsi, marigold, and basil around homes to repel mosquitoes and other insects. Crush leaves to release repellent oils. This is a natural and eco‑friendly approach.",
+    "precautions": ["Do not rely solely on plants – use bed nets and repellents", "Keep plants trimmed", "Use neem oil as a natural pesticide", "If you have allergies, test a small area", "Combine with other vector control measures"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_080",
+    "category": "Use of Mosquito Nets – Proper Installation",
+    "symptoms": ["not applicable"],
+    "guidance": "Install insecticide‑treated mosquito nets (ITNs) over beds. Tuck edges under the mattress. Ensure there are no holes. Retreat nets with insecticide as recommended. Use nets all year round, especially during rainy season.",
+    "precautions": ["Do not wash ITNs with soap (may wash away insecticide)", "If nets have holes, repair them", "Use nets even during the day for young children", "If you are pregnant, use a net", "Replace nets every 2–3 years"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_081",
+    "category": "Indoor Residual Spraying (IRS) – What to Expect",
+    "symptoms": ["not applicable"],
+    "guidance": "IRS involves spraying insecticide on the inside walls of houses to kill mosquitoes. It is safe when done by trained personnel. Leave the house during spraying and for a few hours after. Do not wipe off the insecticide – it remains effective for months.",
+    "precautions": ["Do not stay indoors during spraying", "Cover food and water sources", "Do not clean the walls for at least 2 weeks", "If you have allergies, inform the spray team", "Support IRS campaigns"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_082",
+    "category": "Community Clean‑Up Drives – Organising",
+    "symptoms": ["not applicable"],
+    "guidance": "Organise regular clean‑up drives to clear trash, remove stagnant water, and clean drains. Involve all community members. Use the 'Swachh Bharat' framework. Provide gloves and masks. Dispose of collected waste properly.",
+    "precautions": ["Wear gloves and masks during clean‑up", "Do not touch hazardous waste", "Segregate waste during collection", "Promote the event in advance", "Celebrate successes and maintain momentum"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_083",
+    "category": "Safe Handling of Drinking Water in Public Places",
+    "symptoms": ["not applicable"],
+    "guidance": "In public places (train stations, bus stops), provide clean water points with proper drainage. Ensure taps are clean and functional. Use signage to encourage safe water practices. Regular maintenance is essential.",
+    "precautions": ["Do not allow people to drink from unprotected sources", "Provide handwashing facilities nearby", "Monitor water quality regularly", "If contamination is found, close the source", "Educate the public on safe water habits"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_084",
+    "category": "Water and Sanitation in Slums – Special Focus",
+    "symptoms": ["not applicable"],
+    "guidance": "Slums often lack basic WASH services. Advocate for piped water, sewers, and toilets. Community partnerships with local government are key. Use low‑cost solutions (community toilets, water kiosks). Involve residents in planning.",
+    "precautions": ["Do not ignore slum populations", "Provide safe water points", "Ensure toilets are accessible", "Promote hygiene education", "Monitor for disease outbreaks"],
+    "urgency": "high"
+  },
+  {
+    "id": "ws_085",
+    "category": "Water Testing Kits – Use and Interpretation",
+    "symptoms": ["not applicable"],
+    "guidance": "Use simple water testing kits for chlorine residual, pH, turbidity, and coliform bacteria. Follow instructions carefully. If coliform is detected, treat the water. Confirm with laboratory testing if possible.",
+    "precautions": ["Use fresh test strips", "Read results according to the time specified", "If you are unsure, repeat the test", "Keep kits out of direct sunlight", "If water fails the test, disinfect before drinking"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_086",
+    "category": "Protecting Water Sources from Animal Contamination",
+    "symptoms": ["not applicable"],
+    "guidance": "Fence water sources (wells, springs, ponds) to keep animals away. Ensure proper drainage to prevent runoff from animal areas entering water. Provide separate water for livestock.",
+    "precautions": ["Do not allow animals to defecate near water sources", "Keep water sources covered", "If animals contaminate a source, disinfect it", "Educate livestock owners", "Monitor for faecal contamination"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_087",
+    "category": "Safe Water for Infants – Formula Preparation",
+    "symptoms": ["not applicable"],
+    "guidance": "For infants under 6 months, use boiled and cooled water for formula. Boil water for 1 minute, cool to 70°C, then add formula (as per instructions). Do not use water from unsafe sources. Clean bottles and teats thoroughly.",
+    "precautions": ["Do not use untreated water for formula", "Prepare formula just before feeding", "Do not store prepared formula", "Clean bottles with hot soapy water and sterilise", "If safe water is unavailable, breastfeed exclusively"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ws_088",
+    "category": "Household Water Treatment – Tablet Use",
+    "symptoms": ["not applicable"],
+    "guidance": "Water purification tablets (chlorine, iodine) are effective. Follow dosage instructions. For cloudy water, double the dose. Wait 30 minutes before drinking. If you have thyroid conditions, consult a doctor before using iodine tablets.",
+    "precautions": ["Do not use expired tablets", "Keep tablets in a cool, dry place", "If water has a strong chlorine smell, let it stand", "If you are pregnant, avoid iodine tablets", "Use with clear water – pre‑filter if necessary"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_089",
+    "category": "Global WASH Programs – India's Swachh Bharat Abhiyan",
+    "symptoms": ["not applicable"],
+    "guidance": "Swachh Bharat Abhiyan (Clean India Mission) aims to eliminate open defecation and improve solid waste management. It promotes toilet construction, behaviour change, and cleanliness. Participate in local Swachhata drives and use government‑built toilets.",
+    "precautions": ["Use the toilets built under the program", "Keep them clean", "Encourage others to use toilets", "Report broken toilets to authorities", "Follow hygiene practices"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_090",
+    "category": "Sustainable Development Goal 6 – Clean Water and Sanitation",
+    "symptoms": ["not applicable"],
+    "guidance": "SDG 6 aims to ensure availability and sustainable management of water and sanitation for all. It includes targets on water quality, efficiency, and integrated water resource management. Support local and national efforts to achieve SDG 6.",
+    "precautions": ["Use water wisely", "Support sanitation programs", "Advocate for clean water", "Monitor progress", "Participate in campaigns"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_091",
+    "category": "Water Quality Monitoring – Citizen Science",
+    "symptoms": ["not applicable"],
+    "guidance": "Citizens can monitor water quality using simple test kits and reporting results to local authorities. Take samples from wells, rivers, and taps. Report discolouration, odour, or taste changes. This helps identify pollution early.",
+    "precautions": ["Follow proper sampling procedures", "Record sample details (location, date, time)", "Report findings to the relevant department", "Do not drink if you suspect contamination", "Encourage community participation"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_092",
+    "category": "Climate Change and Water Scarcity",
+    "symptoms": ["not applicable"],
+    "guidance": "Climate change affects water availability. Adapt by harvesting rainwater, using water‑efficient technologies, and conserving water. Advocate for sustainable water management policies. Support mitigation efforts.",
+    "precautions": ["Conserve water", "Use renewable energy", "Adapt to changing rainfall patterns", "Protect watersheds", "Stay informed about climate impacts"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_093",
+    "category": "Waterborne Disease Outbreak – Preparedness",
+    "symptoms": ["diarrhoea, vomiting, fever, dehydration"],
+    "guidance": "In an outbreak: immediately treat all drinking water (boil or chlorinate), use ORS for diarrhoea, seek medical help for severe cases, report to health authorities, and promote handwashing. Isolate contaminated sources.",
+    "precautions": ["Do not drink untreated water", "Wash hands frequently", "Cook food thoroughly", "Use ORS for early treatment", "Cooperate with outbreak investigation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ws_094",
+    "category": "Household Disinfectant – Proper Use of Bleach",
+    "symptoms": ["not applicable"],
+    "guidance": "Bleach (sodium hypochlorite) is effective for disinfecting surfaces, toilets, and water. Dilute as per instructions: for surfaces, 1:10 dilution; for water, 1–2 drops per litre (depending on concentration). Never mix bleach with acid or ammonia.",
+    "precautions": ["Use gloves and eye protection", "Do not mix with other cleaning products", "Rinse surfaces that contact food", "Keep out of children's reach", "If you get bleach on skin, wash immediately"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_095",
+    "category": "Emergency Toilet – Construction and Use",
+    "symptoms": ["not applicable"],
+    "guidance": "In emergencies, construct a simple pit toilet: dig a shallow pit (1–2 metres deep), cover with a platform, and provide a superstructure for privacy. Always keep the pit covered when not in use. Use ash or lime to control odour and flies.",
+    "precautions": ["Site the pit at least 30 metres from water sources", "Keep the toilet clean", "Use a lid to cover the hole", "If the pit is full, fill with soil and dig a new one", "Wash hands after use"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ws_096",
+    "category": "Water Conservation in Agriculture – Drip Irrigation",
+    "symptoms": ["not applicable"],
+    "guidance": "Drip irrigation reduces water use by delivering water directly to plant roots. It is efficient and can double crop yield with less water. Use mulching to reduce evaporation. Government subsidies are often available.",
+    "precautions": ["Install and maintain the system properly", "Use filters to prevent clogging", "Monitor water pressure", "Combine with rainwater harvesting", "Train farmers in its use"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_097",
+    "category": "Water Reuse – Treated Wastewater for Agriculture",
+    "symptoms": ["not applicable"],
+    "guidance": "Treated wastewater can be used for irrigation, reducing freshwater demand. Ensure proper treatment to remove pathogens and chemicals. Follow safety guidelines. Use drip irrigation to reduce exposure.",
+    "precautions": ["Do not use untreated wastewater", "Avoid contact with crops eaten raw", "Monitor soil quality", "Use protective gear when handling", "Follow local regulations"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_098",
+    "category": "Water Filtration – Slow Sand Filters",
+    "symptoms": ["not applicable"],
+    "guidance": "Slow sand filters are effective for community water treatment. They remove bacteria and suspended matter. Maintain by cleaning the surface layer periodically. They are inexpensive and suitable for rural areas.",
+    "precautions": ["Do not let the filter dry out", "Clean the surface regularly", "Monitor flow rate", "If water becomes turbid, allow settling before filtration", "Backwash periodically"],
+    "urgency": "low"
+  },
+  {
+    "id": "ws_099",
+    "category": "Hygiene in Flood‑Affected Areas – Practical Guide",
+    "symptoms": ["skin infections, diarrhoea, respiratory infections"],
+    "guidance": "After floods: assume all water is contaminated. Use safe water for drinking, cooking, and washing. Clean mud and debris, disinfect surfaces, use mosquito nets, and treat wounds promptly. Seek medical help for fever or diarrhoea.",
+    "precautions": ["Do not drink floodwater", "Wear boots when wading", "Disinfect cuts promptly", "Use mosquito repellent", "Participate in community hygiene efforts"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ws_100",
+    "category": "WASH in Hostels and Boarding Schools",
+    "symptoms": ["not applicable"],
+    "guidance": "Ensure hostels have adequate toilets, clean water, and handwashing facilities. Provide separate facilities for girls and boys. Maintain cleanliness daily. Educate students on personal hygiene. Monitor for water‑borne diseases.",
+    "precautions": ["Provide adequate toilets (ratio 1:20)", "Ensure water supply is continuous", "Keep toilets clean and supplied with soap", "Train staff in hygiene promotion", "Encourage students to report issues"],
+    "urgency": "low"
+  }
+]

@@ -1,4 +1,4 @@
-faster-whisper
 fastapi
 uvicorn
 python-multipart
+pydantic

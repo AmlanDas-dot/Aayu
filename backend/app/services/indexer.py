@@ -6,13 +6,15 @@ Called during FastAPI startup.
 
 Design:
   - Uses upsert to prevent duplicate documents on repeated restarts
-  - Collections map 1:1 to JSON files
+  - Collections auto-discovered from healthknowledge/ directory
   - Metadata from each JSON entry is preserved in ChromaDB for filtering
-  - Future datasets: add an entry to DATA_FILES dict — no other changes needed
+  - Schema detection: "content" key → document schema, "symptoms"/"guidance" → structured schema
+  - Add new JSON files to healthknowledge/ directory — indexer picks them up automatically
 """
 
 from __future__ import annotations
 
+import glob
 import json
 import logging
 import os
@@ -23,34 +25,132 @@ from app.services.vector_db_service import VectorDBService
 logger = logging.getLogger(__name__)
 
 # --------------------------------------------------------------------------- #
-# Data file registry — add new knowledge bases here
+# Data directory paths
 # --------------------------------------------------------------------------- #
 
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-
-DATA_FILES: dict[str, str] = {
-    "first_aid": "first_aid.json",
-    "medical_guidance": "medical_guidance.json",
-    "emergency_guidance": "emergency_guidance.json",
-}
+_KNOWLEDGE_DIR = os.path.join(_DATA_DIR, "healthknowledge")
 
 
 # --------------------------------------------------------------------------- #
-# Indexer
+# Auto-discovery of knowledge collections
 # --------------------------------------------------------------------------- #
 
-def _load_json(filename: str) -> list[dict[str, Any]]:
-    path = os.path.join(_DATA_DIR, filename)
-    if not os.path.exists(path):
-        logger.warning("[Indexer] Data file not found: %s", path)
+def list_knowledge_collections() -> dict[str, str]:
+    """
+    Discover all JSON files in healthknowledge/ directory.
+    
+    Returns
+    -------
+    dict mapping collection_name → friendly_description
+    """
+    collections = {}
+    
+    if not os.path.exists(_KNOWLEDGE_DIR):
+        logger.warning("[Indexer] Knowledge directory not found: %s", _KNOWLEDGE_DIR)
+        return collections
+    
+    # Find all .json files
+    json_files = glob.glob(os.path.join(_KNOWLEDGE_DIR, "*.json"))
+    
+    for filepath in json_files:
+        # Extract collection name from filename (without .json)
+        filename = os.path.basename(filepath)
+        collection_name = os.path.splitext(filename)[0]
+        
+        # Build a friendly description from filename
+        friendly_desc = collection_name.replace("_", " ").title()
+        collections[collection_name] = friendly_desc
+    
+    return collections
+
+
+def _load_json(filepath: str) -> list[dict[str, Any]]:
+    """Load JSON from file, handling errors gracefully."""
+    if not os.path.exists(filepath):
+        logger.warning("[Indexer] Data file not found: %s", filepath)
         return []
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(filepath, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as exc:
+        logger.error("[Indexer] Failed to load JSON from %s: %s", filepath, exc)
+        return []
 
+
+def _build_doc(entry: dict[str, Any], collection_name: str) -> tuple[str | None, str, dict[str, Any]]:
+    """
+    Build a document from an entry, detecting schema automatically.
+    
+    Supports two schemas:
+    1. "document" schema: {id, title, category, content, tags, source, ...}
+    2. "structured" schema: {id, category, symptoms, guidance, precautions, urgency, [first_aid], ...}
+    
+    Returns (doc_id, full_text, metadata) or (None, "", {}) if document invalid.
+    """
+    doc_id = entry.get("id", "")
+    if not doc_id:
+        return None, "", {}
+    
+    # Detect schema: "content" key = document schema, otherwise = structured
+    if "content" in entry:
+        # Document schema
+        title = entry.get("title", "")
+        content = entry.get("content", "")
+        category = entry.get("category", "")
+        tags = entry.get("tags", [])
+        source = entry.get("source", "")
+        urgency = entry.get("urgency", "")
+        
+        # Build rich text for embedding
+        full_text = f"{title}. {content}"
+        
+        metadata = {
+            "title": title,
+            "category": category,
+            "source": source,
+            "tags": ", ".join(tags) if tags else "",
+            "urgency": urgency,
+            "collection": collection_name,
+        }
+    else:
+        # Structured schema: medical/health guidance
+        category = entry.get("category", "")
+        symptoms = entry.get("symptoms", [])
+        guidance = entry.get("guidance", "")
+        precautions = entry.get("precautions", [])
+        urgency = entry.get("urgency", "")
+        first_aid = entry.get("first_aid", "")
+        
+        # Build rich text for embedding
+        symptoms_text = ". ".join(symptoms) if symptoms else ""
+        precautions_text = ". ".join(precautions) if precautions else ""
+        full_text = (
+            f"{category}. Symptoms: {symptoms_text}. "
+            f"Guidance: {guidance}. Precautions: {precautions_text}."
+        )
+        if first_aid:
+            full_text += f" First Aid: {first_aid}."
+        
+        metadata = {
+            "title": category,
+            "category": category,
+            "source": "AAYU Health Knowledge Base",
+            "tags": ", ".join(symptoms[:3]) if symptoms else "",  # Top 3 symptoms as tags
+            "urgency": urgency,
+            "collection": collection_name,
+        }
+    
+    return doc_id, full_text, metadata
+
+
+# --------------------------------------------------------------------------- #
+# Main indexing functions
+# --------------------------------------------------------------------------- #
 
 def index_knowledge_base(force_reindex: bool = False) -> dict[str, int]:
     """
-    Index all knowledge base files into ChromaDB.
+    Auto-discover and index all knowledge base files from healthknowledge/ directory.
 
     Parameters
     ----------
@@ -64,64 +164,76 @@ def index_knowledge_base(force_reindex: bool = False) -> dict[str, int]:
     """
     db = VectorDBService.get_instance()
     indexed: dict[str, int] = {}
-
-    for collection_name, filename in DATA_FILES.items():
+    
+    # Auto-discover collections
+    collections = list_knowledge_collections()
+    logger.info("[Indexer] Discovered %d health knowledge collections.", len(collections))
+    
+    for collection_name in collections:
         try:
-            entries = _load_json(filename)
+            filepath = os.path.join(_KNOWLEDGE_DIR, f"{collection_name}.json")
+            entries = _load_json(filepath)
+            
             if not entries:
-                logger.warning("[Indexer] No entries in %s — skipping.", filename)
+                logger.warning("[Indexer] No entries in %s — skipping.", collection_name)
                 continue
-
+            
             if force_reindex:
                 logger.info("[Indexer] Force reindex: dropping collection '%s'.", collection_name)
                 try:
                     db.delete_collection(collection_name)
                 except Exception:
                     pass  # Collection might not exist yet
-
+            
             documents: list[str] = []
             ids: list[str] = []
             metadatas: list[dict[str, Any]] = []
-
+            seen_ids: set[str] = set()
+            
             for entry in entries:
-                doc_id = entry.get("id", "")
-                content = entry.get("content", "")
-                if not doc_id or not content:
+                result = _build_doc(entry, collection_name)
+                if result is None:
+                    continue
+                doc_id, full_text, metadata = result
+                if not doc_id or not full_text:
                     continue
 
-                # Combine title + content for richer embeddings
-                full_text = f"{entry.get('title', '')}. {content}"
-
+                # ── Dedup: prefix with collection name to guarantee uniqueness ──
+                safe_id = f"{collection_name}__{doc_id}"
+                if safe_id in seen_ids:
+                    logger.warning(
+                        "[Indexer] Duplicate ID '%s' in '%s' — skipping duplicate.",
+                        doc_id, collection_name,
+                    )
+                    continue
+                seen_ids.add(safe_id)
+                
                 documents.append(full_text)
-                ids.append(doc_id)
-                metadatas.append(
-                    {
-                        "title": entry.get("title", ""),
-                        "category": entry.get("category", ""),
-                        "source": entry.get("source", ""),
-                        "tags": ", ".join(entry.get("tags", [])),
-                        "collection": collection_name,
-                    }
-                )
-
+                ids.append(safe_id)
+                metadatas.append(metadata)
+            
+            if not documents:
+                logger.warning("[Indexer] No valid documents in %s.", collection_name)
+                continue
+            
             db.upsert_documents(
                 collection_name=collection_name,
                 documents=documents,
                 ids=ids,
                 metadatas=metadatas,
             )
-
+            
             indexed[collection_name] = len(documents)
             logger.info(
                 "[Indexer] Indexed %d documents into '%s'.",
                 len(documents),
                 collection_name,
             )
-
+        
         except Exception as exc:
             logger.error("[Indexer] Failed to index '%s': %s", collection_name, exc)
             indexed[collection_name] = 0
-
+    
     return indexed
 
 
@@ -135,108 +247,160 @@ def index_nutrition_and_schemes(force_reindex: bool = False) -> dict[str, int]:
     Both datasets use a different schema from the medical knowledge base,
     so they are handled separately from index_knowledge_base().
     """
-    import os as _os
     db = VectorDBService.get_instance()
     indexed: dict[str, int] = {}
 
-    # ── Nutrition ──────────────────────────────────────────────────────────
-    nutrition_path = _os.path.join(_DATA_DIR, "nutrition", "foods.json")
+    # -- Nutrition (auto-discover all *.json files in nutrition/) ─────────────
+    nutrition_dir = os.path.join(_DATA_DIR, "nutrition")
     try:
-        with open(nutrition_path, encoding="utf-8") as f:
-            import json as _json
-            foods = _json.load(f)
+        import glob as _glob
+        nutrition_files = sorted(_glob.glob(os.path.join(nutrition_dir, "*.json")))
+        if not nutrition_files:
+            logger.warning("[Indexer] No nutrition files in %s — skipping.", nutrition_dir)
+            indexed["nutrition"] = 0
+        else:
+            if force_reindex:
+                try:
+                    db.delete_collection("nutrition")
+                except Exception:
+                    pass
 
-        if force_reindex:
-            try:
-                db.delete_collection("nutrition")
-            except Exception:
-                pass
+            documents, ids, metas = [], [], []
+            seen_ids: set[str] = set()
 
-        documents: list[str] = []
-        ids: list[str] = []
-        metadatas: list[dict] = []
+            for nf in nutrition_files:
+                source_name = os.path.splitext(os.path.basename(nf))[0]
+                with open(nf, encoding="utf-8") as f:
+                    items = json.load(f)
 
-        for food in foods:
-            name = food.get("name", "")
-            if not name:
-                continue
-            # Build a rich text document for embedding
-            good_for = ", ".join(food.get("good_for", []))
-            rich_in  = ", ".join(food.get("rich_in", []))
-            doc_text = (
-                f"{name}. Category: {food.get('category', '')}. "
-                f"Rich in: {rich_in}. Good for: {good_for}. "
-                f"Avoid if: {', '.join(food.get('avoid_if', []))}."
-            )
-            doc_id = f"nutrition_{name.lower().replace(' ', '_').replace('(', '').replace(')', '')[:40]}"
-            documents.append(doc_text)
-            ids.append(doc_id)
-            metadatas.append({
-                "title": name,
-                "category": food.get("category", ""),
-                "source": "AAYU Nutrition Database",
-                "tags": rich_in,
-                "collection": "nutrition",
-            })
+                for item in items:
+                    item_id = str(item.get("id", ""))
+                    if not item_id:
+                        continue
 
-        if documents:
-            db.upsert_documents("nutrition", documents, ids, metadatas)
-            logger.info("[Indexer] Upserted %d food items into 'nutrition'.", len(documents))
-        indexed["nutrition"] = len(documents)
+                    # Prefix with filename to guarantee uniqueness across files
+                    safe_id = f"nutrition__{source_name}__{item_id}"
+                    if safe_id in seen_ids:
+                        continue
+                    seen_ids.add(safe_id)
 
-    except FileNotFoundError:
-        logger.warning("[Indexer] Nutrition data not found at %s — skipping.", nutrition_path)
-        indexed["nutrition"] = 0
+                    # Schema 1: disease-diet mapping {disease, recommended_foods, avoid_foods}
+                    if "disease" in item:
+                        disease = item.get("disease", "")
+                        rec = item.get("recommended_foods", [])
+                        avoid = item.get("avoid_foods", [])
+                        guidance = item.get("guidance", "")
+                        doc_text = (
+                            f"Nutrition for {disease}. "
+                            f"Recommended: {', '.join(rec)}. "
+                            f"Avoid: {', '.join(avoid)}. "
+                            f"Guidance: {guidance}"
+                        )
+                        title = f"Diet for {disease}"
+                        tags = ", ".join(rec[:5])
+
+                    # Schema 2: pregnancy nutrition {category, focus, recommended_foods}
+                    elif "focus" in item:
+                        category = item.get("category", "")
+                        focus = item.get("focus", "")
+                        rec = item.get("recommended_foods", [])
+                        avoid = item.get("avoid_foods", [])
+                        guidance = item.get("guidance", "")
+                        doc_text = (
+                            f"Pregnancy nutrition — {category}: {focus}. "
+                            f"Recommended: {', '.join(rec)}. "
+                            f"Avoid: {', '.join(avoid)}. {guidance}"
+                        )
+                        title = f"Pregnancy: {category}"
+                        tags = ", ".join(rec[:5])
+
+                    # Schema 3: food item {name, nutrients, benefits, good_for}
+                    else:
+                        name = item.get("name", item_id.replace("_", " ").title())
+                        nutrients = item.get("nutrients", {})
+                        benefits = item.get("benefits", [])
+                        good_for = item.get("good_for", [])
+                        best_time = item.get("best_time", "")
+                        nutrient_str = (
+                            ", ".join(f"{k}: {v}" for k, v in nutrients.items())
+                            if isinstance(nutrients, dict) else str(nutrients)
+                        )
+                        doc_text = (
+                            f"{name}. Nutrients: {nutrient_str}. "
+                            f"Benefits: {', '.join(benefits)}. "
+                            f"Good for: {', '.join(good_for)}. "
+                            f"Best time to eat: {best_time}."
+                        )
+                        title = name
+                        tags = ", ".join(good_for[:5])
+
+                    documents.append(doc_text)
+                    ids.append(safe_id)
+                    metas.append({
+                        "title": title,
+                        "category": source_name,
+                        "source": "AAYU Nutrition",
+                        "tags": tags,
+                        "urgency": item.get("urgency", "low"),
+                        "collection": "nutrition",
+                    })
+
+            if documents:
+                db.upsert_documents("nutrition", documents, ids, metas)
+                logger.info("[Indexer] Upserted %d nutrition entries.", len(documents))
+            indexed["nutrition"] = len(documents)
+
     except Exception as exc:
         logger.error("[Indexer] Failed to index nutrition: %s", exc)
         indexed["nutrition"] = 0
 
-    # ── Schemes ────────────────────────────────────────────────────────────
-    schemes_path = _os.path.join(_DATA_DIR, "schemes", "schemes.json")
+    # -- Schemes (auto-discover all *.json files in schemes/) ────────────────
+    schemes_dir = os.path.join(_DATA_DIR, "schemes")
     try:
-        with open(schemes_path, encoding="utf-8") as f:
-            import json as _json
-            schemes = _json.load(f)
+        import glob as _glob
+        scheme_files = sorted(_glob.glob(os.path.join(schemes_dir, "*.json")))
+        if not scheme_files:
+            logger.warning("[Indexer] No scheme files found in %s — skipping.", schemes_dir)
+            indexed["schemes"] = 0
+        else:
+            if force_reindex:
+                try:
+                    db.delete_collection("schemes")
+                except Exception:
+                    pass
 
-        if force_reindex:
-            try:
-                db.delete_collection("schemes")
-            except Exception:
-                pass
+            documents, ids, metas = [], [], []
+            for sf in scheme_files:
+                with open(sf, encoding="utf-8") as f:
+                    schemes = json.load(f)
+                source_name = os.path.splitext(os.path.basename(sf))[0]
+                for scheme in schemes:
+                    name = scheme.get("name", "")
+                    if not name:
+                        continue
+                    doc_text = (
+                        f"{name}. State: {scheme.get('state', '')}. "
+                        f"Category: {scheme.get('category', '')}. "
+                        f"{scheme.get('description', '')} "
+                        f"Eligibility: {scheme.get('eligibility', '')}. "
+                        f"Benefits: {scheme.get('benefits', '')}."
+                    )
+                    doc_id = f"scheme_{name.lower().replace(' ', '_').replace('(','').replace(')','')[:50]}"
+                    documents.append(doc_text)
+                    ids.append(doc_id)
+                    metas.append({
+                        "title": name,
+                        "category": scheme.get("state", ""),
+                        "source": source_name,
+                        "tags": scheme.get("category", ""),
+                        "collection": "schemes",
+                    })
 
-        documents = []
-        ids = []
-        metadatas = []
+            if documents:
+                db.upsert_documents("schemes", documents, ids, metas)
+                logger.info("[Indexer] Upserted %d schemes into 'schemes'.", len(documents))
+            indexed["schemes"] = len(documents)
 
-        for scheme in schemes:
-            name = scheme.get("name", "")
-            if not name:
-                continue
-            doc_text = (
-                f"{name}. State: {scheme.get('state', '')}. "
-                f"{scheme.get('description', '')} "
-                f"Eligibility: {scheme.get('eligibility', '')}. "
-                f"Benefits: {scheme.get('benefits', '')}."
-            )
-            doc_id = f"scheme_{name.lower().replace(' ', '_').replace('(', '').replace(')', '')[:40]}"
-            documents.append(doc_text)
-            ids.append(doc_id)
-            metadatas.append({
-                "title": name,
-                "category": scheme.get("state", ""),
-                "source": "AAYU Government Schemes Database",
-                "tags": scheme.get("state", ""),
-                "collection": "schemes",
-            })
-
-        if documents:
-            db.upsert_documents("schemes", documents, ids, metadatas)
-            logger.info("[Indexer] Upserted %d schemes into 'schemes'.", len(documents))
-        indexed["schemes"] = len(documents)
-
-    except FileNotFoundError:
-        logger.warning("[Indexer] Schemes data not found at %s — skipping.", schemes_path)
-        indexed["schemes"] = 0
     except Exception as exc:
         logger.error("[Indexer] Failed to index schemes: %s", exc)
         indexed["schemes"] = 0
@@ -245,14 +409,18 @@ def index_nutrition_and_schemes(force_reindex: bool = False) -> dict[str, int]:
 
 
 def get_index_status() -> dict[str, Any]:
-    """Return current document counts for all collections (medical KB + nutrition + schemes)."""
+    """Return current document counts for all collections (health KB + nutrition + schemes)."""
     db = VectorDBService.get_instance()
     status: dict[str, Any] = {}
-    all_collections = list(DATA_FILES.keys()) + ["nutrition", "schemes"]
+    
+    # Get status of auto-discovered health knowledge collections
+    all_collections = list(list_knowledge_collections().keys()) + ["nutrition", "schemes"]
+    
     for collection_name in all_collections:
         try:
             count = db.collection_count(collection_name)
             status[collection_name] = {"indexed": True, "document_count": count}
         except Exception:
             status[collection_name] = {"indexed": False, "document_count": 0}
+    
     return status

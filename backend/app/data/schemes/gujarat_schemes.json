@@ -1,0 +1,251 @@
+[
+  {
+    "name": "Mukhyamantri Amrutam (MA) Yojana",
+    "state": "Gujarat",
+    "category": "Health",
+    "description": "Flagship health insurance scheme providing cashless treatment to economically weaker families.",
+    "eligibility": "BPL families and eligible low-income households.",
+    "benefits": "Cashless treatment for major illnesses at empanelled hospitals.",
+    "documents_required": [
+      "MA Card",
+      "Aadhaar Card",
+      "Ration Card"
+    ],
+    "official_link": "https://magujarat.com/"
+  },
+  {
+    "name": "Mukhyamantri Amrutam Vatsalya (MAV)",
+    "state": "Gujarat",
+    "category": "Health",
+    "description": "Extension of MA Yojana for lower-middle-income families.",
+    "eligibility": "Eligible non-BPL families under income criteria.",
+    "benefits": "Cashless hospitalization coverage.",
+    "documents_required": [
+      "MAV Card",
+      "Income Certificate",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://magujarat.com/"
+  },
+  {
+    "name": "Chiranjeevi Yojana",
+    "state": "Gujarat",
+    "category": "Maternal Health",
+    "description": "Provides free institutional delivery services through private hospitals.",
+    "eligibility": "Pregnant women from eligible families.",
+    "benefits": "Free delivery and maternal healthcare services.",
+    "documents_required": [
+      "Aadhaar Card",
+      "Pregnancy Registration Card"
+    ],
+    "official_link": "https://gujhealth.gujarat.gov.in/"
+  },
+  {
+    "name": "Bal Sakha Yojana",
+    "state": "Gujarat",
+    "category": "Child Health",
+    "description": "Healthcare support for newborns and infants.",
+    "eligibility": "Newborn babies from eligible families.",
+    "benefits": "Free pediatric consultations and care.",
+    "documents_required": [
+      "Birth Record",
+      "Parent Aadhaar"
+    ],
+    "official_link": "https://gujhealth.gujarat.gov.in/"
+  },
+  {
+    "name": "Vahli Dikri Yojana",
+    "state": "Gujarat",
+    "category": "Girl Child Welfare",
+    "description": "Financial assistance scheme for girl children.",
+    "eligibility": "Eligible families with girl children.",
+    "benefits": "Financial support at different educational stages.",
+    "documents_required": [
+      "Birth Certificate",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://wcd.gujarat.gov.in/"
+  },
+  {
+    "name": "Kunvarbai Nu Mameru",
+    "state": "Gujarat",
+    "category": "Women Welfare",
+    "description": "Financial assistance for marriage of daughters from economically weaker families.",
+    "eligibility": "Eligible low-income families.",
+    "benefits": "Marriage assistance grant.",
+    "documents_required": [
+      "Income Certificate",
+      "Aadhaar Card",
+      "Marriage Registration"
+    ],
+    "official_link": "https://esamajkalyan.gujarat.gov.in/"
+  },
+  {
+    "name": "Mukhyamantri Mahila Utkarsh Yojana",
+    "state": "Gujarat",
+    "category": "Women Empowerment",
+    "description": "Support scheme for women Self Help Groups.",
+    "eligibility": "Women SHGs in Gujarat.",
+    "benefits": "Interest-free loans and livelihood support.",
+    "documents_required": [
+      "SHG Registration",
+      "Bank Account",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://ruraldev.gujarat.gov.in/"
+  },
+  {
+    "name": "Namo Lakshmi Yojana",
+    "state": "Gujarat",
+    "category": "Education",
+    "description": "Financial support scheme for girl students.",
+    "eligibility": "Girls studying in government and aided schools.",
+    "benefits": "Annual financial incentives for continuing education.",
+    "documents_required": [
+      "School ID",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://www.gujaratindia.gov.in/"
+  },
+  {
+    "name": "Namo Saraswati Yojana",
+    "state": "Gujarat",
+    "category": "Education",
+    "description": "Encourages science education among students.",
+    "eligibility": "Students pursuing science streams.",
+    "benefits": "Scholarship and educational support.",
+    "documents_required": [
+      "School Records",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://www.gujaratindia.gov.in/"
+  },
+  {
+    "name": "Digital Gujarat Scholarship",
+    "state": "Gujarat",
+    "category": "Education",
+    "description": "Scholarship portal for students from various categories.",
+    "eligibility": "Eligible SC, ST, OBC, EWS and other students.",
+    "benefits": "Educational scholarships.",
+    "documents_required": [
+      "Income Certificate",
+      "Student ID",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://www.digitalgujarat.gov.in/"
+  },
+  {
+    "name": "Ikhedut Portal Schemes",
+    "state": "Gujarat",
+    "category": "Agriculture",
+    "description": "Online platform for farmer subsidies and assistance.",
+    "eligibility": "Farmers in Gujarat.",
+    "benefits": "Subsidies for equipment, irrigation and farming activities.",
+    "documents_required": [
+      "Farmer Registration",
+      "Land Records",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://ikhedut.gujarat.gov.in/"
+  },
+  {
+    "name": "Gujarat Kisan Sahay Yojana",
+    "state": "Gujarat",
+    "category": "Agriculture",
+    "description": "Provides compensation for crop loss due to natural calamities.",
+    "eligibility": "Farmers affected by crop damage.",
+    "benefits": "Financial assistance for crop loss.",
+    "documents_required": [
+      "Land Records",
+      "Farmer Registration",
+      "Bank Account"
+    ],
+    "official_link": "https://agricoop.gujarat.gov.in/"
+  },
+  {
+    "name": "Dr. Savitaben Ambedkar Inter-Caste Marriage Assistance Scheme",
+    "state": "Gujarat",
+    "category": "Social Welfare",
+    "description": "Promotes inter-caste marriages through financial assistance.",
+    "eligibility": "Eligible inter-caste married couples.",
+    "benefits": "Financial grant.",
+    "documents_required": [
+      "Marriage Certificate",
+      "Identity Proof",
+      "Bank Account"
+    ],
+    "official_link": "https://esamajkalyan.gujarat.gov.in/"
+  },
+  {
+    "name": "Ganga Swarupa Arthik Sahay Yojana",
+    "state": "Gujarat",
+    "category": "Women Welfare",
+    "description": "Financial assistance for widowed women.",
+    "eligibility": "Widowed women meeting income criteria.",
+    "benefits": "Monthly financial support.",
+    "documents_required": [
+      "Widow Certificate",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://sje.gujarat.gov.in/"
+  },
+  {
+    "name": "Sant Surdas Scheme",
+    "state": "Gujarat",
+    "category": "Disability Welfare",
+    "description": "Financial support scheme for visually impaired persons.",
+    "eligibility": "Visually impaired citizens.",
+    "benefits": "Monthly assistance and welfare support.",
+    "documents_required": [
+      "Disability Certificate",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://sje.gujarat.gov.in/"
+  },
+  {
+    "name": "Shramyogi Shikshan Sahay Yojana",
+    "state": "Gujarat",
+    "category": "Labour Welfare",
+    "description": "Educational assistance for children of registered labourers.",
+    "eligibility": "Children of registered labour workers.",
+    "benefits": "Scholarships and educational assistance.",
+    "documents_required": [
+      "Labour Registration",
+      "Student Certificate",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://sanman.gujarat.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana (State Implementation)",
+    "state": "Gujarat",
+    "category": "Housing",
+    "description": "Affordable housing assistance for eligible families.",
+    "eligibility": "Urban and rural eligible families.",
+    "benefits": "Housing subsidy and financial assistance.",
+    "documents_required": [
+      "Income Certificate",
+      "Aadhaar Card",
+      "Bank Account"
+    ],
+    "official_link": "https://gujaratpmay.gujarat.gov.in/"
+  },
+  {
+    "name": "Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+    "state": "Gujarat",
+    "category": "Education",
+    "description": "Scholarship and financial assistance for higher education.",
+    "eligibility": "Meritorious students meeting income criteria.",
+    "benefits": "Tuition fee assistance and scholarships.",
+    "documents_required": [
+      "Mark Sheets",
+      "Income Certificate",
+      "Aadhaar Card"
+    ],
+    "official_link": "https://mysy.guj.nic.in/"
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "id": "skin_001",
+    "category": "Atopic Dermatitis (Eczema)",
+    "symptoms": ["dry, itchy, scaly skin", "red or brownish patches (especially on flexural areas)", "cracked, oozing, or crusted skin", "thickened skin from chronic scratching (lichenification)", "symptoms often flare in winter or with stress"],
+    "guidance": "Use gentle, fragrance-free moisturizers multiple times daily. Avoid harsh soaps and hot water. Topical corticosteroids are first-line for flares. For moderate-severe cases, calcineurin inhibitors or biologics (dupilumab) may be needed. Avoid known triggers. Free consultations are available at government dermatology clinics.",
+    "precautions": ["Avoid scratching – keep nails short", "Use mild, soap-free cleansers", "Apply moisturizer immediately after bathing", "Wear soft, breathable cotton clothing", "Identify and avoid food/environmental triggers"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_002",
+    "category": "Seborrheic Dermatitis (Dandruff)",
+    "symptoms": ["greasy, yellowish scales on scalp, eyebrows, nasolabial folds, chest", "mild redness", "itching", "flaking (dandruff)", "may worsen in winter or with stress"],
+    "guidance": "Use medicated shampoos containing ketoconazole, zinc pyrithione, or selenium sulfide. For facial involvement, use antifungal cream (ketoconazole). In severe cases, topical corticosteroids may be used. Maintenance therapy is often needed.",
+    "precautions": ["Wash hair regularly with anti-dandruff shampoos", "Avoid oily scalp products", "Manage stress", "If scalp lesions persist, see a dermatologist", "Do not scratch – can cause secondary infection"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_003",
+    "category": "Rosacea (Acne Rosacea)",
+    "symptoms": ["facial redness (erythema) over cheeks, nose, chin", "visible blood vessels (telangiectasia)", "flushing and blushing easily", "papules and pustules (resembling acne)", "ocular symptoms (dry, irritated eyes)", "thickening of skin (rhinophyma) in severe cases"],
+    "guidance": "Avoid triggers: sun exposure, spicy foods, alcohol, and extreme temperatures. Topical metronidazole, azelaic acid, or ivermectin are first-line. Oral antibiotics (doxycycline) for moderate-severe. Laser therapy for telangiectasia. Protect skin with sunscreen (SPF 50+).",
+    "precautions": ["Use broad-spectrum sunscreen daily", "Avoid hot beverages and spicy foods", "Manage stress", "Do not use harsh exfoliants", "Consult a dermatologist for prescription treatments"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_004",
+    "category": "Perioral Dermatitis",
+    "symptoms": ["small, red, scaly papules around the mouth, nose, and eyes", "spares the vermilion border of the lips", "mild itching or burning", "may be flaky or crusty"],
+    "guidance": "Stop use of topical steroids (they can worsen). Use topical metronidazole, erythromycin, or pimecrolimus. Avoid heavy creams, occlusive cosmetics, and fluoride toothpaste (may help). In severe cases, oral antibiotics (doxycycline).",
+    "precautions": ["Avoid harsh face washes", "Do not use topical steroids on the face", "Use non-comedogenic skincare", "Avoid fluoride toothpaste if sensitive", "Consult a dermatologist for treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_005",
+    "category": "Acne Vulgaris (General)",
+    "symptoms": ["comedones (blackheads, whiteheads)", "papules, pustules, nodules, cysts", "oily skin", "inflammation, redness", "scarring (post-inflammatory hyperpigmentation, pits)"],
+    "guidance": "Over-the-counter benzoyl peroxide, salicylic acid, or retinoids (adapalene). For moderate-severe, prescription topical retinoids, antibiotics, or oral isotretinoin. Hormonal therapy (OCPs, spironolactone) for women. Lifestyle: avoid picking, use non-comedogenic products.",
+    "precautions": ["Do not squeeze or pop pimples", "Use gentle cleansers", "Avoid heavy, greasy cosmetics", "If on isotretinoin, avoid pregnancy (contraception mandatory)", "Regular follow-up with dermatologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_006",
+    "category": "Hidradenitis Suppurativa (HS)",
+    "symptoms": ["recurrent, painful, deep-seated inflamed nodules and abscesses in intertriginous areas (axillae, groin, breasts, buttocks)", "tunnels under the skin (sinus tracts)", "purulent discharge", "scarring", "chronic relapsing"],
+    "guidance": "Weight loss and smoking cessation are critical. Topical clindamycin, oral antibiotics (tetracyclines, rifampicin), and biologics (adalimumab) for moderate-severe. Surgical deroofing or excision for sinus tracts. Free biologics are available at some government hospitals. Warm compresses help.",
+    "precautions": ["Stop smoking", "Lose weight if overweight", "Wear loose-fitting clothes", "Avoid shaving affected areas", "Maintain good hygiene"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_007",
+    "category": "Lichen Planus (Cutaneous)",
+    "symptoms": ["pruritic, polygonal, flat-topped, violaceous papules and plaques", "often on wrists, ankles, lower back, and flexor surfaces", "Wickham's striae (white, lacy lines on surface)", "Koebner phenomenon (lesions at sites of trauma)"],
+    "guidance": "Topical corticosteroids are first-line. For extensive disease, phototherapy (UVB) or systemic corticosteroids. Oral involvement may need topical steroids or tacrolimus. Avoid trauma to skin. Regular follow-up to monitor for malignant transformation (rare).",
+    "precautions": ["Avoid scratching – can cause Koebnerization", "Use topical steroids as prescribed", "Monitor for oral lesions", "If oral lesions persist, see a dentist/ENT", "Stress management"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_008",
+    "category": "Pityriasis Rosea",
+    "symptoms": ["herald patch (large pink patch, often on trunk)", "followed by multiple smaller oval pink/scaly patches on trunk and proximal limbs (Christmas tree pattern)", "mild itching", "may have preceding viral symptoms"],
+    "guidance": "Self-limiting (6-8 weeks). Treatment is symptomatic: antihistamines for itching, and UVB phototherapy for severe or prolonged cases. Avoid using topical steroids on the face. Reassurance is key.",
+    "precautions": ["Avoid harsh soaps", "Keep skin moisturized", "If itching is severe, use antihistamines", "Do not apply strong steroids without advice", "Monitor for resolution – if persistent, see a dermatologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_009",
+    "category": "Tinea Corporis (Ringworm of the Body)",
+    "symptoms": ["annular, scaly, erythematous plaque with central clearing", "expanding border", "itching", "may have satellite lesions"],
+    "guidance": "Topical antifungals (clotrimazole, terbinafine, miconazole) for 2-4 weeks. For extensive or tinea capitis, oral terbinafine or griseofulvin. Keep the area dry and avoid sharing personal items.",
+    "precautions": ["Keep skin dry", "Do not share towels or clothing", "Wash bedding in hot water", "If on oral antifungals, monitor liver function", "Complete the full course"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_010",
+    "category": "Tinea Cruris (Jock Itch)",
+    "symptoms": ["itchy, red, scaly rash in the groin and inner thighs", "bilateral, sparing the scrotum", "well-demarcated border", "may have central clearing"],
+    "guidance": "Apply topical antifungal cream (clotrimazole, terbinafine) twice daily for 2-4 weeks. Keep the area dry, wear loose cotton underwear, and avoid tight clothing. If extensive, oral antifungals may be needed.",
+    "precautions": ["Dry groin well after bathing", "Wear loose, breathable underwear", "Avoid sharing towels", "If diabetic, control blood sugar", "Do not use steroid creams alone – can worsen"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_011",
+    "category": "Tinea Pedis (Athlete's Foot)",
+    "symptoms": ["scaly, itchy, peeling skin between toes", "redness, maceration", "fissures (cracks) that are painful", "may involve soles (moccasin type)"],
+    "guidance": "Topical antifungal creams (clotrimazole, terbinafine) for 2-4 weeks. Keep feet dry, wear cotton socks, and avoid walking barefoot in public places. If severe, oral terbinafine. Secondary bacterial infection may need antibiotics.",
+    "precautions": ["Dry feet thoroughly after washing", "Wear breathable footwear", "Change socks daily", "Avoid sharing towels", "Treat footwear with antifungal powder"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_012",
+    "category": "Tinea Capitis (Ringworm of the Scalp)",
+    "symptoms": ["scaly, itchy patch on the scalp", "hair breakage (black dots)", "circular bald patches", "kerion (inflammatory, boggy mass) with pustules", "may have fever and lymphadenopathy"],
+    "guidance": "This requires systemic antifungal therapy (oral terbinafine, griseofulvin, or itraconazole) for 6-8 weeks. Topical treatments are not effective. Selenium sulfide shampoo can reduce shedding. Monitor liver function. Free treatment at government hospitals.",
+    "precautions": ["Do not share combs, hats, or towels", "Wash hair regularly", "If kerion, may need corticosteroids", "Complete the full oral course", "Monitor for scarring alopecia"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_013",
+    "category": "Tinea Versicolor (Pityriasis Versicolor)",
+    "symptoms": ["hypopigmented or hyperpigmented macules on trunk, neck, and upper arms", "fine scaling", "usually asymptomatic or mild itching", "more prominent in summer"],
+    "guidance": "Topical antifungal (selenium sulfide shampoo, ketoconazole, or terbinafine) applied daily for 1-2 weeks. For extensive disease, oral antifungals (fluconazole, itraconazole). Pigmentation may take months to normalize. Recurrence is common.",
+    "precautions": ["Avoid excessive sweating", "Wear loose, cotton clothing", "Use antifungal wash once monthly for prevention", "If on oral, complete the course", "Sun exposure may make patches more visible – use sunscreen"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_014",
+    "category": "Candidal Intertrigo",
+    "symptoms": ["moist, erythematous, itchy rash in skin folds (axillae, groin, under breasts, buttocks)", "satellite pustules", "maceration", "often associated with diabetes or obesity"],
+    "guidance": "Keep skin folds dry. Topical antifungal (clotrimazole, miconazole) with or without low-potency steroid for inflammation. In severe cases, oral fluconazole. Treat underlying diabetes and lose weight.",
+    "precautions": ["Dry skin folds thoroughly after bathing", "Use absorbent powders", "Wear loose clothing", "If diabetic, control blood sugar", "Avoid self-medicating with steroids"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_015",
+    "category": "Molluscum Contagiosum",
+    "symptoms": ["small, flesh-colored, dome-shaped papules with central umbilication (dimple)", "often on face, trunk, axillae", "may be single or multiple", "usually asymptomatic, occasionally itchy"],
+    "guidance": "Usually self-limiting (6-18 months). For cosmetic or to prevent spread, options include cryotherapy, curettage, or topical agents (cantharidin). In immunocompromised, may be more extensive. Avoid scratching.",
+    "precautions": ["Do not share towels or clothing", "Avoid scratching – can spread", "Cover lesions in children to prevent autoinoculation", "If multiple, see a dermatologist", "In adults, sexual transmission may occur"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_016",
+    "category": "Verruca Vulgaris (Common Wart)",
+    "symptoms": ["firm, rough, flesh-colored or greyish papule with a cauliflower-like surface", "most common on hands, fingers, around nails", "black dots (thrombosed capillaries)", "painless unless on pressure areas"],
+    "guidance": "Topical salicylic acid, cryotherapy, or curettage. Recurrence is common. Avoid picking warts. If persistent, see a dermatologist. In children, often resolve spontaneously.",
+    "precautions": ["Do not bite or pick warts", "Avoid direct contact (can spread)", "If on feet, wear comfortable shoes", "Do not use the same file on normal skin", "If multiple or growing, seek medical advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_017",
+    "category": "Plantar Wart (Verruca Plantaris)",
+    "symptoms": ["painful, callus-like lesion on the sole of the foot", "disruption of skin lines", "black dots (thrombosed capillaries)", "pain on pressure (like a stone in the shoe)"],
+    "guidance": "Treatment options: salicylic acid plasters, cryotherapy, laser, or surgical excision. Avoid self-treatment with acids if diabetic. If painful, see a podiatrist or dermatologist.",
+    "precautions": ["Wear comfortable shoes", "Do not walk barefoot in public places", "Use separate towels for feet", "Avoid picking warts", "If diabetic, seek professional care"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_018",
+    "category": "Herpes Simplex (Cold Sores / Fever Blisters)",
+    "symptoms": ["clusters of painful, fluid-filled blisters on lips, mouth, or genitals", "tingling or burning before eruption", "rupture and crust over", "recurrent attacks", "fever, malaise (primary infection)"],
+    "guidance": "Topical acyclovir or penciclovir can reduce duration if started early. For frequent recurrences, prophylactic oral antivirals (acyclovir, valacyclovir). Avoid triggers (sun, stress). Do not share lip balms.",
+    "precautions": ["Avoid touching lesions", "Do not share utensils or lip products", "Use sunscreen on lips", "If genital, practice safe sex", "If immunocompromised, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_019",
+    "category": "Herpes Zoster (Shingles)",
+    "symptoms": ["painful, vesicular rash in a dermatomal distribution (unilateral)", "burning, tingling, or neuralgic pain before rash", "crusting within 7-10 days", "post-herpetic neuralgia (pain after healing)", "fever, malaise"],
+    "guidance": "Antiviral (acyclovir, valacyclovir, famciclovir) within 72 hours of rash onset to reduce severity and post-herpetic neuralgia. Pain management with NSAIDs, gabapentin, or antidepressants. Zoster vaccine prevents or reduces severity. Keep rash covered to prevent transmission.",
+    "precautions": ["Do not scratch", "Keep rash covered", "Avoid contact with pregnant women and immunocompromised", "If eye involvement, see ophthalmologist", "Vaccination recommended for adults >50"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_020",
+    "category": "Impetigo (Bacterial Skin Infection)",
+    "symptoms": ["red sores that quickly rupture and form honey-colored crusts", "often on face, arms, or legs", "mild itching", "may have regional lymphadenopathy", "highly contagious"],
+    "guidance": "Topical mupirocin for limited cases. Extensive or deep lesions need oral antibiotics (dicloxacillin, cephalexin). Good hygiene: wash with soap, keep lesions covered. If recurrent, check for nasal carriage.",
+    "precautions": ["Wash hands frequently", "Do not share towels or clothing", "Keep lesions covered", "If recurrent, treat family members", "Complete the antibiotic course"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_021",
+    "category": "Cellulitis (Skin Infection)",
+    "symptoms": ["red, warm, tender, swollen skin", "rapidly expanding border", "fever, chills", "blistering or peau d'orange appearance", "regional lymphadenopathy"],
+    "guidance": "Medical emergency – requires oral or IV antibiotics (cephalexin, clindamycin, or penicillin). Elevate the affected limb. Monitor for abscess or sepsis. Do not delay – can lead to bacteremia.",
+    "precautions": ["Clean cuts and abrasions promptly", "If diabetic, inspect feet daily", "Complete antibiotic course", "If redness spreads despite antibiotics, seek emergency", "Avoid using steroid creams on cellulitis"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_022",
+    "category": "Erysipelas",
+    "symptoms": ["well-demarcated, raised, fiery red plaque on face or legs", "pain, burning, tenderness", "fever, chills", "blistering in severe cases", "lymphadenopathy"],
+    "guidance": "This is a superficial cellulitis usually caused by Streptococcus pyogenes. Treat with systemic antibiotics (penicillin or cephalexin). Elevate the affected area. Hospitalisation for severe cases. Recurrence is common; consider prophylaxis.",
+    "precautions": ["Treat fungal infections between toes (portal of entry)", "Keep legs elevated", "If recurrent, consider long-term penicillin", "Good foot hygiene", "Complete antibiotic course"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_023",
+    "category": "Necrotizing Fasciitis (Flesh-Eating Disease)",
+    "symptoms": ["severe pain out of proportion to skin findings", "rapidly spreading redness, swelling", "bullae (blisters) and skin necrosis", "crepitus (gas in tissue)", "high fever, hypotension, confusion", "systemic toxicity"],
+    "guidance": "This is a surgical emergency. Call 108 immediately. Requires urgent surgical debridement and IV antibiotics. Do not delay. High mortality. Hospitalisation is critical.",
+    "precautions": ["Do not delay – early debridement saves lives", "If you have a wound with severe pain, seek care", "If diabetic, be vigilant", "Monitor for signs of sepsis", "Prepare for intensive care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_024",
+    "category": "Folliculitis (Hair Follicle Infection)",
+    "symptoms": ["small, red, tender papules or pustules around hair follicles", "itchy or painful", "commonly on scalp, face, axillae, buttocks", "may be bacterial or fungal"],
+    "guidance": "For bacterial: topical mupirocin or clindamycin; for extensive, oral antibiotics. For fungal: antifungal. Keep area clean, avoid shaving. Prevention: good hygiene, loose clothing.",
+    "precautions": ["Avoid shaving over irritated skin", "Use clean razors", "Wear loose clothing", "If recurrent, check for nasal carriage of bacteria", "Do not squeeze – can worsen"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_025",
+    "category": "Furuncle (Boil) and Carbuncle",
+    "symptoms": ["tender, red, swollen nodule (furuncle) that becomes fluctuant (pus-filled)", "multiple furuncles coalescing into carbuncle (more extensive)", "fever, malaise", "commonly on neck, face, axillae, buttocks"],
+    "guidance": "Warm compresses to promote drainage. Incision and drainage if fluctuant. Antibiotics if systemic symptoms. Recurrent boils may need decolonization (mupirocin nasal, chlorhexidine washes).",
+    "precautions": ["Do not squeeze – can spread", "Warm compresses help", "If recurrent, treat underlying diabetes", "Good hygiene", "If immunocompromised, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_026",
+    "category": "Intertrigo (Dermatitis in Skin Folds)",
+    "symptoms": ["red, moist, macerated rash in skin folds (groin, axillae, under breasts, abdominal folds)", "itching or burning", "may have fissures or erosions", "often fungal or bacterial superinfection"],
+    "guidance": "Keep skin folds dry. Use barrier creams (zinc oxide) and antifungal or antibacterial agents as needed. Lose weight if obese. Wear moisture-wicking clothing.",
+    "precautions": ["Dry skin folds thoroughly after bathing", "Use absorbent powders", "Wear loose-fitting clothes", "If diabetic, control sugar", "Avoid steroid creams alone – can worsen fungal"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_027",
+    "category": "Lichen Simplex Chronicus",
+    "symptoms": ["thickened, lichenified, hyperpigmented plaque", "intense itching", "result of chronic scratching and rubbing", "commonly on ankles, wrists, neck, and vulva"],
+    "guidance": "Break the itch-scratch cycle. Topical corticosteroids and antihistamines. Behavioral modification (avoid scratching). Treat underlying psychological stress. Sometimes intralesional steroids.",
+    "precautions": ["Avoid scratching – use cool compresses", "Keep nails short", "Use topical steroids as prescribed", "If associated with eczema, treat eczema", "Stress management"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_028",
+    "category": "Prurigo Nodularis",
+    "symptoms": ["intensely itchy nodules (pruritic) on arms, legs, and trunk", "excoriated, hyperpigmented", "associated with chronic scratching", "often in atopic individuals or with systemic disease (CKD, liver disease)"],
+    "guidance": "Treat underlying condition. Topical steroids, intralesional steroids, phototherapy, and systemic medications (antidepressants, anticonvulsants) for severe pruritus. Avoid scratching – use occlusive dressings.",
+    "precautions": ["Avoid scratching – use cold compresses", "Keep skin well-moisturized", "If underlying disease, treat it", "Consider phototherapy", "Regular dermatology follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_029",
+    "category": "Scabies",
+    "symptoms": ["intense itching (worse at night)", "burrows (thin, wavy, greyish lines) in finger webs, wrists, elbows, axillae, genitals", "papules, nodules, excoriations", "secondary infection (impetigo)"],
+    "guidance": "Topical permethrin 5% cream applied from neck down, left overnight, washed off in morning. Treat all household members simultaneously. Wash clothing and bedding in hot water. If persistent, may need ivermectin. Pruritus may take weeks to resolve.",
+    "precautions": ["Treat all family members at the same time", "Wash all linen and clothing in hot water", "Avoid close skin contact", "If pruritus persists, may need repeat treatment", "Do not use steroids without scabicide"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_030",
+    "category": "Pediculosis (Head Lice)",
+    "symptoms": ["intense scalp itching", "visible nits (eggs) attached to hair shafts (especially behind ears and nape)", "live lice on scalp", "excoriations, secondary bacterial infection"],
+    "guidance": "Topical permethrin 1% or pyrethrin shampoo, leave for 10 minutes, rinse, and comb with a fine-toothed comb. Repeat in 7-10 days. Wash bedding and clothing in hot water. All household contacts should be checked.",
+    "precautions": ["Do not share combs, hats, or hair accessories", "Wash bedding and clothing in hot water", "Treat all family members if infested", "If resistant, use malathion or ivermectin", "Avoid scented products"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_031",
+    "category": "Pediculosis Pubis (Crabs)",
+    "symptoms": ["itching in the pubic area", "visible nits on pubic hair", "small, greyish lice (crabs)", "blue spots (maculae ceruleae) on skin", "may affect eyebrows, eyelashes"],
+    "guidance": "Apply permethrin 1% cream or pyrethrin shampoo to pubic area, leave for 10 minutes, rinse. Also treat eyelashes with petrolatum (twice daily for 8 days). Sexual partners should be treated. Wash clothes in hot water.",
+    "precautions": ["Do not share towels or clothing", "Treat sexual partners", "Wash bedding in hot water", "Avoid sexual contact until treated", "If eyelash involvement, do not use pesticides – use petroleum jelly"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_032",
+    "category": "Cutaneous Larva Migrans (Creeping Eruption)",
+    "symptoms": ["intensely itchy, red, linear or serpiginous track on the skin (often feet, buttocks)", "occurs after walking on contaminated soil or sand (hookworm larvae)", "track progresses a few mm per day"],
+    "guidance": "Oral ivermectin or albendazole is effective. Topical thiabendazole. Antihistamines for itching. Prevention: wear shoes in tropical areas.",
+    "precautions": ["Wear shoes in endemic areas", "Avoid walking barefoot on sandy beaches", "If you have a track, see a doctor", "Do not scratch – can cause infection", "Treatment with ivermectin is curative"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_033",
+    "category": "Cutaneous Leishmaniasis (Oriental Sore)",
+    "symptoms": ["chronic, painless ulcer with raised, rolled edges", "often on exposed areas (face, arms)", "may have central crust or scab", "regional lymphadenopathy", "history of travel to endemic areas (India, Middle East)"],
+    "guidance": "Treatment depends on species: topical paromomycin, intralesional antimony, or systemic amphotericin B. In India, mucosal disease is rare. Free treatment under government programs. Avoid secondary infection.",
+    "precautions": ["Prevent sandfly bites (bed nets, insect repellent)", "Wear long sleeves in endemic areas", "Avoid scratching lesions", "If ulcer persists, seek medical care", "Complete treatment – relapses occur"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_034",
+    "category": "Leprosy (Hansen's Disease – Skin Manifestations)",
+    "symptoms": ["hypopigmented or erythematous patches with loss of sensation (anesthesia)", "thickened nerves (peripheral nerve enlargement)", "nodules, plaques, and ulcers", "loss of eyebrows, nasal collapse (lepromatous)"],
+    "guidance": "Free multi-drug therapy (MDT) is available at all PHCs and government hospitals under the National Leprosy Eradication Programme. Treatment lasts 6-12 months. Early diagnosis prevents disability. All cases are notifiable. Contacts should be examined.",
+    "precautions": ["Do not ignore patches with loss of sensation", "Complete the full MDT course", "Monitor for nerve damage and reactions (steroids may be needed)", "Protect anaesthetic limbs from injury", "Follow up with health worker"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_035",
+    "category": "Cutaneous Tuberculosis (Lupus Vulgaris)",
+    "symptoms": ["slowly progressive, red-brown plaques with an apple-jelly colour on diascopy", "often on face (nose, cheeks)", "scarring, tissue destruction", "may have ulceration"],
+    "guidance": "Tuberculous skin infections are treated with standard anti-TB drugs (DOTS regimen) for 6-9 months. Free treatment under RNTCP. Suspect if there is a history of TB exposure. Confirm with biopsy and PCR.",
+    "precautions": ["Complete DOTS course", "Do not stop early", "If scarring, cosmetic treatments later", "Monitor for hepatotoxicity", "Cough hygiene"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_036",
+    "category": "Scrofuloderma (Tuberculous Abscess)",
+    "symptoms": ["painless, cold abscess in cervical lymph nodes or skin overlying infected nodes", "skin becomes adherent, then ulcerates with undermined edges", "sinus tract draining caseous material"],
+    "guidance": "Standard anti-TB therapy (DOTS) is curative. Surgical drainage may be needed for large abscesses. Free treatment is available.",
+    "precautions": ["Complete anti-TB course", "Do not delay surgery if needed", "Monitor for scarring", "If HIV positive, co-treat", "Good nutrition"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_037",
+    "category": "Actinic Keratosis (Solar Keratosis)",
+    "symptoms": ["rough, scaly, erythematous papules or plaques on sun-exposed skin", "often on face, scalp, ears, dorsa of hands", "may be tender", "precancerous lesion (risk of squamous cell carcinoma)"],
+    "guidance": "Treatment: cryotherapy, topical 5-fluorouracil, imiquimod, or diclofenac. Sun protection is crucial. If lesions are numerous, photodynamic therapy. Biopsy any lesion that becomes indurated or ulcerated.",
+    "precautions": ["Use broad-spectrum sunscreen (SPF 50+) daily", "Wear protective clothing", "Avoid sun exposure between 10 AM-4 PM", "Regular follow-up for new lesions", "If lesion changes, biopsy immediately"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_038",
+    "category": "Basal Cell Carcinoma (BCC)",
+    "symptoms": ["slow-growing, pearly, shiny bump with telangiectasia", "central ulceration (rodent ulcer)", "on sun-exposed areas (face, nose, ears)", "may be pigmented", "rarely metastasizes"],
+    "guidance": "Treatment: surgical excision is the mainstay; options include Mohs micrographic surgery (best for face), cryotherapy, radiotherapy, or topical imiquimod for superficial lesions. Early detection is key. Free surgery under PMJAY.",
+    "precautions": ["Sun protection is the best prevention", "If you have a suspicious lesion, see a dermatologist", "Do not delay biopsy", "If on immunosuppressants, monitor skin", "Regular skin exams"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_039",
+    "category": "Squamous Cell Carcinoma (SCC)",
+    "symptoms": ["firm, red, scaly plaque or nodule", "may be ulcerated or crusted", "on sun-exposed skin, but also on scars, burn sites", "can metastasize", "more aggressive than BCC"],
+    "guidance": "Surgical excision is the treatment of choice. Mohs surgery for high-risk areas. Radiation therapy for non-surgical candidates. Follow-up for metastases. Prevention: sun protection, avoid smoking.",
+    "precautions": ["Sun protection is essential", "Do not ignore non-healing sores", "If you have a history of immunosuppression, monitor", "If lesion grows rapidly, seek care", "Regular dermatology checkups"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_040",
+    "category": "Melanoma (Malignant Melanoma)",
+    "symptoms": ["ABCDE: Asymmetry, Border irregular, Colour variegated, Diameter >6 mm, Evolving (changing)", "dark, irregular lesion", "may be nodular, superficial spreading, or lentigo maligna", "can arise in pre-existing mole or de novo", "bleeding, itching"],
+    "guidance": "Melanoma is the deadliest skin cancer. Early diagnosis saves lives. Surgical excision with wide margins is primary. Sentinel node biopsy for staging. Immunotherapy and targeted therapy for advanced disease. Free care under PMJAY. Regular skin self-exams and professional mole checks.",
+    "precautions": ["Protect skin from UV radiation", "Do not use tanning beds", "Monitor moles monthly", "If you have a family history, get regular skin checks", "If a mole changes, see a dermatologist immediately"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_041",
+    "category": "Seborrheic Keratosis (Benign Skin Lesion)",
+    "symptoms": ["well-circumscribed, brown/black, waxy, stuck-on appearance", "often multiple", "on trunk, face, and scalp", "no symptoms (sometimes itching)", "benign – no malignant potential"],
+    "guidance": "No treatment needed – it is benign. If cosmetic concern, cryotherapy, curettage, or laser. Reassurance is important. Do not pick or irritate.",
+    "precautions": ["If a lesion changes rapidly or bleeds, get it checked", "Do not self-remove", "If multiple, they are harmless", "Use sunscreen – they are not sun-induced", "If concerned, see a dermatologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_042",
+    "category": "Dermatofibroma",
+    "symptoms": ["firm, solitary, small (0.5-1 cm) papule", "brownish-red, dimples when pinched (dimple sign)", "most commonly on legs", "usually asymptomatic, may be tender"],
+    "guidance": "Benign – no treatment needed. If growing or symptomatic, excision may be done for diagnosis. Reassure that it is not cancer.",
+    "precautions": ["Do not irritate or pick", "If changing, see a dermatologist", "Regular self-exam", "If multiple, may be associated with lupus", "If in doubt, biopsy"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_043",
+    "category": "Keloid and Hypertrophic Scars",
+    "symptoms": ["raised, firm, smooth, shiny scar tissue", "extends beyond the original wound (keloid) or stays within (hypertrophic)", "itching, pain, tenderness", "more common in darker skin types"],
+    "guidance": "Prevention: avoid unnecessary surgery, use silicone gel sheets on healing wounds. Treatment: intralesional steroids, cryotherapy, laser, radiation, or surgical excision with postoperative steroid injections. Silicone sheeting is the mainstay.",
+    "precautions": ["If you have a history of keloids, avoid elective surgery", "Use silicone sheets on cuts", "Do not pick at wounds", "If keloid is growing, see a dermatologist", "If painful, steroids may help"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_044",
+    "category": "Skin Tag (Acrochordon)",
+    "symptoms": ["soft, fleshy, pedunculated papule", "colour similar to skin or slightly darker", "common in neck, axillae, groin, and eyelids", "painless", "more common with obesity and diabetes"],
+    "guidance": "Benign – no treatment needed. If bothersome, removal by snipping (cautery), cryotherapy, or ligation. Associated with insulin resistance – may indicate screening for diabetes.",
+    "precautions": ["If a tag changes colour or bleeds, see a doctor", "Do not self-remove – can bleed or get infected", "If you have many, check blood sugar", "Maintain healthy weight", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_045",
+    "category": "Keratosis Pilaris (Chicken Skin)",
+    "symptoms": ["rough, small, red or white bumps on upper arms, thighs, buttocks", "goosebump appearance", "worse in winter", "often associated with dry skin", "asymptomatic or mild itching"],
+    "guidance": "Moisturizers with keratolytic agents (urea, lactic acid, salicylic acid) help. Topical retinoids may improve appearance. No cure, but condition often improves with age. Avoid dry skin.",
+    "precautions": ["Use rich moisturizers daily", "Avoid harsh soaps", "Use warm (not hot) water", "If severe, see a dermatologist", "Exfoliate gently"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_046",
+    "category": "Ichthyosis Vulgaris (Fish Scale Disease)",
+    "symptoms": ["dry, scaly skin with fine white or brown scales", "especially on lower legs", "worse in winter, improves in summer", "often associated with atopic dermatitis", "hereditary"],
+    "guidance": "Regular moisturization (after bathing) with emollients containing urea, lactic acid, or salicylic acid. Avoid long hot baths. Topical retinoids for severe cases. Gene therapy is not yet available.",
+    "precautions": ["Moisturize immediately after bathing", "Use mild soaps", "Avoid dry environments", "If scaling is severe, see a dermatologist", "Genetic counselling if familial"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_047",
+    "category": "Erythroderma (Exfoliative Dermatitis)",
+    "symptoms": ["generalized redness (erythema) and scaling of >90% of body surface", "itching, burning", "fever, malaise", "can be caused by psoriasis, eczema, drug reaction, or lymphoma"],
+    "guidance": "This is a medical emergency. Hospitalisation is needed. Treat the underlying cause (drug withdrawal, psoriasis, etc.). Supportive care: emollients, corticosteroids, and monitoring of fluid/electrolytes. If drug-induced, stop the drug.",
+    "precautions": ["Do not delay – erythroderma can be life-threatening", "If you develop generalized redness, seek emergency care", "Monitor for signs of sepsis", "Avoid self-medication with steroids", "Prepare for hospitalization"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_048",
+    "category": "Stevens-Johnson Syndrome (SJS) / Toxic Epidermal Necrolysis (TEN)",
+    "symptoms": ["fever, sore throat, cough", "painful mucosal erosions (mouth, eyes, genitals)", "blistering and detachment of skin (Nikolsky sign)", "rash begins as target-like lesions, then spreads", "can be life-threatening"],
+    "guidance": "This is a medical emergency. Stop the offending drug immediately. Hospitalise in an ICU or burns unit. Supportive care: fluid resuscitation, wound care, pain management. Systemic corticosteroids are controversial; IVIG may be used. Ophthalmology consultation is critical.",
+    "precautions": ["If you have a severe drug reaction with mucosal involvement, call 108 immediately", "Do not take any more of the suspected drug", "Monitor for fluid loss", "Eye care is essential to prevent blindness", "If you survive, avoid the causative drug forever"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_049",
+    "category": "Erythema Multiforme",
+    "symptoms": ["target-like (bull's eye) lesions on extremities (hands, feet, palms, soles)", "may have mucosal involvement (oral, genital)", "often triggered by herpes simplex or drugs", "self-limiting (weeks)"],
+    "guidance": "If herpes-associated, treat with antivirals. If drug-induced, stop the drug. Supportive care: antihistamines, pain relief. Severe cases (Stevens-Johnson) need urgent care.",
+    "precautions": ["If you have recurrent erythema multiforme, consider prophylactic acyclovir", "Avoid known triggers", "If mucosal involvement, see a doctor", "Do not use over-the-counter steroids", "Good oral hygiene"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_050",
+    "category": "Erythema Nodosum",
+    "symptoms": ["tender, red, subcutaneous nodules on shins (bilateral)", "may have fever, joint pain", "associated with infections (strep, TB), drugs, or inflammatory bowel disease", "nodules resolve with bruising (over weeks)"],
+    "guidance": "Treat the underlying cause. NSAIDs for pain. Bed rest and leg elevation. Potassium iodide may help. If recurrent, investigate for sarcoidosis, TB, or IBD. Biopsy is diagnostic.",
+    "precautions": ["If you have tender nodules on shins, see a doctor", "Rest with legs elevated", "Use NSAIDs as prescribed", "If you have associated symptoms, investigate", "Monitor for ulceration"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_051",
+    "category": "Granuloma Annulare",
+    "symptoms": ["ring-shaped, skin-coloured or red papules, often on dorsa of hands and feet", "central clearing", "usually asymptomatic", "self-limiting in many cases", "may be associated with diabetes"],
+    "guidance": "Usually no treatment needed – often resolves spontaneously. Topical steroids or calcineurin inhibitors may be used for cosmetic concern. If extensive, phototherapy or antimalarials. Screen for diabetes.",
+    "precautions": ["If you have a ring-shaped rash, get evaluated", "Do not use potent steroids without advice", "If persistent, see a dermatologist", "Monitor blood sugar", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_052",
+    "category": "Dermatitis Herpetiformis",
+    "symptoms": ["intensely itchy, grouped papulovesicles on extensor surfaces (elbows, knees, buttocks)", "symmetrical", "associated with gluten-sensitive enteropathy (celiac disease)", "burning, stinging before lesions appear"],
+    "guidance": "Diagnosis: skin biopsy (direct immunofluorescence shows IgA deposits). Treatment: dapsone (rapid relief) and a strict gluten-free diet (long-term control). Associated with celiac disease – monitor for gastrointestinal symptoms.",
+    "precautions": ["Strict gluten-free diet is essential", "Do not stop dapsone abruptly", "Monitor for hemolytic anemia (G6PD test before starting dapsone)", "If you have celiac, follow diet", "Regular follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_053",
+    "category": "Pemphigus Vulgaris",
+    "symptoms": ["painful, flaccid blisters and erosions on skin and mucous membranes (mouth, throat, genitals)", "positive Nikolsky sign (skin shears with pressure)", "Nikolsky sign positive", "often begins with oral lesions"],
+    "guidance": "This is a serious autoimmune blistering disease. Treatment: systemic corticosteroids (prednisolone) and immunosuppressants (azathioprine, mycophenolate, rituximab). Hospitalisation may be needed. Free rituximab is available at some government centres. Careful wound care and infection prevention.",
+    "precautions": ["Do not delay treatment – can be fatal", "If you have oral ulcers that don't heal, see a dermatologist", "Take steroids as prescribed – do not stop suddenly", "Monitor for infections", "If on rituximab, follow up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_054",
+    "category": "Bullous Pemphigoid",
+    "symptoms": ["tense, large blisters on flexural areas (groin, axillae, lower abdomen)", "intense itching", "may have prodromal urticarial lesions", "mucosal involvement is rare (unlike pemphigus)"],
+    "guidance": "Treatment: topical or systemic corticosteroids. In mild cases, topical steroids suffice. For extensive disease, oral steroids and immunosuppressants (methotrexate, mycophenolate). Rituximab for refractory cases. Monitor for infections and side effects.",
+    "precautions": ["Take steroids as prescribed – taper slowly", "If blisters rupture, keep clean to prevent infection", "Monitor for side effects of steroids", "If on immunosuppressants, avoid live vaccines", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_055",
+    "category": "Pemphigoid Gestationis (Herpes Gestationis)",
+    "symptoms": ["intensely itchy, urticarial plaques and blisters in the second or third trimester of pregnancy", "begins on abdomen, spreads", "resolves postpartum, but may flare at delivery", "risk of prematurity"],
+    "guidance": "Treatment: topical corticosteroids for mild cases; oral prednisolone for severe. Monitor fetal growth. Postpartum may flare. Refer to dermatologist and obstetrician. Usually resolves after delivery but may recur.",
+    "precautions": ["If you develop itchy blisters in pregnancy, see a dermatologist", "Do not self-medicate with steroids", "Monitor for preterm labor", "If postpartum flare, treat", "Good skin care"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_056",
+    "category": "Morphea (Localized Scleroderma)",
+    "symptoms": ["well-circumscribed, ivory-white, indurated plaques with a violaceous border", "on trunk or limbs", "no systemic involvement", "may have hyperpigmentation or atrophy"],
+    "guidance": "Morphea is usually self-limiting. Topical corticosteroids, calcipotriene, or tacrolimus may help. Phototherapy (UVA) for extensive lesions. If linear morphea (en coup de sabre), may need systemic immunosuppression. No internal organ involvement.",
+    "precautions": ["If you have a patch of hard skin, see a dermatologist", "Use topical treatments as prescribed", "If on phototherapy, follow schedule", "Monitor for progression", "If linear on face, ophthalmology check"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_057",
+    "category": "Systemic Sclerosis (Scleroderma – Skin Manifestations)",
+    "symptoms": ["skin tightening and thickening (acral, proximal)", "digital ulcers, calcinosis", "Raynaud's phenomenon", "telangiectasia", "facial skin becomes taut, microstomia (small mouth)"],
+    "guidance": "Management: skin care, avoid cold, vasodilators for Raynaud's. Immunosuppression (methotrexate, mycophenolate) for skin involvement. Pulmonary and renal screening. Multidisciplinary care. Free immunosuppressants at government hospitals.",
+    "precautions": ["Keep warm – avoid cold", "Use moisturizers for dry skin", "Monitor for digital ulcers", "Regular cardiopulmonary checkups", "Do not smoke"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_058",
+    "category": "Lupus Erythematosus (Cutaneous)",
+    "symptoms": ["malar rash (butterfly rash on cheeks and nose) – acute", "discoid lupus: scaly, coin-shaped plaques with scarring and pigment changes", "photosensitivity", "subacute cutaneous: annular or psoriasiform lesions"],
+    "guidance": "Sun protection is critical. Topical corticosteroids, calcineurin inhibitors, or antimalarials (hydroxychloroquine) for cutaneous lupus. Systemic therapy for systemic involvement. Avoid sun exposure – use SPF 50+.",
+    "precautions": ["Use sunblock daily", "Wear broad-brimmed hats", "Avoid sun exposure 10 AM-4 PM", "If you have discoid lesions, monitor for scarring", "If systemic symptoms, see rheumatology"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_059",
+    "category": "Dermatomyositis (Skin Manifestations)",
+    "symptoms": ["heliotrope rash (purple rash on eyelids)", "Gottron's papules (erythematous plaques over knuckles, elbows)", "poikiloderma (photosensitive rash on upper chest)", "mechanic's hands (fissured, hyperkeratotic fingertips)"],
+    "guidance": "Sun protection. Topical steroids. Systemic corticosteroids and immunosuppressants (methotrexate, mycophenolate) for muscle involvement. Screen for malignancy (ovarian, lung). Refer to rheumatology.",
+    "precautions": ["Sun protection is critical", "If you have muscle weakness, seek care", "Monitor for dysphagia", "Cancer screening is important", "Do not stop immunosuppressants suddenly"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_060",
+    "category": "Porphyria Cutanea Tarda (PCT)",
+    "symptoms": ["fragile skin that blisters and peels on sun-exposed areas (hands, face)", "hypertrichosis (excess hair)", "hyperpigmentation, scarring", "urine turns reddish (pink) on exposure to light"],
+    "guidance": "Avoid alcohol, oestrogen, and iron supplements. Phlebotomy (to reduce iron) and low-dose hydroxychloroquine are effective. Sun protection. Treat underlying causes (hepatitis C, haemochromatosis).",
+    "precautions": ["Avoid sun exposure – use protective clothing", "Do not drink alcohol", "If you have hepatitis C, treat it", "If you have blisters, see a dermatologist", "Monitor liver function"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_061",
+    "category": "Erythropoietic Protoporphyria (EPP)",
+    "symptoms": ["acute, painful photosensitivity (burning, stinging, itching) on sun-exposed skin, minutes after sun exposure", "redness, swelling, later crusting and scarring", "may have liver disease"],
+    "guidance": "Sun avoidance and protective clothing are key. Beta-carotene may reduce photosensitivity. Afamelanotide (a melanocortin analogue) is used in some countries. Monitor for liver function. Refer to dermatology and hepatology.",
+    "precautions": ["Avoid sun exposure – wear protective clothing", "Use high-SPF sunscreen", "If you have pain after sun exposure, seek care", "Monitor liver enzymes", "If on afamelanotide, follow up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_062",
+    "category": "Alopecia Areata",
+    "symptoms": ["sudden, patchy hair loss (well-circumscribed round/oval bald patches)", "may involve scalp, beard, eyebrows", "exclamation mark hairs (tapered at the base) at the periphery", "no scarring", "may progress to totalis (scalp) or universalis (whole body)"],
+    "guidance": "Topical corticosteroids, intralesional steroids, or minoxidil. For extensive disease, systemic corticosteroids, contact immunotherapy (DPCP), or JAK inhibitors (available at some centres). Emotional support is crucial. Spontaneous regrowth is common.",
+    "precautions": ["Do not panic – many cases regrow", "Avoid stress", "If on systemic steroids, monitor side effects", "If you have associated thyroid disease, check", "Wear wigs or hats if desired"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_063",
+    "category": "Androgenetic Alopecia (Male/Female Pattern Hair Loss)",
+    "symptoms": ["progressive hair thinning (frontotemporal in males, crown in both)", "with sparing of occiput", "hair miniaturization", "family history common"],
+    "guidance": "Topical minoxidil (2-5%) and oral finasteride (men) are FDA-approved. Low-level laser therapy and hair transplant for advanced cases. In women, spironolactone may be used. Early treatment is best.",
+    "precautions": ["Start treatment early for best results", "Minoxidil takes 4-6 months to show effect", "Finasteride is not for women of childbearing age", "If you have side effects, discuss with doctor", "Cosmetic options: wigs, hair fibres"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_064",
+    "category": "Telogen Effluvium (Stress-Induced Hair Loss)",
+    "symptoms": ["diffuse hair shedding (increased hair fall) 2-3 months after a triggering event (fever, childbirth, stress, surgery)", "usually reversible", "no bald patches, just thinning"],
+    "guidance": "Reassurance – it is self-limiting. Treat the underlying cause. Good nutrition (iron, protein, vitamins). Hair regrowth typically occurs within 6 months. If persistent, check iron, thyroid, and ferritin.",
+    "precautions": ["Do not panic – it will regrow", "Maintain a balanced diet", "Avoid harsh styling", "If shedding persists, see a dermatologist", "Manage stress"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_065",
+    "category": "Hyperhidrosis (Excessive Sweating)",
+    "symptoms": ["excessive sweating beyond what is needed for temperature regulation", "palms, soles, axillae, face", "interferes with daily activities", "may be primary or secondary (systemic)"],
+    "guidance": "Topical aluminium chloride antiperspirants, iontophoresis, botulinum toxin injections, oral anticholinergics, or sympathectomy (for severe cases). Lifestyle: wear breathable fabrics, manage stress. Free botox may be available at some government centres.",
+    "precautions": ["Use clinical-strength antiperspirants", "Avoid triggers (spicy foods, caffeine)", "If you have secondary hyperhidrosis, treat the cause", "If botox, repeat every 6 months", "Consider iontophoresis"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_066",
+    "category": "Bromhidrosis (Body Odour)",
+    "symptoms": ["unpleasant body odour (often from apocrine glands in axillae, groin)", "associated with bacterial breakdown of sweat", "may be present despite good hygiene"],
+    "guidance": "Improve hygiene: wash with antibacterial soaps, use antiperspirants, wear breathable fabrics. If severe, topical antibiotics (clindamycin) or botulinum toxin (reduces sweating). Dietary changes may help (avoid strong-smelling foods).",
+    "precautions": ["Shower daily with antibacterial soap", "Use antiperspirants", "Wear cotton clothing", "If excessive, see a dermatologist", "If related to systemic disease, treat it"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_067",
+    "category": "Chilblains (Pernio)",
+    "symptoms": ["red, itchy, swollen patches on toes, fingers, ears, nose", "after exposure to cold and damp (not freezing)", "pain, burning, ulceration in severe cases", "resolves with warming"],
+    "guidance": "Keep warm – wear gloves, thick socks. Avoid rapid warming. Use topical corticosteroids for itching. In severe cases, vasodilators (nifedipine). Prevention: warm clothing, avoid cold exposure.",
+    "precautions": ["Avoid cold exposure", "Wear warm, dry clothing", "Do not smoke – worsens circulation", "If ulcers, see a doctor", "If recurrent, consider nifedipine"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_068",
+    "category": "Pressure Ulcers (Bedsores)",
+    "symptoms": ["non-blanchable redness (stage I)", "partial- or full-thickness skin loss (stages II-IV)", "pain, exudate, wound infection", "usually over bony prominences (sacrum, heels, elbows)", "in immobile patients"],
+    "guidance": "Prevention: turn bedridden patients every 2 hours, use pressure-relieving mattresses, keep skin clean and dry. Treatment: wound care (debridement, dressings), offloading, and treatment of infection. Severe cases need surgery.",
+    "precautions": ["Turn patients frequently", "Use special mattresses", "Keep skin clean and dry", "Monitor for infection", "Nutritional support (protein, zinc, vitamin C)"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_069",
+    "category": "Venous Ulcers (Stasis Ulcers)",
+    "symptoms": ["chronic, shallow, irregular ulcer on the medial leg above the ankle", "surrounded by brown pigmentation (haemosiderin)", "oedema, varicose veins", "painful, with exudate", "associated with chronic venous insufficiency"],
+    "guidance": "Compression therapy (elastic bandages or stockings) is the mainstay. Wound care with hydrocolloids or foam dressings. Elevate legs. Treat varicose veins if needed. Infection requires antibiotics. Regular follow-up.",
+    "precautions": ["Wear compression stockings", "Elevate legs when resting", "Keep wound clean", "If diabetic, control blood sugar", "Do not smoke"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_070",
+    "category": "Stasis Dermatitis (Varicose Eczema)",
+    "symptoms": ["scaly, itchy, erythematous patches on lower legs (especially medial malleolus)", "brown discoloration, oedema", "may progress to ulcers", "associated with chronic venous insufficiency"],
+    "guidance": "Compression stockings, leg elevation, and moisturizers. Topical steroids for inflammation. Treat underlying venous disease (sclerotherapy or surgery). If ulcer, wound care. Avoid scratching.",
+    "precautions": ["Wear compression stockings", "Keep legs elevated", "Moisturize regularly", "If ulcer, see a wound care specialist", "Do not scratch"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_071",
+    "category": "Xerosis (Dry Skin)",
+    "symptoms": ["rough, dry, scaly skin", "itching, cracking", "worse in winter", "may be associated with atopic dermatitis or ageing"],
+    "guidance": "Use thick emollients (petrolatum, ceramide-containing creams) after bathing. Avoid harsh soaps and hot water. Use a humidifier in winter. If itchy, use antihistamines. If severe, see a dermatologist.",
+    "precautions": ["Apply moisturizer immediately after showering", "Use mild, fragrance-free cleansers", "Avoid long, hot baths", "If you have eczema, treat it", "Stay hydrated"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_072",
+    "category": "Pruritus Ani (Anal Itching)",
+    "symptoms": ["intense itching in the perianal area", "worse at night", "may be associated with pinworms, hemorrhoids, or excessive hygiene"],
+    "guidance": "Avoid aggressive wiping – use wet wipes or sitz baths. Use emollients and topical corticosteroids. Treat the underlying cause (deworming, hemorrhoids). Good perianal hygiene. Avoid irritants (spicy foods, caffeine).",
+    "precautions": ["Keep the area dry", "Use soft, unscented toilet paper", "If pinworms, treat", "Do not use harsh soaps", "If persistent, see a dermatologist or proctologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_073",
+    "category": "Acanthosis Nigricans",
+    "symptoms": ["velvety, hyperpigmented, thickened plaques on flexural areas (neck, axillae, groin)", "associated with insulin resistance, obesity, and diabetes", "may be a sign of internal malignancy (if sudden onset)"],
+    "guidance": "Treat underlying insulin resistance (weight loss, exercise, metformin). If sudden or extensive, evaluate for malignancy (acanthosis nigricans maligna). Cosmetic treatments: topical retinoids, laser. Screen for diabetes.",
+    "precautions": ["Lose weight if overweight", "If you have diabetes, control blood sugar", "If sudden onset, see a doctor", "Do not use skin-lightening creams without advice", "Regular follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_074",
+    "category": "Darier Disease (Keratosis Follicularis)",
+    "symptoms": ["greasy, crusted, warty papules in seborrheic areas (face, chest, flexures)", "may have nail changes (red and white longitudinal bands)", "itchy, worse in summer", "autosomal dominant"],
+    "guidance": "Topical retinoids, keratolytics, and sun protection. Severe cases: oral retinoids (acitretin). Genetic counselling. Avoid sweating and heat. Good skin care.",
+    "precautions": ["Avoid sun exposure", "Keep skin cool", "If on oral retinoids, monitor lipids and liver", "Genetic counselling if planning family", "Regular follow-up"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_075",
+    "category": "Hailey-Hailey Disease (Familial Benign Pemphigus)",
+    "symptoms": ["blistering and erosions in flexural areas (groin, axillae, neck)", "worsened by heat, sweating, and friction", "may have painful fissures", "genetic (autosomal dominant)"],
+    "guidance": "Topical corticosteroids, antibiotics, and emollients. Oral antibiotics (tetracycline) may help. In severe cases, dapsone or retinoids. Avoid friction and heat. Genetic counselling.",
+    "precautions": ["Avoid sweating and heat", "Wear loose clothing", "Keep areas dry", "If secondary infection, treat", "Genetic counselling"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_076",
+    "category": "Epidermolysis Bullosa (EB)",
+    "symptoms": ["fragile skin that blisters with minor trauma", "blisters on hands, feet, elbows, knees (simplex), or widespread (dystrophic)", "mucosal involvement, nail dystrophy", "scarring (in dystrophic EB)", "congenital"],
+    "guidance": "Wound care: gentle cleansing, non-adherent dressings, infection prevention. Avoid trauma. Good nutrition and pain management. Genetic counselling. Multidisciplinary care. Free dressings may be available at government hospitals.",
+    "precautions": ["Avoid friction and trauma", "Use non-adherent dressings", "Monitor for infection", "If esophageal involvement, soft diet", "Genetic counselling"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_077",
+    "category": "Mastocytosis (Cutaneous)",
+    "symptoms": ["brownish macules or papules (urticaria pigmentosa)", "Darier's sign: urtication (wheal) when rubbed", "pruritus, flushing", "may have systemic symptoms (if mast cell activation)"],
+    "guidance": "Avoid triggers: heat, friction, stress, alcohol. Antihistamines are the mainstay. If systemic, may need mast cell stabilizers. Regular monitoring. In children, often resolves.",
+    "precautions": ["Avoid scratching", "Take antihistamines as needed", "If you have flushing or hypotension, seek emergency (anaphylaxis risk)", "Avoid NSAIDs (can trigger)", "If associated with systemic symptoms, see a specialist"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_078",
+    "category": "Skin Manifestations of Diabetes (Diabetic Dermopathy)",
+    "symptoms": ["shiny, hyperpigmented, atrophic patches on shins (shin spots)", "often multiple, small, round or oval", "not painful or itchy", "more common with long-standing diabetes"],
+    "guidance": "No specific treatment – good glycaemic control may prevent progression. Reassurance. Regular foot and skin checks. Prevent trauma.",
+    "precautions": ["Control blood sugar", "Check feet daily", "Avoid trauma", "If ulcers develop, seek care", "Good skin moisturization"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_079",
+    "category": "Necrobiosis Lipoidica Diabeticorum",
+    "symptoms": ["well-demarcated, yellow-brown, atrophic plaques with telangiectasia on shins", "may ulcerate", "associated with diabetes", "more common in women"],
+    "guidance": "Glycaemic control. Topical steroids or intralesional steroids for active lesions. Protect from trauma. In ulceration, wound care. If extensive, consider phototherapy.",
+    "precautions": ["Good glycaemic control", "Protect shins from injury", "If ulceration, see a wound care specialist", "Avoid trauma", "Regular follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_080",
+    "category": "Eruptive Xanthomas",
+    "symptoms": ["sudden eruption of small, red-yellow papules on buttocks, back, extremities", "associated with hypertriglyceridaemia (often in diabetes)", "may be asymptomatic or itchy"],
+    "guidance": "Treat the underlying hyperlipidemia (diet, statins, fibrates). Good glycaemic control if diabetic. Lesions may resolve with treatment. Monitor lipid profile.",
+    "precautions": ["Control blood sugar and lipids", "Follow a low-fat diet", "If on fibrates, take as prescribed", "Regular lipid monitoring", "If lesions are multiple, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_081",
+    "category": "Lipoid Proteinosis (Hyalinosis Cutis)",
+    "symptoms": ["yellowish, waxy papules on eyelids, larynx, and skin", "hoarseness (vocal cord involvement)", "beaded papules on eyelids (moniliform blepharosis)", "scarring, thickened skin"],
+    "guidance": "Rare genetic disease. No specific treatment; symptom management. Speech therapy for hoarseness. Refer to dermatogenetics. Palliative care.",
+    "precautions": ["Avoid trauma", "If hoarseness, see ENT", "Monitor for airway obstruction", "Genetic counselling", "Supportive care"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_082",
+    "category": "Pseudoepitheliomatous Hyperplasia",
+    "symptoms": ["skin-coloured, warty, or verrucous lesions", "often at sites of chronic irritation or inflammation", "may mimic squamous cell carcinoma"],
+    "guidance": "Biopsy to rule out malignancy. Treat underlying cause (remove irritant). May resolve with treatment. Regular follow-up.",
+    "precautions": ["If you have a persistent wart-like lesion, seek biopsy", "Avoid chronic irritation", "If on immunosuppression, monitor", "Reassurance if benign", "If recurrent, see dermatologist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_083",
+    "category": "Pyoderma Gangrenosum",
+    "symptoms": ["rapidly progressive, painful ulcer with a violaceous, undermined border", "pathergy (new lesions at sites of trauma)", "often associated with inflammatory bowel disease, arthritis, or haematological disorders"],
+    "guidance": "Treatment: systemic corticosteroids, cyclosporine, or infliximab. Wound care. Treat underlying disease. Avoid trauma. Immunosuppression is key.",
+    "precautions": ["Avoid trauma – can cause new lesions", "If you have IBD, treat it", "Do not use topical steroids alone", "If ulcer worsens, seek care", "Monitor for infection"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_084",
+    "category": "Cutaneous T-Cell Lymphoma (Mycosis Fungoides)",
+    "symptoms": ["patches, plaques, or tumours on skin", "progressive, pruritic", "may involve lymph nodes", "Sezary syndrome if erythroderma with circulating cells"],
+    "guidance": "Treatment: topical corticosteroids, phototherapy, bexarotene, or systemic chemotherapy. Referral to dermatology oncology. Early-stage disease has good prognosis. Free treatment at government oncology centres.",
+    "precautions": ["If you have persistent scaly patches, see a dermatologist", "Biopsy is essential", "Avoid immunosuppression", "If itching is severe, treat", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_085",
+    "category": "Kaposi Sarcoma (HIV-Associated)",
+    "symptoms": ["purple, red, or brown papules/plaques on skin (often on legs, face, oral mucosa)", "may be nodular or ulcerative", "associated with HHV-8 and HIV infection"],
+    "guidance": "Treatment: antiretroviral therapy (ART) is the mainstay – often leads to regression. Local treatment with cryotherapy or radiation for cosmetic lesions. Systemic chemotherapy if visceral involvement. Free ART under NACO.",
+    "precautions": ["Start ART if HIV positive", "Monitor for visceral involvement", "If lesions grow, see a dermatologist", "Do not pick lesions", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_086",
+    "category": "Angioedema (Non-Urticarial)",
+    "symptoms": ["sudden, deep swelling of subcutaneous tissue, often around eyes, lips, hands, feet, and genitals", "may involve mucous membranes (tongue, throat)", "not itchy (unlike urticaria)", "can cause airway obstruction"],
+    "guidance": "This is a medical emergency if the airway is involved – call 108 immediately. For allergic angioedema: antihistamines, corticosteroids, and epinephrine if anaphylaxis. For hereditary angioedema (C1 inhibitor deficiency): specific treatment (fresh frozen plasma, C1-INH concentrate, icatibant) – available at some centres.",
+    "precautions": ["If you have swelling of the tongue or throat, call emergency", "Avoid known triggers (NSAIDs, ACE inhibitors)", "If you have recurrent episodes, get evaluated (C1 inhibitor, C4, etc.)", "Do not take ACE inhibitors if you have had angioedema", "If hereditary, have an emergency plan"],
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_087",
+    "category": "Drug Eruption (Morbilliform)",
+    "symptoms": ["diffuse, red maculopapular rash starting on trunk, spreading", "often itchy", "occurs 7-14 days after starting a drug (penicillin, sulfonamides, etc.)", "may have fever"],
+    "guidance": "Stop the offending drug (if possible) and seek medical advice. Antihistamines and topical corticosteroids for symptom relief. If severe (fever, mucosal involvement), consider SJS/TEN and hospitalise. Use safe alternatives.",
+    "precautions": ["If you develop a rash after starting a drug, stop it and call your doctor", "Do not scratch – can cause secondary infection", "If you have mucosal involvement or blistering, seek emergency", "Maintain a list of drug allergies", "Do not self-treat with steroids"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_088",
+    "category": "Fixed Drug Eruption",
+    "symptoms": ["well-circumscribed, round, red-violaceous plaque(s) that recur at the same site (often lips, genitals, hands) with each exposure to the offending drug", "may leave post-inflammatory hyperpigmentation"],
+    "guidance": "Identify and avoid the offending drug (commonly NSAIDs, tetracyclines, sulfonamides). Topical steroids for local inflammation. If severe, oral steroids. The hallmark is recurrence at the same site.",
+    "precautions": ["If you notice a recurring rash at the same spot, suspect a drug", "Avoid that drug in the future", "If you need to take it, ask for alternative", "If blistering, see a doctor", "Keep a list of drug allergies"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_089",
+    "category": "Cutaneous Vasculitis (Leukocytoclastic Vasculitis)",
+    "symptoms": ["palpable purpura (non-blanching, raised, red/purple spots) on lower legs", "may have urticarial lesions, ulcers, or vesicles", "painful, burning", "often associated with infections, drugs, or autoimmune disease"],
+    "guidance": "Treat the underlying cause. If mild, NSAIDs. For severe (renal, GI) – systemic corticosteroids and immunosuppressants. Skin biopsy is diagnostic. Monitor renal function.",
+    "precautions": ["If you have purpuric spots, see a doctor", "Avoid NSAIDs if renal involvement", "If you have joint pain or blood in urine, tell your doctor", "Do not ignore – may be systemic", "Regular monitoring"],
+    "urgency": "high"
+  },
+  {
+    "id": "skin_090",
+    "category": "Neonatal Acne",
+    "symptoms": ["small, red bumps or pustules on cheeks, nose, forehead of newborns", "appears in the first few weeks of life", "self-limiting, resolves within weeks to months"],
+    "guidance": "No treatment is needed – resolves spontaneously. Do not use acne creams or oils. If severe, may be due to maternal hormones. Reassurance.",
+    "precautions": ["Do not pick or pop", "Keep the skin clean with mild baby soap", "Avoid oily lotions", "If pustules are widespread, see a paediatrician", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_091",
+    "category": "Erythema Toxicum Neonatorum",
+    "symptoms": ["transient, red macules and pustules on the face, trunk, and limbs of newborns", "appears in the first few days of life", "fades over 1-2 weeks", "benign"],
+    "guidance": "Reassurance – it is benign and self-limiting. No treatment needed. Avoid excessive washing or topical steroids.",
+    "precautions": ["If the baby is otherwise well, no worry", "Do not apply creams", "If pustules persist or the baby is sick, see a doctor", "Keep skin clean", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_092",
+    "category": "Café-au-Lait Spots (Neurofibromatosis Type 1)",
+    "symptoms": ["flat, light brown macules (café-au-lait spots)", "more than 6 of >1.5 cm in post-pubertal individuals (or >0.5 cm in children) may indicate neurofibromatosis", "may have axillary freckling (Crowe's sign)"],
+    "guidance": "If you have multiple café-au-lait spots, evaluate for NF1. Routine screening for other features (Lisch nodules, neurofibromas). Genetic counselling. Regular follow-up.",
+    "precautions": ["If you have >6 spots, see a geneticist", "Monitor for neurofibromas", "If you have high blood pressure, rule out renal artery stenosis", "Regular eye exams", "Genetic counselling for family"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_093",
+    "category": "Becker's Nevus",
+    "symptoms": ["unilateral, well-defined, hyperpigmented patch with hair growth (hypertrichosis)", "often on the shoulder or upper chest", "appears in adolescence", "more common in males"],
+    "guidance": "Benign – no treatment needed. If cosmetic concern, laser hair removal may help. Monitor for malignant transformation (very rare). Reassurance.",
+    "precautions": ["If the lesion changes, see a dermatologist", "Do not pluck hairs (can cause folliculitis)", "If you want hair removal, consider laser", "No increased cancer risk", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_094",
+    "category": "Congenital Melanocytic Nevus (CMN)",
+    "symptoms": ["pigmented mole present at birth", "varied size (small, medium, giant)", "may have hair growth", "risk of melanoma (higher in giant nevi)"],
+    "guidance": "Small/medium CMN: low risk – monitor for changes. Giant CMN (>20 cm) has higher melanoma risk – consider prophylactic excision or regular surveillance. Dermatology follow-up. In case of change, biopsy.",
+    "precautions": ["Monitor the mole for changes (ABCDE)", "If giant, see a dermatologist early", "Do not remove without advice", "Use sun protection", "If there are satellite lesions, follow up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "skin_095",
+    "category": "Vitiligo",
+    "symptoms": ["well-circumscribed, depigmented (white) patches", "often symmetrical", "may involve hair (leukotrichia)", "no symptoms (not itchy, not painful)", "autoimmune"],
+    "guidance": "Topical corticosteroids and calcineurin inhibitors are first-line. Phototherapy (NB-UVB) for extensive disease. In stable cases, surgical transplantation. Sun protection is crucial – depigmented skin burns easily. Free phototherapy at some government hospitals.",
+    "precautions": ["Use sunscreen (SPF 50+) on depigmented areas", "Avoid sunburn – white patches burn easily", "If you are on phototherapy, follow schedule", "Cosmetic camouflage may help", "Do not use unproven remedies"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_096",
+    "category": "Pityriasis Alba",
+    "symptoms": ["hypopigmented, scaly patches on face (cheeks), arms", "more common in children with atopic dermatitis", "may be more noticeable in summer (surrounding tanning)"],
+    "guidance": "Usually self-limiting. Moisturizers and mild topical corticosteroids may help. Sun protection to reduce contrast. Reassurance – not permanent.",
+    "precautions": ["Use sunscreen to minimize contrast", "Keep skin moisturized", "Avoid harsh soaps", "If associated with eczema, treat eczema", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_097",
+    "category": "Post-Inflammatory Hyperpigmentation (PIH)",
+    "symptoms": ["dark spots on skin following inflammation (acne, eczema, trauma)", "more common in darker skin types", "slowly fades over months to years"],
+    "guidance": "Sun protection is essential. Topical tyrosinase inhibitors (hydroquinone, kojic acid, azelaic acid, retinoids). Chemical peels and laser may help. Avoid picking lesions. Be patient – resolution can take months.",
+    "precautions": ["Use sunscreen daily", "Avoid picking at lesions", "Do not use hydroquinone for >3 months without breaks", "If you have acne, treat it to prevent new PIH", "Follow dermatologist's advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_098",
+    "category": "Melasma",
+    "symptoms": ["symmetrical, brown patches on the face (cheeks, forehead, upper lip)", "worse with sun exposure and pregnancy", "more common in women", "hormonal trigger"],
+    "guidance": "Sun protection is essential – use SPF 50+ (physical blockers). Topical hydroquinone, tretinoin, and corticosteroids (triple cream). Azelaic acid and kojic acid are alternatives. Chemical peels and laser for refractory cases. In pregnancy, may resolve after delivery.",
+    "precautions": ["Strict sun protection is key", "Avoid oral contraceptives if they worsen", "Do not use hydroquinone without breaks", "If pregnant, avoid hydroquinone (use azelaic acid instead)", "Be patient – improvement takes months"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_099",
+    "category": "Skin Tags (Acrochordons) – Multiple (Acanthosis)",
+    "symptoms": ["multiple soft, pedunculated growths", "often in neck, axillae, groin", "associated with obesity, diabetes, and insulin resistance"],
+    "guidance": "If you have multiple skin tags, screen for diabetes and insulin resistance. Removal is cosmetic (cryotherapy, snip excision, or cautery). Prevention: weight loss and glycaemic control.",
+    "precautions": ["If you have many skin tags, check blood sugar", "Do not self-remove", "If you have diabetes, control it", "Lose weight if overweight", "Regular skin exams"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_100",
+    "category": "Cutaneous Horn (Cornu Cutaneum)",
+    "symptoms": ["a conical, horn-like protrusion of keratin on sun-exposed skin (face, scalp, ears)", "may be hard, yellowish, or brown", "can be a precursor of squamous cell carcinoma at the base"],
+    "guidance": "Do not cut it at home. A dermatologist will shave it at the base and send for histopathology to rule out malignancy. Benign horns need no further treatment. If malignant, excise widely.",
+    "precautions": ["Do not pull or cut the horn", "If you have a horn, see a dermatologist", "Sun protection is important", "If the base is indurated or ulcerated, it may be cancer", "Regular follow-up"],
+    "urgency": "medium"
+  }
+]

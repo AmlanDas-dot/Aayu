@@ -1,0 +1,458 @@
+[
+  {
+    "id": "milk_cow",
+    "name": "Cow Milk",
+    "nutrients": ["Calcium", "Protein", "Vitamin B12", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Supports growth and development", "Provides energy"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Children", "Pregnant women", "Elderly", "General health"]
+  },
+  {
+    "id": "milk_buffalo",
+    "name": "Buffalo Milk",
+    "nutrients": ["Calcium", "Protein", "Fat", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Provides energy", "Good for weight gain"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Children", "Underweight individuals", "Elderly"]
+  },
+  {
+    "id": "milk_goat",
+    "name": "Goat Milk",
+    "nutrients": ["Calcium", "Protein", "Vitamin A", "Potassium"],
+    "benefits": ["Easy to digest", "Supports bone health", "Good for sensitive stomachs"],
+    "best_time": "Morning or evening",
+    "good_for": ["Children", "Elderly", "Lactose sensitive individuals"]
+  },
+  {
+    "id": "milk_sheep",
+    "name": "Sheep Milk",
+    "nutrients": ["Calcium", "Protein", "Fat", "B Vitamins"],
+    "benefits": ["Strengthens bones", "Provides energy", "Supports muscle growth"],
+    "best_time": "Morning or evening",
+    "good_for": ["Athletes", "Children", "General health"]
+  },
+  {
+    "id": "milk_soy",
+    "name": "Soy Milk",
+    "nutrients": ["Protein", "Calcium (fortified)", "Vitamin D (fortified)", "Iron"],
+    "benefits": ["Good plant-based protein", "Supports bone health", "Lactose-free"],
+    "best_time": "Morning or with meals",
+    "good_for": ["Vegans", "Vegetarians", "Lactose intolerant"]
+  },
+  {
+    "id": "milk_almond",
+    "name": "Almond Milk",
+    "nutrients": ["Calcium (fortified)", "Vitamin E", "Healthy fats", "Vitamin D (fortified)"],
+    "benefits": ["Lactose-free", "Supports skin health", "Low in calories"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Weight loss", "Vegans", "Lactose intolerant"]
+  },
+  {
+    "id": "milk_oat",
+    "name": "Oat Milk",
+    "nutrients": ["Fiber", "Calcium (fortified)", "Vitamin B12", "Iron"],
+    "benefits": ["Supports digestion", "Lactose-free", "Good for heart health"],
+    "best_time": "Morning or with coffee",
+    "good_for": ["Vegans", "Lactose intolerant", "Heart health"]
+  },
+  {
+    "id": "milk_coconut",
+    "name": "Coconut Milk",
+    "nutrients": ["Healthy fats", "Iron", "Magnesium", "Vitamin C"],
+    "benefits": ["Supports immunity", "Provides energy", "Good for heart health"],
+    "best_time": "With meals or in cooking",
+    "good_for": ["Vegans", "Cooking", "General health"]
+  },
+  {
+    "id": "milk_rice",
+    "name": "Rice Milk",
+    "nutrients": ["Carbohydrates", "Calcium (fortified)", "Vitamin D (fortified)"],
+    "benefits": ["Lactose-free", "Hypoallergenic", "Easy to digest"],
+    "best_time": "Morning or as a drink",
+    "good_for": ["Allergies", "Vegans", "Lactose intolerant"]
+  },
+  {
+    "id": "curd",
+    "name": "Curd (Dahi / Yogurt)",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Vitamin B12"],
+    "benefits": ["Improves digestion", "Supports gut health", "Strengthens bones"],
+    "best_time": "Lunch or as a snack",
+    "good_for": ["All age groups", "Digestive health", "Immunity"]
+  },
+  {
+    "id": "yogurt_greek",
+    "name": "Greek Yogurt",
+    "nutrients": ["Protein", "Calcium", "Probiotics", "Vitamin B12"],
+    "benefits": ["Supports muscle growth", "Improves digestion", "High protein content"],
+    "best_time": "Breakfast or post-workout",
+    "good_for": ["Athletes", "Weight loss", "General health"]
+  },
+  {
+    "id": "yogurt_plain",
+    "name": "Plain Yogurt",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "B Vitamins"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Good for bone health"],
+    "best_time": "Breakfast or as a snack",
+    "good_for": ["Children", "Elderly", "General health"]
+  },
+  {
+    "id": "yogurt_flavored",
+    "name": "Flavored Yogurt",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Sugar"],
+    "benefits": ["Supports digestion", "Tasty snack option", "Good for children"],
+    "best_time": "As a snack",
+    "good_for": ["Children", "Snacking"]
+  },
+  {
+    "id": "kefir",
+    "name": "Kefir",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "B Vitamins"],
+    "benefits": ["Supports gut health", "Boosts immunity", "Improves digestion"],
+    "best_time": "Morning or as a drink",
+    "good_for": ["Digestive health", "Immunity", "General health"]
+  },
+  {
+    "id": "buttermilk",
+    "name": "Buttermilk (Chaas / Lassi)",
+    "nutrients": ["Calcium", "Probiotics", "Potassium", "Vitamin B12"],
+    "benefits": ["Improves digestion", "Prevents dehydration", "Supports gut health"],
+    "best_time": "Afternoon or after meals",
+    "good_for": ["Summer nutrition", "Digestion", "All age groups"]
+  },
+  {
+    "id": "paneer",
+    "name": "Paneer (Indian Cottage Cheese)",
+    "nutrients": ["Protein", "Calcium", "Phosphorus", "Fat"],
+    "benefits": ["Builds muscles", "Strengthens bones", "Good vegetarian protein source"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Children", "Athletes", "Vegetarians", "Pregnant women"]
+  },
+  {
+    "id": "cottage_cheese",
+    "name": "Cottage Cheese",
+    "nutrients": ["Protein", "Calcium", "Phosphorus", "Selenium"],
+    "benefits": ["Supports muscle growth", "Strengthens bones", "Low fat option"],
+    "best_time": "Breakfast or post-workout",
+    "good_for": ["Athletes", "Weight loss", "General health"]
+  },
+  {
+    "id": "cheddar_cheese",
+    "name": "Cheddar Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin B12"],
+    "benefits": ["Strengthens bones", "Supports muscle function", "Energy dense"],
+    "best_time": "As a snack or with meals",
+    "good_for": ["General health", "Bone health", "Children"]
+  },
+  {
+    "id": "mozzarella_cheese",
+    "name": "Mozzarella Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin B12"],
+    "benefits": ["Strengthens bones", "Good source of protein", "Lower sodium option"],
+    "best_time": "With meals or as a snack",
+    "good_for": ["General health", "Children", "Heart health"]
+  },
+  {
+    "id": "parmesan_cheese",
+    "name": "Parmesan Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin A"],
+    "benefits": ["Strengthens bones", "Rich flavor", "Good source of protein"],
+    "best_time": "As a topping or with pasta",
+    "good_for": ["General health", "Flavorful cooking"]
+  },
+  {
+    "id": "feta_cheese",
+    "name": "Feta Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin B12"],
+    "benefits": ["Supports bone health", "Good protein source", "Lower fat option"],
+    "best_time": "In salads or as a snack",
+    "good_for": ["General health", "Mediterranean diet"]
+  },
+  {
+    "id": "ricotta_cheese",
+    "name": "Ricotta Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin A"],
+    "benefits": ["Strengthens bones", "Good protein source", "Versatile in cooking"],
+    "best_time": "With meals or in desserts",
+    "good_for": ["General health", "Cooking", "Children"]
+  },
+  {
+    "id": "cream_cheese",
+    "name": "Cream Cheese",
+    "nutrients": ["Calcium", "Vitamin A", "Fat", "Phosphorus"],
+    "benefits": ["Supports bone health", "Provides energy", "Creamy texture"],
+    "best_time": "Breakfast or as a spread",
+    "good_for": ["General health", "Cooking"]
+  },
+  {
+    "id": "ghee",
+    "name": "Ghee (Clarified Butter)",
+    "nutrients": ["Healthy fats", "Vitamin A", "Vitamin E", "Conjugated Linoleic Acid"],
+    "benefits": ["Provides energy", "Supports nutrient absorption", "Good for digestion"],
+    "best_time": "With meals",
+    "good_for": ["Children", "Underweight individuals", "General health"]
+  },
+  {
+    "id": "butter_salted",
+    "name": "Salted Butter",
+    "nutrients": ["Healthy fats", "Vitamin A", "Vitamin E", "Salt"],
+    "benefits": ["Provides energy", "Supports nutrient absorption", "Flavorful"],
+    "best_time": "Breakfast or with meals",
+    "good_for": ["General health", "Cooking"]
+  },
+  {
+    "id": "butter_unsalted",
+    "name": "Unsalted Butter",
+    "nutrients": ["Healthy fats", "Vitamin A", "Vitamin E"],
+    "benefits": ["Provides energy", "Supports nutrient absorption", "Lower sodium"],
+    "best_time": "With meals",
+    "good_for": ["General health", "Cooking", "Heart health"]
+  },
+  {
+    "id": "cream_fresh",
+    "name": "Fresh Cream",
+    "nutrients": ["Fat", "Vitamin A", "Vitamin E", "Calcium"],
+    "benefits": ["Provides energy", "Supports nutrient absorption", "Creamy texture"],
+    "best_time": "With desserts or cooking",
+    "good_for": ["General health", "Cooking"]
+  },
+  {
+    "id": "cream_whipped",
+    "name": "Whipped Cream",
+    "nutrients": ["Fat", "Sugar", "Vitamin A"],
+    "benefits": ["Provides energy", "Dessert topping", "Creamy texture"],
+    "best_time": "With desserts",
+    "good_for": ["Desserts", "Special occasions"]
+  },
+  {
+    "id": "sour_cream",
+    "name": "Sour Cream",
+    "nutrients": ["Calcium", "Vitamin A", "Fat", "Phosphorus"],
+    "benefits": ["Supports bone health", "Flavorful", "Used in cooking"],
+    "best_time": "With meals or as a topping",
+    "good_for": ["Cooking", "General health"]
+  },
+  {
+    "id": "makhana_curd",
+    "name": "Makhana Curd (Foxnut Yogurt)",
+    "nutrients": ["Calcium", "Probiotics", "Protein", "Fiber"],
+    "benefits": ["Supports digestion", "Good for bone health", "Traditional Indian"],
+    "best_time": "As a snack or with meals",
+    "good_for": ["Digestive health", "Traditional diets"]
+  },
+  {
+    "id": "lassi_sweet",
+    "name": "Sweet Lassi",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Sugar"],
+    "benefits": ["Improves digestion", "Refreshing drink", "Supports bone health"],
+    "best_time": "Afternoon or with meals",
+    "good_for": ["Summer nutrition", "Children", "General health"]
+  },
+  {
+    "id": "lassi_salted",
+    "name": "Salted Lassi",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Salt"],
+    "benefits": ["Improves digestion", "Hydrates body", "Refreshing drink"],
+    "best_time": "Afternoon or with meals",
+    "good_for": ["Summer nutrition", "Digestion", "Hydration"]
+  },
+  {
+    "id": "shrikhand",
+    "name": "Shrikhand (Sweet Yogurt Dessert)",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Sugar"],
+    "benefits": ["Supports digestion", "Energy rich", "Traditional Indian dessert"],
+    "best_time": "As a dessert",
+    "good_for": ["General health", "Traditional diets"]
+  },
+  {
+    "id": "khoa",
+    "name": "Khoa (Dried Milk Solids)",
+    "nutrients": ["Calcium", "Fat", "Protein", "Vitamin A"],
+    "benefits": ["Provides energy", "Used in Indian sweets", "Supports bone health"],
+    "best_time": "In desserts",
+    "good_for": ["General health", "Cooking", "Sweets"]
+  },
+  {
+    "id": "chhena",
+    "name": "Chhena (Fresh Indian Cottage Cheese)",
+    "nutrients": ["Protein", "Calcium", "Phosphorus", "Vitamin B12"],
+    "benefits": ["Supports muscle growth", "Strengthens bones", "Used in sweets"],
+    "best_time": "In desserts or snacks",
+    "good_for": ["General health", "Traditional Indian sweets"]
+  },
+  {
+    "id": "skim_milk",
+    "name": "Skim Milk",
+    "nutrients": ["Calcium", "Protein", "Vitamin B12", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Low fat", "Good for weight management"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Weight loss", "Heart health", "General health"]
+  },
+  {
+    "id": "toned_milk",
+    "name": "Toned Milk",
+    "nutrients": ["Calcium", "Protein", "Vitamin B12", "Lower fat"],
+    "benefits": ["Strengthens bones", "Lower fat than full cream", "Good for adults"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Adults", "Weight management", "General health"]
+  },
+  {
+    "id": "full_cream_milk",
+    "name": "Full Cream Milk",
+    "nutrients": ["Calcium", "Protein", "Fat", "Vitamin B12"],
+    "benefits": ["Strengthens bones", "Provides energy", "Good for children"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Children", "Underweight individuals", "Pregnant women"]
+  },
+  {
+    "id": "condensed_milk",
+    "name": "Condensed Milk",
+    "nutrients": ["Calcium", "Sugar", "Fat", "Vitamin B12"],
+    "benefits": ["Provides energy", "Used in desserts", "Long shelf life"],
+    "best_time": "In desserts or as a spread",
+    "good_for": ["General health", "Desserts", "Cooking"]
+  },
+  {
+    "id": "evaporated_milk",
+    "name": "Evaporated Milk",
+    "nutrients": ["Calcium", "Vitamin D", "Protein", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Long shelf life", "Good for cooking"],
+    "best_time": "In cooking or with beverages",
+    "good_for": ["General health", "Cooking"]
+  },
+  {
+    "id": "milk_powder_whole",
+    "name": "Whole Milk Powder",
+    "nutrients": ["Calcium", "Protein", "Fat", "Vitamin B12"],
+    "benefits": ["Strengthens bones", "Long shelf life", "Versatile use"],
+    "best_time": "Reconstituted as milk or in baking",
+    "good_for": ["General health", "Cooking", "Travel"]
+  },
+  {
+    "id": "milk_powder_skim",
+    "name": "Skim Milk Powder",
+    "nutrients": ["Calcium", "Protein", "Vitamin B12", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Low fat", "Long shelf life"],
+    "best_time": "Reconstituted as milk",
+    "good_for": ["Weight loss", "Heart health", "Cooking"]
+  },
+  {
+    "id": "whey_protein",
+    "name": "Whey Protein (Powder)",
+    "nutrients": ["Protein", "Calcium", "B Vitamins", "Essential Amino Acids"],
+    "benefits": ["Supports muscle growth", "Quick absorption", "Good for post-workout"],
+    "best_time": "Post-workout or as a supplement",
+    "good_for": ["Athletes", "Bodybuilders", "Fitness enthusiasts"]
+  },
+  {
+    "id": "casein_protein",
+    "name": "Casein Protein (Powder)",
+    "nutrients": ["Protein", "Calcium", "Phosphorus", "B Vitamins"],
+    "benefits": ["Slow release protein", "Supports muscle recovery", "Good for overnight"],
+    "best_time": "Before bedtime",
+    "good_for": ["Athletes", "Muscle recovery", "Bodybuilders"]
+  },
+  {
+    "id": "milk_amul",
+    "name": "Amul Milk (Branded)",
+    "nutrients": ["Calcium", "Protein", "Vitamin B12", "Phosphorus"],
+    "benefits": ["Strengthens bones", "Supports growth", "Trusted Indian brand"],
+    "best_time": "Morning or bedtime",
+    "good_for": ["Children", "General health", "Indian households"]
+  },
+  {
+    "id": "curd_probiotic",
+    "name": "Probiotic Curd",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Vitamin B12"],
+    "benefits": ["Improves digestion", "Boosts immunity", "Supports gut health"],
+    "best_time": "Lunch or as a snack",
+    "good_for": ["Digestive health", "Immunity", "General health"]
+  },
+  {
+    "id": "yogurt_drink",
+    "name": "Yogurt Drink (Lassi-style)",
+    "nutrients": ["Calcium", "Protein", "Probiotics", "Vitamins"],
+    "benefits": ["Improves digestion", "Refreshing drink", "Supports gut health"],
+    "best_time": "Afternoon or with meals",
+    "good_for": ["Summer nutrition", "Children", "General health"]
+  },
+  {
+    "id": "milk_colostrum",
+    "name": "Colostrum (First Milk)",
+    "nutrients": ["Immunoglobulins", "Protein", "Calcium", "Vitamins"],
+    "benefits": ["Boosts immunity", "Supports newborns", "Rich in antibodies"],
+    "best_time": "As a supplement",
+    "good_for": ["Newborns", "Immunity", "Athletes (supplement)"]
+  },
+  {
+    "id": "milk_camel",
+    "name": "Camel Milk",
+    "nutrients": ["Vitamin C", "Iron", "Calcium", "Protein"],
+    "benefits": ["Supports immunity", "Good for diabetes", "Easy to digest"],
+    "best_time": "Morning or as a drink",
+    "good_for": ["Diabetes", "Immunity", "General health"]
+  },
+  {
+    "id": "milk_donkey",
+    "name": "Donkey Milk",
+    "nutrients": ["Calcium", "Protein", "Vitamin C", "Fat"],
+    "benefits": ["Supports skin health", "Hypoallergenic", "Nutrient-rich"],
+    "best_time": "Morning or as a drink",
+    "good_for": ["Skin health", "Allergies", "General health"]
+  },
+  {
+    "id": "milk_plant_based",
+    "name": "Plant-Based Milk Blend",
+    "nutrients": ["Fiber", "Calcium (fortified)", "Vitamins (fortified)", "Protein (varies)"],
+    "benefits": ["Lactose-free", "Sustainable", "Versatile"],
+    "best_time": "Morning or in beverages",
+    "good_for": ["Vegans", "Lactose intolerant", "Environmentally conscious"]
+  },
+  {
+    "id": "cheese_processed",
+    "name": "Processed Cheese (Slices)",
+    "nutrients": ["Calcium", "Fat", "Phosphorus", "Sodium"],
+    "benefits": ["Convenient", "Meltable", "Good source of calcium"],
+    "best_time": "In sandwiches or snacks",
+    "good_for": ["Children", "Quick meals", "General health"]
+  },
+  {
+    "id": "cheese_blue",
+    "name": "Blue Cheese",
+    "nutrients": ["Calcium", "Protein", "Fat", "Vitamin B12"],
+    "benefits": ["Supports bone health", "Distinct flavor", "Good protein source"],
+    "best_time": "As a snack or with meals",
+    "good_for": ["General health", "Flavorful cooking"]
+  },
+  {
+    "id": "cheese_swiss",
+    "name": "Swiss Cheese",
+    "nutrients": ["Calcium", "Protein", "Phosphorus", "Vitamin B12"],
+    "benefits": ["Strengthens bones", "Good protein source", "Low sodium option"],
+    "best_time": "As a snack or with meals",
+    "good_for": ["General health", "Bone health", "Children"]
+  },
+  {
+    "id": "milk_mare",
+    "name": "Mare Milk (Horse Milk)",
+    "nutrients": ["Calcium", "Vitamin C", "Protein", "Lactose"],
+    "benefits": ["Supports immunity", "Used in traditional medicine", "Nutrient-rich"],
+    "best_time": "Morning or as a drink",
+    "good_for": ["General health", "Traditional diets"]
+  },
+  {
+    "id": "milk_soy_chocolate",
+    "name": "Chocolate Soy Milk",
+    "nutrients": ["Protein", "Calcium (fortified)", "Iron", "B Vitamins"],
+    "benefits": ["Good plant-based protein", "Tasty drink", "Lactose-free"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Children", "Vegans", "General health"]
+  },
+  {
+    "id": "milk_almond_vanilla",
+    "name": "Vanilla Almond Milk",
+    "nutrients": ["Calcium (fortified)", "Vitamin E", "Healthy fats", "Vitamin D (fortified)"],
+    "benefits": ["Lactose-free", "Supports skin health", "Low in calories"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Weight loss", "Vegans", "Lactose intolerant"]
+  }
+]

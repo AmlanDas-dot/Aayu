@@ -1,0 +1,802 @@
+[
+  {
+    "id": "men_001",
+    "category": "Benign Prostatic Hyperplasia (BPH)",
+    "symptoms": ["frequent urination (especially at night)", "difficulty starting urination (hesitancy)", "weak or interrupted urine stream", "sense of incomplete bladder emptying", "urgency, dribbling"],
+    "guidance": "Lifestyle changes: limit caffeine and alcohol, avoid fluid intake before bed. Medications include alpha-blockers (tamsulosin) and 5-alpha reductase inhibitors (finasteride). If symptoms are severe, surgical options (TURP) are available free at government hospitals. Regular follow-up with a urologist is essential.",
+    "precautions": ["Avoid excessive caffeine, alcohol, and spicy foods", "Do not delay urination – go when you feel the urge", "Maintain a healthy weight", "If you have a family history, get screened early", "Take prescribed medications consistently"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_002",
+    "category": "Prostate Cancer (Adenocarcinoma)",
+    "symptoms": ["early stages: often asymptomatic", "later: difficulty urinating, weak stream, blood in urine or semen", "pelvic or lower back pain", "bone pain (if metastatic)", "unexplained weight loss", "erectile dysfunction"],
+    "guidance": "Screening: PSA blood test and digital rectal exam (DRE) from age 50 (earlier if high risk). If diagnosed, treatment depends on stage: active surveillance, surgery, radiation, or hormone therapy. Free treatment is available under PMJAY. Early detection saves lives. Discuss screening with your doctor.",
+    "precautions": ["Get regular PSA screening after age 50 (age 45 if family history or African descent)", "Maintain a healthy diet (low fat, high fruits/vegetables)", "Exercise regularly", "Avoid smoking", "If you have urinary symptoms, do not ignore them"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_003",
+    "category": "Erectile Dysfunction (ED)",
+    "symptoms": ["difficulty achieving or maintaining an erection sufficient for intercourse", "reduced sexual desire", "may occur suddenly or gradually", "often associated with cardiovascular risk factors"],
+    "guidance": "ED is often a marker of underlying vascular disease – evaluate for diabetes, hypertension, and hyperlipidemia. Lifestyle: exercise, weight loss, smoking cessation. PDE5 inhibitors (sildenafil, tadalafil) are effective; avoid with nitrates. Psychotherapy for psychological causes. Free medications at some government hospitals.",
+    "precautions": ["Do not take PDE5 inhibitors with nitrates (risk of severe hypotension)", "If you have heart disease, consult a cardiologist before using these drugs", "Smoking and alcohol worsen ED – quit", "Control blood sugar and BP", "If sudden loss of erection, rule out cardiovascular disease"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_004",
+    "category": "Low Testosterone (Hypogonadism)",
+    "symptoms": ["decreased libido", "fatigue, low energy", "reduced muscle mass and strength", "increased body fat", "mood changes (depression, irritability)", "reduced hair growth", "hot flashes", "difficulty concentrating"],
+    "guidance": "Diagnosis: morning testosterone level (total and free) on two occasions. Treatment: testosterone replacement therapy (gels, injections, patches) if symptomatic and confirmed low. Monitor PSA and hematocrit. Lifestyle: exercise, sleep, and weight loss improve natural levels. Free testosterone therapy may be available at government hospitals.",
+    "precautions": ["Do not start testosterone therapy without a diagnosis", "If on therapy, monitor PSA and hematocrit regularly", "Avoid anabolic steroids (illegal and harmful)", "Maintain a healthy weight and exercise", "If you have sleep apnea, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_005",
+    "category": "Male Infertility (Oligospermia/Azoospermia)",
+    "symptoms": ["inability to conceive after 1 year of unprotected intercourse", "low sperm count or absence of sperm", "sexual dysfunction", "testicular pain or swelling", "history of undescended testicles, infections, or varicocele"],
+    "guidance": "Evaluation: semen analysis, hormone profile (FSH, LH, testosterone), and scrotal ultrasound. Treatment depends on cause: varicocelectomy, hormonal therapy, or assisted reproductive techniques (IVF/ICSI). Lifestyle: avoid smoking, alcohol, and excessive heat. Free fertility services at some government hospitals.",
+    "precautions": ["Avoid smoking, alcohol, and recreational drugs", "Maintain a healthy weight", "Avoid hot baths, saunas, and tight underwear", "If you have a varicocele, consider surgical repair", "If on anabolic steroids, stop (they suppress sperm production)"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_006",
+    "category": "Testicular Torsion (Acute)",
+    "symptoms": ["sudden, severe testicular pain (usually unilateral)", "swelling, redness, and tenderness", "nausea, vomiting", "high-riding testis (horizontal lie)", "loss of cremasteric reflex"],
+    "guidance": "This is a surgical emergency – time is testicle. Call 108 immediately. Do not delay. If treated within 4-6 hours, the testicle can be saved. Surgery is needed for detorsion and orchidopexy. Do not give painkillers before surgical evaluation.",
+    "precautions": ["Seek emergency care immediately for sudden testicular pain", "Do not self-medicate with painkillers", "If you have a history of intermittent torsion, consider prophylactic orchidopexy", "Wear a scrotal support if needed", "Post-surgery, follow the urologist's advice"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_007",
+    "category": "Testicular Cancer (Germ Cell Tumors)",
+    "symptoms": ["painless lump or swelling in the testicle", "heaviness in the scrotum", "dull ache in the groin or lower abdomen", "sudden accumulation of fluid in the scrotum", "breast tenderness (gynecomastia) in some cases"],
+    "guidance": "Testicular cancer is highly curable, especially if detected early. Perform monthly self-exams. If a lump is found, see a urologist immediately. Diagnosis: ultrasound and tumor markers (AFP, hCG, LDH). Treatment: surgery (radical orchiectomy), with chemotherapy or radiation as needed. Free treatment under PMJAY.",
+    "precautions": ["Perform monthly testicular self-exams (after a warm shower)", "If you have a history of undescended testis, get regular checkups", "If you notice a lump, do not delay – see a doctor", "If diagnosed, sperm banking may be considered", "Follow up with tumor markers and imaging as advised"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_008",
+    "category": "Epididymitis (Inflammation of Epididymis)",
+    "symptoms": ["gradual onset of testicular pain (often unilateral)", "swelling and redness of the scrotum", "painful urination", "fever, chills", "discharge (if sexually transmitted)", "often associated with a urinary tract infection or STI"],
+    "guidance": "Treatment: antibiotics (based on cause – doxycycline, ceftriaxone, or fluoroquinolones). Rest, scrotal support, and ice packs for pain. If due to STI, partner treatment is essential. Avoid sexual activity until cured. If recurrent, rule out anatomical anomalies.",
+    "precautions": ["Practice safe sex (condoms)", "If you have painful urination or discharge, get tested", "Complete the full antibiotic course", "If you have an underlying urinary tract abnormality, treat it", "Avoid heavy lifting until symptoms resolve"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_009",
+    "category": "Orchitis (Inflammation of the Testicle)",
+    "symptoms": ["sudden testicular pain", "swelling of one or both testicles", "fever, chills", "nausea, malaise", "often associated with mumps (post-pubertal) or bacterial infection"],
+    "guidance": "Mumps orchitis is common in unvaccinated adult males. Treatment: supportive (rest, scrotal support, ice packs, NSAIDs for pain). Bacterial orchitis needs antibiotics. If infertility is a concern, follow-up semen analysis. Prevention: MMR vaccination.",
+    "precautions": ["Ensure vaccination against mumps (MMR vaccine)", "If you have mumps, isolate and rest", "If testicular pain occurs after mumps, seek care", "If bacterial, complete the antibiotic course", "Monitor for testicular atrophy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_010",
+    "category": "Inguinal Hernia (Direct or Indirect)",
+    "symptoms": ["bulge in the groin (may appear with straining and disappear when lying down)", "groin pain or discomfort (worse with lifting, coughing, or bending)", "heaviness or dragging sensation", "incarceration (painful, non-reducible bulge) – surgical emergency"],
+    "guidance": "Most inguinal hernias require surgical repair (herniorrhaphy or hernioplasty) to prevent strangulation. If incarcerated or strangulated (pain, redness, nausea), call 108. Laparoscopic repair is preferred for bilateral or recurrent hernias. Avoid heavy lifting until repaired.",
+    "precautions": ["Avoid heavy lifting and straining", "If you have a bulge, see a surgeon for evaluation", "If the bulge becomes painful and hard, seek emergency care", "Maintain a healthy weight to reduce intra-abdominal pressure", "If you smoke, quit (coughing worsens hernias)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_011",
+    "category": "Varicocele (Enlarged Scrotal Veins)",
+    "symptoms": ["often asymptomatic", "dull ache or heaviness in the scrotum (worse with standing or heat)", "palpable 'bag of worms' in the scrotum", "testicular atrophy (shrinkage) on the affected side", "infertility (low sperm count and quality)"],
+    "guidance": "If asymptomatic, no treatment needed. If painful or causing infertility, surgery (varicocelectomy) or embolisation can improve sperm parameters and pain. Post-operative improvement is seen in 60-70% of men. Regular semen analysis if fertility is desired.",
+    "precautions": ["If you have scrotal heaviness, get an ultrasound", "If you are trying to conceive, a varicocele may be a cause", "Avoid prolonged standing or heavy lifting if painful", "If surgery is done, follow post-op instructions", "Discuss fertility outcomes with your doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_012",
+    "category": "Hydrocele (Fluid in the Scrotum)",
+    "symptoms": ["painless swelling of the scrotum (usually one side)", "feeling of heaviness", "may vary in size during the day", "transillumination positive (light passes through)", "no pain unless large"],
+    "guidance": "Most hydroceles are benign. If small and asymptomatic, observation. If large or symptomatic, surgical repair (hydrocelectomy) is an option. Aspiration (draining fluid) is temporary and may be used in poor surgical candidates. Ultrasound may be needed to rule out testicular tumours.",
+    "precautions": ["If the scrotum is swollen, see a doctor to rule out other causes", "Do not attempt to drain fluid yourself", "If surgery is done, follow post-operative care", "If you have a history of trauma, mention it", "Wear supportive underwear for comfort"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_013",
+    "category": "Peyronie's Disease (Penile Curvature)",
+    "symptoms": ["curvature of the erect penis (may be upward, downward, or sideways)", "palpable fibrous plaque (scar tissue) on the shaft", "pain during erection", "shortening of the penis", "erectile dysfunction (often associated)"],
+    "guidance": "Treatment options: oral medications (potassium para-aminobenzoate, vitamin E – limited evidence), intralesional collagenase Clostridium histolyticum (if available), or surgery (plicature, grafting, or penile prosthesis) for severe cases. Counseling may help with psychological impact. Refer to a urologist.",
+    "precautions": ["Do not try to forcefully straighten the penis – can worsen", "If you have pain or curvature, see a urologist", "If you have ED, treat it", "Avoid trauma to the penis", "Discuss surgical options if it affects intercourse"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_014",
+    "category": "Phimosis (Tight Foreskin)",
+    "symptoms": ["inability to retract the foreskin over the glans", "pain during erection or intercourse", "difficulty cleaning under the foreskin", "ballooning of the foreskin during urination", "recurrent balanitis (inflammation)"],
+    "guidance": "In children, often resolves spontaneously. In adults, treatment: topical steroid cream (betamethasone) applied twice daily for 4-8 weeks with stretching exercises. If unsuccessful, circumcision or preputioplasty. If there is a paraphimosis (retracted foreskin stuck behind glans), seek emergency reduction.",
+    "precautions": ["Do not force retraction – can cause paraphimosis", "If you have recurrent infections, see a doctor", "If you have diabetes, control blood sugar (risk factor)", "If topical steroids fail, surgery may be needed", "Practice good hygiene"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_015",
+    "category": "Paraphimosis (Strangulated Foreskin)",
+    "symptoms": ["retracted foreskin that cannot be pulled back over the glans", "painful, swollen, and dusky glans", "inability to urinate", "distal penile swelling", "a urological emergency"],
+    "guidance": "This is a medical emergency – call 108 or go to ER immediately. Manual reduction (compression and gentle pulling) may be done by a doctor. If unsuccessful, dorsal slit or circumcision is needed. Do not delay, as it can cause necrosis.",
+    "precautions": ["Do not force the foreskin back", "If you have phimosis, avoid retracting beyond the comfort point", "If paraphimosis occurs, seek emergency care", "After reduction, consider circumcision to prevent recurrence", "If you have diabetes, manage it"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_016",
+    "category": "Balanoposthitis (Inflammation of Glans and Foreskin)",
+    "symptoms": ["redness, swelling, and pain of the glans and foreskin", "itching, burning", "discharge (may be purulent)", "painful urination", "may be due to infections (candidal, bacterial) or dermatoses"],
+    "guidance": "Treatment: antifungals if candidal; antibiotics if bacterial; topical steroids for non-infective causes. Good hygiene, keep the area dry. If recurrent, consider circumcision. If associated with diabetes, control blood sugar.",
+    "precautions": ["Keep the area clean and dry", "Avoid harsh soaps", "If you have diabetes, control it", "If recurrent, see a urologist", "If you have a sexual partner, treat any STI"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_017",
+    "category": "Male Pattern Baldness (Androgenetic Alopecia)",
+    "symptoms": ["receding hairline (frontotemporal) and thinning at the crown", "progressive hair loss", "family history common", "no scarring"],
+    "guidance": "Treatment: topical minoxidil (5%) and oral finasteride (1 mg) – FDA-approved for men. Low-level laser therapy and hair transplantation are options. Early treatment gives best results. Finasteride should not be used by women of childbearing age. Discuss side effects with your doctor.",
+    "precautions": ["Start treatment early for best effect", "If on finasteride, be aware of possible sexual side effects", "Do not use topical minoxidil on irritated skin", "If you have a family history, monitor early", "Cosmetic options include wigs, hair fibres, and micropigmentation"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_018",
+    "category": "Gynecomastia (Male Breast Enlargement)",
+    "symptoms": ["benign enlargement of breast tissue in males (unilateral or bilateral)", "tender or painful", "may be due to hormonal imbalance (low testosterone, high estrogen), drugs (spironolactone, anabolic steroids), obesity, or liver disease"],
+    "guidance": "Evaluation: check testosterone, estrogen, prolactin, and liver function. If drug-induced, stop the offending drug. If idiopathic, reassurance. If persistent and bothersome, surgery (liposuction or mastectomy) may be offered. Treat underlying causes (e.g., weight loss, liver disease).",
+    "precautions": ["If you have breast enlargement, get evaluated to rule out malignancy (rare)", "Avoid anabolic steroids – can cause gynecomastia", "If on medications that cause it, discuss alternatives", "If you have liver or kidney disease, treat it", "Maintain a healthy weight"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_019",
+    "category": "Male Breast Cancer",
+    "symptoms": ["painless lump or thickening in the breast", "skin changes (dimpling, puckering, redness)", "nipple discharge or retraction", "enlarged axillary lymph nodes"],
+    "guidance": "Male breast cancer is rare but aggressive. If you have a breast lump, see a doctor promptly. Mammogram and biopsy are diagnostic. Treatment: surgery, radiation, chemotherapy, and hormone therapy (tamoxifen). Free treatment under PMJAY. Family history (BRCA mutations) increases risk.",
+    "precautions": ["Do not ignore breast lumps – men can get breast cancer", "If you have a family history of breast/ovarian cancer, consider genetic testing", "If you have a lump, see a doctor immediately", "If you have a BRCA mutation, discuss surveillance", "Avoid anabolic steroids (can increase risk)"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_020",
+    "category": "Prostatitis (Acute Bacterial)",
+    "symptoms": ["sudden onset of fever, chills", "lower back and perineal pain", "painful and frequent urination", "urinary retention", "flu-like symptoms", "positive urine culture"],
+    "guidance": "This is a medical emergency – requires immediate antibiotics (IV or oral). Hospitalisation may be needed if sepsis is suspected. Complete the full antibiotic course. If urinary retention, catheterisation may be needed. Follow-up to ensure resolution.",
+    "precautions": ["Do not delay – acute prostatitis can lead to sepsis", "If you have fever and pelvic pain, seek care", "Complete the antibiotic course", "Drink plenty of fluids", "If you have recurrent infections, consider further evaluation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_021",
+    "category": "Chronic Prostatitis (Chronic Pelvic Pain Syndrome)",
+    "symptoms": ["pelvic or perineal pain (dull, aching)", "pain during or after ejaculation", "frequent urination", "painful urination", "often no infection (negative cultures)", "can be debilitating"],
+    "guidance": "Treatment: alpha-blockers, NSAIDs, pelvic floor physiotherapy, stress management, and warm sitz baths. Antibiotics may not help (if not infectious). Avoid triggers: spicy foods, alcohol, prolonged sitting. Multidisciplinary approach (urology, physiotherapy, psychology).",
+    "precautions": ["Avoid spicy foods and alcohol", "Take breaks from prolonged sitting", "Practice relaxation techniques", "If you have pain, see a urologist", "Pelvic floor therapy may help"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_022",
+    "category": "Urethritis (Urethral Discharge/Dysuria)",
+    "symptoms": ["urethral discharge (white, yellow, or clear)", "pain or burning during urination", "frequency, urgency", "often due to STIs (chlamydia, gonorrhea) or non-infectious"],
+    "guidance": "Treatment: empirical antibiotics (ceftriaxone + azithromycin) to cover both gonorrhea and chlamydia. Partner treatment is essential. Avoid sex until cured. If recurrent, check for persistent infection or resistance.",
+    "precautions": ["Practice safe sex (condoms)", "If you have discharge, get tested", "Complete the antibiotic course", "Notify sexual partners", "If symptoms persist, follow up for culture and susceptibility"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_023",
+    "category": "Urological Stone Disease (Urolithiasis)",
+    "symptoms": ["renal colic: severe flank pain radiating to groin", "blood in urine (hematuria)", "nausea, vomiting", "frequency, urgency", "fever if infection"],
+    "guidance": "Treatment: pain relief (NSAIDs, opioids), hydration (drink 2-3 L water/day). If stone <5 mm, conservative with medical expulsive therapy (tamsulosin). For larger stones, lithotripsy, ureteroscopy, or PCNL. Prevention: dietary modifications (limit salt, oxalate, animal protein), hydration.",
+    "precautions": ["Drink plenty of water (2-3 L/day)", "Limit salt and animal protein", "If you have recurrent stones, get metabolic workup", "If fever or inability to pass urine, seek emergency", "If on painkillers, follow dosing"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_024",
+    "category": "Urinary Retention (Acute)",
+    "symptoms": ["inability to urinate despite full bladder", "severe suprapubic pain", "distended bladder", "restlessness", "overflow incontinence (dribbling)"],
+    "guidance": "This is a urological emergency. Immediate catheterisation (urethral or suprapubic) is needed. Causes include BPH, stones, neurologic disorders, or medications (anticholinergics, decongestants). Do not delay – can cause bladder damage.",
+    "precautions": ["If you cannot urinate, seek emergency care", "Avoid caffeine and alcohol", "If you have BPH, take medications regularly", "If you have a catheter, follow catheter care", "Monitor for post-obstructive diuresis"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_025",
+    "category": "Chronic Kidney Disease (Men – Higher Prevalence)",
+    "symptoms": ["fatigue, weakness", "swelling (edema)", "high blood pressure", "decreased urine output", "nausea, loss of appetite", "itching", "metallic taste"],
+    "guidance": "Risk factors: diabetes, hypertension, and smoking (more common in men). Screening: annual urine and creatinine for high-risk groups. Management: BP control (<130/80), glucose control, low-salt/protein diet, avoid NSAIDs. Free dialysis under PMNDP. Early detection prevents progression.",
+    "precautions": ["Control blood sugar and BP", "Avoid NSAIDs (ibuprofen, diclofenac)", "Reduce salt intake", "If diabetic, check urine microalbumin yearly", "If you have risk factors, get kidney function checked annually"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_026",
+    "category": "Cardiovascular Disease (Men – Higher Risk)",
+    "symptoms": ["chest pain or pressure (angina)", "shortness of breath", "palpitations", "fatigue", "pain radiating to arm, jaw, back"],
+    "guidance": "Men have higher cardiovascular risk than women at a younger age. Prevention: smoking cessation, healthy diet, regular exercise, and control of BP, lipids, and diabetes. Aspirin therapy for secondary prevention. Free NCD screening at PHCs. Know the signs of a heart attack – call 108 immediately.",
+    "precautions": ["Stop smoking", "Maintain healthy weight", "Control BP, cholesterol, and blood sugar", "Exercise 30-45 min daily", "Know your numbers – get screened regularly"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_027",
+    "category": "Hypertension (Men – Higher Prevalence)",
+    "symptoms": ["often asymptomatic", "headache, dizziness (if severe)", "visual changes", "chest pain", "shortness of breath"],
+    "guidance": "Men develop hypertension earlier and at lower BMI than women. Lifestyle: reduce salt, exercise, limit alcohol, and manage stress. Medications: ACE inhibitors, ARBs, CCBs, diuretics – available free at PHCs. Regular BP monitoring is essential. Uncontrolled hypertension leads to stroke, kidney disease, and heart failure.",
+    "precautions": ["Reduce salt intake (<5g/day)", "Exercise regularly", "Limit alcohol", "Take medications consistently", "Monitor BP at home"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_028",
+    "category": "Diabetes Mellitus Type 2 (Men – Higher Risk)",
+    "symptoms": ["polyuria, polydipsia, polyphagia", "unexplained weight loss", "fatigue, blurred vision", "slow-healing wounds", "frequent infections", "tingling in hands/feet"],
+    "guidance": "Men are more likely to develop diabetes at a lower BMI. Management: diet (low glycemic index), exercise, metformin, and other oral agents/insulin. Annual screening for complications (retinopathy, nephropathy, neuropathy). Free diabetes care at NCD clinics.",
+    "precautions": ["Reduce sugar and refined carbs", "Exercise daily", "Monitor blood sugar regularly", "If you have a family history, get screened", "Do not skip medications"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_029",
+    "category": "Obesity (Men – Central Adiposity)",
+    "symptoms": ["waist circumference >90 cm", "BMI >30", "fatigue, joint pain", "shortness of breath", "sleep apnea (snoring, daytime sleepiness)"],
+    "guidance": "Men tend to accumulate visceral fat, which increases metabolic risk. Weight loss (5-10%) improves BP, lipids, and glucose. Lifestyle: calorie deficit, exercise, behavioral therapy. Bariatric surgery for severe obesity. Free counseling at government hospitals.",
+    "precautions": ["Reduce portion sizes", "Avoid sugary drinks", "Exercise 150 min/week", "Set realistic goals", "If you have obstructive sleep apnea, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_030",
+    "category": "Sleep Apnea (Obstructive – More Common in Men)",
+    "symptoms": ["loud snoring", "gasping or choking during sleep", "daytime sleepiness", "morning headache", "hypertension", "decreased libido"],
+    "guidance": "Men are 2-3 times more likely to have OSA. Risk factors: obesity, large neck circumference. Diagnosis: sleep study (polysomnography). Treatment: CPAP, weight loss, positional therapy, or oral appliances. Free CPAP machines at some government sleep clinics.",
+    "precautions": ["Lose weight", "Avoid alcohol and sedatives before bed", "Sleep on your side", "Use CPAP as prescribed", "If you have hypertension, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_031",
+    "category": "Alcohol Use Disorder (Men – Higher Rates)",
+    "symptoms": ["craving for alcohol", "loss of control over drinking", "tolerance (needs more)", "withdrawal symptoms (tremors, sweating, anxiety)", "continued use despite problems"],
+    "guidance": "Men are more likely to develop alcohol dependence. Treatment: medically supervised detoxification, psychotherapy (CBT), and medications (naltrexone, acamprosate). Support groups (AA). Free de-addiction services at government hospitals. Early intervention prevents liver disease, pancreatitis, and accidents.",
+    "precautions": ["Do not stop heavy drinking abruptly – risk of seizures", "Seek medical help for detox", "Remove alcohol from home", "Build a support system", "If you have a relapse, seek help again"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_032",
+    "category": "Tobacco Cessation (Smoking/Vaping)",
+    "symptoms": ["cough, shortness of breath", "dependence on nicotine", "withdrawal symptoms when trying to quit", "increased risk of lung cancer, COPD, heart disease"],
+    "guidance": "Smoking is the leading cause of preventable death in men. Treatment: nicotine replacement therapy (gum, patches), bupropion, varenicline, and counseling. Free cessation services at government hospitals. Set a quit date and get support. Health benefits begin immediately.",
+    "precautions": ["Set a quit date", "Avoid triggers", "Use nicotine replacement if needed", "Join a support group", "If you relapse, try again"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_033",
+    "category": "Occupational Lung Disease (Men – Higher Exposure)",
+    "symptoms": ["chronic cough", "shortness of breath", "wheezing", "exposure to dust, fumes (mining, construction, agriculture)"],
+    "guidance": "Men are more likely to work in industries with respiratory hazards. Prevention: use of protective masks, workplace dust control. Regular screening (chest X-ray, PFTs). Treat with bronchodilators and avoid further exposure. Free screening at government hospitals.",
+    "precautions": ["Always wear approved respirators", "Ensure workplace ventilation", "If you have symptoms, get evaluated", "Avoid smoking (synergistic risk)", "If you have silicosis, get TB screening"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_034",
+    "category": "Industrial Injuries (Men – Higher Risk)",
+    "symptoms": ["trauma from work accidents (fractures, lacerations, crush injuries)", "back pain, hearing loss", "chemical burns, eye injuries"],
+    "guidance": "Men are more likely to sustain work-related injuries. Prevention: use of protective gear, safe work practices, and ergonomic training. For any injury, seek immediate medical care. Report workplace hazards. Free emergency care at government hospitals.",
+    "precautions": ["Wear safety equipment (helmets, gloves, goggles)", "Follow workplace safety protocols", "Take breaks to avoid repetitive strain", "If you have a back injury, get ergonomic assessment", "If you have hearing loss, use ear protection"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_035",
+    "category": "Depression in Men (Atypical Presentation)",
+    "symptoms": ["irritability, anger", "fatigue, sleep disturbances", "loss of interest in work or hobbies", "substance abuse", "risk-taking behaviour", "physical aches (backache, headache)", "suicidal thoughts"],
+    "guidance": "Men may present with externalizing symptoms (anger, aggression) rather than sadness. Depression is underdiagnosed in men. Treatment: CBT, antidepressants (SSRIs, SNRIs). Free mental health care at DMHP centers. If suicidal, call iCall: 9152987821. Do not ignore mood changes.",
+    "precautions": ["If you have persistent irritability or anger, talk to a professional", "Avoid alcohol and substance use as coping", "Maintain social connections", "If you have suicidal thoughts, call helpline", "Seek help – it is not a sign of weakness"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_036",
+    "category": "Anxiety in Men",
+    "symptoms": ["excessive worry", "restlessness, tension", "irritability", "sleep problems", "muscle tension", "palpitations, sweating", "avoidance of social situations"],
+    "guidance": "Men often express anxiety as physical symptoms or irritability. Treatment: CBT, relaxation techniques, SSRIs. Stress management and regular exercise help. Free counseling at government mental health centers. Do not self-medicate with alcohol.",
+    "precautions": ["Practice deep breathing", "Limit caffeine and alcohol", "Exercise regularly", "Talk to trusted individuals", "If symptoms interfere with daily life, seek professional help"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_037",
+    "category": "Suicide Prevention in Men",
+    "symptoms": ["talking about wanting to die", "withdrawing from family and friends", "increased substance use", "mood swings, hopelessness", "giving away possessions", "making a plan"],
+    "guidance": "Men have higher rates of suicide globally. If you or someone you know is in crisis, call 108 or iCall (9152987821). Do not leave the person alone. Remove access to means. Encourage professional help. Remember: suicidal crises are temporary.",
+    "precautions": ["If you have suicidal thoughts, reach out to a helpline", "Do not isolate yourself", "Avoid alcohol and drugs", "If you are worried about someone, ask them directly", "Seek emergency care if needed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_038",
+    "category": "Post-Traumatic Stress Disorder (PTSD) – Men",
+    "symptoms": ["flashbacks, nightmares", "avoidance of reminders", "hypervigilance", "anger outbursts", "emotional numbness", "sleep problems", "often after combat, accidents, or assault"],
+    "guidance": "PTSD is common in men with a history of trauma (military, first responders, accidents). Treatment: trauma-focused CBT, EMDR, and SSRIs. Free trauma care at government hospitals. Avoid substance abuse – worsens symptoms. Seek support groups.",
+    "precautions": ["If you have experienced trauma, seek help early", "Avoid self-medicating with alcohol or drugs", "Practice grounding techniques", "If you have flashbacks, tell a professional", "Build a safety plan"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_039",
+    "category": "Andropause (Male Menopause / Late-Onset Hypogonadism)",
+    "symptoms": ["progressive decline in libido", "fatigue, low energy", "mood changes (depression, irritability)", "reduced muscle mass and strength", "increased body fat", "sleep problems", "hot flashes"],
+    "guidance": "Testosterone declines gradually with age. If symptomatic and confirmed low, testosterone replacement may be considered. Lifestyle: exercise, weight loss, and good sleep. Monitor PSA and hematocrit on therapy. Not all men need treatment – only those with symptoms.",
+    "precautions": ["Get a proper diagnosis before starting testosterone", "If on therapy, monitor for prostate effects", "Maintain a healthy weight and exercise", "Avoid anabolic steroids", "Discuss risks and benefits with your doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_040",
+    "category": "Hair Loss – Alopecia Areata (Men)",
+    "symptoms": ["sudden, patchy hair loss on scalp, beard, or body", "well-circumscribed round/oval bald patches", "exclamation mark hairs at periphery", "no scarring", "may progress to totalis/universalis"],
+    "guidance": "Alopecia areata is autoimmune. Treatment: topical or intralesional steroids, minoxidil, DPCP (contact immunotherapy), or JAK inhibitors (available at some centres). Spontaneous regrowth is common. Emotional support is important.",
+    "precautions": ["Do not panic – many cases regrow", "Avoid stress", "If on immunosuppressants, monitor for infections", "If you have associated thyroid disease, check", "Wear hats or wigs if desired"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_041",
+    "category": "Fungal Infections (Men – Tinea Cruris, Tinea Pedis)",
+    "symptoms": ["itchy, red, scaly rash in groin or feet", "well-demarcated borders", "cracking, peeling", "often worse in warm, sweaty conditions"],
+    "guidance": "Topical antifungals (clotrimazole, terbinafine) for 2-4 weeks. Keep the area dry, wear loose cotton underwear, and change socks daily. If extensive, oral antifungals. Prevention: good hygiene, avoid sharing towels.",
+    "precautions": ["Keep skin dry – use powder", "Wear breathable fabrics", "Change socks and underwear daily", "Do not share towels", "If you have diabetes, control blood sugar"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_042",
+    "category": "Folliculitis (Men – Shaving-Related)",
+    "symptoms": ["small, red, tender papules or pustules at hair follicles", "commonly on face, neck (pseudofolliculitis barbae), or scalp", "itching or burning"],
+    "guidance": "Prevention: use an electric razor or single-blade razor; shave in the direction of hair growth; use soothing aftershave. Treatment: topical antibiotics (clindamycin) or benzoyl peroxide. If severe, oral antibiotics. If pseudofolliculitis, consider laser hair removal.",
+    "precautions": ["Shave with the grain", "Use a sharp razor", "Avoid close shaving", "If you have bumps, do not pick", "If recurrent, see a dermatologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_043",
+    "category": "Ingrown Toenail (Onychocryptosis – Men)",
+    "symptoms": ["pain, redness, and swelling at the edge of the toenail (usually big toe)", "infection with discharge", "difficulty wearing shoes", "more common in men due to footwear"],
+    "guidance": "Treatment: soak in warm water, place a small piece of cotton under the nail edge, wear open-toed shoes. If infected, antibiotics. If recurrent, surgical wedge resection (partial nail avulsion) is done by a podiatrist or surgeon. Prevention: cut nails straight across, avoid tight shoes.",
+    "precautions": ["Cut nails straight across – do not round corners", "Wear shoes with a wide toe box", "Keep feet clean and dry", "If you have diabetes, be extra careful", "If red streaks or fever, seek care"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_044",
+    "category": "Plantar Fasciitis (Men – Heel Pain)",
+    "symptoms": ["sharp pain in the heel (worse with first steps in the morning or after rest)", "pain with weight-bearing", "often in overweight men, runners"],
+    "guidance": "Stretching exercises (calf stretch, plantar fascia stretch). Footwear with arch support and cushioned soles. Night splints. Pain relief: ice, NSAIDs. If persistent, corticosteroid injections, shockwave therapy, or surgery. Prevention: maintain weight, proper footwear.",
+    "precautions": ["Stretch calf muscles regularly", "Wear supportive shoes", "Do not walk barefoot on hard surfaces", "If you have pain, rest and ice", "If pain persists, see an orthopedist"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_045",
+    "category": "Tennis Elbow (Lateral Epicondylitis – Men)",
+    "symptoms": ["pain on the outside of the elbow", "worse with gripping, lifting, or wrist extension", "often due to repetitive activity (sports, manual work)"],
+    "guidance": "Rest, ice, NSAIDs, and a tennis elbow strap. Physiotherapy with eccentric exercises. Corticosteroid injections for refractory cases. Prevention: proper technique, strength training, and ergonomic adjustments.",
+    "precautions": ["Use proper technique in sports and work", "Take breaks during repetitive activities", "Strengthen forearm muscles", "If pain persists, see a physiotherapist", "Do not use steroids repeatedly"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_046",
+    "category": "Rotator Cuff Injury (Shoulder – Men)",
+    "symptoms": ["shoulder pain, especially with overhead activities", "weakness", "limited range of motion", "night pain", "often in athletes or manual workers"],
+    "guidance": "Rest, ice, physiotherapy (strengthening and stretching). NSAIDs for pain. Corticosteroid injections for inflammation. If full-thickness tear, surgical repair may be needed. Prevention: warm-up before activity, avoid overuse.",
+    "precautions": ["Do not ignore shoulder pain", "Avoid overhead activities until healed", "Physiotherapy is key", "If you have a tear, surgery may be needed", "Maintain shoulder flexibility"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_047",
+    "category": "Carpal Tunnel Syndrome (Men – Occupational)",
+    "symptoms": ["numbness, tingling in thumb, index, middle fingers", "worse at night", "weak grip", "often in occupations with repetitive wrist motion"],
+    "guidance": "Wrist splints at night, ergonomic adjustments, NSAIDs. Corticosteroid injection if needed. If severe, surgical release. Prevention: take breaks, adjust workstation.",
+    "precautions": ["Use wrist splints", "Take breaks from repetitive tasks", "Adjust keyboard and mouse height", "If symptoms persist, see a neurologist", "Early treatment prevents permanent nerve damage"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_048",
+    "category": "Low Back Pain – Mechanical (Men)",
+    "symptoms": ["lower back pain (may radiate to buttocks or thighs)", "worse with sitting, bending, or lifting", "relieved by lying down", "often in men with heavy lifting jobs"],
+    "guidance": "Stay active – avoid prolonged bed rest. Physiotherapy (core strengthening, stretching). NSAIDs for pain. Good posture and ergonomic support. If radicular symptoms (leg pain, weakness), imaging may be needed. Prevention: core exercises, proper lifting techniques.",
+    "precautions": ["Lift with your legs, not your back", "Maintain good posture", "Strengthen core muscles", "Avoid prolonged sitting", "If you have leg weakness or bowel/bladder changes, seek emergency (cauda equina)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_049",
+    "category": "Sciatica (Men – Lumbar Radiculopathy)",
+    "symptoms": ["sharp, shooting pain from lower back down the leg (often one side)", "numbness, tingling", "weakness in the leg", "may follow heavy lifting"],
+    "guidance": "NSAIDs, physiotherapy (McKenzie exercises), and avoid aggravating activities. If severe or progressive weakness, imaging (MRI) and possible surgery. Prevention: core strengthening, proper lifting.",
+    "precautions": ["Do not lift heavy objects improperly", "Use a lumbar support", "If you have progressive weakness, seek medical care", "Avoid prolonged sitting", "Physiotherapy is helpful"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_050",
+    "category": "Gout (Men – Higher Prevalence)",
+    "symptoms": ["sudden, severe pain, redness, and swelling in the joint (especially big toe)", "worse at night", "can affect ankle, knee, wrist", "triggers: alcohol, red meat, seafood"],
+    "guidance": "Acute attack: NSAIDs, colchicine, or corticosteroids. Long-term: allopurinol to lower uric acid (start after acute attack resolves). Lifestyle: reduce purine-rich foods, limit alcohol, stay hydrated. Free allopurinol at government hospitals.",
+    "precautions": ["Avoid red meat, organ meats, shellfish, and alcohol (especially beer)", "Drink plenty of water", "Maintain a healthy weight", "Do not stop allopurinol during an attack", "If you have frequent attacks, see a rheumatologist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_051",
+    "category": "Metabolic Syndrome (Men – Central Obesity)",
+    "symptoms": ["waist circumference >90 cm", "high blood pressure", "elevated triglycerides, low HDL", "elevated fasting glucose", "often asymptomatic but high-risk"],
+    "guidance": "Lifestyle modification: weight loss, exercise, dietary changes (DASH diet). Treat individual components: antihypertensives, statins, antidiabetics. Free screening at NCD clinics. Prevention: healthy diet, physical activity, regular checkups.",
+    "precautions": ["Lose weight (5-10%)", "Exercise 30-45 min daily", "Reduce sugar and refined carbs", "Monitor BP, lipids, and blood sugar", "If you have three criteria, treat aggressively"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_052",
+    "category": "Non-Alcoholic Fatty Liver Disease (NAFLD – Men)",
+    "symptoms": ["often asymptomatic", "fatigue, malaise", "elevated liver enzymes", "hepatomegaly", "associated with obesity and metabolic syndrome"],
+    "guidance": "Weight loss (7-10%) is the most effective treatment. Dietary changes: reduce fructose, refined carbs, and saturated fats. Exercise. If liver enzymes are elevated, further evaluation for NASH. Free liver function tests at government hospitals.",
+    "precautions": ["Lose weight", "Avoid sugary drinks", "Exercise regularly", "If you have diabetes, control blood sugar", "Monitor liver enzymes annually"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_053",
+    "category": "Chronic Hepatitis B (Men – Higher Progression)",
+    "symptoms": ["fatigue, jaundice", "elevated liver enzymes", "progress to cirrhosis and liver cancer", "often detected on screening"],
+    "guidance": "Men with chronic HBV have higher risk of cirrhosis and HCC. Treatment: antiviral (tenofovir, entecavir) – free at government hospitals. Regular ultrasound and AFP surveillance for HCC. Vaccination is preventive. Avoid alcohol.",
+    "precautions": ["If you have chronic HBV, avoid alcohol", "Take antivirals as prescribed", "Get regular liver function and ultrasound", "If you have a family history, get screened", "Vaccinate children"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_054",
+    "category": "Chronic Hepatitis C (Men)",
+    "symptoms": ["fatigue, jaundice", "elevated enzymes", "often asymptomatic", "complications: cirrhosis, HCC"],
+    "guidance": "Treatment: direct-acting antivirals (DAAs) are curative (>95%) – available free under government programs. Screen high-risk men (injection drug use, blood transfusions). Avoid alcohol. Monitor liver function and AFP.",
+    "precautions": ["If you have risk factors, get tested", "Complete the DAA course", "Avoid alcohol", "If you are on treatment, follow up", "Prevent transmission (not sharing needles)"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_055",
+    "category": "Alcohol-Associated Liver Disease (Men – Higher Risk)",
+    "symptoms": ["jaundice, ascites, edema", "gastrointestinal bleeding (varices)", "confusion (encephalopathy)", "chronic liver disease", "history of heavy alcohol use"],
+    "guidance": "Complete abstinence is essential. Nutritional support (thiamine, folate, high-protein diet). Manage complications (ascites, varices). Liver transplant in end-stage. Free de-addiction support. If you drink heavily, seek help.",
+    "precautions": ["Stop alcohol completely", "If you cannot stop, seek de-addiction", "Take vitamin supplements", "Monitor for ascites and bleeding", "If you have jaundice, seek care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_056",
+    "category": "Peptic Ulcer Disease (Men – Higher Rate)",
+    "symptoms": ["burning epigastric pain (worse on empty stomach, relieved by food)", "bloating, nausea", "may be associated with H. pylori or NSAID use", "risk of bleeding (black stools, hematemesis)"],
+    "guidance": "Test for H. pylori and treat (triple therapy). Avoid NSAIDs. Use PPIs for healing. If bleeding, urgent endoscopy. Prevention: avoid NSAIDs, manage stress. Free H. pylori testing at government hospitals.",
+    "precautions": ["Avoid NSAIDs (ibuprofen, aspirin) without protection", "If you have H. pylori, complete the course", "Do not skip meals", "If you have black stools, seek emergency", "Avoid alcohol and smoking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_057",
+    "category": "Gastroesophageal Reflux Disease (GERD – Men)",
+    "symptoms": ["heartburn (retrosternal burning)", "regurgitation", "chest pain", "chronic cough, hoarseness", "worse with lying down"],
+    "guidance": "Lifestyle: lose weight, avoid large meals, elevate head of bed, avoid trigger foods (spicy, fatty, acidic). PPIs for acid suppression. If long-term, monitor for Barrett's esophagus. Free PPIs at government hospitals.",
+    "precautions": ["Avoid large meals and lying down after eating", "Elevate the head of the bed", "Avoid spicy, fatty, and acidic foods", "Do not smoke or consume alcohol", "If you have dysphagia, seek endoscopy"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_058",
+    "category": "Hemorrhoids (Men – Common)",
+    "symptoms": ["pain, itching, or bleeding around the anus", "lump near the anus", "worse with straining", "internal or external"],
+    "guidance": "Prevent constipation: high-fiber diet, hydration, avoid straining. Sitz baths. Topical creams (hydrocortisone, witch hazel). If thrombosed, incision. If persistent, rubber band ligation or surgery. Prevention: avoid sitting for long periods.",
+    "precautions": ["Eat high-fiber foods", "Drink plenty of water", "Avoid straining during bowel movements", "Use stool softeners if needed", "If bleeding, rule out colon pathology"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_059",
+    "category": "Anal Fissure (Men)",
+    "symptoms": ["sharp pain during defecation", "bright red blood on toilet paper", "spasm of anal sphincter", "often due to constipation"],
+    "guidance": "Stool softeners, sitz baths, high-fiber diet, and topical nitroglycerin or diltiazem cream. If chronic, surgery (lateral internal sphincterotomy). Prevention: avoid constipation.",
+    "precautions": ["Drink enough water", "Use stool softeners if needed", "Do not strain", "Sitz baths help", "If pain persists, see a proctologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_060",
+    "category": "Inflammatory Bowel Disease (Men – Crohn's, UC)",
+    "symptoms": ["chronic diarrhea (often bloody)", "abdominal pain, weight loss", "fever, fatigue", "may have extraintestinal manifestations (joint, skin, eye)"],
+    "guidance": "Treatment: mesalamine, corticosteroids, immunomodulators, and biologics (infliximab, adalimumab) – available free at government hospitals. Colonoscopy for surveillance. Nutritional support. Avoid NSAIDs. If you have symptoms, see a gastroenterologist.",
+    "precautions": ["Take maintenance medications to prevent flares", "Avoid NSAIDs", "If you have weight loss, seek care", "Regular colonoscopy (cancer surveillance)", "If on biologics, monitor for infections"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_061",
+    "category": "Diverticular Disease (Men)",
+    "symptoms": ["chronic constipation", "abdominal pain (often left lower quadrant)", "bloating", "may have diverticulitis (fever, severe pain)"],
+    "guidance": "High-fiber diet prevents diverticulosis. For diverticulitis, antibiotics and clear liquids. If recurrent or complications, surgery. Prevention: fiber, hydration, weight management.",
+    "precautions": ["Eat a high-fiber diet", "Drink adequate water", "If you have acute pain with fever, seek care", "Avoid nuts and seeds (old advice – no evidence)", "If you have recurrence, see a surgeon"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_062",
+    "category": "Colorectal Cancer (Men – Higher Risk)",
+    "symptoms": ["change in bowel habits", "blood in stool (bright red or dark)", "unexplained weight loss", "abdominal pain", "anemia, fatigue"],
+    "guidance": "Screening: colonoscopy starting at age 50 (45 if high risk). Early detection saves lives. Treatment: surgery, chemotherapy, radiation – free under PMJAY. Prevention: high-fiber diet, avoid red/processed meats, exercise, and screening.",
+    "precautions": ["Get regular colonoscopy after 50", "Eat a diet rich in fruits, vegetables, and fiber", "Limit red and processed meats", "If you have a family history, start screening earlier", "Do not ignore blood in stool"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_063",
+    "category": "Pancreatic Cancer (Men – Slightly Higher)",
+    "symptoms": ["jaundice (yellow skin, dark urine)", "abdominal or back pain", "unexplained weight loss", "loss of appetite", "new-onset diabetes (in older adults)"],
+    "guidance": "Pancreatic cancer is often diagnosed late. If you have new-onset diabetes, especially in a non-obese older man, consider screening. Treatment: surgery (Whipple), chemotherapy, and palliative care. Prevention: smoking cessation, healthy diet, maintaining weight. Free care under PMJAY.",
+    "precautions": ["Stop smoking", "Maintain a healthy weight", "If you have jaundice, seek immediate care", "If you have unexplained weight loss, see a doctor", "If you have a family history, discuss screening"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_064",
+    "category": "Lung Cancer (Men – Higher Incidence)",
+    "symptoms": ["persistent cough, hemoptysis", "chest pain, shortness of breath", "unexplained weight loss", "hoarseness, recurrent infections"],
+    "guidance": "Smoking is the leading cause. Screening: low-dose CT for high-risk individuals (age 50+ with smoking history). Treatment: surgery, chemotherapy, radiation, immunotherapy – free under PMJAY. Prevention: smoking cessation is the single most effective measure.",
+    "precautions": ["Stop smoking completely", "Avoid secondhand smoke", "If you have a persistent cough, get a chest X-ray", "If you are high-risk, get yearly low-dose CT", "Protect yourself from occupational carcinogens"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_065",
+    "category": "Bladder Cancer (Men – Higher Risk)",
+    "symptoms": ["painless hematuria (blood in urine) – most common", "frequent or painful urination", "pelvic pain", "often in smokers and those exposed to industrial dyes"],
+    "guidance": "If you have blood in urine, see a urologist immediately. Diagnosis: cystoscopy and imaging. Treatment: transurethral resection, intravesical therapy, or cystectomy. Prevention: smoking cessation, hydration, and occupational safety.",
+    "precautions": ["Stop smoking", "If you work with dyes or chemicals, use protective gear", "Drink plenty of water", "If you have blood in urine, do not ignore", "Regular follow-up after treatment"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_066",
+    "category": "Kidney Cancer (Renal Cell Carcinoma – Men)",
+    "symptoms": ["hematuria (blood in urine)", "flank pain", "palpable mass", "unexplained weight loss, fever, anaemia", "often asymptomatic and found on imaging"],
+    "guidance": "Treatment: surgery (partial or radical nephrectomy) is the mainstay. For advanced, targeted therapy or immunotherapy. Free treatment under PMJAY. Prevention: smoking cessation, maintain healthy weight, avoid occupational exposure.",
+    "precautions": ["Stop smoking", "Maintain a healthy weight", "If you have blood in urine, get evaluated", "If you have a family history, discuss screening", "Follow up with urology"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_067",
+    "category": "Penile Cancer (Rare)",
+    "symptoms": ["growth or sore on the penis (often on glans or foreskin)", "bleeding, discharge", "change in skin colour", "pain or difficulty with sexual function"],
+    "guidance": "Penile cancer is rare but associated with HPV and phimosis. Treatment: surgery (partial or total penectomy), radiation, or chemotherapy. HPV vaccination prevents. Early detection is key. See a urologist for any suspicious lesion.",
+    "precautions": ["If you have phimosis, treat it", "Practice safe sex (HPV vaccine)", "If you have a penile sore that does not heal, see a doctor", "Maintain good hygiene", "Regular self-examination"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_068",
+    "category": "Genital Warts (HPV – Men)",
+    "symptoms": ["small, flesh-coloured, cauliflower-like growths on the penis, scrotum, or anus", "may be itchy or bleed", "caused by HPV (types 6, 11)"],
+    "guidance": "Treatment: topical creams (imiquimod, podophyllotoxin), cryotherapy, or surgical excision. HPV vaccination prevents genital warts. Safe sex reduces transmission. Recurrence is common.",
+    "precautions": ["HPV vaccine (Gardasil) prevents genital warts and cancers", "Use condoms", "If you have warts, avoid sexual contact until cleared", "Do not pick warts – can spread", "If you have anal warts, see a proctologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_069",
+    "category": "Genital Herpes (HSV-2 – Men)",
+    "symptoms": ["painful blisters or ulcers on genitals", "tingling or itching before eruption", "flu-like symptoms with primary infection", "recurrences are common"],
+    "guidance": "Antivirals (acyclovir, valacyclovir) reduce severity and frequency of outbreaks. Use condoms to reduce transmission. Inform sexual partners. If you have a lesion, avoid sexual contact.",
+    "precautions": ["Avoid sex during outbreaks", "Use condoms consistently", "Take antivirals as prescribed for suppression", "If you are pregnant, inform your partner", "Do not share towels"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_070",
+    "category": "Syphilis (Men)",
+    "symptoms": ["primary: painless sore (chancre) on genitals or mouth", "secondary: rash on palms and soles, fever, lymphadenopathy", "latent: no symptoms", "tertiary: neurological, cardiovascular"],
+    "guidance": "Penicillin is the treatment of choice. Partner treatment is essential. If untreated, can progress to serious complications. Screening (VDRL) is part of routine health checks. Free penicillin at government hospitals.",
+    "precautions": ["Use condoms", "If you have a sore, get tested", "Complete the penicillin course", "If you have a positive test, treat partners", "If you have neurological symptoms, get evaluation"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_071",
+    "category": "Gonorrhea (Men)",
+    "symptoms": ["urethral discharge (white, yellow, or green)", "painful urination", "testicular pain (epididymitis)", "rectal discharge (if anal sex)"],
+    "guidance": "Antibiotics (ceftriaxone + azithromycin) – resistance is growing. Partner treatment is essential. Avoid sex until cured. If symptoms persist, retest for resistance.",
+    "precautions": ["Use condoms", "If you have discharge, get tested", "Complete the antibiotic course", "Notify sexual partners", "If you have pain or swelling, see a urologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_072",
+    "category": "Chlamydia (Men)",
+    "symptoms": ["often asymptomatic", "urethral discharge (clear or white)", "painful urination", "testicular pain (epididymitis)", "rectal pain or discharge"],
+    "guidance": "Antibiotics (azithromycin or doxycycline). Partner treatment is essential. Untreated chlamydia can cause infertility (epididymitis). Retesting after 3 months is recommended.",
+    "precautions": ["Use condoms", "If you have discharge, get tested", "Complete the antibiotic course", "Notify sexual partners", "If you have pain, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_073",
+    "category": "Trichomoniasis (Men – Often Asymptomatic)",
+    "symptoms": ["mild urethral discharge", "itching, burning", "irritation", "often asymptomatic, but can transmit to partners"],
+    "guidance": "Treatment: single-dose metronidazole or tinidazole. Both partners must be treated simultaneously. Avoid alcohol during treatment. Use condoms.",
+    "precautions": ["If you have a partner with trichomoniasis, get treated", "Avoid alcohol during treatment", "Use condoms", "If you have discharge, get tested", "Complete the course"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_074",
+    "category": "Lichen Sclerosus (Balanitis Xerotica Obliterans – Penile)",
+    "symptoms": ["white, atrophic, sclerotic plaques on the foreskin and glans", "itching, burning, pain", "phimosis, urethral stricture", "may be chronic"],
+    "guidance": "Treatment: high-potency topical corticosteroids (clobetasol). If phimosis develops, circumcision may be needed. Monitor for malignancy (rare). Refer to a dermatologist or urologist.",
+    "precautions": ["Apply clobetasol as prescribed", "If you have phimosis, see a urologist", "Do not self-medicate", "If lesions do not respond, consider biopsy", "Good hygiene"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_075",
+    "category": "Peyronie's Disease – Non-Surgical Management",
+    "symptoms": ["penile curvature with plaque formation", "erectile dysfunction", "pain with erection", "shortening of the penis"],
+    "guidance": "First-line: oral supplements (vitamin E, carnitine) – limited evidence. Intralesional collagenase injections (if available). If curvature is stable and severe, surgery is an option. Counseling and vacuum devices may help. See a urologist.",
+    "precautions": ["Do not attempt to straighten the penis forcefully", "If you have pain, seek medical advice", "If you have ED, treat it", "If surgery is needed, discuss all options", "Avoid trauma to the penis"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_076",
+    "category": "Priapism (Ischaemic) – Emergency",
+    "symptoms": ["persistent, painful erection lasting >4 hours", "not associated with sexual arousal", "rigid corpora cavernosa, soft glans", "if not treated, can cause fibrosis and ED"],
+    "guidance": "This is a urological emergency. Call 108 immediately. Do not try to treat at home with ice or exercise. Hospital treatment: aspiration and injection of phenylephrine. If refractory, surgical shunting. Avoid blood disorders (sickle cell disease) – a common cause.",
+    "precautions": ["Do not delay – ischaemic priapism causes permanent damage", "If you have sickle cell disease, seek immediate care", "Do not use over-the-counter remedies", "If you are on antipsychotics or ED medications, inform the team", "Prepare for emergency urological intervention"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_077",
+    "category": "Glans Penis Pain – Balanitis (Infective)",
+    "symptoms": ["red, swollen, painful glans", "itching or burning", "discharge (purulent or cheesy)", "may be due to candidiasis, bacteria, or STIs"],
+    "guidance": "Treatment: antifungals (clotrimazole) for candida; antibiotics for bacterial. If recurrent, consider circumcision. If STI, treat partner. Good hygiene and keep the area dry.",
+    "precautions": ["Keep the area clean and dry", "Avoid harsh soaps", "If you have diabetes, control blood sugar", "If recurrent, see a urologist", "If you have a sexual partner, treat STI"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_078",
+    "category": "Scrotal Pain – Intermittent (Torsion Prevention)",
+    "symptoms": ["recurrent, brief episodes of testicular pain (could be intermittent torsion)", "may be associated with bell-clapper anomaly", "may resolve spontaneously"],
+    "guidance": "If you have recurrent pain, see a urologist – may need prophylactic orchidopexy to prevent torsion. Do not ignore even if pain resolves. If pain becomes constant and severe, this is an emergency.",
+    "precautions": ["If you have recurrent pain, get evaluated", "If severe pain occurs, go to emergency", "Avoid vigorous physical activity if pain is frequent", "If you have a history of torsion in the family, discuss", "Do not self-diagnose"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_079",
+    "category": "Scrotal Mass – Differential (Tumour vs Benign)",
+    "symptoms": ["palpable lump in the scrotum", "may be painless or painful", "associated with testicular cancer, hydrocele, varicocele, or epididymal cyst"],
+    "guidance": "Any new scrotal mass needs ultrasound evaluation. If solid, testicular cancer is a possibility – urgent urology referral. If cystic, may be benign. Do not delay – early detection of testicular cancer is life-saving.",
+    "precautions": ["If you feel a lump, see a doctor", "Perform monthly self-exams", "If the lump is hard and painless, be suspicious", "Do not ignore", "If you have a history of undescended testis, be vigilant"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_080",
+    "category": "Spermatocele (Epididymal Cyst)",
+    "symptoms": ["painless, smooth, fluid-filled cyst in the epididymis (upper pole of the testicle)", "may be found incidentally", "usually benign"],
+    "guidance": "No treatment needed if asymptomatic. If large and uncomfortable, surgery (spermatocelectomy) may be considered. Reassurance – it is benign.",
+    "precautions": ["If you have a cyst, get an ultrasound to confirm", "If it grows or becomes painful, see a urologist", "Do not puncture it", "Reassurance", "Regular self-exams"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_081",
+    "category": "Epididymal Tuberculosis (Men)",
+    "symptoms": ["painless or mildly tender scrotal swelling", "may have a thickened epididymis", "occasionally discharging sinus", "associated with pulmonary TB or constitutional symptoms"],
+    "guidance": "Diagnosis: biopsy or PCR. Treatment: anti-TB drugs (DOTS) for 6-9 months. Free treatment under RNTCP. If abscess forms, surgical drainage. Good response with treatment.",
+    "precautions": ["If you have scrotal swelling with TB history, get evaluated", "Complete the DOTS course", "If you have a discharging sinus, keep it clean", "If HIV positive, co-treat", "Monitor for drug resistance"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_082",
+    "category": "Fournier's Gangrene (Urogenital Necrotizing Fasciitis)",
+    "symptoms": ["severe pain in the perineal/scrotal area", "rapidly spreading necrosis, gangrene", "foul-smelling discharge", "fever, sepsis, and shock"],
+    "guidance": "This is a life-threatening surgical emergency. Call 108 immediately. Requires urgent debridement and broad-spectrum antibiotics. Often seen in diabetics or immunocompromised. Do not delay.",
+    "precautions": ["If you have diabetes, control it", "If you have severe perineal pain with fever, seek emergency care", "Do not delay", "If you have a wound, keep it clean", "Prepare for ICU and surgical intervention"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_083",
+    "category": "Chronic Pain Syndrome – Urogenital (CPPS)",
+    "symptoms": ["pelvic, perineal, or testicular pain for >3 months", "no infection", "may be associated with ejaculatory pain", "often accompanied by anxiety and depression"],
+    "guidance": "Multidisciplinary management: physical therapy (pelvic floor), stress reduction, cognitive behavioral therapy, and medications (antidepressants, anticonvulsants). Avoid triggers (spicy foods, prolonged sitting). Urology follow-up.",
+    "precautions": ["Avoid spicy foods and alcohol", "Take breaks from sitting", "Pelvic floor physiotherapy", "Manage stress", "If you have depression, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_084",
+    "category": "Male Menopause – Psychological Aspects",
+    "symptoms": ["mood swings, irritability", "loss of zest for life", "anxiety, depression", "reduced concentration, memory issues", "often related to testosterone decline and life stressors"],
+    "guidance": "Hormone evaluation may be helpful. Counseling, support groups, and lifestyle changes (exercise, social engagement) improve mood. If testosterone is low, replacement may help. Do not dismiss as 'normal aging' if it affects quality of life.",
+    "precautions": ["If you have mood changes, talk to a doctor", "Maintain social connections", "Exercise regularly", "If you have sleep problems, treat them", "Consider testosterone if indicated"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_085",
+    "category": "Work Stress and Burnout (Men)",
+    "symptoms": ["exhaustion (physical and emotional)", "cynicism and detachment", "reduced efficacy", "irritability, sleep disturbances", "headaches, stomach issues"],
+    "guidance": "Set boundaries, take breaks, and practice mindfulness. Seek professional help if needed. Exercise and sleep are critical. If burnout is severe, consider time off. Free counseling at government hospitals.",
+    "precautions": ["Do not neglect sleep", "Set work-life boundaries", "Talk to a supervisor about workload", "If you have anxiety, seek help", "Take regular vacations"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_086",
+    "category": "Relationships and Communication (Men's Health)",
+    "symptoms": ["difficulty expressing emotions", "withdrawal from family and friends", "conflict in relationships", "increased substance use", "poor mental health"],
+    "guidance": "Seek couples counseling or individual therapy. Learn emotional intelligence skills. Open communication is key. Men's support groups can help. Government mental health services provide free counseling.",
+    "precautions": ["If you are having relationship problems, talk to a counselor", "Do not isolate yourself", "Practice active listening", "If you have anger issues, seek help", "Build a support network"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_087",
+    "category": "Body Image Issues – Men (Muscle Dysmorphia)",
+    "symptoms": ["preoccupation with muscularity", "excessive exercise (overtraining)", "disordered eating", "use of anabolic steroids or supplements", "dissatisfaction with body size"],
+    "guidance": "Counseling and cognitive behavioral therapy. Address underlying anxiety. If using anabolic steroids, medical supervision for cessation. Education about healthy body image. Support groups.",
+    "precautions": ["Do not use anabolic steroids – they have serious side effects", "If you are obsessing about your body, see a counselor", "Avoid comparing yourself to others", "Maintain a balanced diet", "If you have symptoms, talk to a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_088",
+    "category": "Sports Injuries (Men – Common)",
+    "symptoms": ["sprains, strains, fractures", "joint pain, swelling", "bruising, cuts", "ligament injuries (ACL, ankle)", "tendonitis"],
+    "guidance": "RICE (Rest, Ice, Compression, Elevation) for acute injuries. For severe injuries, seek medical care. Prevention: warm-up, stretching, proper technique, and protective gear. If you have a head injury, rule out concussion.",
+    "precautions": ["Warm up before exercise", "Wear protective gear (helmets, pads)", "Use proper technique", "If you have pain, do not push through", "If you have a head injury, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_089",
+    "category": "Concussion (Head Injury – Men)",
+    "symptoms": ["headache, dizziness, confusion", "nausea, vomiting", "visual disturbances", "memory problems", "loss of consciousness (may be brief)"],
+    "guidance": "Any head injury with loss of consciousness or confusion needs emergency evaluation. Rest from physical and mental activity until cleared. Gradual return to sports. If symptoms persist, see a neurologist.",
+    "precautions": ["If you have a head injury, do not return to play until cleared", "If you have confusion or vomiting, seek emergency", "Do not drive after a concussion", "If you have a second concussion, recovery takes longer", "Use helmets in contact sports"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_090",
+    "category": "Heat Illness – Men (Exertional)",
+    "symptoms": ["heat exhaustion: heavy sweating, weakness, nausea, cramps", "heat stroke: high temperature, confusion, hot dry skin, collapse"],
+    "guidance": "For heat exhaustion: move to cool place, hydrate with electrolyte drinks. For heat stroke: call 108, cool rapidly (ice packs to neck, armpits, groin), and hospitalise. Prevention: acclimatize, hydrate, and avoid peak heat.",
+    "precautions": ["Acclimatize to heat", "Drink fluids before, during, and after exercise", "Wear light clothing", "If you feel dizzy or nauseous, stop activity", "Know the signs of heat stroke – it is life-threatening"],
+    "urgency": "high"
+  },
+  {
+    "id": "men_091",
+    "category": "Hyponatremia – Exertional (Men – Endurance Sports)",
+    "symptoms": ["nausea, vomiting, headache", "confusion, seizures", "muscle cramps, weakness", "occurs in endurance athletes who drink excessive water without electrolytes"],
+    "guidance": "If you are doing prolonged exercise, replace electrolytes (sports drinks). If you have symptoms, seek medical care. Severe cases need IV hypertonic saline. Prevention: do not over-hydrate with plain water.",
+    "precautions": ["Do not drink more than you sweat", "Use sports drinks for long-duration exercise", "If you have nausea and confusion, stop exercise and seek help", "Weigh yourself before and after exercise to gauge fluid loss", "Do not ignore symptoms"],
+    "urgency": "critical"
+  },
+  {
+    "id": "men_092",
+    "category": "Caffeine Overuse (Men – Energy Drinks)",
+    "symptoms": ["palpitations, anxiety", "insomnia, jitteriness", "gastrointestinal upset", "headache (withdrawal)", "increased heart rate and BP"],
+    "guidance": "Limit caffeine to <400 mg/day (about 4 cups of coffee). Avoid energy drinks mixed with alcohol. If you have symptoms, taper gradually to avoid withdrawal. Seek medical help if you have palpitations or chest pain.",
+    "precautions": ["Limit energy drinks", "Avoid mixing with alcohol", "If you have anxiety, reduce caffeine", "Do not exceed 400 mg/day", "If you have palpitations, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_093",
+    "category": "Erectile Dysfunction – Psychogenic",
+    "symptoms": ["difficulty achieving or maintaining erections", "often situation- or partner-specific", "associated with stress, anxiety, or depression", "normal nocturnal and morning erections"],
+    "guidance": "Counseling, sex therapy, and stress management. PDE5 inhibitors (sildenafil) may be used for confidence, but address the underlying psychological issue. Good communication with partner.",
+    "precautions": ["Do not rely solely on medication – address stress", "If you have anxiety, consider CBT", "If you have depression, treat it", "Open communication with partner", "If symptoms persist, rule out organic causes"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_094",
+    "category": "Erectile Dysfunction – Vascular (Diabetes/Hypertension)",
+    "symptoms": ["gradual onset of ED", "associated with cardiovascular risk factors", "may be the first sign of underlying vascular disease"],
+    "guidance": "Evaluate for diabetes, hypertension, and hyperlipidemia. Lifestyle changes: exercise, weight loss, smoking cessation. PDE5 inhibitors are effective. If severe, consider penile injection therapy, vacuum devices, or penile prosthesis. Treat the underlying condition.",
+    "precautions": ["Do not use PDE5 inhibitors with nitrates", "Control BP and blood sugar", "Do not smoke", "If you have chest pain, see a cardiologist", "If you have sudden ED, rule out cardiovascular disease"],
+    "urgency": "medium"
+  },
+  {
+    "id": "men_095",
+    "category": "Premature Ejaculation (Men)",
+    "symptoms": ["ejaculation that occurs with minimal sexual stimulation, before or soon after penetration", "lack of control", "distress", "may be lifelong or acquired"],
+    "guidance": "Behavioral techniques (stop-start, squeeze), topical anaesthetics, and SSRIs (dapoxetine, sertraline) are effective. Counseling and partner involvement. Free SSRIs at government hospitals.",
+    "precautions": ["Do not self-medicate with SSRIs without prescription", "Use condoms to reduce sensation", "Practice stop-start technique", "If you have anxiety, treat it", "If you have a partner, involve them"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_096",
+    "category": "Retrograde Ejaculation (Men)",
+    "symptoms": ["orgasm with absent or very little semen (dry ejaculation)", "cloudy urine after ejaculation (semen in urine)", "often due to diabetes, surgery (TURP), or medications (alpha-blockers)"],
+    "guidance": "If drug-induced, switch medication. If diabetic, good glycaemic control may help. If fertility is desired, sperm can be retrieved from urine. Reassurance – not harmful. Refer to urology.",
+    "precautions": ["If you have dry ejaculation, see a doctor", "If you are on alpha-blockers, discuss alternatives", "If you have diabetes, control it", "If you want children, seek fertility advice", "Reassurance – it does not affect sexual pleasure"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_097",
+    "category": "Erectile Dysfunction – Medication-Induced",
+    "symptoms": ["new-onset ED after starting a medication (antihypertensives, antidepressants, antipsychotics, finasteride)", "reversible on stopping the drug"],
+    "guidance": "Review medications with your doctor. If possible, switch to an alternative. If not, adjunctive ED treatments (PDE5 inhibitors) may help. Do not stop medications without medical advice.",
+    "precautions": ["If you have ED after starting a drug, inform your doctor", "Do not stop medications abruptly", "If you are on finasteride, discuss side effects", "If you are on SSRIs, talk to your psychiatrist", "Consider non-pharmacological treatments"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_098",
+    "category": "Post-Orchiectomy (Testicular Cancer) – Follow-up",
+    "symptoms": ["absence of one testicle", "monitoring for recurrence (tumor markers, imaging)", "possible hormone replacement if bilateral"],
+    "guidance": "Regular follow-up with tumor markers (AFP, hCG, LDH) and CT scans as per protocol. If testosterone is low, consider replacement. Fertility preservation before treatment. Psychological support if needed.",
+    "precautions": ["Adhere to follow-up schedule", "If you have a unilateral orchiectomy, monitor the remaining testicle", "If you have low energy, check testosterone", "If you have children, discuss fertility preservation", "Join a support group"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_099",
+    "category": "Vasectomy – Postoperative Care",
+    "symptoms": ["mild scrotal pain, swelling, bruising after the procedure", "usual recovery within a week", "semen analysis after 3 months to confirm sterility"],
+    "guidance": "Rest, scrotal support, and ice packs for the first 48 hours. Avoid heavy lifting for a week. Use alternative contraception until semen analysis confirms azoospermia. If pain persists or fever develops, see a doctor.",
+    "precautions": ["Do not lift heavy objects for 1 week", "Use ice packs to reduce swelling", "Wear supportive underwear", "Do not have unprotected sex until confirmed sterile", "If you have fever or severe pain, seek care"],
+    "urgency": "low"
+  },
+  {
+    "id": "men_100",
+    "category": "Testosterone Replacement – Monitoring and Safety",
+    "symptoms": ["benefits: improved energy, libido, mood, muscle mass", "risks: erythrocytosis, worsening sleep apnea, prostate effects (PSA monitoring)"],
+    "guidance": "If you are on testosterone therapy, have regular follow-up: hematocrit, PSA, and symptom assessment. If hematocrit >54%, hold therapy and consider phlebotomy. If prostate issues develop, evaluate. Do not use without supervision.",
+    "precautions": ["Monitor hematocrit and PSA regularly", "If you have sleep apnea, testosterone can worsen it", "If you have a history of prostate cancer, testosterone is contraindicated", "Do not stop therapy without discussing", "If you have side effects, report them"],
+    "urgency": "low"
+  }
+]

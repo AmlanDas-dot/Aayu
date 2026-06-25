@@ -1,0 +1,2010 @@
+[
+  {
+    "id": "acai_berry",
+    "name": "Açaí Berry",
+    "nutrients": ["Antioxidants", "Fiber", "Healthy fats", "Vitamin A"],
+    "benefits": ["Boosts energy", "Supports heart health", "Promotes skin health"],
+    "best_time": "Morning or as a smoothie base",
+    "good_for": ["Athletes", "Immunity", "Skin health"]
+  },
+  {
+    "id": "ackee",
+    "name": "Ackee",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Healthy fats"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts energy"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["General health", "Energy"]
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes healthy skin"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["General health", "Weight management", "Heart health"]
+  },
+  {
+    "id": "apricot",
+    "name": "Apricot",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Eye health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "avocado",
+    "name": "Avocado",
+    "nutrients": ["Healthy fats", "Fiber", "Potassium", "Vitamin K"],
+    "benefits": ["Supports heart health", "Promotes brain function", "Helps absorb nutrients"],
+    "best_time": "With meals (as a healthy fat source)",
+    "good_for": ["Heart health", "Brain health", "Weight management"]
+  },
+  {
+    "id": "banana",
+    "name": "Banana",
+    "nutrients": ["Potassium", "Vitamin B6", "Vitamin C", "Fiber"],
+    "benefits": ["Supports heart health", "Provides quick energy", "Helps digestion"],
+    "best_time": "Morning or before exercise",
+    "good_for": ["Athletes", "Children", "Hypertension"]
+  },
+  {
+    "id": "baobab",
+    "name": "Baobab Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a powder in smoothies or water",
+    "good_for": ["Immunity", "Digestion", "General health"]
+  },
+  {
+    "id": "bayberry",
+    "name": "Bayberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports respiratory health"],
+    "best_time": "As a snack",
+    "good_for": ["General health", "Immunity"]
+  },
+  {
+    "id": "blackberry",
+    "name": "Blackberry",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Antioxidants"],
+    "benefits": ["Supports brain health", "Promotes heart health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Brain health", "Heart health", "Digestion"]
+  },
+  {
+    "id": "blackcurrant",
+    "name": "Blackcurrant",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Vitamin E"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes heart health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Heart health"]
+  },
+  {
+    "id": "blueberry",
+    "name": "Blueberry",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Anthocyanins"],
+    "benefits": ["Supports brain health", "Reduces oxidative stress", "Promotes heart health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Brain health", "Heart health", "Aging"]
+  },
+  {
+    "id": "boysenberry",
+    "name": "Boysenberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "breadfruit",
+    "name": "Breadfruit",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Carbohydrates"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes heart health"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["Energy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cactus_pear",
+    "name": "Cactus Pear (Prickly Pear)",
+    "nutrients": ["Vitamin C", "Fiber", "Magnesium", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes hydration"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Digestion", "Immunity"]
+  },
+  {
+    "id": "cantaloupe",
+    "name": "Cantaloupe Melon",
+    "nutrients": ["Vitamin A", "Vitamin C", "Potassium", "Fiber"],
+    "benefits": ["Hydrates body", "Supports eye health", "Boosts immunity"],
+    "best_time": "Morning or after exercise",
+    "good_for": ["Hydration", "Eye health", "Immunity"]
+  },
+  {
+    "id": "carambola",
+    "name": "Carambola (Star Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cherimoya",
+    "name": "Cherimoya",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin B6", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["General health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "cherry",
+    "name": "Cherry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Reduces inflammation", "Improves sleep quality", "Supports exercise recovery"],
+    "best_time": "Evening (may aid sleep) or after exercise",
+    "good_for": ["Athletes", "Inflammation", "Sleep"]
+  },
+  {
+    "id": "cherry_sour",
+    "name": "Sour Cherry",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Melatonin"],
+    "benefits": ["Promotes sleep", "Reduces muscle soreness", "Supports heart health"],
+    "best_time": "Evening",
+    "good_for": ["Sleep", "Athletes", "Heart health"]
+  },
+  {
+    "id": "chico",
+    "name": "Chico (Sapodilla)",
+    "nutrients": ["Fiber", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes bone health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Energy", "Digestion", "Bone health"]
+  },
+  {
+    "id": "chokeberry",
+    "name": "Chokeberry",
+    "nutrients": ["Antioxidants", "Vitamin C", "Fiber", "Vitamin K"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Reduces inflammation"],
+    "best_time": "As a snack or in juices",
+    "good_for": ["Heart health", "Immunity", "Inflammation"]
+  },
+  {
+    "id": "citron",
+    "name": "Citron",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "Used in preserves or drinks",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "clementine",
+    "name": "Clementine",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Children"]
+  },
+  {
+    "id": "coconut",
+    "name": "Coconut (fresh meat)",
+    "nutrients": ["Healthy fats (MCT)", "Fiber", "Manganese", "Copper"],
+    "benefits": ["Supports brain function", "Boosts energy", "Supports heart health"],
+    "best_time": "As a snack or with meals",
+    "good_for": ["Athletes", "Energy", "Brain health"]
+  },
+  {
+    "id": "coconut_water",
+    "name": "Coconut Water",
+    "nutrients": ["Potassium", "Magnesium", "Calcium", "Electrolytes"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids exercise recovery"],
+    "best_time": "After exercise or during hot weather",
+    "good_for": ["Athletes", "Hydration", "General health"]
+  },
+  {
+    "id": "cranberry",
+    "name": "Cranberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Manganese"],
+    "benefits": ["Prevents urinary tract infections", "Supports heart health", "Aids digestion"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Urinary health", "Heart health", "Immunity"]
+  },
+  {
+    "id": "custard_apple",
+    "name": "Custard Apple (Sitaphal)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Magnesium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Bone health"]
+  },
+  {
+    "id": "dates",
+    "name": "Dates (Medjool)",
+    "nutrients": ["Fiber", "Potassium", "Magnesium", "Iron"],
+    "benefits": ["Provides quick energy", "Supports digestive health", "Promotes bone health"],
+    "best_time": "Morning or before exercise",
+    "good_for": ["Athletes", "Anemia", "Bone health"]
+  },
+  {
+    "id": "dates_dried",
+    "name": "Dried Dates",
+    "nutrients": ["Fiber", "Potassium", "Magnesium", "Iron"],
+    "benefits": ["Provides energy", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Energy", "Digestion", "Anemia"]
+  },
+  {
+    "id": "dragon_fruit",
+    "name": "Dragon Fruit (Pitaya)",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "durian",
+    "name": "Durian",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Healthy fats"],
+    "benefits": ["Provides energy", "Supports bone health", "Promotes digestion"],
+    "best_time": "As a snack (in moderation)",
+    "good_for": ["Energy", "Bone health", "General health"]
+  },
+  {
+    "id": "elderberry",
+    "name": "Elderberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports respiratory health", "Reduces inflammation"],
+    "best_time": "As syrup or tea",
+    "good_for": ["Immunity", "Respiratory health", "Cold & flu"]
+  },
+  {
+    "id": "feijoa",
+    "name": "Feijoa (Pineapple Guava)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin B6", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "fig",
+    "name": "Fig (fresh)",
+    "nutrients": ["Fiber", "Calcium", "Potassium", "Magnesium"],
+    "benefits": ["Aids digestion", "Supports bone health", "Promotes heart health"],
+    "best_time": "Mid-morning or as a snack",
+    "good_for": ["Bone health", "Digestion", "Anemia prevention"]
+  },
+  {
+    "id": "fig_dried",
+    "name": "Dried Fig",
+    "nutrients": ["Fiber", "Calcium", "Iron", "Potassium"],
+    "benefits": ["Supports digestion", "Promotes bone health", "Boosts energy"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Anemia", "Energy"]
+  },
+  {
+    "id": "goji_berry",
+    "name": "Goji Berry",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Antioxidants"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack or in smoothies",
+    "good_for": ["Eye health", "Immunity", "Anti-aging"]
+  },
+  {
+    "id": "gooseberry",
+    "name": "Indian Gooseberry (Amla)",
+    "nutrients": ["Vitamin C (very high)", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Promotes hair and skin health", "Supports digestion"],
+    "best_time": "Morning (raw or as juice)",
+    "good_for": ["Immunity", "Hair health", "Skin health"]
+  },
+  {
+    "id": "gooseberry_cape",
+    "name": "Cape Gooseberry (Goldenberry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "grape",
+    "name": "Grape (Red/Green)",
+    "nutrients": ["Vitamin C", "Vitamin K", "Antioxidants", "Potassium"],
+    "benefits": ["Supports heart health", "Protects cells from damage", "May improve brain function"],
+    "best_time": "Any time, as a snack",
+    "good_for": ["Heart health", "Skin health", "Brain health"]
+  },
+  {
+    "id": "grape_concord",
+    "name": "Concord Grape",
+    "nutrients": ["Vitamin C", "Vitamin K", "Antioxidants", "Fiber"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Supports brain health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Brain health", "Immunity"]
+  },
+  {
+    "id": "grape_cotton_candy",
+    "name": "Cotton Candy Grape",
+    "nutrients": ["Vitamin C", "Vitamin K", "Antioxidants", "Potassium"],
+    "benefits": ["Supports heart health", "Provides quick energy", "Aids hydration"],
+    "best_time": "As a snack",
+    "good_for": ["Children", "General health", "Hydration"]
+  },
+  {
+    "id": "grapefruit",
+    "name": "Grapefruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports weight loss", "Boosts immunity", "Promotes heart health"],
+    "best_time": "Morning or mid-morning",
+    "good_for": ["Weight loss", "Immunity", "Heart health"]
+  },
+  {
+    "id": "grapefruit_pink",
+    "name": "Pink Grapefruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Lycopene"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Promotes heart health"],
+    "best_time": "Morning",
+    "good_for": ["Immunity", "Skin health", "Heart health"]
+  },
+  {
+    "id": "grapefruit_white",
+    "name": "White Grapefruit",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Supports weight loss", "Aids digestion", "Boosts immunity"],
+    "best_time": "Morning",
+    "good_for": ["Weight loss", "Digestion", "Immunity"]
+  },
+  {
+    "id": "greengage",
+    "name": "Greengage",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "guava",
+    "name": "Guava",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Improves digestion", "Supports skin health"],
+    "best_time": "Morning or evening",
+    "good_for": ["Immunity", "Diabetes", "Weight management"]
+  },
+  {
+    "id": "guava_strawberry",
+    "name": "Strawberry Guava",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "hackberry",
+    "name": "Hackberry",
+    "nutrients": ["Calcium", "Phosphorus", "Vitamin C", "Fiber"],
+    "benefits": ["Supports bone health", "Aids digestion", "Boosts energy"],
+    "best_time": "As a snack",
+    "good_for": ["Bone health", "Energy", "General health"]
+  },
+  {
+    "id": "hawthorn_berry",
+    "name": "Hawthorn Berry",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Flavonoids"],
+    "benefits": ["Supports heart health", "Regulates blood pressure", "Aids digestion"],
+    "best_time": "As a tea or supplement",
+    "good_for": ["Heart health", "Blood pressure", "Digestion"]
+  },
+  {
+    "id": "honeydew_melon",
+    "name": "Honeydew Melon",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Vitamin B6"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids digestion"],
+    "best_time": "Morning or after exercise",
+    "good_for": ["Hydration", "Heart health", "Digestion"]
+  },
+  {
+    "id": "huckleberry",
+    "name": "Huckleberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "jackfruit",
+    "name": "Jackfruit",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Magnesium"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Provides energy"],
+    "best_time": "Mid-morning or afternoon",
+    "good_for": ["Energy", "Immunity", "Digestion"]
+  },
+  {
+    "id": "jambolan",
+    "name": "Jambolan (Java Plum)",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "japanese_plum",
+    "name": "Japanese Plum (Loquat)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "jicama",
+    "name": "Jicama (Mexican Yam Bean)",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Iron"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes hydration"],
+    "best_time": "As a snack (raw)",
+    "good_for": ["Digestion", "Weight loss", "Hydration"]
+  },
+  {
+    "id": "juniper_berry",
+    "name": "Juniper Berry",
+    "nutrients": ["Vitamin C", "Antioxidants", "Flavonoids", "Essential oils"],
+    "benefits": ["Supports digestion", "Boosts immunity", "May aid respiratory health"],
+    "best_time": "As a spice or tea",
+    "good_for": ["Digestion", "Immunity", "Respiratory health"]
+  },
+  {
+    "id": "kaki",
+    "name": "Kaki (Japanese Persimmon)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "kiwi",
+    "name": "Kiwi (Kiwi fruit)",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports eye health"],
+    "best_time": "Morning or between meals",
+    "good_for": ["Immunity", "Digestion", "Eye health"]
+  },
+  {
+    "id": "kiwi_gold",
+    "name": "Gold Kiwi",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin E", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "Morning",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "kumquat",
+    "name": "Kumquat",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes skin health"],
+    "best_time": "As a snack (eaten whole)",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "langsat",
+    "name": "Langsat (Lansium)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports energy"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Energy"]
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "nutrients": ["Vitamin C", "Fiber", "Citric acid", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "Morning (with warm water) or anytime",
+    "good_for": ["Immunity", "Digestion", "Weight management"]
+  },
+  {
+    "id": "lemon_myer",
+    "name": "Meyer Lemon",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "In cooking or drinks",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Iron"],
+    "benefits": ["Supports immunity", "Promotes hydration", "Aids digestion"],
+    "best_time": "Anytime, often in drinks",
+    "good_for": ["Immunity", "Hydration", "Digestion"]
+  },
+  {
+    "id": "lime_key",
+    "name": "Key Lime",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "In cooking or drinks",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "lingonberry",
+    "name": "Lingonberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Supports urinary health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As jam or snack",
+    "good_for": ["Urinary health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "loganberry",
+    "name": "Loganberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "longan",
+    "name": "Longan",
+    "nutrients": ["Vitamin C", "Potassium", "Iron", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Heart health", "Skin health"]
+  },
+  {
+    "id": "loquat",
+    "name": "Loquat",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "lychee",
+    "name": "Lychee (Litchi)",
+    "nutrients": ["Vitamin C", "Copper", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "General health"]
+  },
+  {
+    "id": "mamey_sapote",
+    "name": "Mamey Sapote",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "mandarin",
+    "name": "Mandarin (Tangerine)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "mango",
+    "name": "Mango",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Improves digestion", "Supports eye health"],
+    "best_time": "Mid-morning or afternoon",
+    "good_for": ["General health", "Eye health", "Digestion"]
+  },
+  {
+    "id": "mango_alphonso",
+    "name": "Alphonso Mango",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "Afternoon",
+    "good_for": ["General health", "Eye health", "Immunity"]
+  },
+  {
+    "id": "mango_keitt",
+    "name": "Keitt Mango",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "Afternoon",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "mangosteen",
+    "name": "Mangosteen",
+    "nutrients": ["Vitamin C", "Fiber", "Xanthones", "Antioxidants"],
+    "benefits": ["Reduces inflammation", "Boosts immunity", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Anti-aging"]
+  },
+  {
+    "id": "marionberry",
+    "name": "Marionberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "medlar",
+    "name": "Medlar",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Iron"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports bone health"],
+    "best_time": "After bletting (ripe) as a snack",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "melon_casaba",
+    "name": "Casaba Melon",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Vitamin B6"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids digestion"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Hydration", "Heart health", "Digestion"]
+  },
+  {
+    "id": "melon_crenshaw",
+    "name": "Crenshaw Melon",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Vitamin A"],
+    "benefits": ["Hydrates body", "Supports eye health", "Boosts immunity"],
+    "best_time": "Afternoon",
+    "good_for": ["Hydration", "Eye health", "Immunity"]
+  },
+  {
+    "id": "melon_galia",
+    "name": "Galia Melon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Fiber"],
+    "benefits": ["Hydrates body", "Supports eye health", "Boosts immunity"],
+    "best_time": "Morning",
+    "good_for": ["Hydration", "Eye health", "Immunity"]
+  },
+  {
+    "id": "melon_watermelon",
+    "name": "Watermelon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Lycopene"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids muscle recovery"],
+    "best_time": "Mid-morning or after exercise",
+    "good_for": ["Athletes", "Hydration", "Heart health"]
+  },
+  {
+    "id": "melon_yubari",
+    "name": "Yubari Melon",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Vitamin A"],
+    "benefits": ["Hydrates body", "Supports skin health", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Skin health", "Immunity"]
+  },
+  {
+    "id": "mirabelle_plum",
+    "name": "Mirabelle Plum",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "monstera",
+    "name": "Monstera (Swiss Cheese Plant fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Calcium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports bone health"],
+    "best_time": "When ripe, as a snack",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "mulberry",
+    "name": "Mulberry",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Iron"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Heart health", "Bone health"]
+  },
+  {
+    "id": "nectarine",
+    "name": "Nectarine",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Supports skin health", "Aids digestion", "Promotes eye health"],
+    "best_time": "Afternoon or as a snack",
+    "good_for": ["Skin health", "Digestion", "Eye health"]
+  },
+  {
+    "id": "noni",
+    "name": "Noni",
+    "nutrients": ["Vitamin C", "Vitamin A", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports joint health", "Aids digestion"],
+    "best_time": "As juice",
+    "good_for": ["Immunity", "Joint health", "Digestion"]
+  },
+  {
+    "id": "olive",
+    "name": "Olive (fresh)",
+    "nutrients": ["Healthy fats", "Vitamin E", "Antioxidants", "Iron"],
+    "benefits": ["Supports heart health", "Reduces inflammation", "Promotes skin health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "orange",
+    "name": "Orange",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Improves skin health", "Supports heart health"],
+    "best_time": "Morning or mid-morning",
+    "good_for": ["Immunity", "Skin health", "Anemia prevention"]
+  },
+  {
+    "id": "orange_blood",
+    "name": "Blood Orange",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes skin health"],
+    "best_time": "Morning",
+    "good_for": ["Immunity", "Heart health", "Skin health"]
+  },
+  {
+    "id": "orange_navel",
+    "name": "Navel Orange",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "Morning",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "orange_valencia",
+    "name": "Valencia Orange",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids hydration"],
+    "best_time": "Mid-morning",
+    "good_for": ["Immunity", "Skin health", "Hydration"]
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Papain (enzyme)"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports skin health"],
+    "best_time": "Morning or between meals",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "papaya_green",
+    "name": "Green Papaya",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Papain"],
+    "benefits": ["Aids digestion", "Supports skin health", "Boosts immunity"],
+    "best_time": "In salads or cooked",
+    "good_for": ["Digestion", "Skin health", "Immunity"]
+  },
+  {
+    "id": "passion_fruit",
+    "name": "Passion Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports eye health"],
+    "best_time": "As a snack or in juices",
+    "good_for": ["Immunity", "Digestion", "Eye health"]
+  },
+  {
+    "id": "passion_fruit_purple",
+    "name": "Purple Passion Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "passion_fruit_yellow",
+    "name": "Yellow Passion Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "peach",
+    "name": "Peach",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Supports skin health", "Aids digestion", "Promotes eye health"],
+    "best_time": "Afternoon or as a snack",
+    "good_for": ["Skin health", "Digestion", "Eye health"]
+  },
+  {
+    "id": "peach_white",
+    "name": "White Peach",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports skin health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Afternoon",
+    "good_for": ["Skin health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "peach_yellow",
+    "name": "Yellow Peach",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Antioxidants"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "pear",
+    "name": "Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Copper", "Potassium"],
+    "benefits": ["Aids digestion", "Supports heart health", "Promotes hydration"],
+    "best_time": "Morning or evening",
+    "good_for": ["Digestion", "Heart health", "Weight management"]
+  },
+  {
+    "id": "pear_anjou",
+    "name": "Anjou Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes hydration"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Hydration"]
+  },
+  {
+    "id": "pear_asian",
+    "name": "Asian Pear (Apple Pear)",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin K", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Bone health"]
+  },
+  {
+    "id": "pear_bartlett",
+    "name": "Bartlett Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Vitamin K"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Morning",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "pear_bosc",
+    "name": "Bosc Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Copper", "Vitamin K"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Bone health"]
+  },
+  {
+    "id": "pear_concorde",
+    "name": "Concorde Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Afternoon",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "pear_forelle",
+    "name": "Forelle Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin K", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Skin health"]
+  },
+  {
+    "id": "pear_seckel",
+    "name": "Seckel Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Antioxidants", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "pear_starkrimson",
+    "name": "Starkrimson Pear",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin K", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Skin health"]
+  },
+  {
+    "id": "pepino",
+    "name": "Pepino (Melon Pear)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Hydrates body", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Immunity", "Digestion"]
+  },
+  {
+    "id": "persimmon_american",
+    "name": "American Persimmon",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "persimmon_japanese",
+    "name": "Japanese Persimmon (Kaki)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "physalis",
+    "name": "Physalis (Ground Cherry)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "nutrients": ["Vitamin C", "Manganese", "Fiber", "Bromelain (enzyme)"],
+    "benefits": ["Reduces inflammation", "Aids digestion", "Boosts immunity"],
+    "best_time": "After meals (as a digestive aid)",
+    "good_for": ["Digestion", "Arthritis", "Immunity"]
+  },
+  {
+    "id": "pineapple_sugarloaf",
+    "name": "Sugarloaf Pineapple",
+    "nutrients": ["Vitamin C", "Manganese", "Fiber", "Bromelain"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports skin health"],
+    "best_time": "After meals",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "pink_pearl_apple",
+    "name": "Pink Pearl Apple",
+    "nutrients": ["Fiber", "Vitamin C", "Antioxidants", "Potassium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes healthy skin"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["General health", "Heart health", "Skin health"]
+  },
+  {
+    "id": "pistachio_fruit",
+    "name": "Pistachio (fresh fruit)",
+    "nutrients": ["Healthy fats", "Protein", "Fiber", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Provides energy"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Energy", "General health"]
+  },
+  {
+    "id": "plantain",
+    "name": "Plantain (Cooking Banana)",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Provides energy", "Promotes heart health"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["Energy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "plum",
+    "name": "Plum",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Aids digestion", "Supports bone health", "Promotes heart health"],
+    "best_time": "As a snack any time",
+    "good_for": ["Digestion", "Bone health", "Heart health"]
+  },
+  {
+    "id": "plum_black",
+    "name": "Black Plum",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "plum_green",
+    "name": "Green Plum (Greengage)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "plum_red",
+    "name": "Red Plum",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "plum_yellow",
+    "name": "Yellow Plum",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports eye health", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Digestion", "Skin health"]
+  },
+  {
+    "id": "pomegranate",
+    "name": "Pomegranate",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Antioxidants"],
+    "benefits": ["Supports heart health", "Reduces inflammation", "May improve memory"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Heart health", "Brain health", "Anti-aging"]
+  },
+  {
+    "id": "pomelo",
+    "name": "Pomelo",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Aids digestion"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Heart health", "Weight management"]
+  },
+  {
+    "id": "prickly_pear",
+    "name": "Prickly Pear (Cactus Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Magnesium", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes hydration"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Digestion", "Immunity"]
+  },
+  {
+    "id": "pulasan",
+    "name": "Pulasan",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "quince",
+    "name": "Quince",
+    "nutrients": ["Fiber", "Vitamin C", "Copper", "Potassium"],
+    "benefits": ["Aids digestion", "Supports heart health", "Boosts immunity"],
+    "best_time": "Cooked, in jams or desserts",
+    "good_for": ["Digestion", "Heart health", "Immunity"]
+  },
+  {
+    "id": "rambutan",
+    "name": "Rambutan",
+    "nutrients": ["Vitamin C", "Iron", "Fiber", "Copper"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Bone health", "Digestion"]
+  },
+  {
+    "id": "raspberry",
+    "name": "Raspberry",
+    "nutrients": ["Vitamin C", "Fiber", "Manganese", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Reduces inflammation"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Inflammation"]
+  },
+  {
+    "id": "raspberry_black",
+    "name": "Black Raspberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "raspberry_golden",
+    "name": "Golden Raspberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "red_currant",
+    "name": "Red Currant",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Heart health", "Digestion"]
+  },
+  {
+    "id": "rose_apple",
+    "name": "Rose Apple",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "sabah_banana",
+    "name": "Sabah Banana (Pisang Sabah)",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Athletes", "Energy", "Digestion"]
+  },
+  {
+    "id": "sago_palm_fruit",
+    "name": "Sago Palm Fruit",
+    "nutrients": ["Carbohydrates", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Provides energy", "Supports bone health", "Aids digestion"],
+    "best_time": "Cooked",
+    "good_for": ["Energy", "Bone health", "General health"]
+  },
+  {
+    "id": "saguaro_fruit",
+    "name": "Saguaro Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Hydrates body", "Boosts immunity", "Supports digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Immunity", "Digestion"]
+  },
+  {
+    "id": "salak",
+    "name": "Salak (Snake Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "santol",
+    "name": "Santol (Cotton Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "sapodilla",
+    "name": "Sapodilla (Chikoo)",
+    "nutrients": ["Fiber", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes bone health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Energy", "Digestion", "Bone health"]
+  },
+  {
+    "id": "sapote_black",
+    "name": "Black Sapote (Chocolate Pudding Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "sapote_white",
+    "name": "White Sapote",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "satsuma",
+    "name": "Satsuma (Mandarin)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "seaberry",
+    "name": "Seaberry (Sea Buckthorn)",
+    "nutrients": ["Vitamin C", "Vitamin E", "Antioxidants", "Omega-7 fatty acids"],
+    "benefits": ["Supports skin health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As juice or supplement",
+    "good_for": ["Skin health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "soursop",
+    "name": "Soursop (Graviola)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "star_fruit",
+    "name": "Star Fruit (Carambola)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "nutrients": ["Vitamin C", "Manganese", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Promotes heart health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Skin health", "Weight management"]
+  },
+  {
+    "id": "strawberry_alpine",
+    "name": "Alpine Strawberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "sugar_apple",
+    "name": "Sugar Apple (Sweetsop)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Magnesium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "tamarillo",
+    "name": "Tamarillo (Tree Tomato)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "tamarind",
+    "name": "Tamarind",
+    "nutrients": ["Vitamin B1", "Magnesium", "Fiber", "Potassium"],
+    "benefits": ["Aids digestion", "Supports heart health", "Promotes skin health"],
+    "best_time": "As a snack or in chutneys",
+    "good_for": ["Digestion", "Heart health", "Skin health"]
+  },
+  {
+    "id": "tangerine",
+    "name": "Tangerine",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "tayberry",
+    "name": "Tayberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "thimbleberry",
+    "name": "Thimbleberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato (botanically a fruit)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "With meals (raw or cooked)",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "ugli_fruit",
+    "name": "Ugli Fruit (Jamaican Tangelo)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "watermelon",
+    "name": "Watermelon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Lycopene"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids muscle recovery"],
+    "best_time": "Mid-morning or after exercise",
+    "good_for": ["Athletes", "Hydration", "Heart health"]
+  },
+  {
+    "id": "white_currant",
+    "name": "White Currant",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "wild_blueberry",
+    "name": "Wild Blueberry",
+    "nutrients": ["Vitamin C", "Fiber", "Anthocyanins", "Vitamin K"],
+    "benefits": ["Supports brain health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Brain health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "wineberry",
+    "name": "Wineberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "xango",
+    "name": "Xango (Mangosteen derivative)",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Xanthones"],
+    "benefits": ["Reduces inflammation", "Boosts immunity", "Supports skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Inflammation", "Skin health"]
+  },
+  {
+    "id": "yangmei",
+    "name": "Yangmei (Chinese Bayberry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "yellow_watermelon",
+    "name": "Yellow Watermelon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Antioxidants"],
+    "benefits": ["Hydrates body", "Supports heart health", "Boosts immunity"],
+    "best_time": "After exercise",
+    "good_for": ["Athletes", "Hydration", "Immunity"]
+  },
+  {
+    "id": "yuzu",
+    "name": "Yuzu",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a flavoring or in drinks",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "ziziphus",
+    "name": "Ziziphus (Jujube)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes sleep"],
+    "best_time": "As a snack (fresh or dried)",
+    "good_for": ["Digestion", "Immunity", "Sleep"]
+  },
+  {
+    "id": "abiu",
+    "name": "Abiu",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "achacha",
+    "name": "Achacha (Garcinia humilis)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "araza",
+    "name": "Araza (Amazonian fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "bacuri",
+    "name": "Bacuri",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "cabeluda",
+    "name": "Cabeluda",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "cajamanga",
+    "name": "Cajamanga (Pequi)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "camu_camu",
+    "name": "Camu Camu",
+    "nutrients": ["Vitamin C (very high)", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Reduces inflammation", "Supports skin health"],
+    "best_time": "As juice or powder",
+    "good_for": ["Immunity", "Inflammation", "Skin health"]
+  },
+  {
+    "id": "canistel",
+    "name": "Canistel (Eggfruit)",
+    "nutrients": ["Vitamin A", "Fiber", "Vitamin C", "Calcium"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "cermai",
+    "name": "Cermai (Otaheite Gooseberry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "chayote",
+    "name": "Chayote (Mexican squash fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes hydration"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["Heart health", "Digestion", "Hydration"]
+  },
+  {
+    "id": "cocona",
+    "name": "Cocona",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports eye health"],
+    "best_time": "As a snack or in juices",
+    "good_for": ["Immunity", "Digestion", "Eye health"]
+  },
+  {
+    "id": "cupuacu",
+    "name": "Cupuaçu",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Healthy fats"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes skin health"],
+    "best_time": "As juice or dessert",
+    "good_for": ["Immunity", "Heart health", "Skin health"]
+  },
+  {
+    "id": "dabai",
+    "name": "Dabai (Borneo olive)",
+    "nutrients": ["Vitamin C", "Fiber", "Healthy fats", "Calcium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "engkala",
+    "name": "Engkala",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "gac",
+    "name": "Gac (Momordica cochinchinensis)",
+    "nutrients": ["Vitamin A (high)", "Vitamin C", "Antioxidants", "Fiber"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As juice or in cooking",
+    "good_for": ["Eye health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "grumichama",
+    "name": "Grumichama (Brazilian cherry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "hala_fruit",
+    "name": "Hala Fruit (Pandanus)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "ilama",
+    "name": "Ilama",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "jabuticaba",
+    "name": "Jabuticaba (Brazilian grape tree)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "jatoba",
+    "name": "Jatoba",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports energy"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Energy"]
+  },
+  {
+    "id": "jelly_palm",
+    "name": "Jelly Palm Fruit",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "kapundung",
+    "name": "Kapundung",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "kedondong",
+    "name": "Kedondong (Hog Plum)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "kepel",
+    "name": "Kepel",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "korlan",
+    "name": "Korlan (Lansium parasiticum)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports energy"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Energy"]
+  },
+  {
+    "id": "kwai_muk",
+    "name": "Kwai Muk (Artocarpus hypargyreus)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports eye health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Eye health"]
+  },
+  {
+    "id": "lakoocha",
+    "name": "Lakoocha (Artocarpus lakoocha)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "lucuma",
+    "name": "Lucuma",
+    "nutrients": ["Fiber", "Vitamin C", "Beta-carotene", "Iron"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts energy"],
+    "best_time": "As powder in smoothies or desserts",
+    "good_for": ["Energy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "macadamia_nut",
+    "name": "Macadamia Nut (fruit shell)",
+    "nutrients": ["Healthy fats", "Fiber", "Protein", "Vitamin E"],
+    "benefits": ["Supports heart health", "Promotes brain function", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Brain health", "Energy"]
+  },
+  {
+    "id": "marañon",
+    "name": "Marañon (Cashew apple)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "marula",
+    "name": "Marula",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin E"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "mexican_hawthorn",
+    "name": "Mexican Hawthorn (Tejocote)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "miracle_fruit",
+    "name": "Miracle Fruit (Synsepalum dulcificum)",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Calcium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack (makes sour foods sweet)",
+    "good_for": ["General health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "mombin",
+    "name": "Mombin (Yellow Mombin)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "monkey_puzzle",
+    "name": "Monkey Puzzle Fruit (Pehuen)",
+    "nutrients": ["Fiber", "Healthy fats", "Vitamin C", "Calcium"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts energy"],
+    "best_time": "Cooked",
+    "good_for": ["Energy", "Heart health", "Digestion"]
+  },
+  {
+    "id": "naranjilla",
+    "name": "Naranjilla (Lulo)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As juice",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "neem_fruit",
+    "name": "Neem Fruit",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Calcium"],
+    "benefits": ["Boosts immunity", "Supports digestive health", "Promotes skin health"],
+    "best_time": "As a supplement",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "nepali_hog_plum",
+    "name": "Nepali Hog Plum (Lapsi)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "nutmeg_fruit",
+    "name": "Nutmeg Fruit (Mace)",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Calcium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a spice",
+    "good_for": ["Digestion", "Immunity", "General health"]
+  },
+  {
+    "id": "palm_fruit",
+    "name": "Palm Fruit (Oil Palm)",
+    "nutrients": ["Vitamin A", "Vitamin E", "Healthy fats", "Antioxidants"],
+    "benefits": ["Supports eye health", "Promotes skin health", "Boosts immunity"],
+    "best_time": "Cooked or processed",
+    "good_for": ["Eye health", "Skin health", "Immunity"]
+  },
+  {
+    "id": "peach_palm",
+    "name": "Peach Palm Fruit (Pupunha)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Carbohydrates"],
+    "benefits": ["Provides energy", "Boosts immunity", "Aids digestion"],
+    "best_time": "Cooked",
+    "good_for": ["Energy", "Immunity", "Digestion"]
+  },
+  {
+    "id": "pequi",
+    "name": "Pequi (Cajá-manga)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "Cooked or as a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "phalsa",
+    "name": "Phalsa (Grewia asiatica)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "pineberry",
+    "name": "Pineberry (white strawberry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "pitanga",
+    "name": "Pitanga (Surinam Cherry)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "pitaya",
+    "name": "Pitaya (Dragon Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "pomme_cythere",
+    "name": "Pomme Cythere (Golden Apple)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "pomme_du_ciel",
+    "name": "Pomme du Ciel (Star Apple)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "pouteria",
+    "name": "Pouteria (various species)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "pulasan",
+    "name": "Pulasan",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "purple_mombin",
+    "name": "Purple Mombin (Jocote)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "ramontchi",
+    "name": "Ramontchi (Governor's Plum)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Bone health", "Digestion"]
+  },
+  {
+    "id": "red_mombin",
+    "name": "Red Mombin (Ciruela)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Skin health", "Digestion"]
+  },
+  {
+    "id": "red_peach",
+    "name": "Red Peach",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Supports skin health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Skin health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "rollinia",
+    "name": "Rollinia (Rollinia deliciosa)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "sabah_banana",
+    "name": "Sabah Banana (Pisang Sabah)",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Athletes", "Energy", "Digestion"]
+  },
+  {
+    "id": "saguaro",
+    "name": "Saguaro (Cactus fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Hydrates body", "Boosts immunity", "Supports digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Hydration", "Immunity", "Digestion"]
+  },
+  {
+    "id": "santol",
+    "name": "Santol (Cotton Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Phosphorus"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "sapota",
+    "name": "Sapota (Sapodilla)",
+    "nutrients": ["Fiber", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes bone health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Energy", "Digestion", "Bone health"]
+  },
+  {
+    "id": "satsuma",
+    "name": "Satsuma (Mandarin)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "seaberry",
+    "name": "Seaberry (Sea Buckthorn)",
+    "nutrients": ["Vitamin C", "Vitamin E", "Antioxidants", "Omega-7 fatty acids"],
+    "benefits": ["Supports skin health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As juice or supplement",
+    "good_for": ["Skin health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "soursop",
+    "name": "Soursop (Graviola)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "spanish_lime",
+    "name": "Spanish Lime (Mamoncillo)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "star_apple",
+    "name": "Star Apple (Caimito)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Calcium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "sugar_apple",
+    "name": "Sugar Apple (Sweetsop)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Magnesium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "surinam_cherry",
+    "name": "Surinam Cherry (Pitanga)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "sweet_pepper",
+    "name": "Sweet Pepper (Bell pepper, fruit)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "With meals (raw or cooked)",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "tahitian_chestnut",
+    "name": "Tahitian Chestnut (Inocarpus fagifer)",
+    "nutrients": ["Fiber", "Protein", "Healthy fats", "Calcium"],
+    "benefits": ["Provides energy", "Supports bone health", "Aids digestion"],
+    "best_time": "Cooked",
+    "good_for": ["Energy", "Bone health", "Digestion"]
+  },
+  {
+    "id": "tamarillo",
+    "name": "Tamarillo (Tree Tomato)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "tamarind",
+    "name": "Tamarind",
+    "nutrients": ["Vitamin B1", "Magnesium", "Fiber", "Potassium"],
+    "benefits": ["Aids digestion", "Supports heart health", "Promotes skin health"],
+    "best_time": "As a snack or in chutneys",
+    "good_for": ["Digestion", "Heart health", "Skin health"]
+  },
+  {
+    "id": "tangelo",
+    "name": "Tangelo (Mineola)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "tangerine",
+    "name": "Tangerine",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "tayberry",
+    "name": "Tayberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "thimbleberry",
+    "name": "Thimbleberry",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Vitamin A"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato (botanically a fruit)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "With meals (raw or cooked)",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "ugli_fruit",
+    "name": "Ugli Fruit (Jamaican Tangelo)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "watermelon",
+    "name": "Watermelon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Lycopene"],
+    "benefits": ["Hydrates body", "Supports heart health", "Aids muscle recovery"],
+    "best_time": "Mid-morning or after exercise",
+    "good_for": ["Athletes", "Hydration", "Heart health"]
+  },
+  {
+    "id": "white_sapote",
+    "name": "White Sapote (Casimiroa edulis)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "As a snack",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "wild_blueberry",
+    "name": "Wild Blueberry",
+    "nutrients": ["Vitamin C", "Fiber", "Anthocyanins", "Vitamin K"],
+    "benefits": ["Supports brain health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "As a snack",
+    "good_for": ["Brain health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "wineberry",
+    "name": "Wineberry",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "xango",
+    "name": "Xango (Mangosteen derivative)",
+    "nutrients": ["Vitamin C", "Antioxidants", "Fiber", "Xanthones"],
+    "benefits": ["Reduces inflammation", "Boosts immunity", "Supports skin health"],
+    "best_time": "As a snack or juice",
+    "good_for": ["Immunity", "Inflammation", "Skin health"]
+  },
+  {
+    "id": "yangmei",
+    "name": "Yangmei (Chinese Bayberry)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "yellow_pitaya",
+    "name": "Yellow Pitaya (Yellow Dragon Fruit)",
+    "nutrients": ["Vitamin C", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "yuzu",
+    "name": "Yuzu",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "As a flavoring or in drinks",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "ziziphus",
+    "name": "Ziziphus (Jujube)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes sleep"],
+    "best_time": "As a snack (fresh or dried)",
+    "good_for": ["Digestion", "Immunity", "Sleep"]
+  }
+]

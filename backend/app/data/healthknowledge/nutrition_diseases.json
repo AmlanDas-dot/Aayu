@@ -1,0 +1,850 @@
+[
+  {
+    "id": "vitamin_a_deficiency",
+    "category": "Vitamin A Deficiency (Xerophthalmia)",
+    "symptoms": ["night blindness (nyctalopia)", "dry eyes (xerosis)", "Bitot's spots (foamy white patches on conjunctiva)", "corneal ulceration", "keratomalacia (softening of cornea)", "dry skin (follicular hyperkeratosis)", "increased susceptibility to infections"],
+    "guidance": "Treatment: high-dose Vitamin A supplementation (oral) as per WHO schedule—free under government programs. Dietary sources: carrots, sweet potatoes, spinach, pumpkin, mangoes, papaya, eggs, milk, and liver. In severe cases with corneal involvement, urgent ophthalmology referral is needed to prevent blindness.",
+    "precautions": ["Children should receive Vitamin A supplements every 6 months from 6 months to 5 years", "Include colorful vegetables and fruits in daily meals", "If night blindness is present, seek medical help immediately—do not wait", "Pregnant women should not take high-dose Vitamin A (teratogenic risk)—only standard prenatal vitamins", "Fortified foods like Vitamin A-fortified oil and milk help prevent deficiency"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_d_rickets",
+    "category": "Vitamin D Deficiency Rickets (Children)",
+    "symptoms": ["bowed legs (genu varum) or knock-knees (genu valgum)", "widened wrists and ankles (rachitic rosary)", "delayed walking and teething", "muscle weakness, hypotonia", "bone pain and tenderness", "craniotabes (soft skull bones)", "growth retardation", "dental enamel defects"],
+    "guidance": "Treatment: high-dose Vitamin D (Stoss therapy or daily dosing) plus calcium. Sunlight exposure: 15-30 minutes daily (morning). Dietary sources: fortified milk, egg yolks, fish, and cod liver oil. Prevention: Vitamin D drops for all breastfed infants from 2 weeks of age. Free Vitamin D is available at government health centers.",
+    "precautions": ["Expose child to morning sunlight (7-9 AM) daily", "Give Vitamin D supplements to all breastfed infants from birth (400 IU/day)", "Include calcium-rich foods: milk, curd, ragi, sesame seeds", "Do not give excess Vitamin D without medical monitoring—causes hypercalcemia", "If bowed legs or delayed walking, seek pediatric evaluation"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_d_osteomalacia",
+    "category": "Vitamin D Deficiency Osteomalacia (Adults)",
+    "symptoms": ["generalized bone pain (especially hips, lower back, ribs)", "muscle weakness (proximal myopathy—difficulty climbing stairs, rising from chair)", "waddling gait", "bone fractures with minimal trauma", "hypocalcemia symptoms (tingling, cramps)", "fatigue, depression"],
+    "guidance": "Treatment: Vitamin D supplementation (daily or weekly high-dose) and calcium. Sunlight exposure. Dietary sources: fatty fish, egg yolks, fortified milk. Risk factors: women who cover fully (burqa), elderly, malabsorption. Free testing and supplements at government hospitals.",
+    "precautions": ["Sunlight exposure (hands and face for 15-20 min daily)", "Consume calcium-rich foods", "Check Vitamin D levels if bone pain is present", "Avoid self-prescribing high-dose Vitamin D", "If on anticonvulsants or steroids, higher doses may be needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_e_deficiency",
+    "category": "Vitamin E Deficiency",
+    "symptoms": ["peripheral neuropathy (tingling, numbness in hands and feet)", "ataxia (loss of coordination)", "muscle weakness", "retinopathy (vision loss)", "hemolytic anemia", "impaired immune response", "occurs in fat malabsorption or abetalipoproteinemia"],
+    "guidance": "Vitamin E supplementation (alpha-tocopherol) is treatment. Dietary sources: nuts (almonds, peanuts), seeds (sunflower), spinach, broccoli, and vegetable oils. If due to malabsorption, treat the underlying condition. Neurological symptoms may be irreversible if delayed.",
+    "precautions": ["Include nuts and seeds in daily diet", "If on a low-fat diet, ensure adequate vitamin E intake", "If neurological symptoms persist, seek neurology evaluation", "Do not take high-dose Vitamin E without evidence—risk of bleeding", "Check for fat malabsorption if deficiency is severe"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_k_deficiency",
+    "category": "Vitamin K Deficiency",
+    "symptoms": ["easy bruising", "bleeding from gums or nose", "prolonged bleeding from wounds", "blood in urine or stool", "heavy menstrual bleeding", "in newborns: hemorrhagic disease of the newborn (bleeding from umbilical stump, GI bleed, intracranial hemorrhage)"],
+    "guidance": "Treatment: Vitamin K supplementation (oral or injectable). Newborns receive Vitamin K injection at birth (free under government programs). Dietary sources: green leafy vegetables (spinach, kale, fenugreek), broccoli, and fermented foods. If on anticoagulants (warfarin), Vitamin K intake should be consistent.",
+    "precautions": ["All newborns must receive Vitamin K injection at birth—this prevents fatal bleeding", "Include green leafy vegetables in regular diet", "If on blood thinners, do not suddenly increase Vitamin K intake without doctor's advice", "If bleeding is unexplained, seek immediate medical care", "Chronic antibiotic use may deplete Vitamin K—consider supplementation"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_b1_beriberi",
+    "category": "Thiamine (Vitamin B1) Deficiency – Beriberi",
+    "symptoms": ["DRY BERIBERI: peripheral neuropathy (tingling, weakness, foot drop), muscle wasting, ataxia", "WET BERIBERI: heart failure (dyspnea, edema, tachycardia), dilated cardiomyopathy", "WERNICKE'S ENCEPHALOPATHY: confusion, ophthalmoplegia (eye movement paralysis), ataxia, often in alcoholics", "infantile beriberi: hoarse cry, vomiting, cyanosis, heart failure"],
+    "guidance": "Treatment: IV or IM thiamine (if severe) or oral thiamine. Dietary sources: whole grains (unpolished rice), legumes, nuts, pork, and fortified cereals. In India, polished rice is a major cause. Wernicke's is a medical emergency—give thiamine before glucose. Free treatment at government hospitals.",
+    "precautions": ["Eat unpolished rice (brown/parboiled) instead of polished white rice", "If alcoholic, take thiamine supplements regularly", "If Wernicke's suspected (confusion + eye signs), seek emergency care", "Do not give glucose without thiamine in suspected Wernicke's", "Pregnant and lactating women need extra thiamine"],
+    "urgency": "critical"
+  },
+  {
+    "id": "vitamin_b2_ariboflavinosis",
+    "category": "Riboflavin (Vitamin B2) Deficiency",
+    "symptoms": ["cracked, red lips (cheilosis)", "inflammation of the corners of the mouth (angular stomatitis)", "sore, red tongue (glossitis)", "seborrheic dermatitis (scaly skin around nose, scrotum)", "eye irritation, photophobia (sensitivity to light)", "anemia"],
+    "guidance": "Treatment: oral riboflavin supplements. Dietary sources: milk, eggs, yogurt, green leafy vegetables, meat, and fortified cereals. Riboflavin is sensitive to light—store milk in opaque containers. Most cases resolve with supplementation.",
+    "precautions": ["Include milk, curd, and green vegetables daily", "Store milk away from direct light", "If angular stomatitis persists, check for iron and B12 deficiency as well", "Do not self-treat—other deficiencies may coexist", "If on phenothiazines or tricyclic antidepressants, riboflavin requirement may be higher"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_b3_pellagra",
+    "category": "Niacin (Vitamin B3) Deficiency – Pellagra",
+    "symptoms": ["classic 3 Ds: Dermatitis (rough, scaly rash on sun-exposed areas, hyperpigmentation with peeling), Diarrhea (glossitis, stomatitis, GI upset), Dementia (confusion, memory loss, depression, psychosis)", "If untreated: death"],
+    "guidance": "Treatment: oral niacinamide (not niacin, which causes flushing). Dietary sources: meat, fish, poultry, eggs, legumes, and niacin-fortified cereals. Corn-based diets (maize) without processing can cause pellagra (bound niacin). Free treatment available. If dementia is present, may need hospitalization.",
+    "precautions": ["If diet is mainly maize, treat corn with alkali (lime water) to release bound niacin", "Ensure protein intake (meat, eggs, legumes)", "If rash on sun-exposed areas, avoid sun and seek medical care", "Do not use high-dose niacin for pellagra—use niacinamide", "Pellagra can occur with isoniazid (TB drug) treatment—supplement B3"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_b5_deficiency",
+    "category": "Pantothenic Acid (Vitamin B5) Deficiency",
+    "symptoms": ["fatigue", "insomnia", "irritability", "numbness and tingling (paresthesia)", "muscle cramps", "GI disturbances", "adrenal insufficiency-like symptoms (rare)"],
+    "guidance": "Vitamin B5 is widespread in foods; deficiency is very rare except in severe malnutrition. Treatment: oral pantothenic acid. Dietary sources: meat, avocados, broccoli, eggs, whole grains, legumes.",
+    "precautions": ["Rare deficiency—if symptoms persist, check other B vitamins", "Include whole grains and vegetables", "If on prolonged antibiotics, consider supplementation", "Do not take high doses—may cause diarrhea", "Balanced diet prevents deficiency"],
+    "urgency": "low"
+  },
+  {
+    "id": "vitamin_b6_deficiency",
+    "category": "Vitamin B6 (Pyridoxine) Deficiency",
+    "symptoms": ["microcytic anemia", "peripheral neuropathy (tingling, pain)", "seizures (especially in infants)", "glossitis, cheilosis", "depression, confusion", "impaired immune function", "can be caused by isoniazid, penicillamine"],
+    "guidance": "Treatment: oral pyridoxine. Dietary sources: chickpeas, poultry, fish, potatoes, bananas, and fortified cereals. If on isoniazid (TB treatment), prophylactic B6 is given. In infants with seizures, IV B6 is diagnostic and therapeutic.",
+    "precautions": ["If on TB treatment (isoniazid), take B6 supplement as prescribed", "Include bananas, chickpeas, and potatoes in diet", "If taking oral contraceptives, B6 requirement may be higher", "Do not self-diagnose B6 deficiency—nerve damage can be irreversible", "Consult doctor for dosing"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_b7_biotin_deficiency",
+    "category": "Biotin (Vitamin B7) Deficiency",
+    "symptoms": ["thinning hair and alopecia", "scaly, red skin rash around eyes, nose, mouth (seborrheic dermatitis)", "brittle nails", "neurological: depression, lethargy, hallucinations", "ataxia", "in infants: hypotonia, developmental delay"],
+    "guidance": "Treatment: oral biotin. Common causes: prolonged raw egg white consumption (avidin binds biotin), certain anticonvulsants, and genetic biotinidase deficiency. Dietary sources: eggs (cooked, not raw), liver, salmon, nuts, seeds, and sweet potatoes.",
+    "precautions": ["Do not consume large amounts of raw egg whites", "If on anticonvulsants, consider biotin supplementation", "In infants with developmental delay, screen for biotinidase deficiency", "Biotin is safe at high doses", "Include cooked eggs and nuts in diet"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_b9_folate_deficiency",
+    "category": "Folate (Vitamin B9) Deficiency",
+    "symptoms": ["megaloblastic anemia (fatigue, pallor, weakness, shortness of breath)", "glossitis (red, smooth tongue)", "mouth ulcers", "diarrhea", "neural tube defects in fetus (spina bifida, anencephaly)", "elevated homocysteine (cardiovascular risk)"],
+    "guidance": "Treatment: oral folic acid (1-5 mg/day). In pregnancy, 400-600 mcg/day prevents neural tube defects—free IFA tablets are given under government programs. Dietary sources: dark green leafy vegetables (spinach, fenugreek), legumes, citrus fruits, and fortified cereals. For malabsorption, higher doses may be needed.",
+    "precautions": ["All women of childbearing age should take folic acid supplements (400 mcg/day) if planning pregnancy", "Do not stop folic acid in pregnancy—prevents birth defects", "If anemia is not responding, check B12 as well (giving folic acid alone can mask B12 deficiency)", "Include green leafy vegetables daily", "If on methotrexate or antiepileptics, higher doses may be needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_b12_deficiency",
+    "category": "Vitamin B12 (Cobalamin) Deficiency",
+    "symptoms": ["megaloblastic anemia (fatigue, pallor, shortness of breath)", "peripheral neuropathy (numbness, tingling, especially hands and feet)", "subacute combined degeneration of spinal cord (loss of vibration/position sense, ataxia, weakness)", "glossitis (sore, red tongue)", "cognitive impairment, memory loss", "depression, confusion, psychosis", "risk in strict vegetarians/vegans"],
+    "guidance": "Treatment: oral B12 supplements (high dose) or intramuscular injections (cyanocobalamin, hydroxocobalamin)—available free at government hospitals. Dietary sources: meat, fish, eggs, milk, and dairy. Strict vegetarians need fortified foods or supplements. Neurological symptoms may be partially reversible if treated early.",
+    "precautions": ["Strict vegetarians and vegans MUST take B12 supplements (at least 2.4 mcg/day)", "Do not delay treatment if neurological symptoms are present", "If taking metformin long-term, B12 should be checked annually", "If anemia is treated with folic acid alone, B12 deficiency can be masked—check both", "In Pernicious anemia (autoimmune), lifetime B12 injections are needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_c_scurvy",
+    "category": "Vitamin C Deficiency – Scurvy",
+    "symptoms": ["bleeding gums, loose teeth", "easy bruising and petechiae", "slow wound healing", "joint pain and swelling", "anemia", "fatigue, weakness", "coiled hair with perifollicular hemorrhage", "in children: irritability, bone pain, pseudoparalysis"],
+    "guidance": "Treatment: oral Vitamin C (ascorbic acid) 300-500 mg/day. Dietary sources: citrus fruits (lemon, orange), amla (Indian gooseberry), guava, tomatoes, and green vegetables. Scurvy is rare but can occur in alcoholics, elderly, or those on severely restricted diets.",
+    "precautions": ["Include fruits and vegetables rich in Vitamin C daily", "Amla is an excellent Indian source—consume regularly", "If bleeding gums, do not ignore—seek medical help", "Smoking increases Vitamin C requirement", "Do not take massive doses (>2000 mg/day)—causes diarrhea"],
+    "urgency": "medium"
+  },
+  {
+    "id": "iron_deficiency_anemia",
+    "category": "Iron Deficiency Anemia",
+    "symptoms": ["extreme fatigue, weakness", "pale skin and nails", "dizziness, shortness of breath", "cold hands and feet", "brittle, spoon-shaped nails (koilonychia)", "headache", "pica (craving ice, dirt, chalk)", "restless legs syndrome", "impaired cognitive function in children"],
+    "guidance": "Treatment: oral ferrous sulfate (65 mg elemental iron) 2-3 times daily, with Vitamin C to enhance absorption. For severe anemia, IV iron or blood transfusion. Dietary sources: red meat, poultry, fish, eggs, legumes, green leafy vegetables, and fortified cereals. Free iron supplements are available at PHCs under Anemia Mukt Bharat. Continue for 3-6 months to replenish stores.",
+    "precautions": ["Take iron supplements with Vitamin C (lemon water) to increase absorption", "Avoid tea/coffee within 1 hour of iron intake—they block absorption", "Do not take iron with calcium supplements—separate by 2 hours", "If GI side effects (nausea, constipation), take after meals", "Do not self-diagnose—get Hb tested regularly"],
+    "urgency": "high"
+  },
+  {
+    "id": "iodine_deficiency",
+    "category": "Iodine Deficiency Disorders (Goiter, Hypothyroidism)",
+    "symptoms": ["enlarged thyroid gland (goiter)", "hypothyroidism: fatigue, weight gain, cold intolerance, constipation, dry skin", "intellectual impairment (in children—cretinism)", "growth retardation", "hearing loss", "pregnancy complications (miscarriage, stillbirth)"],
+    "guidance": "Treatment: iodine supplementation (oral iodine, or Lugol's solution in severe cases). Universal salt iodization is the key prevention—use only iodized salt. Seafood is rich in iodine. In pregnant women, iodine requirement is higher—ensure iodized salt and prenatal vitamins containing iodine.",
+    "precautions": ["Use only iodized salt (5 ppm iodine) in daily cooking", "Store iodized salt in airtight containers—iodine can evaporate", "Do not use non-iodized salt", "If goiter is present, check TSH and T4", "Pregnant women need adequate iodine—do not avoid salt"],
+    "urgency": "high"
+  },
+  {
+    "id": "zinc_deficiency",
+    "category": "Zinc Deficiency",
+    "symptoms": ["delayed wound healing", "hair loss (alopecia)", "loss of appetite", "diarrhea (in children)", "growth retardation", "hypogonadism (delayed sexual maturation)", "impaired immune function (frequent infections)", "skin lesions (acrodermatitis enteropathica—vesicular rash around mouth, anus)"],
+    "guidance": "Treatment: oral zinc supplements (20-50 mg/day for 2-3 months). Dietary sources: meat, shellfish, legumes, nuts, seeds, dairy, and whole grains. In children, zinc is given during diarrhea (10-20 mg/day for 14 days) to reduce severity. Free zinc supplements are available under government programs.",
+    "precautions": ["Take zinc supplements with food to reduce GI upset", "If on iron supplements, separate zinc and iron doses by 2 hours (competition for absorption)", "If using zinc for wound healing, continue until wound closes", "Do not take high doses (>40 mg/day) long-term—may cause copper deficiency", "Include nuts and seeds in daily diet"],
+    "urgency": "medium"
+  },
+  {
+    "id": "calcium_deficiency",
+    "category": "Calcium Deficiency (Dietary)",
+    "symptoms": ["muscle cramps and spasms", "tingling in fingers and around mouth (hypocalcemia)", "bone pain, fractures (osteoporosis, osteomalacia)", "dental problems (weak teeth, delayed eruption)", "in children: impaired growth, rickets", "fatigue, irritability"],
+    "guidance": "Treatment: calcium supplements (oral calcium carbonate or calcium citrate)—free under some government programs for pregnant women. Dietary sources: milk, curd, paneer, ragi (finger millet), sesame seeds (til), leafy greens, and sardines. Combine with Vitamin D for absorption. For osteoporosis, higher doses (1200 mg/day) are needed.",
+    "precautions": ["Consume calcium-rich foods daily—milk, curd, ragi, sesame seeds", "If taking calcium supplements, do not exceed 2000 mg/day (risk of kidney stones)", "Take calcium in divided doses (better absorption)", "Avoid taking calcium with iron (competition)—separate by 2 hours", "If on vitamin D, calcium absorption is enhanced—ensure both"],
+    "urgency": "medium"
+  },
+  {
+    "id": "magnesium_deficiency",
+    "category": "Magnesium Deficiency",
+    "symptoms": ["muscle cramps, twitching, tremors", "fatigue and weakness", "arrhythmias (palpitations)", "paresthesia (numbness)", "insomnia, anxiety", "nausea and vomiting", "hypocalcemia and hypokalemia (if prolonged)"],
+    "guidance": "Treatment: oral magnesium supplements (magnesium citrate, glycinate)—avoid oxide due to poor absorption. Dietary sources: green leafy vegetables, nuts (almonds, cashews), seeds (pumpkin, sunflower), legumes, whole grains, and bananas. Risk factors: alcoholics, diabetics, malabsorption, and diuretic use.",
+    "precautions": ["Include nuts, seeds, and green vegetables daily", "If taking magnesium supplements, choose citrate or glycinate for better absorption", "Do not exceed 350 mg/day from supplements (diarrhea risk)", "If on diuretics or PPIs, consider magnesium monitoring", "Hypomagnesemia can cause refractory hypokalemia and hypocalcemia"],
+    "urgency": "medium"
+  },
+  {
+    "id": "selenium_deficiency",
+    "category": "Selenium Deficiency",
+    "symptoms": ["Keshan disease: cardiomyopathy (enlarged heart, heart failure) in children and women of childbearing age", "Kashin-Beck disease: osteoarthropathy (joint pain, enlargement, stiff joints)", "muscle weakness", "thyroid dysfunction (selenium is needed for thyroid hormone metabolism)", "immunosuppression"],
+    "guidance": "Treatment: oral sodium selenite or selenomethionine supplements. Dietary sources: Brazil nuts, seafood, eggs, meats, and whole grains. In India, selenium levels vary by region. Selenium deficiency is rare but occurs in areas with low soil selenium (e.g., some parts of Northeast India).",
+    "precautions": ["Consume selenium-rich foods—Brazil nuts (1-2 nuts/day is enough), eggs, fish", "Do not take high doses (>400 mcg/day)—selenium toxicity (selenosis): garlic breath, hair loss, nail brittleness", "If on hemodialysis, supplementation may be needed", "Selenium is important for thyroid health—combine with iodine", "Check levels if unexplained cardiomyopathy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "copper_deficiency",
+    "category": "Copper Deficiency",
+    "symptoms": ["anemia (normocytic or microcytic, unresponsive to iron)", "neutropenia (increased infections)", "osteoporosis, bone fractures", "neuropathy (peripheral nerve damage)", "abnormal gait, ataxia", "depigmentation of hair and skin", "in infants: failure to thrive, developmental delay (Menkes disease)"],
+    "guidance": "Treatment: oral copper supplementation (copper gluconate). Dietary sources: shellfish, liver, nuts, seeds, whole grains, and legumes. Risk factors: malabsorption, gastric bypass surgery, prolonged zinc supplementation (competition), and genetic disorders (Wilson's disease is copper excess, not deficiency).",
+    "precautions": ["If taking high-dose zinc (>50 mg/day), monitor copper levels", "Include nuts, shellfish, and liver in diet", "If anemia is not responding to iron, check copper", "Do not take copper supplements without medical supervision—toxicity is possible", "In Menkes disease, copper histidinate injections are needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "manganese_deficiency",
+    "category": "Manganese Deficiency",
+    "symptoms": ["bone demineralization and poor bone health", "impaired wound healing", "abnormal glucose metabolism", "fatigue", "increased oxidative stress", "rare deficiency"],
+    "guidance": "Manganese is a trace mineral. Deficiency is rare. Dietary sources: nuts, seeds, whole grains, leafy greens, tea, and pineapple. Treatment: oral manganese supplementation if confirmed. No RDA established but estimated 2-5 mg/day.",
+    "precautions": ["Whole grains, nuts, and leafy greens provide adequate manganese", "Deficiency is extremely rare—do not supplement without confirmed deficiency", "Excessive manganese (inhalation in welders) causes neurotoxicity (manganism)", "If on TPN (total parenteral nutrition), ensure manganese is included", "General balanced diet meets requirements"],
+    "urgency": "low"
+  },
+  {
+    "id": "chromium_deficiency",
+    "category": "Chromium Deficiency",
+    "symptoms": ["impaired glucose tolerance, insulin resistance", "unexplained weight changes", "peripheral neuropathy", "increased cholesterol and triglycerides", "anxiety, fatigue"],
+    "guidance": "Chromium is a trace mineral that enhances insulin action. Deficiency is rare. Treatment: oral chromium picolinate supplements if confirmed. Dietary sources: broccoli, whole grains, meat, nuts, and brewer's yeast. High-dose supplements are not recommended for diabetes without evidence.",
+    "precautions": ["Include whole grains and broccoli in diet", "Do not self-medicate with chromium for diabetes—evidence is weak", "If taking chromium supplements, do not exceed 50 mcg/day without medical advice", "Chromium supplements may cause skin irritation and sleep disturbances", "A balanced diet provides adequate chromium"],
+    "urgency": "low"
+  },
+  {
+    "id": "molybdenum_deficiency",
+    "category": "Molybdenum Deficiency",
+    "symptoms": ["tachycardia, palpitations", "headache, nausea, vomiting", "confusion, disorientation", "elevated uric acid levels (gout-like symptoms)", "rare deficiency"],
+    "guidance": "Molybdenum is a cofactor for enzymes metabolizing sulfur amino acids and uric acid. Deficiency is extremely rare. Dietary sources: legumes, grains, nuts, and leafy greens. Treatment: oral molybdenum supplementation if confirmed.",
+    "precautions": ["Rare deficiency—do not supplement routinely", "A balanced diet provides adequate molybdenum", "Excess molybdenum can increase uric acid and cause gout-like symptoms", "If on TPN, ensure molybdenum is included", "No established RDA, adequate intake is 45 mcg/day"],
+    "urgency": "low"
+  },
+  {
+    "id": "potassium_deficiency",
+    "category": "Potassium Deficiency (Hypokalemia) – Nutritional",
+    "symptoms": ["muscle weakness, cramps", "fatigue", "arrhythmias (palpitations)", "constipation", "paralysis (severe)", "paresthesia"],
+    "guidance": "Treatment: oral potassium supplements (potassium chloride) or dietary correction. Dietary sources: bananas, potatoes, sweet potatoes, spinach, beans, and coconut water. Risk factors: diuretics, diarrhea, vomiting, excessive sweating. Severe hypokalemia requires IV potassium.",
+    "precautions": ["Include potassium-rich foods daily—bananas, coconut water, spinach", "If taking diuretics, monitor potassium levels", "Do not take potassium supplements without checking levels (risk of hyperkalemia)", "If on ACE inhibitors or ARBs, potassium levels can rise—monitor", "Do not crush or chew potassium tablets—GI irritation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "phosphorus_deficiency",
+    "category": "Phosphorus Deficiency",
+    "symptoms": ["bone pain, fractures (osteomalacia)", "muscle weakness", "anemia", "impaired growth", "anorexia", "irritability", "rickets in children"],
+    "guidance": "Treatment: oral phosphate supplements (Fleet enema not for oral). Dietary sources: milk, cheese, meat, fish, nuts, beans, and whole grains. Risk factors: starvation, malabsorption, prolonged antacid use. Often coexists with calcium and Vitamin D deficiency.",
+    "precautions": ["Include dairy and nuts in diet", "If on phosphate binders (chronic kidney disease), supplement may be needed", "Do not take excessive phosphate—causes hyperphosphatemia", "Alcoholism and refeeding syndrome can cause hypophosphatemia—medical supervision", "If bone pain, check calcium, phosphorus, and Vitamin D"],
+    "urgency": "medium"
+  },
+  {
+    "id": "protein_energy_malnutrition_marasmus",
+    "category": "Marasmus (Protein-Energy Malnutrition – Severe Wasting)",
+    "symptoms": ["severe weight loss, emaciation", "muscle wasting (no subcutaneous fat)", "skin and bones appearance (old man face)", "hair thinning, easily pluckable", "growth retardation", "apathy, irritability", "no edema (differentiates from kwashiorkor)"],
+    "guidance": "Marasmus is due to overall calorie deficiency. Treatment: nutritional rehabilitation with therapeutic feeding—F-75, F-100, and Ready-to-Use Therapeutic Food (RUTF/Plumpy'Nut). Free at Nutrition Rehabilitation Centers (NRCs) in government hospitals. Refer all SAM children to NRC. Feeding should be gradual to avoid refeeding syndrome.",
+    "precautions": ["Refer to NRC immediately", "Do not give high-calorie feeds rapidly—risk of refeeding syndrome", "Continue breastfeeding", "Monitor for complications (hypothermia, hypoglycemia, infections)", "Government provides free therapeutic food"],
+    "urgency": "critical"
+  },
+  {
+    "id": "protein_energy_malnutrition_kwashiorkor",
+    "category": "Kwashiorkor (Protein-Energy Malnutrition – Edematous)",
+    "symptoms": ["bilateral pitting edema (feet, hands, face)", "skin changes: hyperpigmentation, desquamation, fissures (flaky paint dermatosis)", "hair changes: reddish, brittle, sparse", "potbelly (protuberant abdomen due to fatty liver)", "muscle wasting (less than marasmus)", "apathy, misery", "fatty liver, hepatomegaly"],
+    "guidance": "Kwashiorkor is due to protein deficiency despite adequate calories. Treatment: nutritional rehabilitation with high-protein foods and therapeutic milk (F-75, F-100). Free treatment at NRCs. Severe cases may need IV albumin. Correct electrolyte imbalances (potassium, magnesium).",
+    "precautions": ["Do not give high-protein loads rapidly—precipitates complications", "Monitor for infection and sepsis", "Begin with F-75 then F-100", "Continue breastfeeding", "Refer to NRC immediately—do not treat at home"],
+    "urgency": "critical"
+  },
+  {
+    "id": "marasmic_kwashiorkor",
+    "category": "Marasmic-Kwashiorkor (Mixed Protein-Energy Malnutrition)",
+    "symptoms": ["severe wasting (marasmus) + edema (kwashiorkor)", "very low weight-for-height", "bilateral edema", "skin and hair changes", "hepatomegaly", "apathy"],
+    "guidance": "Mixed form—most severe PEM. Requires urgent hospitalization at NRC. Therapeutic feeding (F-75, F-100, RUTF). Correct electrolyte abnormalities and treat infections. Close monitoring of weight gain and edema resolution.",
+    "precautions": ["Hospitalize immediately", "Gradual nutritional rehabilitation", "Monitor for refeeding syndrome", "Treat infections aggressively", "Long-term follow-up for catch-up growth"],
+    "urgency": "critical"
+  },
+  {
+    "id": "severe_acute_malnutrition",
+    "category": "Severe Acute Malnutrition (SAM) – General",
+    "symptoms": ["MUAC < 11.5 cm (6-59 months)", "weight-for-height Z-score < -3 SD", "bilateral edema", "severe wasting", "frequent infections", "poor appetite"],
+    "guidance": "SAM is a medical emergency. Treatment: community-based or facility-based management with RUTF (Plumpy'Nut) under government programs. If complications (fever, severe edema, not eating), refer to NRC. Free treatment under NHM. All SAM children should be screened for TB and HIV.",
+    "precautions": ["MUAC screening at Anganwadi centers", "If MUAC < 11.5 cm, refer immediately", "Do not give home remedies—need therapeutic food", "Monitor for weight gain (minimum 5 g/kg/day)", "Deworming and Vitamin A supplementation are part of treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "moderate_acute_malnutrition",
+    "category": "Moderate Acute Malnutrition (MAM)",
+    "symptoms": ["MUAC 11.5-12.5 cm (6-59 months)", "weight-for-height Z-score between -2 and -3 SD", "no edema", "mild wasting", "growth faltering"],
+    "guidance": "MAM is managed with supplementary feeding (Take-Home Rations) provided at Anganwadi centers. Counseling on dietary diversification, hygiene, and feeding practices. Monitor monthly for progress.",
+    "precautions": ["Attend regular Anganwadi visits", "Take the supplementary food given", "Continue breastfeeding", "Ensure handwashing before meals", "If child develops edema, refer to NRC"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_malnutrition_stunting",
+    "category": "Stunting (Chronic Malnutrition)",
+    "symptoms": ["height-for-age Z-score < -2 SD", "appears shorter than peers", "delayed development", "poor school performance", "frequent infections", "often not apparent without measurement"],
+    "guidance": "Stunting results from prolonged undernutrition, starting in utero. The first 1000 days are critical. Interventions: maternal nutrition during pregnancy, exclusive breastfeeding for 6 months, diverse complementary feeding (ragi, dal, eggs, vegetables), growth monitoring at Anganwadi. Stunting is largely irreversible after age 2 but can be prevented.",
+    "precautions": ["Measure height and weight monthly at Anganwadi", "Ensure mother's nutrition during pregnancy", "Exclusive breastfeeding for 6 months", "Introduce diverse foods at 6 months", "Vaccination and deworming are essential"],
+    "urgency": "medium"
+  },
+  {
+    "id": "underweight_child",
+    "category": "Underweight (Weight-for-Age < -2 SD)",
+    "symptoms": ["weight-for-age Z-score < -2 SD", "growth faltering", "may be wasted, stunted, or both", "frequent illness"],
+    "guidance": "Underweight is a composite indicator. Management: dietary counseling, supplementary nutrition (Anganwadi), deworming, and regular growth monitoring. Address underlying causes (malabsorption, infection, inadequate feeding).",
+    "precautions": ["Regular growth monitoring", "Ensure calorie and protein intake", "Deworming every 6 months", "Treat infections promptly", "Take advantage of Anganwadi nutrition supplementation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "wasting_acute_malnutrition",
+    "category": "Wasting (Acute Malnutrition)",
+    "symptoms": ["weight-for-height Z-score < -2 SD", "rapid weight loss", "visible ribs and collarbones", "recent illness (diarrhea, infection)", "MUAC decreased"],
+    "guidance": "Wasting indicates acute, recent weight loss due to food scarcity or illness. Treatment: nutritional rehabilitation (RUTF if severe), treatment of underlying infection, and dietary counseling. Prevention: adequate feeding during illness, ORS for diarrhea, and continued feeding.",
+    "precautions": ["Continue feeding during illness", "Give extra nutrition after illness (catch-up growth)", "If MUAC < 12.5 cm, seek medical care", "Monitor weight weekly", "Vitamin A supplementation"],
+    "urgency": "high"
+  },
+  {
+    "id": "obesity",
+    "category": "Obesity (BMI ≥ 30 kg/m²)",
+    "symptoms": ["excess body fat, BMI ≥ 30", "shortness of breath on exertion", "joint pain (osteoarthritis)", "fatigue", "sleep apnea (snoring, daytime sleepiness)", "acanthosis nigricans (dark skin folds, insulin resistance)", "hypertension, dyslipidemia"],
+    "guidance": "Obesity is a chronic disease. Management: lifestyle modification—calorie-controlled diet (reduced refined carbs, sugars, saturated fats), increased physical activity (at least 150 min/week of moderate exercise), and behavioral therapy. Pharmacotherapy (orlistat, GLP-1 agonists) and bariatric surgery for severe cases (BMI > 35 with comorbidities). Free obesity clinics at some government hospitals.",
+    "precautions": ["Avoid crash diets—sustainable weight loss is 0.5-1 kg/week", "Exercise regularly—walking, swimming, cycling", "Reduce screen time", "Eat more fruits, vegetables, and whole grains", "If BMI > 35 with diabetes or hypertension, consult a specialist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "overweight_adult",
+    "category": "Overweight (BMI 25-29.9 kg/m²)",
+    "symptoms": ["BMI 25-29.9", "increased waist circumference (>90 cm in men, >80 cm in women)", "may have dyslipidemia, hypertension", "often asymptomatic"],
+    "guidance": "Overweight is a risk factor for type 2 diabetes, hypertension, and heart disease. Intervention: lifestyle changes—healthy diet (reduce calories, processed foods), regular exercise, and portion control. Even 5-10% weight loss improves metabolic parameters. Free BMI screening at PHCs.",
+    "precautions": ["Monitor waist circumference (central obesity is more dangerous)", "Eat a diet rich in fiber and low in refined carbohydrates", "Exercise 30-45 minutes daily", "Avoid sugary beverages", "Regular BP and blood sugar screening"],
+    "urgency": "low"
+  },
+  {
+    "id": "metabolic_syndrome",
+    "category": "Metabolic Syndrome (Nutrition-Related)",
+    "symptoms": ["central obesity (waist circumference ≥ 90 cm male, ≥ 80 cm female)", "high triglycerides (≥150 mg/dL)", "low HDL (<40 mg/dL male, <50 mg/dL female)", "high BP (≥130/85 mmHg)", "high fasting glucose (≥100 mg/dL)"],
+    "guidance": "Metabolic syndrome increases the risk of diabetes and heart disease. Treatment: lifestyle intervention—weight loss, dietary changes (Mediterranean/DASH diet), increased exercise. Pharmacotherapy for individual components (statins, antihypertensives, metformin). Free NCD screening at PHCs.",
+    "precautions": ["Lose weight—5-10% reduction", "Follow DASH diet (low salt, high fruits/vegetables)", "Regular aerobic exercise (30-45 min/day)", "Monitor BP, lipids, and blood sugar annually", "If three criteria are present, treat aggressively"],
+    "urgency": "high"
+  },
+  {
+    "id": "non_alcoholic_fatty_liver",
+    "category": "Non-Alcoholic Fatty Liver Disease (NAFLD)",
+    "symptoms": ["often asymptomatic", "fatigue, malaise", "right upper quadrant discomfort", "hepatomegaly", "elevated ALT/AST (mild)", "associated with obesity, diabetes, hyperlipidemia"],
+    "guidance": "NAFLD is the hepatic manifestation of metabolic syndrome. Treatment: lifestyle modification—weight loss (7-10% of body weight) is the most effective. Dietary changes: reduce fructose, refined carbs, and saturated fats. Regular exercise. No specific drug currently approved (vitamin E, pioglitazone for selected cases).",
+    "precautions": ["Weight loss is the cornerstone", "Avoid sugary drinks and processed foods", "Regular exercise (at least 150 min/week)", "If diabetic, control blood sugar", "Monitor liver enzymes and ultrasound annually"],
+    "urgency": "medium"
+  },
+  {
+    "id": "celiac_disease_adult",
+    "category": "Celiac Disease (Gluten Enteropathy) – Adult",
+    "symptoms": ["chronic diarrhea, steatorrhea (fatty stools)", "abdominal bloating, pain", "weight loss, failure to thrive", "anemia (iron, B12, folate deficiency)", "osteoporosis (bone pain)", "dermatitis herpetiformis (itchy, blistering rash)", "neurological: ataxia, peripheral neuropathy"],
+    "guidance": "Diagnosis: tissue transglutaminase IgA (ttg IgA) and duodenal biopsy. Treatment: strict lifelong gluten-free diet (avoid wheat, barley, rye, and oats cross-contaminated). Free follow-up at government hospitals. Nutritional supplements for deficiencies (iron, B12, calcium, Vitamin D).",
+    "precautions": ["Strict gluten-free diet for life", "Avoid cross-contamination (separate utensils)", "Read food labels carefully", "Take calcium and Vitamin D supplements", "Annual follow-up for nutritional status and bone density"],
+    "urgency": "medium"
+  },
+  {
+    "id": "lactose_intolerance",
+    "category": "Lactose Intolerance",
+    "symptoms": ["abdominal bloating, cramps", "diarrhea, flatulence", "nausea", "occurring 30 minutes to 2 hours after consuming dairy products", "symptoms vary by amount consumed"],
+    "guidance": "Diagnosis: lactose hydrogen breath test or trial elimination. Management: reduce or avoid lactose-containing foods (milk, ice cream, soft cheeses). Lactase enzyme supplements can be taken with dairy. Hard cheeses and yogurt are often better tolerated. Calcium and Vitamin D supplementation is essential to prevent deficiency.",
+    "precautions": ["Choose lactose-free milk or plant-based alternatives", "Take lactase enzyme with dairy", "Hard cheese (cheddar, parmesan) has less lactose", "Ensure adequate calcium intake from non-dairy sources (leafy greens, almonds, fortified foods)", "Do not avoid dairy completely without medical advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "food_allergy_general",
+    "category": "Food Allergy (IgE-Mediated)",
+    "symptoms": ["hives, itching", "swelling of lips, tongue, face", "wheezing, difficulty breathing", "abdominal pain, vomiting, diarrhea", "anaphylaxis (life-threatening)", "symptoms occur within minutes to 2 hours of eating the offending food"],
+    "guidance": "Common triggers: peanuts, tree nuts, shellfish, fish, eggs, milk, soy, wheat. Diagnosis: skin prick test, specific IgE, or oral food challenge (under supervision). Treatment: strict avoidance; emergency epinephrine (EpiPen) for anaphylaxis. Carry a medical alert bracelet.",
+    "precautions": ["Identify and strictly avoid the allergen", "Read food labels carefully", "Carry an EpiPen if prescribed", "Inform restaurants and family about allergy", "If anaphylaxis occurs, use EpiPen and call 108 immediately"],
+    "urgency": "critical"
+  },
+  {
+    "id": "cow_milk_protein_allergy",
+    "category": "Cow's Milk Protein Allergy (CMPA) – Infant",
+    "symptoms": ["vomiting, diarrhea (bloody in severe)", "blood in stool", "failure to thrive", "eczema, hives", "colicky crying", "wheezing, respiratory symptoms", "reflux"],
+    "guidance": "Diagnosis: trial elimination of cow's milk from maternal diet (if breastfeeding) or switch to extensively hydrolyzed formula or amino acid-based formula. For breastfed infants, mother eliminates all dairy. Symptoms usually resolve within 2-4 weeks. Government hospitals provide free formula for severe cases.",
+    "precautions": ["If breastfeeding, mother should eliminate dairy", "Use hydrolyzed formula if formula-fed (available at government hospitals for prescription)", "Do not give soy formula if also soy allergy", "Reintroduce milk gradually after 1 year if tolerated", "Monitor growth and development"],
+    "urgency": "high"
+  },
+  {
+    "id": "dehydration_oral",
+    "category": "Dehydration (Nutritional/Hydration)",
+    "symptoms": ["thirst", "dry mouth and tongue", "dark yellow urine", "decreased urine output", "dizziness, lightheadedness", "fatigue", "sunken eyes", "dry skin", "in severe: confusion, tachycardia, hypotension"],
+    "guidance": "Mild-moderate: ORS solution (1 packet in 1 liter clean water)—free at government facilities. Sip slowly. Continue eating light meals. Severe dehydration (vomiting, unable to drink, confusion) needs IV fluids at hospital. Prevention: drink enough water daily (2-3 liters), more in hot weather or with diarrhea.",
+    "precautions": ["Drink clean water regularly—do not wait for thirst", "Use ORS for diarrhea or vomiting", "Avoid sugary drinks (worsen dehydration)", "If unable to keep fluids down, seek hospital care", "Elderly and children are at higher risk—monitor closely"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hyponatremia_dietary",
+    "category": "Hyponatremia (Low Sodium) – Nutritional/Excess Water",
+    "symptoms": ["nausea, vomiting", "headache", "confusion", "muscle cramps, weakness", "seizures, coma (severe)", "can occur with excessive water intake without electrolytes (e.g., marathon runners)"],
+    "guidance": "Treatment: fluid restriction, sodium supplements, and treatment of underlying cause. In severe (<120 mEq/L), IV hypertonic saline is given. Prevention: ensure adequate salt intake, especially in hot climates and with heavy sweating. Do not drink large amounts of plain water without food.",
+    "precautions": ["Do not overhydrate with plain water without food", "If sweating heavily, add salt to food or use ORS", "If on diuretics, monitor sodium levels", "If confusion or seizures, seek emergency care", "Do not use salt tablets without supervision"],
+    "urgency": "high"
+  },
+  {
+    "id": "hypernatremia_dietary",
+    "category": "Hypernatremia (High Sodium) – Excessive Salt Intake",
+    "symptoms": ["extreme thirst", "dry mucous membranes", "restlessness, irritability", "muscle twitching", "confusion, lethargy", "seizures, coma (severe)"],
+    "guidance": "Treatment: gradual fluid replacement (water or IV dextrose). Prevention: reduce salt intake (<5 g/day). Avoid processed foods, pickles, papad, and salty snacks. In children, avoid salty foods. If taking oral rehydration, ensure correct dilution.",
+    "precautions": ["Reduce salt in cooking", "Avoid processed and packaged foods (high salt)", "Drink adequate water", "If on tube feeding, monitor sodium", "If thirst is excessive, check sodium level"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hyperkalemia_dietary",
+    "category": "Hyperkalemia (High Potassium) – Dietary Excess or Renal Failure",
+    "symptoms": ["muscle weakness, paralysis", "numbness, tingling", "palpitations, arrhythmias", "nausea, vomiting", "often asymptomatic until severe (cardiac arrest)"],
+    "guidance": "Emergency if ECG changes or K > 6.5 mEq/L. Treatment: calcium gluconate (cardioprotection), insulin + glucose, sodium bicarbonate, and potassium binders. Prevention: avoid high-potassium foods if renal failure (bananas, potatoes, coconut water, spinach, oranges). Dialysis if needed.",
+    "precautions": ["If chronic kidney disease, restrict potassium-rich foods", "Do not use salt substitutes (KCl)", "If on ACE inhibitors/ARBs, monitor potassium", "If palpitations or weakness, seek emergency care", "Regular blood tests if at risk"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hypokalemia_dietary",
+    "category": "Hypokalemia (Low Potassium) – Dietary/Diarrhea",
+    "symptoms": ["muscle cramps, weakness", "fatigue", "palpitations", "constipation", "paralysis (severe)", "paresthesia", "arrhythmias"],
+    "guidance": "Treatment: oral potassium supplements (KCl) or high-potassium diet. Dietary sources: bananas, coconut water, oranges, potatoes, spinach. In severe (<3.0 mEq/L), IV potassium is needed. Prevention: ensure adequate intake, especially with diarrhea or diuretic use.",
+    "precautions": ["Eat potassium-rich foods daily", "If taking diuretics, consider potassium supplementation", "Do not crush sustained-release potassium tablets", "If muscle weakness or palpitations, check potassium", "Coconut water is an excellent source"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hypocalcemia_nutritional",
+    "category": "Hypocalcemia (Low Calcium) – Nutritional",
+    "symptoms": ["tingling around mouth and fingers", "muscle cramps, spasms", "paresthesia", "Chvostek sign (facial twitching), Trousseau sign (carpopedal spasm)", "arrhythmias", "confusion, seizures"],
+    "guidance": "Treatment: oral calcium supplements (calcium carbonate or citrate) and Vitamin D to enhance absorption. Severe (<7.5 mg/dL) needs IV calcium gluconate. Dietary sources: milk, curd, ragi, sesame seeds. Chronic hypocalcemia may indicate hypoparathyroidism or malabsorption.",
+    "precautions": ["Ensure adequate calcium and Vitamin D intake", "If muscle cramps or tingling, check calcium", "Do not take calcium with iron (separate by 2 hours)", "If on PPIs long-term, calcium absorption may be impaired", "Monitor kidney stones with high-dose calcium"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hypercalcemia_dietary",
+    "category": "Hypercalcemia (High Calcium) – Excess Vitamin D or Calcium",
+    "symptoms": ["nausea, vomiting, constipation", "fatigue, weakness", "confusion, depression", "polyuria, polydipsia", "kidney stones, renal failure", "can occur with excessive Vitamin D or calcium intake"],
+    "guidance": "Treatment: hydration (IV fluids), diuretics (furosemide), calcitonin, and corticosteroids. Identify and remove the cause (e.g., stop supplements). Prevention: do not exceed recommended doses of Vitamin D and calcium.",
+    "precautions": ["Do not take high-dose Vitamin D or calcium without medical indication", "Stay hydrated", "If kidney stones, check calcium levels", "Monitor for hypercalcemia in tuberculosis or sarcoidosis", "Seek care for persistent nausea and confusion"],
+    "urgency": "critical"
+  },
+  {
+    "id": "iron_overload_hemochromatosis",
+    "category": "Hemochromatosis (Iron Overload) – Dietary/Hereditary",
+    "symptoms": ["fatigue, joint pain", "liver cirrhosis, hepatomegaly", "skin pigmentation (bronze or gray)", "diabetes (bronze diabetes)", "cardiomyopathy, arrhythmias", "hypogonadism", "arthralgia"],
+    "guidance": "Diagnosis: serum ferritin, transferrin saturation, genetic testing (HFE). Treatment: therapeutic phlebotomy (regular blood removal) is the mainstay. Dietary: avoid iron supplements, vitamin C (increases absorption), and reduce intake of red meat. Alcohol should be avoided (increases iron absorption and liver damage).",
+    "precautions": ["Avoid iron supplements and multivitamins with iron", "Limit red meat intake", "Avoid Vitamin C supplements with meals (increases iron absorption)", "Do not consume alcohol", "If diagnosed, family members should be screened"],
+    "urgency": "high"
+  },
+  {
+    "id": "wilson_disease_dietary",
+    "category": "Wilson's Disease – Copper Overload – Dietary Management",
+    "symptoms": ["hepatic: jaundice, hepatomegaly, cirrhosis", "neurological: tremors, dystonia, speech difficulties, personality changes", "psychiatric: depression, psychosis", "Kayser-Fleischer rings (copper deposits in eyes)"],
+    "guidance": "Treatment: chelating agents (penicillamine, trientine) and zinc acetate. Dietary: reduce copper-rich foods (liver, shellfish, nuts, chocolate, mushrooms) during initial treatment. Maintain lifelong therapy. Liver transplant in severe cases. Genetic counseling.",
+    "precautions": ["Avoid copper-rich foods (liver, shellfish, nuts, mushrooms, chocolate)", "Use copper-free water pipes if possible", "Do not stop chelation therapy—causes deterioration", "Regular monitoring of liver function and copper levels", "If neurological symptoms, seek urgent care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hypomagnesemia_dietary",
+    "category": "Hypomagnesemia (Low Magnesium) – Dietary",
+    "symptoms": ["muscle cramps, tremors", "fatigue, weakness", "arrhythmias, palpitations", "paresthesia", "anxiety, insomnia", "hypocalcemia (refractory)"],
+    "guidance": "Treatment: oral magnesium supplements (citrate, glycinate). Dietary sources: nuts, seeds, leafy greens, legumes, whole grains, bananas. In severe or malabsorption, IV magnesium. Prevention: include magnesium-rich foods daily.",
+    "precautions": ["Include nuts, seeds, and green vegetables daily", "If on PPIs or diuretics, monitor magnesium", "Do not take magnesium oxide (poor absorption)—choose citrate or glycinate", "If muscle cramps persist, check magnesium", "Excessive magnesium causes diarrhea"],
+    "urgency": "medium"
+  },
+  {
+    "id": "essential_fatty_acid_deficiency",
+    "category": "Essential Fatty Acid Deficiency (Linoleic/Linolenic Acid)",
+    "symptoms": ["dry, scaly skin (dermatitis)", "poor wound healing", "hair loss", "growth retardation in children", "fatty liver", "increased infections (immune dysfunction)"],
+    "guidance": "Treatment: supplementation with linoleic acid (safflower oil, sunflower oil) and alpha-linolenic acid (flaxseed oil). Dietary sources: vegetable oils, nuts, seeds, fish. Deficiency is rare except in severe fat malabsorption or TPN without lipids.",
+    "precautions": ["Include vegetable oils, nuts, and seeds in diet", "If on a low-fat diet, ensure essential fatty acids are included", "Do not use hydrogenated oils (trans fats)", "If TPN, ensure lipid emulsion is provided", "Skin dryness may be the first sign"],
+    "urgency": "medium"
+  },
+  {
+    "id": "omega_3_deficiency",
+    "category": "Omega-3 Fatty Acid Deficiency",
+    "symptoms": ["dry, rough skin", "brittle nails", "dry eyes", "poor memory and cognitive function", "depression, mood swings", "increased inflammatory markers", "joint pain"],
+    "guidance": "Treatment: supplementation with EPA/DHA (fish oil, algal oil) and ALA (flaxseed). Dietary sources: fatty fish (salmon, mackerel, sardines), flaxseeds, chia seeds, walnuts, and algae-based oils. Omega-3 has anti-inflammatory and cardioprotective effects.",
+    "precautions": ["Include fatty fish twice a week or supplement with fish oil", "Vegetarians can use flaxseed oil or algal DHA", "Do not exceed 3 g/day EPA/DHA without medical advice (bleeding risk)", "If on blood thinners, caution with high-dose omega-3", "Omega-3 may help with depression and joint pain"],
+    "urgency": "low"
+  },
+  {
+    "id": "biotinidase_deficiency",
+    "category": "Biotinidase Deficiency (Inborn Error)",
+    "symptoms": ["seizures", "hypotonia (floppy infant)", "developmental delay", "alopecia (hair loss)", "seborrheic dermatitis", "hearing loss", "optic atrophy", "ataxia"],
+    "guidance": "Newborn screening (where available) detects this. Treatment: lifelong oral biotin (5-20 mg/day) is highly effective and prevents symptoms. Dietary: no specific restrictions. Free biotin is available at government hospitals under rare disease programs.",
+    "precautions": ["Newborn screening is life-saving", "Do not stop biotin supplementation", "If seizures in infancy with skin rash, suspect biotinidase deficiency", "Monitor hearing and vision regularly", "Genetic counseling for family"],
+    "urgency": "critical"
+  },
+  {
+    "id": "phenylketonuria_dietary",
+    "category": "Phenylketonuria (PKU) – Dietary Phenylalanine Restriction",
+    "symptoms": ["intellectual disability, developmental delay", "seizures", "eczema", "musty odor of urine and skin", "microcephaly", "hypopigmentation (fair skin, blue eyes)"],
+    "guidance": "Newborn screening is essential. Treatment: lifelong dietary restriction of phenylalanine. Use special low-phenylalanine formulas and foods. Monitor blood phenylalanine levels regularly. Free medical nutrition under government rare disease programs. If untreated, severe neurological damage occurs.",
+    "precautions": ["Strict dietary phenylalanine restriction", "Use prescribed metabolic formula", "Avoid high-protein foods (meat, fish, eggs, dairy, nuts)", "Regular blood testing (every 1-4 weeks)", "Do not stop diet—leads to neurological decline"],
+    "urgency": "critical"
+  },
+  {
+    "id": "maple_syrup_urine_disease",
+    "category": "Maple Syrup Urine Disease (MSUD) – Dietary Management",
+    "symptoms": ["sweet-smelling urine (maple syrup odor) in infant", "poor feeding, vomiting", "lethargy", "hypotonia, hypertonia (opisthotonos)", "seizures", "encephalopathy", "progressive neurological deterioration"],
+    "guidance": "Newborn screening. Treatment: lifelong dietary restriction of branched-chain amino acids (leucine, isoleucine, valine). Special formulas. During illness, IV dextrose to prevent catabolism. Free medical nutrition under government programs. Close monitoring of amino acid levels.",
+    "precautions": ["Strict dietary restriction of leucine, isoleucine, valine", "Use MSUD-specific formula", "During illness, increase caloric intake to prevent protein breakdown", "Regular amino acid monitoring", "Do not miss newborn screening"],
+    "urgency": "critical"
+  },
+  {
+    "id": "homocystinuria_dietary",
+    "category": "Homocystinuria – Dietary Methionine Restriction",
+    "symptoms": ["Marfanoid habitus (tall, long limbs)", "ectopia lentis (dislocated lens)", "intellectual disability", "thrombosis (stroke, DVT)", "osteoporosis, scoliosis"],
+    "guidance": "Treatment: vitamin B6 (pyridoxine) responsive in some; others require dietary methionine restriction, cystine supplementation, and betaine. Newborn screening. Prevention of thrombosis is critical. Dietary guidance by a metabolic dietitian.",
+    "precautions": ["Methionine-restricted diet", "Cystine supplementation", "If on pyridoxine, continue—prevents complications", "Antiplatelet therapy for thrombosis prevention", "Regular monitoring of homocysteine levels"],
+    "urgency": "high"
+  },
+  {
+    "id": "tyrosinemia_dietary",
+    "category": "Tyrosinemia (Type I) – Dietary Phenylalanine/Tyrosine Restriction",
+    "symptoms": ["failure to thrive, vomiting", "hepatomegaly, jaundice, liver failure", "renal Fanconi syndrome (rickets, aminoaciduria)", "peripheral neuropathy", "hepatic adenomas, hepatoblastoma"],
+    "guidance": "Treatment: nitisinone (medication) + dietary restriction of phenylalanine and tyrosine. Special formula. Liver transplant in severe cases. Free nitisinone under government rare disease program. Monitor liver function and alpha-fetoprotein.",
+    "precautions": ["Strict dietary restriction of phenylalanine and tyrosine", "Nitisinone (NTBC) is life-saving", "Monitor liver function and alpha-fetoprotein regularly", "Do not stop medication", "If acute crisis, hospitalization"],
+    "urgency": "critical"
+  },
+  {
+    "id": "galactosemia_dietary",
+    "category": "Galactosemia – Dietary Galactose Restriction",
+    "symptoms": ["vomiting, diarrhea in newborns after milk feeding", "failure to thrive", "jaundice, hepatomegaly", "cataracts", "E. coli sepsis in neonatal period", "intellectual disability if untreated"],
+    "guidance": "Newborn screening (where available). Treatment: lifelong avoidance of lactose/galactose (dairy products, breast milk—use soy-based formula). Calcium supplementation is needed. Free formula under government programs. Regular monitoring for cataracts.",
+    "precautions": ["Lifelong galactose-free diet", "Use soy or special lactose-free formula for infants", "Avoid dairy products entirely", "Calcium supplementation (dairy is avoided)", "Regular eye exams for cataracts"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hereditary_fructose_intolerance",
+    "category": "Hereditary Fructose Intolerance (HFI) – Dietary Fructose Restriction",
+    "symptoms": ["nausea, vomiting after consuming fructose/sucrose/sorbitol", "hypoglycemia", "hepatomegaly, jaundice, liver failure", "growth failure", "renal tubular acidosis", "symptoms in infancy after weaning"],
+    "guidance": "Diagnosis by genetic testing or liver biopsy. Treatment: strict lifelong avoidance of fructose, sucrose, and sorbitol. Avoid fruits, honey, sweetened drinks, and table sugar. Free dietary guidance at metabolic centers.",
+    "precautions": ["Avoid all sources of fructose, sucrose, and sorbitol", "Read food labels carefully", "Glucose (dextrose) is safe", "Monitor liver function", "If eating sweets, ensures they are glucose-based"],
+    "urgency": "high"
+  },
+  {
+    "id": "refsum_disease_dietary",
+    "category": "Refsum Disease (Phytanic Acid Accumulation) – Dietary Phytanic Acid Restriction",
+    "symptoms": ["retinitis pigmentosa (night blindness, visual field loss)", "peripheral neuropathy", "ataxia", "deafness", "ichthyosis (scaly skin)", "cardiomyopathy", "cerebellar ataxia"],
+    "guidance": "Treatment: dietary restriction of phytanic acid (avoid dairy fat, ruminant meat, and fish oils). Plasmapheresis for acute attacks. Lifelong diet. Vitamin E and other antioxidants. Multidisciplinary management.",
+    "precautions": ["Strict avoidance of dairy fat, beef, lamb, and fish oils (phytanic acid rich)", "Use plant-based fats", "Regular monitoring of phytanic acid levels", "If neurological symptoms, seek early treatment", "Plasmapheresis for acute crises"],
+    "urgency": "high"
+  },
+  {
+    "id": "abetalipoproteinemia",
+    "category": "Abetalipoproteinemia – Fat Malabsorption and Dietary Management",
+    "symptoms": ["steatorrhea (fatty stools)", "failure to thrive (infancy)", "retinopathy (pigmentary)", "peripheral neuropathy, ataxia", "acanthocytosis (abnormal red cells)", "fat-soluble vitamin deficiencies (A, D, E, K)"],
+    "guidance": "Treatment: high-dose fat-soluble vitamins (A, D, E, K), medium-chain triglycerides (MCT) oil (absorbed without chylomicrons), and a low-fat diet. Strict adherence prevents neurological deterioration. Available under rare disease programs.",
+    "precautions": ["Low-fat diet with MCT oil supplementation", "High-dose Vitamin E (alpha-tocopherol) to prevent neuropathy", "Monitor fat-soluble vitamin levels", "If neurological symptoms, urgent care", "Regular ophthalmology follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "chylomicron_retention_disease",
+    "category": "Chylomicron Retention Disease (CRD) – Dietary Fat Restriction",
+    "symptoms": ["steatorrhea, failure to thrive in infancy", "abdominal distension", "fat-soluble vitamin deficiencies", "growth delay", "may present with hypocholesterolemia"],
+    "guidance": "Treatment: low-fat diet with MCT supplementation and high-dose fat-soluble vitamins. Similar to abetalipoproteinemia but less severe neurological involvement. Dietary counseling is critical.",
+    "precautions": ["Low-fat diet", "MCT oil supplementation", "Fat-soluble vitamin supplementation", "Monitor growth and vitamin levels", "Avoid high-fat foods"],
+    "urgency": "medium"
+  },
+  {
+    "id": "primary_carnitine_deficiency",
+    "category": "Primary Carnitine Deficiency – Dietary Supplementation",
+    "symptoms": ["cardiomyopathy (dilated, hypertrophic)", "skeletal muscle weakness, myopathy", "hypoglycemia (fasting)", "hepatic encephalopathy", "cardiac arrhythmias"],
+    "guidance": "Treatment: lifelong oral L-carnitine supplementation (100-300 mg/kg/day) is life-saving. Avoid fasting. Dietary: high-carbohydrate, frequent meals. Free carnitine available under government rare disease programs.",
+    "precautions": ["Do not skip carnitine doses", "Avoid fasting—regular meals", "Monitor cardiac function", "If cardiomyopathy, urgent cardiology referral", "Genetic testing for family"],
+    "urgency": "critical"
+  },
+  {
+    "id": "glucose_galactose_malabsorption",
+    "category": "Glucose-Galactose Malabsorption – Dietary Sugar Restriction",
+    "symptoms": ["severe diarrhea starting in the neonatal period after feeding", "dehydration, weight loss", "fructosuria", "symptoms resolve on sugar-free diet"],
+    "guidance": "Treatment: dietary restriction of glucose and galactose. Use fructose-based formula. Lifelong diet avoiding glucose, galactose, lactose, and sucrose. Fructose is well tolerated. Diagnosis via stool analysis or genetic testing.",
+    "precautions": ["Avoid glucose, galactose, lactose, and sucrose", "Use fructose-based foods", "Monitor hydration", "Growth monitoring", "Dietary counseling"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sucrose_isomaltase_deficiency",
+    "category": "Congenital Sucrase-Isomaltase Deficiency – Dietary Sucrose Restriction",
+    "symptoms": ["diarrhea, abdominal pain, bloating after consuming sucrose-rich foods (sugar, fruits)", "onset with introduction of sucrose in diet", "acidic stools", "growth failure"],
+    "guidance": "Treatment: dietary restriction of sucrose (table sugar) and starch (isomaltose). Use glucose-based or fructose-based foods. Enzyme supplements (sucrase) may be available. Dietary counseling.",
+    "precautions": ["Avoid sugar, honey, and sucrose-rich fruits", "Use glucose-based sweets", "Take enzyme supplement if available", "Monitor growth", "Do not give sugary drinks"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cystic_fibrosis_nutrition",
+    "category": "Cystic Fibrosis (CF) – Nutritional Management",
+    "symptoms": ["pancreatic insufficiency leading to malabsorption, steatorrhea", "failure to thrive, weight loss", "frequent respiratory infections", "meconium ileus in newborns", "fat-soluble vitamin deficiencies"],
+    "guidance": "Treatment: pancreatic enzyme replacement therapy (PERT) with meals. High-calorie, high-protein diet with MCT oil. Fat-soluble vitamin supplements (A, D, E, K). Salt supplementation in hot climates. Multidisciplinary care. Free enzymes available under government schemes.",
+    "precautions": ["Take pancreatic enzymes with every meal and snack", "High-calorie diet (1.5-2x normal)", "Salt supplementation (especially in summer)", "Vitamin A, D, E, K supplements", "Monitor weight and growth regularly"],
+    "urgency": "high"
+  },
+  {
+    "id": "short_bowel_syndrome",
+    "category": "Short Bowel Syndrome – Nutritional Management",
+    "symptoms": ["malabsorption, chronic diarrhea", "weight loss, dehydration", "fatigue, weakness", "vitamin and mineral deficiencies", "after extensive bowel resection (e.g., neonatal necrotizing enterocolitis, trauma)"],
+    "guidance": "Treatment: parenteral nutrition (TPN) initially; transition to enteral nutrition as bowel adapts. Oral rehydration solutions, medium-chain triglycerides (MCT), and vitamin/mineral supplements. Multidisciplinary team. Intestinal transplantation for end-stage. Free TPN in government hospitals.",
+    "precautions": ["TPN requires strict sterile technique", "Monitor for line infections", "Gradual advancement of enteral feeds", "Vitamin B12 and fat-soluble vitamin supplementation", "Close monitoring of electrolytes"],
+    "urgency": "critical"
+  },
+  {
+    "id": "gastroparesis_nutritional",
+    "category": "Gastroparesis – Nutritional Management",
+    "symptoms": ["early satiety, nausea, vomiting", "abdominal pain", "bloating", "weight loss, malnutrition", "diabetic gastroparesis is common"],
+    "guidance": "Treatment: small, frequent meals, low-fat, low-fiber, liquid or pureed foods. Prokinetics (metoclopramide, erythromycin). In severe cases, jejunal feeding or parenteral nutrition. Manage underlying diabetes. Dietary counseling is key.",
+    "precautions": ["Eat small, frequent meals", "Low-fat, low-fiber diet", "Chew well and eat slowly", "Avoid high-fat and high-fiber foods", "If vomiting, seek medical care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "dumping_syndrome",
+    "category": "Dumping Syndrome (Post-Gastric Surgery) – Dietary Management",
+    "symptoms": ["after gastric surgery (bariatric, gastrectomy): early dumping (nausea, palpitations, diarrhea 15-30 min after meals)", "late dumping (hypoglycemia 1-3 hours after meals, sweating, weakness, confusion)"],
+    "guidance": "Treatment: dietary modification—small, frequent meals, low in simple sugars, high in protein and complex carbohydrates. Separate liquids from solids (drink 30 minutes before or after meals). Acarbose may help with late dumping. Nutritional support.",
+    "precautions": ["Avoid concentrated sweets and sugar", "Eat protein with every meal", "Do not drink liquids with meals", "Lie down after meals if symptomatic", "Monitor for hypoglycemia"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sarcopenia_nutritional",
+    "category": "Sarcopenia – Age-Related Muscle Loss – Nutritional Support",
+    "symptoms": ["loss of muscle mass and strength", "difficulty climbing stairs, walking", "frequent falls", "slow gait", "reduced grip strength", "fatigue"],
+    "guidance": "Treatment: adequate protein intake (1.2-1.5 g/kg/day) with essential amino acids, particularly leucine. Vitamin D and calcium supplementation. Resistance exercise (strength training) is critical. Nutritional counseling.",
+    "precautions": ["Increase protein intake (egg, meat, dairy, legumes)", "Resistance training (at least 2-3 times/week)", "Vitamin D and calcium", "Prevent falls—home safety", "If weight loss, consult dietitian"],
+    "urgency": "medium"
+  },
+  {
+    "id": "frailty_elderly_nutrition",
+    "category": "Frailty in Elderly – Nutritional Intervention",
+    "symptoms": ["unintentional weight loss", "weakness, fatigue", "slow walking speed", "low physical activity", "poor nutrition, reduced intake", "increased vulnerability to stress"],
+    "guidance": "Nutritional interventions: high-protein, calorie-dense foods, fortified foods, and oral nutritional supplements (ONS). Vitamin D and calcium. Social support and eating assistance. Treat underlying depression and dental issues. Regular monitoring.",
+    "precautions": ["Fortify foods with protein and calories", "Use oral nutritional supplements if needed", "Ensure dental health for chewing", "Vitamin D supplementation", "Encourage regular meals and snacks"],
+    "urgency": "medium"
+  },
+  {
+    "id": "anorexia_of_aging",
+    "category": "Anorexia of Aging – Reduced Appetite in Elderly",
+    "symptoms": ["loss of appetite", "early satiety", "unintentional weight loss", "reduced food intake", "fatigue, weakness"],
+    "guidance": "Causes: age-related physiological changes, medications, depression, social isolation, dental problems. Intervention: small frequent meals, energy-dense foods, appetite stimulants (if indicated), social eating, and addressing underlying causes. Oral nutritional supplements.",
+    "precautions": ["Eat small, frequent meals", "Use nutrient-dense foods", "Consider appetite stimulants (megestrol, mirtazapine) if indicated", "Address dental and GI issues", "Monitor weight monthly"],
+    "urgency": "low"
+  },
+  {
+    "id": "pica_nutritional",
+    "category": "Pica – Non-Food Eating – Nutritional Deficiency",
+    "symptoms": ["persistent eating of non-nutritive items (soil, chalk, paper, ice, starch)", "may be associated with iron or zinc deficiency", "more common in children and pregnant women", "may lead to lead poisoning, intestinal obstruction"],
+    "guidance": "Treatment: correct iron and zinc deficiencies (often causative). Behavioral interventions. Childproof home to remove harmful substances. Lead screening is important. Dietary counseling to ensure adequate nutrition.",
+    "precautions": ["Check iron and zinc levels", "Store harmful substances out of reach", "Positive reinforcement for appropriate eating", "Lead screening if pica with soil", "Counseling for behavioral modification"],
+    "urgency": "medium"
+  },
+  {
+    "id": "rumination_nutritional",
+    "category": "Rumination Disorder – Nutritional Consequences",
+    "symptoms": ["repeated regurgitation of food, re-chewing, re-swallowing, or spitting", "weight loss, malnutrition", "failure to thrive (in children)", "electrolyte imbalance", "can occur in adults with intellectual disability"],
+    "guidance": "Treatment: behavioral therapy (habit reversal, diaphragmatic breathing). Address comorbid conditions. Nutritional support to correct deficiencies. In severe cases, hospitalization. Multidisciplinary approach.",
+    "precautions": ["Behavioral therapy", "Nutritional rehabilitation", "Monitor weight and electrolytes", "Address underlying stress", "If in children, involve parents"],
+    "urgency": "medium"
+  },
+  {
+    "id": "avoidant_restrictive_food_intake",
+    "category": "Avoidant/Restrictive Food Intake Disorder (ARFID) – Nutritional",
+    "symptoms": ["eating disturbance leading to significant weight loss, nutritional deficiency, or dependence on supplements", "no body image disturbance", "avoidance based on sensory characteristics or fear of adverse consequences", "often in children and adolescents"],
+    "guidance": "Treatment: nutritional rehabilitation, CBT, sensory desensitization, and family-based therapy. Address anxiety and aversive experiences. Multidisciplinary: dietitian, psychologist, pediatrician. Free mental health services available.",
+    "precautions": ["Nutritional support and monitoring", "Sensory desensitization exercises", "Family involvement", "Do not force feed—creates aversions", "Gradual food reintroduction"],
+    "urgency": "medium"
+  },
+  {
+    "id": "tropical_sprue",
+    "category": "Tropical Sprue (Malabsorption) – Nutritional",
+    "symptoms": ["chronic diarrhea, steatorrhea", "weight loss, malnutrition", "megaloblastic anemia (B12 and folate deficiency)", "tongue soreness, glossitis", "abdominal distension, cramps", "common in tropical regions including India"],
+    "guidance": "Treatment: folic acid, Vitamin B12, and broad-spectrum antibiotics (tetracycline). Dietary support: high-protein, high-calorie, and low-fat diet. Treat electrolyte imbalances. Free treatment at government hospitals.",
+    "precautions": ["Vitamin B12 and folic acid supplementation", "Antibiotic course", "Dietary support", "Monitor for electrolyte imbalances", "Long-term follow-up for relapse"],
+    "urgency": "high"
+  },
+  {
+    "id": "celiac_gluten_crisis",
+    "category": "Celiac Crisis – Severe Malabsorption",
+    "symptoms": ["profuse diarrhea, dehydration", "severe electrolyte imbalances", "metabolic acidosis", "weight loss, malnutrition", "hypoalbuminemia (edema)", "may be precipitated by infection"],
+    "guidance": "Medical emergency. Treatment: IV fluids, electrolyte correction, corticosteroids, and strict gluten-free diet. Nutritional rehabilitation. Hospitalization is mandatory. Free care at government hospitals.",
+    "precautions": ["Emergency hospitalization", "IV hydration and electrolytes", "Corticosteroids may be needed", "Strict gluten-free diet", "Monitor for refeeding syndrome"],
+    "urgency": "critical"
+  },
+  {
+    "id": "exocrine_pancreatic_insufficiency",
+    "category": "Exocrine Pancreatic Insufficiency – Nutritional Management",
+    "symptoms": ["steatorrhea (fatty, foul-smelling stools)", "weight loss, failure to thrive", "bloating, abdominal pain", "fat-soluble vitamin deficiencies (A, D, E, K)", "causes: chronic pancreatitis, cystic fibrosis, pancreatic cancer"],
+    "guidance": "Treatment: pancreatic enzyme replacement therapy (PERT) with meals. High-calorie, high-protein diet. MCT oil for fat absorption. Vitamin supplementation. Free enzyme tablets at government hospitals.",
+    "precautions": ["Take pancreatic enzymes with every meal and snack", "High-calorie diet", "Fat-soluble vitamins (A, D, E, K)", "If on PERT, do not crush tablets", "Monitor stool fat and weight"],
+    "urgency": "high"
+  },
+  {
+    "id": "fat_malabsorption_general",
+    "category": "General Fat Malabsorption – Dietary Management",
+    "symptoms": ["steatorrhea (bulky, greasy, foul-smelling stools)", "weight loss", "bloating, flatulence", "fat-soluble vitamin deficiencies", "causes: celiac, pancreatitis, biliary obstruction"],
+    "guidance": "Treatment: treat the underlying cause. Dietary: low-fat diet with MCT oil supplementation, high-dose fat-soluble vitamins. If severe, consider parenteral nutrition. Dietary counseling is essential.",
+    "precautions": ["Low-fat diet", "MCT oil supplementation", "Vitamin A, D, E, K supplementation", "Monitor weight and stool", "Seek dietary counseling"],
+    "urgency": "medium"
+  },
+  {
+    "id": "protein_losing_enteropathy",
+    "category": "Protein-Losing Enteropathy – Nutritional Support",
+    "symptoms": ["edema (hypoalbuminemia)", "weight loss", "diarrhea", "malnutrition", "causes: inflammatory bowel disease, celiac, intestinal lymphangiectasia"],
+    "guidance": "Treatment: high-protein diet, medium-chain triglycerides, and fat-soluble vitamins. Manage underlying cause. Albumin infusion in severe cases. Dietary counseling. Free supplements at hospitals.",
+    "precautions": ["High-protein diet", "MCT oil", "Monitor serum albumin", "Treat underlying disease", "If edema, salt restriction"],
+    "urgency": "high"
+  },
+  {
+    "id": "zinc_induced_copper_deficiency",
+    "category": "Zinc-Induced Copper Deficiency (Iatrogenic)",
+    "symptoms": ["anemia (normocytic, microcytic)", "neutropenia (recurrent infections)", "peripheral neuropathy (tingling, numbness)", "myelopathy", "occurs with high-dose zinc supplementation (>50 mg/day)"],
+    "guidance": "Treatment: stop excess zinc; oral copper supplementation. Dietary sources of copper: shellfish, nuts, seeds, and liver. Prevention: do not take high-dose zinc without medical supervision.",
+    "precautions": ["Do not take high-dose zinc (>50 mg/day) without medical indication", "If taking zinc, monitor copper levels", "If neuropathy or anemia, check copper", "Use balanced supplements", "Zinc and copper are antagonists"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitamin_a_toxicity",
+    "category": "Vitamin A Toxicity (Hypervitaminosis A)",
+    "symptoms": ["nausea, vomiting", "headache, dizziness", "blurred vision", "bone pain, joint pain", "hair loss", "dry skin, peeling lips", "liver toxicity, hepatomegaly", "can occur with excessive supplementation (>10,000 IU/day) or eating polar bear liver"],
+    "guidance": "Treatment: stop Vitamin A supplements. In severe cases, supportive care. Prevention: avoid excessive supplementation; follow RDA (700-900 mcg/day). Children should not exceed recommended doses.",
+    "precautions": ["Do not take high-dose Vitamin A supplements without medical supervision", "Pregnant women should not exceed 3000 IU/day (teratogenic)", "Children's Vitamin A supplements should be given as per government schedule", "If headache and bone pain, check Vitamin A level", "Acute toxicity can be fatal"],
+    "urgency": "high"
+  },
+  {
+    "id": "vitamin_d_toxicity",
+    "category": "Vitamin D Toxicity (Hypervitaminosis D)",
+    "symptoms": ["nausea, vomiting, loss of appetite", "constipation", "weakness, fatigue", "confusion", "polyuria, polydipsia", "hypercalcemia (kidney stones, renal failure)", "can occur with excessive supplementation (>10,000 IU/day)"],
+    "guidance": "Treatment: stop Vitamin D; restriction of calcium intake; hydration (IV fluids); corticosteroids and bisphosphonates for severe hypercalcemia. Prevention: follow recommended doses (600-800 IU/day; up to 4000 IU/day safe).",
+    "precautions": ["Do not take high-dose Vitamin D without medical indication", "If taking high-dose, monitor calcium and Vitamin D levels", "If nausea and thirst, check calcium", "Do not confuse Vitamin D supplementation with high-dose bolus therapy", "Toxicity is rare but serious"],
+    "urgency": "critical"
+  },
+  {
+    "id": "iron_toxicity",
+    "category": "Iron Toxicity (Acute Overdose)",
+    "symptoms": ["severe vomiting, diarrhea (bloody)", "abdominal pain", "lethargy, drowsiness", "shock, hypotension", "metabolic acidosis", "liver failure, coma", "can be fatal", "occurs in children with accidental ingestion of iron supplements"],
+    "guidance": "Medical emergency. Call poison control (1800-116-117). Decontamination: whole bowel irrigation. IV fluids and supportive care. Deferoxamine (chelation) in severe cases. Prevention: keep iron supplements out of children's reach.",
+    "precautions": ["Store iron supplements in child-proof containers", "Do not leave iron tablets within reach of children", "If accidental ingestion, call Poison Control immediately", "Do not induce vomiting unless instructed", "Iron poisoning is life-threatening"],
+    "urgency": "critical"
+  },
+  {
+    "id": "zinc_toxicity",
+    "category": "Zinc Toxicity (Acute or Chronic High Dose)",
+    "symptoms": ["nausea, vomiting, diarrhea", "abdominal cramps", "headache", "loss of appetite", "chronic: copper deficiency leading to anemia and neuropathy", "occurs with excessive supplementation (> 100 mg/day)"],
+    "guidance": "Treatment: stop zinc supplements. Supportive care. Chelation not usually needed. Prevention: do not exceed 40 mg/day from supplements. If copper deficiency develops, supplement copper.",
+    "precautions": ["Do not exceed 40 mg/day of zinc from supplements", "If taking zinc, monitor for copper deficiency", "If GI symptoms, reduce dose", "Zinc is best taken with food", "High doses may impair immune function"],
+    "urgency": "medium"
+  },
+  {
+    "id": "fluoride_deficiency",
+    "category": "Fluoride Deficiency – Dental Caries Risk",
+    "symptoms": ["increased dental caries", "no specific systemic symptoms", "fluoride prevents dental caries by enamel remineralization"],
+    "guidance": "Prevention: use fluoridated toothpaste (with supervision in children to avoid fluorosis). Fluoride varnishes in dental clinics. Community water fluoridation (where feasible). Fluoride supplementation in areas with <0.7 ppm fluoride in water.",
+    "precautions": ["Use fluoride toothpaste twice daily", "Children under 6: use pea-sized amount and supervise (to prevent swallowing)", "Dental checkups for fluoride varnish", "Excessive fluoride causes fluorosis (white/brown stains)", "Do not swallow toothpaste"],
+    "urgency": "low"
+  },
+  {
+    "id": "dental_fluorosis",
+    "category": "Dental Fluorosis (Excess Fluoride – Cosmetic)",
+    "symptoms": ["white streaks, white spots, or brown/yellow stains on teeth", "pitting of enamel", "cosmetic concern", "occurs in children with excessive fluoride intake during tooth development (<8 years)"],
+    "guidance": "Prevention: avoid excessive fluoride in childhood. Use non-fluoridated water if fluoride levels are high. Do not swallow toothpaste. Treatment: cosmetic dental procedures (bonding, veneers). No systemic health issues.",
+    "precautions": ["If water has high fluoride (>1.5 ppm), use alternative water source", "Supervise children's toothbrushing to prevent swallowing", "Use toothpaste appropriate for age (low fluoride for under 3 years)", "Dental fluorosis is not painful", "Prevent by fluoride water testing"],
+    "urgency": "low"
+  },
+  {
+    "id": "skeletal_fluorosis",
+    "category": "Skeletal Fluorosis (Excess Fluoride – Bone Disease)",
+    "symptoms": ["bone pain, joint stiffness, arthralgia", "calcification of ligaments, tendons", "spinal curvature, kyphosis", "fractures (brittle bones)", "muscle weakness", "in severe: crippling deformities", "occurs with long-term high fluoride intake from water (>4-8 ppm)"],
+    "guidance": "Treatment: reduce fluoride exposure (alternative water source). High calcium and Vitamin D intake may reduce absorption. Orthopedic management. No specific cure. Prevention: defluoridation of drinking water (government programs).",
+    "precautions": ["Test drinking water for fluoride", "If high fluoride, use defluoridation (activated alumina, reverse osmosis)", "Do not use high-fluoride toothpaste in children", "Calcium and Vitamin D may help", "Report cases to public health authorities"],
+    "urgency": "high"
+  },
+  {
+    "id": "fluoride_toxicity_acute",
+    "category": "Acute Fluoride Toxicity",
+    "symptoms": ["nausea, vomiting, diarrhea", "abdominal pain, salivation", "paresthesia", "seizures", "cardiac arrhythmias", "hypocalcemia (due to calcium binding)", "can be fatal", "occurs with accidental ingestion of high-fluoride products"],
+    "guidance": "Medical emergency. Call poison control (1800-116-117). Treatment: calcium gluconate (IV), magnesium, and supportive care. Gastric lavage if within 1 hour. Prevention: keep fluoride products away from children.",
+    "precautions": ["Keep fluoride tablets and toothpaste out of children's reach", "Do not leave fluoride rinses accessible", "If ingestion, call Poison Control", "Do not induce vomiting without advice", "Fluoride toothpaste is not meant to be swallowed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "night_blindness_vitamin_a",
+    "category": "Night Blindness – Vitamin A Deficiency",
+    "symptoms": ["difficulty seeing in dim light or at night", "dry eyes (xerosis)", "difficulty driving at night", "may be an early sign of deficiency"],
+    "guidance": "Treat with Vitamin A supplementation (oral). Dietary: carrots, sweet potatoes, spinach, mangoes, papaya, and liver. If night blindness is present, seek medical help immediately to prevent progression to xerophthalmia and blindness.",
+    "precautions": ["If night blindness, seek medical help", "Include Vitamin A-rich foods daily", "Children should receive Vitamin A supplements", "Do not self-prescribe high-dose Vitamin A", "Correcting deficiency reverses night blindness"],
+    "urgency": "medium"
+  },
+  {
+    "id": "beriberi_infantile",
+    "category": "Infantile Beriberi (Thiamine Deficiency in Infants)",
+    "symptoms": ["hoarse cry", "vomiting, refusal to feed", "cyanosis, respiratory distress", "tachycardia, heart failure", "convulsions", "occur in breastfed infants of thiamine-deficient mothers"],
+    "guidance": "Medical emergency. Treatment: IV or IM thiamine (rapid response). Breastfeeding mothers should take thiamine supplements. Prevention: thiamine supplementation for pregnant and lactating women. Free thiamine at government hospitals.",
+    "precautions": ["Pregnant and lactating women should take thiamine supplements", "If infant has hoarse cry and vomiting, seek emergency care", "Do not delay thiamine administration", "Infantile beriberi can be fatal", "Thiamine is safe and life-saving"],
+    "urgency": "critical"
+  },
+  {
+    "id": "beriberi_wet",
+    "category": "Wet Beriberi – Thiamine Deficiency (Cardiovascular)",
+    "symptoms": ["dilated cardiomyopathy, heart failure", "edema (feet, legs, face)", "shortness of breath, orthopnea", "tachycardia", "warm extremities (vasodilation)", "can occur in alcoholics, malnourished"],
+    "guidance": "Treatment: IV thiamine 100 mg then oral. Diuretics for heart failure. Prognosis is excellent if treated early. Prevention: adequate thiamine intake (whole grains, legumes). Free treatment.",
+    "precautions": ["If edema and tachycardia, consider wet beriberi", "Do not give glucose before thiamine (worsens)", "Thiamine is life-saving", "Alcoholics should be supplemented", "If heart failure is not responding, think of thiamine"],
+    "urgency": "critical"
+  },
+  {
+    "id": "beriberi_dry",
+    "category": "Dry Beriberi – Thiamine Deficiency (Neurological)",
+    "symptoms": ["peripheral neuropathy (tingling, burning, numbness in feet)", "muscle weakness, foot drop", "atrophy of calf muscles", "difficulty walking", "loss of reflexes", "may progress to Wernicke-Korsakoff"],
+    "guidance": "Treatment: thiamine supplements (oral or IM). Neuropathy may partially reverse. Prevention: thiamine-rich foods (pulses, nuts, whole grains). If alcoholic, supplement.",
+    "precautions": ["If tingling in feet, check thiamine", "Do not ignore neuropathy", "Thiamine is safe and effective", "If alcoholic, take supplements", "Dietary improvement prevents recurrence"],
+    "urgency": "medium"
+  },
+  {
+    "id": "wernicke_korsakoff",
+    "category": "Wernicke-Korsakoff Syndrome (Thiamine Deficiency)",
+    "symptoms": ["Wernicke: confusion, ataxia, ophthalmoplegia (eye movement paralysis)", "Korsakoff: memory loss, confabulation, personality changes", "usually in alcoholics", "emergency"],
+    "guidance": "Medical emergency. IV thiamine 500 mg immediately, followed by oral. Do not give glucose before thiamine. Prognosis depends on early treatment. Prevention: thiamine supplementation in alcoholics.",
+    "precautions": ["If confusion + eye signs + ataxia, suspect Wernicke", "Thiamine is life-saving and cheap", "Do not delay treatment", "Alcoholics should be on thiamine", "Korsakoff may be permanent"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pellagra_dermatitis",
+    "category": "Pellagra – Dermatitis (Niacin Deficiency)",
+    "symptoms": ["rough, scaly, red-brown rash on sun-exposed areas (hands, feet, neck, face)", "skin thickens and peels", "rash is bilateral and symmetrical", "often associated with diarrhea and dementia"],
+    "guidance": "Treatment: oral niacinamide (not niacin to avoid flushing). Dietary: meat, fish, eggs, legumes, and fortified cereals. Protect skin from sun. Free treatment.",
+    "precautions": ["If rash on sun-exposed areas, seek medical help", "Diet improvement is key", "Do not use high-dose niacin – use niacinamide", "If with diarrhea and dementia, suspect pellagra", "Pellagra can be fatal"],
+    "urgency": "high"
+  },
+  {
+    "id": "pellagra_diarrhea",
+    "category": "Pellagra – Diarrhea (Niacin Deficiency)",
+    "symptoms": ["chronic diarrhea", "glossitis (red, swollen tongue)", "stomatitis (mouth ulcers)", "abdominal pain, nausea", "often with dermatitis and dementia"],
+    "guidance": "Same as pellagra dermatitis. Treat with niacinamide. Dietary improvement. Address dehydration with ORS.",
+    "precautions": ["If chronic diarrhea with skin rash, suspect pellagra", "ORS for dehydration", "Niacinamide treatment", "Diet diversification", "Prevent with adequate protein"],
+    "urgency": "high"
+  },
+  {
+    "id": "pellagra_dementia",
+    "category": "Pellagra – Dementia (Niacin Deficiency)",
+    "symptoms": ["confusion, memory loss", "depression, irritability", "psychosis, hallucinations", "may be misdiagnosed as psychiatric illness", "reversible with treatment"],
+    "guidance": "Treatment: niacinamide. If dementia is due to pellagra, symptoms improve. Psychiatric evaluation if needed.",
+    "precautions": ["If confusion with skin rash, think of pellagra", "Do not label as psychiatric without nutritional workup", "Niacinamide is treatment", "If alcohol abuse, consider other deficiencies", "Reversible with therapy"],
+    "urgency": "high"
+  },
+  {
+    "id": "scurvy_bone_children",
+    "category": "Scurvy – Bone Pain in Children",
+    "symptoms": ["irritability, pseudoparalysis (refusal to move limbs)", "tender, swollen joints", "bleeding gums, petechiae", "bone pain on palpation", "poor wound healing", "anemia"],
+    "guidance": "Treatment: Vitamin C (ascorbic acid). Dietary: citrus, amla, guava, tomatoes. In children, give IV if needed. Prompt improvement. Free treatment.",
+    "precautions": ["If child refuses to move limbs, consider scurvy", "Vitamin C supplementation", "Include fruits and vegetables", "Scurvy is rare but occurs in restricted diets", "Bone pain resolves with treatment"],
+    "urgency": "high"
+  },
+  {
+    "id": "xerophthalmia_corneal",
+    "category": "Xerophthalmia – Corneal Involvement (Vitamin A)",
+    "symptoms": ["corneal xerosis (dry, cloudy cornea)", "keratomalacia (corneal softening, melting)", "ulceration, perforation", "blindness", "emergency"],
+    "guidance": "Ophthalmic emergency. High-dose Vitamin A immediately (oral or IM), patching, antibiotics. Urgent ophthalmology referral. Prevention: Vitamin A supplementation. Government programs.",
+    "precautions": ["If corneal clouding, seek emergency", "Vitamin A is life-saving for the eye", "Do not delay", "Corneal perforation leads to blindness", "Prevention is better than cure"],
+    "urgency": "critical"
+  },
+  {
+    "id": "xerophthalmia_bitot_spots",
+    "category": "Xerophthalmia – Bitot's Spots (Vitamin A)",
+    "symptoms": ["foamy, white, cheesy deposits on conjunctiva (Bitot's spots)", "dry eyes", "night blindness", "often bilateral"],
+    "guidance": "Treat with high-dose Vitamin A. Dietary improvement. If untreated, progresses to corneal damage. Free supplementation.",
+    "precautions": ["If white spots in eyes, seek care", "Vitamin A supplements", "Children need semi-annual doses", "Bitot's spots are reversible", "Do not delay"],
+    "urgency": "high"
+  },
+  {
+    "id": "beriberi_hepatic",
+    "category": "Hepatic Beriberi – Thiamine in Liver Disease",
+    "symptoms": ["lactic acidosis", "hypoglycemia", "encephalopathy", "in patients with liver disease or malnutrition"],
+    "guidance": "Treat with thiamine. Often underrecognized. If lactic acidosis in malnourished, think of thiamine. Free.",
+    "precautions": ["If unexplained lactic acidosis, give thiamine", "Common in alcoholics", "Thiamine is safe", "Monitor glucose", "Consider in any malnourished patient"],
+    "urgency": "critical"
+  },
+  {
+    "id": "malnutrition_infection_cycle",
+    "category": "Malnutrition-Infection Cycle",
+    "symptoms": ["recurrent infections (diarrhea, pneumonia, TB)", "poor weight gain", "wasting", "micronutrient deficiencies", "immune dysfunction"],
+    "guidance": "Break the cycle: nutritional rehabilitation, vitamin A and zinc supplementation, vaccinations, and infection prevention. Government programs (Anganwadi, ICDS) provide nutrition support. Handwashing and hygiene.",
+    "precautions": ["Vaccination prevents infections", "Good nutrition boosts immunity", "Zinc during diarrhea", "Vitamin A reduces measles mortality", "Handwashing and hygiene"],
+    "urgency": "high"
+  },
+  {
+    "id": "refeeding_syndrome",
+    "category": "Refeeding Syndrome – Nutritional Emergency",
+    "symptoms": ["after re-feeding a starved patient: hypophosphatemia, hypokalemia, hypomagnesemia", "fluid overload, heart failure", "arrhythmias, confusion", "can be fatal"],
+    "guidance": "Prevention: start feeds slowly (25% of goal) and monitor electrolytes. Thiamine before feeding. Correct electrolytes aggressively. ICU monitoring. Government hospitals manage this.",
+    "precautions": ["Do not feed rapidly in severe malnutrition", "Give thiamine before feeding", "Monitor phosphate, potassium, magnesium", "Start at 25% of goal calories", "Refeeding syndrome is preventable"],
+    "urgency": "critical"
+  },
+  {
+    "id": "starvation_ketosis",
+    "category": "Starvation Ketosis – Nutritional",
+    "symptoms": ["weight loss, ketosis (acetone breath)", "fatigue, weakness", "anorexia", "hypoglycemia (in severe)", "can occur in prolonged fasting"],
+    "guidance": "Treatment: gradual refeeding with carbohydrates. Monitor electrolytes. Prevention: regular meals. If diabetic, rule out DKA.",
+    "precautions": ["Do not fast for prolonged periods without supervision", "If acetone breath, check blood sugar", "Gradual refeeding", "Hydration", "If weakness, eat complex carbs"],
+    "urgency": "medium"
+  }
+]

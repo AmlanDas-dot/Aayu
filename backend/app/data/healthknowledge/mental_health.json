@@ -1,0 +1,866 @@
+[
+  {
+    "id": "depression_major",
+    "category": "Major Depressive Disorder",
+    "symptoms": ["persistent sadness or emptiness for more than 2 weeks", "loss of interest or pleasure in activities", "significant weight loss/gain or appetite change", "insomnia or hypersomnia", "psychomotor agitation or retardation", "fatigue or loss of energy", "feelings of worthlessness or excessive guilt", "diminished ability to think or concentrate", "recurrent thoughts of death or suicide"],
+    "guidance": "Depression is a medical illness, not a weakness. Effective treatments include cognitive-behavioral therapy (CBT), interpersonal therapy, and antidepressant medications (SSRIs, SNRIs). Free mental health care is available at government hospitals and District Mental Health Program (DMHP) centers. iCall helpline: 9152987821. If suicidal, seek emergency care.",
+    "precautions": ["Do not stop antidepressants abruptly", "Maintain regular sleep and activity", "Avoid alcohol and substances", "Stay connected with supportive people", "Seek professional help early"],
+    "urgency": "high"
+  },
+  {
+    "id": "dysthymia",
+    "category": "Dysthymia (Persistent Depressive Disorder)",
+    "symptoms": ["depressed mood for most of the day, for at least 2 years", "poor appetite or overeating", "insomnia or hypersomnia", "low energy or fatigue", "low self-esteem", "poor concentration", "feelings of hopelessness"],
+    "guidance": "Dysthymia is a chronic but less severe form of depression. It often responds to psychotherapy (CBT) and antidepressants. The DMHP provides free counseling. Long-term management improves quality of life.",
+    "precautions": ["Regular follow-up with therapist", "Build a structured daily routine", "Avoid isolation", "Monitor for episodes of major depression", "Use medications as prescribed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "bipolar_i",
+    "category": "Bipolar I Disorder",
+    "symptoms": ["manic episodes lasting at least 7 days (elevated mood, grandiosity, decreased need for sleep, racing thoughts, impulsivity, risky behavior)", "depressive episodes (low mood, fatigue, suicidal thoughts)", "sometimes psychotic features", "significant impairment in functioning"],
+    "guidance": "Bipolar I requires lifelong mood stabilizers (lithium, valproate, lamotrigine). Antipsychotics for acute mania. Never stop medication abruptly. Maintain a regular sleep-wake cycle. Free treatment is available at government psychiatric centers. Family support is crucial.",
+    "precautions": ["Take mood stabilizers consistently", "Avoid sleep deprivation (triggers mania)", "Avoid alcohol and drugs", "Watch for early warning signs of relapse", "Have an emergency plan"],
+    "urgency": "high"
+  },
+  {
+    "id": "bipolar_ii",
+    "category": "Bipolar II Disorder",
+    "symptoms": ["hypomanic episodes (less severe than mania, lasting at least 4 days)", "major depressive episodes", "no full manic episodes", "may be misdiagnosed as depression"],
+    "guidance": "Mood stabilizers (lamotrigine, lithium) and sometimes antidepressants with caution. Psychotherapy (CBT, psychoeducation) helps prevent relapse. Regular monitoring is essential.",
+    "precautions": ["Do not take antidepressants alone without mood stabilizer", "Track mood patterns daily", "Maintain routine", "Avoid triggers", "Seek support groups"],
+    "urgency": "high"
+  },
+  {
+    "id": "cyclothymia",
+    "category": "Cyclothymic Disorder",
+    "symptoms": ["chronic fluctuating mood with mild hypomanic and depressive symptoms for at least 2 years", "never meet full criteria for major depression or mania", "affects social and occupational function"],
+    "guidance": "May progress to bipolar disorder. Treatment includes mood stabilizers and psychotherapy. Psychoeducation helps cope with mood swings.",
+    "precautions": ["Monitor mood changes", "Maintain lifestyle regularity", "Avoid stimulants", "Cognitive-behavioral strategies", "Seek help if worsening"],
+    "urgency": "medium"
+  },
+  {
+    "id": "generalized_anxiety",
+    "category": "Generalized Anxiety Disorder (GAD)",
+    "symptoms": ["excessive worry about various events or activities (e.g., work, health)", "difficulty controlling worry", "restlessness", "fatigue", "muscle tension", "sleep disturbance", "difficulty concentrating"],
+    "guidance": "GAD is very treatable with CBT, relaxation techniques, and SSRIs/SNRIs. Mindfulness and deep breathing are helpful. Avoid caffeine and alcohol. Free counseling at DMHP.",
+    "precautions": ["Limit caffeine and sugar", "Practice diaphragmatic breathing", "Challenge anxious thoughts", "Maintain regular exercise", "Do not self-medicate with alcohol"],
+    "urgency": "medium"
+  },
+  {
+    "id": "panic_disorder",
+    "category": "Panic Disorder",
+    "symptoms": ["recurrent unexpected panic attacks (sudden intense fear, palpitations, sweating, trembling, shortness of breath, chest pain, dizziness, fear of dying)", "persistent concern about future attacks", "avoidance of situations", "agoraphobia may develop"],
+    "guidance": "Panic disorder is treatable with CBT (exposure, cognitive restructuring) and SSRIs. During an attack, practice slow breathing and grounding (5-4-3-2-1). Avoid avoidance behaviors. Free treatment available.",
+    "precautions": ["Learn breathing techniques", "Gradual exposure to feared situations", "Avoid caffeine and stimulants", "Medication adherence", "Do not fear the fear itself"],
+    "urgency": "high"
+  },
+  {
+    "id": "social_anxiety",
+    "category": "Social Anxiety Disorder (Social Phobia)",
+    "symptoms": ["marked fear of social situations where one may be scrutinized", "fear of embarrassment or humiliation", "avoidance of social interactions", "physical symptoms: blushing, sweating, trembling", "significant distress"],
+    "guidance": "CBT (exposure therapy and social skills training) is highly effective. SSRIs are helpful. Support groups and gradual exposure reduce symptoms.",
+    "precautions": ["Practice social skills", "Start with low-anxiety situations", "Challenge negative self-beliefs", "Do not avoid completely", "Consider therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "specific_phobia",
+    "category": "Specific Phobia",
+    "symptoms": ["marked fear of a specific object or situation (e.g., heights, animals, needles, flying)", "immediate anxiety upon exposure", "avoidance or endurance with intense distress", "interference with daily life"],
+    "guidance": "Exposure therapy (gradual, systematic desensitization) is the gold standard. CBT and relaxation techniques. Virtual reality therapy is also effective.",
+    "precautions": ["Avoidance reinforces fear – gradual exposure is key", "Use relaxation techniques", "Seek therapy", "Do not force confrontation without support", "Medication rarely needed"],
+    "urgency": "low"
+  },
+  {
+    "id": "agoraphobia",
+    "category": "Agoraphobia",
+    "symptoms": ["anxiety about places where escape might be difficult or help unavailable", "typically fear of open spaces, crowds, public transport", "avoidance leading to confinement to home", "often with panic disorder"],
+    "guidance": "CBT with exposure and response prevention. SSRIs may help. Gradually increase activities outside. Supportive therapy.",
+    "precautions": ["Gradual exposure to feared situations", "Use a trusted companion", "CBT is most effective", "Medication may assist", "Do not become housebound"],
+    "urgency": "high"
+  },
+  {
+    "id": "ocd",
+    "category": "Obsessive-Compulsive Disorder (OCD)",
+    "symptoms": ["recurrent obsessions (intrusive thoughts, images, urges) causing anxiety", "compulsions (repetitive behaviors or mental acts) to reduce anxiety", "e.g., excessive cleaning, checking, counting, ordering", "insight may be good or poor"],
+    "guidance": "Gold-standard: Exposure and Response Prevention (ERP) therapy. SSRIs (clomipramine, fluoxetine) also effective. Do not accommodate rituals. Free treatment at DMHP.",
+    "precautions": ["Do not perform rituals to reduce anxiety in therapy – it prevents progress", "Learn to tolerate uncertainty", "Medication + CBT is optimal", "Do not give in to compulsions", "Family should not participate in rituals"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ptsd",
+    "category": "Post-Traumatic Stress Disorder (PTSD)",
+    "symptoms": ["exposure to traumatic event (actual or threatened death, serious injury, sexual violence)", "intrusive memories, nightmares, flashbacks", "avoidance of reminders", "negative alterations in mood and cognition", "hyperarousal (hypervigilance, startle response, sleep disturbance)"],
+    "guidance": "Trauma-focused CBT, EMDR (Eye Movement Desensitization and Reprocessing) are effective. SSRIs help. Seek specialized trauma services. Government hospitals offer care.",
+    "precautions": ["Do not avoid all reminders – therapy helps process", "Practice grounding techniques", "Avoid alcohol and substances", "Build a safety plan", "Connect with support groups"],
+    "urgency": "high"
+  },
+  {
+    "id": "acute_stress_disorder",
+    "category": "Acute Stress Disorder",
+    "symptoms": ["similar to PTSD but occurs within 1 month of trauma", "dissociative symptoms (depersonalization, derealization)", "intrusive symptoms", "avoidance", "hyperarousal", "lasts 3 days to 1 month"],
+    "guidance": "Early intervention can prevent PTSD. Provide psychological first aid, trauma-focused CBT. Most recover with supportive care.",
+    "precautions": ["Early psychological support", "Avoid retraumatization", "Normalize reactions", "Monitor for progression to PTSD", "Encourage social support"],
+    "urgency": "high"
+  },
+  {
+    "id": "adjustment_disorder",
+    "category": "Adjustment Disorder",
+    "symptoms": ["emotional or behavioral symptoms within 3 months of a stressful event (e.g., divorce, job loss, illness)", "distress out of proportion", "impairment in social/occupational function", "not meeting criteria for other disorders"],
+    "guidance": "Brief therapy (CBT) and problem-solving counseling. Usually resolves once stressor ends or coping improves. Free counseling available.",
+    "precautions": ["Identify stressors", "Develop coping skills", "Talk to a counselor", "Maintain routine", "Self-care"],
+    "urgency": "low"
+  },
+  {
+    "id": "schizophrenia",
+    "category": "Schizophrenia",
+    "symptoms": ["hallucinations (usually auditory)", "delusions (fixed false beliefs)", "disorganized speech and behavior", "negative symptoms (flat affect, avolition, alogia, anhedonia, asociality)", "cognitive impairment", "onset usually in late adolescence to early adulthood"],
+    "guidance": "Antipsychotic medications (risperidone, olanzapine, haloperidol) are the mainstay – available free at government hospitals. Adherence is crucial. Psychosocial rehabilitation (occupational therapy, social skills training). Family psychoeducation. Never stop medication abruptly.",
+    "precautions": ["Medication adherence is critical to prevent relapse", "Avoid substance use (especially cannabis)", "Monitor side effects (weight gain, metabolic syndrome)", "Early intervention improves outcomes", "Supportive family environment"],
+    "urgency": "high"
+  },
+  {
+    "id": "schizoaffective_disorder",
+    "category": "Schizoaffective Disorder",
+    "symptoms": ["features of schizophrenia (hallucinations, delusions, disorganized speech) and mood episode (mania or depression) occurring together", "psychotic symptoms occur without mood episodes as well"],
+    "guidance": "Treatment combines antipsychotics and mood stabilizers/antidepressants. Long-term management is essential. Psychotherapy and vocational support.",
+    "precautions": ["Combined pharmacotherapy", "Monitor mood and psychotic symptoms", "Psychosocial support", "Medication adherence", "Avoid triggers"],
+    "urgency": "high"
+  },
+  {
+    "id": "delusional_disorder",
+    "category": "Delusional Disorder",
+    "symptoms": ["non-bizarre delusions (e.g., being followed, poisoned, loved) for at least 1 month", "no prominent hallucinations", "functioning relatively normal except for delusional content"],
+    "guidance": "Antipsychotics (pimozide, risperidone) may help. CBT for delusions. Insight is often poor – therapeutic alliance is key.",
+    "precautions": ["Do not argue with delusions – validate feelings", "Gradual reality testing", "Medication adherence", "Supportive therapy", "Monitor for depression"],
+    "urgency": "medium"
+  },
+  {
+    "id": "brief_psychotic_disorder",
+    "category": "Brief Psychotic Disorder",
+    "symptoms": ["sudden onset of psychotic symptoms (delusions, hallucinations, disorganized speech) lasting 1 day to 1 month", "full return to premorbid function", "often triggered by stress"],
+    "guidance": "Antipsychotics and supportive care. Usually good prognosis. Rule out substance-induced or organic causes.",
+    "precautions": ["Identify and treat stressor", "Short-term antipsychotics", "Follow-up to prevent recurrence", "Psychoeducation", "Monitor for subsequent episodes"],
+    "urgency": "high"
+  },
+  {
+    "id": "shared_psychotic_disorder",
+    "category": "Shared Psychotic Disorder (Folie à Deux)",
+    "symptoms": ["delusions develop in a person in close relationship with someone who already has a delusion", "the delusion resolves when they are separated"],
+    "guidance": "Separate the individuals, treat the primary case with antipsychotics, and provide therapy to the secondary.",
+    "precautions": ["Separation may be therapeutic", "Treat primary", "Psychotherapy", "Monitor for relapse", "Family therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "catatonia",
+    "category": "Catatonia (Psychomotor Disturbance)",
+    "symptoms": ["stupor (no movement or speech)", "mutism", "posturing", "negativism", "excitement", "echolalia/echopraxia", "can occur in schizophrenia, mood disorders, or medical conditions"],
+    "guidance": "Catatonia is a medical emergency – treat with benzodiazepines (lorazepam) and ECT. Rule out underlying medical causes (encephalitis, metabolic).",
+    "precautions": ["Immediate medical evaluation", "Benzodiazepine challenge", "Avoid antipsychotics initially (can worsen)", "Monitor vital signs", "ECT if refractory"],
+    "urgency": "critical"
+  },
+  {
+    "id": "eating_disorder_anorexia",
+    "category": "Anorexia Nervosa",
+    "symptoms": ["restriction of energy intake leading to significantly low body weight", "intense fear of gaining weight", "disturbed body image", "denial of seriousness of low weight", "amenorrhea in females"],
+    "guidance": "Multidisciplinary: medical, nutritional, and psychological (CBT, family-based therapy). Hospitalization if severe weight loss or electrolyte imbalance. Eating disorders have the highest mortality among mental illnesses.",
+    "precautions": ["Medical monitoring is essential", "Nutritional rehabilitation", "Do not focus on weight in conversations", "Family involvement (Maudsley approach)", "Address comorbid depression/anxiety"],
+    "urgency": "critical"
+  },
+  {
+    "id": "eating_disorder_bulimia",
+    "category": "Bulimia Nervosa",
+    "symptoms": ["recurrent episodes of binge eating (large amount of food in short time with loss of control)", "compensatory behaviors (vomiting, laxatives, fasting, excessive exercise)", "self-evaluation unduly influenced by body shape/weight", "occurs at least once a week for 3 months"],
+    "guidance": "CBT (CBT-E) is first-line. SSRIs (fluoxetine) reduce binge-purge cycles. Nutritional counseling. Address dental erosion and electrolyte imbalances.",
+    "precautions": ["Do not induce vomiting", "Avoid laxatives", "Regular dental checkups", "Monitor potassium levels", "Therapy is essential"],
+    "urgency": "high"
+  },
+  {
+    "id": "eating_disorder_binge",
+    "category": "Binge Eating Disorder",
+    "symptoms": ["recurrent episodes of binge eating without compensatory behaviors", "eating rapidly, until uncomfortably full, alone due to embarrassment", "distress about bingeing", "occurs at least once a week for 3 months"],
+    "guidance": "CBT, interpersonal therapy, and medications (lisdexamfetamine, SSRIs) are effective. Weight management and self-help support.",
+    "precautions": ["Seek therapy", "Avoid dieting – triggers bingeing", "Regular meals to reduce bingeing", "Monitor weight", "Address emotional triggers"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pica_adult",
+    "category": "Pica (Adult) – Non-Food Eating",
+    "symptoms": ["persistent eating of non-nutritive substances (e.g., dirt, chalk, soap) for at least 1 month", "inappropriate to developmental level", "not part of cultural practice"],
+    "guidance": "Check for nutritional deficiencies (iron, zinc). Behavioral interventions. Address underlying mental health issues.",
+    "precautions": ["Check iron/zinc levels", "Monitor for lead poisoning", "Behavioral therapy", "Address stress/OCD", "Safe environment"],
+    "urgency": "medium"
+  },
+  {
+    "id": "rumination_disorder",
+    "category": "Rumination Disorder",
+    "symptoms": ["repeated regurgitation of food over at least 1 month", "may be re-chewed, re-swallowed, or spit out", "not due to GI illness", "occurs in both children and adults"],
+    "guidance": "Behavioral therapy (diaphragmatic breathing, habit reversal). Address comorbid anxiety. Medical evaluation for weight loss.",
+    "precautions": ["Diaphragmatic breathing", "Habit reversal", "Monitor nutrition", "Psychotherapy", "Dental erosion care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "insomnia_disorder",
+    "category": "Insomnia Disorder",
+    "symptoms": ["difficulty initiating or maintaining sleep, or early morning awakening", "occurs at least 3 nights per week for ≥3 months", "causes significant distress/impairment", "despite adequate opportunity for sleep"],
+    "guidance": "Cognitive-behavioral therapy for insomnia (CBT-I) is the first-line treatment. Sleep hygiene: regular schedule, no screens before bed, avoid caffeine/alcohol. Medications (temporary) as needed.",
+    "precautions": ["Maintain a regular sleep schedule", "Avoid naps", "Limit caffeine after noon", "Create a restful environment", "Do not self-medicate with alcohol"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hypersomnia_disorder",
+    "category": "Hypersomnia Disorder",
+    "symptoms": ["excessive daytime sleepiness despite ≥7 hours of sleep", "recurrent daytime sleep episodes", "not better explained by other conditions"],
+    "guidance": "Rule out sleep apnea, narcolepsy, or medical causes. Treatment: stimulants (modafinil), lifestyle changes, good sleep hygiene.",
+    "precautions": ["Evaluate for sleep apnea", "Avoid driving if sleepy", "Regular sleep schedule", "Stimulant medication under supervision", "Rule out depression"],
+    "urgency": "medium"
+  },
+  {
+    "id": "narcolepsy",
+    "category": "Narcolepsy",
+    "symptoms": ["excessive daytime sleepiness", "cataplexy (sudden loss of muscle tone triggered by emotions)", "sleep paralysis", "hypnagogic hallucinations", "often associated with HLA DQB1*0602"],
+    "guidance": "Stimulants (modafinil, methylphenidate) for sleepiness; antidepressants for cataplexy. Scheduled naps help. Sodium oxybate for severe cases. Neurologist referral.",
+    "precautions": ["Scheduled daytime naps", "Avoid driving if drowsy", "Medication adherence", "Educate family", "Monitor for side effects"],
+    "urgency": "medium"
+  },
+  {
+    "id": "restless_legs",
+    "category": "Restless Legs Syndrome (Willis-Ekbom Disease)",
+    "symptoms": ["urge to move legs, often accompanied by uncomfortable sensations", "worse at rest, relieved by movement", "worse in evening/night", "can disrupt sleep"],
+    "guidance": "Check ferritin (treat if low). Medications: dopamine agonists (pramipexole), gabapentin. Avoid caffeine, alcohol. Iron supplementation if deficient.",
+    "precautions": ["Check iron levels", "Avoid caffeine and alcohol", "Exercise regularly", "Medication under specialist", "Warm baths may help"],
+    "urgency": "medium"
+  },
+  {
+    "id": "nightmare_disorder",
+    "category": "Nightmare Disorder",
+    "symptoms": ["repeated nightmares (vivid, dysphoric dreams) leading to awakenings", "causes distress or impairment", "not due to substance or other disorder"],
+    "guidance": "Image rehearsal therapy (IRT) is effective. Treat PTSD if present. Good sleep hygiene.",
+    "precautions": ["IRT therapy", "Manage daytime stress", "Avoid alcohol before bed", "Sleep hygiene", "Seek therapy if frequent"],
+    "urgency": "low"
+  },
+  {
+    "id": "parasomnia_sleepwalking",
+    "category": "Sleepwalking (Somnambulism)",
+    "symptoms": ["arising from sleep and walking, with blank stare, unresponsive, confused", "may perform routine activities", "amnesia for the episode", "occurs in deep sleep, usually first third of night"],
+    "guidance": "Safety measures: lock windows, remove obstacles. Avoid sleep deprivation. Usually benign. Address underlying stress.",
+    "precautions": ["Secure environment", "Avoid sleep deprivation", "Do not wake abruptly (may cause agitation)", "Treat stress", "Consult if dangerous"],
+    "urgency": "low"
+  },
+  {
+    "id": "parasomnia_sleep_terror",
+    "category": "Sleep Terrors (Night Terrors)",
+    "symptoms": ["sudden arousal from sleep with screaming, intense fear", "increased autonomic activity (heart rate, sweating)", "unresponsive to comfort", "amnesia for episode", "occurs in non-REM sleep, often in children"],
+    "guidance": "Reassure; most resolve with age. Safety measures. Identify and reduce stress. In adults, consider psychiatric evaluation.",
+    "precautions": ["Protect from injury", "Avoid sleep deprivation", "Reassurance", "Counseling if frequent", "Rarely needs medication"],
+    "urgency": "low"
+  },
+  {
+    "id": "substance_alcohol_use",
+    "category": "Alcohol Use Disorder",
+    "symptoms": ["strong craving for alcohol", "loss of control over drinking", "tolerance", "withdrawal symptoms (tremors, sweating, seizures)", "continued use despite problems", "giving up activities"],
+    "guidance": "Medically supervised detoxification (benzodiazepines) for withdrawal. Naltrexone, acamprosate, disulfiram to reduce cravings. Psychosocial therapy (CBT, motivational interviewing). Support groups (AA). Free de-addiction centers at government hospitals.",
+    "precautions": ["Do not stop abruptly without medical supervision (seizure risk)", "Remove alcohol from home", "Engage family in treatment", "Monitor for relapse", "Attend aftercare"],
+    "urgency": "high"
+  },
+  {
+    "id": "substance_opioid_use",
+    "category": "Opioid Use Disorder",
+    "symptoms": ["craving for opioids", "impaired control over use", "tolerance", "withdrawal (pain, nausea, diarrhea, yawning, restlessness)", "continued use despite harm"],
+    "guidance": "Medication-assisted treatment (MAT) with buprenorphine/naloxone or methadone is first-line. Detoxification alone leads to high relapse. Counseling and social support are crucial. Free services at government de-addiction centers.",
+    "precautions": ["MAT is highly effective", "Do not stop medication abruptly", "Counseling is essential", "Prevent overdose (naloxone availability)", "Monitor for diversion"],
+    "urgency": "critical"
+  },
+  {
+    "id": "substance_cannabis_use",
+    "category": "Cannabis Use Disorder",
+    "symptoms": ["craving cannabis", "use despite adverse consequences", "tolerance", "withdrawal (irritability, sleep problems, decreased appetite)", "preoccupation with use"],
+    "guidance": "CBT and motivational enhancement therapy. Address underlying anxiety/depression. No specific medication currently approved.",
+    "precautions": ["CBT is effective", "Address co-occurring mental health issues", "Avoid triggers", "Build alternative coping", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "substance_stimulant_use",
+    "category": "Stimulant Use Disorder (Cocaine, Amphetamines)",
+    "symptoms": ["strong craving, loss of control, tolerance, withdrawal (depression, fatigue, sleep changes)", "social/occupational impairment", "risky use"],
+    "guidance": "CBT, contingency management. No specific pharmacotherapy. Supportive treatment. Address medical complications (cardiovascular).",
+    "precautions": ["Monitor cardiac symptoms", "CBT is effective", "Address underlying depression", "Avoid triggers", "Aftercare planning"],
+    "urgency": "high"
+  },
+  {
+    "id": "substance_inhalant_use",
+    "category": "Inhalant Use Disorder",
+    "symptoms": ["use of inhalants (glue, paint thinner, aerosols)", "euphoria, dizziness, hallucinations", "tolerance, withdrawal (sometimes)", "neurological and cognitive damage"],
+    "guidance": "CBT, motivational interviewing. Address medical complications (hepatic, renal, neurological). Liver transplant may be needed in severe cases.",
+    "precautions": ["Neurological monitoring", "CBT", "Address social factors", "Prevent toxic exposure", "Long-term rehabilitation"],
+    "urgency": "high"
+  },
+  {
+    "id": "substance_nicotine_use",
+    "category": "Nicotine Dependence",
+    "symptoms": ["strong craving for tobacco", "continued use despite health problems", "withdrawal (irritability, anxiety, craving, difficulty concentrating)"],
+    "guidance": "Nicotine replacement therapy (gum, patches) and medications (bupropion, varenicline) double quit rates. Counseling and support groups. Free services at government health centers.",
+    "precautions": ["Combine pharmacotherapy with counseling", "Avoid relapse triggers", "Set a quit date", "Supportive environment", "Monitor for mood changes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "gambling_disorder",
+    "category": "Gambling Disorder (Behavioral Addiction)",
+    "symptoms": ["persistent and recurrent problematic gambling", "chasing losses", "lying about gambling", "jeopardizing relationships/jobs", "need to gamble with increasing amounts"],
+    "guidance": "CBT, motivational interviewing, and support groups (Gamblers Anonymous). Address co-occurring depression or substance use.",
+    "precautions": ["CBT is effective", "Financial management", "Address underlying stress", "Family therapy", "Restrict access to funds"],
+    "urgency": "medium"
+  },
+  {
+    "id": "internet_gaming_disorder",
+    "category": "Internet Gaming Disorder",
+    "symptoms": ["preoccupation with gaming", "withdrawal symptoms when not gaming", "tolerance (needs more time)", "loss of interest in other activities", "continues despite negative consequences", "deceives others about time spent"],
+    "guidance": "CBT, family therapy, and digital detox strategies. Set time limits and promote alternative activities.",
+    "precautions": ["Digital hygiene", "Set time limits", "Family involvement", "Address comorbid depression/anxiety", "Monitor school/work performance"],
+    "urgency": "medium"
+  },
+  {
+    "id": "personality_disorder_borderline",
+    "category": "Borderline Personality Disorder (BPD)",
+    "symptoms": ["unstable relationships", "identity disturbance", "impulsivity (e.g., self-harm, spending, substance)", "affective instability", "anger outbursts", "chronic emptiness", "paranoid ideation under stress", "suicidal ideation"],
+    "guidance": "Dialectical Behavior Therapy (DBT) is the gold standard. Mentalization-based therapy and transference-focused therapy. Medications for co-occurring depression/anxiety. Crisis management is essential.",
+    "precautions": ["DBT is effective", "Crisis planning", "Avoid invalidation", "Supportive therapy", "Monitor for self-harm"],
+    "urgency": "high"
+  },
+  {
+    "id": "personality_disorder_antisocial",
+    "category": "Antisocial Personality Disorder",
+    "symptoms": ["disregard for and violation of others' rights", "deceitfulness", "impulsivity", "irritability and aggression", "reckless disregard for safety", "lack of remorse"],
+    "guidance": "Cognitive-behavioral approaches, contingency management. Limited treatment effectiveness; focus on harm reduction and legal consequences. Comorbid substance use should be treated.",
+    "precautions": ["Encourage prosocial behavior", "Substance treatment", "Limit reinforcement of antisocial behavior", "Legal monitoring", "Family therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "personality_disorder_histrionic",
+    "category": "Histrionic Personality Disorder",
+    "symptoms": ["excessive emotionality and attention-seeking", "need to be center of attention", "seductive/provocative behavior", "shallow emotions", "easily influenced by others", "dramatic speech"],
+    "guidance": "Psychodynamic therapy, CBT. Help develop more stable sense of self and deeper relationships.",
+    "precautions": ["Validate feelings but set boundaries", "CBT to reduce dramatic reactions", "Encourage self-reflection", "Supportive therapy", "Do not reinforce drama"],
+    "urgency": "low"
+  },
+  {
+    "id": "personality_disorder_narcissistic",
+    "category": "Narcissistic Personality Disorder",
+    "symptoms": ["grandiose sense of self-importance", "preoccupation with fantasies of success/power", "believes they are special", "requires excessive admiration", "sense of entitlement", "lacks empathy", "envious of others"],
+    "guidance": "Psychotherapy (psychodynamic, CBT) can help improve empathy and self-reflection. Focus on realistic self-appraisal and interpersonal functioning.",
+    "precautions": ["Build therapeutic alliance", "Set boundaries", "Address entitlement", "Encourage empathy", "Monitor for depression"],
+    "urgency": "low"
+  },
+  {
+    "id": "personality_disorder_avoidant",
+    "category": "Avoidant Personality Disorder",
+    "symptoms": ["social inhibition", "feelings of inadequacy", "hypersensitivity to negative evaluation", "avoids interpersonal contact", "fears rejection", "views self as inept"],
+    "guidance": "CBT (social skills training, gradual exposure) is effective. Build self-esteem. May respond to SSRIs for anxiety.",
+    "precautions": ["Gradual exposure to social situations", "CBT", "Build social skills", "Address negative self-talk", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "personality_disorder_dependent",
+    "category": "Dependent Personality Disorder",
+    "symptoms": ["excessive need to be taken care of", "submissive and clinging behavior", "difficulty making decisions without reassurance", "difficulty expressing disagreement", "feels helpless when alone"],
+    "guidance": "CBT to build autonomy and decision-making skills. Assertiveness training. Address anxiety. Gradually reduce reliance.",
+    "precautions": ["Encourage self-reliance", "Assertiveness training", "CBT", "Supportive therapy", "Avoid reinforcing dependence"],
+    "urgency": "low"
+  },
+  {
+    "id": "personality_disorder_ocpd",
+    "category": "Obsessive-Compulsive Personality Disorder (OCPD)",
+    "symptoms": ["preoccupation with orderliness, perfectionism, and control", "inflexibility", "devotion to work to the exclusion of leisure", "rigidity and stubbornness", "miserliness"],
+    "guidance": "Psychotherapy (CBT) to reduce rigidity and improve flexibility. Address underlying anxiety. Different from OCD – no compulsive rituals.",
+    "precautions": ["CBT", "Encourage flexibility", "Address perfectionism", "Relaxation techniques", "Monitor for depression"],
+    "urgency": "low"
+  },
+  {
+    "id": "dissociative_identity_disorder",
+    "category": "Dissociative Identity Disorder (DID)",
+    "symptoms": ["presence of two or more distinct identity states", "recurrent gaps in memory for everyday events", "depersonalization/derealization", "often associated with severe trauma"],
+    "guidance": "Long-term psychotherapy (specialized) focusing on integration and trauma processing. Grounding techniques. Avoid hypnosis without expertise.",
+    "precautions": ["Trauma-focused therapy", "Grounding exercises", "Stabilization phase", "Controlled integration", "Monitor suicidal risk"],
+    "urgency": "high"
+  },
+  {
+    "id": "dissociative_amnesia",
+    "category": "Dissociative Amnesia",
+    "symptoms": ["inability to recall important autobiographical information, usually traumatic or stressful", "not due to ordinary forgetting", "may be localized or generalized"],
+    "guidance": "Psychotherapy to safely recover memories. Grounding and stabilization. Rule out organic causes.",
+    "precautions": ["Safe memory recovery", "Stabilization", "Rule out neurological", "Address trauma", "Supportive therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "depersonalization_derealization",
+    "category": "Depersonalization/Derealization Disorder",
+    "symptoms": ["persistent or recurrent experiences of unreality (detachment from self or surroundings)", "reality testing remains intact", "causes distress or impairment"],
+    "guidance": "CBT, grounding techniques, mindfulness. SSRIs may help comorbid anxiety. Rule out substance-induced.",
+    "precautions": ["Grounding techniques (5-4-3-2-1)", "Mindfulness", "Address stress", "CBT", "Avoid substances"],
+    "urgency": "medium"
+  },
+  {
+    "id": "somatic_symptom_disorder",
+    "category": "Somatic Symptom Disorder",
+    "symptoms": ["one or more somatic symptoms that are distressing or cause disruption", "excessive thoughts, feelings, or behaviors related to symptoms", "health anxiety", "disproportionate concern"],
+    "guidance": "CBT, mindfulness, and reassurance. Address underlying stress. Avoid unnecessary medical tests. Regular follow-up with a trusted physician.",
+    "precautions": ["Validate symptoms but focus on function", "CBT to reduce catastrophizing", "Avoid unnecessary investigations", "Stress management", "Set boundaries on reassurance seeking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "illness_anxiety_disorder",
+    "category": "Illness Anxiety Disorder (Hypochondriasis)",
+    "symptoms": ["preoccupation with having a serious illness", "no or mild symptoms", "high health anxiety", "excessive checking, reassurance seeking"],
+    "guidance": "CBT is effective. Reduce checking and reassurance. Build tolerance to uncertainty. Rule out organic causes once.",
+    "precautions": ["CBT", "Avoid excessive testing", "Set limits on reassurance", "Address anxiety", "Supportive therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "conversion_disorder",
+    "category": "Conversion Disorder (Functional Neurological Symptom Disorder)",
+    "symptoms": ["symptoms of altered voluntary motor or sensory function (e.g., paralysis, seizures, blindness, numbness)", "not explained by neurological disease", "symptoms cause distress/impairment"],
+    "guidance": "Multidisciplinary: neurology and psychiatry. CBT, physical therapy, and treatment of underlying psychological stressors. Avoid iatrogenic harm.",
+    "precautions": ["Neurological evaluation to rule out organic", "CBT", "Physical rehabilitation", "Address stressors", "Avoid making symptoms the focus"],
+    "urgency": "medium"
+  },
+  {
+    "id": "factitious_disorder",
+    "category": "Factitious Disorder (Munchausen's Syndrome)",
+    "symptoms": ["falsification of physical or psychological symptoms, without external reward", "deceptive behavior even in the absence of obvious benefit", "may present with dramatic, inconsistent symptoms"],
+    "guidance": "Difficult to treat – establish a therapeutic alliance, avoid confrontation. Address underlying personality issues. Protect from unnecessary procedures.",
+    "precautions": ["Avoid confrontation", "Protect from iatrogenic harm", "Psychotherapy", "Limit unnecessary tests", "Involve a psychiatrist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "malingering",
+    "category": "Malingering",
+    "symptoms": ["intentional production of false or grossly exaggerated symptoms for external gain (e.g., avoiding work, financial compensation)", "not a mental disorder but a condition"],
+    "guidance": "Identify through inconsistency and motivation. Address with a non-judgmental approach. Offer appropriate referral.",
+    "precautions": ["Do not accuse; assess motivation", "Offer treatment if actual disorder present", "Maintain empathy", "Document clearly", "Limit unnecessary procedures"],
+    "urgency": "low"
+  },
+  {
+    "id": "sexual_dysfunction_male",
+    "category": "Male Sexual Dysfunction (Erectile Dysfunction, Premature Ejaculation)",
+    "symptoms": ["difficulty achieving/maintaining erection", "premature ejaculation", "decreased libido", "may be associated with anxiety or physical illness"],
+    "guidance": "Medical evaluation (vascular, hormonal, neurological). Treat underlying conditions. Psychological counseling, CBT, and pharmacotherapy (PDE5 inhibitors, SSRIs for premature ejaculation).",
+    "precautions": ["Address anxiety", "Rule out medical causes", "Couples therapy", "Medication under supervision", "Lifestyle changes (exercise, diet)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sexual_dysfunction_female",
+    "category": "Female Sexual Dysfunction (Arousal, Orgasmic, Pain Disorders)",
+    "symptoms": ["reduced sexual desire", "difficulty with arousal", "lack of orgasm", "pain during sex (dyspareunia, vaginismus)", "often multifactorial"],
+    "guidance": "Biopsychosocial approach. Rule out medical causes (hormonal, pelvic). Psychotherapy (CBT, sex therapy) and pelvic floor physiotherapy. Address relationship issues.",
+    "precautions": ["Couples communication", "Pelvic floor therapy", "Hormonal evaluation", "Psychotherapy", "Avoid self-blame"],
+    "urgency": "medium"
+  },
+  {
+    "id": "gender_dysphoria",
+    "category": "Gender Dysphoria",
+    "symptoms": ["marked incongruence between experienced/expressed gender and assigned gender", "strong desire to be of the other gender", "aversion to primary/secondary sex characteristics", "causes significant distress"],
+    "guidance": "Psychotherapy (supportive), hormonal therapy (cross-sex hormones), and surgical interventions (gender-affirming surgeries) for eligible individuals. Multidisciplinary care. Respect identity.",
+    "precautions": ["Respect gender identity", "Provide counseling", "Hormonal therapy under specialist", "Monitor mental health", "Support social transition"],
+    "urgency": "medium"
+  },
+  {
+    "id": "paraphilia_disorder",
+    "category": "Paraphilic Disorders (Pedophilic, Voyeuristic, Exhibitionistic, etc.)",
+    "symptoms": ["sexual arousal to atypical objects/situations, causing distress or impairment, or involving non-consenting persons", "e.g., pedophilia, voyeurism, exhibitionism, frotteurism"],
+    "guidance": "Treatment: cognitive-behavioral therapy, relapse prevention, and sometimes antiandrogens or SSRIs to reduce sexual drive. Legal and ethical considerations. Protect potential victims.",
+    "precautions": ["Monitor for risk", "CBT and relapse prevention", "Pharmacotherapy if indicated", "Legal compliance", "Supervised treatment"],
+    "urgency": "high"
+  },
+  {
+    "id": "intermittent_explosive_disorder",
+    "category": "Intermittent Explosive Disorder",
+    "symptoms": ["recurrent behavioral outbursts representing a failure to control aggressive impulses", "verbal or physical aggression", "outbursts are disproportionate to provocation", "causes distress/impairment"],
+    "guidance": "CBT, anger management, and SSRIs or mood stabilizers. Identify triggers and develop coping strategies.",
+    "precautions": ["Anger management training", "Identify triggers", "CBT", "Medication if severe", "Avoid alcohol"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pyromania",
+    "category": "Pyromania",
+    "symptoms": ["impulsive and deliberate fire-setting", "tension before the act", "fascination with fire", "relief after setting fire", "no other motive (e.g., financial gain, revenge)"],
+    "guidance": "CBT and medication (SSRIs). Address impulsivity. Safety supervision. Monitor for comorbid conduct disorder.",
+    "precautions": ["Safety monitoring", "CBT", "Address impulse control", "Supervise access to fire", "Treat comorbidities"],
+    "urgency": "high"
+  },
+  {
+    "id": "kleptomania",
+    "category": "Kleptomania",
+    "symptoms": ["recurrent failure to resist impulses to steal objects not needed for personal use", "tension before and relief after stealing", "not for monetary gain"],
+    "guidance": "CBT, impulse control training, and SSRIs. Address legal consequences. Therapy focuses on urge surfing.",
+    "precautions": ["CBT", "Urge surfing techniques", "Address consequences", "Monitor for relapse", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "trichotillomania",
+    "category": "Trichotillomania (Hair-Pulling Disorder)",
+    "symptoms": ["recurrent pulling out of one's hair leading to hair loss", "repeated attempts to decrease/stop", "not due to other causes"],
+    "guidance": "Habit reversal therapy (HRT) is the most effective. CBT and acceptance-based therapy. Medications (SSRIs, N-acetylcysteine) may help.",
+    "precautions": ["Habit reversal training", "Use fidget toys", "Identify triggers", "Support groups", "CBT"],
+    "urgency": "medium"
+  },
+  {
+    "id": "excoriation_disorder",
+    "category": "Excoriation (Skin-Picking) Disorder",
+    "symptoms": ["recurrent skin picking resulting in lesions", "repeated attempts to decrease/stop", "causes distress/impairment", "not due to other conditions"],
+    "guidance": "Habit reversal training, CBT, and SSRIs. Keep nails short, cover picking areas, and use fidget objects.",
+    "precautions": ["Habit reversal", "Keep nails short", "Use fidget toys", "Address underlying stress", "CBT"],
+    "urgency": "medium"
+  },
+  {
+    "id": "body_dysmorphic_disorder",
+    "category": "Body Dysmorphic Disorder (BDD)",
+    "symptoms": ["preoccupation with one or more perceived defects in appearance that are not observable or slight", "repetitive behaviors (mirror checking, excessive grooming, seeking reassurance)", "significant distress/impairment"],
+    "guidance": "CBT (especially exposure and response prevention) and SSRIs. Avoid unnecessary cosmetic procedures. Address distorted body image.",
+    "precautions": ["CBT and ERP", "Avoid cosmetic surgery", "SSRIs", "Do not reassure excessively", "Address social anxiety"],
+    "urgency": "high"
+  },
+  {
+    "id": "hoarding_disorder",
+    "category": "Hoarding Disorder",
+    "symptoms": ["persistent difficulty discarding possessions regardless of value", "accumulation leading to clutter that compromises living areas", "significant distress/impairment"],
+    "guidance": "CBT (specialized for hoarding), motivational interviewing, and sometimes SSRIs. Practical help with decluttering and decision-making.",
+    "precautions": ["CBT", "Decluttering support", "Address underlying depression/anxiety", "Family involvement", "Harm reduction"],
+    "urgency": "medium"
+  },
+  {
+    "id": "delirium",
+    "category": "Delirium (Acute Confusional State)",
+    "symptoms": ["acute onset of confusion, inattention, disorganized thinking, altered consciousness", "fluctuating course", "may have hallucinations, delusions, agitation, or lethargy", "often due to medical condition, substance, or medication"],
+    "guidance": "Medical emergency – identify and treat underlying cause. Environmental measures (reorientation, familiar objects, calm setting). Antipsychotics (haloperidol) for agitation if needed.",
+    "precautions": ["Identify and treat cause", "Reorientation", "Avoid restraints", "Monitor fluid/electrolytes", "Prevent falls"],
+    "urgency": "critical"
+  },
+  {
+    "id": "dementia_alzheimer",
+    "category": "Alzheimer's Dementia",
+    "symptoms": ["gradual memory loss affecting daily life", "difficulty with familiar tasks", "confusion about time/place", "language problems", "poor judgment", "personality changes", "wandering", "late: incontinence, swallowing difficulties"],
+    "guidance": "Acetylcholinesterase inhibitors (donepezil, rivastigmine) and memantine. Supportive care, environmental modifications, and caregiver education. Free memory clinics at some government hospitals.",
+    "precautions": ["Home safety (remove hazards)", "Maintain routines", "Do not argue (redirect)", "Caregiver support is essential", "Plan for advanced care"],
+    "urgency": "high"
+  },
+  {
+    "id": "dementia_vascular",
+    "category": "Vascular Dementia",
+    "symptoms": ["stepwise decline in cognition", "associated with cerebrovascular disease", "focal neurological signs", "slower processing, executive dysfunction", "may have gait disturbance"],
+    "guidance": "Control vascular risk factors (hypertension, diabetes, cholesterol). Medications similar to Alzheimer's. Rehabilitation and lifestyle changes.",
+    "precautions": ["Manage BP and diabetes", "Stop smoking", "Healthy diet", "Exercise", "Monitor for falls"],
+    "urgency": "medium"
+  },
+  {
+    "id": "frontotemporal_dementia",
+    "category": "Frontotemporal Dementia (FTD)",
+    "symptoms": ["personality and behavior changes (apathy, disinhibition, loss of empathy)", "language difficulties (fluent aphasia)", "early onset (40-60 years)", "relatively preserved memory in early stages"],
+    "guidance": "Supportive care, behavioral interventions, speech therapy. No cure. Genetic counseling if familial.",
+    "precautions": ["Behavioral management", "Speech therapy", "Support groups", "Caregiver education", "Plan for long-term care"],
+    "urgency": "high"
+  },
+  {
+    "id": "lewy_body_dementia",
+    "category": "Dementia with Lewy Bodies (DLB)",
+    "symptoms": ["dementia with prominent visual hallucinations", "fluctuating cognition", "Parkinsonian motor symptoms (rigidity, tremor)", "REM sleep behavior disorder"],
+    "guidance": "Cholinesterase inhibitors may help; avoid antipsychotics (can worsen). Management of motor and autonomic symptoms.",
+    "precautions": ["Avoid antipsychotics (extreme sensitivity)", "Manage Parkinsonism", "Address sleep disorders", "Supportive care", "Fall prevention"],
+    "urgency": "high"
+  },
+  {
+    "id": "parkinsons_disease_mental",
+    "category": "Parkinson's Disease with Psychiatric Symptoms",
+    "symptoms": ["motor symptoms (tremor, rigidity, bradykinesia)", "depression, anxiety", "psychosis (hallucinations, delusions)", "cognitive decline", "sleep disturbances"],
+    "guidance": "Treat depression with SSRIs. Psychosis: clozapine or quetiapine (avoid typical antipsychotics). Optimize dopaminergic therapy. Multidisciplinary care.",
+    "precautions": ["Avoid typical antipsychotics", "Monitor for orthostatic hypotension", "Physical therapy", "Support groups", "Medication adherence"],
+    "urgency": "high"
+  },
+  {
+    "id": "huntingtons_disease",
+    "category": "Huntington's Disease",
+    "symptoms": ["progressive chorea (involuntary movements)", "psychiatric symptoms (depression, irritability, psychosis)", "cognitive decline (dementia)", "onset usually 30-50 years, autosomal dominant"],
+    "guidance": "Genetic counseling. Symptomatic: tetrabenazine for chorea, antidepressants, antipsychotics. Multidisciplinary care. Prognosis: 15-20 years after onset.",
+    "precautions": ["Genetic testing with counseling", "Symptom management", "Fall prevention", "Psychiatric care", "Long-term planning"],
+    "urgency": "high"
+  },
+  {
+    "id": "tourette_syndrome",
+    "category": "Tourette Syndrome",
+    "symptoms": ["multiple motor tics and at least one vocal tic", "onset before 18", "waxing and waning", "often with ADHD and OCD"],
+    "guidance": "Psychoeducation, behavioral therapy (habit reversal), and medications (antipsychotics, alpha-agonists). Supportive school environment.",
+    "precautions": ["Habit reversal training", "Medication if severe", "Educate teachers", "Avoid stress triggers", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "tics_disorder",
+    "category": "Chronic Motor or Vocal Tic Disorder",
+    "symptoms": ["single or multiple motor or vocal tics, but not both", "present for more than a year", "onset before 18", "not due to substance or other condition"],
+    "guidance": "Similar to Tourette's – behavioral therapy, medication if needed. Usually mild and manageable.",
+    "precautions": ["Reduce stress", "Habit reversal", "Education", "Avoid stimulants", "Monitor for progression"],
+    "urgency": "low"
+  },
+  {
+    "id": "schizotypal_personality",
+    "category": "Schizotypal Personality Disorder",
+    "symptoms": ["odd beliefs (magical thinking)", "unusual perceptions", "odd thinking/speech", "suspiciousness", "social anxiety", "no overt psychosis"],
+    "guidance": "CBT and supportive therapy. Low-dose antipsychotics may help. Focus on social skills.",
+    "precautions": ["Supportive therapy", "Social skills training", "Avoid overinterpreting", "Monitor for psychosis", "Build trust"],
+    "urgency": "medium"
+  },
+  {
+    "id": "schizoid_personality",
+    "category": "Schizoid Personality Disorder",
+    "symptoms": ["detachment from social relationships", "limited range of emotions", "prefers solitary activities", "indifferent to praise/criticism", "little interest in sexual experiences"],
+    "guidance": "Supportive therapy, social skills training. Respect need for distance. Focus on functional goals.",
+    "precautions": ["Respect boundaries", "Social skills training", "Avoid forced socializing", "Monitor for depression", "Build trust"],
+    "urgency": "low"
+  },
+  {
+    "id": "paranoid_personality",
+    "category": "Paranoid Personality Disorder",
+    "symptoms": ["pervasive distrust and suspiciousness of others", "interprets motives as malevolent", "bears grudges", "perceives attacks on reputation", "unwilling to confide"],
+    "guidance": "Difficult to treat due to distrust. Build therapeutic alliance slowly. CBT to challenge assumptions. Address hypervigilance.",
+    "precautions": ["Build trust gradually", "Do not confront directly", "CBT", "Avoid validating suspicions", "Structured approach"],
+    "urgency": "medium"
+  },
+  {
+    "id": "eating_disorder_avoidant_restrictive",
+    "category": "Avoidant/Restrictive Food Intake Disorder (ARFID)",
+    "symptoms": ["eating or feeding disturbance leading to significant weight loss, nutritional deficiency, or dependence on supplements", "no body image disturbance", "avoidance based on sensory characteristics or fear of adverse consequences"],
+    "guidance": "Nutritional rehabilitation and CBT. Address sensory issues and anxiety. Family-based therapy for children.",
+    "precautions": ["Nutritional monitoring", "Sensory desensitization", "CBT", "Involve dietitian", "Family support"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sleep_apnea_mental",
+    "category": "Sleep Apnea-Related Psychological Effects",
+    "symptoms": ["excessive daytime sleepiness", "fatigue", "irritability, depression", "cognitive impairment", "snoring, gasping during sleep"],
+    "guidance": "Treat obstructive sleep apnea with CPAP. Address depression/anxiety. Weight loss. Avoid sedatives.",
+    "precautions": ["CPAP therapy", "Weight loss", "Avoid alcohol before bed", "Sleep hygiene", "Monitor mood"],
+    "urgency": "medium"
+  },
+  {
+    "id": "circadian_rhythm_disorder",
+    "category": "Circadian Rhythm Sleep-Wake Disorder",
+    "symptoms": ["persistent sleep-wake schedule misalignment with the environment", "insomnia or excessive sleepiness", "impairment in functioning", "e.g., delayed sleep phase, shift work disorder"],
+    "guidance": "Chronotherapy, light therapy, melatonin, and sleep hygiene. For shift work, strategic napping and caffeine.",
+    "precautions": ["Light therapy", "Maintain consistent schedule", "Melatonin at appropriate time", "Avoid bright light at night", "Sleep hygiene"],
+    "urgency": "medium"
+  },
+  {
+    "id": "enuresis_adult",
+    "category": "Adult Enuresis (Nocturnal, not organic)",
+    "symptoms": ["repeated involuntary urination during sleep in adults", "not due to medical conditions", "often associated with stress or anxiety"],
+    "guidance": "Rule out UTI, diabetes, neurologic. Behavioral: fluid restriction, bladder training. Desmopressin or alarm therapy if indicated.",
+    "precautions": ["Rule out medical causes", "Bladder training", "Fluid restriction in evening", "Psychological support", "Alarm therapy"],
+    "urgency": "low"
+  },
+  {
+    "id": "encopresis_adult",
+    "category": "Adult Encopresis (Fecal Incontinence, not organic)",
+    "symptoms": ["repeated passage of feces into inappropriate places (e.g., underwear) in adults", "not due to medical condition", "may be associated with stress or trauma"],
+    "guidance": "Rule out organic causes. Behavioral therapy, bowel training, and treatment of underlying psychological issues.",
+    "precautions": ["Bowel training", "Fiber management", "Psychological therapy", "Avoid punishment", "Rule out neuropathy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "orgasmic_disorder_male",
+    "category": "Male Orgasmic Disorder (Delayed Ejaculation)",
+    "symptoms": ["marked delay or absence of ejaculation", "causes distress", "not due to substance"],
+    "guidance": "Address anxiety, relationship issues. Medications (e.g., oxytocin) may help. Sex therapy.",
+    "precautions": ["Sex therapy", "Address anxiety", "Reduce medication side effects", "Couples counseling", "Patience"],
+    "urgency": "medium"
+  },
+  {
+    "id": "orgasmic_disorder_female",
+    "category": "Female Orgasmic Disorder",
+    "symptoms": ["marked delay or absence of orgasm", "causes distress", "not due to substance"],
+    "guidance": "Sex therapy, sensate focus exercises, and CBT. Address relationship issues. Vibratory stimulation may help.",
+    "precautions": ["Sex therapy", "Sensate focus", "Address anxiety", "Couples counseling", "Empowerment"],
+    "urgency": "medium"
+  },
+  {
+    "id": "genito_pelvic_pain_penetration",
+    "category": "Genito-Pelvic Pain/Penetration Disorder (Vaginismus)",
+    "symptoms": ["persistent difficulty with vaginal penetration", "pelvic pain during penetration", "fear of pain or penetration", "tensing of pelvic floor muscles"],
+    "guidance": "Pelvic floor physiotherapy, vaginal dilators, and CBT. Address anxiety. Gradually desensitize.",
+    "precautions": ["Pelvic floor physiotherapy", "Dilator therapy", "CBT", "Supportive partner", "Avoid forceful penetration"],
+    "urgency": "medium"
+  },
+  {
+    "id": "substance_benzodiazepine_use",
+    "category": "Benzodiazepine Use Disorder",
+    "symptoms": ["craving, tolerance, withdrawal (anxiety, insomnia, seizures, tremor)", "continued use despite problems", "dose escalation"],
+    "guidance": "Gradual taper (as long-term benzodiazepines) under medical supervision. CBT and supportive therapy. Flumazenil in overdose.",
+    "precautions": ["Slow taper to avoid withdrawal", "Monitor for seizures", "CBT", "Address underlying anxiety", "Avoid abrupt cessation"],
+    "urgency": "high"
+  },
+  {
+    "id": "substance_sedative_use",
+    "category": "Sedative, Hypnotic, or Anxiolytic Use Disorder",
+    "symptoms": ["similar to benzodiazepine use", "use of barbiturates or other sedatives", "withdrawal can be life-threatening (delirium, seizures)"],
+    "guidance": "Medically supervised detoxification. Long-term therapy for underlying issues. Relapse prevention.",
+    "precautions": ["Medical detoxification", "Seizure precautions", "CBT", "Support groups", "Avoid poly-substance use"],
+    "urgency": "critical"
+  },
+  {
+    "id": "substance_hallucinogen_use",
+    "category": "Hallucinogen Use Disorder",
+    "symptoms": ["use of LSD, psilocybin, ketamine, etc.", "perceptual disturbances", "tolerance", "persistent perception disorder (flashbacks)"],
+    "guidance": "CBT, motivational interviewing. Address psychosis if present. No specific pharmacotherapy.",
+    "precautions": ["Monitor for flashbacks", "CBT", "Address psychosis", "Avoid triggers", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "substance_caffeine_use",
+    "category": "Caffeine Use Disorder",
+    "symptoms": ["excessive caffeine intake", "withdrawal symptoms (headache, fatigue, irritability)", "tolerance", "continued use despite harm"],
+    "guidance": "Gradual reduction. Manage withdrawal symptoms. Substitute with decaf.",
+    "precautions": ["Gradual tapering", "Hydration", "Avoid abrupt stop", "Monitor sleep", "Address underlying fatigue"],
+    "urgency": "low"
+  },
+  {
+    "id": "substance_anabolic_steroid_use",
+    "category": "Anabolic Steroid Use Disorder",
+    "symptoms": ["use of anabolic steroids despite adverse effects (aggression, mood swings, liver toxicity)", "withdrawal (depression, fatigue, loss of libido)", "continued use to maintain physique"],
+    "guidance": "Psychotherapy, harm reduction, and medical monitoring for organ damage. Address body image issues.",
+    "precautions": ["Monitor liver and cardiovascular", "CBT", "Address body dysmorphia", "Support groups", "Medical follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pathological_lying",
+    "category": "Pathological Lying (Pseudologia Fantastica)",
+    "symptoms": ["chronic, compulsive lying", "lies are often extravagant and not self-serving", "no external reward", "may be associated with personality disorders"],
+    "guidance": "Psychotherapy to address underlying issues. Establish trust. Cognitive restructuring.",
+    "precautions": ["Build trust", "CBT", "Address underlying narcissism", "Avoid confrontation", "Monitor for other disorders"],
+    "urgency": "low"
+  },
+  {
+    "id": "impulse_control_disorder_nos",
+    "category": "Impulse Control Disorder (Not Elsewhere Classified)",
+    "symptoms": ["failure to resist impulses that harm self or others", "e.g., sexual impulses, reckless driving, fire-setting", "increasing tension before act, relief after"],
+    "guidance": "CBT, contingency management, and medication (SSRIs, mood stabilizers). Address triggers.",
+    "precautions": ["Identify triggers", "CBT", "Safety planning", "Medication if needed", "Family involvement"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cutting_self_harm",
+    "category": "Non-Suicidal Self-Injury (NSSI) – Cutting, Burning",
+    "symptoms": ["deliberate self-inflicted damage to body tissue (cutting, burning, scratching) without suicidal intent", "often to relieve tension or regulate emotions", "may be associated with BPD or PTSD"],
+    "guidance": "DBT is the most effective. Address underlying emotional dysregulation. Crisis plan. Keep sharp objects secured.",
+    "precautions": ["DBT", "Crisis planning", "Remove means", "Address trauma", "Medication for comorbidity"],
+    "urgency": "high"
+  },
+  {
+    "id": "dissociative_trance",
+    "category": "Dissociative Trance Disorder (Cultural Context)",
+    "symptoms": ["involuntary trance states with narrowing of awareness, often in cultural or religious contexts", "may involve possession", "not considered pathological in cultural context unless distressing"],
+    "guidance": "Cultural understanding. If distressing, psychotherapy. Rule out epilepsy or psychosis.",
+    "precautions": ["Respect cultural practices", "Assess distress", "Rule out medical", "Psychotherapy if needed", "Avoid pathologizing"],
+    "urgency": "low"
+  },
+  {
+    "id": "bereavement_complicated",
+    "category": "Complicated Grief (Prolonged Grief Disorder)",
+    "symptoms": ["intense, persistent longing for the deceased", "frequent intrusive memories, difficulty accepting death", "avoidance of reminders", "difficulty engaging in new activities", "lasts > 1 year (in adults)"],
+    "guidance": "Grief-focused CBT and complicated grief therapy. Support groups. Medications for associated depression.",
+    "precautions": ["Grief-focused therapy", "Support groups", "Normalize grief", "Avoid excessive avoidance", "Address depression"],
+    "urgency": "medium"
+  },
+  {
+    "id": "psychogenic_nonepileptic_seizures",
+    "category": "Psychogenic Nonepileptic Seizures (PNES)",
+    "symptoms": ["episodes resembling epileptic seizures but with no epileptiform activity on EEG", "often associated with emotional distress or trauma", "may have pelvic thrusting, asynchronous movements, crying"],
+    "guidance": "Diagnosis by video-EEG. CBT and trauma-focused therapy. Avoid antiepileptic drugs. Validate the reality of the experience.",
+    "precautions": ["Video-EEG diagnosis", "CBT", "Trauma therapy", "Avoid unnecessary AEDs", "Psychoeducation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "factitious_disorder_imposed_on_another",
+    "category": "Factitious Disorder Imposed on Another (Munchausen by Proxy)",
+    "symptoms": ["caregiver falsifies or induces illness in a person under their care (usually a child)", "without external reward", "perpetrator may have medical knowledge"],
+    "guidance": "Protect the victim. Remove from the caregiver if needed. Psychiatric treatment for the perpetrator. Legal involvement.",
+    "precautions": ["Protect the child", "Forensic evaluation", "Psychiatric treatment", "Legal action", "Monitor for recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "relational_problems",
+    "category": "Relational Problems (Marital, Parent-Child)",
+    "symptoms": ["patterns of interaction causing distress", "poor communication", "conflict", "emotional distance", "may be associated with depression or anxiety"],
+    "guidance": "Couples or family therapy. Communication skills training. Mediation if needed.",
+    "precautions": ["Couples therapy", "Family therapy", "Address communication", "Set boundaries", "Individual therapy if needed"],
+    "urgency": "low"
+  },
+  {
+    "id": "occupational_burnout",
+    "category": "Burnout Syndrome (Work-Related Stress)",
+    "symptoms": ["emotional exhaustion", "cynicism/detachment from work", "reduced professional efficacy", "fatigue", "sleep disturbances"],
+    "guidance": "Rest, stress management, therapy (CBT), and organizational changes. Set work-life boundaries. Engage in leisure activities.",
+    "precautions": ["Set boundaries", "Regular breaks", "Supportive workplace", "Counseling", "Self-care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "academic_stress",
+    "category": "Academic Stress and Performance Anxiety",
+    "symptoms": ["excessive worry about exams or grades", "avoidance of study", "physical symptoms (headache, nausea)", "insomnia", "irritability"],
+    "guidance": "Time management, relaxation techniques, study skills training, and counseling. Address perfectionism.",
+    "precautions": ["Time management", "Relaxation", "Realistic goals", "Supportive environment", "Seek help if overwhelmed"],
+    "urgency": "low"
+  },
+  {
+    "id": "exam_phobia",
+    "category": "Examination Phobia",
+    "symptoms": ["intense fear of examinations", "panic before/during exams", "blanking out", "avoidance of tests", "significant impairment"],
+    "guidance": "CBT (exposure, cognitive restructuring) and relaxation training. Study skills and test-taking strategies.",
+    "precautions": ["Exposure therapy", "CBT", "Study skills", "Relaxation techniques", "Parental support"],
+    "urgency": "medium"
+  },
+  {
+    "id": "body_image_disturbance",
+    "category": "Body Image Disturbance (Not BDD)",
+    "symptoms": ["dissatisfaction with body weight/shape", "overvaluation of appearance", "may lead to disordered eating", "not necessarily distress"],
+    "guidance": "Cognitive restructuring, media literacy, and building self-esteem. Address eating disorder if present.",
+    "precautions": ["Promote healthy body image", "CBT", "Avoid comparison", "Focus on strengths", "Seek help if distressed"],
+    "urgency": "low"
+  },
+  {
+    "id": "mood_disorder_substance_induced",
+    "category": "Substance-Induced Mood Disorder",
+    "symptoms": ["depression or mania directly caused by substance intoxication or withdrawal", "e.g., alcohol-induced depression, cocaine-induced mania"],
+    "guidance": "Substance cessation. Treat the underlying substance use. Mood symptoms usually improve with abstinence.",
+    "precautions": ["Substance cessation", "Detoxification", "Monitor mood", "Treat withdrawal", "Long-term therapy"],
+    "urgency": "high"
+  },
+  {
+    "id": "psychotic_disorder_substance_induced",
+    "category": "Substance-Induced Psychotic Disorder",
+    "symptoms": ["hallucinations or delusions due to substance use (e.g., cannabis, amphetamines)", "onset during intoxication or withdrawal", "resolves with abstinence"],
+    "guidance": "Substance cessation. Short-term antipsychotics if needed. Monitor for persistence.",
+    "precautions": ["Substance cessation", "Antipsychotics if needed", "Psychoeducation", "Monitor for schizophrenia", "Relapse prevention"],
+    "urgency": "high"
+  },
+  {
+    "id": "anxiety_substance_induced",
+    "category": "Substance-Induced Anxiety Disorder",
+    "symptoms": ["anxiety, panic, or phobic symptoms due to substance (e.g., caffeine, cannabis, withdrawal from alcohol)"],
+    "guidance": "Identify and stop substance. Behavioral management. Short-term benzodiazepines may be used but avoid if possible.",
+    "precautions": ["Substance cessation", "Cognitive reframing", "Avoid benzodiazepines long-term", "Monitor for withdrawal", "Address underlying"],
+    "urgency": "medium"
+  },
+  {
+    "id": "obsessive_compulsive_related_disorder_nos",
+    "category": "Obsessive-Compulsive Related Disorder (Not Otherwise Specified)",
+    "symptoms": ["symptoms resembling OCD but not meeting full criteria", "e.g., compulsive checking, ordering, or collecting"],
+    "guidance": "CBT, ERP, and SSRIs. Address distress.",
+    "precautions": ["ERP", "CBT", "SSRIs", "Address functional impairment", "Monitor for full OCD"],
+    "urgency": "medium"
+  },
+  {
+    "id": "somatization_disorder",
+    "category": "Somatization Disorder (Briquet's Syndrome)",
+    "symptoms": ["multiple, recurrent, often changing somatic symptoms over years", "no physical explanation", "excessive healthcare seeking", "distress and impairment"],
+    "guidance": "CBT, mindfulness, and regular scheduled visits with a single physician to reduce unnecessary testing.",
+    "precautions": ["Single physician", "Avoid unnecessary tests", "CBT", "Address stress", "Build therapeutic alliance"],
+    "urgency": "medium"
+  }
+]

@@ -24,7 +24,7 @@ from typing import Any, Optional
 logger = logging.getLogger(__name__)
 
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "nutrition")
-_FOODS_FILE = "foods.json"
+_FOODS_FILE = None  # deprecated
 
 VALID_GOALS = ["weight loss", "weight gain", "diabetes", "high protein", "general health"]
 
@@ -47,13 +47,76 @@ class NutritionService:
     # Loading
     # ------------------------------------------------------------------ #
 
-    def _load_foods(self) -> list[dict[str, Any]]:
-        path = os.path.join(_DATA_DIR, _FOODS_FILE)
-        if not os.path.exists(path):
-            logger.warning("[Nutrition] Data file not found: %s", path)
-            return []
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+    def _load_foods(self) -> list[dict]:
+        """Auto-discover and normalise all *.json files in the nutrition/ directory."""
+        import glob as _glob
+        files = sorted(_glob.glob(os.path.join(_DATA_DIR, "*.json")))
+        all_items: list[dict] = []
+        for filepath in files:
+            try:
+                with open(filepath, encoding="utf-8") as f:
+                    data = json.load(f)
+                source = os.path.splitext(os.path.basename(filepath))[0]
+                for item in data:
+                    normalised = self._normalise(item, source)
+                    if normalised:
+                        all_items.append(normalised)
+            except Exception as exc:
+                logger.warning("[Nutrition] Failed to load %s: %s", filepath, exc)
+        logger.info("[Nutrition] Loaded %d entries from %d files.", len(all_items), len(files))
+        return all_items
+
+    def _normalise(self, item: dict, source: str) -> dict | None:
+        """Convert any nutrition schema to a unified shape."""
+        item_id = str(item.get("id", ""))
+        if not item_id:
+            return None
+
+        # Schema 1: disease-diet
+        if "disease" in item:
+            return {
+                "id": item_id,
+                "display_name": item.get("disease", ""),
+                "type": "disease_diet",
+                "recommended_foods": item.get("recommended_foods", []),
+                "avoid_foods": item.get("avoid_foods", []),
+                "guidance": item.get("guidance", ""),
+                "urgency": item.get("urgency", "low"),
+                "source": source,
+            }
+
+        # Schema 2: pregnancy
+        if "focus" in item:
+            return {
+                "id": item_id,
+                "display_name": f"Pregnancy — {item.get('category', '')}",
+                "type": "pregnancy",
+                "recommended_foods": item.get("recommended_foods", []),
+                "avoid_foods": item.get("avoid_foods", []),
+                "guidance": f"{item.get('focus', '')}. {item.get('guidance', '')}",
+                "urgency": "medium",
+                "source": source,
+            }
+
+        # Schema 3: food item
+        name = item.get("name", item_id.replace("_", " ").title())
+        benefits = item.get("benefits", [])
+        good_for = item.get("good_for", [])
+        nutrients = item.get("nutrients", {})
+        nutrient_str = (
+            ", ".join(f"{k}: {v}" for k, v in nutrients.items())
+            if isinstance(nutrients, dict) else ""
+        )
+        return {
+            "id": item_id,
+            "display_name": name,
+            "type": "food_item",
+            "recommended_foods": benefits,  # repurpose as benefits list
+            "avoid_foods": [],
+            "guidance": f"Nutrients: {nutrient_str}. Best time: {item.get('best_time', '')}. Good for: {', '.join(good_for)}.",
+            "urgency": "low",
+            "source": source,
+        }
 
     @property
     def count(self) -> int:
@@ -64,37 +127,39 @@ class NutritionService:
     # ------------------------------------------------------------------ #
 
     def get_food_nutrition(self, food_name: str) -> Optional[dict[str, Any]]:
-        """Exact match first, then substring match (handles 'roti' -> 'Roti (Chapati)')."""
+        """Exact match first, then substring match."""
         target = food_name.lower().strip()
 
         for food in self._foods:
-            if food["name"].lower() == target:
+            name_val = food.get("display_name", "")
+            if name_val.lower() == target:
                 return food
 
         for food in self._foods:
-            name = food["name"].lower()
-            if target in name or name in target:
+            name_val = food.get("display_name", "")
+            sname = name_val.lower()
+            if sname and (target in sname or sname in target):
                 return food
 
         return None
 
     def get_foods_by_category(self, category: str) -> list[dict[str, Any]]:
         target = category.lower().strip()
-        return [f for f in self._foods if f.get("category", "").lower() == target]
+        return [f for f in self._foods if f.get("source", "").lower() == target]
 
     def get_all_foods(self) -> list[dict[str, Any]]:
         """Return all foods in the dataset."""
         return self._foods
 
-    def search_foods(self, query: str) -> list[dict[str, Any]]:
-        """Search foods by name, category, good_for, or rich_in (case-insensitive)."""
-        target = query.lower().strip()
+    def search_foods(self, query: str) -> list[dict]:
+        q = query.lower().strip()
         return [
-            f for f in self._foods
-            if target in f.get("name", "").lower()
-            or target in f.get("category", "").lower()
-            or any(target in g.lower() for g in f.get("good_for", []))
-            or any(target in r.lower() for r in f.get("rich_in", []))
+            item for item in self._foods
+            if q in (
+                item.get("display_name", "") + " " +
+                item.get("guidance", "") + " " +
+                " ".join(item.get("recommended_foods", []))
+            ).lower()
         ]
 
     # ------------------------------------------------------------------ #
@@ -145,11 +210,16 @@ class NutritionService:
             )[:limit]
 
         if g == "diabetes":
-            return [
-                f for f in self._foods
-                if "diabetes" in [x.lower() for x in f.get("good_for", [])]
-                and "diabetes" not in [x.lower() for x in f.get("avoid_if", [])]
-            ][:limit]
+            res = []
+            for f in self._foods:
+                disease = f.get("disease", "").lower()
+                good_for = [str(x).lower() for x in (f.get("good_for") or f.get("benefits") or [])]
+                avoid_if = [str(x).lower() for x in f.get("avoid_if", [])]
+                avoid_foods = [str(x).lower() for x in f.get("avoid_foods", [])]
+                if ("diabetes" in disease or 
+                    ("diabetes" in good_for and "diabetes" not in avoid_if and "diabetes" not in avoid_foods)):
+                    res.append(f)
+            return res[:limit]
 
         if g == "high protein":
             return self.suggest_high_protein_foods(limit)

@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 # Persisted on disk — survives server restarts
 _CHROMA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "chroma_db")
-_EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+_EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 
 
 # --------------------------------------------------------------------------- #

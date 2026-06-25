@@ -1,0 +1,498 @@
+[
+  {
+    "id": "almond",
+    "name": "Almond",
+    "nutrients": ["Protein", "Vitamin E", "Magnesium", "Healthy Fats"],
+    "benefits": ["Supports brain health", "Improves heart health", "Provides long-lasting energy"],
+    "best_time": "Morning after soaking overnight",
+    "good_for": ["Students", "Pregnant women", "Heart health"]
+  },
+  {
+    "id": "walnut",
+    "name": "Walnut",
+    "nutrients": ["Omega-3 Fatty Acids", "Protein", "Antioxidants"],
+    "benefits": ["Supports brain development", "Improves heart health", "Reduces inflammation"],
+    "best_time": "Morning or evening snack",
+    "good_for": ["Brain health", "Pregnancy", "Elderly"]
+  },
+  {
+    "id": "cashew",
+    "name": "Cashew Nut",
+    "nutrients": ["Iron", "Magnesium", "Protein", "Healthy Fats"],
+    "benefits": ["Supports blood formation", "Provides energy", "Supports bone health"],
+    "best_time": "Morning or afternoon snack",
+    "good_for": ["Anemia", "Weight gain", "Children"]
+  },
+  {
+    "id": "pistachio",
+    "name": "Pistachio",
+    "nutrients": ["Protein", "Fiber", "Vitamin B6"],
+    "benefits": ["Supports digestion", "Improves heart health", "Helps control blood sugar"],
+    "best_time": "Evening snack",
+    "good_for": ["Diabetes", "Weight management"]
+  },
+  {
+    "id": "peanut",
+    "name": "Peanut",
+    "nutrients": ["Protein", "Niacin", "Healthy Fats", "Magnesium"],
+    "benefits": ["Affordable protein source", "Supports muscle growth", "Provides energy"],
+    "best_time": "Anytime as a snack",
+    "good_for": ["Children", "Athletes", "Vegetarians"]
+  },
+  {
+    "id": "sesame_seed",
+    "name": "Sesame Seeds (Til)",
+    "nutrients": ["Calcium", "Iron", "Magnesium", "Zinc"],
+    "benefits": ["Strengthens bones", "Helps prevent anemia", "Supports immunity"],
+    "best_time": "With meals",
+    "good_for": ["Pregnant women", "Anemia", "Elderly"]
+  },
+  {
+    "id": "flax_seed",
+    "name": "Flax Seeds",
+    "nutrients": ["Omega-3 Fatty Acids", "Fiber", "Protein"],
+    "benefits": ["Improves heart health", "Supports digestion", "Helps control cholesterol"],
+    "best_time": "Morning with water or curd",
+    "good_for": ["Heart health", "Diabetes", "Weight management"]
+  },
+  {
+    "id": "chia_seed",
+    "name": "Chia Seeds",
+    "nutrients": ["Fiber", "Calcium", "Protein", "Omega-3"],
+    "benefits": ["Supports digestion", "Provides hydration", "Strengthens bones"],
+    "best_time": "Morning soaked in water",
+    "good_for": ["Weight loss", "Pregnancy", "Bone health"]
+  },
+  {
+    "id": "pumpkin_seed",
+    "name": "Pumpkin Seeds",
+    "nutrients": ["Zinc", "Iron", "Magnesium", "Protein"],
+    "benefits": ["Supports immunity", "Improves sleep quality", "Supports prostate health"],
+    "best_time": "Evening snack",
+    "good_for": ["Men's health", "Immunity", "Anemia"]
+  },
+  {
+    "id": "sunflower_seed",
+    "name": "Sunflower Seeds",
+    "nutrients": ["Vitamin E", "Selenium", "Healthy Fats"],
+    "benefits": ["Supports skin health", "Boosts immunity", "Supports heart health"],
+    "best_time": "Afternoon snack",
+    "good_for": ["Skin health", "Heart health"]
+  },
+  {
+    "id": "watermelon_seed",
+    "name": "Watermelon Seeds",
+    "nutrients": ["Protein", "Iron", "Magnesium", "Zinc"],
+    "benefits": ["Supports muscle growth", "Improves blood health", "Boosts immunity"],
+    "best_time": "Snack time",
+    "good_for": ["Anemia", "Athletes", "Children"]
+  },
+  {
+    "id": "foxnut",
+    "name": "Fox Nut (Makhana)",
+    "nutrients": ["Protein", "Calcium", "Magnesium"],
+    "benefits": ["Supports bone health", "Low-calorie healthy snack", "Provides sustained energy"],
+    "best_time": "Evening snack",
+    "good_for": ["Pregnant women", "Elderly", "Weight management"]
+  },
+  {
+    "id": "hazelnut",
+    "name": "Hazelnut",
+    "nutrients": ["Vitamin E", "Copper", "Manganese", "Healthy Fats"],
+    "benefits": ["Supports heart health", "Promotes brain function", "Improves skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["General health", "Heart health", "Skin health"]
+  },
+  {
+    "id": "brazil_nut",
+    "name": "Brazil Nut",
+    "nutrients": ["Selenium", "Magnesium", "Protein", "Healthy Fats"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Provides energy"],
+    "best_time": "1-2 nuts daily",
+    "good_for": ["Thyroid health", "Immunity", "General health"]
+  },
+  {
+    "id": "macadamia",
+    "name": "Macadamia Nut",
+    "nutrients": ["Healthy Fats", "Vitamin B1", "Manganese", "Copper"],
+    "benefits": ["Supports heart health", "Provides energy", "Promotes brain function"],
+    "best_time": "As a snack",
+    "good_for": ["Brain health", "Heart health", "Energy"]
+  },
+  {
+    "id": "pecan",
+    "name": "Pecan",
+    "nutrients": ["Healthy Fats", "Fiber", "Zinc", "Vitamin E"],
+    "benefits": ["Supports heart health", "Aids digestion", "Protects cells from damage"],
+    "best_time": "As a snack",
+    "good_for": ["Heart health", "Digestion", "General health"]
+  },
+  {
+    "id": "pine_nut",
+    "name": "Pine Nut",
+    "nutrients": ["Protein", "Iron", "Magnesium", "Vitamin K"],
+    "benefits": ["Provides energy", "Supports bone health", "Boosts immunity"],
+    "best_time": "In salads or pesto",
+    "good_for": ["Energy", "Bone health", "General health"]
+  },
+  {
+    "id": "chestnut",
+    "name": "Chestnut",
+    "nutrients": ["Carbohydrates", "Fiber", "Vitamin C", "Potassium"],
+    "benefits": ["Provides energy", "Supports digestion", "Boosts immunity"],
+    "best_time": "Roasted as a snack",
+    "good_for": ["Energy", "Digestion", "General health"]
+  },
+  {
+    "id": "coconut_meat",
+    "name": "Coconut Meat (Fresh)",
+    "nutrients": ["Healthy Fats", "Fiber", "Manganese", "Copper"],
+    "benefits": ["Supports brain function", "Boosts energy", "Supports heart health"],
+    "best_time": "As a snack or in cooking",
+    "good_for": ["Energy", "Brain health", "General health"]
+  },
+  {
+    "id": "hemp_seed",
+    "name": "Hemp Seeds",
+    "nutrients": ["Complete Protein", "Omega-3", "Magnesium", "Iron"],
+    "benefits": ["Supports muscle growth", "Reduces inflammation", "Supports heart health"],
+    "best_time": "In smoothies or salads",
+    "good_for": ["Athletes", "Vegetarians", "Heart health"]
+  },
+  {
+    "id": "poppy_seed",
+    "name": "Poppy Seeds",
+    "nutrients": ["Calcium", "Magnesium", "Phosphorus", "Iron"],
+    "benefits": ["Supports bone health", "Improves sleep", "Aids digestion"],
+    "best_time": "In baking or as a topping",
+    "good_for": ["Bone health", "Sleep", "General health"]
+  },
+  {
+    "id": "mustard_seed",
+    "name": "Mustard Seeds",
+    "nutrients": ["Selenium", "Magnesium", "Omega-3", "Calcium"],
+    "benefits": ["Supports digestion", "Has anti-inflammatory properties", "Boosts metabolism"],
+    "best_time": "In cooking",
+    "good_for": ["Digestion", "General health"]
+  },
+  {
+    "id": "cumin_seed",
+    "name": "Cumin Seeds",
+    "nutrients": ["Iron", "Manganese", "Magnesium", "Calcium"],
+    "benefits": ["Aids digestion", "Supports immunity", "Promotes iron absorption"],
+    "best_time": "In cooking",
+    "good_for": ["Digestion", "Immunity", "General health"]
+  },
+  {
+    "id": "fennel_seed",
+    "name": "Fennel Seeds",
+    "nutrients": ["Fiber", "Potassium", "Calcium", "Magnesium"],
+    "benefits": ["Aids digestion", "Relieves bloating", "Supports bone health"],
+    "best_time": "After meals as a mouth freshener",
+    "good_for": ["Digestion", "Bone health", "General health"]
+  },
+  {
+    "id": "nigella_seed",
+    "name": "Nigella Seeds (Kalonji)",
+    "nutrients": ["Thymoquinone", "Iron", "Calcium", "Healthy Fats"],
+    "benefits": ["Boosts immunity", "Supports respiratory health", "Has anti-inflammatory properties"],
+    "best_time": "With meals",
+    "good_for": ["Immunity", "Respiratory health", "General health"]
+  },
+  {
+    "id": "fenugreek_seed",
+    "name": "Fenugreek Seeds (Methi)",
+    "nutrients": ["Fiber", "Iron", "Magnesium", "Protein"],
+    "benefits": ["Supports blood sugar control", "Improves digestion", "Boosts milk production in nursing mothers"],
+    "best_time": "Soaked overnight or as a spice",
+    "good_for": ["Diabetes", "Breastfeeding", "Digestion"]
+  },
+  {
+    "id": "lotus_seed",
+    "name": "Lotus Seeds (Makhana alternative)",
+    "nutrients": ["Protein", "Magnesium", "Potassium", "Phosphorus"],
+    "benefits": ["Supports bone health", "Calms the nervous system", "Provides energy"],
+    "best_time": "Roasted as a snack",
+    "good_for": ["General health", "Energy", "Sleep"]
+  },
+  {
+    "id": "amaranth_seed",
+    "name": "Amaranth Seeds",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Gluten-free grain alternative", "Provides sustained energy"],
+    "best_time": "As a porridge or in cooking",
+    "good_for": ["Bone health", "Gluten-free diets", "Energy"]
+  },
+  {
+    "id": "quinoa_seed",
+    "name": "Quinoa (Seed)",
+    "nutrients": ["Complete Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Provides all essential amino acids", "Supports muscle repair", "Good for digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Athletes", "Vegetarians", "General health"]
+  },
+  {
+    "id": "millet_seed",
+    "name": "Millet (as a seed – general)",
+    "nutrients": ["Fiber", "B Vitamins", "Iron", "Magnesium"],
+    "benefits": ["Supports heart health", "Helps control blood sugar", "Aids digestion"],
+    "best_time": "As a grain in meals",
+    "good_for": ["Diabetes", "Heart health", "Digestion"]
+  },
+  {
+    "id": "buckwheat_seed",
+    "name": "Buckwheat (Seed)",
+    "nutrients": ["Fiber", "Protein", "Magnesium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Improves digestion", "Gluten-free"],
+    "best_time": "As a grain in meals",
+    "good_for": ["Heart health", "Gluten-free diets", "Digestion"]
+  },
+  {
+    "id": "teff_seed",
+    "name": "Teff (Seed)",
+    "nutrients": ["Calcium", "Protein", "Fiber", "Iron"],
+    "benefits": ["Strengthens bones", "Supports digestion", "Provides energy"],
+    "best_time": "As a porridge or in baking",
+    "good_for": ["Bone health", "Anemia", "Energy"]
+  },
+  {
+    "id": "sorghum_seed",
+    "name": "Sorghum (Jowar – as seed)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Helps weight management", "Provides sustained energy"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "Heart health"]
+  },
+  {
+    "id": "barley_seed",
+    "name": "Barley (as a seed)",
+    "nutrients": ["Fiber", "Selenium", "B Vitamins", "Magnesium"],
+    "benefits": ["Lowers cholesterol", "Supports digestion", "Helps control blood sugar"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Digestion"]
+  },
+  {
+    "id": "oats_seed",
+    "name": "Oats (as a seed)",
+    "nutrients": ["Fiber", "Protein", "Iron", "Magnesium"],
+    "benefits": ["Lowers cholesterol", "Improves digestion", "Keeps stomach full longer"],
+    "best_time": "Breakfast",
+    "good_for": ["Heart health", "Weight management"]
+  },
+  {
+    "id": "rice_bran",
+    "name": "Rice Bran (seed husk)",
+    "nutrients": ["Fiber", "Vitamin E", "B Vitamins", "Healthy Fats"],
+    "benefits": ["Supports digestion", "Lowers cholesterol", "Provides energy"],
+    "best_time": "In cooking or supplements",
+    "good_for": ["Heart health", "Digestion", "General health"]
+  },
+  {
+    "id": "wheat_germ",
+    "name": "Wheat Germ (seed embryo)",
+    "nutrients": ["Fiber", "Vitamin E", "B Vitamins", "Protein"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Provides energy"],
+    "best_time": "Sprinkled over cereals or in baking",
+    "good_for": ["General health", "Energy", "Immunity"]
+  },
+  {
+    "id": "sunflower_butter",
+    "name": "Sunflower Seed Butter",
+    "nutrients": ["Healthy Fats", "Vitamin E", "Magnesium", "Protein"],
+    "benefits": ["Supports skin health", "Provides energy", "Nut-free alternative"],
+    "best_time": "As a spread",
+    "good_for": ["Allergies", "Energy", "Skin health"]
+  },
+  {
+    "id": "almond_butter",
+    "name": "Almond Butter",
+    "nutrients": ["Healthy Fats", "Protein", "Vitamin E", "Calcium"],
+    "benefits": ["Supports heart health", "Provides sustained energy", "Good for bone health"],
+    "best_time": "As a spread or in smoothies",
+    "good_for": ["Heart health", "Energy", "Bone health"]
+  },
+  {
+    "id": "peanut_butter",
+    "name": "Peanut Butter",
+    "nutrients": ["Protein", "Healthy Fats", "Niacin", "Magnesium"],
+    "benefits": ["Affordable protein", "Provides energy", "Supports muscle growth"],
+    "best_time": "As a spread or in smoothies",
+    "good_for": ["Athletes", "Children", "General health"]
+  },
+  {
+    "id": "tahini",
+    "name": "Tahini (Sesame Seed Paste)",
+    "nutrients": ["Calcium", "Healthy Fats", "Protein", "Iron"],
+    "benefits": ["Strengthens bones", "Supports heart health", "Good for blood health"],
+    "best_time": "In hummus or dressings",
+    "good_for": ["Bone health", "Heart health", "Anemia"]
+  },
+  {
+    "id": "sacha_inchi",
+    "name": "Sacha Inchi Seeds (Inca Peanut)",
+    "nutrients": ["Omega-3", "Protein", "Fiber", "Antioxidants"],
+    "benefits": ["Supports brain health", "Reduces inflammation", "Provides energy"],
+    "best_time": "As a snack",
+    "good_for": ["Brain health", "Heart health", "General health"]
+  },
+  {
+    "id": "baobab_seed",
+    "name": "Baobab Seeds",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes skin health"],
+    "best_time": "As a powder or snack",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "moringa_seed",
+    "name": "Moringa Seeds",
+    "nutrients": ["Protein", "Vitamin C", "Iron", "Calcium"],
+    "benefits": ["Boosts energy", "Supports immunity", "Purifies water (crushed)"],
+    "best_time": "As a supplement",
+    "good_for": ["Energy", "Immunity", "General health"]
+  },
+  {
+    "id": "cottonseed",
+    "name": "Cottonseed (edible variety)",
+    "nutrients": ["Protein", "Healthy Fats", "Fiber"],
+    "benefits": ["Provides energy", "Used in cooking oil"],
+    "best_time": "As oil in cooking",
+    "good_for": ["General health", "Cooking"]
+  },
+  {
+    "id": "grape_seed",
+    "name": "Grape Seeds",
+    "nutrients": ["Antioxidants", "Vitamin E", "Flavonoids"],
+    "benefits": ["Supports heart health", "Reduces inflammation", "Promotes skin health"],
+    "best_time": "As a supplement or oil",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "cranberry_seed",
+    "name": "Cranberry Seeds",
+    "nutrients": ["Vitamin E", "Omega-3", "Fiber"],
+    "benefits": ["Supports urinary health", "Antioxidant-rich", "Promotes heart health"],
+    "best_time": "In baking or as a snack",
+    "good_for": ["Urinary health", "Heart health", "General health"]
+  },
+  {
+    "id": "pomegranate_seed",
+    "name": "Pomegranate Seeds (Arils)",
+    "nutrients": ["Vitamin C", "Fiber", "Antioxidants", "Potassium"],
+    "benefits": ["Supports heart health", "Reduces inflammation", "Boosts immunity"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Heart health", "Immunity", "General health"]
+  },
+  {
+    "id": "papaya_seed",
+    "name": "Papaya Seeds (edible in small amounts)",
+    "nutrients": ["Protein", "Healthy Fats", "Enzymes"],
+    "benefits": ["Aids digestion", "Has anti-parasitic properties", "Supports liver health"],
+    "best_time": "Small amount with meals",
+    "good_for": ["Digestion", "Liver health"]
+  },
+  {
+    "id": "cardamom_seed",
+    "name": "Cardamom Seeds",
+    "nutrients": ["Potassium", "Calcium", "Magnesium"],
+    "benefits": ["Aids digestion", "Freshens breath", "Supports heart health"],
+    "best_time": "In cooking or as a mouth freshener",
+    "good_for": ["Digestion", "Oral health", "General health"]
+  },
+  {
+    "id": "clove_seed",
+    "name": "Clove (bud, often used as seed)",
+    "nutrients": ["Manganese", "Vitamin K", "Fiber"],
+    "benefits": ["Has antibacterial properties", "Supports digestion", "Relieves toothache"],
+    "best_time": "In cooking or as a spice",
+    "good_for": ["Oral health", "Digestion", "General health"]
+  },
+  {
+    "id": "nutmeg_seed",
+    "name": "Nutmeg (seed)",
+    "nutrients": ["Manganese", "Copper", "B Vitamins"],
+    "benefits": ["Supports brain function", "Aids digestion", "Promotes sleep"],
+    "best_time": "Grated in cooking or warm milk",
+    "good_for": ["Sleep", "Brain health", "Digestion"]
+  },
+  {
+    "id": "mace_seed",
+    "name": "Mace (aril of nutmeg seed)",
+    "nutrients": ["B Vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Aids digestion", "Supports immunity", "Has anti-inflammatory properties"],
+    "best_time": "In cooking",
+    "good_for": ["Digestion", "Immunity", "General health"]
+  },
+  {
+    "id": "black_seed",
+    "name": "Black Seed (Nigella sativa)",
+    "nutrients": ["Thymoquinone", "Iron", "Calcium", "Healthy Fats"],
+    "benefits": ["Boosts immunity", "Supports respiratory health", "Reduces inflammation"],
+    "best_time": "With meals or as oil",
+    "good_for": ["Immunity", "Respiratory health", "General health"]
+  },
+  {
+    "id": "mustard_oil_seed",
+    "name": "Mustard Oil Seed (for oil)",
+    "nutrients": ["Healthy Fats", "Selenium", "Omega-3"],
+    "benefits": ["Supports heart health", "Used in cooking", "Has antibacterial properties"],
+    "best_time": "In cooking",
+    "good_for": ["Heart health", "Cooking", "General health"]
+  },
+  {
+    "id": "sunflower_oil_seed",
+    "name": "Sunflower Oil Seed (for oil extraction)",
+    "nutrients": ["Vitamin E", "Healthy Fats", "Selenium"],
+    "benefits": ["Supports skin health", "Used in cooking", "Good for heart health"],
+    "best_time": "In cooking",
+    "good_for": ["Skin health", "Heart health", "General health"]
+  },
+  {
+    "id": "safflower_seed",
+    "name": "Safflower Seeds",
+    "nutrients": ["Healthy Fats", "Vitamin E", "Fiber"],
+    "benefits": ["Supports heart health", "Used in oil", "Good for skin health"],
+    "best_time": "As oil or snack",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "coconut_flakes",
+    "name": "Coconut Flakes (dried)",
+    "nutrients": ["Healthy Fats", "Fiber", "Manganese"],
+    "benefits": ["Provides energy", "Supports digestion", "Good for baking"],
+    "best_time": "In baking or as a snack",
+    "good_for": ["Energy", "Digestion", "General health"]
+  },
+  {
+    "id": "desiccated_coconut",
+    "name": "Desiccated Coconut (dried, grated)",
+    "nutrients": ["Healthy Fats", "Fiber", "Iron"],
+    "benefits": ["Provides energy", "Adds flavor to dishes", "Supports digestion"],
+    "best_time": "In cooking and desserts",
+    "good_for": ["Energy", "Digestion", "General health"]
+  },
+  {
+    "id": "tigernut",
+    "name": "Tigernut (actually a tuber, but often grouped with nuts)",
+    "nutrients": ["Fiber", "Healthy Fats", "Vitamin E", "Iron"],
+    "benefits": ["Supports digestion", "Provides energy", "Gluten-free alternative"],
+    "best_time": "As a snack or in baking",
+    "good_for": ["Digestion", "Energy", "Gluten-free diets"]
+  },
+  {
+    "id": "ginkgo_seed",
+    "name": "Ginkgo Seeds (Ginkgo biloba)",
+    "nutrients": ["Antioxidants", "Protein", "Carbohydrates"],
+    "benefits": ["Supports brain function", "Improves circulation", "May enhance memory"],
+    "best_time": "Cooked as a snack",
+    "good_for": ["Brain health", "Memory", "General health"]
+  },
+  {
+    "id": "litchi_seed",
+    "name": "Litchi Seeds (edible in traditional medicine)",
+    "nutrients": ["Polyphenols", "Fiber"],
+    "benefits": ["Used in traditional medicine", "May support digestion"],
+    "best_time": "As a supplement or tea",
+    "good_for": ["Traditional use", "Digestion"]
+  }
+]

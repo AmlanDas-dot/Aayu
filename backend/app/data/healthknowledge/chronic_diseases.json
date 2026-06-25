@@ -1,0 +1,890 @@
+[
+  {
+    "id": "essential_hypertension",
+    "category": "Essential Hypertension",
+    "symptoms": ["often asymptomatic (silent killer)", "occasional headaches", "dizziness", "nosebleeds (epistaxis)", "shortness of breath on exertion", "visual changes in severe cases", "may be detected only on routine BP measurement"],
+    "guidance": "Hypertension is a major risk factor for heart disease, stroke, and kidney disease. Lifestyle modifications: reduce salt intake (<5g/day), maintain healthy weight, regular exercise (30 min/day), limit alcohol, and stop smoking. Medications (ACE inhibitors, ARBs, CCBs, diuretics) are prescribed based on severity. BP should be monitored regularly at home or at PHCs. Free BP screening and medications are available at government NCD clinics.",
+    "precautions": ["Do not stop blood pressure medication without doctor's advice—even if you feel fine", "Reduce salt intake (avoid pickles, papad, processed foods)", "Exercise regularly (brisk walking for 30 minutes daily)", "Monitor BP at home regularly and maintain a log", "Seek emergency care for sudden severe headache, chest pain, or vision changes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "diabetes_mellitus_type2",
+    "category": "Type 2 Diabetes Mellitus",
+    "symptoms": ["frequent urination (polyuria)", "excessive thirst (polydipsia)", "increased hunger (polyphagia)", "unexplained weight loss", "fatigue and weakness", "blurred vision", "slow-healing wounds", "tingling or numbness in hands and feet", "recurrent skin or urinary tract infections"],
+    "guidance": "Manage blood sugar through diet (high-fiber foods like ragi, whole wheat, vegetables; avoid refined sugar and white rice), regular exercise (30-45 min daily), and prescribed oral antidiabetics or insulin. Monitor blood sugar (fasting and postprandial) and HbA1c every 3-6 months. Free diabetes care and medicines are available at PHCs under the National Programme for Prevention and Control of NCDs. Annual foot, eye, and kidney checkups are essential to prevent complications.",
+    "precautions": ["Avoid sugary drinks, sweets, white bread, and polished white rice", "Do not skip meals—maintain regular meal timing", "Check feet daily for any wounds or sores (do not walk barefoot)", "Take medications consistently—do not stop without consulting", "Get annual eye exams (retinopathy screening) and kidney function tests"],
+    "urgency": "high"
+  },
+  {
+    "id": "diabetes_mellitus_type1",
+    "category": "Type 1 Diabetes Mellitus",
+    "symptoms": ["extreme thirst (polydipsia)", "frequent urination (polyuria)", "rapid unintentional weight loss", "extreme hunger", "blurred vision", "severe fatigue", "fruity-smelling breath (acetone)", "nausea and vomiting (in DKA)"],
+    "guidance": "Type 1 diabetes requires lifelong insulin therapy. Multiple daily injections (basal-bolus) or insulin pump. Blood glucose monitoring 4-6 times daily. Learn to recognize and treat hypoglycemia (give 15g fast sugar: juice, glucose tablets). HbA1c should be checked every 3 months. Insulin and testing strips are available free at government hospitals. Sick-day management is essential—never skip insulin even if not eating.",
+    "precautions": ["Always carry fast-acting sugar (glucose tablets, juice) for hypoglycemic episodes", "Do not skip insulin doses—this leads to DKA, a life-threatening emergency", "Wear a medical alert ID", "Monitor blood glucose before driving", "Learn sick-day rules (check ketones, stay hydrated, call doctor)"],
+    "urgency": "high"
+  },
+  {
+    "id": "coronary_artery_disease",
+    "category": "Coronary Artery Disease (CAD) – Chronic Angina",
+    "symptoms": ["chest pain or pressure (angina) that occurs with exertion or stress", "pain radiating to left arm, jaw, neck, or back", "shortness of breath", "palpitations", "fatigue", "dizziness", "indigestion or heartburn-like sensation", "angina usually subsides with rest or nitroglycerin"],
+    "guidance": "CAD is caused by atherosclerotic plaque in coronary arteries. Management: lifestyle—heart-healthy diet (low saturated fat, high fiber), regular exercise, smoking cessation, and stress reduction. Medications: aspirin, statins, beta-blockers, and ACE inhibitors. For severe disease, angioplasty with stenting or coronary artery bypass grafting (CABG). Free cardiac care is available under PMJAY (Ayushman Bharat) at empanelled hospitals. Regular cardiology follow-up is essential.",
+    "precautions": ["Take aspirin daily if prescribed (unless contraindicated)", "Do not smoke", "Maintain a healthy weight and control BP/blood sugar", "Know the signs of a heart attack—seek emergency care immediately if chest pain persists >20 min", "Carry sublingual nitroglycerin as prescribed"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_heart_failure",
+    "category": "Chronic Heart Failure (Congestive Heart Failure)",
+    "symptoms": ["shortness of breath (dyspnea) on exertion or at rest", "orthopnea (shortness of breath when lying flat)", "paroxysmal nocturnal dyspnea (waking up gasping for air)", "ankle and leg swelling (edema)", "fatigue and weakness", "palpitations", "persistent cough or wheezing", "reduced exercise tolerance", "weight gain (fluid retention)"],
+    "guidance": "Heart failure is a chronic condition where the heart cannot pump enough blood. Management: medications (ACE inhibitors, beta-blockers, diuretics, aldosterone antagonists), fluid and salt restriction, daily weight monitoring, and regular exercise as tolerated. Implantable devices (CRT, ICD) in severe cases. Free care under PMJAY. Monitor for worsening symptoms (increased edema, weight gain, breathlessness).",
+    "precautions": ["Restrict salt intake (<2g/day) and fluid intake (as advised)", "Weigh yourself daily—report weight gain >2 kg in 3 days", "Take diuretics as prescribed—do not skip", "Avoid NSAIDs (ibuprofen, naproxen) which worsen heart failure", "Seek care for worsening breathlessness, orthopnea, or edema"],
+    "urgency": "high"
+  },
+  {
+    "id": "atrial_fibrillation",
+    "category": "Atrial Fibrillation (AF)",
+    "symptoms": ["palpitations (irregular, fast heartbeat)", "dizziness, lightheadedness", "shortness of breath", "fatigue", "chest discomfort", "may be asymptomatic and detected incidentally", "risk of stroke (clots in the heart go to the brain)"],
+    "guidance": "Atrial fibrillation is a common arrhythmia. Management: rate control (beta-blockers, calcium channel blockers) or rhythm control (antiarrhythmics, cardioversion). Anticoagulation (warfarin, DOACs) is critical to prevent stroke—the CHA₂DS₂-VASc score guides this. Free anticoagulants available at government hospitals. Regular ECG and follow-up with a cardiologist are essential.",
+    "precautions": ["Take anticoagulants exactly as prescribed to prevent stroke", "Do not stop blood thinners without doctor's advice", "Report any signs of bleeding (blood in urine/stool, bruising, nosebleeds)", "Limit alcohol intake—can trigger AF", "Monitor heart rate at home—report persistent >100/min"],
+    "urgency": "high"
+  },
+  {
+    "id": "rheumatic_heart_disease",
+    "category": "Rheumatic Heart Disease (RHD)",
+    "symptoms": ["history of acute rheumatic fever in childhood", "mitral stenosis (breathlessness, palpitations, hemoptysis)", "mitral regurgitation (fatigue, palpitations)", "aortic valve involvement (chest pain, syncope)", "heart failure symptoms (edema, dyspnea)", "atrial fibrillation (palpitations)"],
+    "guidance": "RHD is a preventable complication of untreated strep throat. Secondary prophylaxis with monthly benzathine penicillin injections is essential to prevent recurrence and valve damage—free under government programs. In severe valve disease, surgery (valve repair/replacement) is needed. Free cardiac surgery under PMJAY. Avoid dental procedures without antibiotic prophylaxis.",
+    "precautions": ["Do not miss monthly penicillin injections—this prevents worsening", "Inform dentists about RHD—need antibiotic prophylaxis for procedures", "If breathlessness worsens, see a cardiologist", "Monitor for signs of infective endocarditis (fever, new murmur)", "Avoid high-salt diets and fluid overload"],
+    "urgency": "high"
+  },
+  {
+    "id": "dilated_cardiomyopathy",
+    "category": "Dilated Cardiomyopathy (DCM)",
+    "symptoms": ["progressive breathlessness (dyspnea)", "fatigue, weakness", "ankle edema", "palpitations", "chest pain", "orthopnea", "reduced exercise capacity", "may be idiopathic, post-viral, alcoholic, or familial"],
+    "guidance": "DCM is characterized by an enlarged, weakened heart. Treatment: heart failure medications (ACE inhibitors, beta-blockers, diuretics), lifestyle changes (salt restriction, fluid restriction), and avoidance of alcohol. In severe cases, ICD or cardiac transplant. Regular follow-up with echocardiography. Free care at government cardiology centers.",
+    "precautions": ["Strictly avoid alcohol", "Monitor daily weight", "Limit salt and fluid intake", "Take medications consistently", "Seek emergency care if palpitations or syncope occurs"],
+    "urgency": "high"
+  },
+  {
+    "id": "hypertrophic_cardiomyopathy",
+    "category": "Hypertrophic Cardiomyopathy (HCM)",
+    "symptoms": ["chest pain (angina)", "shortness of breath (especially on exertion)", "palpitations", "dizziness or syncope (fainting)", "sudden cardiac death (risk in young athletes)", "may be asymptomatic", "family history is common"],
+    "guidance": "HCM is a genetic heart muscle disease. Management: avoid strenuous exercise and dehydration. Medications: beta-blockers, verapamil, or disopyramide. In severe obstructive cases, septal myectomy or alcohol septal ablation. ICD for high-risk (family history of sudden death, syncope, severe hypertrophy). Genetic counseling for family members.",
+    "precautions": ["Avoid intense physical exertion and competitive sports", "Stay well-hydrated—avoid dehydration", "If you have a family history of HCM, get screened", "Report any episodes of dizziness or fainting immediately", "Do not miss cardiology follow-ups"],
+    "urgency": "high"
+  },
+  {
+    "id": "peripheral_arterial_disease",
+    "category": "Peripheral Arterial Disease (PAD)",
+    "symptoms": ["leg pain or cramping when walking (intermittent claudication)", "relieved by rest", "cold feet, pale or blue skin", "non-healing ulcers or sores on feet/legs", "absent or weak pulses in legs", "hair loss on legs and feet", "brittle toenails", "erectile dysfunction (men)"],
+    "guidance": "PAD is caused by atherosclerosis in leg arteries. Management: smoking cessation (most important), exercise (supervised walking program), antiplatelet therapy (aspirin/clopidogrel), statins, and strict control of diabetes/BP. Angioplasty or bypass surgery in severe cases. Free care at government hospitals. Regular foot care is essential to prevent amputation.",
+    "precautions": ["Stop smoking immediately", "Walk daily (start slowly and increase) until pain starts, rest, repeat", "Check feet daily for wounds—do not walk barefoot", "Take aspirin and statins as prescribed", "Seek emergency if leg becomes suddenly pale, cold, or painful (acute ischemia)"],
+    "urgency": "high"
+  },
+  {
+    "id": "carotid_artery_stenosis",
+    "category": "Carotid Artery Stenosis",
+    "symptoms": ["often asymptomatic", "transient ischemic attacks (TIA): temporary weakness, numbness, or difficulty speaking", "amaurosis fugax (temporary vision loss in one eye)", "increased risk of stroke", "detected on carotid Doppler"],
+    "guidance": "Carotid stenosis is a major stroke risk. Treatment: medical (antiplatelet, statin, BP control). For severe stenosis (>70%), carotid endarterectomy or stenting is recommended. Lifestyle changes: smoking cessation, healthy diet, exercise. Free surgical care under PMJAY.",
+    "precautions": ["Do not smoke", "Control BP and cholesterol", "If you have TIA symptoms (sudden weakness, speech difficulty), seek emergency—do not wait", "Take antiplatelet medications as prescribed", "Follow up with vascular surgeon or neurologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "post_stroke_chronic",
+    "category": "Chronic Post-Stroke (Cerebrovascular Accident)",
+    "symptoms": ["hemiparesis (weakness on one side of body)", "difficulty speaking (aphasia)", "difficulty swallowing (dysphagia)", "cognitive impairment, memory loss", "emotional lability, depression", "spasticity, contractures", "urinary incontinence", "reduced mobility and dependence"],
+    "guidance": "Rehabilitation is key: physiotherapy, occupational therapy, speech therapy, and swallowing training. Prevention of recurrence: antiplatelets/anticoagulants, BP control, statins, and diabetes management. Supportive care and caregiver education. Free rehabilitation at government hospitals under RBSK and NCD programs. Home modifications for safety (grab bars, ramps).",
+    "precautions": ["Do physical therapy daily to prevent contractures", "Use swallow precautions (pureed food, sitting upright) to prevent aspiration pneumonia", "Monitor BP regularly—tight control prevents recurrence", "If depression occurs, seek psychiatric help", "Modify home environment to prevent falls (remove trip hazards, install railings)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_kidney_disease",
+    "category": "Chronic Kidney Disease (CKD) Stage 3-5",
+    "symptoms": ["fatigue, weakness", "swelling (edema) of ankles, feet, and face", "decreased urine output", "foamy or dark urine", "high blood pressure", "nausea, vomiting", "loss of appetite, metallic taste", "itching (pruritus)", "muscle cramps", "difficulty concentrating", "shortness of breath (fluid overload)"],
+    "guidance": "CKD is progressive and often caused by diabetes or hypertension. Management: strict BP control (<130/80), blood sugar control, low-protein, low-salt, low-potassium diet. Avoid nephrotoxic drugs (NSAIDs). Free dialysis (hemodialysis and peritoneal dialysis) is available under the Pradhan Mantri National Dialysis Programme (PMNDP) at district hospitals. Regular monitoring of creatinine, eGFR, and electrolytes. Consider renal transplant for eligible patients.",
+    "precautions": ["Avoid NSAIDs (ibuprofen, diclofenac) and other nephrotoxic drugs", "Limit salt, potassium (bananas, oranges, potatoes), and phosphorus (dairy, nuts)", "Monitor fluid intake as advised", "Take prescribed medications (BP drugs, phosphate binders, erythropoietin) consistently", "If on dialysis, adhere to the schedule strictly"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_glomerulonephritis",
+    "category": "Chronic Glomerulonephritis (GN)",
+    "symptoms": ["hematuria (blood in urine)", "proteinuria (foamy urine)", "hypertension", "edema (swelling)", "reduced kidney function (elevated creatinine)", "fatigue, anemia", "may be asymptomatic until advanced"],
+    "guidance": "Chronic GN is inflammation of the glomeruli. Treatment depends on the type: immunosuppressants (steroids, cyclophosphamide) for immune-mediated GN, BP control with ACE inhibitors/ARBs, and dietary modifications (salt/protein restriction). Regular monitoring of renal function and urine protein. Free immunosuppressants at government hospitals. Dialysis or transplant in end-stage.",
+    "precautions": ["Take immunosuppressants exactly as prescribed—do not stop abruptly", "Monitor BP and urine protein regularly", "Avoid high-salt and high-protein diets", "Report any infection promptly (may reactivate GN)", "If swelling or decreased urine, seek care"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_pyelonephritis",
+    "category": "Chronic Pyelonephritis (Chronic Kidney Infection)",
+    "symptoms": ["recurrent urinary tract infections (UTIs)", "fever, chills (with acute flares)", "flank or back pain", "frequent urination", "hypertension", "progressive kidney damage", "may be associated with vesicoureteral reflux or obstruction"],
+    "guidance": "Chronic pyelonephritis results from recurrent renal infections. Treatment: long-term antibiotics for suppressive therapy (under specialist). Treat underlying causes: VUR, kidney stones, or obstruction. Hydration and good hygiene. Imaging (ultrasound, CT) to assess scarring. Monitor renal function.",
+    "precautions": ["Complete full antibiotic courses for UTIs", "Drink plenty of water", "Maintain good personal hygiene", "If you have recurrent UTIs, a urologist should evaluate for anatomical issues", "Monitor BP and renal function regularly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "copd",
+    "category": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "symptoms": ["chronic cough with mucus (sputum)", "shortness of breath, especially on exertion", "wheezing", "chest tightness", "frequent respiratory infections", "fatigue", "cyanosis (bluish lips) in advanced stages", "barrel-shaped chest", "history of smoking or biomass fuel exposure"],
+    "guidance": "COPD is largely preventable by avoiding smoking and biomass smoke. Management: smoking cessation (most important), inhalers (bronchodilators and corticosteroids), pulmonary rehabilitation, oxygen therapy for severe cases, and annual flu and pneumococcal vaccinations. Free inhalers and oxygen therapy are available at government hospitals. Avoid dust, smoke, and air pollution.",
+    "precautions": ["Stop smoking completely", "Use clean cooking fuel (LPG) under Ujjwala Yojana", "Learn proper inhaler technique—use a spacer", "Take prescribed inhalers daily—do not use only when symptoms worsen", "Get annual flu and pneumococcal vaccines"],
+    "urgency": "high"
+  },
+  {
+    "id": "bronchiectasis",
+    "category": "Bronchiectasis (Chronic Airway Dilation)",
+    "symptoms": ["chronic productive cough with copious purulent sputum", "shortness of breath", "wheezing", "recurrent chest infections", "hemoptysis (coughing blood)", "fatigue", "halitosis (bad breath)", "clubbing of fingers"],
+    "guidance": "Bronchiectasis is permanent dilation of airways. Treatment: chest physiotherapy (postural drainage), inhaled bronchodilators, mucolytics, and antibiotics for exacerbations. Manage underlying causes (e.g., immunodeficiency, CF). In severe cases, surgery or lung transplant. Smoking cessation is essential.",
+    "precautions": ["Perform chest physiotherapy daily", "Stay well-hydrated to thin secretions", "Avoid smoking and respiratory irritants", "Complete antibiotic courses during exacerbations", "Monitor for hemoptysis—seek care if severe"],
+    "urgency": "medium"
+  },
+  {
+    "id": "idiopathic_pulmonary_fibrosis",
+    "category": "Idiopathic Pulmonary Fibrosis (IPF)",
+    "symptoms": ["progressive shortness of breath (dyspnea)", "dry, persistent cough", "fatigue", "weight loss", "clubbing of fingers", "basilar crackles on auscultation", "older age (usually >50 years)"],
+    "guidance": "IPF is a progressive scarring of the lungs. Treatment: antifibrotic drugs (pirfenidone, nintedanib) slow progression—available at government hospitals for eligible patients. Oxygen therapy for hypoxemia. Pulmonary rehabilitation. Lung transplant for suitable candidates. Avoid smoking and GERD (gastroesophageal reflux worsens).",
+    "precautions": ["Take antifibrotic medications as prescribed", "Avoid smoking and secondhand smoke", "Monitor oxygen saturation with a pulse oximeter", "Get annual flu and pneumococcal vaccines", "If breathlessness worsens, seek medical care"],
+    "urgency": "high"
+  },
+  {
+    "id": "pulmonary_arterial_hypertension",
+    "category": "Pulmonary Arterial Hypertension (PAH)",
+    "symptoms": ["shortness of breath (dyspnea on exertion)", "fatigue", "dizziness or syncope (fainting) on exertion", "chest pain", "palpitations", "ankle edema", "cyanosis (blue lips/fingers)"],
+    "guidance": "PAH is high blood pressure in the pulmonary arteries. Management: vasodilators (sildenafil, bosentan, prostacyclin analogs), diuretics, and oxygen. Treat underlying causes (connective tissue disease, congenital heart disease). Specialist care at tertiary centers. Free medications under government rare disease programs. Avoid pregnancy—high risk.",
+    "precautions": ["Do not get pregnant—pregnancy is extremely dangerous in PAH", "Avoid strenuous exercise", "Take vasodilators consistently—do not miss doses", "Monitor for edema and weight gain", "If syncope or severe breathlessness, seek emergency"],
+    "urgency": "critical"
+  },
+  {
+    "id": "chronic_liver_disease",
+    "category": "Chronic Liver Disease / Cirrhosis",
+    "symptoms": ["fatigue, weakness", "jaundice (yellowing of skin and eyes)", "abdominal distension (ascites)", "ankle swelling (edema)", "easy bruising and bleeding", "spider angiomas (spider-like blood vessels on skin)", "palmar erythema (red palms)", "confusion or forgetfulness (hepatic encephalopathy)", "vomiting blood (esophageal varices)", "loss of appetite, weight loss"],
+    "guidance": "Cirrhosis is the end stage of chronic liver injury. Management: treat the cause (stop alcohol, treat hepatitis B/C). Avoid hepatotoxic drugs. Low-sodium diet for ascites. Diuretics, lactulose for encephalopathy, and beta-blockers for varices. Variceal banding for bleeding. Liver transplant for eligible patients. Free care at government gastroenterology centers.",
+    "precautions": ["Absolute avoidance of alcohol", "Use acetaminophen/paracetamol at minimal doses (do not exceed 2g/day)", "Follow low-sodium diet (<2g/day)", "Monitor for confusion—if present, use lactulose", "Seek emergency care for vomiting blood or black stools"],
+    "urgency": "high"
+  },
+  {
+    "id": "alcoholic_liver_disease",
+    "category": "Alcoholic Liver Disease (ALD)",
+    "symptoms": ["fatigue, jaundice", "ascites (abdominal swelling)", "edema (ankle swelling)", "nausea, vomiting", "loss of appetite, weight loss", "hepatomegaly (enlarged liver)", "in advanced: cirrhosis, encephalopathy, variceal bleeding"],
+    "guidance": "Complete abstinence from alcohol is the cornerstone. Nutritional support (high-protein, high-calorie), vitamins (especially thiamine, folate, B12). Corticosteroids for severe alcoholic hepatitis. Abstinence can reverse early damage and improve survival. Free de-addiction support and medical care at government hospitals.",
+    "precautions": ["Stop alcohol completely—no amount is safe", "Take vitamin supplements (thiamine, folic acid)", "Follow a high-protein, high-calorie diet", "Monitor for bleeding and encephalopathy", "If jaundice or ascites, seek medical care"],
+    "urgency": "high"
+  },
+  {
+    "id": "autoimmune_hepatitis",
+    "category": "Autoimmune Hepatitis",
+    "symptoms": ["fatigue, weakness", "jaundice", "elevated liver transaminases", "positive ANA, anti-SMA, IgG", "may present with acute or chronic hepatitis", "associated with other autoimmune diseases"],
+    "guidance": "Treatment: immunosuppressants—corticosteroids (prednisolone) and azathioprine are first-line. Lifelong therapy in most cases. Monitor liver function, transaminases, and immunoglobulin levels. In end-stage, liver transplant. Free immunosuppressants at government hospitals.",
+    "precautions": ["Take immunosuppressants regularly—do not stop without advice", "Monitor for side effects (weight gain, osteoporosis, infections)", "Avoid alcohol and hepatotoxic drugs", "Annual liver function and ultrasound", "If jaundice returns, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "primary_biliary_cholangitis",
+    "category": "Primary Biliary Cholangitis (PBC)",
+    "symptoms": ["fatigue (most common)", "pruritus (itching)", "jaundice", "xanthelasma (yellow cholesterol deposits on eyes)", "hyperpigmentation of skin", "elevated alkaline phosphatase (ALP), positive AMA antibodies", "bone pain (osteoporosis)"],
+    "guidance": "PBC is a chronic cholestatic liver disease. Treatment: ursodeoxycholic acid (UDCA) improves liver biochemistry and delays progression. Obeticholic acid for non-responders. Manage pruritus with antihistamines, cholestyramine. Calcium and Vitamin D for bone health. Liver transplant for end-stage. Free UDCA at government hospitals.",
+    "precautions": ["Take UDCA regularly", "Manage itching with prescribed medications", "Calcium and Vitamin D supplementation", "Annual liver function and ultrasound", "If jaundice worsens, consult hepatologist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "primary_sclerosing_cholangitis",
+    "category": "Primary Sclerosing Cholangitis (PSC)",
+    "symptoms": ["fatigue", "pruritus (itching)", "jaundice", "abdominal pain (right upper quadrant)", "recurrent cholangitis (fever, chills)", "often associated with inflammatory bowel disease (IBD)"],
+    "guidance": "PSC is a progressive bile duct disease. No specific cure. UDCA may help liver biochemistry. ERCP for dominant strictures. Manage cholangitis with antibiotics. Liver transplant is the only cure for end-stage. Monitor for cholangiocarcinoma (annual imaging).",
+    "precautions": ["If you have IBD, get screened for PSC", "Monitor for fever—may indicate cholangitis", "Take UDCA as prescribed", "Avoid alcohol", "Regular imaging (MRI/MRCP) for strictures and cancer surveillance"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_cholecystitis",
+    "category": "Chronic Cholecystitis (Gallstones)",
+    "symptoms": ["recurrent upper abdominal pain (biliary colic) after fatty meals", "pain that may radiate to right shoulder", "nausea, vomiting", "bloating, flatulence", "may be asymptomatic (silent stones)", "acute attacks with fever (if acute cholecystitis)"],
+    "guidance": "Chronic cholecystitis is usually due to gallstones. Management: low-fat diet, weight reduction. Elective cholecystectomy (laparoscopic) for symptomatic stones. Emergency surgery for acute cholecystitis. Free surgery at government hospitals under PMJAY. Asymptomatic stones can be observed.",
+    "precautions": ["Avoid high-fat, fried, and spicy foods", "Maintain a healthy weight", "If pain becomes severe or persistent, seek medical care", "If fever and jaundice occur, urgent care needed", "Post-cholecystectomy: eat small, frequent meals"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_pancreatitis",
+    "category": "Chronic Pancreatitis",
+    "symptoms": ["chronic abdominal pain (epigastric, radiating to back)", "pain worsens after meals", "weight loss", "steatorrhea (fatty, foul-smelling stools)", "diabetes (pancreatic endocrine insufficiency)", "nausea, vomiting"],
+    "guidance": "Management: pain management, pancreatic enzyme replacement therapy (PERT) with meals, low-fat diet, and diabetes management. Avoid alcohol completely. Smoking cessation. Endoscopic or surgical intervention for strictures or pseudocysts. Free enzyme supplementation at government hospitals.",
+    "precautions": ["Avoid alcohol completely", "Take pancreatic enzymes with every meal and snack", "Follow a low-fat, high-protein diet", "Monitor for diabetes—treat as needed", "If pain is severe, seek medical care"],
+    "urgency": "high"
+  },
+  {
+    "id": "crohns_disease",
+    "category": "Crohn's Disease (Inflammatory Bowel Disease)",
+    "symptoms": ["chronic diarrhea (may be bloody)", "abdominal pain (often in right lower quadrant)", "weight loss", "fever", "fatigue", "perianal disease (fistulas, abscesses)", "extraintestinal manifestations (joint pain, skin lesions, eye inflammation)"],
+    "guidance": "Crohn's is a chronic inflammatory bowel disease. Treatment: corticosteroids for acute flares, immunomodulators (azathioprine, methotrexate), biologics (anti-TNF agents like infliximab). Surgery for strictures or fistulas. Nutritional support (enteral feeding). Free biologics are available at government hospitals for eligible patients under NCD programs.",
+    "precautions": ["Take medications consistently—do not stop during remissions", "Monitor for side effects of immunosuppressants (infections)", "If diarrhea or abdominal pain worsens, seek care", "Avoid NSAIDs (worsen IBD)", "Get regular colonoscopy for cancer surveillance"],
+    "urgency": "high"
+  },
+  {
+    "id": "ulcerative_colitis",
+    "category": "Ulcerative Colitis (UC)",
+    "symptoms": ["bloody diarrhea with mucus", "abdominal pain and cramping", "rectal urgency and tenesmus", "weight loss, fatigue", "fever", "extraintestinal manifestations (arthritis, skin, eye)"],
+    "guidance": "UC is inflammation of the colon. Treatment: 5-aminosalicylates (mesalamine), corticosteroids for flares, immunomodulators, and biologics. Colectomy for severe or refractory cases. Free medications at government hospitals. Regular colonoscopy for cancer surveillance.",
+    "precautions": ["Take maintenance medications (mesalamine) daily to prevent flares", "Avoid NSAIDs", "If bloody diarrhea worsens, seek care", "Monitor for toxic megacolon (severe abdominal distension, fever)", "Regular colonoscopy after 8 years of disease"],
+    "urgency": "high"
+  },
+  {
+    "id": "irritable_bowel_syndrome",
+    "category": "Irritable Bowel Syndrome (IBS)",
+    "symptoms": ["chronic abdominal pain with altered bowel habits (diarrhea, constipation, or both)", "bloating, flatulence", "worse with stress", "relief after defecation", "no red flags (no weight loss, no blood, no nocturnal symptoms)"],
+    "guidance": "IBS is a functional bowel disorder. Management: diet (high-fiber, low-FODMAP), stress management, probiotics, and medications (antispasmodics, laxatives, antidiarrheals). CBT and hypnotherapy help. Rule out celiac and IBD. Free dietary counseling at government hospitals. Avoid triggers.",
+    "precautions": ["Keep a food diary to identify triggers (wheat, dairy, caffeine)", "Reduce stress—yoga, meditation", "Eat small, frequent meals", "Avoid gas-producing foods (beans, cabbage, onions)", "If symptoms persist or red flags appear, see a gastroenterologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_gastritis",
+    "category": "Chronic Gastritis",
+    "symptoms": ["dull epigastric pain", "nausea, bloating", "early satiety", "loss of appetite", "belching", "may be associated with H. pylori infection or NSAID use"],
+    "guidance": "Chronic gastritis is inflammation of the gastric lining. Treatment: H. pylori eradication (triple therapy), avoid NSAIDs, and acid suppression (PPIs). Dietary: small frequent meals, avoid spicy and fried foods. Monitor for B12 deficiency (autoimmune gastritis). Free H. pylori testing and treatment at government hospitals.",
+    "precautions": ["Avoid spicy, oily, and acidic foods", "Do not take NSAIDs without medical advice", "Take PPIs as prescribed (do not self-medicate long-term)", "If black tarry stools or vomiting, seek care", "If H. pylori positive, complete the full course"],
+    "urgency": "low"
+  },
+  {
+    "id": "peptic_ulcer_disease",
+    "category": "Peptic Ulcer Disease (Chronic)",
+    "symptoms": ["burning epigastric pain (worse on empty stomach, relieved by food or antacids)", "heartburn", "bloating", "nausea", "weight loss", "hematemesis (vomiting blood) or melena (black stools) if bleeding"],
+    "guidance": "Peptic ulcers are caused by H. pylori or NSAIDs. Treatment: H. pylori eradication, PPIs, and discontinue NSAIDs. Lifestyle: avoid spicy foods, alcohol, and smoking. Free treatment available. If bleeding or perforation, emergency surgery.",
+    "precautions": ["Complete H. pylori eradication course", "Avoid NSAIDs, alcohol, and smoking", "Take PPIs as prescribed", "If black stools or coffee-ground vomiting, seek emergency care", "Follow up for ulcer healing (endoscopy)"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_gerd",
+    "category": "Chronic GERD (Gastroesophageal Reflux Disease)",
+    "symptoms": ["heartburn (retrosternal burning)", "regurgitation of food or sour liquid", "chest pain", "dysphagia (difficulty swallowing)", "chronic cough", "hoarseness", "sore throat", "worse after meals or lying down"],
+    "guidance": "GERD is chronic reflux. Management: lifestyle (weight loss, elevate head of bed, avoid large meals, avoid fatty/spicy foods), PPIs, and prokinetics. Complications: esophagitis, stricture, Barrett's esophagus (precancerous). Free endoscopy and medications at government hospitals. Long-term PPI use requires monitoring.",
+    "precautions": ["Avoid large meals and lying down immediately after eating", "Elevate the head of your bed by 6-8 inches", "Avoid spicy, fatty, and acidic foods", "Do not smoke or consume alcohol", "If dysphagia or weight loss, seek endoscopy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "osteoarthritis_knee",
+    "category": "Osteoarthritis (Knee/Hip)",
+    "symptoms": ["joint pain that worsens with movement and weight-bearing", "morning stiffness (<30 minutes)", "crepitus (grating sensation)", "reduced range of motion", "joint swelling", "bony enlargement", "pain improves with rest"],
+    "guidance": "OA is the most common arthritis. Management: weight loss (reduces knee stress), low-impact exercise (walking, swimming, yoga), physiotherapy, and pain relief (paracetamol, topical NSAIDs). Oral NSAIDs short-term. Corticosteroid injections or hyaluronic acid for pain. Knee replacement for severe cases—free under PMJAY.",
+    "precautions": ["Maintain a healthy weight—every kg reduces knee load", "Do regular low-impact exercises (walking, cycling)", "Use a walking stick if needed to reduce joint stress", "Avoid high-impact activities (running, jumping)", "If severe pain or deformity, consult an orthopedic surgeon"],
+    "urgency": "medium"
+  },
+  {
+    "id": "rheumatoid_arthritis_adult",
+    "category": "Rheumatoid Arthritis (Adult)",
+    "symptoms": ["symmetrical joint pain and swelling (same joints on both sides)", "morning stiffness >1 hour", "warm, red, swollen joints", "fatigue, fever, weight loss", "joint deformity (swan neck, boutonnière) if untreated", "rheumatoid nodules", "affects small joints of hands and feet"],
+    "guidance": "RA is an autoimmune inflammatory arthritis. Early treatment with DMARDs (methotrexate, hydroxychloroquine, sulfasalazine) prevents joint damage. Biologics (TNF inhibitors) for severe cases—available free at government hospitals under NCD programs. Physiotherapy and occupational therapy. Regular monitoring for complications (lung, eye, heart).",
+    "precautions": ["Start DMARDs early to prevent irreversible joint damage", "Do not rely only on painkillers—need disease-modifying drugs", "Monitor for infections while on immunosuppressants", "Regular blood tests for liver function and blood counts", "Physiotherapy to maintain joint function"],
+    "urgency": "high"
+  },
+  {
+    "id": "ankylosing_spondylitis",
+    "category": "Ankylosing Spondylitis (AS)",
+    "symptoms": ["chronic low back pain and stiffness (worse in morning, improves with exercise)", "inflammatory back pain (rest worsens, activity improves)", "loss of spinal mobility, kyphosis (bent-forward posture)", "peripheral arthritis (hips, knees)", "enthesitis (heel pain, Achilles tendonitis)", "extra-articular: uveitis (red eye), IBD, psoriasis"],
+    "guidance": "AS is an inflammatory spondyloarthropathy. Treatment: NSAIDs (first-line), physiotherapy (spinal exercises), TNF inhibitors for severe cases—available free. Good posture, regular exercise (swimming, stretching). Genetic counseling for HLA-B27. Monitor for complications (cardiac, pulmonary).",
+    "precautions": ["Do daily spinal stretching and breathing exercises", "Maintain good posture—sleep on a firm mattress", "If NSAIDs insufficient, biologics are effective", "Monitor for eye inflammation (uveitis)—seek care for red, painful eyes", "Avoid smoking—can worsen lung involvement"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_gout",
+    "category": "Chronic Gout (Tophaceous Gout)",
+    "symptoms": ["recurrent acute gout attacks (severe joint pain, swelling, redness—especially big toe)", "tophi (hard, painless nodules under skin, especially on ears, elbows, fingers)", "chronic joint pain and damage", "renal stones", "elevated serum uric acid"],
+    "guidance": "Gout is a disorder of uric acid metabolism. Chronic management: urate-lowering therapy (allopurinol, febuxostat) to keep uric acid <6 mg/dL. Lifestyle: avoid red meat, organ meats, shellfish, and alcohol (especially beer). Drink 2-3 liters of water daily. Colchicine or NSAIDs for acute flares. Free allopurinol at government hospitals.",
+    "precautions": ["Avoid high-purine foods (red meat, organ meat, shellfish, anchovies)", "Limit alcohol, especially beer", "Drink plenty of water (2-3 L/day)", "Take allopurinol consistently—do not stop, it prevents attacks", "During acute attack, do not start allopurinol (wait until flare resolves)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "osteoporosis_postmenopausal",
+    "category": "Postmenopausal Osteoporosis",
+    "symptoms": ["often asymptomatic until fracture occurs", "back pain (from vertebral fractures)", "loss of height over time", "stooped posture (dowager's hump)", "fractures with minimal trauma (hip, wrist, spine)", "risk factors: early menopause, family history, thin body frame"],
+    "guidance": "Osteoporosis is a bone-thinning disease. Management: calcium (1000-1200 mg/day) and Vitamin D (800 IU/day) supplementation, weight-bearing exercise (walking, dancing). Bisphosphonates (alendronate) for high fracture risk—available free. DEXA scan for diagnosis and monitoring. Fall prevention is critical.",
+    "precautions": ["Take calcium and Vitamin D daily", "Do weight-bearing exercises (walking, stair climbing)", "Remove trip hazards at home to prevent falls (rugs, clutter)", "Avoid alcohol and smoking", "If on bisphosphonates, take with a glass of water on an empty stomach and stay upright for 30 min"],
+    "urgency": "medium"
+  },
+  {
+    "id": "systemic_lupus_erythematosus",
+    "category": "Systemic Lupus Erythematosus (SLE)",
+    "symptoms": ["malar rash (butterfly-shaped rash on face)", "discoid rash (scaly patches)", "photosensitivity", "oral/nasal ulcers", "arthritis (non-erosive)", "serositis (pleuritis, pericarditis)", "renal involvement (nephritis, proteinuria)", "neurological (seizures, psychosis)", "hematologic (anemia, thrombocytopenia)", "positive ANA and other autoantibodies"],
+    "guidance": "SLE is a chronic autoimmune disease. Treatment: hydroxychloroquine (mainstay), corticosteroids for flares, and immunosuppressants (azathioprine, mycophenolate, cyclophosphamide) for organ-threatening disease (lupus nephritis, CNS involvement). Biologics (belimumab) for refractory cases—available free at tertiary centers. Avoid sun exposure, use sunscreen, and monitor for infections. Regular blood and urine monitoring.",
+    "precautions": ["Avoid sun exposure—use sunscreen (SPF 50+)", "Do not stop hydroxychloroquine—it prevents flares", "Monitor urine protein—if present, urgent nephrology referral", "If fever, rash, or joint pain flares, seek care", "Avoid live vaccines while on immunosuppressants"],
+    "urgency": "high"
+  },
+  {
+    "id": "systemic_sclerosis",
+    "category": "Systemic Sclerosis (Scleroderma)",
+    "symptoms": ["skin thickening (scleroderma)", "Raynaud's phenomenon (fingers turn white/blue in cold)", "digestive issues (GERD, dysphagia, diarrhea/constipation)", "pulmonary fibrosis or pulmonary hypertension", "renal crisis (hypertension, renal failure)", "calcinosis, telangiectasia", "anti-centromere or anti-Scl-70 antibodies"],
+    "guidance": "Scleroderma is a rare autoimmune connective tissue disease. Management: vasodilators for Raynaud's, PPIs for GERD, immunosuppressants (methotrexate, mycophenolate) for skin and lung disease, and ACE inhibitors (captopril) for renal crisis—available free at government hospitals. Physical therapy, skin care, and regular monitoring of lung, kidney, and cardiac function.",
+    "precautions": ["Keep warm and avoid cold exposure to prevent Raynaud's", "Take PPIs for GERD to prevent esophageal strictures", "Monitor BP regularly—if sudden rise, seek care (renal crisis)", "Do not smoke—worsens lung disease", "Regular pulmonary function tests and echocardiograms"],
+    "urgency": "high"
+  },
+  {
+    "id": "sjogren_syndrome",
+    "category": "Sjogren's Syndrome",
+    "symptoms": ["dry eyes (keratoconjunctivitis sicca)", "dry mouth (xerostomia)", "dry skin", "vaginal dryness", "parotid gland enlargement", "joint pain (arthralgia)", "fatigue", "positive anti-SSA/SSB antibodies", "can be primary or secondary to SLE/RA"],
+    "guidance": "Sjogren's is an autoimmune disorder affecting exocrine glands. Treatment: artificial tears, oral lubricants, pilocarpine to stimulate saliva, and hydroxychloroquine for systemic symptoms. Good dental hygiene to prevent caries. Monitor for lymphoma (parotid enlargement, weight loss). Free care at rheumatology clinics.",
+    "precautions": ["Use artificial tears frequently", "Sip water frequently to relieve dry mouth", "Maintain excellent dental hygiene (fluoride toothpaste)", "Avoid medications that worsen dryness (antihistamines, tricyclic antidepressants)", "If parotid enlargement or weight loss, seek specialist evaluation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "polymyalgia_rheumatica",
+    "category": "Polymyalgia Rheumatica (PMR)",
+    "symptoms": ["severe muscle pain and stiffness in shoulders, hips, and neck", "morning stiffness >1 hour", "difficulty getting up from a chair, raising arms", "fever, weight loss, malaise", "elevated ESR and CRP", "usually in patients >50 years"],
+    "guidance": "PMR is an inflammatory disorder. Treatment: low-dose corticosteroids (prednisolone) cause dramatic improvement—tapered slowly over months to years. Monitor for giant cell arteritis (GCA)—if headache, jaw claudication, or vision changes, urgent care. Free steroids at government hospitals. Bone protection (calcium, Vitamin D) during steroid therapy.",
+    "precautions": ["Do not stop prednisolone abruptly—taper only under medical guidance", "Monitor for side effects: weight gain, diabetes, osteoporosis", "If headache, vision loss, or jaw pain, seek emergency (GCA risk)", "Take calcium and Vitamin D supplements", "Regular ESR/CRP monitoring to guide treatment"],
+    "urgency": "high"
+  },
+  {
+    "id": "psoriatic_arthritis",
+    "category": "Psoriatic Arthritis",
+    "symptoms": ["joint pain, swelling, and stiffness", "associated with psoriasis (scaly, red patches on skin)", "asymmetric joint involvement", "dactylitis (sausage-like fingers/toes)", "enthesitis (pain at tendon insertions—heel, elbow)", "nail changes (pitting, onycholysis)", "sacroiliitis (lower back pain)"],
+    "guidance": "Psoriatic arthritis is an inflammatory arthritis. Treatment: NSAIDs, DMARDs (methotrexate, sulfasalazine), and biologics (TNF inhibitors, IL-17 inhibitors) for moderate-severe disease—available free. Physiotherapy. Skin treatments for psoriasis. Regular monitoring for cardiovascular risk.",
+    "precautions": ["Treat both skin and joints—control of skin helps joint disease", "Monitor for side effects of methotrexate (liver function, blood counts)", "If you have psoriasis, screen for arthritis", "Avoid smoking—worsens disease", "Maintain a healthy weight to reduce joint stress"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hypothyroidism_chronic",
+    "category": "Chronic Hypothyroidism",
+    "symptoms": ["fatigue, sluggishness", "cold intolerance", "unexplained weight gain", "dry skin and hair", "hair loss", "constipation", "depression, memory problems", "slow heart rate (bradycardia)", "puffy face, hoarse voice", "menstrual irregularities (heavy periods)"],
+    "guidance": "Hypothyroidism is a common condition, especially in women. Treatment: daily levothyroxine replacement—available free at government hospitals. Take on an empty stomach (30-60 minutes before breakfast). Monitor TSH every 6-12 months. Do not stop medication even if you feel well. Iodized salt prevents iodine deficiency hypothyroidism.",
+    "precautions": ["Take levothyroxine daily at the same time—do not skip", "Do not take with iron, calcium, or antacids (separate by 4 hours)", "If you become pregnant, the dose will increase—inform your doctor immediately", "Monitor TSH regularly", "Use iodized salt in cooking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hyperthyroidism_graves",
+    "category": "Graves' Disease (Hyperthyroidism)",
+    "symptoms": ["weight loss despite increased appetite", "palpitations, rapid heart rate", "heat intolerance, excessive sweating", "tremor (fine hand tremor)", "nervousness, anxiety", "goiter (enlarged thyroid)", "proptosis (bulging eyes—Graves' ophthalmopathy)", "thickening of skin on shins (pretibial myxedema)"],
+    "guidance": "Graves' disease is an autoimmune hyperthyroidism. Treatment options: antithyroid drugs (methimazole, PTU), radioactive iodine therapy, or surgery (thyroidectomy). Antithyroid drugs are available free. Beta-blockers for symptom control. Monitor for agranulocytosis (fever, sore throat). Ophthalmopathy requires specialist care—smoking cessation is critical.",
+    "precautions": ["Take antithyroid medications consistently—do not stop abruptly", "Report fever or sore throat immediately (risk of agranulocytosis)", "Do not smoke—worsens eye disease", "If pregnant, inform doctor (PTU is preferred in the first trimester)", "Monitor thyroid function regularly"],
+    "urgency": "high"
+  },
+  {
+    "id": "dyslipidemia",
+    "category": "Dyslipidemia (Hypercholesterolemia)",
+    "symptoms": ["usually asymptomatic", "xanthomas (fatty deposits on skin, eyelids, tendons)", "corneal arcus (white ring around iris)", "elevated total cholesterol, LDL, or triglycerides", "low HDL", "detected on routine blood tests"],
+    "guidance": "Dyslipidemia is a major risk factor for atherosclerosis. Management: lifestyle—heart-healthy diet (low saturated fat, trans fat, high fiber), regular exercise, weight loss. Statins are first-line drug therapy—available free at government NCD clinics. Monitor lipid profile every 6-12 months. Treat aggressively in high-risk patients (diabetes, CAD, hypertension).",
+    "precautions": ["Reduce saturated fats (red meat, butter, ghee, coconut oil)", "Avoid trans fats (hydrogenated oils, commercially baked goods)", "Eat more fiber (oats, fruits, vegetables, legumes)", "Exercise regularly (30-45 min daily)", "Do not stop statins without doctor's advice—even if cholesterol normalizes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "multiple_sclerosis",
+    "category": "Multiple Sclerosis (MS)",
+    "symptoms": ["optic neuritis (painful vision loss in one eye)", "numbness, tingling in limbs", "muscle weakness (often one side)", "difficulty walking, ataxia", "bladder and bowel dysfunction", "fatigue (very common)", "cognitive impairment", "Lhermitte's sign (electric shock sensation on neck flexion)"],
+    "guidance": "MS is an autoimmune demyelinating disease. Treatment: disease-modifying therapies (interferon, glatiramer, fingolimod, rituximab) to reduce relapses—available free at government hospitals. Acute relapses: high-dose corticosteroids. Multidisciplinary: physiotherapy, occupational therapy, speech therapy. Avoid heat (worsens symptoms).",
+    "precautions": ["Take disease-modifying medications as prescribed", "Avoid hot baths, saunas, and fever (heat exacerbates symptoms)", "Exercise regularly but avoid overheating", "Bladder training for urinary symptoms", "Monitor for depression—seek mental health support"],
+    "urgency": "high"
+  },
+  {
+    "id": "parkinsons_disease",
+    "category": "Parkinson's Disease",
+    "symptoms": ["resting tremor (pill-rolling, usually starts in one hand)", "bradykinesia (slowness of movement)", "rigidity (muscle stiffness)", "postural instability (balance problems, falls)", "shuffling gait", "micrographia (small handwriting)", "hypophonia (soft speech)", "loss of smell (hyposmia)", "mask-like face (hypomimia)"],
+    "guidance": "Parkinson's is a progressive neurodegenerative disorder. Treatment: levodopa/carbidopa (mainstay), dopamine agonists, MAO-B inhibitors, and physiotherapy. Deep brain stimulation for advanced cases. Medications are free at government hospitals. Regular exercise (walking, tai chi, yoga) is proven to slow progression. Speech therapy for swallowing/dysarthria.",
+    "precautions": ["Take levodopa at consistent times—protein can interfere (take 1 hour before meals or 2 hours after)", "Do not stop medication abruptly—can cause neuroleptic malignant syndrome", "Exercise regularly—improves mobility", "Fall prevention—remove trip hazards, use walking aids", "If swallowing difficulty occurs, consult speech therapist and nutritionist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "alzheimers_disease",
+    "category": "Alzheimer's Disease",
+    "symptoms": ["memory loss that disrupts daily life (forgetting recent events, appointments)", "difficulty with familiar tasks (cooking, managing finances)", "confusion about time, place, or people", "problems with language (finding words, following conversation)", "poor judgment", "personality changes (apathy, agitation, suspicion)", "getting lost in familiar places", "repeating questions or stories"],
+    "guidance": "Alzheimer's is the most common cause of dementia. Medications: cholinesterase inhibitors (donepezil, rivastigmine) and memantine can slow progression—available free. Non-pharmacological: structured routines, memory aids, safety modifications, and caregiver support. Early diagnosis and planning. Free memory clinics at government hospitals.",
+    "precautions": ["Ensure home safety: lock away sharp objects, secure exits, install grab bars", "Maintain a consistent daily routine", "Do not argue with the person about false memories—redirect gently", "Caregiver support groups are crucial to prevent burnout", "If wandering is a risk, register with local police (tracking programs available)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vascular_dementia",
+    "category": "Vascular Dementia",
+    "symptoms": ["stepwise decline in cognition (sudden worsening after strokes)", "memory problems, executive dysfunction", "slowed thinking, difficulty planning", "focal neurological deficits (from previous strokes)", "gait disturbance, urinary incontinence early", "risk factors: hypertension, diabetes, hyperlipidemia"],
+    "guidance": "Vascular dementia is caused by cerebrovascular disease. Treatment: control vascular risk factors (BP, diabetes, cholesterol), antiplatelet therapy (aspirin), and cognitive rehabilitation. Prevention is the best treatment. Free medications at NCD clinics. Supportive care and caregiver education.",
+    "precautions": ["Strictly control BP, blood sugar, and cholesterol", "Take antiplatelet medications as prescribed", "Maintain healthy diet and exercise", "Fall prevention strategies", "Monitor for new strokes (weakness, speech difficulty) and seek emergency care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "frontotemporal_dementia",
+    "category": "Frontotemporal Dementia (FTD)",
+    "symptoms": ["personality and behavior changes (apathy, disinhibition, loss of empathy)", "compulsive behaviors (eating, repetitive actions)", "speech and language difficulty (fluent aphasia, word-finding problems)", "early onset (usually 40-65 years)", "relatively preserved memory in early stages"],
+    "guidance": "FTD is a progressive neurodegenerative disorder affecting the frontal and temporal lobes. No cure. Treatment: behavioral management, speech therapy, and medications for agitation (antipsychotics, SSRIs). Family support and caregiver education. Genetic counseling if familial.",
+    "precautions": ["Behavioral management strategies", "Speech and occupational therapy", "Address compulsive eating (monitor diet, lock food)", "Caregiver support is essential", "If aggression, discuss medications with psychiatrist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "lewy_body_dementia",
+    "category": "Dementia with Lewy Bodies (DLB)",
+    "symptoms": ["dementia with prominent visual hallucinations", "fluctuating cognition (alertness varies greatly)", "Parkinsonian motor symptoms (rigidity, bradykinesia, tremor)", "REM sleep behavior disorder (acting out dreams)", "autonomic dysfunction (orthostatic hypotension)", "sensitivity to antipsychotics"],
+    "guidance": "DLB is a common type of dementia. Management: cholinesterase inhibitors may help hallucinations. Avoid antipsychotics (severe sensitivity). Treat Parkinsonism with levodopa cautiously (may worsen psychosis). Non-pharmacological: safety measures, routine, and caregiver support. Fall prevention.",
+    "precautions": ["Avoid typical antipsychotics—can be fatal", "Use cholinesterase inhibitors as prescribed", "Manage hallucinations—do not argue, use distraction", "Fall prevention (gait and balance are impaired)", "Monitor for orthostatic hypotension (dizziness on standing)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "amyotrophic_lateral_sclerosis",
+    "category": "Amyotrophic Lateral Sclerosis (ALS / Motor Neuron Disease)",
+    "symptoms": ["progressive muscle weakness (starts in limbs or bulbar)", "fasciculations (muscle twitching)", "cramps", "spasticity", "dysarthria (slurred speech)", "dysphagia (difficulty swallowing)", "respiratory insufficiency", "no cognitive impairment in most cases", "upper and lower motor neuron signs"],
+    "guidance": "ALS is a progressive neurodegenerative disease. Treatment: Riluzole and edaravone slow progression—available at government hospitals. Multidisciplinary care: physiotherapy, occupational therapy, speech therapy, and respiratory support. Nutritional support (high-calorie, PEG feeding if needed). Non-invasive ventilation for respiratory failure. Palliative care and advanced directives.",
+    "precautions": ["Riluzole should be taken consistently", "Monitor weight and nutritional intake", "If swallowing difficulty, consult speech therapist—aspiration is a major risk", "Non-invasive ventilation (BiPAP) for respiratory symptoms", "Plan for advanced care—discuss with family early"],
+    "urgency": "high"
+  },
+  {
+    "id": "myasthenia_gravis",
+    "category": "Myasthenia Gravis (MG)",
+    "symptoms": ["fluctuating muscle weakness (worse with exertion, improves with rest)", "ptosis (drooping eyelid)", "diplopia (double vision)", "difficulty chewing, swallowing", "slurred speech (dysarthria)", "difficulty breathing (myasthenic crisis)", "weakness of proximal limbs"],
+    "guidance": "MG is an autoimmune disease of the neuromuscular junction. Treatment: acetylcholinesterase inhibitors (pyridostigmine), immunosuppressants (corticosteroids, azathioprine), and thymectomy. Plasmapheresis and IVIG for crises. Free medications at government hospitals. Avoid medications that worsen MG (aminoglycosides, magnesium, beta-blockers).",
+    "precautions": ["Take pyridostigmine on time—do not skip doses", "If muscle weakness worsens, seek care (myasthenic crisis risk)", "Infections can trigger exacerbations—get prompt treatment", "Avoid drugs that worsen MG (list provided by neurologist)", "If difficulty breathing, go to emergency immediately"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_epilepsy_adult",
+    "category": "Chronic Epilepsy (Adult)",
+    "symptoms": ["recurrent unprovoked seizures", "types: generalized tonic-clonic (jerking, loss of consciousness), focal (partial, with or without impaired awareness), absence (brief staring spells)", "post-ictal confusion, headache", "may have aura before seizure", "risk of injuries during seizures"],
+    "guidance": "Epilepsy is managed with antiepileptic drugs (AEDs)—available free at government hospitals. Monotherapy is preferred. Never miss doses. Regular monitoring of drug levels. Lifestyle: regular sleep, avoid alcohol, avoid triggering activities (swimming alone, driving). Most patients can live normal lives with treatment.",
+    "precautions": ["Never miss AED doses—this can trigger breakthrough seizures", "Maintain a regular sleep schedule—sleep deprivation triggers seizures", "Do not drive until seizure-free for at least 1 year", "During a seizure: protect from injury, do not put anything in mouth, time the seizure", "If seizure lasts >5 minutes, call 108 (status epilepticus)"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_migraine",
+    "category": "Chronic Migraine",
+    "symptoms": ["headache occurring ≥15 days per month, for ≥3 months", "at least 8 days with migraine features (unilateral, pulsatile, moderate-severe, nausea, photophobia, phonophobia)", "may have aura", "neurological: visual changes, weakness, or speech difficulty (aura)"],
+    "guidance": "Chronic migraine management: lifestyle (regular sleep, meals, hydration, avoid triggers), acute medications (triptans, NSAIDs) limited to ≤2 days/week to prevent medication-overuse headache, and preventive medications (propranolol, amitriptyline, topiramate, flunarizine). Botox and CGRP monoclonal antibodies are available at specialized centers. Free preventive medications at government hospitals.",
+    "precautions": ["Identify and avoid triggers (stress, certain foods, sleep changes)", "Do not overuse acute pain medications (>2 days/week) to avoid rebound headaches", "Take preventive medications consistently", "Stay well-hydrated", "If aura occurs with new weakness, seek emergency (rule out stroke)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "tension_type_headache",
+    "category": "Chronic Tension-Type Headache",
+    "symptoms": ["bilateral, non-pulsating, pressing/tightening quality (band-like)", "mild to moderate intensity", "not aggravated by routine physical activity", "may have photophobia or phonophobia (but not both)", "lasts from 30 minutes to 7 days", "stress and muscle tension are triggers"],
+    "guidance": "Treatment: acute—simple analgesics (paracetamol, NSAIDs) but limit to ≤2 days/week. Preventive: tricyclic antidepressants (amitriptyline), stress management, relaxation therapy, CBT, and physiotherapy (neck muscle relaxation). Free counseling at government hospitals. Good sleep hygiene.",
+    "precautions": ["Limit analgesic use to avoid medication-overuse headache", "Practice stress management (yoga, deep breathing)", "Improve posture (ergonomic work setup)", "Regular exercise", "If headache pattern changes, see a neurologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "cluster_headache",
+    "category": "Cluster Headache (Chronic)",
+    "symptoms": ["severe, strictly unilateral pain (orbital, supraorbital, or temporal)", "lasting 15-180 minutes", "frequency: once every other day to 8 times per day", "associated with ipsilateral autonomic symptoms (red/watery eye, nasal congestion, ptosis, miosis)", "restlessness or agitation during attacks", "circannual and circadian periodicity (cluster periods)"],
+    "guidance": "Cluster headache is the most painful headache. Acute treatment: high-flow oxygen, subcutaneous sumatriptan, or intranasal triptans. Preventive: verapamil (high dose, with ECG monitoring), lithium, corticosteroids (short-term). Neurologist referral is essential. Oxygen is available at some government hospitals. Avoid alcohol and smoking during cluster periods.",
+    "precautions": ["Do not take triptans if you have coronary artery disease", "If on verapamil, monitor ECG and heart rate", "Avoid alcohol during cluster periods (triggers attacks)", "Oxygen therapy is safe and effective if available", "If new headache, do not self-diagnose—see a neurologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "trigeminal_neuralgia",
+    "category": "Trigeminal Neuralgia (Chronic)",
+    "symptoms": ["sudden, severe, sharp, stabbing, electric shock-like pain in the distribution of one or more branches of the trigeminal nerve (face, jaw, eye)", "triggered by trivial stimuli (talking, chewing, brushing teeth, cold air)", "pain lasts seconds to 2 minutes", "remission periods may occur", "often unilateral"],
+    "guidance": "First-line treatment: carbamazepine or oxcarbazepine—available free at government hospitals. If refractory, gabapentin, baclofen, or lamotrigine. Surgical options (microvascular decompression, radiofrequency, gamma knife) for refractory cases. Neurologist/neurosurgeon consultation.",
+    "precautions": ["Take carbamazepine regularly—do not stop abruptly (can cause seizures)", "Monitor for side effects (dizziness, hyponatremia, rash)", "Avoid triggers if possible (cold wind, hard foods)", "If skin rash (Stevens-Johnson syndrome risk), stop medication immediately and seek care", "Dental examination to rule out dental causes"],
+    "urgency": "high"
+  },
+  {
+    "id": "fibromyalgia",
+    "category": "Fibromyalgia",
+    "symptoms": ["chronic widespread musculoskeletal pain", "fatigue", "sleep disturbances (non-restorative sleep)", "cognitive difficulties ('fibro fog'—poor concentration, memory)", "tender points (pressure points on neck, shoulders, back, hips)", "stiffness (worse in morning)", "headaches, irritable bowel syndrome, depression, anxiety"],
+    "guidance": "Fibromyalgia is a chronic pain syndrome. Management: patient education, graded exercise (walking, swimming), CBT, and stress management. Medications: pregabalin, duloxetine, amitriptyline, and gabapentin—available free at government hospitals. Treat comorbidities (depression, IBS). Support groups. Avoid opioids (generally not effective).",
+    "precautions": ["Exercise regularly (start slow and increase gradually)", "Maintain a regular sleep schedule", "Manage stress (yoga, meditation)", "Do not rely on opioids for pain—they are not effective for fibromyalgia", "If depression is present, treat with antidepressants"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_fatigue_syndrome",
+    "category": "Chronic Fatigue Syndrome (Myalgic Encephalomyelitis)",
+    "symptoms": ["persistent, unexplained fatigue for ≥6 months", "not relieved by rest", "worsened by physical or mental exertion (post-exertional malaise)", "sleep disturbance", "cognitive impairment (memory, concentration)", "muscle pain, joint pain", "headaches, sore throat, tender lymph nodes"],
+    "guidance": "CFS is a complex disorder. Management: pacing (balance activity and rest), CBT, graded exercise therapy (carefully monitored). Address sleep disturbances and depression. Free counseling at government hospitals. Avoid extreme exertion. Support groups.",
+    "precautions": ["Pacing is key—do not push through fatigue (worsens symptoms)", "Maintain a regular sleep schedule", "Eat balanced meals", "If mood is low, seek mental health support", "Avoid overexertion leading to post-exertional malaise"],
+    "urgency": "low"
+  },
+  {
+    "id": "anemia_of_chronic_disease",
+    "category": "Anemia of Chronic Disease (ACD)",
+    "symptoms": ["fatigue, weakness", "pallor", "shortness of breath on exertion", "signs of underlying chronic disease (infection, inflammation, malignancy)", "normocytic, normochromic anemia", "low serum iron, low TIBC, high ferritin", "usually mild to moderate"],
+    "guidance": "ACD is secondary to chronic inflammatory conditions (RA, SLE, CKD, infection, cancer). Treatment: treat the underlying condition. Erythropoietin for CKD-associated anemia. Iron supplementation is not effective (iron is trapped). Managing the primary disease improves anemia. Free care for underlying conditions at government hospitals.",
+    "precautions": ["Do not take iron supplements without a doctor's advice—they are ineffective in ACD", "Treat the underlying chronic disease", "Monitor hemoglobin regularly", "If anemia worsens, investigate for other causes (B12, folate, bleeding)", "Erythropoietin if indicated (CKD)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sickle_cell_anemia_adult",
+    "category": "Sickle Cell Anemia (Adult)",
+    "symptoms": ["chronic hemolytic anemia (fatigue, pallor, jaundice)", "sickle cell crises (severe pain in bones, chest, abdomen)", "hand-foot syndrome (dactylitis in children, less in adults)", "acute chest syndrome (chest pain, fever, respiratory distress)", "splenic sequestration (sudden splenomegaly, shock)", "stroke risk (especially in children)", "chronic complications: avascular necrosis, leg ulcers, retinopathy"],
+    "guidance": "Sickle cell disease is a genetic hemoglobinopathy. Management: hydroxyurea reduces crises—available free. Pain management, hydration, and prompt treatment of infections. Penicillin prophylaxis (up to age 5 or lifelong if splenectomized). Pneumococcal and meningococcal vaccines. Blood transfusions for severe anemia or stroke prevention. Genetic counseling.",
+    "precautions": ["Stay well-hydrated—dehydration triggers crises", "Avoid extreme cold", "Take hydroxyurea consistently—it reduces crisis frequency", "Seek care for any fever or pain crisis promptly", "If chest pain or respiratory distress, seek emergency (acute chest syndrome)"],
+    "urgency": "high"
+  },
+  {
+    "id": "thalassemia_major_adult",
+    "category": "Thalassemia Major (Adult)",
+    "symptoms": ["severe transfusion-dependent anemia", "pallor, fatigue, weakness", "jaundice", "hepatosplenomegaly", "iron overload (due to repeated transfusions): cardiac, hepatic, endocrine dysfunction", "bone deformities (frontal bossing, maxillary overgrowth)", "growth retardation"],
+    "guidance": "Thalassemia major requires lifelong regular blood transfusions (every 2-4 weeks) and iron chelation therapy (deferasirox, deferoxamine) to prevent iron overload—available free at government hospitals. Bone marrow transplant is the only cure. Prevention: carrier screening and prenatal diagnosis. Endocrine monitoring for diabetes, hypothyroidism, and osteoporosis.",
+    "precautions": ["Adhere to regular transfusion schedule", "Take iron chelation therapy consistently—iron overload is the leading cause of death", "Monitor cardiac function (echocardiogram, MRI) annually", "Avoid iron-containing supplements (already iron overloaded)", "If splenectomy is done, take lifelong antibiotics for infection prevention"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hemophilia_a",
+    "category": "Hemophilia A (Factor VIII Deficiency)",
+    "symptoms": ["spontaneous bleeding into joints (hemarthrosis) causing pain, swelling, and deformity", "muscle bleeds", "prolonged bleeding after trauma or surgery", "easy bruising", "hematuria (blood in urine)", "intracranial hemorrhage (head trauma is dangerous)"],
+    "guidance": "Hemophilia A is an X-linked bleeding disorder. Treatment: factor VIII replacement (prophylactic or on-demand)—available free under government rare disease programs. Avoid intramuscular injections, aspirin, NSAIDs. Dental care with factor cover. Genetic counseling. Joint physiotherapy for chronic hemarthropathy.",
+    "precautions": ["Avoid contact sports and activities with high injury risk", "Do not take aspirin or NSAIDs (ibuprofen, naproxen)—use paracetamol for pain", "If you have a bleed, factor replacement is urgent", "If head injury, seek emergency care immediately even if no symptoms", "Wear medical alert ID"],
+    "urgency": "high"
+  },
+  {
+    "id": "hemophilia_b",
+    "category": "Hemophilia B (Factor IX Deficiency)",
+    "symptoms": ["same as Hemophilia A (joint bleeds, muscle bleeds, easy bruising)", "prolonged bleeding", "less common than Hemophilia A"],
+    "guidance": "Treatment: factor IX replacement—available free under government rare disease programs. Prophylaxis or on-demand. Avoid aspirin and NSAIDs. Genetic counseling. Joint physiotherapy. Free factor concentrates at designated centers.",
+    "precautions": ["Same as Hemophilia A: avoid NSAIDs, contact sports, and head injuries", "Factor IX replacement is life-saving", "Carry a medical alert ID", "If joint swelling, early factor infusion prevents permanent damage", "Dental procedures require factor cover"],
+    "urgency": "high"
+  },
+  {
+    "id": "von_willebrand_disease",
+    "category": "Von Willebrand Disease (vWD)",
+    "symptoms": ["easy bruising", "prolonged bleeding from cuts and gums", "heavy menstrual bleeding (menorrhagia)", "frequent nosebleeds (epistaxis)", "prolonged bleeding after surgery or dental work", "family history of bleeding"],
+    "guidance": "vWD is the most common inherited bleeding disorder. Treatment: desmopressin (DDAVP) for mild cases; factor concentrate for severe. Antifibrinolytics (tranexamic acid) for mucosal bleeding. Avoid aspirin. Free desmopressin at government hospitals. Gynecological consultation for heavy periods.",
+    "precautions": ["Avoid aspirin and NSAIDs", "If heavy periods, consult a gynecologist—may need hormonal therapy", "Inform dentists and surgeons about the condition", "If bleeding, apply pressure and seek care", "Desmopressin is effective but monitor for hyponatremia"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_venous_insufficiency",
+    "category": "Chronic Venous Insufficiency (CVI)",
+    "symptoms": ["leg heaviness, aching, fatigue (worse at end of day, relieved by elevation)", "ankle and leg swelling (edema)", "varicose veins", "skin changes: stasis dermatitis (brown discoloration, itching, scaling)", "venous ulcers (usually around the ankle)", "lipodermatosclerosis (hardening of skin)"],
+    "guidance": "CVI is caused by damaged valves in leg veins. Management: compression stockings (graduated, 20-30 mmHg), leg elevation, exercise (walking), and weight loss. Avoid prolonged standing. For ulcers: wound care, compression. Sclerotherapy or surgery for varicose veins. Free compression stockings at government hospitals.",
+    "precautions": ["Wear compression stockings during the day (remove at night)", "Elevate legs above heart level for 15-20 minutes several times a day", "Avoid prolonged sitting or standing", "If leg ulcers, keep clean and seek wound care", "If swelling suddenly increases, rule out DVT"],
+    "urgency": "medium"
+  },
+  {
+    "id": "varicose_veins_chronic",
+    "category": "Chronic Varicose Veins",
+    "symptoms": ["dilated, tortuous, superficial veins in legs", "leg heaviness, ache, cramps", "itching, burning", "swelling", "skin changes (hyperpigmentation, eczema)", "ulcers (in advanced)"],
+    "guidance": "Varicose veins are a cosmetic and functional problem. Management: compression stockings, leg elevation, exercise, and weight loss. Sclerotherapy, endovenous ablation, or surgery for symptomatic or cosmetic concerns. Free surgical care at government hospitals.",
+    "precautions": ["Wear compression stockings", "Elevate legs when resting", "Avoid prolonged standing", "Regular walking", "If pain, redness, or swelling, rule out superficial thrombophlebitis"],
+    "urgency": "low"
+  },
+  {
+    "id": "diabetic_peripheral_neuropathy",
+    "category": "Diabetic Peripheral Neuropathy",
+    "symptoms": ["numbness, tingling, burning pain in hands and feet (stocking-glove distribution)", "sharp, shooting pain", "loss of sensation (danger: cannot feel wounds)", "weakness of foot muscles", "foot ulcers and infections", "decreased reflexes"],
+    "guidance": "Neuropathy is a common complication of diabetes. Prevention: strict glycemic control. Treatment: pain management with gabapentin, pregabalin, or duloxetine—available free at government hospitals. Foot care: daily inspection, moisturize, wear proper shoes, do not walk barefoot. Regular podiatry evaluation.",
+    "precautions": ["Check feet daily for cuts, blisters, or sores—use a mirror if needed", "Do not walk barefoot", "Wear well-fitting, soft shoes", "Moisturize feet (but not between toes)", "If a foot ulcer develops, seek medical care immediately (delays lead to amputation)"],
+    "urgency": "high"
+  },
+  {
+    "id": "diabetic_retinopathy",
+    "category": "Diabetic Retinopathy (Non-Proliferative and Proliferative)",
+    "symptoms": ["floaters (spots in vision)", "blurred vision", "fluctuating vision", "loss of visual field", "sudden vision loss (vitreous hemorrhage, retinal detachment)", "often asymptomatic until advanced"],
+    "guidance": "Diabetic retinopathy is the leading cause of blindness in working-age adults. Screening: annual fundoscopy for all diabetics. Treatment: strict glycemic and BP control. For proliferative or macular edema: laser photocoagulation and anti-VEGF injections (ranibizumab, aflibercept)—available free at government hospitals. Early detection prevents blindness.",
+    "precautions": ["Get an annual dilated eye exam (fundoscopy)", "Control blood sugar and BP", "If sudden vision loss or floaters, seek emergency ophthalmology care", "Do not ignore vision changes", "If pregnant with diabetes, more frequent eye exams are needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "diabetic_nephropathy",
+    "category": "Diabetic Nephropathy",
+    "symptoms": ["early: microalbuminuria (detected on urine test, no symptoms)", "later: proteinuria (foamy urine), edema, hypertension", "decreased eGFR, elevated creatinine", "fatigue, anemia", "end-stage renal disease (dialysis needed)"],
+    "guidance": "Diabetic nephropathy is the leading cause of CKD in India. Management: strict glycemic control, BP control with ACE inhibitors or ARBs (renoprotective), low-salt diet, and protein restriction. Monitor urine microalbumin annually. Free ACE inhibitors and ARBs at government hospitals. Dialysis for end-stage—free under PMNDP.",
+    "precautions": ["Get urine microalbumin test annually", "Take ACE inhibitors/ARBs as prescribed (even if BP is normal—they protect kidneys)", "Limit salt and protein intake as advised", "Control blood sugar and BP", "If swelling or foamy urine, seek care"],
+    "urgency": "high"
+  },
+  {
+    "id": "diabetic_foot_ulcer",
+    "category": "Diabetic Foot Ulcer (Chronic)",
+    "symptoms": ["non-healing sore or ulcer on the foot", "surrounding redness, warmth, or swelling", "discharge (pus) or odor", "pain (may be absent due to neuropathy)", "gangrene (black, dead tissue)", "fever (if infection spreads)"],
+    "guidance": "Foot ulcers are a major cause of amputation. Treatment: wound debridement, offloading (special shoes/cast), infection control (antibiotics), and revascularization if PAD. Glycemic control. Multidisciplinary: diabetologist, podiatrist, vascular surgeon. Free wound care and antibiotics at government hospitals. Prevention is key—daily foot inspection.",
+    "precautions": ["Daily foot inspection (use a mirror)", "Do not walk barefoot", "Wear diabetic shoes (wide-toed)", "See a doctor immediately for any non-healing wound", "If gangrene or fever, seek emergency care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "primary_open_angle_glaucoma",
+    "category": "Primary Open-Angle Glaucoma (POAG)",
+    "symptoms": ["often asymptomatic in early stages (silent thief of sight)", "gradual loss of peripheral vision (tunnel vision)", "optic disc cupping on fundoscopy", "elevated intraocular pressure (IOP)", "family history is a risk factor"],
+    "guidance": "Glaucoma is a leading cause of irreversible blindness. Screening: annual eye exam with tonometry and fundoscopy for all >40 years, especially with family history. Treatment: topical eye drops (prostaglandins, beta-blockers, carbonic anhydrase inhibitors)—available free at government hospitals. Laser trabeculoplasty or surgery if needed. Early detection prevents blindness.",
+    "precautions": ["Get regular eye checkups (especially if family history)", "Use eye drops consistently—do not skip doses", "If you experience eye pain, redness, or sudden vision loss, seek emergency (acute angle-closure glaucoma)", "Follow up with ophthalmologist for IOP monitoring", "Do not stop drops without consulting"],
+    "urgency": "high"
+  },
+  {
+    "id": "senile_cataract",
+    "category": "Senile Cataract",
+    "symptoms": ["progressive, painless blurring of vision", "glare (difficulty with bright lights, night driving)", "halos around lights", "dulling of colors (yellowing/browning of vision)", "frequent changes in glasses prescription", "difficulty reading"],
+    "guidance": "Cataract is the most common cause of blindness in India. Treatment: surgical removal with intraocular lens implantation—available free under the National Blindness Control Programme at government hospitals. Surgery is safe and highly effective. Do not delay—cataract surgery restores vision.",
+    "precautions": ["Get annual eye exams", "If vision is affecting daily activities, consider surgery—do not wait until 'ripe'", "Post-surgery: use prescribed eye drops, avoid rubbing the eye", "Avoid heavy lifting for 2 weeks after surgery", "Wear sunglasses to reduce glare"],
+    "urgency": "medium"
+  },
+  {
+    "id": "age_related_macular_degeneration",
+    "category": "Age-Related Macular Degeneration (AMD)",
+    "symptoms": ["central vision loss (blurry or distorted area in the center of vision)", "straight lines appear wavy (metamorphopsia)", "difficulty reading, recognizing faces", "dark spots in central vision", "dry or wet AMD"],
+    "guidance": "AMD affects the macula (central retina). Dry AMD: no specific treatment; supplements (AREDS2: vitamins C, E, zinc, lutein, zeaxanthin) may slow progression. Wet AMD: anti-VEGF injections (ranibizumab, aflibercept)—available free at government hospitals. Early detection via Amsler grid home testing.",
+    "precautions": ["Monitor vision with Amsler grid daily", "If you notice sudden changes, see an ophthalmologist immediately", "Take AREDS2 supplements if recommended", "Do not smoke—smoking worsens AMD", "Protect eyes from UV light (sunglasses)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "retinitis_pigmentosa",
+    "category": "Retinitis Pigmentosa (RP)",
+    "symptoms": ["night blindness (early symptom)", "progressive loss of peripheral vision (tunnel vision)", "difficulty adapting to dark", "photophobia (sensitivity to light)", "loss of central vision in advanced stages", "often inherited"],
+    "guidance": "RP is a genetic retinal degeneration. No cure. Management: genetic counseling, low-vision aids, orientation and mobility training. Vitamin A palmitate (moderate dose) may slow progression in some—consult ophthalmologist. Free low-vision rehabilitation at government hospitals. Avoid driving at night.",
+    "precautions": ["Genetic counseling for family", "Use low-vision aids (magnifiers, mobility canes)", "Do not smoke", "If taking Vitamin A, do not exceed dose (can be hepatotoxic)", "Regular ophthalmology follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_sensorineural_hearing_loss",
+    "category": "Chronic Sensorineural Hearing Loss (Presbycusis)",
+    "symptoms": ["gradual hearing loss, especially high frequencies (difficulty hearing women's/children's voices)", "difficulty understanding speech in noisy environments", "tinnitus (ringing in ears)", "no history of ear infections or ear pain"],
+    "guidance": "Age-related hearing loss is common. Management: hearing aids (available free or subsidized at government hospitals), assistive listening devices, and communication strategies. Avoid loud noise exposure. If sudden hearing loss, seek emergency (may be treatable with steroids).",
+    "precautions": ["Use hearing aids as prescribed", "Avoid loud noises (wear ear protection)", "Inform family/friends to speak clearly and face you", "If sudden hearing loss, seek emergency ENT care", "Regular hearing assessments"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_tinnitus",
+    "category": "Chronic Tinnitus",
+    "symptoms": ["perception of ringing, buzzing, hissing, or roaring sound in the ears without external source", "may be unilateral or bilateral", "worse in quiet environments", "may be associated with hearing loss", "can cause distress, anxiety, and sleep disturbance"],
+    "guidance": "Tinnitus is a symptom, not a disease. Management: treat underlying cause (hearing loss, cerumen, vascular, TMJ). Sound therapy (masking devices), CBT, and tinnitus retraining therapy. Avoid silence. Reduce stress. Free counseling at government ENT clinics. Rule out serious causes (acoustic neuroma).",
+    "precautions": ["Use background noise (white noise, fans) to mask tinnitus", "Reduce stress and anxiety—CBT helps", "Avoid loud noise exposure", "If tinnitus is unilateral and pulsatile, see an ENT", "Do not use over-the-counter 'tinnitus cures' without evidence"],
+    "urgency": "low"
+  },
+  {
+    "id": "benign_prostatic_hyperplasia",
+    "category": "Benign Prostatic Hyperplasia (BPH)",
+    "symptoms": ["hesitancy (difficulty starting urination)", "weak or interrupted stream", "frequent urination (especially at night—nocturia)", "urgency", "feeling of incomplete bladder emptying", "dribbling at the end of urination"],
+    "guidance": "BPH is a non-cancerous enlargement of the prostate. Management: alpha-blockers (tamsulosin) and 5-alpha reductase inhibitors (finasteride)—available free at government hospitals. Lifestyle: reduce caffeine/alcohol, double voiding, and timed voiding. Surgery (TURP) for severe symptoms or complications. Free surgery at government hospitals.",
+    "precautions": ["Limit fluids before bedtime to reduce nocturia", "Avoid caffeine and alcohol—they irritate the bladder", "Do not take decongestants (can worsen symptoms)", "If you cannot urinate, seek emergency care (acute urinary retention)", "Monitor for blood in urine—rule out prostate cancer"],
+    "urgency": "medium"
+  },
+  {
+    "id": "erectile_dysfunction",
+    "category": "Erectile Dysfunction (Vascular/Chronic)",
+    "symptoms": ["difficulty achieving or maintaining an erection sufficient for sexual intercourse", "reduced sexual desire", "may be associated with vascular disease, diabetes, or psychological factors"],
+    "guidance": "Erectile dysfunction is often a vascular problem. Management: lifestyle (exercise, weight loss, smoking cessation, diabetes/BP control). PDE5 inhibitors (sildenafil, tadalafil)—available free at government hospitals (may require prescription). Psychotherapy for psychological causes. Treat underlying conditions.",
+    "precautions": ["Do not take PDE5 inhibitors with nitrates (risk of severe hypotension)", "If you have heart disease, consult cardiologist before taking", "Lifestyle changes may improve ED without medication", "If sudden loss of erection, rule out cardiovascular disease", "Counseling if anxiety is the cause"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_prostatitis",
+    "category": "Chronic Prostatitis (Non-Bacterial)",
+    "symptoms": ["pelvic or perineal pain (lower abdomen, testicles, penis, between scrotum and anus)", "pain during urination", "pain during ejaculation", "frequency, urgency", "may be chronic, waxing and waning", "no evidence of infection (negative cultures)"],
+    "guidance": "Chronic pelvic pain syndrome. Management: alpha-blockers, anti-inflammatory drugs, pelvic floor physiotherapy, and stress management. Antibiotics are not effective (unless infection proven). Free medications at government hospitals. Avoid triggers (spicy foods, prolonged sitting).",
+    "precautions": ["Avoid prolonged sitting—take breaks", "Reduce spicy foods, caffeine, and alcohol", "Pelvic floor physiotherapy", "Warm baths may relieve pain", "If acute symptoms (fever, chills), seek care (may be acute prostatitis)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_urinary_retention",
+    "category": "Chronic Urinary Retention",
+    "symptoms": ["difficulty initiating urination", "weak stream", "frequent urination (small amounts)", "sense of incomplete emptying", "nocturia", "may be asymptomatic with high residual urine volume (>300 ml)"],
+    "guidance": "Chronic retention can be due to BPH, neurological disease, or bladder dysfunction. Management: treat the cause (alpha-blockers for BPH, intermittent self-catheterization, surgery). Monitor renal function. Free urology care at government hospitals. Avoid bladder stones and UTIs.",
+    "precautions": ["Do not ignore difficulty urinating—can damage kidneys", "If you have a neurogenic bladder, intermittent catheterization is important", "Monitor for UTIs", "Avoid caffeine and alcohol", "If acute retention (cannot urinate), emergency Foley catheterization needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "overactive_bladder_adult",
+    "category": "Overactive Bladder (OAB) – Chronic",
+    "symptoms": ["urinary urgency (sudden urge to urinate that is difficult to defer)", "frequency (>8 times in 24 hours)", "nocturia (waking up ≥2 times to void)", "with or without urge incontinence"],
+    "guidance": "OAB is common. Management: behavioral therapy (bladder training, pelvic floor exercises, fluid management), and anticholinergics or beta-3 agonists (mirabegron). Free medications at government hospitals. Rule out UTI. If severe, Botox or neuromodulation.",
+    "precautions": ["Bladder training: delay voiding gradually", "Pelvic floor exercises (Kegels)", "Limit caffeine, alcohol, and citrus (irritants)", "Double void (urinate, wait, urinate again)", "If urgency with fever or pain, rule out infection"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_urticaria",
+    "category": "Chronic Spontaneous Urticaria (Hives)",
+    "symptoms": ["wheals (raised, itchy, red or skin-colored welts) lasting <24 hours", "recurring for ≥6 weeks", "associated with angioedema (swelling of lips, eyelids, hands, feet, genitals) in 40%", "itching can be severe, affecting sleep and daily activities"],
+    "guidance": "Chronic urticaria is often autoimmune. Management: non-sedating antihistamines (second-generation) at higher doses—available free. If refractory, add montelukast, omalizumab (anti-IgE—available at some government hospitals). Avoid triggers (NSAIDs, alcohol, stress). Refer to dermatologist.",
+    "precautions": ["Take antihistamines daily—do not skip", "Avoid aspirin and NSAIDs (can worsen)", "Avoid alcohol and hot environments", "If angioedema with breathing difficulty, seek emergency", "Stress management—stress can trigger flares"],
+    "urgency": "medium"
+  },
+  {
+    "id": "psoriasis_vulgaris",
+    "category": "Psoriasis Vulgaris (Chronic Plaque)",
+    "symptoms": ["well-demarcated, red, scaly plaques covered with silvery-white scales", "most commonly on elbows, knees, scalp, and lower back", "itching, burning", "nail changes (pitting, onycholysis)", "may have associated psoriatic arthritis"],
+    "guidance": "Psoriasis is a chronic inflammatory skin disease. Treatment: topical corticosteroids, vitamin D analogs (calcipotriol), and phototherapy (UVB/PUVA)—available free at government hospitals. Systemic: methotrexate, cyclosporine, and biologics (TNF, IL-17, IL-23 inhibitors) for severe disease. Avoid triggers (stress, infections, alcohol).",
+    "precautions": ["Use topical treatments consistently", "Avoid picking scales (can cause Koebner phenomenon)", "If on methotrexate, monitor liver function and blood counts", "Do not smoke—worsens psoriasis", "If joint pain occurs, see a rheumatologist (psoriatic arthritis)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vitiligo",
+    "category": "Vitiligo",
+    "symptoms": ["well-circumscribed, depigmented (white) patches on skin", "often symmetrical", "hair in affected areas may turn white (leukotrichia)", "no symptoms (not itchy or painful)", "cosmetic concern", "may affect any body part"],
+    "guidance": "Vitiligo is an autoimmune depigmentation. Treatment: topical corticosteroids, calcineurin inhibitors (tacrolimus), and phototherapy (narrowband UVB). In stable cases, surgical transplantation. Sun protection is crucial (depigmented skin burns easily). Free phototherapy at government dermatology centers. Camouflage cosmetics.",
+    "precautions": ["Use broad-spectrum sunscreen (SPF 50+) on depigmented areas", "Avoid sunburn—white patches burn easily", "If on phototherapy, follow schedule strictly", "Psychological support if distressing", "Do not use quack remedies—can cause scarring"],
+    "urgency": "low"
+  },
+  {
+    "id": "alopecia_areata",
+    "category": "Alopecia Areata (Autoimmune Hair Loss)",
+    "symptoms": ["sudden, patchy hair loss (well-demarcated round/oval bald patches)", "may involve scalp, beard, eyebrows, eyelashes", "exclamation mark hairs at the periphery", "may progress to alopecia totalis (all scalp) or universalis (whole body)", "nails may have pitting or ridging"],
+    "guidance": "Alopecia areata is autoimmune. Treatment: topical corticosteroids, intralesional steroids, and minoxidil. In severe cases, systemic corticosteroids, DPCP, or JAK inhibitors (available at some centers). Free treatment at government hospitals. Psychological support. Spontaneous regrowth is possible.",
+    "precautions": ["Do not panic—spontaneous regrowth occurs in many", "Avoid stress (may trigger exacerbations)", "If on systemic steroids, monitor side effects", "Wear wigs or head coverings if desired", "Consult a dermatologist for treatment options"],
+    "urgency": "low"
+  },
+  {
+    "id": "hidradenitis_suppurativa",
+    "category": "Hidradenitis Suppurativa (HS)",
+    "symptoms": ["recurrent, painful, inflamed nodules, abscesses, and sinus tracts in apocrine gland-bearing areas (axillae, groin, perineum, inframammary)", "chronic, relapsing", "often associated with obesity and smoking", "can cause scarring and disability"],
+    "guidance": "HS is a chronic inflammatory skin disease. Management: weight loss, smoking cessation, topical clindamycin, oral antibiotics (doxycycline, rifampicin), and biologics (adalimumab—available at some centers). Surgery for refractory sinus tracts. Free care at government dermatology clinics.",
+    "precautions": ["Lose weight—significant improvement", "Stop smoking—worsens disease", "Wear loose-fitting clothes", "Avoid shaving affected areas (can trigger)", "Warm compresses for painful nodules"],
+    "urgency": "medium"
+  },
+  {
+    "id": "lichen_planus",
+    "category": "Lichen Planus (Chronic)",
+    "symptoms": ["pruritic, polygonal, flat-topped, violaceous papules and plaques", "often on wrists, ankles, lower back", "oral lichen planus: white reticular patches (Wickham's striae) in the mouth", "nail changes (thinning, ridging)", "Koebner phenomenon (new lesions at sites of trauma)"],
+    "guidance": "Lichen planus is an inflammatory skin disease. Treatment: topical corticosteroids, oral antihistamines, and for oral involvement, topical corticosteroids (clobetasol gel). Severe cases: systemic corticosteroids or phototherapy. Free treatment at government hospitals. Monitor oral lesions for malignancy (rare).",
+    "precautions": ["Use topical steroids as prescribed", "Avoid scratching—can cause Koebnerization", "For oral lesions, avoid spicy and acidic foods", "If oral lesions persist, regular dental/ENT follow-up", "Stress management"],
+    "urgency": "medium"
+  },
+  {
+    "id": "chronic_low_back_pain",
+    "category": "Chronic Low Back Pain (Lumbar Spondylosis)",
+    "symptoms": ["chronic pain in the lower back (lumbar region)", "worse with sitting or standing, relieved by lying down", "stiffness in the morning", "may radiate to buttocks and thighs", "associated with degenerative changes (osteophytes, disc degeneration)"],
+    "guidance": "Management: exercise (core strengthening, stretching), physiotherapy, weight loss, and pain relief (paracetamol, NSAIDs short-term). Maintain good posture and ergonomic support. Avoid bed rest—stay active. For radiculopathy (sciatica), imaging and specialist care. Free physiotherapy at government hospitals. Surgery for severe cases.",
+    "precautions": ["Stay active—bed rest worsens back pain", "Strengthen core muscles", "Maintain proper posture (sit up straight, use lumbar support)", "Lift heavy objects correctly (bend knees, not back)", "If leg weakness or bowel/bladder dysfunction, seek emergency (cauda equina)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cervical_spondylosis",
+    "category": "Cervical Spondylosis (Chronic Neck Pain)",
+    "symptoms": ["neck pain and stiffness", "headaches (usually occipital)", "pain radiating to shoulders and arms", "numbness or tingling in arms and hands", "weakness of grip", "spurling test positive (pain on neck extension and rotation)"],
+    "guidance": "Management: physiotherapy (range of motion, strengthening), pain relief (paracetamol, topical NSAIDs), cervical collar (short-term), and posture correction (ergonomic workstations). If radiculopathy, imaging (MRI). Free physiotherapy at government hospitals. Surgery for cervical myelopathy.",
+    "precautions": ["Maintain good posture—avoid forward head position (computer, phone)", "Use an ergonomic chair", "Neck strengthening exercises", "Avoid heavy lifting", "If weakness or gait disturbance, see a neurosurgeon (myelopathy)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "degenerative_disc_disease",
+    "category": "Degenerative Disc Disease (Chronic)",
+    "symptoms": ["chronic back/neck pain", "worse with sitting, bending, twisting", "relieved by lying down", "may have acute exacerbations (disc herniation with radiculopathy)", "stiffness, reduced flexibility"],
+    "guidance": "Management: physiotherapy, core strengthening, weight management, pain relief, and lifestyle modifications. Avoid smoking (decreases disc nutrition). For herniation with neurological symptoms, imaging and specialist intervention. Free physiotherapy at government hospitals.",
+    "precautions": ["Avoid prolonged sitting—take breaks", "Strengthen back and core muscles", "Lift with your legs", "If severe leg pain or weakness, see a specialist", "Smoking accelerates disc degeneration—stop"],
+    "urgency": "medium"
+  },
+  {
+    "id": "osteogenesis_imperfecta",
+    "category": "Osteogenesis Imperfecta (Brittle Bone Disease)",
+    "symptoms": ["frequent bone fractures with minimal trauma", "blue sclerae (blue-tinted whites of eyes)", "hearing loss (otosclerosis)", "dentinogenesis imperfecta (discolored teeth)", "short stature, bowed limbs, kyphosis", "joint laxity", "variable severity"],
+    "guidance": "OI is a genetic disorder of collagen. Management: bisphosphonates (pamidronate) to reduce fractures—available free at government hospitals under rare disease programs. Physical therapy to improve mobility and muscle strength. Fall prevention. Genetic counseling. Dental care. Hearing aids if needed.",
+    "precautions": ["Fall prevention is critical", "Avoid contact sports", "Take bisphosphonates as prescribed", "If you have OI, regular dental and ENT care", "Genetic counseling for family planning"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ehlers_danlos_syndrome",
+    "category": "Ehlers-Danlos Syndrome (Hypermobility Type)",
+    "symptoms": ["joint hypermobility (double-jointedness)", "skin hyperextensibility (stretchy skin)", "easy bruising, fragile skin", "chronic joint pain", "frequent dislocations", "autonomic dysfunction (POTS—dizziness on standing)", "fatigue"],
+    "guidance": "EDS is a connective tissue disorder. Management: physiotherapy (joint protection, muscle strengthening), pain management (paracetamol, avoid NSAIDs if GI issues), and occupational therapy. Avoid contact sports. POTS management: hydration, salt, and compression stockings. Genetic counseling.",
+    "precautions": ["Protect joints—avoid hyperextension", "Strengthen muscles around joints", "Avoid high-impact activities", "If skin wounds, sutures may need to stay longer", "Monitor for aortic dilation (echocardiogram)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "marfan_syndrome",
+    "category": "Marfan Syndrome",
+    "symptoms": ["tall stature, long limbs (arm span > height)", "arachnodactyly (long, slender fingers)", "pectus excavatum or carinatum", "joint hypermobility", "lens dislocation (ectopia lentis)", "aortic dilation/aneurysm", "mitral valve prolapse", "dural ectasia (lower back pain)"],
+    "guidance": "Marfan is a genetic connective tissue disorder. Management: cardiology follow-up with echocardiograms (monitor aortic root), beta-blockers or ARBs to slow aortic dilation, and prophylactic surgery when aortic diameter reaches threshold. Avoid strenuous exercise and contact sports. Genetic counseling. Free cardiology care at government hospitals.",
+    "precautions": ["Avoid strenuous exercise and competitive sports", "Regular echocardiograms (every 6-12 months)", "Take beta-blockers/ARBs as prescribed", "If sudden chest pain or back pain, seek emergency (aortic dissection)", "Ophthalmology follow-up for lens dislocation and glaucoma"],
+    "urgency": "high"
+  },
+  {
+    "id": "polycythemia_vera",
+    "category": "Polycythemia Vera (PV)",
+    "symptoms": ["headache, dizziness, and fatigue", "itching (pruritus), especially after a hot shower (aquagenic pruritus)", "plethora (ruddy complexion)", "splenomegaly", "hypertension", "hyperviscosity symptoms (visual disturbances, tinnitus)", "high risk of thrombosis (stroke, DVT, MI)"],
+    "guidance": "PV is a myeloproliferative neoplasm. Management: phlebotomy (to keep hematocrit <45%), aspirin (low dose) to reduce thrombosis risk, and cytoreduction (hydroxyurea) for high-risk patients. Free phlebotomy and hydroxyurea at government hospitals. Monitor for progression to myelofibrosis or AML.",
+    "precautions": ["Adhere to phlebotomy schedule", "Take aspirin as prescribed (unless contraindicated)", "If you experience sudden headache, vision changes, or weakness, seek emergency (thrombosis)", "Stay well-hydrated", "Monitor blood counts regularly"],
+    "urgency": "high"
+  },
+  {
+    "id": "essential_thrombocythemia",
+    "category": "Essential Thrombocythemia (ET)",
+    "symptoms": ["often asymptomatic", "headache", "dizziness, visual disturbances", "pruritus", "splenomegaly", "risk of thrombosis (stroke, DVT) and bleeding", "platelet count >450,000"],
+    "guidance": "ET is a myeloproliferative neoplasm. Management: low-dose aspirin for all patients. Cytoreduction (hydroxyurea, anagrelide) for high-risk (age >60, history of thrombosis). Free medications at government hospitals. Monitor for progression.",
+    "precautions": ["Take aspirin as prescribed", "Monitor platelet counts regularly", "If sudden severe headache or weakness, seek emergency (stroke)", "Avoid smoking—increases thrombosis risk", "If bleeding (epistaxis, gums), inform doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "myelofibrosis",
+    "category": "Primary Myelofibrosis",
+    "symptoms": ["fatigue, weakness (anemia)", "fever, night sweats, weight loss", "splenomegaly (massive—abdominal pain, early satiety)", "bone pain", "pruritus", "leukopenia or thrombocytopenia", "tear-drop poikilocytes on blood film", "karyotype abnormalities"],
+    "guidance": "Myelofibrosis is a myeloproliferative neoplasm with bone marrow fibrosis. Management: supportive care (transfusions for anemia), JAK2 inhibitors (ruxolitinib)—available free at government tertiary centers, and stem cell transplant (curative). Splenectomy for massive splenomegaly if refractory. Monitor for transformation to AML.",
+    "precautions": ["Take JAK2 inhibitors as prescribed", "Monitor for infections (immunosuppression)", "If severe abdominal pain (splenic infarction), seek care", "If fever, seek care promptly", "Genetic counseling (JAK2 V617F mutation testing)"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_myeloid_leukemia",
+    "category": "Chronic Myeloid Leukemia (CML)",
+    "symptoms": ["fatigue, weakness, weight loss", "night sweats", "fever", "splenomegaly (abdominal fullness)", "elevated white blood cell count", "easily bleeding or bruising", "usually in chronic phase at diagnosis"],
+    "guidance": "CML is caused by the Philadelphia chromosome (BCR-ABL). Treatment: tyrosine kinase inhibitors (imatinib) are highly effective and available free at government hospitals. Regular monitoring with PCR for BCR-ABL (quantitative). Allogeneic stem cell transplant for refractory or accelerated phase. Good long-term survival with imatinib.",
+    "precautions": ["Take imatinib consistently at the same time each day with food", "Monitor blood counts regularly (CBC, differential)", "If you develop rash, diarrhea, or edema, inform doctor (side effects)", "Do not stop medication without consulting—can cause relapse", "If you develop bone pain or fever, seek care (blast crisis risk)"],
+    "urgency": "high"
+  },
+  {
+    "id": "myelodysplastic_syndrome",
+    "category": "Myelodysplastic Syndrome (MDS)",
+    "symptoms": ["fatigue, pallor (anemia)", "recurrent infections (neutropenia)", "easy bruising, bleeding (thrombocytopenia)", "may be asymptomatic", "progressive bone marrow failure"],
+    "guidance": "MDS is a clonal bone marrow disorder. Management: supportive care (transfusions, growth factors), hypomethylating agents (azacitidine) for high-risk—available free at government hospitals. Allogeneic stem cell transplant is curative. Genetic testing for cytogenetic abnormalities.",
+    "precautions": ["Monitor for infections—prompt treatment", "If transfusion-dependent, monitor iron overload and use chelation", "If high-risk, discuss transplant options early", "Regular blood counts and bone marrow assessments", "Avoid alcohol and hepatotoxic drugs"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_lymphocytic_leukemia",
+    "category": "Chronic Lymphocytic Leukemia (CLL)",
+    "symptoms": ["often asymptomatic", "lymphadenopathy (painless swelling of lymph nodes)", "fatigue", "night sweats", "weight loss", "recurrent infections", "anemia, thrombocytopenia (advanced)"],
+    "guidance": "CLL is a mature B-cell neoplasm. Management: watchful waiting in early stages. Treatment: BTK inhibitors (ibrutinib), fludarabine, or venetoclax—available free at government tertiary centers. Monitor for infections (hypogammaglobulinemia). Regular blood counts and physical exams.",
+    "precautions": ["Watch for signs of infection—prompt treatment", "If you develop fever, night sweats, or lymph node swelling, inform doctor", "Avoid live vaccines", "If on ibrutinib, monitor for atrial fibrillation and bleeding", "Good hand hygiene and avoid sick contacts"],
+    "urgency": "medium"
+  },
+  {
+    "id": "multiple_myeloma",
+    "category": "Multiple Myeloma",
+    "symptoms": ["bone pain (often back, ribs, skull—lytic lesions)", "fatigue, weakness, pallor (anemia)", "recurrent infections (immunoparesis)", "renal failure (elevated creatinine, proteinuria)", "hypercalcemia (nausea, confusion, polyuria, polydipsia)", "weight loss", "fractures (pathological)"],
+    "guidance": "Multiple myeloma is a plasma cell neoplasm. Treatment: proteasome inhibitors (bortezomib), immunomodulators (lenalidomide), corticosteroids, and autologous stem cell transplant—available free at government hospitals under rare disease programs. Bisphosphonates for bone lesions. Monitor renal function and calcium.",
+    "precautions": ["Hydrate well to prevent renal failure", "If bone pain, avoid heavy lifting—risk of fracture", "Monitor for infections—prompt treatment", "If you have hypercalcemia symptoms (nausea, confusion), seek care", "Consider novel agents (carfilzomib, daratumumab) at specialized centers"],
+    "urgency": "critical"
+  },
+  {
+    "id": "polyneuropathy_chronic",
+    "category": "Chronic Inflammatory Demyelinating Polyneuropathy (CIDP)",
+    "symptoms": ["progressive, symmetric muscle weakness (proximal and distal)", "numbness, tingling in hands and feet", "loss of reflexes (areflexia)", "difficulty walking", "sensory ataxia (poor coordination)", "progression over >8 weeks (differentiates from Guillain-Barré)"],
+    "guidance": "CIDP is an immune-mediated neuropathy. Treatment: IVIG, corticosteroids (prednisolone), or plasmapheresis—available free at government hospitals. Response is often good. Physiotherapy and occupational therapy. Long-term maintenance therapy needed. Free IVIG at designated centers.",
+    "precautions": ["Take corticosteroids/immunosuppressants as prescribed—do not stop abruptly", "Monitor for side effects (weight gain, high BP, diabetes)", "Physiotherapy is essential for maintaining mobility", "If difficulty breathing or swallowing, seek emergency", "Regular neurology follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "autoimmune_hemolytic_anemia",
+    "category": "Autoimmune Hemolytic Anemia (Chronic)",
+    "symptoms": ["fatigue, weakness, pallor (anemia)", "jaundice (yellow skin and eyes)", "dark urine", "splenomegaly", "fever", "positive Coombs test", "chronic or acute exacerbations"],
+    "guidance": "AIHA is an autoimmune disorder. Management: corticosteroids (prednisolone) are first-line—available free. Rituximab for refractory cases. Splenectomy for chronic disease. Folate supplementation. Avoid infections (can trigger hemolysis). Monitor hemoglobin and hemolysis markers.",
+    "precautions": ["Take steroids as prescribed—taper slowly under medical supervision", "Avoid infections—prompt treatment", "If jaundice or dark urine worsens, seek care", "Folate supplements are important", "Monitor for side effects of long-term steroids"],
+    "urgency": "high"
+  },
+  {
+    "id": "chronic_pain_central_sensitization",
+    "category": "Chronic Pain Syndrome (Central Sensitization)",
+    "symptoms": ["chronic widespread pain", "hypersensitivity to pain (hyperalgesia)", "pain in response to normally non-painful stimuli (allodynia)", "fatigue, sleep disturbance, mood changes", "not explained by organic pathology", "often associated with fibromyalgia"],
+    "guidance": "Management: multidisciplinary—pain education, CBT, graded exercise, and medications (antidepressants, anticonvulsants—pregabalin, gabapentin). Avoid opioids (ineffective and harmful). Free physiotherapy and counseling at government hospitals. Pain clinics in tertiary centers.",
+    "precautions": ["Do not rely on opioids—they worsen pain in the long term", "Graded exercise is beneficial", "CBT helps coping", "Treat depression/anxiety if present", "Set realistic goals"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_whiplash",
+    "category": "Chronic Whiplash Syndrome",
+    "symptoms": ["persistent neck pain after a whiplash injury (motor vehicle accident)", "headache", "dizziness", "neck stiffness", "reduced range of motion", "muscle spasms", "may have radicular symptoms"],
+    "guidance": "Management: physiotherapy (neck exercises, posture correction), pain relief (paracetamol, NSAIDs short-term), and reassurance. Avoid neck collars (can cause deconditioning). Free physiotherapy at government hospitals. Psychological support if chronic.",
+    "precautions": ["Stay active—do not use collars long-term", "Neck strengthening exercises", "Ergonomic adjustments", "If weakness or numbness, see a specialist", "Manage stress"],
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_sinusitis",
+    "category": "Chronic Rhinosinusitis (Sinusitis)",
+    "symptoms": ["nasal congestion, obstruction", "thick, discolored nasal discharge (purulent)", "facial pain or pressure (over cheeks, forehead, eyes)", "headache", "cough (worse at night)", "reduced sense of smell (anosmia)", "halitosis"],
+    "guidance": "Chronic sinusitis is inflammation of the sinuses lasting >12 weeks. Management: nasal saline irrigation, intranasal corticosteroids, and antibiotics for acute exacerbations. In refractory cases, surgery (FESS) for anatomical obstruction. Free ENT care at government hospitals.",
+    "precautions": ["Nasal saline irrigation daily", "Use intranasal corticosteroids consistently", "Avoid smoking and air pollution", "If you have asthma or allergies, manage them", "If vision changes or severe headache, seek emergency (orbital complication)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "temporomandibular_joint_disorder",
+    "category": "Temporomandibular Joint (TMJ) Disorder",
+    "symptoms": ["jaw pain or tenderness", "popping, clicking, or grating sounds in the jaw joint", "difficulty or pain with chewing", "locking of the jaw (open or closed)", "headache, earache (without ear infection)", "facial muscle tension"],
+    "guidance": "TMJ disorders are often self-limiting. Management: soft diet, avoid chewing gum, jaw exercises (stretching, relaxing), heat/cold packs, NSAIDs for pain, and stress management. If persistent, dental splint. Free dental care at government hospitals. Referral to oral/maxillofacial surgeon if severe.",
+    "precautions": ["Avoid hard or chewy foods", "Apply warm compresses", "Practice stress reduction (massage, relaxation)", "Do not chew gum", "If jaw locks, see a dentist or ENT"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_submucous_fibrosis",
+    "category": "Oral Submucous Fibrosis (Chronic)",
+    "symptoms": ["progressive difficulty opening mouth (trismus)", "burning sensation in the mouth, especially with spicy food", "blanching, pale mucosa with fibrous bands", "soft palate involvement", "dysphagia (difficulty swallowing)", "precancerous condition"],
+    "guidance": "Oral submucous fibrosis is strongly associated with areca nut (pan, gutkha) chewing. Treatment: cessation of areca nut and tobacco. Physiotherapy for trismus (jaw opening exercises), steroids, and antioxidants. Surgical release for severe cases. Regular follow-up for malignant transformation. Free government dental/ENT care.",
+    "precautions": ["Stop chewing areca nut, pan, gutkha, and tobacco completely", "Practice jaw-stretching exercises", "Avoid spicy foods", "Regular oral cancer screening", "If ulcer or growth, seek immediate biopsy"],
+    "urgency": "high"
+  },
+  {
+    "id": "leukoplakia",
+    "category": "Oral Leukoplakia (Chronic Precancerous Lesion)",
+    "symptoms": ["white patches or plaques in the mouth that cannot be scraped off", "usually asymptomatic", "most common on buccal mucosa, tongue, floor of mouth", "associated with tobacco/smoking", "risk of malignant transformation (1-10%)"],
+    "guidance": "Leukoplakia is a precancerous lesion. Management: cessation of risk factors (smoking, tobacco, alcohol). Biopsy of suspicious lesions. Surgical excision if dysplasia. Regular follow-up (every 3-6 months). Free oral cancer screening at government hospitals.",
+    "precautions": ["Stop all tobacco and alcohol use", "Regular dental/oral medicine checkups", "If lesion changes (redness, ulceration, induration), biopsy urgently", "Maintain good oral hygiene", "Avoid irritants"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_cancer",
+    "category": "Oral Cancer (Squamous Cell Carcinoma)",
+    "symptoms": ["non-healing ulcer or growth in the mouth", "white or red patch", "persistent pain, bleeding", "loosening of teeth", "difficulty chewing, swallowing, or speaking", "unilateral ear pain", "neck lymphadenopathy", "weight loss"],
+    "guidance": "Oral cancer is common in India. Early detection saves lives—free oral cancer screening at PHCs under National Cancer Screening Programme. Treatment: surgery, radiation, and chemotherapy—free at government hospitals under PMJAY. Prevention: avoid tobacco, areca nut, and alcohol.",
+    "precautions": ["Stop tobacco, areca nut, and alcohol", "Get oral screening at every health visit", "If ulcer does not heal in 2 weeks, seek biopsy", "If a lump in the neck, get evaluated", "HPV vaccine (for oropharyngeal cancer prevention)"],
+    "urgency": "critical"
+  }
+]

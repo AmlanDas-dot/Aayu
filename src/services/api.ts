@@ -35,7 +35,7 @@ export async function checkBackendHealth(): Promise<boolean> {
 // Calls POST /chat — full pipeline: translate → search → triage → response
 
 export async function sendChatMessage(
-  req: ChatRequest
+  req: ChatRequest & { session_id?: string }
 ): Promise<ChatApiResponse> {
   const res = await fetch(`${API_BASE}/chat`, {
     method: "POST",
@@ -45,6 +45,7 @@ export async function sendChatMessage(
       language: req.language ?? "en",
       top_k: req.top_k ?? 5,
       collection: req.collection ?? "all",
+      session_id: req.session_id ?? "",
     }),
   });
   if (!res.ok) {
@@ -74,6 +75,211 @@ export async function getMockChatResponse(
     `Please consult a healthcare professional at your nearest health centre.\n\n` +
     `⚠️ AAYU provides general information only — not medical diagnoses.`
   );
+}
+
+// ── Nutrition types & calls ──────────────────────────────────────────────────
+
+export interface FoodNutrition {
+  id: string;
+  display_name: string;       // unified name field — works for all 3 schemas
+  type: string;               // "disease_diet" | "pregnancy" | "food_item"
+  recommended_foods: string[];
+  avoid_foods: string[];
+  guidance: string;
+  urgency: string;
+  source: string;
+}
+
+export async function getAllFoods(): Promise<FoodNutrition[]> {
+  const res = await fetch(`${API_BASE}/nutrition`);
+  if (!res.ok) throw new Error("Failed to load foods. Is the backend running?");
+  const data = await res.json();
+  return data.items;
+}
+
+export async function searchNutrition(query: string): Promise<FoodNutrition[]> {
+  const res = await fetch(`${API_BASE}/nutrition/search?q=${encodeURIComponent(query)}`);
+  if (!res.ok) throw new Error("Nutrition search failed.");
+  const data = await res.json();
+  return data.items ?? [];
+}
+
+// ── Schemes types & calls ─────────────────────────────────────────────────────
+
+export interface GovernmentScheme {
+  name: string;
+  state: string;
+  description: string;
+  eligibility: string;
+  benefits: string;
+  documents_required: string[];
+  official_link: string;
+}
+
+export async function getAllSchemes(): Promise<GovernmentScheme[]> {
+  const res = await fetch(`${API_BASE}/schemes`);
+  if (!res.ok) throw new Error("Failed to load schemes. Is the backend running?");
+  const data = await res.json();
+  return data.items;
+}
+
+export async function getStateSchemes(state: string): Promise<GovernmentScheme[]> {
+  const res = await fetch(`${API_BASE}/schemes?state=${encodeURIComponent(state)}`);
+  if (!res.ok) throw new Error("Failed to load schemes for that state.");
+  const data = await res.json();
+  return data.items;
+}
+
+export async function searchScheme(query: string): Promise<GovernmentScheme[]> {
+  const res = await fetch(`${API_BASE}/schemes/search?q=${encodeURIComponent(query)}`);
+  if (!res.ok) throw new Error("Scheme search failed.");
+  const data = await res.json();
+  return data.items;
+}
+
+// ── Collections (for Search page dropdown) ────────────────────────────────────
+
+export interface CollectionInfo {
+  description: string;
+  document_count: number;
+}
+
+export async function getCollections(): Promise<Record<string, CollectionInfo>> {
+  const res = await fetch(`${API_BASE}/search/collections`);
+  if (!res.ok) throw new Error("Failed to load collections.");
+  return res.json();
+}
+
+// ── System Status ──────────────────────────────────────────────────────────────
+
+export interface SystemStatus {
+  status: string;
+  connectivity: "online" | "offline";
+  llm: {
+    preferred: "gemini" | "ollama";
+    ollama: "running" | "unavailable" | "error";
+    gemini: "configured" | "no_key";
+  };
+}
+
+export async function getSystemStatus(): Promise<SystemStatus> {
+  const res = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(3000) });
+  if (!res.ok) throw new Error("Backend unreachable");
+  return res.json();
+}
+
+// ── Emergency types ───────────────────────────────────────────────────────────
+
+export interface EmergencyInfo {
+  is_emergency: boolean;
+  risk_level: "critical" | "high" | "medium" | "low";
+  detected_conditions: string[];
+  call_108: boolean;
+  summary: string;
+  timestamp: string;
+}
+
+// ── Hospital / PHC Finder ─────────────────────────────────────────────────────
+
+export interface HospitalFacility {
+  name: string;
+  type: string;
+  lat: number;
+  lon: number;
+  address: string;
+  phone: string;
+  distance_km: number;
+}
+
+export interface HospitalResponse {
+  count: number;
+  facilities: HospitalFacility[];
+  query_lat: number;
+  query_lon: number;
+}
+
+export async function findNearbyHospitals(
+  lat: number,
+  lon: number,
+  radius: number = 5000,
+  facilityType: string = "all"
+): Promise<HospitalResponse> {
+  const params = new URLSearchParams({
+    lat: String(lat),
+    lon: String(lon),
+    radius: String(radius),
+    facility_type: facilityType,
+  });
+  const res = await fetch(`${API_BASE}/hospitals/nearby?${params}`);
+  if (!res.ok) throw new Error("Hospital search failed. Are you online?");
+  return res.json();
+}
+
+export function getUserLocation(): Promise<{ lat: number; lon: number }> {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(new Error("Geolocation not supported by your browser."));
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      (err) => reject(new Error(`Location error: ${err.message}`)),
+      { timeout: 20000, maximumAge: 60000 }
+    );
+  });
+}
+
+export interface TranscribeResponse {
+  transcript: string;
+}
+
+export async function transcribeAudio(
+  audioBlob: Blob,
+  language: string = "en"
+): Promise<TranscribeResponse> {
+  const formData = new FormData();
+  formData.append("file", audioBlob, "recording.webm");
+  formData.append("language", language);
+
+  const res = await fetch(`${API_BASE}/transcribe`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) throw new Error("Transcription failed.");
+  return res.json();
+}
+
+export async function submitScreeningAnswer(
+  sessionId: string,
+  questionId: string,
+  answer: string
+): Promise<ChatApiResponse> {
+  const res = await fetch(`${API_BASE}/chat/screening/answer`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      session_id: sessionId,
+      question_id: questionId,
+      answer: answer,
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Unknown error" }));
+    throw new Error(err.detail ?? "Failed to submit screening answer");
+  }
+  return res.json();
+}
+
+export async function clearChatSession(
+  sessionId: string
+): Promise<{ cleared: boolean; session_id: string }> {
+  const res = await fetch(`${API_BASE}/chat/session/${sessionId}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to clear chat session on server");
+  }
+  return res.json();
 }
 
 export { API_BASE };

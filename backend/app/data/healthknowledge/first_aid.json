@@ -1,0 +1,802 @@
+[
+  {
+    "id": "fa_001",
+    "title": "CPR – Adult (Hands‑Only)",
+    "category": "cardiac",
+    "content": "If an adult collapses and is unresponsive with no normal breathing: call 108 immediately. Place the heel of one hand on the centre of the chest, interlock fingers, and push hard and fast at a rate of 100–120 compressions per minute, to a depth of at least 5 cm. Continue until help arrives or an AED is used. Do not stop unless the person wakes or you are exhausted.",
+    "tags": ["cpr", "cardiac arrest", "emergency", "resuscitation"],
+    "source": "AHA CPR Guidelines 2023"
+  },
+  {
+    "id": "fa_002",
+    "title": "CPR – Child (1–8 years)",
+    "category": "cardiac",
+    "content": "For a child aged 1–8 who is unresponsive and not breathing: call 108. Perform CPR with one hand (or two if needed) on the lower half of the breastbone, compressing to a depth of about 5 cm at 100–120 per minute. Give 30 compressions then 2 rescue breaths. Continue cycles of 30:2. If untrained, give hands‑only compressions.",
+    "tags": ["cpr", "child", "pediatric", "emergency", "resuscitation"],
+    "source": "AHA CPR Guidelines 2023"
+  },
+  {
+    "id": "fa_003",
+    "title": "CPR – Infant (Under 1 year)",
+    "category": "cardiac",
+    "content": "For an infant (under 1 year) who is unresponsive and not breathing: call 108. Place two fingers on the centre of the chest just below the nipple line. Compress to a depth of about 4 cm at 100–120 per minute. Give 30 compressions then 2 gentle rescue breaths (cover mouth and nose). Continue cycles of 30:2. If alone, give 2 minutes of CPR before calling.",
+    "tags": ["cpr", "infant", "neonatal", "emergency", "resuscitation"],
+    "source": "AHA CPR Guidelines 2023"
+  },
+  {
+    "id": "fa_004",
+    "title": "Choking – Adult (Heimlich Maneuver)",
+    "category": "choking",
+    "content": "If a conscious adult cannot cough, speak, or breathe: stand behind them, wrap your arms around their waist, make a fist with one hand and place it above the navel, grasp the fist with the other hand, and give quick inward and upward thrusts. Repeat until the object is expelled or the person becomes unconscious.",
+    "tags": ["choking", "heimlich", "airway", "emergency", "adult"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_005",
+    "title": "Choking – Infant (Under 1 year)",
+    "category": "choking",
+    "content": "For a choking infant: hold the infant face‑down along your forearm, supporting the head and jaw. Give 5 back blows between the shoulder blades with the heel of your hand. If not cleared, turn the infant face‑up and give 5 chest thrusts (two fingers on the breastbone). Repeat alternating until the object comes out or the infant becomes unconscious.",
+    "tags": ["choking", "infant", "airway", "emergency", "back blows"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_006",
+    "title": "Bleeding – Severe External Haemorrhage",
+    "category": "bleeding",
+    "content": "Apply direct firm pressure to the wound with a clean cloth or sterile dressing. Do not remove the cloth if it becomes soaked – add more layers on top. Elevate the injured limb above heart level if possible. For life‑threatening limb bleeding, apply a tourniquet 5–7 cm above the wound (not over joints) and tighten until bleeding stops. Call 108 immediately.",
+    "tags": ["bleeding", "haemorrhage", "tourniquet", "wound", "emergency"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_007",
+    "title": "Bleeding – Nosebleed (Epistaxis)",
+    "category": "bleeding",
+    "content": "Sit upright and lean slightly forward (do not tilt the head back). Pinch the soft part of the nose firmly with thumb and index finger for 10–15 minutes continuously. Apply a cold pack or ice wrapped in a cloth to the bridge of the nose. If bleeding persists beyond 20 minutes, seek medical help. Avoid blowing the nose for several hours.",
+    "tags": ["nosebleed", "epistaxis", "bleeding", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_008",
+    "title": "Burns – Thermal (Minor)",
+    "category": "burns",
+    "content": "Immediately cool the burn under cool (not cold) running water for at least 20 minutes. Do not use ice, butter, toothpaste, or oils. Remove jewellery and clothing near the burn (unless stuck). Cover with a sterile, non‑adhesive dressing or clean cloth. For burns larger than a palm, deep burns, facial burns, or burns in children, seek medical attention.",
+    "tags": ["burn", "scald", "thermal", "first aid", "wound"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_009",
+    "title": "Burns – Chemical (Acid/Alkali)",
+    "category": "burns",
+    "content": "Remove any contaminated clothing immediately. Flush the affected area with copious amounts of running water for at least 20 minutes. Do not try to neutralise the chemical. For eye exposure, irrigate the eye with water for at least 20 minutes, holding the eyelid open. Call 108 or a poison control centre (1800‑116‑117) for further advice.",
+    "tags": ["chemical burn", "acid", "alkali", "eye", "emergency"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_010",
+    "title": "Fractures – Splinting a Broken Bone",
+    "category": "fracture",
+    "content": "Do not try to straighten the bone. Immobilise the injured limb in the position found using a splint (e.g., rolled newspaper, board) tied above and below the fracture site. Apply an ice pack (wrapped in cloth) to reduce swelling. Elevate if possible. Seek medical care immediately. If an open fracture (bone visible), cover with a sterile dressing and do not press on the bone.",
+    "tags": ["fracture", "broken bone", "splint", "immobilisation", "injury"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_011",
+    "title": "Sprains and Strains – RICE Method",
+    "category": "injury",
+    "content": "Follow RICE: Rest the injured area, Ice (apply an ice pack wrapped in a cloth for 15–20 minutes every 2–3 hours), Compression (use an elastic bandage but not too tight), and Elevation (raise above heart level). Avoid heat, alcohol, and massage in the first 48 hours. If unable to bear weight or severe swelling, seek medical evaluation.",
+    "tags": ["sprain", "strain", "RICE", "injury", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_012",
+    "title": "Heat Stroke – Emergency",
+    "category": "heat",
+    "content": "Heat stroke is life‑threatening: high body temperature (>40°C), hot dry skin, confusion, and loss of consciousness. Call 108 immediately. Move the person to a cool place, remove clothing, and cool rapidly by any means: pour cool water over the body, apply ice packs to neck, armpits, and groin, and fan vigorously. Do NOT give aspirin or paracetamol.",
+    "tags": ["heat stroke", "hyperthermia", "emergency", "heat illness"],
+    "source": "CDC Heat Illness Guidelines"
+  },
+  {
+    "id": "fa_013",
+    "title": "Heat Exhaustion – First Aid",
+    "category": "heat",
+    "content": "Symptoms include heavy sweating, weakness, nausea, and pale, cool skin. Move to a cool place, loosen clothing, apply cool wet cloths, and sip cool water (not ice). If vomiting occurs or symptoms worsen, seek medical care. Do not give caffeinated or alcoholic drinks. Rest in a cool environment.",
+    "tags": ["heat exhaustion", "dehydration", "first aid", "heat illness"],
+    "source": "CDC Heat Illness Guidelines"
+  },
+  {
+    "id": "fa_014",
+    "title": "Hypothermia – Mild to Moderate",
+    "category": "cold",
+    "content": "Move the person to a warm, dry place. Remove wet clothing and replace with dry blankets or clothing. Apply warm compresses to the neck, chest, and groin. Give warm, non‑alcoholic fluids if conscious. For severe hypothermia (unconscious, slow breathing), call 108 and begin CPR if no breathing. Avoid vigorous movement or hot water immersion.",
+    "tags": ["hypothermia", "cold", "emergency", "first aid", "warming"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_015",
+    "title": "Frostbite – First Aid",
+    "category": "cold",
+    "content": "Move to a warm area. Soak the affected part in warm (not hot) water (37–40°C) for 15–30 minutes until sensation returns. Do not rub, massage, or apply direct heat. Protect the area with dry, sterile gauze. Do not walk on frostbitten feet. Seek medical help for severe frostbite with blistering or blackening.",
+    "tags": ["frostbite", "cold injury", "first aid", "warming"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_016",
+    "title": "Snake Bite – First Aid",
+    "category": "bite",
+    "content": "Keep the person calm and immobilise the bitten limb (splint as if fractured). Remove rings and watches. Do NOT cut the wound, suck venom, apply a tourniquet, or apply ice. Keep the limb at heart level. Rush to the nearest government hospital immediately – anti‑snake venom (ASV) is available free. Try to note the snake's appearance (do not try to catch it).",
+    "tags": ["snake", "bite", "venom", "emergency", "ASV"],
+    "source": "WHO Guidelines on Snake Bite Management"
+  },
+  {
+    "id": "fa_017",
+    "title": "Insect Sting (Bee/Wasp) – Allergic Reaction",
+    "category": "allergy",
+    "content": "Remove the stinger by scraping it off with a firm card (do not squeeze). Apply a cold pack to reduce swelling. Give antihistamine (e.g., cetirizine) if available. If the person develops difficulty breathing, swelling of face/throat, or dizziness, it may be anaphylaxis – call 108 immediately and use an EpiPen (if available).",
+    "tags": ["bee sting", "wasp", "allergy", "anaphylaxis", "insect"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_018",
+    "title": "Anaphylaxis (Severe Allergic Reaction)",
+    "category": "allergy",
+    "content": "Recognise: sudden hives, swelling of lips/face, difficulty breathing, wheezing, dizziness, and feeling of doom. Call 108 immediately. If the person has an EpiPen, administer it into the outer thigh (hold for 3 seconds). Lay the person flat with legs elevated (if breathing is difficult, sit them up). Give a second dose after 5–15 minutes if no improvement.",
+    "tags": ["anaphylaxis", "allergy", "EpiPen", "emergency", "epinephrine"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_019",
+    "title": "Seizure – First Aid (Tonic‑Clonic)",
+    "category": "seizure",
+    "content": "Stay calm. Protect the person from injury by clearing nearby objects. Place a folded cloth under the head. Loosen tight clothing. Do NOT put anything in the mouth. Time the seizure – if it lasts more than 5 minutes, call 108. After the seizure stops, place the person on their side (recovery position) and stay with them until fully conscious.",
+    "tags": ["seizure", "epilepsy", "convulsion", "first aid", "emergency"],
+    "source": "Epilepsy Foundation First Aid"
+  },
+  {
+    "id": "fa_020",
+    "title": "Diabetic Hypoglycemia (Low Blood Sugar)",
+    "category": "diabetes",
+    "content": "If a diabetic person is conscious but confused, sweaty, shaky, or drowsy, give 15 grams of fast‑acting sugar (e.g., 4 glucose tablets, 150 ml fruit juice, 3 teaspoons of sugar dissolved in water). Recheck blood sugar in 15 minutes – repeat if still low. If they are unconscious, do not give anything by mouth – call 108 and apply glucose gel to gums if available.",
+    "tags": ["hypoglycemia", "diabetes", "low sugar", "emergency", "glucose"],
+    "source": "ADA Guidelines"
+  },
+  {
+    "id": "fa_021",
+    "title": "Diabetic Ketoacidosis (DKA) – Emergency",
+    "category": "diabetes",
+    "content": "Symptoms: nausea, vomiting, abdominal pain, fruity breath, rapid breathing, confusion. Call 108 immediately. Do not give insulin at home without medical supervision. Keep the person upright and give sips of water if conscious. Hospitalisation is required for IV fluids and insulin. Do not delay.",
+    "tags": ["DKA", "diabetes", "ketoacidosis", "emergency", "type 1"],
+    "source": "ADA Guidelines"
+  },
+  {
+    "id": "fa_022",
+    "title": "Stroke – FAST Recognition and Action",
+    "category": "stroke",
+    "content": "Use FAST: Face drooping (ask to smile), Arm weakness (raise both arms), Speech difficulty (repeat a phrase), Time to call 108. If any sign is present, call emergency immediately. Note the time symptoms started. Keep the person lying on their side if unconscious. Do NOT give food, water, or aspirin (aspirin may worsen a bleeding stroke).",
+    "tags": ["stroke", "FAST", "brain attack", "emergency", "TIA"],
+    "source": "WHO Stroke Guidelines"
+  },
+  {
+    "id": "fa_023",
+    "title": "Heart Attack – Suspected Cardiac Event",
+    "category": "cardiac",
+    "content": "If someone has crushing chest pain, pain radiating to arm/jaw, shortness of breath, cold sweat, or nausea – call 108 immediately. Have the person sit down and rest. If they have prescribed nitroglycerin, assist them. If they are conscious and not allergic, give one adult aspirin (325 mg) to chew. If they become unresponsive, begin CPR.",
+    "tags": ["heart attack", "myocardial infarction", "chest pain", "emergency", "aspirin"],
+    "source": "AHA Guidelines"
+  },
+  {
+    "id": "fa_024",
+    "title": "Asthma Attack – Severe",
+    "category": "respiratory",
+    "content": "If a person is having severe asthma (cannot speak full sentences, lips blue, rescue inhaler not helping): call 108 immediately. Sit them upright and keep them calm. Give 4–8 puffs of salbutamol inhaler through a spacer (if available) every 20 minutes while waiting for help. If they stop breathing, begin CPR. Do not give sedatives.",
+    "tags": ["asthma", "respiratory distress", "inhaler", "emergency", "wheezing"],
+    "source": "Global Initiative for Asthma (GINA)"
+  },
+  {
+    "id": "fa_025",
+    "title": "Choking – Self‑Administered Heimlich",
+    "category": "choking",
+    "content": "If you are alone and choking, you can perform the Heimlich on yourself: make a fist and place it above your navel, grasp it with your other hand, and thrust inward and upward quickly. Alternatively, lean over the back of a chair and press your abdomen against it, using your body weight to thrust upward.",
+    "tags": ["choking", "self", "heimlich", "airway", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_026",
+    "title": "Drowning – Rescue and CPR",
+    "category": "drowning",
+    "content": "Remove the person from water safely (use a rope or pole; do not enter water if untrained). Call 108. If not breathing, begin CPR immediately (30 compressions : 2 breaths) – do not waste time on abdominal thrusts. Place them in recovery position if breathing returns. All near‑drowning victims need hospital evaluation even if they seem fine (secondary drowning risk).",
+    "tags": ["drowning", "water rescue", "CPR", "emergency", "secondary drowning"],
+    "source": "WHO Drowning Prevention"
+  },
+  {
+    "id": "fa_027",
+    "title": "Poisoning – General First Aid",
+    "category": "poisoning",
+    "content": "Call the National Poison Control Helpline: 1800‑116‑117 (free, 24/7). Do NOT induce vomiting unless advised (it can worsen injury with corrosive substances). If poison is on the skin, remove contaminated clothing and flush with water for 20 minutes. If swallowed, bring the container to the hospital. If unconscious, place on side and call 108.",
+    "tags": ["poison", "toxic", "ingestion", "emergency", "poison control"],
+    "source": "National Poison Control Centre, India"
+  },
+  {
+    "id": "fa_028",
+    "title": "Carbon Monoxide Poisoning",
+    "category": "poisoning",
+    "content": "If someone has headache, dizziness, nausea, confusion, or cherry‑red skin in a closed space with fuel‑burning appliances – move them to fresh air immediately. Call 108. If not breathing, begin CPR. High‑flow oxygen is the treatment. Prevention: install CO detectors and ensure good ventilation.",
+    "tags": ["carbon monoxide", "gas", "poison", "emergency", "inhalation"],
+    "source": "CDC Carbon Monoxide Poisoning"
+  },
+  {
+    "id": "fa_029",
+    "title": "Electric Shock – First Aid",
+    "category": "electrical",
+    "content": "Do not touch the person if they are still in contact with the electrical source – turn off the power first, or use a dry wooden object to move the source away. Call 108. Check for breathing and pulse – if absent, begin CPR. Treat burns by cooling with water and covering. Even if they seem fine, all electric shock victims need medical evaluation.",
+    "tags": ["electric shock", "electrocution", "emergency", "burns", "CPR"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_030",
+    "title": "Eye Injury – Foreign Body or Chemical",
+    "category": "eye",
+    "content": "For a foreign body: do not rub the eye. Flush with clean water or saline for 15 minutes by tilting the head and pouring water from the inner to outer corner. If the object is embedded, do not remove it – cover the eye with a clean cup and seek help. For chemical splashes, irrigate immediately with copious water for at least 20 minutes and call 108.",
+    "tags": ["eye", "foreign body", "chemical", "irrigation", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_031",
+    "title": "Fish Hook Removal (Embedded)",
+    "category": "wound",
+    "content": "If a fish hook is embedded in the skin, do not try to pull it out backward (barb causes more damage). The safest method is to cut the barb with a wire cutter and then back the hook out. Clean the wound with soap and water, apply antibiotic ointment, and cover. Seek medical care for tetanus prophylaxis and infection prevention.",
+    "tags": ["fish hook", "embedding", "wound", "first aid", "removal"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_032",
+    "title": "Splinter Removal – Basic",
+    "category": "wound",
+    "content": "Wash hands and the area with soap and water. Use sterilised tweezers to grasp the splinter and pull it out in the same direction it entered. If the splinter is deeply embedded or under a nail, seek medical help. After removal, clean the area, apply antibiotic ointment, and cover with a bandage.",
+    "tags": ["splinter", "foreign body", "tweezers", "wound", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_033",
+    "title": "Head Injury – Concussion Suspected",
+    "category": "head",
+    "content": "If someone has a head injury with loss of consciousness, confusion, vomiting, or unequal pupils – call 108. If conscious, keep them still and apply a cold pack to the swelling. Do not move the person unnecessarily (risk of spinal injury). Observe for signs of deterioration (worsening headache, vomiting, slurred speech) and seek emergency care.",
+    "tags": ["head injury", "concussion", "trauma", "emergency", "brain"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_034",
+    "title": "Spinal Injury – Suspected",
+    "category": "spinal",
+    "content": "If a person has fallen or had a trauma with neck or back pain, numbness, or weakness – do NOT move them unless they are in immediate danger (fire, traffic). Keep the head and neck in a neutral position. Call 108. If they are unconscious, check breathing and pulse without moving the neck. Do not remove a helmet if one is on.",
+    "tags": ["spinal injury", "neck", "back", "trauma", "immobilisation"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_035",
+    "title": "Amputation – Traumatic (Severed Limb)",
+    "category": "bleeding",
+    "content": "Control bleeding by applying firm pressure with a clean cloth. Call 108. Do not put the severed part directly on ice – wrap it in a clean moist cloth, place it in a plastic bag, and keep it cool (but not frozen) by placing the bag in another container with ice. If possible, bring the amputated part to the hospital with the patient.",
+    "tags": ["amputation", "severe bleeding", "trauma", "emergency", "severed limb"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_036",
+    "title": "Tick Bite – Removal",
+    "category": "bite",
+    "content": "Use fine‑tipped tweezers to grasp the tick as close to the skin as possible. Pull steadily and firmly upward – do not twist or jerk. Do not use heat, petroleum jelly, or alcohol to make it detach. After removal, clean the bite area with soap and water. Monitor for rash or fever (Lyme disease) and seek medical care if symptoms develop.",
+    "tags": ["tick", "bite", "removal", "Lyme", "first aid"],
+    "source": "CDC Tick Removal"
+  },
+  {
+    "id": "fa_037",
+    "title": "Jellyfish Sting – First Aid",
+    "category": "sting",
+    "content": "Rinse the area with vinegar (acetic acid) – do NOT use fresh water, alcohol, or urine. Remove any tentacles with tweezers (wear gloves). Soak the affected part in hot water (45°C) for 20 minutes to relieve pain. Seek medical care if severe pain, breathing difficulty, or allergic reaction occurs.",
+    "tags": ["jellyfish", "sting", "marine", "vinegar", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_038",
+    "title": "Animal Bite (Dog/Cat) – First Aid",
+    "category": "bite",
+    "content": "Wash the wound immediately with soap and running water for at least 5 minutes. Apply pressure to stop bleeding and cover with a clean dressing. Seek medical care for tetanus booster, antibiotics, and rabies risk assessment. Report the bite to local authorities if the animal is stray or unknown. If the animal is rabid, post‑exposure rabies vaccine is needed.",
+    "tags": ["dog bite", "cat bite", "rabies", "wound", "infection"],
+    "source": "WHO Rabies Guidelines"
+  },
+  {
+    "id": "fa_039",
+    "title": "Human Bite – First Aid",
+    "category": "bite",
+    "content": "Human bites can become infected easily. Wash thoroughly with soap and water. Apply antibacterial ointment and cover with a sterile dressing. Seek medical care, especially if the bite broke the skin (risk of infection and transmission of blood‑borne diseases). Tetanus and hepatitis B prophylaxis may be needed.",
+    "tags": ["human bite", "infection", "wound", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_040",
+    "title": "Nosebleed – Children",
+    "category": "bleeding",
+    "content": "For a child with a nosebleed: have them sit upright and lean slightly forward. Pinch the soft part of the nose for 10 minutes continuously. Apply an ice pack to the bridge of the nose. If bleeding persists, seek medical attention. Keep the child calm and do not let them blow their nose for several hours.",
+    "tags": ["nosebleed", "children", "epistaxis", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_041",
+    "title": "Tooth Avulsion (Knocked‑Out Tooth)",
+    "category": "dental",
+    "content": "Pick up the tooth by the crown (not the root). Rinse gently with milk or saline if dirty – do not scrub. Try to reinsert it into the socket (if possible) and hold in place by biting on a gauze. If not, store it in milk or the person's saliva (not water). Seek emergency dental care within 30 minutes for best chance of saving the tooth.",
+    "tags": ["tooth", "avulsion", "dental", "emergency", "knocked out"],
+    "source": "ADA First Aid"
+  },
+  {
+    "id": "fa_042",
+    "title": "Dental Abscess – First Aid",
+    "category": "dental",
+    "content": "Rinse the mouth with warm salt water. Apply a cold pack to the cheek to reduce swelling. Take over‑the‑counter pain relievers (paracetamol or ibuprofen). Do not apply heat. See a dentist as soon as possible; if fever or difficulty breathing/swallowing occurs, go to the emergency room.",
+    "tags": ["abscess", "tooth infection", "dental", "pain", "emergency"],
+    "source": "ADA First Aid"
+  },
+  {
+    "id": "fa_043",
+    "title": "Broken Tooth – First Aid",
+    "category": "dental",
+    "content": "Rinse the mouth with warm water. Apply a cold pack to the outside of the mouth to reduce swelling. Save any broken pieces. Take pain relievers. See a dentist immediately. If the nerve is exposed, it can be very painful – keep the area clean and avoid chewing on that side.",
+    "tags": ["broken tooth", "dental", "fracture", "pain", "first aid"],
+    "source": "ADA First Aid"
+  },
+  {
+    "id": "fa_044",
+    "title": "Blisters – Prevention and Care",
+    "category": "skin",
+    "content": "Prevent blisters by wearing well‑fitting shoes and using moisture‑wicking socks. For an intact blister, do not pop it – cover with a sterile dressing or moleskin. If it is painful, you can drain it by sterilising a needle, puncturing the edge, and applying gentle pressure – then cover with antiseptic. Monitor for signs of infection.",
+    "tags": ["blister", "skin", "friction", "foot", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_045",
+    "title": "Sunburn – First Aid",
+    "category": "skin",
+    "content": "Cool the skin with cool (not cold) water or a cool wet cloth. Apply aloe vera gel or a moisturiser containing aloe. Take over‑the‑counter pain relievers like ibuprofen. Drink extra water to prevent dehydration. Protect sunburned skin from further sun exposure. If blisters or severe pain occur, seek medical help.",
+    "tags": ["sunburn", "UV", "skin", "first aid", "aloe"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_046",
+    "title": "Foreign Body in Ear – Removal",
+    "category": "ent",
+    "content": "Do not attempt to remove an object from the ear with cotton swabs or tweezers – this can push it deeper. If an insect is inside, shine a light near the ear or instil a few drops of mineral or olive oil to float it out. If the object is stuck or causes pain, see an ENT specialist. Do not use water if a perforated eardrum is suspected.",
+    "tags": ["ear", "foreign body", "insect", "ent", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_047",
+    "title": "Foreign Body in Nose",
+    "category": "ent",
+    "content": "For children, if an object is lodged in the nose, ask them to breathe through the mouth. Do not try to remove it with tweezers – risk of pushing it further. If the child is old enough, have them blow their nose gently while pressing the other nostril. If unsuccessful, seek ENT help. Do not use water or air pressure.",
+    "tags": ["nose", "foreign body", "children", "ent", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_048",
+    "title": "Vomiting – First Aid and Recovery",
+    "category": "general",
+    "content": "Rest the stomach: do not eat solid foods for a few hours. Sip clear fluids (water, ORS, or clear broth) slowly. Avoid dairy, caffeine, alcohol, and fatty foods. If vomiting persists for more than 24 hours, or if there is blood, severe headache, or signs of dehydration, seek medical care. Reintroduce bland foods gradually.",
+    "tags": ["vomiting", "nausea", "dehydration", "ORS", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_049",
+    "title": "Diarrhoea – Home Management",
+    "category": "general",
+    "content": "Prevent dehydration: drink ORS (1 packet in 1 litre of clean water) regularly. Continue eating light, easily digestible foods (bananas, rice, toast). Avoid dairy, caffeine, and fatty foods. Wash hands frequently. If diarrhoea lasts >3 days, or if there is blood in stool, severe pain, or high fever, see a doctor.",
+    "tags": ["diarrhoea", "ORS", "dehydration", "handwashing", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_050",
+    "title": "Constipation – Immediate Relief",
+    "category": "general",
+    "content": "Increase fluid intake (warm water, prune juice). Eat high‑fiber foods (fruits, vegetables, whole grains). If needed, use a stool softener (docusate) or a mild laxative (lactulose) as directed. Do not use stimulant laxatives regularly. If constipation is associated with severe pain, vomiting, or absent bowel movements for >3 days, seek medical advice.",
+    "tags": ["constipation", "fiber", "laxative", "first aid", "digestion"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_051",
+    "title": "Hiccups – Persistent (First Aid)",
+    "category": "general",
+    "content": "Try these home remedies: hold your breath for 10–20 seconds, drink a glass of cold water quickly, bite a lemon, or swallow a spoonful of sugar. If hiccups persist for more than 48 hours, or are associated with severe pain or neurological symptoms, seek medical attention (may indicate underlying problem).",
+    "tags": ["hiccups", "home remedies", "breath", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_052",
+    "title": "Muscle Cramp – Relief",
+    "category": "injury",
+    "content": "Stop the activity and gently stretch the cramped muscle (e.g., for a calf cramp, pull the toes towards the shin). Massage the area with gentle pressure. Apply a heat pack or warm compress to relax the muscle. Stay hydrated; if cramps recur frequently, consider electrolyte replacement (sports drinks or ORS).",
+    "tags": ["muscle cramp", "spasm", "stretch", "massage", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_053",
+    "title": "Fainting (Syncope) – First Aid",
+    "category": "general",
+    "content": "Lay the person flat on their back. Elevate their legs above heart level to improve blood flow to the brain. Loosen tight clothing. Check for breathing. If they do not regain consciousness within 1–2 minutes, call 108. Do not give food or drink until they are fully conscious. If they fell, check for injuries.",
+    "tags": ["fainting", "syncope", "collapse", "first aid", "recovery position"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_054",
+    "title": "Shock – First Aid (Hypovolaemic / Anaphylactic)",
+    "category": "emergency",
+    "content": "Lay the person flat and elevate the legs (if no head/neck injury). Keep them warm with a blanket. Treat the underlying cause (e.g., stop bleeding, give EpiPen for anaphylaxis). Monitor breathing and pulse. Call 108. Do not give anything by mouth. Shock can be life‑threatening and requires urgent medical attention.",
+    "tags": ["shock", "hypotension", "emergency", "first aid", "circulation"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_055",
+    "title": "Hyperventilation – First Aid",
+    "category": "respiratory",
+    "content": "Help the person slow their breathing – encourage slow, deep breaths (in through nose, out through mouth) or have them breathe into a paper bag (if it helps). Sit them upright, speak calmly, and reassure them. If symptoms persist or if there is chest pain or confusion, seek medical attention.",
+    "tags": ["hyperventilation", "breathing", "anxiety", "panic", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_056",
+    "title": "Febrile Seizure in Children – First Aid",
+    "category": "seizure",
+    "content": "If a child has a convulsion with fever: place them on the floor on their side, protect their head, and loosen clothing. Do not put anything in the mouth. Note the duration. Call 108 if the seizure lasts more than 5 minutes. After it stops, treat the fever with paracetamol (as per weight) and seek medical evaluation to rule out meningitis.",
+    "tags": ["febrile seizure", "children", "fever", "convulsion", "emergency"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_057",
+    "title": "Meningitis Rash (Non‑blanching) – Recognition",
+    "category": "emergency",
+    "content": "A non‑blanching rash (does not fade when pressed with a glass) accompanied by fever, headache, and neck stiffness may indicate meningococcal meningitis. Call 108 immediately. Do not wait for the rash to appear – if there is a high fever with severe headache and stiff neck, seek emergency care.",
+    "tags": ["meningitis", "rash", "non-blanching", "emergency", "meningococcal"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_058",
+    "title": "Allergic Reaction – Mild (Hives, Itching)",
+    "category": "allergy",
+    "content": "Give an oral antihistamine (cetirizine, loratadine) as directed. Apply cool compresses to itchy areas. Monitor for signs of progression to anaphylaxis (difficulty breathing, swelling of face/lips). Avoid the trigger. If symptoms worsen or breathing becomes difficult, call 108 and use an EpiPen if available.",
+    "tags": ["allergy", "hives", "itching", "antihistamine", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_059",
+    "title": "Earache – First Aid",
+    "category": "ent",
+    "content": "Apply a warm (not hot) compress to the ear. Over‑the‑counter pain relievers (paracetamol or ibuprofen) can help. Rest with the head elevated. Do not insert cotton swabs or drops unless prescribed. If earache is accompanied by fever, discharge, or hearing loss, see a doctor.",
+    "tags": ["earache", "pain", "warm compress", "first aid", "ent"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_060",
+    "title": "Sore Throat – Symptom Relief",
+    "category": "general",
+    "content": "Gargle with warm salt water (half teaspoon salt in a glass of warm water) several times a day. Drink warm liquids (honey and lemon in tea). Use throat lozenges or sprays. If there is high fever, difficulty swallowing, or pus on tonsils, seek medical care – may need antibiotics for strep throat.",
+    "tags": ["sore throat", "gargle", "salt water", "throat", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_061",
+    "title": "Fever – Home Management",
+    "category": "general",
+    "content": "Rest and drink plenty of fluids. Take paracetamol or ibuprofen to reduce fever (do not give aspirin to children). Sponge with lukewarm water (not cold). Monitor temperature. Seek medical care if fever >103°F (39.5°C), lasts more than 3 days, or is accompanied by stiff neck, rash, or difficulty breathing.",
+    "tags": ["fever", "temperature", "paracetamol", "hydration", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_062",
+    "title": "Burns – Electrical (First Aid)",
+    "category": "burns",
+    "content": "Turn off the power source. If unable, use a dry wooden object to move the person away. Call 108. Treat as a thermal burn: cool with water, cover with sterile dressing. Even if the burn looks minor, electrical injury can cause internal damage – all such patients need hospital evaluation. Monitor for cardiac arrhythmias.",
+    "tags": ["electrical burn", "shock", "emergency", "internal injury", "cardiac"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_063",
+    "title": "Burns – Radiation (Sunburn / UV)",
+    "category": "burns",
+    "content": "Cool the skin with cool compresses, apply aloe vera gel, and take oral fluids. For severe sunburn with blistering or fever, seek medical care. Prevention is key: use sunscreen, wear protective clothing, and avoid midday sun.",
+    "tags": ["sunburn", "UV", "radiation", "skin", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_064",
+    "title": "Facial Injury – First Aid",
+    "category": "head",
+    "content": "Apply firm pressure with a clean cloth to control bleeding. If there is a suspected fracture, do not press on the bone. Apply an ice pack to reduce swelling. If there is injury to the eye, mouth, or airway, seek emergency care. For any loss of consciousness or confusion, call 108.",
+    "tags": ["facial injury", "bleeding", "trauma", "first aid", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_065",
+    "title": "Chest Injury – First Aid",
+    "category": "chest",
+    "content": "If there is a penetrating chest wound, do not remove the object – stabilise it. If there is an open wound, cover it with a non‑porous dressing (plastic) taped on three sides to allow air to escape but not enter (preventing tension pneumothorax). Call 108 immediately. Monitor breathing and pulse.",
+    "tags": ["chest injury", "penetrating", "pneumothorax", "emergency", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_066",
+    "title": "Abdominal Injury – Blunt Trauma",
+    "category": "abdominal",
+    "content": "Lay the person flat with bent knees to relieve tension. Apply a cold pack to the area. Do not give food or drink. Watch for signs of internal bleeding (dizziness, weakness, distended abdomen). Call 108 immediately. Do not attempt to push protruding organs back in – cover with a moist sterile dressing.",
+    "tags": ["abdominal injury", "blunt trauma", "internal bleeding", "emergency", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_067",
+    "title": "Pelvic Fracture – First Aid",
+    "category": "fracture",
+    "content": "Keep the person still. Do not move them unless absolutely necessary. Stabilise the pelvis by placing a sheet or towel around the hips and tying it snugly (not too tight). Monitor for signs of shock and internal bleeding. Call 108 immediately. Do not give food or drink.",
+    "tags": ["pelvic fracture", "trauma", "stabilisation", "shock", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_068",
+    "title": "Amputation – Finger/Toe",
+    "category": "bleeding",
+    "content": "Apply direct pressure to the wound with a sterile pad. Elevate the hand/foot. Save the amputated part – wrap it in a moist cloth, place in a sealed plastic bag, and then in another container with ice (do not place directly on ice). Seek emergency care. Time is critical for reattachment.",
+    "tags": ["amputation", "finger", "toe", "bleeding", "reattachment"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_069",
+    "title": "Eye – Something in Eye (Non‑embedded)",
+    "category": "eye",
+    "content": "Do not rub. Pull the upper eyelid down over the lower lashes to let tears flush out the object. If that doesn't work, rinse the eye with clean water or saline solution using a clean cup or syringe. If the object is embedded or remains, seek medical help. Do not use tweezers or cotton swabs.",
+    "tags": ["eye", "foreign body", "irrigation", "first aid", "safety"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_070",
+    "title": "Eye – Chemical Burn (Alkali/Acid)",
+    "category": "eye",
+    "content": "Immediately flush the eye with copious amounts of water for at least 20 minutes. Hold the eyelid open. Call 108 or poison control. Do not try to neutralise the chemical. Continue flushing while en route to hospital. Acid burns are less severe than alkali burns – but both need urgent care.",
+    "tags": ["chemical burn", "eye", "alkali", "acid", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_071",
+    "title": "Eye – Blowout Fracture (Black Eye)",
+    "category": "eye",
+    "content": "Apply a cold pack (not directly on the eye) to reduce swelling and pain. Do not blow the nose (can cause air to enter the orbit). Seek medical evaluation to rule out orbital fracture, especially if there is double vision, numbness, or difficulty moving the eye.",
+    "tags": ["black eye", "orbital fracture", "trauma", "eye", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_072",
+    "title": "Stingray Sting – First Aid",
+    "category": "sting",
+    "content": "Immerse the affected part in hot water (as hot as can be tolerated, ~45°C) for 30–90 minutes to denature the venom. Remove any visible spines with tweezers. Clean the wound and seek medical care – stings can cause severe tissue damage and infection. Watch for systemic symptoms (nausea, cramps).",
+    "tags": ["stingray", "marine", "venom", "hot water", "wound"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_073",
+    "title": "Scorpion Sting – First Aid",
+    "category": "sting",
+    "content": "Wash the area with soap and water. Apply a cold pack to reduce pain and swelling. Do not cut, suck, or apply tourniquets. Seek medical care, especially for children, elderly, or if severe pain, vomiting, or difficulty breathing occurs. Antivenom may be needed – available at government hospitals.",
+    "tags": ["scorpion", "sting", "venom", "first aid", "emergency"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_074",
+    "title": "Spider Bite – First Aid (Non‑Venomous)",
+    "category": "bite",
+    "content": "Clean the bite with soap and water. Apply a cold pack to reduce swelling. Elevate the area. Take paracetamol or ibuprofen for pain. Monitor for signs of infection or systemic reaction. If the spider is a black widow or brown recluse (rare in India), seek emergency care.",
+    "tags": ["spider bite", "first aid", "cleaning", "cold pack", "pain"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_075",
+    "title": "Bee Sting – Removal of Stinger",
+    "category": "sting",
+    "content": "Scrape out the stinger using a credit card or fingernail – do not squeeze (squeezing injects more venom). Apply a cold pack. Give an antihistamine for itching. If allergic symptoms (hives, swelling, difficulty breathing) develop, treat as anaphylaxis and call 108.",
+    "tags": ["bee sting", "stinger removal", "allergy", "first aid", "antihistamine"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_076",
+    "title": "Wasp/Hornet Sting – First Aid",
+    "category": "sting",
+    "content": "Unlike bees, wasps do not leave a stinger. Clean the area with soap and water. Apply a cold pack to reduce swelling. Give antihistamines and pain relievers. If there is a history of allergy or signs of anaphylaxis, seek emergency care.",
+    "tags": ["wasp", "hornet", "sting", "allergy", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_077",
+    "title": "Ant Bite (Fire Ant) – First Aid",
+    "category": "bite",
+    "content": "Wash the area with soap and water. Apply a cold pack. Antihistamines may help with itching. Monitor for signs of infection (blisters may form). Do not scratch – can lead to secondary infection. If multiple stings or allergic reaction, seek medical care.",
+    "tags": ["fire ant", "bite", "itching", "blister", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_078",
+    "title": "Tetanus – Wound Care Prophylaxis",
+    "category": "wound",
+    "content": "Clean any wound thoroughly with soap and running water. If the wound is deep, dirty, or caused by a puncture, and the person's tetanus vaccination is not up‑to‑date (last dose >10 years), seek medical care for a tetanus booster. Always clean wounds promptly to prevent tetanus.",
+    "tags": ["tetanus", "wound", "prophylaxis", "vaccination", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_079",
+    "title": "Wound – Deep Laceration (Suturing Needed)",
+    "category": "wound",
+    "content": "Apply direct pressure to stop bleeding. Clean the wound gently with clean water. If the edges are gaping, or the wound is on the face, hands, or joints, or if there is debris embedded, seek medical care for sutures. Do not use tourniquets for long periods.",
+    "tags": ["laceration", "wound", "sutures", "bleeding", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_080",
+    "title": "Puncture Wound – First Aid",
+    "category": "wound",
+    "content": "Clean the wound with soap and water. Apply an antibiotic ointment and cover with a dressing. Puncture wounds are prone to infection (especially tetanus). Seek medical care if deep, or if caused by a dirty object, or if there is a foreign body retained. Tetanus booster may be needed.",
+    "tags": ["puncture", "wound", "infection", "tetanus", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_081",
+    "title": "Incision (Clean Cut) – First Aid",
+    "category": "wound",
+    "content": "Apply direct pressure to stop bleeding. Clean the wound with soap and water. Apply an antibiotic ointment and cover with a sterile bandage. Keep the wound clean and dry. If the edges are well‑apposed and the cut is small, it may heal without sutures. If it gapes, see a doctor.",
+    "tags": ["incision", "cut", "bleeding", "wound", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_082",
+    "title": "Abrasion (Graze) – First Aid",
+    "category": "wound",
+    "content": "Clean the abrasion with mild soap and water to remove dirt and debris. Apply an antibiotic ointment to prevent infection. Cover with a sterile non‑stick dressing. Change the dressing daily. Do not let the wound dry out – keeping it moist helps healing. Watch for signs of infection.",
+    "tags": ["abrasion", "graze", "wound", "cleaning", "dressing"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_083",
+    "title": "Burn – Sunburn (Minor)",
+    "category": "burns",
+    "content": "Cool the skin with cool compresses or a cool bath. Apply aloe vera or moisturiser. Drink extra fluids. Take ibuprofen for pain. Do not apply ice directly. If blisters form, do not pop them. If sunburn is severe (>20% body surface) or associated with fever, seek medical care.",
+    "tags": ["sunburn", "UV", "cooling", "aloe", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_084",
+    "title": "Burns – Scalds (Hot Liquid)",
+    "category": "burns",
+    "content": "Immediately remove clothing that is not sticking to the burn. Cool the area with running cool water for at least 20 minutes. Cover with a clean, non‑adherent dressing. Do not apply butter, oils, or ointments. Seek medical care if the burn is large, deep, or on the face, hands, or genitals.",
+    "tags": ["scald", "hot liquid", "burn", "cooling", "first aid"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_085",
+    "title": "Burns – Fire/Flame (Thermal)",
+    "category": "burns",
+    "content": "Stop, drop, and roll if clothing is on fire. Cool the burn with water for 20 minutes. Cover with a clean, moist cloth. Call 108 for severe burns. Do not apply ice or remove clothing stuck to the burn. Watch for signs of inhalation injury (singed nasal hairs, sooty sputum, hoarseness).",
+    "tags": ["fire", "flame", "burn", "emergency", "inhalation"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_086",
+    "title": "Burns – Electrical (Internal Damage Risk)",
+    "category": "burns",
+    "content": "Turn off the power source. If the person is in contact with live current, do not touch them – use a non‑conductive object to separate them. Call 108. Treat visible burns with cool water. Even if external burns look minor, internal injuries may be severe – all electrical burns require hospital evaluation.",
+    "tags": ["electrical burn", "current", "internal injury", "emergency", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_087",
+    "title": "Burns – Chemical (Dry Powder)",
+    "category": "burns",
+    "content": "Brush off dry powder chemicals carefully before flushing. Then flush with large amounts of water for at least 20 minutes. Remove contaminated clothing. Call 108 or poison control. Do not apply any ointment. Continue flushing while transporting to hospital.",
+    "tags": ["chemical burn", "powder", "flushing", "emergency", "poison"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_088",
+    "title": "Burns – Tar or Hot Grease",
+    "category": "burns",
+    "content": "Do not try to remove the tar or grease – it will come off during dressing changes. Cool the area with running cool water. Do not apply ice. Cover with a clean dressing. Seek medical care for any burn from hot grease – they tend to be deep and prone to infection.",
+    "tags": ["tar burn", "grease burn", "hot oil", "cooling", "dressing"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_089",
+    "title": "Blisters – Burn (Second Degree)",
+    "category": "burns",
+    "content": "If the blister is intact, do not pop it. Cool the area, cover with a loose sterile dressing. If it breaks, clean gently and apply antibiotic ointment. Watch for signs of infection (redness, pain, swelling). Large blisters or burns on hands, feet, or face require medical care.",
+    "tags": ["blister", "burn", "second degree", "dressing", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_090",
+    "title": "Fracture – Open (Compound)",
+    "category": "fracture",
+    "content": "Do not try to push the bone back in. Cover the wound with a sterile dressing. Immobilise the limb. Call 108. Apply a cold pack to the area (not directly on the open wound). Monitor for shock. Do not give food or drink.",
+    "tags": ["open fracture", "compound fracture", "bone", "wound", "emergency"],
+    "source": "WHO First Aid Guidelines"
+  },
+  {
+    "id": "fa_091",
+    "title": "Fracture – Collarbone (Clavicle)",
+    "category": "fracture",
+    "content": "Support the arm on the injured side with a sling (use a triangular bandage or cloth). Apply a cold pack to the area. The person may feel pain with shoulder movement. Seek medical care for X‑ray and proper immobilisation. Do not try to reduce the fracture.",
+    "tags": ["clavicle", "collarbone", "fracture", "sling", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_092",
+    "title": "Fracture – Rib (Suspected)",
+    "category": "fracture",
+    "content": "If someone has chest pain after trauma and difficulty breathing, suspect rib fracture. Apply a cold pack to the area. Encourage shallow breathing. Do not wrap the chest tightly (can restrict breathing). Seek medical care to rule out pneumothorax or hemothorax.",
+    "tags": ["rib fracture", "chest pain", "trauma", "first aid", "breathing"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_093",
+    "title": "Dislocation – Shoulder",
+    "category": "injury",
+    "content": "Support the arm in a comfortable position (e.g., sling). Do not try to pop it back in – this can cause nerve or vascular damage. Apply a cold pack to the area. Seek medical care immediately. X‑ray will confirm the dislocation and guide reduction.",
+    "tags": ["shoulder dislocation", "joint", "injury", "sling", "emergency"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_094",
+    "title": "Dislocation – Finger",
+    "category": "injury",
+    "content": "Apply a cold pack to reduce swelling. Do not attempt to pull or straighten the finger – this can cause fractures. Immobilise the finger with a splint (e.g., tape it to the adjacent finger). Seek medical care for X‑ray and reduction.",
+    "tags": ["finger dislocation", "joint", "splint", "cold pack", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_095",
+    "title": "Dislocation – Knee (Patella)",
+    "category": "injury",
+    "content": "Do not try to straighten the knee. Support the leg in the position found. Apply a cold pack. Call 108 for transport. Do not bear weight on the leg. Seek emergency care – knee dislocation can damage blood vessels and nerves.",
+    "tags": ["knee dislocation", "patella", "emergency", "splint", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_096",
+    "title": "Spinal Injury – Removal of Helmet",
+    "category": "spinal",
+    "content": "Do not remove a helmet from an injured person unless it is necessary for airway management. If you must remove it, have two people: one stabilises the head/neck, the other gently removes the helmet by pulling the straps apart and lifting off. Maintain in‑line stabilisation throughout. Call 108.",
+    "tags": ["helmet removal", "spinal", "trauma", "neck", "first aid"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_097",
+    "title": "Impalement (Penetrating Object)",
+    "category": "emergency",
+    "content": "Do not remove the impaled object – it may be tamponading bleeding. Stabilise the object with bulky dressings and tape. Call 108. If the object is in the chest or abdomen, monitor breathing and watch for signs of shock. Do not move the person unnecessarily.",
+    "tags": ["impalement", "penetrating", "stabilisation", "emergency", "object"],
+    "source": "Red Cross First Aid"
+  },
+  {
+    "id": "fa_098",
+    "title": "Snake Bite – Dry Bite (No Venom)",
+    "category": "bite",
+    "content": "Even if the snake did not inject venom, the wound can still become infected. Clean the wound with soap and water and cover with a dressing. Observe for any signs of swelling, pain, or systemic symptoms. If any develop, seek medical care. It is best to always get evaluated for a snake bite.",
+    "tags": ["dry bite", "snake", "venom", "infection", "first aid"],
+    "source": "WHO Guidelines on Snake Bite Management"
+  },
+  {
+    "id": "fa_099",
+    "title": "Rabies – Post‑Exposure Prophylaxis (PEP)",
+    "category": "bite",
+    "content": "After any bite from a potentially rabid animal, wash the wound with soap and water for 15 minutes. Apply an antiseptic (povidone‑iodine). Go to a government hospital immediately for PEP: rabies vaccine and rabies immunoglobulin (RIG) if indicated. PEP is nearly 100% effective if started early. Do not wait for symptoms.",
+    "tags": ["rabies", "PEP", "bite", "vaccine", "immunoglobulin"],
+    "source": "WHO Rabies Guidelines"
+  },
+  {
+    "id": "fa_100",
+    "title": "Allergic Reaction – Food Allergy (Mild)",
+    "category": "allergy",
+    "content": "If someone develops oral itching, hives, or mild throat discomfort after eating a known allergen, give an antihistamine (cetirizine). Monitor closely – if any signs of respiratory distress, swelling, or dizziness occur, treat as anaphylaxis and call 108. Avoid the allergen in the future.",
+    "tags": ["food allergy", "antihistamine", "hives", "itching", "first aid"],
+    "source": "Red Cross First Aid"
+  }
+]

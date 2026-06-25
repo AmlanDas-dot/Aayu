@@ -10,17 +10,11 @@ import { API_BASE_URL } from "../config/api";
  * /transcribe can import it from here.
  */
 export interface TranscriptionResponse {
-  selected_language: string;
-  detected_language: string;
-
-  original_text: string;
-  english_text: string;
-
-  processing_time_ms: number;
+  transcript: string;
 }
 
 /**
- * useSpeech — server-side transcription hook using MediaRecorder + Whisper.
+ * useSpeech — server-side transcription hook using MediaRecorder + STT Service.
  *
  * Pipeline:
  *   User Voice
@@ -33,7 +27,7 @@ export interface TranscriptionResponse {
  *   After receiving transcript, insert a translation step before passing text
  *   to the medical LLM:
  *
- *   Voice → Whisper (language) → IndicTrans2 (→ English)
+ *   Voice → STT (language) → IndicTrans2 (→ English)
  *         → Medical LLM
  *         → IndicTrans2 (← user language) → TTS (TTS_LANG_MAP[language])
  *
@@ -81,7 +75,7 @@ export function useSpeech(
 
       recorder.onstop = () => {
         // Fire-and-forget; errors handled inside
-        void _sendToWhisper();
+        void _sendToSTT();
       };
 
       recorder.onerror = () => {
@@ -99,7 +93,7 @@ export function useSpeech(
   }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // -------------------------------------------------------------------------
-  // stopListening — stop the recorder (triggers onstop → _sendToWhisper)
+  // stopListening — stop the recorder (triggers onstop → _sendToSTT)
   // -------------------------------------------------------------------------
   const stopListening = useCallback(() => {
     try {
@@ -119,9 +113,9 @@ export function useSpeech(
   }, []);
 
   // -------------------------------------------------------------------------
-  // _sendToWhisper — POST audio blob to /transcribe
+  // _sendToSTT — POST audio blob to /transcribe
   // -------------------------------------------------------------------------
-  const _sendToWhisper = async () => {
+  const _sendToSTT = async () => {
     if (chunksRef.current.length === 0) {
       _handleError("No audio captured. Please try again.");
       return;
@@ -147,14 +141,13 @@ export function useSpeech(
       const data: TranscriptionResponse = await response.json();
 
       console.log(
-        `[useSpeech] Transcription complete in ${data.processing_time_ms}ms`,
+        `[useSpeech] Transcription complete`,
         data
       );
 
-      setTranscript(data.english_text);
+      setTranscript(data.transcript);
 
-      // Backend already returns translated English text.
-      // transcript now contains english_text.
+      // Backend returns the string directly
       onTranscribed?.(data);
     } catch (err) {
       console.error("[useSpeech] Transcription request failed:", err);

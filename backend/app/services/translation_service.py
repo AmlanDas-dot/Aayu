@@ -34,6 +34,7 @@ _logger = logging.getLogger(__name__)
 
 _lock = threading.Lock()
 _state: str = "unloaded"   # "unloaded" | "loaded" | "failed"
+_INDIC_AVAILABLE: bool | None = None  # None = unchecked, True/False = result cached
 
 # Actual model objects — populated on first use
 _ip = None        # IndicProcessor
@@ -41,8 +42,16 @@ _tokenizer = None
 _model = None
 _device: str = "cpu"
 
-# Path to the locally downloaded checkpoint
-MODEL_PATH = r"D:\AI_Models\hub\models--ai4bharat--indictrans2-indic-en-1B\snapshots\ac3daf0ecd37be3b6957764a9179ab2b07fa9d6a"
+import os
+
+# Priority: env var (set in .env or shell) → HuggingFace auto-download cache.
+# Set INDICTRANS2_MODEL_PATH to a local snapshot folder if you have it downloaded;
+# otherwise the model is downloaded from HuggingFace on first use.
+MODEL_PATH: str = os.getenv(
+    "INDICTRANS2_MODEL_PATH",
+    "ai4bharat/indictrans2-indic-en-1B",   # HuggingFace repo ID — auto-downloads
+)
+_LOCAL_ONLY: bool = os.path.isabs(MODEL_PATH)  # True only if user gave a real path
 
 LANGUAGE_MAP: dict[str, str] = {
     "gu": "guj_Gujr",
@@ -68,6 +77,21 @@ def _load_model() -> None:
     """
     global _state, _ip, _tokenizer, _model, _device
 
+    global _INDIC_AVAILABLE
+    if _INDIC_AVAILABLE is None:
+        try:
+            import IndicTransToolkit  # noqa: F401
+            _INDIC_AVAILABLE = True
+        except ImportError:
+            _INDIC_AVAILABLE = False
+            _state = "unavailable"
+            _logger.warning(
+                "[Translation] IndicTransToolkit not installed. "
+                "Translation disabled — English passthrough only. "
+                "Install with: pip install IndicTransToolkit"
+            )
+            return
+
     # --- check under lock whether another thread already loaded ---
     if _state != "unloaded":
         return
@@ -89,7 +113,7 @@ def _load_model() -> None:
         _tokenizer = AutoTokenizer.from_pretrained(
             MODEL_PATH,
             trust_remote_code=True,
-            local_files_only=True,
+            local_files_only=_LOCAL_ONLY,
         )
 
         # Load to CPU first, then move to GPU — avoids a double-allocation spike
@@ -97,7 +121,7 @@ def _load_model() -> None:
         _model = AutoModelForSeq2SeqLM.from_pretrained(
             MODEL_PATH,
             trust_remote_code=True,
-            local_files_only=True,
+            local_files_only=_LOCAL_ONLY,
         )
         _model = _model.to(_device)
         _model.eval()  # Disable dropout — slightly faster inference
@@ -144,6 +168,9 @@ def translate_to_english(text: str, source_lang: str) -> str:
     if source_lang == "en":
         return text
 
+    if _state == "unavailable":
+        return text   # passthrough — no repeated warnings
+
     # Lazy-load under lock — thread-safe singleton init
     with _lock:
         if _state == "unloaded":
@@ -189,6 +216,63 @@ def translate_to_english(text: str, source_lang: str) -> str:
     except Exception as exc:
         _logger.error("[Translation] Inference failed: %s", exc)
         return text
+
+
+def translate_from_english(text: str, target_lang: str) -> str:
+    """
+    Translate English text to the target language using IndicTrans2.
+    Falls back to the original English text if translation fails or model is not loaded.
+    """
+    if _state == "unavailable":
+        return text   # passthrough — no repeated warnings
+
+    _load_model()
+
+    if _state != "loaded":
+        return text
+
+    if target_lang == "en":
+        return text
+
+    indic_lang = LANGUAGE_MAP.get(target_lang)
+    if not indic_lang:
+        _logger.warning("[Translation] Unknown target language: %s", target_lang)
+        return text
+
+    with _lock:
+        try:
+            import torch
+            batch = _ip.preprocess_batch(
+                [text],
+                src_lang="eng_Latn",
+                tgt_lang=indic_lang,
+            )
+            inputs = _tokenizer(
+                batch,
+                truncation=True,
+                padding="longest",
+                return_tensors="pt",
+                return_attention_mask=True,
+            ).to(_device)
+            with torch.no_grad():
+                generated_tokens = _model.generate(
+                    **inputs,
+                    use_cache=True,
+                    min_length=0,
+                    max_length=256,
+                    num_beams=5,
+                    num_return_sequences=1,
+                )
+            with _tokenizer.as_target_tokenizer():
+                decoded = _tokenizer.batch_decode(
+                    generated_tokens.detach().cpu().tolist(),
+                    skip_special_tokens=True,
+                    clean_up_tokenization_spaces=True,
+                )
+            return _ip.postprocess_batch(decoded, lang=indic_lang)[0]
+        except Exception as exc:
+            _logger.error("[Translation] translate_from_english failed: %s", exc)
+            return text
 
 
 def is_model_loaded() -> bool:

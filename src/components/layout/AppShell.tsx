@@ -1,67 +1,35 @@
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 import { AayuSidebar } from "../navigation/AayuSidebar";
 import { AayuHeader } from "../navigation/AayuHeader";
+import { DisclaimerBanner } from "../ui/DisclaimerBanner";
 
 interface AppShellProps {
   children: ReactNode;
 }
 
 export function AppShell({ children }: AppShellProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(() => {
-    const saved = localStorage.getItem("aayu_sidebar_open");
-    return saved !== null ? saved === "true" : true;
-  });
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [language, setLanguage] = useState("en");
-  const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1024);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("aayu_sidebar_open", String(sidebarOpen));
-  }, [sidebarOpen]);
-
-  const marginLeft = isMobile ? 0 : sidebarOpen ? 260 : 72;
+  if (location.pathname === "/") {
+    return <>{children}</>;
+  }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="aayu-shell">
       <AayuSidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen((o) => !o)} />
-
-      <div
-        style={{ marginLeft, width: isMobile ? "100%" : `calc(100% - ${marginLeft}px)` }}
-        className="min-h-screen flex flex-col transition-all duration-300"
-      >
+      <div className="aayu-main">
         <AayuHeader
           language={language}
           onLanguageChange={setLanguage}
-          onMenuToggle={() => setSidebarOpen((o) => !o)}
-          isOpen={sidebarOpen}
         />
-
-        {/* Disclaimer */}
-        <div className="bg-amber-50 border-b border-amber-100 px-4 py-2">
-          <p className="text-xs text-amber-800 text-center font-medium">
-            ⚠️ AAYU provides health <strong>guidance</strong>, not diagnosis. Always consult a qualified healthcare professional.
-          </p>
-        </div>
-
-        <main id="main-content" className="flex-1 p-4 lg:p-6" role="main">
+        <DisclaimerBanner />
+        <main className="aayu-content">
           {children}
         </main>
       </div>
-
-      {/* Mobile overlay when sidebar open */}
-      {sidebarOpen && isMobile && (
-        <div
-          className="fixed inset-0 bg-black/20 z-30"
-          onClick={() => setSidebarOpen(false)}
-          aria-hidden="true"
-        />
-      )}
     </div>
   );
 }

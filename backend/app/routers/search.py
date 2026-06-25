@@ -43,6 +43,7 @@ class SearchResultItem(BaseModel):
     category: str
     source: str
     tags: Any
+    urgency: str = ""
     score: float
     distance: float
     collection: str

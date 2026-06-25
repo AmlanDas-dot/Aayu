@@ -1,0 +1,802 @@
+[
+  {
+    "id": "resp_001",
+    "category": "Allergic Rhinitis",
+    "symptoms": ["sneezing", "runny nose", "itchy eyes", "nasal congestion", "watery eyes", "post-nasal drip"],
+    "guidance": "Avoid allergens such as dust, pollen, and pet dander. Use prescribed antihistamines or intranasal corticosteroids. Saline nasal rinses may help. If symptoms interfere with daily life, see an ENT specialist. Immunotherapy (allergy shots) can provide long-term relief.",
+    "precautions": ["Keep living spaces clean and dust-free", "Use masks during high pollen seasons", "Avoid known allergy triggers", "Wash bedding in hot water", "Keep windows closed during pollen season"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_002",
+    "category": "Acute Sinusitis",
+    "symptoms": ["facial pain or pressure over the sinuses", "nasal congestion", "thick yellow/green nasal discharge", "headache", "reduced sense of smell", "fever", "cough", "dental pain"],
+    "guidance": "Use steam inhalation, saline nasal sprays, and stay well-hydrated. Over-the-counter decongestants may help. If symptoms persist beyond 10 days or worsen, see a doctor; bacterial sinusitis may require antibiotics. Avoid smoking and allergens.",
+    "precautions": ["Avoid smoking and secondhand smoke", "Treat allergies promptly", "Maintain good hydration", "Use a humidifier in dry environments", "Avoid flying if severely congested"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_003",
+    "category": "Lung Cancer (Malignant Neoplasm)",
+    "symptoms": ["persistent cough (lasting >3 weeks)", "coughing up blood (haemoptysis)", "chest pain that worsens with deep breathing", "unexplained weight loss", "shortness of breath", "hoarseness", "recurrent respiratory infections", "clubbing of fingers"],
+    "guidance": "Consult a pulmonologist immediately if symptoms persist. Early detection through low-dose CT screening (in high-risk individuals) improves outcomes. Treatment includes surgery, chemotherapy, radiation, targeted therapy, and immunotherapy. Free treatment is available under PMJAY for eligible patients. Smoking cessation is the most important preventive measure.",
+    "precautions": ["Avoid smoking and tobacco in all forms", "Avoid exposure to industrial pollutants (asbestos, radon, silica)", "Attend regular health screenings if high-risk (age >50, smoking history)", "Maintain a healthy diet rich in fruits and vegetables", "Report any persistent cough or blood in sputum immediately"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_004",
+    "category": "Common Cold (Acute Viral Rhinitis)",
+    "symptoms": ["runny or stuffy nose", "sneezing", "sore throat", "mild cough", "low-grade fever", "malaise", "watery eyes"],
+    "guidance": "Rest, drink plenty of fluids, and use saline nasal sprays. Over-the-counter cold medications may relieve symptoms. Antibiotics are not effective for viral colds. Handwashing and avoiding close contact with infected persons help prevent spread.",
+    "precautions": ["Wash hands frequently with soap and water", "Avoid touching your face", "Cover coughs and sneezes with a tissue or elbow", "Stay home when sick", "Use disposable tissues and dispose of them properly"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_005",
+    "category": "Acute Pharyngitis (Sore Throat)",
+    "symptoms": ["sore throat, pain on swallowing", "red and swollen tonsils/pharynx", "fever", "headache", "swollen lymph nodes in the neck", "cough", "hoarseness"],
+    "guidance": "Gargle with warm salt water, drink warm liquids (honey and lemon tea), and use throat lozenges. If fever is high, take paracetamol. If symptoms persist >3 days, or if there is pus on tonsils, see a doctor – may need antibiotics for strep throat. Avoid spicy foods and smoking.",
+    "precautions": ["Wash hands regularly", "Avoid sharing food and utensils", "Avoid smoking and secondhand smoke", "Stay hydrated", "If you have strep, complete the antibiotic course"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_006",
+    "category": "Acute Laryngitis",
+    "symptoms": ["hoarseness or loss of voice", "sore throat", "dry cough", "fever", "feeling of a lump in the throat", "difficulty speaking"],
+    "guidance": "Rest your voice – avoid talking and whispering (whispering strains the vocal cords). Drink warm fluids, use a humidifier, and avoid irritants (smoke, alcohol). If hoarseness lasts more than 2 weeks, see an ENT specialist. Usually self-limiting.",
+    "precautions": ["Avoid smoking and alcohol", "Stay well-hydrated", "Use a humidifier", "Avoid clearing your throat harshly", "If vocal strain is chronic, seek voice therapy"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_007",
+    "category": "Acute Tracheitis",
+    "symptoms": ["severe cough (often with sputum)", "pain or burning in the chest (tracheal area)", "fever", "hoarseness", "difficulty breathing", "wheezing (in children)"],
+    "guidance": "Usually viral; rest, fluids, and warm steam inhalation help. Cough syrups with expectorants may assist. If fever is high or breathing becomes difficult, seek medical care. Bacterial tracheitis (more common in children) requires antibiotics and may need hospitalisation.",
+    "precautions": ["Avoid smoke and irritants", "Stay hydrated", "Use a cool-mist humidifier", "If you have a persistent cough, see a doctor", "Cover your mouth when coughing"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_008",
+    "category": "Acute Bronchitis (Viral)",
+    "symptoms": ["persistent cough (dry or productive)", "wheezing", "shortness of breath", "chest discomfort", "mild fever", "fatigue", "production of clear or white sputum"],
+    "guidance": "Rest, drink plenty of fluids, and use a humidifier. Over-the-counter cough suppressants or expectorants may help. If coughing persists >3 weeks, or if you have high fever, shortness of breath, or blood in sputum, consult a doctor. Antibiotics are not effective for viral bronchitis. Avoid smoking.",
+    "precautions": ["Avoid smoke and air pollution", "Wash hands frequently", "Cover coughs", "Stay well-hydrated", "If you have asthma, follow your asthma action plan"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_009",
+    "category": "Non-Allergic Rhinitis (Vasomotor Rhinitis)",
+    "symptoms": ["chronic nasal congestion", "runny nose", "post-nasal drip", "no itching or sneezing (unlike allergic)", "triggered by changes in temperature, humidity, or strong odors"],
+    "guidance": "Avoid triggers such as perfumes, smoke, and temperature changes. Saline nasal rinses and intranasal corticosteroids can help. In some cases, antihistamines are not effective. See an ENT if symptoms are severe.",
+    "precautions": ["Avoid strong odors and smoke", "Use a humidifier", "Avoid sudden temperature changes", "Keep nasal passages moist with saline sprays", "If symptoms persist, consider allergy testing to rule out allergy"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_010",
+    "category": "Nasal Polyps",
+    "symptoms": ["chronic nasal congestion", "runny nose", "post-nasal drip", "reduced sense of smell", "snoring", "headache", "facial pain (if associated with sinusitis)"],
+    "guidance": "Treatment includes intranasal corticosteroids to shrink polyps. In severe cases, oral steroids or surgery (polypectomy) may be needed. Manage underlying allergies or asthma. Regular follow-up with an ENT is important.",
+    "precautions": ["Treat underlying allergies and asthma", "Avoid nasal irritants", "Use saline rinses", "If you have recurring polyps, consider allergy immunotherapy", "Follow up with your ENT"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_011",
+    "category": "Deviated Nasal Septum",
+    "symptoms": ["difficulty breathing through the nose (often one side)", "frequent nosebleeds", "chronic sinusitis", "snoring", "sleep apnea (in severe cases)", "nasal congestion"],
+    "guidance": "Mild cases need no treatment. If symptoms are severe, septoplasty (surgical repair) may be recommended. This is a common condition. Medical management includes nasal decongestants and saline sprays.",
+    "precautions": ["Avoid nasal trauma", "Use saline sprays for dryness", "If you have sleep apnea, treat it", "Consult an ENT if breathing difficulty affects daily life", "Post-surgery follow-up is important"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_012",
+    "category": "Vocal Cord Dysfunction (Paradoxical Vocal Fold Motion)",
+    "symptoms": ["episodes of difficulty breathing (inspiratory stridor)", "feeling of throat tightness", "hoarseness", "coughing", "wheezing (more often inspiratory)", "triggered by exercise, stress, or irritants"],
+    "guidance": "This condition is often misdiagnosed as asthma. Speech therapy with breathing exercises is the main treatment. Avoid triggers and practice diaphragmatic breathing. An ENT or pulmonologist can diagnose with laryngoscopy.",
+    "precautions": ["Learn breathing techniques (pursed-lip breathing, diaphragmatic)", "Avoid irritants (smoke, strong odors)", "Manage anxiety and stress", "If you have asthma, treat both conditions", "Seek a specialist if symptoms persist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_013",
+    "category": "Laryngopharyngeal Reflux (LPR) – Silent Reflux",
+    "symptoms": ["chronic throat clearing", "hoarseness", "cough (especially at night)", "feeling of a lump in the throat", "post-nasal drip", "acid taste in the mouth", "difficulty swallowing"],
+    "guidance": "Lifestyle changes: avoid acidic/spicy foods, eat small meals, avoid lying down after eating, elevate the head of the bed. Proton pump inhibitors (PPIs) may be prescribed. Persistent symptoms warrant an ENT or gastroenterologist consultation.",
+    "precautions": ["Avoid late-night meals", "Elevate the head of your bed by 6-8 inches", "Avoid trigger foods (citrus, tomato, chocolate, caffeine, alcohol)", "Do not smoke", "Lose weight if overweight"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_014",
+    "category": "Central Sleep Apnea",
+    "symptoms": ["episodes of stopped breathing during sleep", "frequent awakenings", "insomnia or excessive daytime sleepiness", "morning headaches", "difficulty concentrating", "snoring (less common than obstructive)"],
+    "guidance": "Central sleep apnea is caused by the brain not sending signals to breathe. Treatment includes treating underlying conditions (heart failure, stroke), using adaptive servo-ventilation (ASV) or CPAP, and oxygen therapy. Sleep study is diagnostic. Refer to a sleep specialist.",
+    "precautions": ["Maintain a regular sleep schedule", "Avoid alcohol and sedatives before bed", "If you have heart failure, manage it well", "Use CPAP/ASV as prescribed", "Follow up with sleep clinic regularly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_015",
+    "category": "Obesity Hypoventilation Syndrome (Pickwickian Syndrome)",
+    "symptoms": ["daytime sleepiness", "shortness of breath", "morning headache", "fatigue", "poor concentration", "signs of right heart failure (edema, cyanosis) in advanced", "obesity (BMI >30)"],
+    "guidance": "This condition is defined by obesity, daytime hypoventilation (elevated PaCO2), and sleep-disordered breathing. Treatment: weight loss is the most effective. CPAP or BiPAP is used for sleep apnea. Ventilatory support may be needed. Refer to a pulmonologist.",
+    "precautions": ["Weight loss is critical", "Use CPAP/BiPAP as prescribed", "Avoid sedatives and alcohol", "Monitor daytime sleepiness", "Regular follow-up with pulmonologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_016",
+    "category": "Acute Bronchiolitis (Infants)",
+    "symptoms": ["cough", "wheezing", "rapid breathing (tachypnoea)", "nasal flaring", "chest retractions", "fever", "poor feeding", "coryza (runny nose) preceding symptoms", "most commonly in infants <2 years, often due to RSV"],
+    "guidance": "This is a common viral lower respiratory infection in infants. Management is supportive: hydration, nasal suctioning, and oxygen if needed. Hospitalisation may be required if breathing difficulty or dehydration occurs. Do not use cough suppressants or antibiotics (unless bacterial superinfection). Prevention: handwashing and avoiding exposure to smoke.",
+    "precautions": ["Keep the infant well-hydrated", "Use a cool-mist humidifier", "Nasal saline drops and bulb suction to clear secretions", "Avoid smoke exposure", "Seek emergency care if breathing becomes labored or bluish"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_017",
+    "category": "Bronchiolitis Obliterans (Popcorn Lung)",
+    "symptoms": ["progressive shortness of breath", "dry cough", "wheezing", "fatigue", "exercise intolerance", "often irreversible", "caused by inhalation of toxins (diacetyl, chemicals), post-infectious, or after lung transplant"],
+    "guidance": "This is a rare but severe obstructive lung disease. Treatment focuses on managing symptoms: bronchodilators, corticosteroids, and oxygen therapy. Lung transplant may be considered in advanced cases. Avoid exposure to causative agents. Early referral to a pulmonologist is essential.",
+    "precautions": ["Avoid occupational exposure to diacetyl and other harmful chemicals", "Wear protective masks in high-risk environments", "If you have a lung transplant, monitor closely", "Smoking cessation", "Seek specialized care"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_018",
+    "category": "Cryptogenic Organizing Pneumonia (COP)",
+    "symptoms": ["progressive cough (dry or with scanty sputum)", "shortness of breath", "fever", "malaise, weight loss", "crackles on lung auscultation", "patchy opacities on chest imaging", "similar to pneumonia but not responding to antibiotics"],
+    "guidance": "COP is a treatable interstitial pneumonia. Diagnosis is by biopsy (transbronchial or surgical). Treatment: corticosteroids (prednisolone) are the mainstay. Relapses are common. Management by a pulmonologist is essential. Do not delay diagnosis.",
+    "precautions": ["Take corticosteroids as prescribed and do not stop abruptly", "Monitor for side effects (weight gain, hyperglycemia)", "Regular follow-up with pulmonary function tests", "Avoid smoking", "Report any recurrence of symptoms promptly"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_019",
+    "category": "Eosinophilic Pneumonia",
+    "symptoms": ["fever", "cough", "shortness of breath", "night sweats", "weight loss", "eosinophilia on blood count", "pulmonary infiltrates on imaging", "can be acute or chronic"],
+    "guidance": "Eosinophilic pneumonia is caused by allergens, drugs, or infections (including parasites). Treatment: corticosteroids (prednisolone) are highly effective. Identify and remove the cause (drugs, environmental triggers). Pulmonologist referral is needed.",
+    "precautions": ["Avoid known triggers (drugs, allergens)", "If on steroids, follow the schedule strictly", "Monitor for infections while on immunosuppression", "Regular follow-up with chest X-ray and eosinophil count", "Maintain good nutrition"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_020",
+    "category": "Pulmonary Eosinophilia (Löffler's Syndrome)",
+    "symptoms": ["mild cough", "fever", "wheezing", "eosinophilia on blood count", "transient pulmonary infiltrates on chest X-ray", "often associated with parasitic infections (Ascaris, hookworm), or drug reaction"],
+    "guidance": "This is a benign, self-limiting condition. Identify and treat the underlying cause (deworming for parasites, withdrawal of offending drug). In most cases, no specific treatment is needed. Symptomatic relief with antihistamines or corticosteroids if severe.",
+    "precautions": ["Good hygiene and handwashing (prevent parasitic infections)", "Avoid self-medication with dewormers without diagnosis", "If drug-induced, avoid the drug in the future", "Monitor for progression", "Seek medical advice if symptoms worsen"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_021",
+    "category": "Tropical Pulmonary Eosinophilia",
+    "symptoms": ["chronic cough (worse at night)", "wheezing", "shortness of breath", "fever", "loss of appetite, weight loss", "marked eosinophilia (>3000/μL)", "common in tropical countries (India, Southeast Asia), caused by filarial infection"],
+    "guidance": "Diagnosis is by high eosinophil count and positive filarial serology. Treatment: diethylcarbamazine (DEC) is effective and available free under government programs. Corticosteroids may be added for severe symptoms. Prognosis is good with treatment.",
+    "precautions": ["Prevent mosquito bites (filariasis prevention)", "Take the full course of DEC", "If on steroids, follow the prescribed schedule", "Regular follow-up for eosinophil counts", "Avoid self-medication"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_022",
+    "category": "Allergic Bronchopulmonary Aspergillosis (ABPA)",
+    "symptoms": ["asthma symptoms (wheezing, shortness of breath)", "fever", "cough with brownish sputum (mucus plugs)", "recurrent pulmonary infiltrates", "eosinophilia, elevated IgE", "often in patients with asthma or cystic fibrosis"],
+    "guidance": "ABPA is a hypersensitivity reaction to Aspergillus fumigatus. Treatment: corticosteroids (prednisolone) and antifungal (itraconazole) to reduce fungal load. Monitoring of IgE levels and pulmonary function is essential. Pulmonologist management is required.",
+    "precautions": ["Use corticosteroids and antifungals as prescribed", "Monitor for side effects of steroids", "Regular lung function tests", "Avoid exposure to mouldy environments", "If you have asthma, manage it well"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_023",
+    "category": "Hypersensitivity Pneumonitis (Extrinsic Allergic Alveolitis)",
+    "symptoms": ["acute: fever, chills, cough, shortness of breath hours after exposure", "subacute: progressive cough, fatigue, weight loss", "chronic: irreversible fibrosis, clubbing", "triggers: bird droppings (bird fancier's lung), mouldy hay (farmer's lung), etc."],
+    "guidance": "Avoidance of the inciting antigen is the cornerstone. Corticosteroids for acute/subacute forms. Chronic HP may progress to fibrosis. Diagnosis requires high-resolution CT and sometimes biopsy. Pulmonologist referral is essential.",
+    "precautions": ["Identify and avoid the causative allergen", "Use protective masks in high-risk occupations", "Improve ventilation in work and living spaces", "If you have chronic HP, consider lung transplant if severe", "Regular follow-up with pulmonary function tests"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_024",
+    "category": "Silicosis (Occupational Lung Disease)",
+    "symptoms": ["chronic cough", "shortness of breath", "fatigue", "progressive massive fibrosis (in severe)", "increased risk of tuberculosis", "history of exposure to silica dust (mining, stone cutting, sandblasting)"],
+    "guidance": "Silicosis is preventable by dust control and use of respirators. There is no cure; treatment is supportive: bronchodilators, oxygen, and management of complications (TB, pneumothorax). Avoid further exposure. Free TB screening is available for silicosis patients.",
+    "precautions": ["Always wear approved respiratory protection in dust-prone jobs", "Ensure good workplace ventilation", "Regular health checkups for workers", "If you have silicosis, get screened for TB", "Avoid smoking"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_025",
+    "category": "Asbestosis (Occupational Lung Disease)",
+    "symptoms": ["progressive shortness of breath", "dry cough", "chest pain", "clubbing of fingers", "history of asbestos exposure (mining, construction, shipbuilding)"],
+    "guidance": "There is no cure. Management is supportive: oxygen therapy, bronchodilators, and treatment of complications (pleural effusion, mesothelioma). Smoking cessation is crucial (synergistic effect with asbestos). Monitor for lung cancer and mesothelioma. Workers' compensation may be available.",
+    "precautions": ["Avoid exposure to asbestos fibres", "If you work with asbestos, use appropriate protective equipment", "Do not smoke", "Regular chest imaging and lung function tests", "If you develop symptoms, seek medical attention immediately"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_026",
+    "category": "Coal Worker's Pneumoconiosis (Black Lung)",
+    "symptoms": ["chronic cough", "black sputum (melanoptysis)", "shortness of breath", "progressive massive fibrosis in advanced", "history of coal mining"],
+    "guidance": "Prevention is key through dust control. Treatment is supportive: bronchodilators, oxygen, and management of complications. Avoid further dust exposure. Regular surveillance of coal miners is recommended.",
+    "precautions": ["Use dust suppression measures in mines", "Wear approved respirators", "Regular chest X-rays for miners", "Smoking cessation", "If you have symptoms, seek medical evaluation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_027",
+    "category": "Berylliosis (Chronic Beryllium Disease)",
+    "symptoms": ["progressive shortness of breath", "cough", "fatigue", "weight loss", "joint pain", "history of beryllium exposure (aerospace, nuclear, electronics)"],
+    "guidance": "This is a granulomatous lung disease similar to sarcoidosis. Diagnosis: beryllium lymphocyte proliferation test (BeLPT). Treatment: corticosteroids and immunosuppressants. Avoid further exposure. Screening for exposed workers is essential.",
+    "precautions": ["Avoid exposure to beryllium", "Use protective equipment in high-risk jobs", "Regular screening for workers", "Do not smoke", "If diagnosed, follow pulmonary care closely"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_028",
+    "category": "Siderosis (Welder's Lung)",
+    "symptoms": ["mild cough", "shortness of breath (usually mild)", "sometimes no symptoms", "history of welding or iron dust exposure", "benign, often reversible with cessation of exposure"],
+    "guidance": "Siderosis is generally benign and does not progress to fibrosis. The main treatment is removal from exposure. Pulmonary function is usually normal. Regular monitoring is recommended.",
+    "precautions": ["Use respiratory protection when welding", "Ensure adequate ventilation in the workplace", "Regular health checkups", "Avoid smoking", "If you have symptoms, consult a pulmonologist"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_029",
+    "category": "Stannosis (Tin Dust Exposure)",
+    "symptoms": ["usually asymptomatic", "benign pneumoconiosis", "tiny opacities on chest X-ray", "history of tin mining or smelting"],
+    "guidance": "Stannosis is benign and does not cause significant lung impairment. Removal from exposure is sufficient. No specific treatment is needed.",
+    "precautions": ["Use dust control measures in tin-related industries", "Wear masks", "Regular chest X-rays for surveillance", "Avoid smoking", "If symptoms occur, rule out other causes"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_030",
+    "category": "Talcosis (Talc Pneumoconiosis)",
+    "symptoms": ["chronic cough", "shortness of breath", "progressive fibrosis (if high exposure)", "history of talc mining or industrial use"],
+    "guidance": "Talcosis can cause fibrosis. Treatment is supportive: bronchodilators, oxygen, and avoidance of further exposure. In severe cases, lung transplant may be considered. Regular monitoring is important.",
+    "precautions": ["Avoid talc dust exposure", "Use protective equipment", "Regular lung function tests", "Smoking cessation", "Seek medical attention for symptoms"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_031",
+    "category": "Byssinosis (Cotton Dust Exposure)",
+    "symptoms": ["chest tightness", "cough", "wheezing", "shortness of breath", "worse on the first day of the work week (Monday morning chest)", "history of working with cotton, flax, or hemp"],
+    "guidance": "Byssinosis is an occupational lung disease. Prevention: dust control in textile mills. Treatment: bronchodilators and corticosteroids may help. Avoidance of further exposure is key. If severe, consider changing occupation.",
+    "precautions": ["Improve ventilation and dust control at work", "Wear respiratory protection", "If symptoms persist, seek medical advice", "Smoking cessation", "Regular health checkups for textile workers"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_032",
+    "category": "Bagassosis (Sugar Cane Dust)",
+    "symptoms": ["cough", "shortness of breath", "fever", "weight loss", "history of exposure to mouldy sugar cane bagasse", "can cause hypersensitivity pneumonitis"],
+    "guidance": "This is a form of hypersensitivity pneumonitis. Avoidance of bagasse dust is essential. Corticosteroids may be needed in acute cases. Diagnosis is by history and imaging. Supportive care.",
+    "precautions": ["Use masks when handling bagasse", "Improve drying and storage to prevent mould", "Regular health monitoring of workers", "If symptoms develop, seek medical care", "Avoid smoking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_033",
+    "category": "Pulmonary Sarcoidosis",
+    "symptoms": ["dry cough", "shortness of breath", "chest pain", "fever", "night sweats", "weight loss", "skin lesions (erythema nodosum)", "eye involvement (uveitis)", "Lofgren's syndrome (fever, erythema nodosum, bilateral hilar lymphadenopathy)"],
+    "guidance": "Sarcoidosis is a multisystem granulomatous disease. Treatment: corticosteroids are first-line; immunosuppressants for refractory cases. Many cases resolve spontaneously. Regular follow-up with pulmonary function tests and imaging is needed. Eye and cardiac involvement require specialist care.",
+    "precautions": ["Take steroids as prescribed and taper slowly", "Monitor for side effects", "Regular eye exams (for uveitis)", "If you have cardiac symptoms, see a cardiologist", "Avoid smoking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_034",
+    "category": "Pulmonary Alveolar Proteinosis (PAP)",
+    "symptoms": ["progressive shortness of breath", "dry cough", "fatigue", "weight loss", "low-grade fever", "crackles on auscultation", "chest imaging shows 'crazy paving' pattern"],
+    "guidance": "PAP is a rare disease caused by accumulation of surfactant. Treatment: whole-lung lavage (bronchoalveolar lavage) is the standard. In some cases, GM-CSF therapy. Referral to a specialist centre is essential.",
+    "precautions": ["Early diagnosis is important", "If you have unexplained dyspnoea and crazy-paving CT, suspect PAP", "Whole-lung lavage is safe and effective", "Follow up with pulmonary function tests", "Avoid smoking"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_035",
+    "category": "Pulmonary Langerhans Cell Histiocytosis (PLCH)",
+    "symptoms": ["dry cough", "shortness of breath", "fatigue", "weight loss", "fever", "recurrent pneumothorax", "cystic lesions on CT, often in young adult smokers"],
+    "guidance": "PLCH is associated with smoking in most cases. Smoking cessation is the main treatment; many cases improve. Corticosteroids may be used if progressive. In severe cases, lung transplant. Close monitoring with PFTs and CT.",
+    "precautions": ["Smoking cessation is mandatory", "Avoid secondhand smoke", "If you have recurrent pneumothorax, seek care", "Regular follow-up with pulmonologist", "Maintain good nutrition"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_036",
+    "category": "Lymphangioleiomyomatosis (LAM)",
+    "symptoms": ["progressive shortness of breath", "cough", "recurrent pneumothorax", "chylous pleural effusions", "hemoptysis", "abdominal masses (angiomyolipomas, lymphangioleiomyomas)", "occurs almost exclusively in women of childbearing age"],
+    "guidance": "LAM is a rare cystic lung disease. Treatment: sirolimus (rapamycin) has been shown to stabilise lung function. Bronchodilators and oxygen therapy. Lung transplant for end-stage. Referral to a LAM specialist centre is essential.",
+    "precautions": ["Avoid oestrogen-containing medications (may worsen)", "Monitor for pneumothorax – seek care immediately for sudden chest pain", "If you have angiomyolipomas, monitor for rupture", "Regular pulmonary function tests", "Genetic counselling (TSC2 mutations)"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_037",
+    "category": "Pulmonary Sequestration",
+    "symptoms": ["recurrent infections (pneumonia) in the same area", "cough", "fever", "hemoptysis", "may be asymptomatic and found incidentally on imaging", "congenital anomaly with non-functional lung tissue"],
+    "guidance": "Diagnosis is by CT angiography. Treatment: surgical resection if symptomatic or recurrent infections. Asymptomatic cases may be monitored. Referral to a thoracic surgeon is needed.",
+    "precautions": ["If you have recurrent pneumonia, seek workup for sequestration", "Surgery is curative", "Prevent infections with good hygiene", "If asymptomatic, follow imaging regularly", "Avoid smoking"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_038",
+    "category": "Bronchogenic Cyst",
+    "symptoms": ["often asymptomatic", "if large, may cause cough, dyspnoea, or wheezing", "recurrent infections (if infected)", "chest pain", "incidental finding on imaging"],
+    "guidance": "Bronchogenic cysts are congenital. If asymptomatic, they can be observed. If symptomatic or infected, surgical excision is recommended. Endoscopic drainage may be an option.",
+    "precautions": ["If you have recurrent chest infections, rule out cyst", "Monitor for growth", "Surgical removal is safe and curative", "Avoid smoking", "Regular follow-up"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_039",
+    "category": "Congenital Cystic Adenomatoid Malformation (CCAM)",
+    "symptoms": ["respiratory distress in neonates", "recurrent infections in older children", "cough", "fever", "rarely asymptomatic", "cystic lung lesion on prenatal ultrasound"],
+    "guidance": "CCAM is a congenital lung malformation. Management: asymptomatic cases may be observed; if symptomatic or large, surgical resection is recommended. Prenatal diagnosis is common. Paediatric pulmonology and surgical consultation are needed.",
+    "precautions": ["If diagnosed prenatally, plan delivery in a centre with paediatric surgery", "If recurrent infections, surgery is curative", "Monitor growth and development", "Avoid smoke exposure", "Regular paediatric follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_040",
+    "category": "Pulmonary Arteriovenous Malformation (PAVM)",
+    "symptoms": ["shortness of breath", "cyanosis (bluish skin)", "clubbing of fingers", "hemoptysis", "brain abscess (paradoxical embolism)", "epistaxis (nosebleeds) – may be associated with hereditary haemorrhagic telangiectasia (HHT)"],
+    "guidance": "PAVMs are abnormal communications between pulmonary arteries and veins. Treatment: endovascular embolisation is the treatment of choice. Screening for HHT is important. If large or symptomatic, intervention is needed.",
+    "precautions": ["If you have unexplained cyanosis or clubbing, seek evaluation", "Embolisation is safe and effective", "If you have HHT, screen for PAVMs", "Avoid pregnancy without treatment", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_041",
+    "category": "Pulmonary Veno-Occlusive Disease (PVOD)",
+    "symptoms": ["progressive shortness of breath", "fatigue", "syncope on exertion", "signs of right heart failure (oedema, jugular venous distension)", "hypoxaemia", "pulmonary hypertension (pre-capillary)"],
+    "guidance": "PVOD is a rare cause of pulmonary hypertension. Diagnosis is by right heart catheterisation and imaging (septal lines). Treatment: supportive, and lung transplant is the only curative option. Avoid vasodilators (may cause pulmonary oedema). Referral to a PH centre is essential.",
+    "precautions": ["Avoid medications that can worsen (some vasodilators)", "If you have pulmonary hypertension with risk factors, suspect PVOD", "Early referral for transplant evaluation", "Avoid pregnancy", "Regular follow-up with a PH specialist"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_042",
+    "category": "Pulmonary Capillary Hemangiomatosis (PCH)",
+    "symptoms": ["progressive dyspnoea", "cough", "haemoptysis", "pulmonary hypertension", "signs of right heart failure", "rare, often fatal"],
+    "guidance": "PCH is a rare disease with proliferation of pulmonary capillaries. Treatment is limited; lung transplant is the only option. Diagnosis by lung biopsy. Palliative care for advanced cases.",
+    "precautions": ["If you have unexplained pulmonary hypertension with haemoptysis, consider PCH", "Refer to a PH expert centre", "Avoid pregnancy", "Consider lung transplant evaluation", "Supportive care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_043",
+    "category": "Tracheobronchomalacia",
+    "symptoms": ["wheezing (expiratory)", "cough", "shortness of breath", "difficulty clearing secretions", "recurrent infections", "stridor (in children)", "collapse of trachea on expiration"],
+    "guidance": "This is a weakness of the tracheal wall. Treatment: continuous positive airway pressure (CPAP) or stenting in severe cases. In children, it may resolve with growth. Avoid irritants. Pulmonary rehabilitation.",
+    "precautions": ["Avoid smoke and irritants", "If you have recurrent infections, seek evaluation", "CPAP may be helpful", "In severe cases, consult a pulmonologist", "Maintain good hydration to keep secretions thin"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_044",
+    "category": "Tracheal Stenosis",
+    "symptoms": ["stridor (inspiratory)", "shortness of breath", "cough", "hoarseness", "recurrent respiratory infections", "history of intubation, trauma, or infection"],
+    "guidance": "Tracheal stenosis is a narrowing of the trachea. Treatment: bronchoscopic dilatation, stent placement, or surgical resection. Referral to a thoracic surgeon or pulmonologist is essential. Avoid further airway trauma.",
+    "precautions": ["If you have had prolonged intubation, monitor for stridor", "Surgical correction may be needed", "Avoid irritants", "Regular follow-up with bronchoscopy", "Do not delay treatment"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_045",
+    "category": "Bronchomalacia",
+    "symptoms": ["wheezing", "cough", "shortness of breath", "difficulty clearing secretions", "recurrent infections", "collapse of bronchi on expiration", "more common in children"],
+    "guidance": "Bronchomalacia is a weakness of the bronchial walls. Treatment: supportive (physiotherapy, bronchodilators), and in severe cases, stenting or surgery. Avoid triggers and smoke. Follow-up with a pulmonologist.",
+    "precautions": ["Avoid respiratory irritants", "Chest physiotherapy to clear secretions", "If recurrent infections, consider bronchoscopy", "In children, may improve with age", "Do not smoke"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_046",
+    "category": "Bronchiolitis Obliterans Syndrome (Post-Transplant)",
+    "symptoms": ["progressive shortness of breath", "dry cough", "wheezing", "reduced exercise tolerance", "after lung or bone marrow transplant", "irreversible airflow obstruction"],
+    "guidance": "This is a form of chronic rejection after lung transplant. Treatment: augmented immunosuppression, azithromycin, and possibly retransplantation in selected cases. Early detection with PFTs is crucial. Multidisciplinary care.",
+    "precautions": ["Adhere to immunosuppressive therapy", "Monitor PFTs regularly", "Avoid infections", "If you have a transplant, report any decline in breathing", "Follow transplant team's recommendations"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_047",
+    "category": "Bronchopulmonary Dysplasia (Chronic Lung Disease of Prematurity)",
+    "symptoms": ["respiratory distress in premature infants", "need for oxygen therapy beyond 36 weeks postmenstrual age", "wheezing", "cough", "poor growth", "recurrent hospitalisations"],
+    "guidance": "BPD is a complication of premature birth and mechanical ventilation. Management: oxygen therapy, bronchodilators, diuretics, and nutrition support. Prevention: antenatal steroids, gentle ventilation. Long-term follow-up for pulmonary function and developmental issues.",
+    "precautions": ["Prevent premature birth with good antenatal care", "If your baby has BPD, follow the NICU team's advice", "Avoid smoke exposure", "Ensure adequate nutrition for growth", "Regular paediatric pulmonology follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_048",
+    "category": "Atelectasis (Lung Collapse)",
+    "symptoms": ["sudden shortness of breath", "chest pain", "cough", "fever (if infectious)", "reduced breath sounds on the affected side", "sometimes asymptomatic"],
+    "guidance": "Atelectasis is collapse of lung tissue. It can be caused by obstruction (mucus plug, tumour), compression (pleural effusion), or surgery. Treatment: deep breathing exercises, incentive spirometry, bronchodilators, and treatment of underlying cause. If severe, bronchoscopy may be needed.",
+    "precautions": ["After surgery, do deep breathing exercises", "Use incentive spirometry", "Stay well-hydrated", "Avoid smoking", "If you have a tumour, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_049",
+    "category": "Pleurisy (Pleuritis)",
+    "symptoms": ["sharp chest pain that worsens with breathing or coughing", "shortness of breath", "fever", "cough", "pain may be relieved by lying on the affected side"],
+    "guidance": "Pleurisy is inflammation of the pleura. Treatment: NSAIDs for pain; treat the underlying cause (infection, autoimmune, or PE). Rest and deep breathing exercises. If pain is severe or associated with breathlessness, seek medical care.",
+    "precautions": ["Take NSAIDs as prescribed", "Avoid smoking", "If you have a fever, see a doctor", "Do not ignore pleuritic pain", "Treat the underlying disease"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_050",
+    "category": "Pleural Effusion (Transudative)",
+    "symptoms": ["shortness of breath", "chest pain (pleuritic)", "cough", "reduced breath sounds", "dullness to percussion", "causes: heart failure, cirrhosis, nephrotic syndrome"],
+    "guidance": "Transudative effusion is due to systemic factors. Treatment: manage the underlying cause (diuretics for heart failure). If large and symptomatic, therapeutic thoracentesis. Do not ignore if recurrent.",
+    "precautions": ["Treat the underlying condition", "If you have heart failure, take diuretics as prescribed", "Monitor for increasing breathlessness", "Avoid salt if fluid overload", "Regular follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_051",
+    "category": "Exudative Pleural Effusion",
+    "symptoms": ["shortness of breath", "pleuritic chest pain", "fever", "cough", "causes: pneumonia, malignancy, pulmonary embolism, autoimmune"],
+    "guidance": "Exudative effusion requires diagnostic thoracentesis to identify the cause. Treatment: antibiotics for infection, chemotherapy for malignancy, or treatment of the underlying condition. Large effusions may need drainage.",
+    "precautions": ["Do not delay diagnostic thoracentesis", "If you have fever and pleural effusion, it could be empyema", "Follow up with a pulmonologist", "Treat the underlying cause", "Maintain good nutrition"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_052",
+    "category": "Empyema (Infected Pleural Effusion)",
+    "symptoms": ["fever, chills", "chest pain", "cough with purulent sputum", "shortness of breath", "signs of sepsis (tachycardia, hypotension)", "purulent pleural fluid on thoracentesis"],
+    "guidance": "Empyema is a serious infection of the pleural space. Treatment: antibiotics, chest tube drainage, and sometimes surgery (decortication). Hospitalisation is required. Do not delay; empyema can be life-threatening.",
+    "precautions": ["Seek immediate care if you have fever and pleural effusion", "Antibiotics and drainage are essential", "If you have pneumonia, follow up to ensure it resolves", "Avoid smoking", "Complete the antibiotic course"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_053",
+    "category": "Chylothorax",
+    "symptoms": ["shortness of breath", "cough", "chest pain", "milky white pleural fluid (chyle)", "often due to trauma, malignancy, or lymphatic obstruction"],
+    "guidance": "Chylothorax is a leakage of chyle into the pleural space. Treatment: dietary modification (low-fat, high-MCT diet), octreotide, and sometimes surgery (thoracic duct ligation). Treat the underlying cause. Fluid drainage may be needed.",
+    "precautions": ["Follow a low-fat diet with MCT oil", "If you have trauma, monitor for chylothorax", "Surgery may be needed if refractory", "Regular follow-up with a thoracic surgeon", "Maintain good nutrition"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_054",
+    "category": "Hemothorax",
+    "symptoms": ["shortness of breath", "chest pain", "signs of shock (hypotension, tachycardia)", "dullness to percussion", "history of trauma or surgery", "blood in pleural space"],
+    "guidance": "Hemothorax is blood in the pleural space, usually from trauma. Treatment: chest tube drainage and blood transfusion if needed. Urgent surgical consultation if ongoing bleeding. Do not delay; it can be life-threatening.",
+    "precautions": ["If you have chest trauma, seek emergency care", "Chest tube drainage is essential", "Monitor for re-bleeding", "If on anticoagulants, inform the team", "Prepare for surgery if bleeding continues"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_055",
+    "category": "Malignant Pleural Effusion",
+    "symptoms": ["shortness of breath", "pleuritic chest pain", "cough", "weight loss", "history of malignancy (lung, breast, ovarian)", "pleural fluid cytology positive for malignant cells"],
+    "guidance": "Management: therapeutic thoracentesis for symptom relief, pleurodesis (talc) to prevent reaccumulation, and treatment of the underlying cancer. Palliative care may be needed. Referral to oncology.",
+    "precautions": ["If you have cancer and develop shortness of breath, seek care", "Pleurodesis can provide long-term relief", "Treat the underlying cancer", "Maintain good nutrition", "Supportive care"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_056",
+    "category": "Primary Spontaneous Pneumothorax",
+    "symptoms": ["sudden sharp chest pain", "shortness of breath", "cough", "rapid heart rate", "occurs in young, tall, thin individuals without underlying lung disease"],
+    "guidance": "Small pneumothoraces may resolve with observation and oxygen therapy. Large or symptomatic ones require needle aspiration or chest tube insertion. Recurrence is common; pleurodesis may be considered after the second episode. Avoid flying and diving until resolved.",
+    "precautions": ["Seek emergency care for sudden chest pain with breathlessness", "If you have had a pneumothorax, avoid flying and diving", "Do not smoke – increases recurrence risk", "If you have recurrent pneumothorax, consider pleurodesis", "Follow up with a pulmonologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_057",
+    "category": "Secondary Spontaneous Pneumothorax",
+    "symptoms": ["sudden chest pain", "shortness of breath", "cyanosis", "underlying lung disease (COPD, cystic fibrosis, interstitial lung disease)"],
+    "guidance": "This is more serious and often requires chest tube drainage. Hospitalisation is needed. Treat the underlying disease. Recurrence is high; pleurodesis is often recommended. Do not delay treatment.",
+    "precautions": ["If you have chronic lung disease and develop sudden breathlessness, seek emergency care", "Avoid smoking", "Chest tube may be needed", "Consider pleurodesis to prevent recurrence", "Manage your underlying lung disease optimally"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_058",
+    "category": "Mesothelioma (Pleural)",
+    "symptoms": ["chest pain", "shortness of breath", "cough", "weight loss", "pleural effusion", "history of asbestos exposure", "often diagnosed late"],
+    "guidance": "Mesothelioma is a rare and aggressive cancer. Treatment: surgery, chemotherapy, radiation, and immunotherapy. Early diagnosis improves outcomes. Referral to a specialist centre is essential. Asbestos exposure is the main risk factor.",
+    "precautions": ["Avoid asbestos exposure", "If you have been exposed, get regular checkups", "Smoking cessation (synergistic risk)", "If you have symptoms, seek immediate evaluation", "Palliative care may be needed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_059",
+    "category": "Benign Pulmonary Nodule",
+    "symptoms": ["usually asymptomatic", "found incidentally on chest X-ray or CT", "may be a granuloma, hamartoma, or infection"],
+    "guidance": "Most pulmonary nodules are benign. Management: follow-up CT scans to monitor growth. If large, suspicious, or growing, biopsy or surgery may be needed. Do not panic; most are not cancer. Regular monitoring is key.",
+    "precautions": ["Follow the recommended surveillance schedule", "Do not ignore follow-up appointments", "If you smoke, consider cessation", "If you have a family history of lung cancer, discuss with your doctor", "Maintain a healthy lifestyle"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_060",
+    "category": "Pulmonary Hamartoma",
+    "symptoms": ["usually asymptomatic", "incidental finding on imaging", "rarely causes cough or pain if large"],
+    "guidance": "Hamartomas are benign tumours composed of cartilage, fat, and connective tissue. They do not become malignant. If symptomatic or growing, surgical removal may be considered. No treatment needed for asymptomatic ones.",
+    "precautions": ["Reassurance – hamartomas are benign", "Follow-up imaging to ensure stability", "Do not panic", "If you have symptoms, discuss with a pulmonologist", "Avoid smoking"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_061",
+    "category": "Drug-Induced Pulmonary Fibrosis",
+    "symptoms": ["progressive shortness of breath", "dry cough", "fatigue", "clubbing", "history of taking drugs (amiodarone, bleomycin, nitrofurantoin, methotrexate, etc.)"],
+    "guidance": "Stop the offending drug immediately. Corticosteroids may be needed. Pulmonary function and imaging monitoring is essential. Referral to a pulmonologist. Prognosis depends on the drug and severity.",
+    "precautions": ["If you are on a drug known to cause pulmonary fibrosis, report any breathlessness", "Regular lung function tests during therapy with such drugs", "Do not stop medications without consulting your doctor", "Smoking increases risk", "Seek early evaluation"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_062",
+    "category": "Radiation Pneumonitis",
+    "symptoms": ["cough", "shortness of breath", "fever", "chest pain", "occurs 1-6 months after radiation therapy to the chest (for breast, lung, or lymphoma)"],
+    "guidance": "Treatment: corticosteroids (prednisolone) are the mainstay. In severe cases, oxygen and supportive care. Prevention: modern radiation techniques reduce the risk. Patients should report symptoms promptly.",
+    "precautions": ["If you have had chest radiation, monitor for new cough or dyspnoea", "Steroids may be needed", "Avoid smoking", "Regular follow-up with oncology and pulmonology", "If symptoms are severe, seek emergency care"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_063",
+    "category": "Rheumatoid Arthritis-Associated Lung Disease",
+    "symptoms": ["shortness of breath", "cough", "pleuritic chest pain", "rheumatoid nodules in the lung", "pleural effusion", "interstitial lung disease (usual interstitial pneumonia pattern)"],
+    "guidance": "Lung involvement is common in RA. Management: treat RA with DMARDs/biologics; corticosteroids for acute exacerbations. Pulmonary function tests and HRCT monitoring. Smoking cessation. Multidisciplinary care with rheumatology and pulmonology.",
+    "precautions": ["If you have RA and develop breathlessness, see a pulmonologist", "Do not smoke", "Treat RA optimally", "Regular pulmonary surveillance", "Avoid infections (pneumococcal, flu vaccines)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_064",
+    "category": "Lupus Pneumonitis",
+    "symptoms": ["fever", "cough", "shortness of breath", "pleuritic chest pain", "hemoptysis (rare)", "signs of SLE (malar rash, arthritis, nephritis)"],
+    "guidance": "Lupus pneumonitis is a rare but serious manifestation of SLE. Treatment: corticosteroids and immunosuppressants. Hospitalisation may be needed. Monitor for respiratory failure. Optimise SLE therapy.",
+    "precautions": ["If you have SLE and develop respiratory symptoms, see a doctor", "Do not stop immunosuppressants", "Avoid infections", "Regular follow-up with rheumatologist and pulmonologist", "Smoking cessation"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_065",
+    "category": "Scleroderma Lung Disease (Interstitial Lung Disease)",
+    "symptoms": ["progressive shortness of breath", "dry cough", "fatigue", "skin changes (scleroderma)", "Raynaud's", "GERD", "pulmonary hypertension may also occur"],
+    "guidance": "ILD is a major cause of death in scleroderma. Treatment: immunosuppressants (mycophenolate, cyclophosphamide) and antifibrotics (nintedanib). Pulmonary rehabilitation and oxygen therapy. Referral to a scleroderma centre.",
+    "precautions": ["Early diagnosis with PFTs and HRCT", "Treat GERD aggressively (may worsen fibrosis)", "Avoid smoking", "Regular screening for pulmonary hypertension", "Multidisciplinary care"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_066",
+    "category": "Sjogren's Lung Disease",
+    "symptoms": ["dry cough", "shortness of breath", "recurrent respiratory infections", "bronchiectasis (due to dry airways)", "interstitial lung disease (NSIP pattern)", "lymphocytic interstitial pneumonia"],
+    "guidance": "Sjogren's can affect the lungs. Treatment: bronchodilators, mucolytics, and immunosuppression for ILD. Good hydration and humidification. Regular dental care (dry mouth). Referral to pulmonologist.",
+    "precautions": ["Keep airways moist with humidifiers", "Stay well-hydrated", "Avoid smoke", "If you have recurrent infections, consider bronchiectasis", "Regular follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_067",
+    "category": "Polymyositis/Dermatomyositis-Associated ILD",
+    "symptoms": ["shortness of breath", "dry cough", "muscle weakness (proximal)", "skin rash (heliotrope, Gottron's)", "fever", "progressive ILD"],
+    "guidance": "ILD can be the presenting feature. Treatment: corticosteroids and immunosuppressants (tacrolimus, mycophenolate, cyclophosphamide). Rapidly progressive forms may need aggressive therapy. Multidisciplinary management.",
+    "precautions": ["If you have muscle weakness and breathlessness, seek evaluation", "Do not stop immunosuppressants", "Avoid infections", "Regular PFTs and HRCT", "Physical therapy for muscles"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_068",
+    "category": "Goodpasture Syndrome (Anti-GBM Disease)",
+    "symptoms": ["cough", "hemoptysis (coughing blood)", "shortness of breath", "haematuria (blood in urine)", "rapidly progressive glomerulonephritis", "pulmonary haemorrhage", "anti-GBM antibodies positive"],
+    "guidance": "This is a rare autoimmune disease affecting lungs and kidneys. Treatment: plasmapheresis, corticosteroids, and cyclophosphamide. Early diagnosis is crucial to prevent renal failure. Referral to nephrology and pulmonology.",
+    "precautions": ["If you have hemoptysis and blood in urine, seek immediate care", "Plasmapheresis is life-saving", "Avoid smoking", "Monitor renal function", "Do not delay treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_069",
+    "category": "Granulomatosis with Polyangiitis (Wegener's)",
+    "symptoms": ["sinusitis", "nasal crusting", "cough", "hemoptysis", "shortness of breath", "pulmonary nodules or cavitary lesions", "glomerulonephritis", "positive c-ANCA (anti-PR3)"],
+    "guidance": "This is a vasculitis affecting small vessels. Treatment: corticosteroids and cyclophosphamide or rituximab. Early treatment can induce remission. Multidisciplinary care (rheumatology, pulmonology, nephrology).",
+    "precautions": ["If you have sinusitis and lung lesions, consider GPA", "Do not stop immunosuppressants", "Monitor renal function", "Avoid smoking", "Regular follow-up for relapse"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_070",
+    "category": "Microscopic Polyangiitis (MPA)",
+    "symptoms": ["cough", "hemoptysis", "shortness of breath", "glomerulonephritis", "pulmonary haemorrhage", "mononeuritis multiplex", "positive p-ANCA (anti-MPO)"],
+    "guidance": "Treatment is similar to GPA: corticosteroids and cyclophosphamide/rituximab. Early recognition prevents organ damage. Multidisciplinary care is essential.",
+    "precautions": ["If you have pulmonary and renal symptoms, seek immediate care", "Immunosuppression is key", "Monitor for infections", "Avoid smoking", "Regular follow-up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_071",
+    "category": "Eosinophilic Granulomatosis with Polyangiitis (Churg-Strauss)",
+    "symptoms": ["asthma (often severe)", "eosinophilia", "sinusitis", "cough", "hemoptysis", "pulmonary infiltrates", "mononeuritis multiplex", "skin nodules"],
+    "guidance": "This is a vasculitis with eosinophilic infiltration. Treatment: corticosteroids and cyclophosphamide/rituximab. Omalizumab may help in some cases. Multidisciplinary care.",
+    "precautions": ["If you have asthma with eosinophilia and systemic symptoms, suspect EGPA", "Do not stop steroids abruptly", "Monitor for neuropathy", "Avoid infections", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_072",
+    "category": "Pulmonary Vasculitis",
+    "symptoms": ["cough", "hemoptysis", "shortness of breath", "fever", "weight loss", "pulmonary nodules or infiltrates", "may be part of systemic vasculitis (GPA, MPA, EGPA)"],
+    "guidance": "Treatment depends on the underlying vasculitis: immunosuppressants (cyclophosphamide, rituximab) and corticosteroids. Early diagnosis is crucial. Referral to rheumatology and pulmonology.",
+    "precautions": ["If you have unexplained respiratory symptoms with systemic signs, seek evaluation", "Do not delay immunosuppression", "Monitor for infections", "Avoid smoking", "Regular follow-up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_073",
+    "category": "Idiopathic Pulmonary Hemosiderosis",
+    "symptoms": ["recurrent episodes of hemoptysis", "shortness of breath", "anemia", "cough", "fever", "pulmonary infiltrates", "causes: autoimmune or unknown", "more common in children"],
+    "guidance": "Treatment: corticosteroids are the mainstay; immunosuppressants may be needed. Iron supplementation for anemia. Avoid triggers (if known). Referral to a pulmonologist. Prognosis varies.",
+    "precautions": ["If you have recurrent hemoptysis, seek evaluation", "Monitor for anemia", "Take iron supplements", "Avoid smoking", "Regular follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_074",
+    "category": "Alveolar Hemorrhage",
+    "symptoms": ["hemoptysis (coughing blood)", "shortness of breath", "cough", "fever", "iron deficiency anemia", "diffuse alveolar infiltrates on chest imaging", "drop in hemoglobin"],
+    "guidance": "Alveolar hemorrhage is a medical emergency. Causes include vasculitis, Goodpasture, and drug reactions. Treatment: high-dose corticosteroids, immunosuppressants, and supportive care. Bronchoscopy and BAL are diagnostic. Urgent management is needed.",
+    "precautions": ["Seek immediate care for hemoptysis", "Do not delay", "If you have a known systemic disease, report symptoms", "Avoid anticoagulants", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_075",
+    "category": "Diffuse Alveolar Hemorrhage (DAH)",
+    "symptoms": ["massive hemoptysis", "acute respiratory distress", "hypoxemia", "rapidly falling hemoglobin", "diffuse bilateral opacities on imaging", "signs of underlying vasculitis or autoimmune disease"],
+    "guidance": "DAH is a life-threatening emergency. Immediate hospitalisation, high-dose corticosteroids, and immunosuppressants are needed. Bronchoscopy with BAL will show progressively bloodier returns. Plasmapheresis may be used. ICU support is often required.",
+    "precautions": ["Do not delay – DAH can be fatal", "If you have systemic symptoms, report them", "Monitor oxygen saturation", "Prepare for mechanical ventilation", "Multidisciplinary care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_076",
+    "category": "Pulmonary-Renal Syndrome",
+    "symptoms": ["hemoptysis", "shortness of breath", "hematuria", "proteinuria", "rapidly progressive renal failure", "pulmonary haemorrhage", "causes: Goodpasture, GPA, MPA, SLE"],
+    "guidance": "This is a medical emergency. Diagnosis: anti-GBM, ANCA, and renal biopsy. Treatment: plasmapheresis, steroids, cyclophosphamide, and dialysis. Early referral to nephrology and pulmonology is critical.",
+    "precautions": ["If you have both lung and kidney symptoms, seek emergency care", "Do not delay treatment", "Immunosuppression is key", "Prepare for dialysis", "Regular follow-up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_077",
+    "category": "Alpha-1 Antitrypsin Deficiency (Emphysema)",
+    "symptoms": ["progressive shortness of breath", "wheezing", "chronic cough", "liver disease in some", "onset earlier than typical COPD (age 30-40)", "family history", "low serum AAT level"],
+    "guidance": "This is a genetic cause of emphysema. Treatment: smoking cessation is the most important. Augmentation therapy with intravenous AAT is available (free under some programs). Bronchodilators and pulmonary rehabilitation. Genetic counselling for family members.",
+    "precautions": ["Smoking accelerates disease – stop immediately", "If you have early-onset COPD, get tested for AAT deficiency", "Augmentation therapy can slow progression", "Avoid respiratory infections", "Regular follow-up with a pulmonologist"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_078",
+    "category": "Primary Ciliary Dyskinesia (Kartagener's Syndrome)",
+    "symptoms": ["chronic sinusitis", "bronchiectasis", "situs inversus (organs reversed)", "infertility (men)", "chronic ear infections", "history of recurrent respiratory infections from childhood"],
+    "guidance": "This is a genetic disorder affecting ciliary motility. Diagnosis: nasal nitric oxide, electron microscopy of cilia, or genetic testing. Management: chest physiotherapy, bronchodilators, antibiotics for infections, and ENT care. Avoid smoking. Multidisciplinary care.",
+    "precautions": ["Regular chest physiotherapy to clear secretions", "Treat infections promptly", "Avoid smoke and irritants", "Monitor for hearing loss", "Genetic counselling"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_079",
+    "category": "Yellow Nail Syndrome",
+    "symptoms": ["yellow, thickened, slow-growing nails", "lymphedema (leg swelling)", "pleural effusion (often chylous)", "chronic sinusitis", "respiratory symptoms (cough, dyspnoea)"],
+    "guidance": "This is a rare disorder. Treatment: supportive; vitamin E and zinc may help nails. Pleural effusion may need drainage. Treat underlying conditions (if any). No specific cure.",
+    "precautions": ["Monitor for pleural effusion", "Maintain good skin and nail care", "Treat infections", "Avoid trauma to nails", "Regular follow-up"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_080",
+    "category": "Pulmonary Lymphangiectasia",
+    "symptoms": ["respiratory distress in neonates", "cough", "shortness of breath", "chylothorax", "recurrent infections", "may be congenital or acquired"],
+    "guidance": "This is a rare condition of dilated lymphatics. Treatment: supportive, including oxygen, drainage of pleural effusion, and dietary modification (MCT oil). In severe cases, surgical intervention. Paediatric pulmonology care.",
+    "precautions": ["If your child has respiratory distress, seek specialist care", "MCT diet may help", "Monitor for infections", "Regular follow-up", "Genetic counselling if congenital"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_081",
+    "category": "Pulmonary Interstitial Emphysema (Neonatal)",
+    "symptoms": ["respiratory distress in premature infants", "hyperinflation of the chest", "pneumothorax", "need for high ventilator settings", "often associated with mechanical ventilation"],
+    "guidance": "This is a complication of positive pressure ventilation in premature infants. Management: conservative with lower pressures, oxygen, and sometimes selective bronchial intubation. Prevention: gentle ventilation strategies. Paediatric intensivist care.",
+    "precautions": ["Prevent premature birth", "Use lung-protective ventilation", "Monitor for pneumothorax", "If your baby has PIE, follow NICU advice", "Long-term follow-up for lung function"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_082",
+    "category": "Congenital Lobar Emphysema",
+    "symptoms": ["respiratory distress in neonates", "hyperinflation of a lobe", "wheezing", "cough", "may be asymptomatic and discovered later"],
+    "guidance": "This is a congenital anomaly causing overinflation of a lung lobe. Treatment: surgical resection (lobectomy) if symptomatic. Asymptomatic cases may be observed. Paediatric surgery referral.",
+    "precautions": ["If your child has breathing difficulty, seek evaluation", "Surgery is curative", "Monitor for infections", "Avoid smoke exposure", "Regular follow-up with paediatrician"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_083",
+    "category": "Pulmonary Agenesis",
+    "symptoms": ["severe respiratory distress at birth", "absence of one or both lungs", "associated with other anomalies (cardiac, skeletal)", "high mortality if bilateral"],
+    "guidance": "This is a rare congenital absence of lung tissue. Treatment: supportive; may need long-term ventilation. Prognosis depends on the extent and associated anomalies. Multidisciplinary care.",
+    "precautions": ["Prenatal diagnosis may be possible", "Delivery in a tertiary centre", "Supportive care", "Monitor for respiratory infections", "Family counselling"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_084",
+    "category": "Scimitar Syndrome (Congenital Pulmonary Venolobar Syndrome)",
+    "symptoms": ["often asymptomatic in mild cases", "recurrent respiratory infections", "shortness of breath", "scimitar sign on chest X-ray (curvilinear shadow)", "associated with anomalous pulmonary venous return", "sometimes with lung hypoplasia"],
+    "guidance": "This is a rare congenital anomaly. Treatment: if symptomatic, surgical repair of anomalous venous return or embolisation of collaterals. Asymptomatic cases can be followed. Multidisciplinary care.",
+    "precautions": ["If you have recurrent infections, consider surgery", "Monitor for pulmonary hypertension", "Regular imaging follow-up", "Avoid smoking", "Cardiology and pulmonology review"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_085",
+    "category": "Pulmonary Sling (Anomalous Left Pulmonary Artery)",
+    "symptoms": ["stridor", "wheezing", "dysphagia", "recurrent respiratory infections", "occurs in infants", "diagnosed by imaging"],
+    "guidance": "This is a congenital vascular anomaly where the left pulmonary artery originates from the right. Treatment: surgical reimplantation is needed if symptomatic. Early diagnosis is key. Referral to paediatric cardiology and cardiothoracic surgery.",
+    "precautions": ["If your child has stridor and feeding difficulties, seek evaluation", "Surgery can relieve symptoms", "Regular follow-up", "Monitor for tracheal compression", "Avoid respiratory infections"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_086",
+    "category": "Bronchial Atresia",
+    "symptoms": ["often asymptomatic", "may cause recurrent infections", "cough", "shortness of breath", "incidental finding of a bronchocoele (mucus-filled cyst)", "associated with hyperlucency of a segment"],
+    "guidance": "This is a congenital defect where a segmental bronchus is occluded. If asymptomatic, observation. If recurrent infections, surgical resection. Diagnosis by CT. Pulmonology and thoracic surgery review.",
+    "precautions": ["If you have recurrent infections, consider surgery", "Avoid smoking", "Regular follow-up", "Monitor for growth of the cyst", "If symptomatic, treat early"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_087",
+    "category": "Laryngomalacia (Infant Stridor)",
+    "symptoms": ["inspiratory stridor (high-pitched) in infants, usually from birth", "worse with crying, feeding, or lying on the back", "improves when prone", "often resolves by 18-24 months", "rarely causes feeding difficulty or cyanosis"],
+    "guidance": "This is the most common cause of stridor in infants. Most cases are benign and self-limiting. If the infant has feeding problems, poor weight gain, or cyanosis, evaluation by ENT is needed. Severe cases may need supraglottoplasty.",
+    "precautions": ["Keep the infant upright during feeds", "Monitor weight gain", "If breathing difficulty or cyanosis, seek emergency care", "Do not panic – most resolve", "Regular paediatric follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_088",
+    "category": "Vocal Cord Paralysis",
+    "symptoms": ["hoarseness", "breathy voice", "voice fatigue", "dysphagia", "aspiration (choking on liquids)", "shortness of breath (if bilateral)", "caused by nerve damage (surgery, tumour, viral)"],
+    "guidance": "Treatment: voice therapy, and if severe, surgical interventions (injection laryngoplasty, thyroplasty). Bilateral paralysis may cause airway obstruction – emergency tracheostomy may be needed. ENT specialist evaluation is essential.",
+    "precautions": ["If you have sudden voice loss after surgery, see an ENT", "Monitor for aspiration – eat slowly", "Speech therapy can help", "If breathing difficulty, seek emergency", "Avoid smoke and irritants"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_089",
+    "category": "Recurrent Respiratory Papillomatosis (Laryngeal Papillomatosis)",
+    "symptoms": ["hoarseness, voice change", "stridor (if airway narrowing)", "cough", "dysphonia", "slow-growing benign warts in the larynx, caused by HPV (types 6, 11)", "recurrence is common"],
+    "guidance": "Treatment: surgical removal (microdebrider, laser) is the mainstay. Adjuvant therapy: interferon, cidofovir, or bevacizumab may reduce recurrence. HPV vaccination is preventive. Regular ENT follow-up.",
+    "precautions": ["HPV vaccination (Gardasil) prevents this", "If you have recurring hoarseness, see an ENT", "Avoid smoking", "Surgery may be needed repeatedly", "Monitor for airway compromise"],
+    "urgency": "medium"
+  },
+  {
+    "id": "resp_090",
+    "category": "Laryngeal Carcinoma (Cancer of the Larynx)",
+    "symptoms": ["persistent hoarseness (>3 weeks)", "sore throat", "ear pain (referred)", "dysphagia", "weight loss", "haemoptysis", "history of smoking and alcohol use"],
+    "guidance": "Early diagnosis is key – if hoarseness persists, get a laryngoscopy. Treatment: surgery, radiation, and chemotherapy depending on stage. Early-stage cancer has a good prognosis. Smoking cessation is the best prevention.",
+    "precautions": ["Stop smoking and alcohol", "If hoarseness lasts >3 weeks, see an ENT", "Avoid irritants", "Regular checkups for high-risk individuals", "If diagnosed, follow oncology plan"],
+    "urgency": "high"
+  },
+  {
+    "id": "resp_091",
+    "category": "Acute Respiratory Infection (Unspecified)",
+    "symptoms": ["fever", "cough", "sore throat", "nasal congestion", "malaise", "usually viral"],
+    "guidance": "Most are self-limiting. Rest, hydration, and symptomatic relief (paracetamol, cough syrup). See a doctor if fever >3 days, shortness of breath, or worsening symptoms. Handwashing prevents spread.",
+    "precautions": ["Wash hands frequently", "Cover coughs", "Stay home if sick", "Avoid smoke and irritants", "If you have underlying lung disease, seek care earlier"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_092",
+    "category": "Costochondritis (Chest Wall Pain)",
+    "symptoms": ["chest pain (sharp, aching, or pressure-like)", "worse with movement or deep breathing", "tenderness over the costochondral junctions", "pain reproducible by palpation", "often mistaken for heart pain"],
+    "guidance": "This is inflammation of the cartilage connecting ribs to the breastbone. Treatment: NSAIDs, heat application, and rest. Reassurance is important. If pain is severe or associated with shortness of breath, rule out cardiac causes.",
+    "precautions": ["Take NSAIDs as prescribed", "Avoid heavy lifting", "Use heat packs", "If chest pain is new, get cardiac evaluation", "Do not ignore if pain is accompanied by other symptoms"],
+    "urgency": "low"
+  },
+  {
+    "id": "resp_093",
+    "category": "Pulmonary Infarction",
+    "symptoms": ["sudden chest pain (pleuritic)", "hemoptysis", "shortness of breath", "fever", "often due to pulmonary embolism (PE)", "associated with underlying PE"],
+    "guidance": "Pulmonary infarction is lung tissue death due to obstruction of pulmonary blood supply, usually from PE. Treatment: anticoagulation for PE, supportive care, and oxygen. If large, may need thrombolysis. Emergency care is needed.",
+    "precautions": ["If you have chest pain with hemoptysis, seek emergency", "Anticoagulation is essential", "If you have risk factors for DVT/PE, use prophylaxis", "Avoid immobility", "Monitor for complications"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_094",
+    "category": "Air Embolism",
+    "symptoms": ["sudden chest pain", "shortness of breath", "cough", "cyanosis", "confusion", "seizures", "loss of consciousness", "often due to trauma, central venous catheter, or scuba diving"],
+    "guidance": "This is a medical emergency. Treatment: position the patient in Trendelenburg (head down, left lateral) to trap air in the right ventricle. High-flow oxygen. If possible, hyperbaric oxygen therapy. Emergency intervention is needed.",
+    "precautions": ["Invasive procedures: ensure air is purged from lines", "If diving, ascend slowly", "If you have a central line, monitor for air", "If symptoms develop after line manipulation, seek immediate care", "Prepare for emergency treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_095",
+    "category": "Pulmonary Barotrauma",
+    "symptoms": ["chest pain", "shortness of breath", "cough", "hemoptysis", "pneumothorax", "subcutaneous emphysema", "occurs with rapid changes in pressure (scuba diving, mechanical ventilation)"],
+    "guidance": "Barotrauma is lung injury from pressure changes. Treatment: oxygen, chest tube for pneumothorax, and supportive care. If on a ventilator, reduce pressures. Divers should ascend slowly. Emergency care is needed.",
+    "precautions": ["If you are diving, ascend slowly", "Do not hold your breath during ascent", "If you have lung disease, consult a doctor before diving", "If symptoms occur, seek medical care", "Avoid flying if you have a pneumothorax"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_096",
+    "category": "Diving-Related Pulmonary Disorder (e.g., Pulmonary Overinflation Syndrome)",
+    "symptoms": ["chest pain", "shortness of breath", "cough", "subcutaneous emphysema", "pneumothorax", "medastinal emphysema", "after scuba diving with rapid ascent"],
+    "guidance": "This is a type of barotrauma. Treatment: oxygen, observation, and chest tube if needed. Avoid diving if you have lung cysts or asthma. Emergency evaluation is required.",
+    "precautions": ["Dive safely – ascend slowly", "Do not dive if you have a respiratory infection", "If you have a history of pneumothorax, avoid diving", "If symptoms, seek emergency", "Monitor for recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_097",
+    "category": "High-Altitude Pulmonary Edema (HAPE) – Prevention and Management",
+    "symptoms": ["breathlessness at rest", "dry cough progressing to frothy sputum", "fatigue", "cyanosis", "tachycardia", "occurs at altitudes >2,500 m"],
+    "guidance": "Descend immediately – this is the most important treatment. Administer oxygen if available. Nifedipine and dexamethasone may be used. Portable hyperbaric bags can be life-saving. Ascend slowly with acclimatisation.",
+    "precautions": ["Acclimatise gradually", "Avoid alcohol and sedatives at high altitude", "If symptoms, descend – do not wait", "Take acetazolamide for prophylaxis if susceptible", "Know the signs – early recognition saves lives"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_098",
+    "category": "High-Altitude Cerebral Edema (HACE) – Prevention and Management",
+    "symptoms": ["severe headache", "ataxia (unsteady gait)", "confusion", "hallucinations", "vomiting", "decreased consciousness", "occurs at high altitude"],
+    "guidance": "This is a medical emergency. Descend immediately. Give dexamethasone and oxygen. If descent is not possible, use a hyperbaric bag. Do not leave the person alone.",
+    "precautions": ["Gradual ascent", "Avoid overexertion", "If you have HAPE, treat aggressively", "Carry acetazolamide for prophylaxis", "Know the symptoms – early descent is life-saving"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_099",
+    "category": "Decompression Sickness (Caisson Disease) – Pulmonary Manifestations",
+    "symptoms": ["shortness of breath (chokes)", "chest pain", "dry cough", "cyanosis", "occurs after rapid decompression in divers or aviators"],
+    "guidance": "Treatment: recompression in a hyperbaric chamber is the definitive treatment. Administer 100% oxygen. Do not fly after diving. Emergency transport to a hyperbaric facility is needed.",
+    "precautions": ["Follow diving tables", "Ascend slowly", "Do not fly within 12-24 hours after diving", "If symptoms, seek emergency care", "Do not ignore – can be fatal"],
+    "urgency": "critical"
+  },
+  {
+    "id": "resp_100",
+    "category": "Chronic Hypersensitivity Pneumonitis (Fibrotic)",
+    "symptoms": ["progressive shortness of breath", "cough", "fatigue", "weight loss", "clubbing", "irreversible fibrosis", "history of repeated exposure to organic antigens (birds, mouldy hay)"],
+    "guidance": "Treatment: avoidance of the antigen is the most important. Corticosteroids and immunosuppressants may slow progression. In advanced cases, lung transplant may be considered. Management by a pulmonologist is essential.",
+    "precautions": ["Identify and avoid the causative antigen", "If you have bird exposure, remove birds", "Use respirators in high-risk occupations", "Regular PFTs and imaging", "Smoking cessation"],
+    "urgency": "high"
+  }
+]

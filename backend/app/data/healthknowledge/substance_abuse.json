@@ -1,0 +1,802 @@
+[
+  {
+    "id": "sa_001",
+    "category": "Tobacco Use Disorder (Nicotine Dependence)",
+    "symptoms": ["strong cravings for tobacco", "irritability, anxiety, or restlessness when not using", "continued use despite health problems", "tolerance (needs more to get same effect)", "withdrawal symptoms (headache, insomnia, difficulty concentrating)", "failed attempts to quit"],
+    "guidance": "Nicotine addiction is a chronic condition. Treatment options: nicotine replacement therapy (gum, patches, lozenges), oral medications (bupropion, varenicline), and behavioral counseling (CBT). Set a quit date, avoid triggers, and enlist social support. Free cessation support is available at government hospitals and tobacco cessation centres.",
+    "precautions": ["Do not use e‑cigarettes as a 'safe' alternative – they are not harmless", "Avoid situations where you usually smoke (e.g., after meals, with coffee)", "If you relapse, try again – it often takes multiple attempts", "Consider joining a support group", "Nicotine replacement doubles quit success rates"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_002",
+    "category": "Nicotine Withdrawal (Acute)",
+    "symptoms": ["intense craving for nicotine", "irritability, anger, frustration", "anxiety, depressed mood", "difficulty concentrating", "increased appetite, weight gain", "insomnia, restlessness", "headache, sweating"],
+    "guidance": "Withdrawal symptoms peak within the first week and usually subside within 2–4 weeks. Use nicotine replacement to ease symptoms. Stay hydrated, engage in physical activity, and distract yourself. If symptoms are severe, talk to a healthcare provider.",
+    "precautions": ["Do not give in to cravings – they usually last only 5–10 minutes", "Keep healthy snacks on hand to manage weight gain", "Practice deep breathing to manage stress", "If you feel depressed, seek professional help", "Nicotine replacement reduces withdrawal intensity"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_003",
+    "category": "Alcohol Use Disorder (Moderate‑Severe)",
+    "symptoms": ["strong craving for alcohol", "loss of control over drinking", "tolerance (needs more to feel same effect)", "withdrawal symptoms (tremors, sweating, anxiety) when not drinking", "continued drinking despite social, occupational, or health problems", "spending a lot of time drinking or recovering"],
+    "guidance": "Treatment: medically supervised detoxification, medications (naltrexone, acamprosate, disulfiram), and psychosocial interventions (CBT, motivational interviewing). Support groups (AA, SMART Recovery) are helpful. Free de‑addiction services are available at government hospitals. Never stop heavy drinking abruptly without medical supervision – risk of seizures.",
+    "precautions": ["Do not stop alcohol abruptly if you are physically dependent – seek medical help", "Remove alcohol from your home", "Avoid social situations that trigger drinking", "If you have a relapse, do not give up – treatment works", "Take medications as prescribed to reduce cravings"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_004",
+    "category": "Alcohol Withdrawal Syndrome (Delirium Tremens)",
+    "symptoms": ["tremors (shakes)", "sweating, rapid heart rate, hypertension", "anxiety, irritability", "nausea, vomiting", "hallucinations (visual, tactile)", "seizures", "confusion, disorientation (delirium tremens – life‑threatening)", "occurs 6–72 hours after last drink"],
+    "guidance": "This is a medical emergency – call 108. Do not try to manage at home. Hospitalisation is needed for IV fluids, benzodiazepines, and monitoring. Withdrawal can be fatal if untreated. Prevention: seek medically supervised detoxification. Free emergency care is available.",
+    "precautions": ["Do not attempt 'cold turkey' if you drink heavily – seek medical help", "If you have a seizure, protect the person from injury", "Ensure a calm, quiet environment", "If you are caring for someone with alcohol dependence, know the signs", "Early treatment prevents complications"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_005",
+    "category": "Opioid Use Disorder (Heroin / Prescription Opioids)",
+    "symptoms": ["intense craving for opioids", "inability to control use", "tolerance (needing more)", "withdrawal symptoms (pain, diarrhea, nausea, yawning, restlessness)", "continued use despite harm", "neglect of responsibilities"],
+    "guidance": "Medication‑assisted treatment (MAT) with buprenorphine/naloxone or methadone is the gold standard – available free at government de‑addiction centres. Counseling and support groups (NA) are essential. Overdose can be reversed with naloxone (available free). Avoid mixing with alcohol or sedatives.",
+    "precautions": ["Do not stop MAT medications abruptly – it prevents withdrawal and cravings", "Carry naloxone if you or a loved one uses opioids", "If you witness an overdose, call 108, administer naloxone, and start CPR", "Avoid injecting – risk of HIV, hepatitis C, and infections", "Engage in long‑term treatment – relapse is common, but recovery is possible"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_006",
+    "category": "Opioid Withdrawal (Acute)",
+    "symptoms": ["muscle aches and bone pain", "diarrhea, abdominal cramping", "nausea, vomiting", "dilated pupils, runny nose, sweating", "yawning, restlessness, anxiety", "insomnia", "intense cravings", "onset 6–24 hours after last dose"],
+    "guidance": "Withdrawal is not life‑threatening but is extremely uncomfortable. Managed with buprenorphine (sublingual) or methadone under medical supervision. Clonidine and other symptomatic treatments help. Do not attempt cold turkey without support. Free detoxification at government centres.",
+    "precautions": ["Do not try to detox at home without medical support – risk of severe dehydration", "If you are on MAT, do not stop suddenly – it can precipitate withdrawal", "Stay hydrated – drink ORS to prevent dehydration", "If you have diarrhoea, use loperamide (temporarily)", "Seek mental health support – withdrawal can be distressing"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_007",
+    "category": "Opioid Overdose (Life‑Threatening)",
+    "symptoms": ["pinpoint pupils", "respiratory depression (slow, shallow, or no breathing)", "cyanosis (blue lips/fingernails)", "unconsciousness, unresponsiveness", "cold, clammy skin", "bradycardia (slow pulse)"],
+    "guidance": "This is a medical emergency – call 108 immediately. If you have naloxone, administer intranasal or IM. Start CPR if no breathing. Lay the person on their side. Do not give food or water. Even if naloxone is given, the person must go to hospital (naloxone may wear off). Free naloxone is available at some centres.",
+    "precautions": ["Do not assume the person is just asleep – check breathing", "If you are at risk, carry naloxone", "Do not inject alone – ensure someone can call for help", "If you give naloxone, stay until help arrives", "After overdose, get treatment – it is an opportunity for recovery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_008",
+    "category": "Cannabis Use Disorder",
+    "symptoms": ["craving cannabis", "use despite negative consequences (work, relationships)", "tolerance (needs more to get high)", "withdrawal symptoms (irritability, sleep problems, decreased appetite)", "spending a lot of time obtaining and using cannabis", "failed attempts to cut down"],
+    "guidance": "Cannabis use disorder is treatable. Cognitive‑behavioural therapy (CBT) and motivational enhancement therapy are effective. No specific medications are approved, but addressing underlying anxiety/depression helps. Avoid triggers, build a support network, and engage in alternative activities. Free counselling at government mental health centres.",
+    "precautions": ["Do not use cannabis to self‑medicate – it may worsen anxiety", "If you have a history of psychosis, avoid cannabis entirely", "Monitor for worsening mood or motivation", "If you are trying to quit, stay away from people who use", "Seek professional help if you cannot control your use"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_009",
+    "category": "Cannabis Withdrawal",
+    "symptoms": ["irritability, anger, aggression", "anxiety, restlessness", "insomnia, sleep disturbances", "decreased appetite, weight loss", "depressed mood", "cravings for cannabis", "peaks within 1 week, resolves in 2–3 weeks"],
+    "guidance": "Withdrawal from cannabis is uncomfortable but not dangerous. Supportive care: hydrate, maintain a regular sleep schedule, exercise. Over‑the‑counter sleep aids may help. If symptoms are severe, see a doctor – they may prescribe medications (e.g., gabapentin) to ease symptoms. Free counselling available.",
+    "precautions": ["Do not use other substances to manage withdrawal", "Stay physically active to improve mood", "Keep a regular sleep schedule", "If you have anxiety, practice relaxation techniques", "If symptoms persist, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_010",
+    "category": "Cocaine Use Disorder",
+    "symptoms": ["strong craving for cocaine", "tolerance (needs more to get high)", "withdrawal (depression, fatigue, increased appetite, intense cravings)", "continued use despite physical, social, or financial harm", "use often in binges", "nasal damage (if snorted) or vein problems (if injected)"],
+    "guidance": "Cocaine addiction is treatable. No specific medications; CBT and contingency management are effective. Address co‑occurring psychiatric disorders. Medical monitoring for cardiovascular complications. Free rehabilitation at government centres. Avoid triggers and high‑risk situations.",
+    "precautions": ["Cocaine can cause heart attacks and strokes – seek emergency if chest pain", "If you inject, use clean needles – free needle exchange programs exist", "If you have a relapse, get back into treatment", "Avoid alcohol – it potentiates cocaine's cardiovascular effects", "If you have paranoid thoughts, seek immediate help"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_011",
+    "category": "Cocaine Withdrawal",
+    "symptoms": ["depressed mood, anhedonia (loss of pleasure)", "fatigue, hypersomnia (sleeping a lot)", "increased appetite", "intense cravings for cocaine", "agitation, anxiety", "nightmares", "symptoms peak in 1–3 days, can last weeks"],
+    "guidance": "Withdrawal is not life‑threatening but can be severe. Supportive care, adequate nutrition, and sleep. Antidepressants (SSRIs) may help with depressive symptoms. Psychotherapy is essential to prevent relapse. Free mental health support.",
+    "precautions": ["Do not use alcohol or other drugs to cope with withdrawal", "Maintain a healthy sleep cycle", "If you have severe depression, seek professional help", "Stay connected with supportive people", "If you have suicidal thoughts, call a helpline"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_012",
+    "category": "Stimulant Use Disorder (Amphetamines / Methamphetamine)",
+    "symptoms": ["compulsive use of stimulants", "tolerance (needing more)", "withdrawal (depression, fatigue, sleep disturbances)", "continued use despite harm", "hyperactivity, agitation", "psychosis (paranoia, hallucinations) in severe cases"],
+    "guidance": "Treatment: behavioral therapies (CBT, contingency management) are the mainstay. No specific medications for amphetamine addiction, but antidepressants may help with depression. Medical management of psychosis (antipsychotics) if needed. Free rehabilitation services.",
+    "precautions": ["Methamphetamine can cause severe dental problems ('meth mouth') – maintain oral hygiene", "If you have psychosis, seek emergency care", "Avoid driving or operating machinery while under the influence", "If you inject, use clean needles", "Treatment is effective – seek help early"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_013",
+    "category": "Amphetamine Withdrawal",
+    "symptoms": ["depression, anxiety", "extreme fatigue", "increased appetite", "vivid, unpleasant dreams", "cravings", "psychomotor retardation", "peaks in 2–3 days, resolves in 1–2 weeks"],
+    "guidance": "Supportive care: rest, hydration, nutrition, and a safe environment. Antidepressants may be needed for depression. Counseling and CBT to prevent relapse. Free mental health services.",
+    "precautions": ["Do not use other stimulants to 'help' – it worsens the cycle", "Get adequate sleep and rest", "If you have suicidal thoughts, seek emergency help", "Maintain a structured daily routine", "Avoid triggers and high‑stress situations"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_014",
+    "category": "Benzodiazepine Use Disorder",
+    "symptoms": ["craving for benzodiazepines", "tolerance (need higher doses)", "withdrawal symptoms (anxiety, insomnia, seizures) when stopping", "continued use despite negative consequences", "doctor‑shopping or obtaining illegally"],
+    "guidance": "Gradual tapering under medical supervision is essential – abrupt withdrawal can cause seizures. Substitute with long‑acting benzodiazepine (diazepam) and taper slowly over weeks to months. CBT addresses underlying anxiety. Free de‑addiction services.",
+    "precautions": ["Do not stop benzodiazepines abruptly – risk of seizures", "If you have a history of seizures, taper under medical supervision", "Avoid alcohol (cross‑tolerance and withdrawal)", "If you have anxiety, use non‑drug therapies (CBT)", "Do not buy benzodiazepines from unauthorized sources"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_015",
+    "category": "Benzodiazepine Withdrawal",
+    "symptoms": ["rebound anxiety, panic attacks", "insomnia, nightmares", "sweating, palpitations", "muscle aches, tremors", "nausea, vomiting", "seizures (in severe cases)", "psychosis, confusion (rare)"],
+    "guidance": "Withdrawal is managed by switching to a long‑acting benzodiazepine (diazepam) and tapering slowly (weeks to months). Do not attempt abrupt cessation. Medical supervision is essential. Free detox at government centres. Psychological support helps.",
+    "precautions": ["Do not stop suddenly – seizures are a risk", "If you have a seizure, call 108", "Tapering should be supervised by a doctor", "Avoid alcohol and other sedatives", "If you have anxiety, use relaxation techniques"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_016",
+    "category": "Sedative‑Hypnotic Use Disorder (Non‑Benzodiazepines)",
+    "symptoms": ["use of zolpidem, zopiclone, barbiturates", "tolerance, cravings, withdrawal", "continued use despite cognitive impairment, daytime sleepiness", "abuse often in combination with alcohol"],
+    "guidance": "Tapering under medical supervision is needed. Substitute with longer‑acting medications if indicated. Address underlying sleep and anxiety issues with CBT‑I. Free sleep clinics at some hospitals.",
+    "precautions": ["Do not mix with alcohol – can be fatal", "If you have sleep problems, try non‑drug approaches first", "Do not drive after taking sedatives", "If you are dependent, taper slowly", "Seek treatment for underlying anxiety or insomnia"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_017",
+    "category": "Barbiturate Withdrawal",
+    "symptoms": ["anxiety, tremors, weakness", "seizures (life‑threatening)", "delirium, hallucinations", "insomnia, nausea, vomiting", "can be fatal if untreated"],
+    "guidance": "This is a medical emergency. Treatment: phenobarbital or benzodiazepines for tapering under close monitoring. ICU may be needed. Do not attempt at home. Call 108. Free emergency care.",
+    "precautions": ["Do not stop barbiturates abruptly", "If you have seizures, protect the person from injury", "Seek medical help immediately", "Do not use alcohol", "Monitor vital signs"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_018",
+    "category": "Inhalant Use Disorder",
+    "symptoms": ["intense urge to inhale volatile substances (glue, paint thinner, aerosols)", "tolerance, withdrawal (may be mild)", "continued use despite harm (neurological, hepatic, renal)", "may cause acute intoxication with euphoria, hallucinations, and dizziness"],
+    "guidance": "Inhalant abuse is dangerous and can cause sudden death. Treatment: supportive care, medical management of complications (liver, kidney, neurological). CBT and motivational interviewing. Free de‑addiction services. Prevention: education and early intervention.",
+    "precautions": ["Do not use inhalants – can cause heart arrhythmia and death", "If you have used, monitor for neurological symptoms", "If you have a seizure, seek emergency care", "Avoid mixing with other substances", "Get a full medical checkup to assess organ damage"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_019",
+    "category": "Inhalant Withdrawal",
+    "symptoms": ["craving, anxiety, sleep disturbances", "irritability, depression", "sweating, nausea", "symptoms are generally mild but may include psychosis in chronic users"],
+    "guidance": "Withdrawal is usually mild but may require supportive care. Address medical complications (liver, renal, neurological). Counseling and CBT to prevent relapse. Free care.",
+    "precautions": ["Do not return to use – it can cause irreversible organ damage", "Get regular medical checkups", "If you have depression, seek treatment", "Avoid triggers (paint, solvents)", "If you have confusion, seek emergency"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_020",
+    "category": "Hallucinogen Use Disorder (LSD, Psilocybin, PCP)",
+    "symptoms": ["recurrent use of hallucinogens", "persistent perception disorder (flashbacks)", "continued use despite distress or danger", "tolerance (not to psychedelic effects, but to subjective effects)"],
+    "guidance": "Treatment: psychotherapy (CBT) is the mainstay. No specific medications. If psychotic symptoms occur, antipsychotics may be needed. Address underlying mental health issues. Free mental health services.",
+    "precautions": ["If you experience flashbacks, seek professional help", "Do not use hallucinogens if you have a personal or family history of psychosis", "Avoid driving or operating machinery while under the influence", "If you have a bad trip, stay calm, reassure the person, and seek medical help if needed", "Education about effects is key"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_021",
+    "category": "Phencyclidine (PCP) Use Disorder",
+    "symptoms": ["intoxication with severe agitation, violence, psychosis", "tolerance, cravings", "withdrawal: depression, craving, sleep problems"],
+    "guidance": "Treatment is supportive. Antipsychotics for psychosis. Hospitalisation for severe agitation. Long‑term: CBT and motivational interviewing. Free emergency and mental health care.",
+    "precautions": ["PCP can cause violent behavior – keep yourself safe, call 108", "Do not attempt to restrain alone", "If the person is psychotic, do not argue", "After intoxication, treat underlying psychiatric issues", "Avoid stimulant use concurrently"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_022",
+    "category": "Anabolic Steroid Use Disorder",
+    "symptoms": ["body image preoccupation, extreme workouts", "use of steroids despite adverse effects (mood swings, aggression, liver toxicity, gynecomastia, testicular atrophy)", "withdrawal: depression, fatigue, loss of libido, increased risk of injury"],
+    "guidance": "Treatment: education, CBT, and support groups. Address body dysmorphic disorder if present. Medical monitoring for organ damage. Testosterone replacement may be needed for hypogonadism. Free endocrinology care.",
+    "precautions": ["Do not use anabolic steroids – they cause long‑term damage", "If you have mood changes, see a doctor", "Monitor liver function and lipid profile", "If you experience depression upon stopping, seek help", "Avoid needle sharing – risk of HIV and hepatitis"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_023",
+    "category": "Anabolic Steroid Withdrawal",
+    "symptoms": ["depression, fatigue, loss of appetite", "decreased libido, erectile dysfunction", "increased irritability", "cravings for steroids", "may last weeks to months"],
+    "guidance": "Supportive care, CBT, and monitoring of testosterone levels. In severe cases, testosterone replacement may be needed. Free mental health and endocrinology care.",
+    "precautions": ["Do not restart steroids to alleviate withdrawal", "If you have suicidal thoughts, seek emergency help", "Maintain a healthy diet and exercise naturally", "Monitor for hypogonadism", "Address body image concerns"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_024",
+    "category": "Prescription Drug Misuse – Stimulants (ADHD Medications)",
+    "symptoms": ["using ADHD medications (methylphenidate, amphetamines) without a prescription, or in higher doses", "to get high, improve performance, or lose weight", "tolerance, withdrawal (depression, fatigue)", "cardiovascular effects (tachycardia, hypertension)"],
+    "guidance": "Education, CBT, and medical management. If you are diagnosed with ADHD, use medications as prescribed. If you are misusing, seek help. Free de‑addiction services.",
+    "precautions": ["Do not crush or inject ADHD medications – can cause severe reactions", "If you have heart palpitations, stop and seek care", "Avoid alcohol", "If you are a student, use non‑drug study strategies", "Do not share prescriptions"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_025",
+    "category": "Prescription Drug Misuse – Opioid Painkillers",
+    "symptoms": ["using higher doses than prescribed", "frequent refill requests", "doctor‑shopping", "tolerance, withdrawal", "using for non‑medical purposes"],
+    "guidance": "Treatment: MAT with buprenorphine/naloxone, detox, and CBT. Address pain management with alternatives (physical therapy, non‑opioid pain relief). Free MAT at government hospitals.",
+    "precautions": ["Do not stop opioids abruptly if physically dependent – taper", "If you have chronic pain, explore non‑opioid options", "If you are prescribed opioids, do not increase dose without advice", "If you have a history of addiction, discuss with your doctor", "Carry naloxone if you are at risk"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_026",
+    "category": "Polysubstance Abuse",
+    "symptoms": ["using multiple substances (alcohol, opioids, benzodiazepines, etc.)", "increased risk of overdose and interactions", "tolerance, withdrawal from multiple substances", "severe social, health, and legal consequences"],
+    "guidance": "Treatment must address all substances. Medically supervised detox, comprehensive rehabilitation, and dual diagnosis treatment. Free de‑addiction centres offer integrated care. Avoid mixing substances – risk of fatal overdose.",
+    "precautions": ["Do not mix alcohol with benzodiazepines or opioids – can be fatal", "If you are in treatment, be honest about all substances used", "If you have a relapse, get back into treatment", "Build a strong support network", "Address underlying mental health issues"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_027",
+    "category": "Dual Diagnosis (Substance Use + Mental Illness)",
+    "symptoms": ["co‑occurring substance use and psychiatric disorder (depression, anxiety, bipolar, schizophrenia)", "worsening of both conditions when untreated", "poor treatment adherence", "higher relapse rates"],
+    "guidance": "Integrated treatment is essential – address both conditions simultaneously. Medications for psychiatric symptoms and addiction. Psychotherapy (CBT, DBT). Free integrated mental health and de‑addiction services at government hospitals.",
+    "precautions": ["Do not stop psychiatric medications to use substances", "If you have a mental illness, avoid self‑medication with drugs/alcohol", "Attend dual‑diagnosis support groups", "If you have suicidal thoughts, call 108", "Regular follow‑up with both psychiatrist and addiction specialist"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_028",
+    "category": "Fetal Alcohol Spectrum Disorder (FASD)",
+    "symptoms": ["caused by alcohol exposure during pregnancy", "growth retardation, facial dysmorphology", "intellectual disability, behavioural problems", "attention deficits, learning difficulties"],
+    "guidance": "Prevention: complete abstinence from alcohol during pregnancy. If you are pregnant and drink, stop immediately and seek prenatal care. No safe amount of alcohol during pregnancy. Early intervention for affected children (special education, therapy).",
+    "precautions": ["If you are pregnant, do not drink alcohol", "If you have a child with FASD, seek early intervention", "Education and counselling for women of childbearing age", "Alcohol and pregnancy do not mix", "Support groups for affected families"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_029",
+    "category": "Alcohol‑Induced Liver Disease (Alcoholic Hepatitis)",
+    "symptoms": ["jaundice (yellowing of skin/eyes)", "abdominal pain, nausea, vomiting", "fever, malaise", "hepatomegaly (enlarged liver)", "elevated liver enzymes and bilirubin"],
+    "guidance": "Immediate medical care. Abstinence is the most important step. Nutritional support, corticosteroids for severe hepatitis. If cirrhosis develops, liver transplant may be needed. Free hepatology care at government hospitals.",
+    "precautions": ["Stop alcohol completely", "If you have jaundice, see a doctor immediately", "Maintain a high‑protein, high‑calorie diet", "If you have ascites or confusion, seek emergency care", "Regular liver function monitoring"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_030",
+    "category": "Alcoholic Cirrhosis (Decompensated)",
+    "symptoms": ["jaundice, ascites (abdominal swelling)", "peripheral edema, variceal bleeding", "hepatic encephalopathy (confusion, sleep reversal)", "easy bruising, fatigue, muscle wasting"],
+    "guidance": "Abstinence is the only treatment that can slow progression. Manage complications with diuretics, beta‑blockers, lactulose, and endoscopic variceal banding. Liver transplant for eligible patients. Free hepatology care.",
+    "precautions": ["Strictly avoid alcohol", "Follow a low‑sodium diet", "Take lactulose as prescribed to prevent encephalopathy", "If you have bleeding (vomiting blood, black stools), seek emergency", "Discuss transplant evaluation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_031",
+    "category": "Alcohol‑Induced Pancreatitis (Acute)",
+    "symptoms": ["severe epigastric pain radiating to the back", "nausea, vomiting", "fever, tachycardia", "abdominal tenderness", "elevated lipase/amylase"],
+    "guidance": "Medical emergency – call 108. Hospitalisation for IV fluids, pain management, and fasting. Abstinence is the only prevention. Recurrence with continued drinking. Free emergency care.",
+    "precautions": ["Stop alcohol immediately", "If you have severe abdominal pain, do not delay seeking care", "Do not eat or drink until medically cleared", "Follow a low‑fat diet after recovery", "If you have recurrent pancreatitis, avoid alcohol entirely"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_032",
+    "category": "Alcoholic Cardiomyopathy",
+    "symptoms": ["heart failure symptoms (dyspnoea, orthopnoea, oedema)", "palpitations, arrhythmias", "fatigue, reduced exercise tolerance", "history of heavy alcohol use"],
+    "guidance": "Abstinence is the most effective treatment – may reverse early cardiomyopathy. Heart failure medications (ACE inhibitors, beta‑blockers, diuretics). Free cardiology care. If you continue drinking, prognosis is poor.",
+    "precautions": ["Stop alcohol completely", "Take heart failure medications as prescribed", "Monitor weight daily – report any sudden gain", "Follow a low‑salt diet", "If you have breathing difficulty, seek emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_033",
+    "category": "Wernicke‑Korsakoff Syndrome (Alcohol‑Related Neurological Damage)",
+    "symptoms": ["Wernicke: confusion, ophthalmoplegia (eye movement disorders), ataxia", "Korsakoff: profound memory loss, confabulation, personality changes", "often in chronic alcoholics with thiamine deficiency"],
+    "guidance": "Medical emergency – thiamine (IV) should be given immediately, before glucose. Long‑term: high‑dose oral thiamine. Korsakoff is often irreversible, but early treatment can prevent progression. Free neurology care.",
+    "precautions": ["If you are alcoholic, take thiamine supplements", "If you develop confusion or eye problems, seek emergency", "Do not give glucose without thiamine", "Maintain a balanced diet", "If you have memory problems, see a neurologist"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_034",
+    "category": "Tobacco‑Related Oral Cancer (Smokeless Tobacco)",
+    "symptoms": ["non‑healing ulcer in the mouth", "white or red patch (leukoplakia, erythroplakia)", "pain, difficulty chewing or swallowing", "lump in the neck", "bleeding from the mouth"],
+    "guidance": "Stop using gutkha, paan, or any smokeless tobacco immediately. See a dentist or oncologist for biopsy. Treatment: surgery, radiation, chemotherapy – free under PMJAY. Prevention: avoid tobacco, regular oral screening.",
+    "precautions": ["Do not use gutkha, paan, or any tobacco products", "If you have a mouth ulcer lasting >2 weeks, see a doctor", "Attend regular oral cancer screening (free at PHCs)", "Avoid alcohol and smoking (synergistic risk)", "If you have a lump in the neck, get evaluated"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_035",
+    "category": "Smoking‑Related Lung Cancer",
+    "symptoms": ["persistent cough, hemoptysis (coughing blood)", "chest pain, shortness of breath", "unexplained weight loss, fatigue", "hoarseness, recurrent respiratory infections"],
+    "guidance": "Stop smoking immediately. Low‑dose CT screening for high‑risk individuals (age 50+, heavy smokers). Treatment: surgery, chemo, radiation, immunotherapy – free under PMJAY. Prevention: smoking cessation is key.",
+    "precautions": ["Stop smoking – it is never too late", "If you have a persistent cough, get a chest X‑ray", "If you are high‑risk, discuss screening with your doctor", "Avoid secondhand smoke", "If diagnosed, follow oncology treatment plan"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_036",
+    "category": "Smoking‑Related COPD (Chronic Bronchitis/Emphysema)",
+    "symptoms": ["chronic cough with sputum", "shortness of breath", "wheezing, chest tightness", "frequent respiratory infections"],
+    "guidance": "Smoking cessation slows disease progression. Inhalers (bronchodilators, steroids), pulmonary rehabilitation, oxygen therapy for severe. Free inhalers at government hospitals. Annual flu and pneumococcal vaccines.",
+    "precautions": ["Stop smoking", "Use inhalers correctly (with spacer)", "Avoid air pollution and dust", "Get vaccinated against flu and pneumococcus", "If breathlessness worsens, seek care"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_037",
+    "category": "Smoking‑Related Cardiovascular Disease (Atherosclerosis)",
+    "symptoms": ["chest pain (angina), shortness of breath", "leg pain with walking (claudication)", "stroke or transient ischaemic attack (TIA)"],
+    "guidance": "Smoking damages blood vessels – quitting reduces risk dramatically. Control BP, cholesterol, diabetes. Use antiplatelet therapy (aspirin). Free NCD care. If you have chest pain, call 108.",
+    "precautions": ["Quit smoking – it is the single most important step", "Control BP, lipids, and blood sugar", "Take aspirin if prescribed", "If you have chest pain, do not delay – call 108", "Adopt a heart‑healthy diet and exercise"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_038",
+    "category": "Alcohol and Breast Cancer Risk",
+    "symptoms": ["alcohol consumption is a risk factor, not a symptom", "risk increases with the amount consumed", "even moderate drinking increases risk"],
+    "guidance": "Reduce alcohol intake to lower breast cancer risk. The risk is dose‑dependent – the less you drink, the lower the risk. Regular breast screening (mammography). Free screening at government hospitals.",
+    "precautions": ["Limit alcohol to ≤1 drink per day (or abstain)", "If you have a family history of breast cancer, limit or avoid alcohol", "Attend regular mammography", "Maintain a healthy weight and exercise", "If you have concerns, discuss with your doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_039",
+    "category": "Alcohol‑Related Seizures (Withdrawal)",
+    "symptoms": ["generalised tonic‑clonic seizures", "occurs 6–48 hours after last drink", "may be preceded by tremors, sweating, hallucinations"],
+    "guidance": "Call 108 immediately. Protect from injury. Do not put anything in the mouth. Seizures are a sign of severe withdrawal – hospitalisation needed for benzodiazepines. Do not attempt home management.",
+    "precautions": ["If you are withdrawing, do not be alone", "Seek medical help for detox", "If you have a seizure, turn the person on their side", "Do not give anything by mouth during seizure", "Prevent future seizures by supervised detox"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_040",
+    "category": "Alcohol‑Induced Psychosis",
+    "symptoms": ["auditory hallucinations (often accusatory voices)", "paranoid delusions", "agitation, confusion", "occurs during intoxication or withdrawal", "may be transient or chronic"],
+    "guidance": "Medical emergency – rule out delirium tremens. Treatment: benzodiazepines (for withdrawal) and antipsychotics (haloperidol). Abstinence resolves symptoms in most cases. Free psychiatric care.",
+    "precautions": ["Do not leave the person alone – risk of harm", "If the person is agitated, do not argue", "Ensure a calm, safe environment", "If you have psychotic symptoms, seek immediate help", "Long‑term: treat alcohol dependence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_041",
+    "category": "Cannabis and Schizophrenia Risk",
+    "symptoms": ["cannabis use can trigger or worsen schizophrenia in vulnerable individuals", "early‑onset psychosis", "positive symptoms (hallucinations, delusions) and negative symptoms"],
+    "guidance": "Avoid cannabis if you have a personal or family history of psychosis. If you develop psychotic symptoms, see a psychiatrist immediately. Treatment: antipsychotics and cessation of cannabis. Free mental health services.",
+    "precautions": ["If you have a family history of psychosis, do not use cannabis", "If you develop paranoia or hallucinations, seek help", "Do not use cannabis to 'self‑medicate'", "If you are on antipsychotics, do not stop due to cannabis use", "Educate yourself about the risks"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_042",
+    "category": "Cocaine‑Induced Cardiac Events",
+    "symptoms": ["chest pain, palpitations, shortness of breath", "hypertension, tachycardia", "arrhythmias, myocardial infarction", "sudden cardiac arrest"],
+    "guidance": "Cocaine use can cause acute cardiovascular events. Call 108 immediately if chest pain occurs. Do not use cocaine if you have underlying heart disease. Free emergency cardiac care.",
+    "precautions": ["If you have chest pain after cocaine use, call 108", "Do not use cocaine with alcohol (produces cocaethylene, more toxic)", "If you have high BP or heart disease, avoid cocaine", "If you have palpitations, stop use", "Seek addiction treatment to prevent recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_043",
+    "category": "Methamphetamine‐Induced Psychosis",
+    "symptoms": ["paranoid delusions, auditory hallucinations", "formication (sensation of bugs crawling on skin)", "agitation, aggression", "can persist for weeks after cessation"],
+    "guidance": "Medical emergency – antipsychotics (haloperidol) and benzodiazepines for agitation. Psychiatric evaluation. Long‑term abstinence is required; psychosis may remit but can become chronic. Free psychiatric care.",
+    "precautions": ["Do not use methamphetamine if you have a history of psychosis", "If you have paranoia, seek help", "Avoid alcohol (can worsen)", "If you are aggressive, call for help", "Long‑term treatment for methamphetamine use disorder"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_044",
+    "category": "Heroin Overdose – Prevention and Naloxone",
+    "symptoms": ["not a disease – preventive guidance", "carrying naloxone, using with a buddy", "avoid mixing with alcohol or sedatives"],
+    "guidance": "If you use opioids, carry naloxone (available free at some government centres). Do not use alone. Start with a small test dose. Know the signs of overdose. If you witness an overdose, administer naloxone, call 108, and start CPR. Free naloxone training.",
+    "precautions": ["Do not use alone", "Carry naloxone if you or a loved one uses opioids", "Do not mix opioids with alcohol or benzodiazepines", "If you are in treatment, continue medications – they reduce overdose risk", "If you are new to treatment, take it slowly – tolerance drops"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_045",
+    "category": "Opioid Use Disorder – Medication‑Assisted Treatment (MAT)",
+    "symptoms": ["not a disease – treatment for opioid dependence", "using buprenorphine/naloxone or methadone to reduce cravings and withdrawal", "reducing illicit opioid use", "stabilising social function"],
+    "guidance": "MAT is the most effective treatment for opioid use disorder. Buprenorphine/naloxone is available free at government de‑addiction centres. It reduces craving, prevents withdrawal, and blocks the euphoric effects of illicit opioids. Adherence is essential. Combine with counselling.",
+    "precautions": ["Take medications as prescribed – do not skip", "If you take buprenorphine, wait for withdrawal symptoms before the first dose (precipitated withdrawal)", "Do not stop suddenly – it can cause withdrawal", "If you are on methadone, do not take other opioids", "Engage in counselling – medication alone is not enough"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_046",
+    "category": "Alcohol Use Disorder – Pharmacotherapy (Naltrexone/Acamprosate)",
+    "symptoms": ["not a disease – treatment options", "naltrexone reduces cravings and blocks the euphoric effect of alcohol", "acamprosate reduces withdrawal symptoms and cravings"],
+    "guidance": "Medications for alcohol dependence are effective. Naltrexone and acamprosate are available free at government hospitals. Take as prescribed. Best results with counselling. Disulfiram (aversive) is another option – take only if you are committed to abstinence.",
+    "precautions": ["Do not drink alcohol while on disulfiram – causes severe reaction", "If you are on naltrexone, do not take opioid painkillers (blocks them)", "Take medications consistently", "If you have a relapse, do not stop medication – continue and seek support", "Combine with therapy"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_047",
+    "category": "Cannabis – Medical vs. Recreational Use",
+    "symptoms": ["not a disease – differentiating use", "medical cannabis for specific conditions (chronic pain, epilepsy, nausea)", "recreational use for non‑medical purposes", "risks of recreational use (cognitive impairment, respiratory issues, dependence)"],
+    "guidance": "Medical cannabis should only be used under a doctor's supervision for approved indications. Recreational use carries risks, especially for young people. If you are using cannabis for medical reasons, follow the prescription. If you are using recreationally and find it hard to stop, seek help.",
+    "precautions": ["Do not self‑medicate with cannabis", "If you have a family history of psychosis, avoid cannabis", "Do not drive under the influence", "If you are under 25, avoid cannabis (affects brain development)", "If you are pregnant, do not use cannabis"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_048",
+    "category": "E‑Cigarettes and Vaping – Health Risks",
+    "symptoms": ["cough, shortness of breath", "irritation of throat and mouth", "nicotine addiction", "EVALI (e‑cigarette or vaping product use‑associated lung injury) – acute respiratory failure, lung damage"],
+    "guidance": "E‑cigarettes are not safe – they contain nicotine and harmful chemicals. They can cause lung injury and addiction. If you are a non‑smoker, do not start vaping. If you smoke, FDA‑approved cessation methods are safer and more effective. Free cessation counselling.",
+    "precautions": ["Do not use e‑cigarettes if you do not already smoke", "If you vape, consider quitting – it is not harmless", "If you have coughing or breathing difficulty, see a doctor", "Avoid buying illicit vaping liquids (contaminants)", "If you are young, do not start vaping"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_049",
+    "category": "Gambling Disorder (Behavioural Addiction)",
+    "symptoms": ["preoccupation with gambling", "need to gamble with increasing amounts to feel excitement", "repeated unsuccessful efforts to cut down", "restlessness or irritability when trying to stop", "gambling to escape problems", "continued gambling despite losses", "lies to conceal extent of gambling", "relies on others to relieve financial situation"],
+    "guidance": "Gambling disorder is a behavioural addiction. Treatment: CBT, motivational interviewing, and support groups (Gamblers Anonymous). Financial counselling may help. No specific medications, but treat co‑occurring depression/anxiety. Free mental health services.",
+    "precautions": ["If you have urges, use a budgeting tool to limit money", "Avoid environments that trigger gambling", "If you have a relapse, seek help again", "Family therapy can help", "If you feel depressed, see a professional"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_050",
+    "category": "Internet Gaming Disorder",
+    "symptoms": ["preoccupation with gaming", "withdrawal symptoms (irritability, anxiety) when not gaming", "tolerance (needs more time)", "unsuccessful attempts to control gaming", "loss of interest in other activities", "continuing despite negative consequences", "deceiving others about gaming"],
+    "guidance": "Treatment: CBT, family therapy, and digital detox. Set time limits and promote alternative activities. Address underlying depression/anxiety. Free counselling at mental health centres. Screen time management.",
+    "precautions": ["Set time limits for gaming", "Find alternative hobbies", "If you are a parent, monitor your child's gaming", "If gaming affects school or work, seek help", "Do not use gaming to avoid problems"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_051",
+    "category": "Sexual Addiction (Compulsive Sexual Behaviour Disorder)",
+    "symptoms": ["persistent pattern of failure to control intense sexual impulses", "repetitive sexual behaviour becomes a central focus of life", "continued despite negative consequences", "inability to stop despite harm to self and others", "uses sex to cope with stress"],
+    "guidance": "Treatment: CBT, psychodynamic therapy, and support groups (Sex Addicts Anonymous). Address underlying trauma or mental health conditions. No specific medications. Free mental health services.",
+    "precautions": ["If you feel you are losing control, seek help", "Avoid triggers (pornography, certain situations)", "Build a support network", "If you have a relapse, do not give up", "Address shame – it is a treatable condition"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_052",
+    "category": "Shopping Addiction (Compulsive Buying Disorder)",
+    "symptoms": ["preoccupation with shopping", "uncontrollable urges to buy", "buying items not needed", "continued shopping despite financial problems", "uses shopping to cope with emotions", "post‑purchase guilt, remorse"],
+    "guidance": "Treatment: CBT, financial counselling, and support groups. Address underlying anxiety or depression. Free mental health services. Strategies: use cash, avoid online shopping triggers, set a budget.",
+    "precautions": ["If you have urges, wait 24 hours before buying", "Avoid online shopping when emotional", "Seek professional help if it affects finances", "Share financial control with a trusted person", "Identify triggers (stress, loneliness)"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_053",
+    "category": "Food Addiction (Binge Eating Disorder)",
+    "symptoms": ["recurrent episodes of binge eating (eating more than normal, loss of control)", "eating rapidly until uncomfortably full", "eating alone due to shame", "feeling guilty, depressed after bingeing", "not followed by compensatory behaviours (unlike bulimia)"],
+    "guidance": "Treatment: CBT, interpersonal therapy, and sometimes medications (lisdexamfetamine). Support groups. Address body image issues. Free counselling at government hospitals. Do not diet – it can trigger binges.",
+    "precautions": ["Do not skip meals – can trigger binges", "Seek professional help for binge eating", "If you have depression, treat it", "Avoid keeping binge foods at home", "Practice mindful eating"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_054",
+    "category": "Khat Use Disorder",
+    "symptoms": ["use of khat (a stimulant plant) leading to dependence", "tolerance, withdrawal (depression, irritability)", "continued use despite health problems (oral lesions, cardiovascular effects)", "social and occupational impairment"],
+    "guidance": "Treatment: CBT and motivational interviewing. Address psychiatric comorbidities. Free de‑addiction services. Education about risks.",
+    "precautions": ["If you use khat, be aware of health risks (oral cancer, hypertension)", "If you have mood changes, seek help", "Avoid mixing with alcohol", "If you have cardiovascular problems, stop", "Seek counselling for dependence"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_055",
+    "category": "Kratom Use Disorder",
+    "symptoms": ["use of kratom (a plant with opioid‑like effects) leading to dependence", "tolerance, withdrawal (restlessness, muscle aches, insomnia, anxiety)", "continued use despite harm", "increasing doses"],
+    "guidance": "Treatment: tapering, symptom management (loperamide for diarrhoea, clonidine). MAT (buprenorphine) may be used. Free de‑addiction services. Avoid mixing with other substances.",
+    "precautions": ["Do not use kratom with other drugs", "If you are dependent, taper gradually", "If you have withdrawal, seek medical help", "Monitor for liver toxicity", "If you have psychiatric symptoms, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_056",
+    "category": "Pregabalin / Gabapentin Misuse",
+    "symptoms": ["use of these medications without prescription, or in higher doses", "for euphoria or to potentiate opioids", "tolerance, withdrawal (anxiety, insomnia, sweating, seizures)", "continued use despite harm"],
+    "guidance": "Tapering is needed to avoid withdrawal seizures. Medical supervision is required. Address underlying pain or anxiety. Free de‑addiction services. Do not stop abruptly.",
+    "precautions": ["Do not take pregabalin/gabapentin without prescription", "If you are taking it, do not increase dose without advice", "Avoid alcohol – potentiates effects", "If you have seizures, seek help", "If you are dependent, taper slowly"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_057",
+    "category": "Pregabalin Withdrawal",
+    "symptoms": ["anxiety, irritability, agitation", "insomnia, sweating", "nausea, tremors", "seizures (rare but possible)", "pain hypersensitivity"],
+    "guidance": "Taper over weeks under medical supervision. Do not stop abruptly. If seizures occur, emergency care. Free detox.",
+    "precautions": ["Do not stop abruptly", "If you have anxiety, do not take more to 'calm'", "Seek medical help for taper", "If you have a seizure, call 108", "Follow a structured taper plan"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_058",
+    "category": "Bath Salts (Synthetic Cathinones) Use Disorder",
+    "symptoms": ["use of synthetic cathinones (bath salts) leading to severe agitation, psychosis, tachycardia, hypertension, hyperthermia", "tolerance, cravings, withdrawal (depression, fatigue)"],
+    "guidance": "Acute intoxication may require sedation (benzodiazepines), cooling, and cardiac monitoring. Long‑term: CBT and motivational interviewing. Free emergency and psychiatric care.",
+    "precautions": ["Do not use bath salts – can cause fatal hyperthermia and psychosis", "If you have agitation, seek emergency care", "Avoid mixing with other stimulants", "If you have severe headache or chest pain, call 108", "Seek help for dependence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_059",
+    "category": "Flakka (Alpha‑PVP) Use",
+    "symptoms": ["extreme agitation, paranoia, hallucinations", "hyperthermia, tachycardia, seizures", "rhabdomyolysis, renal failure", "violent behaviour"],
+    "guidance": "Medical emergency – requires sedation, cooling, and supportive care. Hospitalisation is mandatory. Call 108. Long‑term: rehabilitation.",
+    "precautions": ["Do not use flakka – it is extremely dangerous", "If someone is using, call emergency", "Do not approach an agitated user alone", "If you have used and have symptoms, seek emergency", "Seek addiction treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_060",
+    "category": "Synthetic Cannabinoids (Spice, K2) Use",
+    "symptoms": ["use of synthetic cannabinoids leading to severe agitation, psychosis, tachycardia, hypertension, seizures", "often more potent than natural cannabis", "withdrawal symptoms (insomnia, anxiety, sweating)"],
+    "guidance": "Acute intoxication: supportive care, sedation if needed. Long‑term: CBT and treatment of psychosis if persistent. Free emergency and mental health care.",
+    "precautions": ["Do not use synthetic cannabinoids – risk of severe side effects", "If you have severe agitation, call 108", "If you have chest pain, seek care", "Avoid mixing with other drugs", "If you have psychosis, see a psychiatrist"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_061",
+    "category": "Khat Withdrawal",
+    "symptoms": ["depression, lethargy, irritability", "loss of appetite, insomnia", "cravings for khat", "sweating, tremors"],
+    "guidance": "Supportive care, rest, and hydration. Address depression with antidepressants if needed. CBT to prevent relapse.",
+    "precautions": ["Do not use other stimulants to overcome withdrawal", "Maintain a healthy diet and sleep", "If you have depression, seek help", "Avoid triggers", "Engage in physical activity"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_062",
+    "category": "Caffeine Use Disorder",
+    "symptoms": ["excessive caffeine intake (>400 mg/day)", "tolerance (needs more to feel effect)", "withdrawal (headache, fatigue, irritability, difficulty concentrating) when stopping", "continued use despite side effects (insomnia, palpitations, anxiety)"],
+    "guidance": "Gradually reduce intake to avoid withdrawal headaches. Substitute with decaffeinated drinks. If you have anxiety or palpitations, reduce caffeine. Free counselling.",
+    "precautions": ["Do not stop abruptly – can cause severe headache", "Limit caffeine to <400 mg/day (about 4 cups of coffee)", "Avoid energy drinks mixed with alcohol", "If you have palpitations, reduce intake", "If you have insomnia, avoid caffeine in the afternoon"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_063",
+    "category": "Caffeine Withdrawal",
+    "symptoms": ["headache (often throbbing)", "fatigue, drowsiness", "irritability, depressed mood", "difficulty concentrating", "flu‑like symptoms", "peaks in 24–48 hours, resolves in 1 week"],
+    "guidance": "Taper gradually over a week. Use pain relief (paracetamol) for headaches. Stay hydrated. Free self‑help.",
+    "precautions": ["Do not use caffeine to relieve withdrawal", "Take paracetamol for headaches", "Get extra sleep", "Drink water", "If you have severe headaches, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_064",
+    "category": "Sugar Addiction (Food Craving)",
+    "symptoms": ["intense cravings for sugary foods", "loss of control over sugar intake", "withdrawal symptoms (headache, fatigue, irritability) when stopping", "continued use despite health problems (diabetes, obesity)"],
+    "guidance": "Gradually reduce added sugars. Increase protein and fibre to reduce cravings. Manage stress (stress increases sugar craving). Exercise helps. Free nutrition counselling.",
+    "precautions": ["Do not go cold turkey – gradual reduction is better", "Read food labels for added sugar", "Avoid sugary drinks", "If you have diabetes, control sugar", "If you have cravings, try fruit instead"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_065",
+    "category": "Substance‑Induced Mood Disorder",
+    "symptoms": ["depression, mania, or anxiety directly caused by substance intoxication or withdrawal", "symptoms resolve with abstinence", "e.g., alcohol‑induced depression, cocaine‑induced mania"],
+    "guidance": "Abstinence is the main treatment. If symptoms persist after 2‑4 weeks of abstinence, treat underlying mood disorder. Free psychiatric care.",
+    "precautions": ["Do not self‑medicate mood symptoms with substances", "If you have depression, get treatment", "If you have mania, see a psychiatrist", "Avoid alcohol and drugs", "If you have suicidal thoughts, call 108"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_066",
+    "category": "Substance‑Induced Anxiety Disorder",
+    "symptoms": ["panic, generalised anxiety, or social anxiety caused by substance use (cannabis, caffeine, alcohol withdrawal, stimulants)"],
+    "guidance": "Abstinence resolves symptoms. If anxiety persists, treat with CBT or SSRIs. Free mental health services.",
+    "precautions": ["If you have anxiety, avoid stimulants", "If you are withdrawing from alcohol, get medical help", "If you have panic attacks, seek help", "Avoid cannabis if it triggers anxiety", "Practice relaxation techniques"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_067",
+    "category": "Substance‑Induced Psychotic Disorder",
+    "symptoms": ["hallucinations, delusions caused by substance use (stimulants, cannabis, hallucinogens)", "onset during or soon after intoxication or withdrawal", "resolves with abstinence (usually within 1 month)"],
+    "guidance": "Treatment: antipsychotics if needed, and abstinence. If symptoms persist >1 month, consider primary psychotic disorder. Free psychiatric care.",
+    "precautions": ["If you have psychosis, do not use substances", "Seek medical help immediately", "If you have paranoia, do not be alone", "Avoid triggers", "If you have a family history of psychosis, avoid substances"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_068",
+    "category": "Substance‑Induced Sleep Disorder",
+    "symptoms": ["insomnia or hypersomnia caused by substance use or withdrawal", "e.g., stimulant‑induced insomnia, alcohol withdrawal insomnia"],
+    "guidance": "Abstinence and good sleep hygiene. If insomnia persists, non‑pharmacological treatment (CBT‑I). Free sleep clinics.",
+    "precautions": ["Do not use alcohol to help sleep", "Avoid caffeine after noon", "Maintain a regular sleep schedule", "If you have insomnia, get treatment", "Do not use sedatives without a prescription"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_069",
+    "category": "Substance‑Induced Sexual Dysfunction",
+    "symptoms": ["erectile dysfunction, reduced libido, or orgasmic problems caused by substances (alcohol, opioids, antidepressants with misuse)"],
+    "guidance": "Abstinence or dose reduction may improve function. If on prescribed medications (e.g., SSRIs), discuss alternatives. Free urology/sexual health clinics.",
+    "precautions": ["If you have sexual dysfunction, do not self‑medicate", "Avoid alcohol before sex", "If on prescribed drugs, talk to your doctor", "If you have depression, treat it", "If you have concerns, see a professional"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_070",
+    "category": "Substance‑Induced Cognitive Impairment",
+    "symptoms": ["memory problems, poor concentration, executive dysfunction", "caused by chronic alcohol, benzodiazepine, or cannabis use", "may be reversible with abstinence, but can be permanent"],
+    "guidance": "Abstinence is the most important. Cognitive rehabilitation and addressing nutritional deficiencies (thiamine). Free neuropsychology services.",
+    "precautions": ["Do not use substances that impair cognition", "If you have memory problems, see a doctor", "If you drink, take thiamine", "Engage in cognitive stimulation", "If you have confusion, seek care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_071",
+    "category": "Harm Reduction – Needle Exchange Programs",
+    "symptoms": ["not a disease – prevention strategy", "providing clean needles to injecting drug users to reduce HIV, hepatitis C, and bacterial infections", "safe disposal of used needles"],
+    "guidance": "Needle exchange programs are available at some government centres. They do not encourage drug use but reduce harm. If you inject, use a new sterile needle each time. Do not share needles. Get tested for HIV and hepatitis C.",
+    "precautions": ["Use new needles every time", "Do not share needles, syringes, or other equipment", "Dispose of needles safely", "Get vaccinated for hepatitis A and B", "If you have a wound, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_072",
+    "category": "Harm Reduction – Supervised Consumption Sites",
+    "symptoms": ["not a disease – facility where people can use drugs under medical supervision, reducing overdose risk"],
+    "guidance": "Supervised consumption sites reduce fatal overdoses and transmission of blood‑borne viruses. If you use drugs, use such services if available. Free naloxone is often provided.",
+    "precautions": ["Use services where available", "Do not use alone", "If you are in a site, follow staff instructions", "If you have an overdose, staff will help", "These services can connect you to treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_073",
+    "category": "Overdose Prevention – Naloxone Distribution",
+    "symptoms": ["not a disease – access to life‑saving medication", "naloxone reverses opioid overdose", "available free at some government centres"],
+    "guidance": "If you or someone you know uses opioids, get naloxone. Learn how to use it. Always call 108 after administering. Free naloxone is available in many areas. It saves lives.",
+    "precautions": ["Get naloxone if you are at risk", "Learn how to administer", "Do not wait – administer if you suspect overdose", "After naloxone, call 108", "Naloxone is safe and effective"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_074",
+    "category": "Drug Driving – Legal and Health Risks",
+    "symptoms": ["impaired driving under the influence of alcohol or drugs", "increased reaction time, poor judgment", "risk of accidents, injuries, and legal penalties"],
+    "guidance": "Never drive under the influence. Use public transport, designated driver, or ride‑sharing. If you are in treatment, do not drive if you are on sedating medications. Know the laws.",
+    "precautions": ["Do not drink and drive", "Do not take drugs and drive", "If you are on sedating medication, do not drive", "Use a designated driver", "If you are caught, you may face legal consequences"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_075",
+    "category": "Alcohol and Pregnancy – Fetal Alcohol Effects",
+    "symptoms": ["not a disease – prevention", "alcohol during pregnancy can cause miscarriage, stillbirth, and FASD", "no safe amount", "stop drinking as soon as you know you are pregnant"],
+    "guidance": "If you are pregnant or planning to become pregnant, do not drink alcohol. If you are struggling with alcohol, seek help. Free de‑addiction services. Early cessation reduces harm.",
+    "precautions": ["If you are pregnant, do not drink", "If you have a problem with alcohol, seek treatment", "If you have a child with FASD, get early intervention", "Educate yourself", "Support groups for women"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_076",
+    "category": "Alcohol and Breastfeeding",
+    "symptoms": ["not a disease – alcohol passes into breast milk", "can affect infant sleep, development", "moderate drinking may be acceptable if timed correctly"],
+    "guidance": "If you drink, wait at least 2 hours per drink before breastfeeding. Pump and discard if needed. Better to avoid alcohol while breastfeeding. Free advice at well‑baby clinics.",
+    "precautions": ["If you drink, wait 2 hours per drink before breastfeeding", "If you have a drink, pump and discard", "Do not bed‑share if you have been drinking", "Limit alcohol intake", "If you have a problem, seek help"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_077",
+    "category": "Alcohol and Older Adults – Risks",
+    "symptoms": ["older adults are more sensitive to alcohol", "increased risk of falls, cognitive decline, drug interactions", "exacerbation of chronic diseases (hypertension, diabetes, liver)"],
+    "guidance": "Limit alcohol to ≤1 drink/day for older adults. Avoid if you are on medications that interact (benzodiazepines, blood thinners). If you have health problems, consider abstaining. Free geriatric consultations.",
+    "precautions": ["If you are over 65, limit alcohol", "If you are on multiple medications, avoid alcohol", "Do not drink if you have liver disease", "If you have falls, reduce alcohol", "If you have cognitive decline, abstain"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_078",
+    "category": "Alcohol and Cancer Risk (General)",
+    "symptoms": ["alcohol is a known carcinogen", "increases risk of mouth, throat, esophagus, liver, colon, and breast cancer"],
+    "guidance": "The risk increases with the amount consumed. Even moderate drinking increases risk. To reduce cancer risk, limit or avoid alcohol. If you drink, follow low‑risk drinking guidelines. Free cancer screening.",
+    "precautions": ["Limit alcohol to reduce cancer risk", "If you have a family history of cancer, avoid alcohol", "If you have HPV, avoid alcohol (increases oral cancer risk)", "Combine with smoking cessation – synergistic risk", "Attend regular cancer screenings"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_079",
+    "category": "Tobacco and Cancer Risk (Multiple Sites)",
+    "symptoms": ["tobacco causes cancers of the lung, mouth, throat, esophagus, stomach, pancreas, kidney, bladder, and cervix"],
+    "guidance": "Tobacco is the leading preventable cause of cancer. Quitting reduces risk – it is never too late. Use cessation support. Free cancer screening is available. If you smoke, stop now.",
+    "precautions": ["Stop smoking and tobacco use", "Avoid secondhand smoke", "If you have symptoms (cough, blood), see a doctor", "Get regular cancer screenings", "If you are on cessation medication, use it"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_080",
+    "category": "Smoking Cessation – Pharmacotherapy",
+    "symptoms": ["not a disease – treatment options", "nicotine replacement therapy (NRT), bupropion, varenicline"],
+    "guidance": "NRT (patches, gum, lozenges) doubles quit success. Bupropion and varenicline are effective and available free at government tobacco cessation centres. Combine with behavioural counselling. Set a quit date.",
+    "precautions": ["If you are on varenicline, report mood changes", "Use NRT as directed – do not smoke while on it", "Combine with counselling", "If you have a relapse, try again", "Discuss side effects with your doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_081",
+    "category": "Alcohol and Cardiovascular Risk",
+    "symptoms": ["heavy alcohol increases BP, triglycerides, cardiomyopathy, and arrhythmias"],
+    "guidance": "Reduce alcohol to lower cardiovascular risk. For men, limit to ≤2 drinks/day; for women, ≤1 drink/day. Abstinence is best for those with heart disease. Free NCD screening.",
+    "precautions": ["If you have high BP, limit alcohol", "If you have heart failure, avoid alcohol", "If you have arrhythmias, avoid alcohol", "Monitor BP regularly", "If you have chest pain, call 108"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_082",
+    "category": "Alcohol and Diabetes Management",
+    "symptoms": ["alcohol affects blood sugar – can cause hypoglycaemia", "especially in those on insulin or sulfonylureas", "also increases triglycerides"],
+    "guidance": "If you drink, do so with food. Monitor blood sugar. Limit alcohol to 1 drink/day (women) or 2 (men). Avoid sweetened mixers. If you have diabetes, consult your doctor. Free diabetes care.",
+    "precautions": ["Check blood sugar before and after drinking", "If you are on insulin, have a meal with alcohol", "If you have hypoglycaemia, treat with glucose", "Avoid sugary alcoholic drinks", "If you have neuropathy, be careful with feet"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_083",
+    "category": "Alcohol and Liver Disease – Early Detection",
+    "symptoms": ["elevated liver enzymes (ALT, AST, GGT)", "fatty liver, hepatitis, cirrhosis"],
+    "guidance": "Regular liver function tests for heavy drinkers. If elevated, reduce or stop alcohol. Reversible in early stages. Free liver function testing. If you have symptoms (jaundice, ascites), seek care.",
+    "precautions": ["If you drink heavily, get liver function tests", "If you have elevated enzymes, cut down", "Abstain if you have fatty liver", "Maintain a healthy diet", "If you have jaundice, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_084",
+    "category": "Alcohol and Pancreatitis – Prevention",
+    "symptoms": ["recurrent abdominal pain, chronic pancreatitis"],
+    "guidance": "Abstinence is the only way to prevent alcoholic pancreatitis. If you have had an attack, stop drinking completely. If you continue, risk of chronic pain, diabetes, and death. Free pancreatic care.",
+    "precautions": ["If you have had pancreatitis, stop drinking", "Avoid fatty foods", "If you have abdominal pain, see a doctor", "If you have diabetes, treat it", "Seek help for alcohol dependence"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_085",
+    "category": "Drug Interactions – Alcohol and Medications",
+    "symptoms": ["alcohol interacts with many drugs: benzodiazepines, opioids, antidepressants, antiepileptics, warfarin, etc.", "can cause sedation, hepatotoxicity, bleeding, or reduced efficacy"],
+    "guidance": "Check with your pharmacist or doctor before drinking while on medication. In general, avoid alcohol if you are on sedatives, anticoagulants, or drugs for chronic disease. Free medication review.",
+    "precautions": ["If you are on medication, ask if alcohol is safe", "Do not drink if you are on opioids or benzodiazepines", "If you are on warfarin, avoid alcohol", "If you are on paracetamol, limit alcohol", "If you are on antibiotics, avoid alcohol (can cause nausea)"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_086",
+    "category": "Withdrawal Management – General Principles",
+    "symptoms": ["not a disease – management of detox", "medical supervision, hydration, nutrition, and symptomatic medications"],
+    "guidance": "Detoxification is the first step. Never attempt cold turkey for alcohol or benzodiazepines – risk of seizures. Inpatient or outpatient detox depending on severity. Free detox at government hospitals.",
+    "precautions": ["Detox should be medically supervised", "Do not use other substances during detox", "Stay hydrated and eat well", "If you have a seizure, seek emergency", "After detox, continue treatment to prevent relapse"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_087",
+    "category": "Rehabilitation (Inpatient/Outpatient)",
+    "symptoms": ["not a disease – structured treatment", "therapeutic community, CBT, relapse prevention, life skills"],
+    "guidance": "Rehabilitation addresses the psychological, social, and behavioural aspects of addiction. Inpatient (residential) or outpatient depending on severity. Free rehabilitation in many government centres. Family involvement is critical.",
+    "precautions": ["Attend all sessions", "Be honest with therapists", "Build a relapse prevention plan", "Involve family in therapy", "If you have a relapse, get back into treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_088",
+    "category": "Relapse Prevention – Coping Strategies",
+    "symptoms": ["cravings, triggers, high‑risk situations"],
+    "guidance": "Identify triggers and develop alternative behaviours. Use coping skills (e.g., distraction, relaxation, calling a sponsor). Avoid people, places, and things associated with use. Build a strong support network. Free counselling.",
+    "precautions": ["If you have a relapse, do not give up", "Avoid high‑risk situations", "Have a relapse response plan", "Use support groups", "If you have a craving, delay – it will pass"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_089",
+    "category": "Motivational Interviewing for Addiction",
+    "symptoms": ["not a disease – therapeutic technique", "enhances motivation to change", "explores ambivalence", "non‑judgmental"],
+    "guidance": "Motivational interviewing is an evidence‑based approach. It helps resolve ambivalence and builds commitment to change. Available at government de‑addiction centres. If you are unsure about quitting, this can help.",
+    "precautions": ["Be open to exploring your thoughts", "Do not feel pressured – it is collaborative", "If you have ambivalence, it is normal", "Take small steps", "If you are ready, make a plan"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_090",
+    "category": "Family Therapy and Addiction",
+    "symptoms": ["not a disease – family involvement", "addiction affects the whole family", "family therapy improves communication and support"],
+    "guidance": "Family therapy is a key component of treatment. It educates family members, improves communication, and strengthens support. Free at government centres. Family involvement improves outcomes.",
+    "precautions": ["Involve family in treatment", "If you are a family member, attend sessions", "Understand that addiction is a disease, not a moral failing", "Be supportive, not enabling", "Set healthy boundaries"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_091",
+    "category": "Support Groups (AA, NA, SMART Recovery)",
+    "symptoms": ["not a disease – mutual support", "12‑step and non‑12‑step groups", "free, widely available", "provides social support and accountability"],
+    "guidance": "Support groups are a vital part of recovery. They offer peer support, shared experiences, and a network of people in recovery. AA and NA are 12‑step; SMART is evidence‑based. Find what works for you.",
+    "precautions": ["Attend regularly", "Find a sponsor (in 12‑step)", "If you have a relapse, share it – it helps", "Be open to the process", "If one group doesn't suit you, try another"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_092",
+    "category": "Dual Recovery – Mental Health and Substance Use",
+    "symptoms": ["co‑occurring mental illness and substance use disorder"],
+    "guidance": "Integrated treatment is essential. Address both conditions simultaneously. Use medications for psychiatric symptoms and for addiction. Free integrated care at government hospitals. Attend dual‑recovery support groups.",
+    "precautions": ["Take medications as prescribed", "If you have depression, get treatment", "Avoid self‑medication", "If you have suicidal thoughts, call 108", "Be honest with your treatment team"],
+    "urgency": "high"
+  },
+  {
+    "id": "sa_093",
+    "category": "Nicotine Replacement Therapy – Correct Use",
+    "symptoms": ["not a disease – using patches, gum, lozenges correctly"],
+    "guidance": "Use NRT as directed. Patches: apply to clean, dry skin once daily. Gum: chew until tingling, then park between cheek and gum. Do not eat or drink 15 minutes before or during use. Use combination therapy (patch + gum) for better results. Free NRT at tobacco cessation centres.",
+    "precautions": ["Do not smoke while using NRT", "If you have a heart condition, consult your doctor", "Do not use more than directed", "If you have mouth irritation, try a different form", "Combine with counselling"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_094",
+    "category": "Bupropion / Varenicline – Side Effect Management",
+    "symptoms": ["not a disease – medications for smoking cessation", "side effects: nausea (varenicline), insomnia, dry mouth (bupropion), mood changes"],
+    "guidance": "Take with food to reduce nausea. Take bupropion in the morning (to avoid insomnia). If you have mood changes, report to your doctor. Free cessation medications.",
+    "precautions": ["If you have a seizure disorder, avoid bupropion", "If you have a history of psychosis, use varenicline with caution", "If you have suicidal thoughts, stop and seek help", "Do not double doses", "Complete the full course"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_095",
+    "category": "Overdose Prevention – Education and Training",
+    "symptoms": ["not a disease – community training", "recognising overdose, administering naloxone, and CPR"],
+    "guidance": "Free training is available at some health centres. Learn to recognise opioid overdose: pinpoint pupils, slow breathing, unresponsiveness. Call 108, administer naloxone if available, and start CPR. Training saves lives.",
+    "precautions": ["Get trained in overdose response", "If you are at risk, carry naloxone", "Do not assume someone is asleep", "If you are unsure, administer naloxone – it is safe", "After giving naloxone, call 108"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_096",
+    "category": "Polysubstance Withdrawal – Management Challenges",
+    "symptoms": ["withdrawal from multiple substances simultaneously", "complicated withdrawal syndrome", "increased risk of seizures, delirium, and medical complications"],
+    "guidance": "Requires inpatient medical detox with monitoring. Tailored pharmacological management (benzodiazepines for alcohol/sedative withdrawal; buprenorphine for opioid withdrawal). Multidisciplinary care. Free hospital‑based detox.",
+    "precautions": ["Do not attempt outpatient detox for polysubstance", "If you have seizures, emergency care", "Be honest about all substances used", "If you are in a detox program, follow the protocol", "After detox, long‑term rehabilitation is essential"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sa_097",
+    "category": "Contingency Management for Stimulant Use Disorder",
+    "symptoms": ["not a disease – behavioural intervention", "provides incentives for drug‑free urine tests", "effective for cocaine and methamphetamine"],
+    "guidance": "Contingency management is an evidence‑based treatment. It reinforces abstinence with tangible rewards. Available in some government centres. Combine with CBT.",
+    "precautions": ["If you are in the program, attend regularly", "If you have a positive test, it is a learning opportunity", "Focus on progress", "If you have a relapse, get back on track", "Do not be discouraged – it is part of the process"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_098",
+    "category": "Gambling Disorder – Financial and Legal Consequences",
+    "symptoms": ["severe financial problems", "debt, bankruptcy, legal issues", "relationship breakdown"],
+    "guidance": "Seek financial counselling and legal aid. Treatment includes CBT and support groups. Address co‑occurring depression. Free counselling at mental health centres. There are also helplines.",
+    "precautions": ["If you have financial problems, get help", "Do not borrow to gamble", "If you have legal issues, consult a lawyer", "Attend support groups", "If you have suicidal thoughts, call 108"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sa_099",
+    "category": "Internet Gaming Disorder – Social Consequences",
+    "symptoms": ["withdrawal from family and friends", "conflict over gaming", "neglect of school/work", "lying about gaming time"],
+    "guidance": "Family therapy and setting boundaries. Reduce screen time gradually. Replace gaming with other activities. Free counselling at mental health centres.",
+    "precautions": ["Set time limits for gaming", "If you are a parent, monitor gaming", "If gaming affects relationships, seek help", "Do not use gaming to escape problems", "If you have depression, treat it"],
+    "urgency": "low"
+  },
+  {
+    "id": "sa_100",
+    "category": "Comprehensive Recovery – Long‑Term Management",
+    "symptoms": ["not a disease – holistic recovery", "addressing physical health, mental health, social functioning, and spirituality"],
+    "guidance": "Recovery is a process, not an event. Continued participation in support groups, regular medical checkups, and healthy lifestyle (exercise, nutrition, sleep). Address any co‑occurring issues. Relapse is a part of recovery – learn from it. Free long‑term support.",
+    "precautions": ["Stay connected to support networks", "Regular follow‑up with your treatment team", "If you have a relapse, seek help early", "Maintain a healthy lifestyle", "Be patient with yourself"],
+    "urgency": "low"
+  }
+]

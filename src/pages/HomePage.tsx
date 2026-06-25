@@ -1,318 +1,527 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  MessageSquare,
-  Search,
-  Apple,
-  Building2,
-  Stethoscope,
-  Shield,
-  Heart,
-  Users,
-  Mic,
-  Camera,
-  Send,
-  AlertTriangle,
-  ArrowRight,
-  CheckCircle2,
-  Globe,
-  WifiOff,
-  Lock,
-  TrendingUp,
-  Activity,
-  FileText,
-} from "lucide-react";
+import { AayuSidebar } from "../components/navigation/AayuSidebar";
+import "../aayu-home.css";
 
-/* ── Data ───────────────────────────────────────────────────────── */
+import logoHeart from "../assets/logo-heart.png";
 
-const QUICK_ACTIONS = [
-  { icon: Stethoscope, title: "Symptom Check",    desc: "AI-powered health assessment",    path: "/chat",      color: "from-teal-500 to-teal-700" },
-  { icon: Search,      title: "Knowledge Search", desc: "Search trusted health databases",  path: "/search",    color: "from-blue-500 to-blue-700" },
-  { icon: Apple,       title: "Nutrition Guide",   desc: "Regional food & diet plans",       path: "/nutrition", color: "from-emerald-500 to-emerald-700" },
-  { icon: Building2,   title: "Gov. Schemes",     desc: "Find eligible health schemes",     path: "/schemes",   color: "from-violet-500 to-violet-700" },
-  { icon: Heart,       title: "Family Health",    desc: "Manage your family's wellness",    path: "/chat",      color: "from-rose-500 to-rose-600" },
-  { icon: FileText,    title: "Health Records",   desc: "Store reports & prescriptions",    path: "/chat",      color: "from-amber-500 to-amber-700" },
-];
-
-const HEALTH_ALERTS = [
-  { id: "1", title: "Dengue cases rising in districts", severity: "high" as const,   desc: "Use mosquito repellents. Keep surroundings clean. Seek care if high fever persists." },
-  { id: "2", title: "Seasonal Flu Advisory",            severity: "medium" as const, desc: "Cases increasing in some areas. Get vaccinated at nearest PHC." },
-  { id: "3", title: "Heat Wave Warning",               severity: "medium" as const, desc: "Stay hydrated and avoid direct sunlight between 12–4 PM." },
-];
-
-const STATS = [
-  { label: "Health Queries", value: "12,483", icon: Activity, trend: "+18%" },
-  { label: "Active Users",   value: "2,891",  icon: Users,    trend: "+12%" },
-  { label: "Knowledge Docs", value: "847",    icon: FileText, trend: "+5%" },
-  { label: "Alerts Active",  value: "3",      icon: AlertTriangle, trend: "Live" },
-];
-
-const WHY_AAYU = [
-  { icon: Shield,  text: "Verified medical knowledge from trusted sources" },
-  { icon: Mic,     text: "Voice-based interaction in your language" },
-  { icon: WifiOff, text: "Works offline — your health, always with you" },
-  { icon: Lock,    text: "Private and secure — data stays on your device" },
-];
-
-const TRUSTED_SOURCES = [
-  { name: "World Health Organization", abbr: "WHO" },
-  { name: "Ministry of Health & Family Welfare", abbr: "MoHFW" },
-  { name: "Indian Council of Medical Research", abbr: "ICMR" },
-  { name: "UNICEF", abbr: "UNICEF" },
-];
-
-/* ── Component ────────────────────────────────────────────────── */
+import Docs from "../assets/Docs.png";
+import Screening from "../assets/Screening.png";
+import Nearby from "../assets/Nearby.png";
+import Nutrition from "../assets/Nutrition.png";
+import FamilyHealth from "../assets/Family_health.png";
+import Schemes from "../assets/Schemes.png";
+import Dengue from "../assets/dengue.png";
+import Malaria from "../assets/malaria.png";
+import Tuberculosis from "../assets/tuberculosis.png";
+import Flu from "../assets/flu.png";
+import Maternal from "../assets/maternal.png";
+import Whatsapp from "../assets/whatsapp.png";
+import StepTell from "../assets/step_tell.png";
+import StepQuestions from "../assets/step_questions.png";
+import StepGuidance from "../assets/step_guidance.png";
+import StepConsult from "../assets/step_consult.png";
 
 export function HomePage() {
-  const navigate = useNavigate();
-  const [chatInput, setChatInput] = useState("");
+    const navigate = useNavigate();
+    const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  function handleQuickChat() {
-    if (chatInput.trim()) {
-      navigate("/chat", { state: { initialMessage: chatInput.trim() } });
-    } else {
-      navigate("/chat");
-    }
-  }
 
-  return (
-    <div className="space-y-6 max-w-7xl mx-auto animate-fade-in">
-      {/* ── Hero Section ───────────────────────────────────────── */}
-      <section className="relative overflow-hidden rounded-2xl bg-teal-50 border border-teal-100 p-6 lg:p-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/4" />
+    return (
+        <div className="homepage-root">
 
-        <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <div className="flex-1 space-y-4">
-            <div className="inline-flex items-center gap-2 bg-teal-100 rounded-full px-4 py-1.5 text-teal-700 text-xs font-medium">
-              <Globe size={14} />
-              <span>Multilingual AI Health Assistant</span>
-            </div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-              Healthcare Information.
-              <br />
-              <span className="text-teal-200">Guidance. Care.</span>
-            </h1>
-            <p className="text-teal-600/80 max-w-lg text-sm lg:text-base leading-relaxed">
-              Ask anything about symptoms, nutrition, schemes, or nearby
-              healthcare — in your own language. Powered by local AI.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {[
-                { icon: Globe, label: "Multilingual" },
-                { icon: WifiOff, label: "Offline First" },
-                { icon: Shield, label: "Trusted Sources" },
-                { icon: Lock, label: "Privacy Focused" },
-              ].map((b) => (
-                <span key={b.label} className="inline-flex items-center gap-1.5 bg-teal-100 rounded-full px-3 py-1 text-xs text-teal-800 font-medium">
-                  <b.icon size={12} />
-                  {b.label}
-                </span>
-              ))}
-            </div>
-          </div>
 
-          <div className="shrink-0 hidden lg:flex flex-col items-center gap-3">
-            <div className="w-24 h-24 rounded-2xl bg-teal-100 flex items-center justify-center shadow-lg ring-1 ring-teal-200">
-              <Stethoscope size={40} className="text-teal-700" />
+            <div className="wrapper d-flex">
+
+                <AayuSidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+
+                <main className="main flex-grow-1">
+
+                    <div className="topbar d-flex align-items-center justify-content-between">
+
+                        <div className="search">
+                            <span>Search for diseases, symptoms, articles, schemes...</span>
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <div className="profile">
+                            <div className="profile-item">
+                                <i className="fa-solid fa-globe"></i>
+                                <span>English</span>
+                                <i className="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div className="profile-item">
+                                <i className="fa-solid fa-gear"></i>
+                            </div>
+                            <div className="profile-item">
+                                <i className="fa-regular fa-user"></i>
+                                <span>My Account</span>
+                                <i className="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="content-layout">
+
+                        {/*  LEFT SIDE  */}
+
+                        <div className="main-content">
+
+                            <div className="hero">
+                                <div className="hero-card">
+
+                                    <div className="hero-left">
+
+                                        <div className="subtitle">
+                                            Your AI Health Assistant
+                                        </div>
+
+                                        <div className="hero-title">
+                                            Information.<br />
+                                            Guidance.<br />
+                                            Care.
+                                        </div>
+
+                                        <div className="hero-desc">
+                                            Ask anything about symptoms, disease prevention,
+                                            nutrition, government schemes or nearby healthcare
+                                            facilities in your own language.
+                                        </div>
+
+                                        <div className="tags">
+                                            <div className="tag">Multilingual</div>
+                                            <div className="tag">Offline First</div>
+                                            <div className="tag">Trusted Sources</div>
+                                            <div className="tag">Privacy Focused</div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div className="chat-box">
+
+                                    <div className="chat-title">
+                                        Talk to AAYU
+                                    </div>
+
+                                    <p className="chat-sub">
+                                        Voice, text or image-based healthcare assistance.
+                                    </p>
+
+                                    <div className="chat-input">
+
+                                        <input placeholder="Ask about symptoms, nutrition, schemes..." />
+
+                                        <button className="send-btn" onClick={() => navigate('/chat')}>
+                                            ➤
+                                        </button>
+
+                                    </div>
+
+                                    <div className="quick-actions">
+
+                                        <button className="action-btn" onClick={() => navigate('/chat')}>
+                                            <div className="action-icon">
+                                                <i className="fa-solid fa-microphone"></i>
+                                            </div>
+                                            <span>Speak</span>
+                                        </button>
+
+                                        <button className="action-btn" onClick={() => navigate('/chat')}>
+                                            <div className="action-icon">
+                                                <i className="fa-solid fa-camera text-xl"></i>
+                                            </div>
+                                            <span>Scan / Upload</span>
+                                        </button>
+
+                                        <button className="action-btn" onClick={() => navigate('/chat')}>
+                                            <div className="action-icon">
+                                                <i className="fa-solid fa-headphones text-xl"></i>
+                                            </div>
+                                            <span>Listen</span>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div className="section">
+
+                                <div className="section-title">
+                                    Start Here — What Would You Like To Do?
+                                </div>
+
+                                <div className="section-layout">
+
+                                    <div className="grid">
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/records')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={Docs} alt="My Health Records icon" />
+                                            <h3>My Health Records</h3>
+                                            <p>
+                                                Vaccination records, prescriptions and reports.
+                                            </p>
+                                        </div>
+
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/screening')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={Screening} alt="Screening & Guidance icon" />
+                                            <h3>Screening & Guidance</h3>
+                                            <p>
+                                                Symptom assessment and healthcare guidance.
+                                            </p>
+                                        </div>
+
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/hospitals')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={Nearby} alt="Nearby Healthcare icon" />
+                                            <h3>Nearby Healthcare</h3>
+                                            <p>
+                                                Hospitals, clinics and health camps.
+                                            </p>
+                                        </div>
+
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/nutrition')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={Nutrition} alt="Nutrition icon" />
+                                            <h3>Nutrition</h3>
+                                            <p>
+                                                Personalized food and diet guidance.
+                                            </p>
+                                        </div>
+
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/family')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={FamilyHealth} alt="Family Health icon" />
+                                            <h3>Family Health</h3>
+                                            <p>
+                                                Manage health information for family members.
+                                            </p>
+                                        </div>
+
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/schemes')} style={{cursor:'pointer'}}>
+                                            <img className="card-icon" src={Schemes} alt="Government Schemes icon" />
+                                            <h3>Government Schemes</h3>
+                                            <p>
+                                                Discover benefits and eligibility information.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: 0, minWidth: '320px', flex: 1, alignSelf: 'stretch' }}>
+                                        <div className="map-card" style={{ flex: 1, borderRadius: '20px 20px 0 0' }}>
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15489.039243794621!2d85.83363572524317!3d19.816389349047885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20%26%20clinics%20in%20puri!5e0!3m2!1sen!2sin!4v1781807694205!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                        <div style={{ background: 'white', borderRadius: '0 0 20px 20px', border: '1px solid #e5e7eb', borderTop: 'none', padding: '16px 18px', boxShadow: '0 5px 20px rgba(0,0,0,.04)' }}>
+                                            <div className="healthcare-item">
+                                                <div className="hc-icon red"><i className="fa-solid fa-hospital"></i></div>
+                                                <div><h5>Hospitals</h5><p>Find multi-speciality hospitals near you</p></div>
+                                            </div>
+                                            <div className="healthcare-item">
+                                                <div className="hc-icon blue"><i className="fa-solid fa-house-medical"></i></div>
+                                                <div><h5>PHC / CHC</h5><p>Locate Primary &amp; Community Health Centers</p></div>
+                                            </div>
+                                            <div className="healthcare-item">
+                                                <div className="hc-icon green"><i className="fa-solid fa-campground"></i></div>
+                                                <div><h5>Health Camps</h5><p>Find upcoming health camps in your area</p></div>
+                                            </div>
+                                            <div className="healthcare-item" style={{ marginBottom: 0 }}>
+                                                <div className="hc-icon rose"><i className="fa-solid fa-droplet"></i></div>
+                                                <div><h5>Blood Banks</h5><p>Search blood banks and donate blood</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {/*  RIGHT SIDE  */}
+
+                        <aside className="right-panel">
+
+                            <div className="alerts-panel">
+
+                                <div className="panel-header">
+                                    <div className="panel-title">
+                                        <i className="fa-solid fa-circle-exclamation"></i>
+                                        <span>Health Alerts</span>
+                                    </div>
+                                    <span className="panel-link" style={{ cursor: 'pointer' }}>View all</span>
+                                </div>
+
+                                <div className="featured-alert">
+                                    <div className="featured-top">
+                                        <h4>Dengue cases rising in some districts</h4>
+                                        <span className="pill high">HIGH ALERT</span>
+                                    </div>
+
+                                    <p>
+                                        Stay safe and follow preventive measures. Use mosquito
+                                        repellents and keep surroundings clean.
+                                    </p>
+
+                                    <button className="featured-action">
+                                        See Advisory →
+                                    </button>
+                                </div>
+
+                                <div className="stack-card">
+                                    <div className="stack-icon blue">
+                                        <i className="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <div className="stack-copy">
+                                        <div className="stack-row">
+                                            <h5>Seasonal Flu</h5>
+                                            <span className="pill seasonal">SEASONAL</span>
+                                        </div>
+                                        <p>Cases tracking in some areas.</p>
+                                    </div>
+                                </div>
+
+                                <div className="stack-card">
+                                    <div className="stack-icon yellow">
+                                        <i className="fa-solid fa-sun"></i>
+                                    </div>
+                                    <div className="stack-copy">
+                                        <div className="stack-row">
+                                            <h5>Heat Wave Advisory</h5>
+                                            <span className="pill heat">HEAT</span>
+                                        </div>
+                                        <p>Stay hydrated and avoid direct sunlight.</p>
+                                    </div>
+                                </div>
+
+                                <div className="notify-card">
+                                    <div className="notify-copy">
+                                        <i className="fa-solid fa-bell"></i>
+                                        <div>
+                                            <h5>Enable notifications</h5>
+                                            <p>Get timely alerts and updates</p>
+                                        </div>
+                                    </div>
+                                    <div className="toggle"></div>
+                                </div>
+                            </div>
+
+                            <div className="health-banner">
+
+                                <h3>Stay Ahead,<br />Stay Healthy!</h3>
+
+                                <p>
+                                    Real-time updates on seasonal alerts and important
+                                    health news.
+                                </p>
+
+                                <button>
+                                    View All Updates →
+                                </button>
+
+                            </div>
+
+                            <div className="why-panel">
+
+                                <h3>Why AAYU?</h3>
+
+                                <ul>
+                                    <li>Verified medical knowledge from trusted sources</li>
+                                    <li>Voice based interaction for everyone</li>
+                                    <li>Works offline, your health always with you</li>
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                    {/*  AI SCREENING & GUIDANCE  */}
+                    <div className="screening-section" style={{ margin: '0 30px 30px' }}>
+                        <h2>AI Screening & Guidance – <span>Simple, Safe & Helpful</span></h2>
+                        <div className="screening-top">
+                            <div className="screening-left">
+                                <ul>
+                                    <li><i className="fa-solid fa-circle-check"></i> Answer easy questions about your symptoms</li>
+                                    <li><i className="fa-solid fa-circle-check"></i> Get possible health risk insights</li>
+                                    <li><i className="fa-solid fa-circle-check"></i> Receive guidance and preventive tips</li>
+                                    <li><i className="fa-solid fa-circle-check"></i> Consult a healthcare professional for confirmation</li>
+                                </ul>
+                            </div>
+                            <div className="screening-flow">
+                                <div className="screening-step">
+                                    <img src={StepTell} alt="Tell AAYU" />
+                                    <span>Tell AAYU how you are feeling</span>
+                                </div>
+                                <div className="screening-arrow">→</div>
+                                <div className="screening-step">
+                                    <img src={StepQuestions} alt="Answer questions" />
+                                    <span>Answer a few simple questions</span>
+                                </div>
+                                <div className="screening-arrow">→</div>
+                                <div className="screening-step">
+                                    <img src={StepGuidance} alt="Get guidance" />
+                                    <span>Get AI-driven guidance</span>
+                                </div>
+                                <div className="screening-arrow">→</div>
+                                <div className="screening-step">
+                                    <img src={StepConsult} alt="Consult professional" />
+                                    <span>Consult a healthcare professional</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="screening-disclaimer">
+                            <i className="fa-solid fa-shield-halved"></i>
+                            AAYU provides information and guidance only. It does not diagnose medical conditions or replace professional medical advice.
+                        </div>
+                    </div>
+
+                    {/*  DISEASE AWARENESS CENTRE  */}
+                    <div className="disease-section" style={{ margin: '0 30px 30px' }}>
+                        <div className="disease-header">
+                            <h2>Disease Awareness Centre</h2>
+                            <span style={{ cursor: 'pointer' }}>View all diseases <i className="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                        <div className="disease-carousel-wrap">
+                            <button className="carousel-btn prev" onClick={() => document.getElementById('diseaseCarousel')?.scrollBy(-200, 0)}>
+                                <i className="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <div className="disease-carousel" id="diseaseCarousel">
+                                <div className="disease-card">
+                                    <img src={Dengue} alt="Dengue" />
+                                    <h4>Dengue</h4>
+                                    <p>Symptoms, prevention and care tips</p>
+                                </div>
+                                <div className="disease-card">
+                                    <img src={Malaria} alt="Malaria" />
+                                    <h4>Malaria</h4>
+                                    <p>Symptoms, prevention and care tips</p>
+                                </div>
+                                <div className="disease-card">
+                                    <img src={Tuberculosis} alt="Tuberculosis" />
+                                    <h4>Tuberculosis</h4>
+                                    <p>Symptoms, prevention and care tips</p>
+                                </div>
+                                <div className="disease-card">
+                                    <img src={Flu} alt="Seasonal Flu" />
+                                    <h4>Seasonal Flu</h4>
+                                    <p>Symptoms, prevention and care tips</p>
+                                </div>
+                                <div className="disease-card">
+                                    <img src={Maternal} alt="Maternal Health" />
+                                    <h4>Maternal Health</h4>
+                                    <p>Care during pregnancy and beyond</p>
+                                </div>
+                            </div>
+                            <button className="carousel-btn next" onClick={() => document.getElementById('diseaseCarousel')?.scrollBy(200, 0)}>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/*  CONNECT ON WHATSAPP  */}
+                    <div className="healthcare-row" style={{ margin: '0 30px 30px' }}>
+                        <div className="whatsapp-connect">
+                            <div className="wa-header">
+                                <h3>Connect on WhatsApp</h3>
+                            </div>
+                            <div className="wa-brand">
+                                <div className="wa-brand-icon"><i className="fa-brands fa-whatsapp"></i></div>
+                                <div>
+                                    <h4>AAYU is now on WhatsApp!</h4>
+                                    <p>Your health assistant in your pocket.</p>
+                                </div>
+                            </div>
+                            <ul className="wa-features">
+                                <li><i className="fa-solid fa-check"></i> Ask questions</li>
+                                <li><i className="fa-solid fa-check"></i> Send voice notes</li>
+                                <li><i className="fa-solid fa-check"></i> Upload documents & images (OCR)</li>
+                                <li><i className="fa-solid fa-check"></i> Get information on schemes & centers</li>
+                            </ul>
+                            <button className="wa-chat-btn">Chat on WhatsApp <i className="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        </div>
+                    </div>
+
+                    {/*  POWERED BY TRUSTED KNOWLEDGE  */}
+                    <div className="trusted-section" style={{ margin: '0 30px 30px' }}>
+                        <h2>Powered by Trusted Knowledge</h2>
+                        <div className="trusted-logos">
+                            <div className="trusted-logo">
+                                <div className="trusted-logo-icon who"><i className="fa-solid fa-globe"></i></div>
+                                <div><h5>World Health Organization</h5><p>WHO</p></div>
+                            </div>
+                            <div className="trusted-logo">
+                                <div className="trusted-logo-icon icmr"><i className="fa-solid fa-flask"></i></div>
+                                <div><h5>Indian Council of Medical Research</h5><p>ICMR</p></div>
+                            </div>
+                            <div className="trusted-logo">
+                                <div className="trusted-logo-icon mohfw"><i className="fa-solid fa-building-columns"></i></div>
+                                <div><h5>Ministry of Health & Family Welfare</h5><p>Government of India</p></div>
+                            </div>
+                            <div className="trusted-logo">
+                                <div className="trusted-logo-icon icd"><i className="fa-solid fa-book-medical"></i></div>
+                                <div><h5>ICD-11</h5><p>International Classification of Diseases</p></div>
+                            </div>
+                            <div className="trusted-logo">
+                                <div className="trusted-logo-icon medline"><i className="fa-solid fa-heart-pulse"></i></div>
+                                <div><h5>MedlinePlus</h5><p>Trusted Health Information</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*  FEATURE BADGES  */}
+                    <div className="feature-badges" style={{ margin: '0 30px 30px' }}>
+                        <div className="feature-badge">
+                            <div className="fb-icon"><i className="fa-solid fa-circle-check"></i></div>
+                            <div><h5>Verified Medical Knowledge (FAQ)</h5><p>Answers from trusted medical sources</p></div>
+                        </div>
+                        <div className="feature-badge">
+                            <div className="fb-icon"><i className="fa-solid fa-language"></i></div>
+                            <div><h5>Multilingual Support</h5><p>Gujarati, Hindi, English, Odia & more</p></div>
+                        </div>
+                        <div className="feature-badge">
+                            <div className="fb-icon"><i className="fa-solid fa-microphone"></i></div>
+                            <div><h5>Voice First</h5><p>Speak naturally, get replies easily</p></div>
+                        </div>
+                        <div className="feature-badge">
+                            <div className="fb-icon"><i className="fa-solid fa-wifi"></i></div>
+                            <div><h5>Offline First</h5><p>Works even without internet</p></div>
+                        </div>
+                        <div className="feature-badge">
+                            <div className="fb-icon"><i className="fa-solid fa-lock"></i></div>
+                            <div><h5>Privacy & Security</h5><p>Your data is protected</p></div>
+                        </div>
+                    </div>
+
+                    {/*  FOOTER  */}
+                    <div className="footer-new" style={{ margin: '0 30px 30px' }}>
+                        <div className="footer-left">
+                            <img src={logoHeart} alt="AAYU" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '8px' }} />
+                            <div className="footer-brand">
+                                <h3>AAYU</h3>
+                                <p>AI-Powered Public<br />Health Assistant</p>
+                            </div>
+                        </div>
+                        <div className="footer-center">
+                            <h3>Your Health. Your Data. Your Control.</h3>
+                            <p>Secure. Private. Built for everyone.</p>
+                            <div className="footer-pills">
+                                <span className="footer-pill">Secure & Private</span>
+                                <span className="footer-pill">You Stay in Control</span>
+                                <span className="footer-pill">Guidance, Not Diagnosis</span>
+                                <span className="footer-pill">Consult Professionals</span>
+                            </div>
+                        </div>
+                        <div className="footer-shield">
+                            <i className="fa-solid fa-shield-halved"></i>
+                        </div>
+                    </div>
+
+                </main>
+
             </div>
-            <div className="bg-teal-100 rounded-xl px-4 py-2 text-teal-800 text-sm font-medium">
-              Namaste! 🙏 How can I help?
-            </div>
-          </div>
+
+
         </div>
-      </section>
-
-      {/* ── Stats Bar ─────────────────────────────────────────── */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        {STATS.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div key={stat.label} className="bg-white rounded-xl p-4 shadow-md border border-slate-200/60 hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between mb-2">
-                <div className="w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center">
-                  <Icon size={18} className="text-teal-600" />
-                </div>
-                <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">{stat.trend}</span>
-              </div>
-              <p className="text-xl font-bold text-slate-800">{stat.value}</p>
-              <p className="text-xs text-slate-500">{stat.label}</p>
-            </div>
-          );
-        })}
-      </section>
-
-      {/* ── Talk to AAYU ──────────────────────────────────────── */}
-      <section className="bg-white rounded-2xl p-5 lg:p-6 shadow-md border border-slate-200/60">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md">
-            <MessageSquare size={20} className="text-white" />
-          </div>
-          <div>
-            <h2 className="text-base font-semibold text-slate-800">Talk to AAYU</h2>
-            <p className="text-xs text-slate-500">Voice, text, or images — your health assistant is ready</p>
-          </div>
-        </div>
-
-        <div className="flex gap-2">
-          <textarea
-            value={chatInput}
-            onChange={(e) => setChatInput(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleQuickChat(); } }}
-            placeholder="Describe your symptoms or ask a question..."
-            rows={2}
-            className="flex-1 resize-none bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 transition-all"
-            aria-label="Type your health question"
-          />
-          <div className="flex flex-col gap-2">
-            <button
-              onClick={handleQuickChat}
-              className="flex-1 w-12 rounded-xl bg-teal-500 hover:bg-teal-600 text-white flex items-center justify-center transition-colors shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
-              aria-label="Send message"
-            >
-              <Send size={18} />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex gap-2 mt-3">
-          <button
-            onClick={() => navigate("/chat")}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors cursor-pointer"
-          >
-            <Mic size={14} />
-            <span>Speak</span>
-          </button>
-          <button
-            onClick={() => navigate("/chat")}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium transition-colors cursor-pointer"
-          >
-            <Camera size={14} />
-            <span>Scan / Upload</span>
-          </button>
-        </div>
-      </section>
-
-      {/* ── Quick Actions + Health Alerts ─────────────────────── */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Quick Actions */}
-        <section className="lg:col-span-2">
-          <h2 className="text-base font-semibold text-slate-800 mb-3">Quick Actions</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {QUICK_ACTIONS.map((action) => {
-              const Icon = action.icon;
-              return (
-                <button
-                  key={action.title}
-                  onClick={() => navigate(action.path)}
-                  className="group bg-white rounded-xl p-4 shadow-md border border-slate-200/60 hover:shadow-lg hover:border-teal-200 transition-all text-left active:scale-[0.98] cursor-pointer"
-                >
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${action.color} flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow`}>
-                    <Icon size={20} className="text-white" />
-                  </div>
-                  <h3 className="text-sm font-semibold text-slate-800 mb-0.5">{action.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{action.desc}</p>
-                  <ArrowRight size={14} className="mt-2 text-slate-300 group-hover:text-teal-7000 group-hover:translate-x-1 transition-all" />
-                </button>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Health Alerts */}
-        <aside className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-base font-semibold text-slate-800">Health Alerts</h2>
-            <button className="text-xs text-teal-600 font-medium hover:text-teal-700 cursor-pointer">View All</button>
-          </div>
-
-          {HEALTH_ALERTS.map((alert) => (
-            <div
-              key={alert.id}
-              className={`
-                rounded-xl p-4 border-l-4 shadow-md
-                ${alert.severity === "high"
-                  ? "bg-red-50 border-red-500"
-                  : "bg-amber-50 border-amber-500"
-                }
-              `}
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className={`text-2xs font-bold uppercase tracking-wider ${alert.severity === "high" ? "text-red-600" : "text-amber-600"}`}>
-                  {alert.severity === "high" ? "🚨 HIGH ALERT" : "⚠️ ADVISORY"}
-                </span>
-              </div>
-              <h4 className="text-sm font-semibold text-slate-800 mb-1">{alert.title}</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">{alert.desc}</p>
-              <button className="mt-2 text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1 cursor-pointer">
-                Learn more <ArrowRight size={12} />
-              </button>
-            </div>
-          ))}
-
-          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-xl p-4 border border-teal-200/50">
-            <h4 className="text-sm font-semibold text-teal-800 mb-1">🌟 Stay Healthy!</h4>
-            <p className="text-xs text-teal-700/70 mb-2">Real-time health updates and disease advisories for your region.</p>
-            <button className="text-xs font-medium text-teal-600 hover:text-teal-700 inline-flex items-center gap-1 cursor-pointer">
-              View All Updates <ArrowRight size={12} />
-            </button>
-          </div>
-        </aside>
-      </div>
-
-      {/* ── Why AAYU + Trusted Sources ────────────────────────── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <section className="bg-white rounded-2xl p-6 shadow-md border border-slate-200/60">
-          <h2 className="text-base font-semibold text-slate-800 mb-4">Why AAYU?</h2>
-          <div className="space-y-3">
-            {WHY_AAYU.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.text} className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center shrink-0 mt-0.5">
-                    <Icon size={16} className="text-teal-600" />
-                  </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="bg-white rounded-2xl p-6 shadow-md border border-slate-200/60">
-          <h2 className="text-base font-semibold text-slate-800 mb-4">Trusted Sources</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {TRUSTED_SOURCES.map((src) => (
-              <div key={src.abbr} className="bg-slate-50 rounded-xl p-4 text-center hover:bg-slate-100 transition-colors">
-                <p className="text-lg font-bold text-teal-700">{src.abbr}</p>
-                <p className="text-2xs text-slate-500 mt-1">{src.name}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      {/* ── Footer ────────────────────────────────────────────── */}
-      <footer className="bg-white rounded-2xl p-6 shadow-md border border-slate-200/60">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold shadow-md">
-              A
-            </div>
-            <div>
-              <p className="font-bold text-slate-800">AAYU</p>
-              <p className="text-xs text-slate-500">AI-Powered Public Health Assistant</p>
-            </div>
-          </div>
-          <p className="text-xs text-slate-500 text-center">Your Health. Your Data. Your Control.</p>
-          <div className="flex flex-wrap gap-3 text-xs text-slate-400">
-            <a href="#" className="hover:text-teal-600 transition-colors">Disclaimer</a>
-            <a href="#" className="hover:text-teal-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-teal-600 transition-colors">Terms</a>
-            <a href="#" className="hover:text-teal-600 transition-colors">Help</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+    );
 }

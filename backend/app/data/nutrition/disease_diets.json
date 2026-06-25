@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "diabetes_type2",
+    "disease": "Type 2 Diabetes",
+    "recommended_foods": ["Ragi", "Oats", "Whole Wheat", "Green Vegetables", "Guava", "Millets", "Legumes", "Nuts", "Seeds"],
+    "avoid_foods": ["Sugar", "Soft Drinks", "White Bread", "Sweets", "White Rice", "Fried Foods", "Processed Snacks"],
+    "guidance": "Eat small frequent meals, monitor blood sugar regularly, and choose low glycemic index foods. Include protein with every meal.",
+    "urgency": "high"
+  },
+  {
+    "id": "diabetes_type1",
+    "disease": "Type 1 Diabetes",
+    "recommended_foods": ["Complex carbohydrates", "Lean protein", "Healthy fats", "Green Vegetables", "Whole Grains"],
+    "avoid_foods": ["Simple sugars", "Sugary drinks", "Processed foods", "High glycemic index foods"],
+    "guidance": "Match insulin doses to carbohydrate intake. Count carbs consistently and monitor blood sugar frequently. Never skip meals.",
+    "urgency": "high"
+  },
+  {
+    "id": "hypertension",
+    "disease": "Hypertension (High Blood Pressure)",
+    "recommended_foods": ["Banana", "Spinach", "Oats", "Beetroot", "Garlic", "Nuts", "Seeds", "Whole Grains"],
+    "avoid_foods": ["Salt", "Pickles", "Papad", "Processed Foods", "Canned Foods", "Salted Snacks", "Fast Food"],
+    "guidance": "Reduce salt intake to less than 5g per day. Eat potassium-rich foods. Maintain a healthy weight and exercise regularly.",
+    "urgency": "high"
+  },
+  {
+    "id": "heart_disease",
+    "disease": "Heart Disease / Coronary Artery Disease",
+    "recommended_foods": ["Oats", "Nuts", "Flaxseeds", "Fish", "Olive Oil", "Berries", "Avocado", "Green Leafy Vegetables"],
+    "avoid_foods": ["Trans Fats", "Processed Meat", "Fried Foods", "Sugary Drinks", "Refined Flour", "Excess Salt"],
+    "guidance": "Follow a heart-healthy diet rich in fiber, healthy fats, and antioxidants. Avoid saturated and trans fats. Exercise regularly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "heart_failure",
+    "disease": "Congestive Heart Failure",
+    "recommended_foods": ["Fresh Vegetables", "Fruits", "Lean Protein", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Salt", "Processed Foods", "Canned Soups", "Salted Snacks", "Excess Fluids"],
+    "guidance": "Strictly limit salt and fluid intake as advised. Monitor weight daily. Eat small, frequent meals.",
+    "urgency": "critical"
+  },
+  {
+    "id": "chronic_kidney_disease",
+    "disease": "Chronic Kidney Disease (CKD)",
+    "recommended_foods": ["Apples", "Cabbage", "Cauliflower", "Berries", "Onions", "Bell Peppers", "Egg Whites"],
+    "avoid_foods": ["Bananas", "Oranges", "Potatoes", "Tomatoes", "Salt", "Processed Meat", "Dark-Colored Sodas"],
+    "guidance": "Limit sodium, potassium, and phosphorus. Control protein intake as advised. Monitor fluid intake strictly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "liver_cirrhosis",
+    "disease": "Liver Cirrhosis",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Alcohol", "Salt", "Fatty Foods", "Processed Foods", "Fried Foods"],
+    "guidance": "Complete abstinence from alcohol. Follow a high-protein, low-sodium diet. Avoid hepatotoxic drugs.",
+    "urgency": "critical"
+  },
+  {
+    "id": "fatty_liver",
+    "disease": "Non-Alcoholic Fatty Liver Disease (NAFLD)",
+    "recommended_foods": ["Vegetables", "Fruits", "Whole Grains", "Nuts", "Fish", "Olive Oil", "Green Tea"],
+    "avoid_foods": ["Sugar", "Refined Carbohydrates", "Processed Foods", "Sugary Drinks", "Trans Fats"],
+    "guidance": "Lose weight if overweight. Avoid sugar and refined carbs. Eat anti-inflammatory foods. Exercise regularly.",
+    "urgency": "medium"
+  },
+  {
+    "id": "gout",
+    "disease": "Gout",
+    "recommended_foods": ["Cherries", "Berries", "Vegetables", "Whole Grains", "Low-Fat Dairy", "Water"],
+    "avoid_foods": ["Red Meat", "Organ Meat", "Shellfish", "Alcohol (Beer)", "Sugary Drinks", "Anchovies"],
+    "guidance": "Drink at least 2-3 litres of water daily. Avoid high-purine foods. Limit alcohol completely.",
+    "urgency": "high"
+  },
+  {
+    "id": "osteoporosis",
+    "disease": "Osteoporosis",
+    "recommended_foods": ["Milk", "Curd", "Cheese", "Ragi", "Sesame Seeds", "Green Leafy Vegetables", "Soy", "Eggs"],
+    "avoid_foods": ["Excess Salt", "Caffeine", "Alcohol", "Phosphoric Acid in Sodas"],
+    "guidance": "Ensure adequate calcium and vitamin D intake. Do weight-bearing exercises. Avoid smoking and excessive alcohol.",
+    "urgency": "medium"
+  },
+  {
+    "id": "anemia_iron",
+    "disease": "Iron Deficiency Anemia",
+    "recommended_foods": ["Spinach", "Moringa Leaves", "Jaggery", "Red Meat", "Eggs", "Legumes", "Beetroot", "Dates"],
+    "avoid_foods": ["Tea", "Coffee", "Calcium Supplements (with meals)"],
+    "guidance": "Take iron with vitamin C for better absorption. Avoid tea/coffee within 1 hour of meals. Eat iron-rich foods daily.",
+    "urgency": "high"
+  },
+  {
+    "id": "b12_deficiency",
+    "disease": "Vitamin B12 Deficiency",
+    "recommended_foods": ["Eggs", "Milk", "Curd", "Fish", "Chicken", "Fortified Cereals", "Nutritional Yeast"],
+    "avoid_foods": ["No specific restrictions"],
+    "guidance": "If vegetarian, take B12 supplements. Include dairy and eggs if not vegan. Monitor B12 levels regularly.",
+    "urgency": "medium"
+  },
+  {
+    "id": "obesity",
+    "disease": "Obesity",
+    "recommended_foods": ["Vegetables", "Fruits", "Lean Protein", "Whole Grains", "Nuts", "Seeds", "Legumes"],
+    "avoid_foods": ["Sugary Drinks", "Processed Foods", "Fried Foods", "Refined Carbohydrates", "Excess Fats"],
+    "guidance": "Create a calorie deficit with a balanced diet. Exercise regularly. Focus on portion control and mindful eating.",
+    "urgency": "high"
+  },
+  {
+    "id": "gerd",
+    "disease": "GERD (Acid Reflux)",
+    "recommended_foods": ["Oats", "Banana", "Melon", "Ginger", "Green Vegetables", "Turkey", "Egg Whites"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Citrus Fruits", "Tomatoes", "Onions", "Garlic", "Caffeine", "Alcohol"],
+    "guidance": "Eat small frequent meals. Avoid lying down after eating. Elevate the head of your bed. Identify trigger foods.",
+    "urgency": "medium"
+  },
+  {
+    "id": "peptic_ulcer",
+    "disease": "Peptic Ulcer Disease",
+    "recommended_foods": ["Banana", "Cabbage", "Potato", "Whole Grains", "Lean Protein", "Probiotic Foods"],
+    "avoid_foods": ["Spicy Foods", "Alcohol", "Caffeine", "Acidic Foods", "Fried Foods", "Heavy Meals"],
+    "guidance": "Eat small frequent meals. Avoid NSAIDs and alcohol. Treat H. pylori if present.",
+    "urgency": "high"
+  },
+  {
+    "id": "ibs",
+    "disease": "Irritable Bowel Syndrome (IBS)",
+    "recommended_foods": ["Oats", "Rice", "Banana", "Potato", "Probiotic Foods", "Lean Protein"],
+    "avoid_foods": ["Beans", "Onions", "Garlic", "Cauliflower", "Broccoli", "Fried Foods", "Spicy Foods"],
+    "guidance": "Follow a low-FODMAP diet. Eat small frequent meals. Manage stress. Identify trigger foods.",
+    "urgency": "medium"
+  },
+  {
+    "id": "celiac_disease",
+    "disease": "Celiac Disease",
+    "recommended_foods": ["Rice", "Ragi", "Corn", "Millet", "Potato", "Fruits", "Vegetables", "Meat", "Fish", "Eggs"],
+    "avoid_foods": ["Wheat", "Barley", "Rye", "Oats", "Bread", "Pasta", "Pastry", "Beer", "Many Processed Foods"],
+    "guidance": "Strict lifelong gluten-free diet. Read all food labels. Supplement calcium and vitamin D. Monitor for nutritional deficiencies.",
+    "urgency": "high"
+  },
+  {
+    "id": "crohns_disease",
+    "disease": "Crohn's Disease",
+    "recommended_foods": ["White Rice", "Banana", "Applesauce", "Lean Meat", "Fish", "Eggs", "Probiotics"],
+    "avoid_foods": ["High-Fiber Foods", "Spicy Foods", "Dairy", "Fried Foods", "Alcohol", "Caffeine"],
+    "guidance": "Eat small frequent meals. Stay hydrated. Avoid trigger foods. During flares, follow a low-fiber diet.",
+    "urgency": "high"
+  },
+  {
+    "id": "ulcerative_colitis",
+    "disease": "Ulcerative Colitis",
+    "recommended_foods": ["White Rice", "Banana", "Sweet Potato", "Lean Protein", "Applesauce", "Oatmeal"],
+    "avoid_foods": ["High-Fiber Foods", "Spicy Foods", "Dairy", "Fried Foods", "Alcohol", "Caffeine"],
+    "guidance": "Eat small frequent meals. Stay hydrated. Avoid trigger foods. During flares, follow a low-residue diet.",
+    "urgency": "high"
+  },
+  {
+    "id": "diverticulitis",
+    "disease": "Diverticulitis (Acute)",
+    "recommended_foods": ["Clear Liquids", "Broth", "White Rice", "White Bread", "Lean Protein", "Low-Fiber Foods"],
+    "avoid_foods": ["High-Fiber Foods", "Nuts", "Seeds", "Popcorn", "Corn", "Spicy Foods"],
+    "guidance": "During acute flares, follow a clear liquid diet. Gradually reintroduce low-fiber foods. Avoid nuts and seeds.",
+    "urgency": "high"
+  },
+  {
+    "id": "constipation",
+    "disease": "Chronic Constipation",
+    "recommended_foods": ["High-Fiber Fruits", "Vegetables", "Legumes", "Oats", "Whole Grains", "Plums", "Prunes", "Water"],
+    "avoid_foods": ["Processed Foods", "Fried Foods", "Excess Dairy", "Low-Fiber Foods"],
+    "guidance": "Increase fiber gradually. Drink at least 2 litres of water daily. Exercise regularly. Don't ignore the urge.",
+    "urgency": "medium"
+  },
+  {
+    "id": "diarrhea",
+    "disease": "Acute Diarrhea",
+    "recommended_foods": ["ORS", "Banana", "Rice", "Toast", "Apple Sauce", "Broth", "Boiled Potatoes"],
+    "avoid_foods": ["Dairy", "Fried Foods", "Spicy Foods", "High-Fiber Foods", "Sugary Drinks"],
+    "guidance": "Use ORS to prevent dehydration. Eat bland, easy-to-digest foods. Avoid dairy and fatty foods until recovered.",
+    "urgency": "high"
+  },
+  {
+    "id": "copd",
+    "disease": "COPD (Chronic Obstructive Pulmonary Disease)",
+    "recommended_foods": ["Lean Protein", "Fruits", "Vegetables", "Whole Grains", "Fish", "Olive Oil"],
+    "avoid_foods": ["Fried Foods", "Refined Carbohydrates", "Processed Foods", "Excess Salt"],
+    "guidance": "Eat small frequent meals to avoid bloating. Stay hydrated. Avoid foods that cause gas. Maintain healthy weight.",
+    "urgency": "high"
+  },
+  {
+    "id": "asthma",
+    "disease": "Asthma",
+    "recommended_foods": ["Fruits", "Vegetables", "Fish", "Nuts", "Seeds", "Ginger", "Garlic"],
+    "avoid_foods": ["Processed Foods", "Sulfite-Containing Foods", "Food Allergens", "Fried Foods"],
+    "guidance": "Identify and avoid food allergens. Eat anti-inflammatory foods. Stay hydrated. Maintain a healthy weight.",
+    "urgency": "medium"
+  },
+  {
+    "id": "arthritis_osteo",
+    "disease": "Osteoarthritis",
+    "recommended_foods": ["Fish", "Nuts", "Seeds", "Olive Oil", "Fruits", "Vegetables", "Whole Grains"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods", "Refined Carbohydrates"],
+    "guidance": "Maintain a healthy weight to reduce joint stress. Eat anti-inflammatory foods. Exercise regularly.",
+    "urgency": "medium"
+  },
+  {
+    "id": "arthritis_rheumatoid",
+    "disease": "Rheumatoid Arthritis",
+    "recommended_foods": ["Fish Oil", "Turmeric", "Ginger", "Fruits", "Vegetables", "Olive Oil", "Whole Grains"],
+    "avoid_foods": ["Red Meat", "Processed Foods", "Fried Foods", "Sugary Foods", "Refined Carbohydrates"],
+    "guidance": "Eat anti-inflammatory foods. Include omega-3 fatty acids. Maintain a healthy weight. Avoid trigger foods.",
+    "urgency": "high"
+  },
+  {
+    "id": "thyroid_hypo",
+    "disease": "Hypothyroidism",
+    "recommended_foods": ["Seafood", "Eggs", "Dairy", "Nuts", "Whole Grains", "Fruits", "Vegetables"],
+    "avoid_foods": ["Processed Foods", "Soy (excess)", "Raw Cruciferous Vegetables", "Excess Iodine"],
+    "guidance": "Take thyroid medication on an empty stomach. Avoid eating for 30 minutes after. Ensure adequate selenium and iodine.",
+    "urgency": "medium"
+  },
+  {
+    "id": "thyroid_hyper",
+    "disease": "Hyperthyroidism (Graves' Disease)",
+    "recommended_foods": ["Calcium-Rich Foods", "Lean Protein", "Whole Grains", "Vegetables", "Fruits"],
+    "avoid_foods": ["Excess Iodine", "Caffeine", "Sugary Foods", "Processed Foods"],
+    "guidance": "Avoid iodine-rich foods. Eat small frequent meals. Stay hydrated. Monitor weight loss.",
+    "urgency": "high"
+  },
+  {
+    "id": "epilepsy",
+    "disease": "Epilepsy",
+    "recommended_foods": ["Whole Grains", "Legumes", "Fruits", "Vegetables", "Lean Protein", "Healthy Fats"],
+    "avoid_foods": ["Alcohol", "Caffeine", "Sugary Foods", "Processed Foods"],
+    "guidance": "Avoid alcohol and caffeine. Follow a healthy balanced diet. Consider a ketogenic diet under medical supervision.",
+    "urgency": "medium"
+  },
+  {
+    "id": "migraine",
+    "disease": "Migraine",
+    "recommended_foods": ["Fresh Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Water"],
+    "avoid_foods": ["Aged Cheese", "Red Wine", "Chocolate", "Caffeine", "Processed Meats", "MSG"],
+    "guidance": "Identify and avoid trigger foods. Eat regular meals. Stay hydrated. Avoid skipping meals.",
+    "urgency": "medium"
+  },
+  {
+    "id": "pcos",
+    "disease": "Polycystic Ovary Syndrome (PCOS)",
+    "recommended_foods": ["Low Glycemic Foods", "Vegetables", "Legumes", "Whole Grains", "Lean Protein", "Healthy Fats"],
+    "avoid_foods": ["Refined Carbohydrates", "Sugary Foods", "Processed Foods", "Fried Foods"],
+    "guidance": "Lose weight if overweight. Choose low glycemic foods. Exercise regularly. Manage insulin resistance.",
+    "urgency": "high"
+  },
+  {
+    "id": "endometriosis",
+    "disease": "Endometriosis",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Fish", "Nuts", "Seeds", "Olive Oil"],
+    "avoid_foods": ["Red Meat", "Fried Foods", "Processed Foods", "Caffeine", "Alcohol"],
+    "guidance": "Eat anti-inflammatory foods. Avoid red meat and alcohol. Maintain a healthy weight. Manage stress.",
+    "urgency": "medium"
+  },
+  {
+    "id": "menopause",
+    "disease": "Menopause",
+    "recommended_foods": ["Calcium-Rich Foods", "Soy", "Flaxseeds", "Fruits", "Vegetables", "Whole Grains"],
+    "avoid_foods": ["Caffeine", "Spicy Foods", "Sugary Foods", "Processed Foods", "Alcohol"],
+    "guidance": "Ensure calcium and vitamin D. Eat phytoestrogen-rich foods. Stay hydrated. Manage hot flashes with lifestyle changes.",
+    "urgency": "low"
+  },
+  {
+    "id": "prostate_bph",
+    "disease": "Benign Prostatic Hyperplasia (BPH)",
+    "recommended_foods": ["Pumpkin Seeds", "Tomatoes", "Soy", "Green Tea", "Fruits", "Vegetables", "Fish"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Spicy Foods", "Excess Salt", "Processed Foods"],
+    "guidance": "Reduce caffeine and alcohol. Eat zinc-rich foods. Stay hydrated. Maintain a healthy weight.",
+    "urgency": "medium"
+  },
+  {
+    "id": "prostate_cancer",
+    "disease": "Prostate Cancer",
+    "recommended_foods": ["Tomatoes", "Cruciferous Vegetables", "Soy", "Fish", "Green Tea", "Fruits", "Vegetables"],
+    "avoid_foods": ["Red Meat", "Processed Meat", "High-Fat Dairy", "Fried Foods"],
+    "guidance": "Eat a plant-based diet. Avoid red and processed meat. Include tomatoes and cruciferous vegetables regularly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "breast_cancer",
+    "disease": "Breast Cancer",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Soy", "Fish", "Flaxseeds", "Green Tea"],
+    "avoid_foods": ["Processed Foods", "Red Meat", "Alcohol", "Sugary Foods", "High-Fat Foods"],
+    "guidance": "Maintain a healthy weight. Eat a plant-based diet. Limit alcohol. Exercise regularly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "colon_cancer",
+    "disease": "Colorectal Cancer",
+    "recommended_foods": ["High-Fiber Fruits", "Vegetables", "Legumes", "Whole Grains", "Fish", "Probiotics"],
+    "avoid_foods": ["Red Meat", "Processed Meat", "Fried Foods", "Refined Carbohydrates", "Alcohol"],
+    "guidance": "Eat a high-fiber diet. Limit red and processed meats. Exercise regularly. Maintain a healthy weight.",
+    "urgency": "critical"
+  },
+  {
+    "id": "lung_cancer",
+    "disease": "Lung Cancer",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Fish", "Nuts"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods", "Red Meat"],
+    "guidance": "Eat a nutrient-dense diet. Maintain weight. Stay hydrated. Include anti-inflammatory foods.",
+    "urgency": "critical"
+  },
+  {
+    "id": "skin_cancer",
+    "disease": "Skin Cancer (Prevention)",
+    "recommended_foods": ["Carrots", "Tomatoes", "Green Tea", "Berries", "Nuts", "Fish", "Olive Oil"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Trans Fats"],
+    "guidance": "Eat antioxidant-rich foods. Avoid sun exposure. Use sunscreen. Maintain a healthy weight.",
+    "urgency": "medium"
+  },
+  {
+    "id": "dementia",
+    "disease": "Dementia / Alzheimer's Disease",
+    "recommended_foods": ["Berries", "Fish", "Nuts", "Olive Oil", "Whole Grains", "Green Vegetables", "Turmeric"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Red Meat", "Fried Foods", "Excess Salt"],
+    "guidance": "Follow a Mediterranean diet. Include omega-3 fatty acids. Stay mentally and physically active.",
+    "urgency": "high"
+  },
+  {
+    "id": "parkinsons",
+    "disease": "Parkinson's Disease",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Fish", "Nuts", "Olive Oil"],
+    "avoid_foods": ["Processed Foods", "High-Protein Foods (with levodopa)", "Sugary Foods"],
+    "guidance": "Take levodopa at least 1 hour before or 2 hours after meals to avoid protein interference. Stay hydrated.",
+    "urgency": "high"
+  },
+  {
+    "id": "stroke_recovery",
+    "disease": "Post-Stroke Recovery",
+    "recommended_foods": ["Vegetables", "Fruits", "Whole Grains", "Lean Protein", "Fish", "Healthy Fats"],
+    "avoid_foods": ["Excess Salt", "Sugary Foods", "Fried Foods", "Processed Foods"],
+    "guidance": "Control blood pressure and cholesterol. Eat a heart-healthy diet. If swallowing is difficult, use pureed foods.",
+    "urgency": "critical"
+  },
+  {
+    "id": "depression",
+    "disease": "Depression",
+    "recommended_foods": ["Fish", "Nuts", "Seeds", "Whole Grains", "Fruits", "Vegetables", "Probiotics"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Alcohol", "Excess Caffeine"],
+    "guidance": "Eat a nutrient-dense diet. Include omega-3 fatty acids. Stay hydrated. Avoid alcohol and excessive sugar.",
+    "urgency": "high"
+  },
+  {
+    "id": "anxiety",
+    "disease": "Anxiety Disorder",
+    "recommended_foods": ["Complex Carbohydrates", "Lean Protein", "Nuts", "Seeds", "Vegetables", "Green Tea"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Sugary Foods", "Processed Foods"],
+    "guidance": "Avoid caffeine and alcohol. Eat regular meals. Include complex carbohydrates. Stay hydrated.",
+    "urgency": "medium"
+  },
+  {
+    "id": "insomnia",
+    "disease": "Insomnia",
+    "recommended_foods": ["Banana", "Cherries", "Oats", "Almonds", "Warm Milk", "Honey", "Whole Grains"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Sugary Foods", "Heavy Meals Late at Night"],
+    "guidance": "Avoid caffeine after midday. Eat a light evening meal. Include foods containing tryptophan and magnesium.",
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_diet",
+    "disease": "Pregnancy (Healthy Diet)",
+    "recommended_foods": ["Folic Acid Foods", "Iron-Rich Foods", "Calcium-Rich Foods", "Fruits", "Vegetables", "Whole Grains", "Legumes"],
+    "avoid_foods": ["Alcohol", "Raw Meat", "Raw Eggs", "Unpasteurized Dairy", "Excess Caffeine"],
+    "guidance": "Take folic acid and iron supplements. Eat a balanced diet. Avoid alcohol and caffeine. Stay hydrated.",
+    "urgency": "high"
+  },
+  {
+    "id": "breastfeeding_diet",
+    "disease": "Breastfeeding (Lactation Diet)",
+    "recommended_foods": ["Oats", "Barley", "Fennel", "Fenugreek", "Whole Grains", "Lean Protein", "Vegetables", "Fruits"],
+    "avoid_foods": ["Alcohol", "Excess Caffeine", "Food Allergens"],
+    "guidance": "Stay well-hydrated. Eat a nutrient-dense diet. Continue prenatal vitamins. Avoid alcohol and excess caffeine.",
+    "urgency": "medium"
+  },
+  {
+    "id": "childhood_anemia",
+    "disease": "Childhood Anemia",
+    "recommended_foods": ["Spinach", "Jaggery", "Dates", "Pomegranate", "Eggs", "Legumes", "Fortified Cereals"],
+    "avoid_foods": ["Tea", "Coffee"],
+    "guidance": "Include iron-rich foods daily. Avoid tea/coffee with meals. Give vitamin C-rich foods to enhance absorption.",
+    "urgency": "high"
+  },
+  {
+    "id": "childhood_diarrhea",
+    "disease": "Childhood Diarrhea",
+    "recommended_foods": ["ORS", "Rice", "Banana", "Toast", "Apple Sauce", "Broth"],
+    "avoid_foods": ["Dairy", "Fried Foods", "Spicy Foods", "Sugary Drinks"],
+    "guidance": "Use ORS immediately. Continue feeding. Use zinc supplements as advised. Return to normal diet gradually.",
+    "urgency": "critical"
+  },
+  {
+    "id": "malnutrition_child",
+    "disease": "Child Malnutrition (SAM)",
+    "recommended_foods": ["Therapeutic Foods (F-75, F-100)", "RUTF (Plumpy'Nut)", "Eggs", "Milk", "Legumes", "Vegetables"],
+    "avoid_foods": ["Empty Calorie Foods", "Processed Snacks", "Sugary Drinks"],
+    "guidance": "Refer to Nutrition Rehabilitation Center. Follow therapeutic feeding protocol. Treat underlying infections.",
+    "urgency": "critical"
+  },
+  {
+    "id": "elderly_nutrition",
+    "disease": "Elderly Nutrition (Aging)",
+    "recommended_foods": ["High-Protein Foods", "Calcium-Rich Foods", "Fruits", "Vegetables", "Whole Grains", "Healthy Fats"],
+    "avoid_foods": ["Processed Foods", "Excess Salt", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat small frequent meals. Ensure adequate protein and calcium. Stay hydrated. Maintain social eating.",
+    "urgency": "medium"
+  },
+  {
+    "id": "pressure_ulcer",
+    "disease": "Pressure Ulcers (Bedsores)",
+    "recommended_foods": ["High-Protein Foods", "Vitamin C-Rich Foods", "Zinc-Rich Foods", "Calorie-Dense Foods"],
+    "avoid_foods": ["Processed Foods", "Low-Nutrient Foods"],
+    "guidance": "High protein and high calorie diet. Ensure vitamin C and zinc. Provide adequate fluids.",
+    "urgency": "critical"
+  },
+  {
+    "id": "wound_healing",
+    "disease": "Wound Healing (Post-Surgery / Injury)",
+    "recommended_foods": ["Protein-Rich Foods", "Vitamin C-Rich Foods", "Zinc-Rich Foods", "Vitamin A-Rich Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods"],
+    "guidance": "Eat a high-protein diet. Include vitamin C and zinc. Stay hydrated. Avoid smoking.",
+    "urgency": "high"
+  },
+  {
+    "id": "alcohol_liver",
+    "disease": "Alcoholic Liver Disease",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Alcohol", "Fatty Foods", "Processed Foods", "Excess Salt"],
+    "guidance": "Complete abstinence from alcohol. Eat a high-protein, low-sodium diet. Monitor for nutritional deficiencies.",
+    "urgency": "critical"
+  },
+  {
+    "id": "alcohol_withdrawal",
+    "disease": "Alcohol Withdrawal",
+    "recommended_foods": ["Hydrating Fluids", "ORS", "Broth", "Soft Foods", "Fruits", "Vegetables"],
+    "avoid_foods": ["Caffeine", "Sugary Foods", "Fatty Foods"],
+    "guidance": "Stay hydrated. Use ORS for dehydration. Eat soft, easily digestible foods. Do not stop alcohol abruptly without medical supervision.",
+    "urgency": "critical"
+  },
+  {
+    "id": "smoking_cessation",
+    "disease": "Smoking Cessation (Withdrawal)",
+    "recommended_foods": ["Fruits", "Vegetables", "Nuts", "Seeds", "Chewing Gum (sugar-free)"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Sugary Foods"],
+    "guidance": "Eat regular meals. Use sugar-free gum to manage oral cravings. Stay hydrated. Avoid alcohol.",
+    "urgency": "medium"
+  },
+  {
+    "id": "mouth_ulcers",
+    "disease": "Mouth Ulcers (Aphthous)",
+    "recommended_foods": ["Soft Foods", "Yogurt", "Milk", "Rice", "Mashed Potatoes", "Smoothies"],
+    "avoid_foods": ["Spicy Foods", "Acidic Foods", "Hot Foods", "Crunchy Foods", "Salt"],
+    "guidance": "Eat soft, bland foods. Avoid triggers. Stay hydrated. Use topical treatments.",
+    "urgency": "low"
+  },
+  {
+    "id": "oral_cancer_diet",
+    "disease": "Oral Cancer (During Treatment)",
+    "recommended_foods": ["Pureed Foods", "Smoothies", "Soups", "Milk", "Yogurt", "Soft Fruits"],
+    "avoid_foods": ["Spicy Foods", "Hard Foods", "Acidic Foods", "Alcohol", "Hot Foods"],
+    "guidance": "Eat soft, nutritious foods. Avoid irritants. Use tube feeding if swallowing is difficult. Stay hydrated.",
+    "urgency": "critical"
+  },
+  {
+    "id": "dental_caries",
+    "disease": "Dental Caries (Tooth Decay)",
+    "recommended_foods": ["Fruits", "Vegetables", "Cheese", "Nuts", "Sugar-Free Gum", "Water"],
+    "avoid_foods": ["Sugary Foods", "Sticky Sweets", "Sugary Drinks", "Refined Carbohydrates"],
+    "guidance": "Limit sugary foods and drinks. Drink water after meals. Brush and floss regularly. Use fluoride toothpaste.",
+    "urgency": "low"
+  },
+  {
+    "id": "gingivitis",
+    "disease": "Gingivitis",
+    "recommended_foods": ["Fruits", "Vegetables", "Dairy", "Nuts", "Vitamin C-Rich Foods"],
+    "avoid_foods": ["Sugary Foods", "Sticky Foods", "Processed Foods"],
+    "guidance": "Maintain good oral hygiene. Eat vitamin C-rich foods. Avoid sugary foods. Visit the dentist regularly.",
+    "urgency": "low"
+  },
+  {
+    "id": "gallstones",
+    "disease": "Gallstones",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Lean Protein"],
+    "avoid_foods": ["Fatty Foods", "Fried Foods", "Spicy Foods", "Refined Carbohydrates"],
+    "guidance": "Eat a low-fat, high-fiber diet. Avoid large fatty meals. Maintain a healthy weight. Avoid rapid weight loss.",
+    "urgency": "medium"
+  },
+  {
+    "id": "cholecystitis",
+    "disease": "Cholecystitis (Acute)",
+    "recommended_foods": ["Clear Liquids", "Broth", "Rice", "Toast", "Fruits (non-acidic)"],
+    "avoid_foods": ["Fatty Foods", "Fried Foods", "Spicy Foods", "Heavy Meals"],
+    "guidance": "Follow a low-fat diet. Eat small frequent meals. Avoid triggers. If severe, surgical consultation is needed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "pancreatitis",
+    "disease": "Acute / Chronic Pancreatitis",
+    "recommended_foods": ["Clear Liquids", "Broth", "Rice", "Toast", "Lean Protein", "Fruits", "Vegetables"],
+    "avoid_foods": ["Alcohol", "Fatty Foods", "Fried Foods", "Spicy Foods", "Heavy Meals"],
+    "guidance": "Avoid alcohol completely. Follow a low-fat diet. Eat small frequent meals. Take pancreatic enzymes if prescribed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "gastritis",
+    "disease": "Gastritis",
+    "recommended_foods": ["Oats", "Banana", "Rice", "Toast", "Lean Protein", "Cooked Vegetables"],
+    "avoid_foods": ["Spicy Foods", "Acidic Foods", "Fried Foods", "Caffeine", "Alcohol"],
+    "guidance": "Eat small frequent meals. Avoid triggers. Take medications as prescribed. Manage stress.",
+    "urgency": "medium"
+  },
+  {
+    "id": "h_pylori",
+    "disease": "H. pylori Infection",
+    "recommended_foods": ["Probiotic Foods", "Cabbage", "Broccoli", "Green Tea", "Fruits", "Vegetables"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Alcohol", "Caffeine"],
+    "guidance": "Take prescribed antibiotics. Eat a bland diet. Avoid triggers. Take probiotics to restore gut flora.",
+    "urgency": "high"
+  },
+  {
+    "id": "urinary_tract_infection",
+    "disease": "Urinary Tract Infection (UTI)",
+    "recommended_foods": ["Cranberry", "Water", "Blueberries", "Vitamin C-Rich Foods", "Probiotics"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Spicy Foods", "Sugary Foods"],
+    "guidance": "Drink plenty of water. Include cranberry juice. Avoid bladder irritants. Take antibiotics as prescribed.",
+    "urgency": "high"
+  },
+  {
+    "id": "kidney_stones",
+    "disease": "Kidney Stones",
+    "recommended_foods": ["Water", "Lemon", "Orange", "Fruits", "Vegetables", "Low-Sodium Foods"],
+    "avoid_foods": ["High-Oxalate Foods", "Salt", "Red Meat", "Sugary Drinks"],
+    "guidance": "Drink 2-3 litres of water daily. Limit salt and animal protein. Avoid high-oxalate foods if prone to calcium oxalate stones.",
+    "urgency": "high"
+  },
+  {
+    "id": "pneumonia",
+    "disease": "Pneumonia",
+    "recommended_foods": ["High-Calorie Foods", "High-Protein Foods", "Clear Broth", "Soups", "Fruits", "Vegetables"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat small frequent meals. Stay hydrated. Include high-protein foods. Rest and take medications as prescribed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "tuberculosis",
+    "disease": "Tuberculosis (TB)",
+    "recommended_foods": ["High-Protein Foods", "Calorie-Dense Foods", "Fruits", "Vegetables", "Milk", "Eggs", "Meat"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat a high-protein, high-calorie diet. Take anti-TB medications regularly. Monitor for drug interactions. Maintain good nutrition.",
+    "urgency": "critical"
+  },
+  {
+    "id": "typhoid",
+    "disease": "Typhoid Fever",
+    "recommended_foods": ["Clear Broth", "Rice", "Toast", "Banana", "Applesauce", "Boiled Potatoes"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "High-Fiber Foods", "Dairy", "Alcohol"],
+    "guidance": "Eat soft, easily digestible foods. Stay hydrated. Avoid raw foods. Take antibiotics as prescribed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "dengue",
+    "disease": "Dengue Fever",
+    "recommended_foods": ["ORS", "Coconut Water", "Fresh Juices", "Soup", "Soft Foods", "Fruits"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "NSAIDs", "Alcohol", "Caffeine"],
+    "guidance": "Stay well-hydrated. Use ORS and coconut water. Avoid NSAIDs (aspirin, ibuprofen). Monitor for warning signs.",
+    "urgency": "critical"
+  },
+  {
+    "id": "malaria",
+    "disease": "Malaria",
+    "recommended_foods": ["High-Calorie Foods", "High-Protein Foods", "ORS", "Fresh Juices", "Fruits", "Vegetables"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Alcohol"],
+    "guidance": "Eat a nutrient-dense diet. Stay hydrated. Take antimalarial medications as prescribed. Rest.",
+    "urgency": "critical"
+  },
+  {
+    "id": "chikungunya",
+    "disease": "Chikungunya",
+    "recommended_foods": ["Fresh Fruits", "Vegetables", "Soups", "High-Protein Foods", "ORS", "Coconut Water"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Processed Foods", "NSAIDs (Acute Phase)"],
+    "guidance": "Stay hydrated. Eat anti-inflammatory foods. Use paracetamol for fever. Avoid NSAIDs in acute phase.",
+    "urgency": "high"
+  },
+  {
+    "id": "cholera",
+    "disease": "Cholera",
+    "recommended_foods": ["ORS", "Coconut Water", "Clear Broth", "Rice Water", "Soft Foods"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Dairy", "High-Fiber Foods", "Raw Foods"],
+    "guidance": "Use ORS immediately. Continue feeding. Take antibiotics as prescribed. Seek hospital care if severe.",
+    "urgency": "critical"
+  },
+  {
+    "id": "food_poisoning",
+    "disease": "Food Poisoning",
+    "recommended_foods": ["ORS", "Clear Broth", "Rice", "Toast", "Banana", "Boiled Potatoes"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Dairy", "High-Fiber Foods", "Raw Foods"],
+    "guidance": "Use ORS. Eat bland foods. Avoid triggers. Seek medical care if blood in stool or severe dehydration.",
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_a",
+    "disease": "Hepatitis A",
+    "recommended_foods": ["High-Protein Foods", "Fruits", "Vegetables", "Rice", "Toast", "Clear Broth"],
+    "avoid_foods": ["Fatty Foods", "Fried Foods", "Alcohol", "Spicy Foods"],
+    "guidance": "Eat a high-calorie, low-fat diet. Avoid alcohol completely. Rest. Stay hydrated.",
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_b",
+    "disease": "Hepatitis B (Chronic)",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Low-Sodium Foods"],
+    "avoid_foods": ["Alcohol", "Fatty Foods", "Processed Foods", "Excess Salt"],
+    "guidance": "Avoid alcohol. Follow a low-fat, low-sodium diet. Monitor liver function. Take antivirals as prescribed.",
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_c",
+    "disease": "Hepatitis C",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Alcohol", "Fatty Foods", "Processed Foods", "Excess Salt"],
+    "guidance": "Avoid alcohol. Eat a healthy diet. Take DAAs as prescribed. Monitor liver function.",
+    "urgency": "high"
+  },
+  {
+    "id": "hiv_aids",
+    "disease": "HIV/AIDS",
+    "recommended_foods": ["High-Protein Foods", "High-Calorie Foods", "Fruits", "Vegetables", "Whole Grains", "Healthy Fats"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Raw Meat", "Raw Eggs", "Unpasteurized Dairy"],
+    "guidance": "Eat a nutrient-dense diet to maintain weight. Ensure food safety. Take ART medications regularly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "cancer_general",
+    "disease": "Cancer (General Nutrition)",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Healthy Fats", "Antioxidant-Rich Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Red Meat", "Processed Meat", "Alcohol"],
+    "guidance": "Eat a plant-based diet. Maintain a healthy weight. Include anti-inflammatory foods. Avoid processed foods.",
+    "urgency": "critical"
+  },
+  {
+    "id": "chemotherapy_diet",
+    "disease": "Chemotherapy / Cancer Treatment",
+    "recommended_foods": ["Soft Foods", "Smoothies", "Soups", "Protein-Rich Foods", "Fruits", "Vegetables"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Acidic Foods", "Raw Foods (if neutropenic)"],
+    "guidance": "Eat small frequent meals. Stay hydrated. Avoid foodborne illnesses. Manage nausea with bland foods.",
+    "urgency": "critical"
+  },
+  {
+    "id": "radiation_diet",
+    "disease": "Radiation Therapy (Head/Neck)",
+    "recommended_foods": ["Soft Foods", "Pureed Foods", "Smoothies", "High-Protein Foods", "High-Calorie Foods"],
+    "avoid_foods": ["Spicy Foods", "Acidic Foods", "Hard Foods", "Hot Foods"],
+    "guidance": "Eat soft, high-calorie foods. Stay hydrated. Avoid irritants. Use tube feeding if needed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "post_surgery_diet",
+    "disease": "Post-Surgery Recovery",
+    "recommended_foods": ["High-Protein Foods", "High-Calorie Foods", "Vitamin C-Rich Foods", "Zinc-Rich Foods", "Clear Fluids"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat a high-protein, high-calorie diet for wound healing. Stay hydrated. Follow doctor's dietary instructions.",
+    "urgency": "high"
+  },
+  {
+    "id": "burn_recovery",
+    "disease": "Burn Recovery",
+    "recommended_foods": ["High-Protein Foods", "High-Calorie Foods", "Fruits", "Vegetables", "Nutrient-Dense Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Low-Nutrient Foods"],
+    "guidance": "Eat a high-protein, high-calorie diet. Include vitamin C and zinc. Stay hydrated. Ensure adequate nutrition.",
+    "urgency": "critical"
+  },
+  {
+    "id": "dialysis_diet",
+    "disease": "Hemodialysis",
+    "recommended_foods": ["High-Protein Foods", "Low-Potassium Fruits", "Low-Phosphorus Foods"],
+    "avoid_foods": ["High-Potassium Foods (Bananas, Oranges)", "High-Phosphorus Foods (Dairy, Nuts)", "Excess Salt"],
+    "guidance": "Limit potassium, phosphorus, and sodium. Maintain protein intake as advised. Monitor fluid intake strictly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "peritoneal_dialysis",
+    "disease": "Peritoneal Dialysis",
+    "recommended_foods": ["Lean Protein", "Fresh Fruits", "Vegetables", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Excess Salt", "Sugary Foods", "Processed Foods"],
+    "guidance": "Maintain protein intake. Limit sodium. Monitor fluid intake. Follow dietitian's advice.",
+    "urgency": "critical"
+  },
+  {
+    "id": "chronic_fatigue",
+    "disease": "Chronic Fatigue Syndrome",
+    "recommended_foods": ["Energy-Dense Foods", "Lean Protein", "Fruits", "Vegetables", "Whole Grains", "Healthy Fats"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Caffeine", "Alcohol"],
+    "guidance": "Eat small frequent meals. Include protein and complex carbohydrates. Avoid sugar crashes. Stay hydrated.",
+    "urgency": "low"
+  },
+  {
+    "id": "fibromyalgia",
+    "disease": "Fibromyalgia",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Healthy Fats", "Anti-Inflammatory Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Caffeine", "Alcohol", "Food Additives"],
+    "guidance": "Eat anti-inflammatory foods. Avoid triggers. Stay hydrated. Manage stress.",
+    "urgency": "low"
+  },
+  {
+    "id": "allergies_food",
+    "disease": "Food Allergies",
+    "recommended_foods": ["Fresh Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Safe Alternatives"],
+    "avoid_foods": ["Allergenic Foods (Peanuts, Shellfish, Dairy, etc.)", "Processed Foods"],
+    "guidance": "Identify and strictly avoid allergens. Read food labels carefully. Carry an epinephrine auto-injector if prescribed.",
+    "urgency": "critical"
+  },
+  {
+    "id": "sickle_cell",
+    "disease": "Sickle Cell Anemia",
+    "recommended_foods": ["High-Calorie Foods", "High-Protein Foods", "Fruits", "Vegetables", "Whole Grains", "Water"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Alcohol", "Dehydrating Drinks"],
+    "guidance": "Stay well-hydrated to prevent crises. Eat a nutrient-dense diet. Take folic acid supplements.",
+    "urgency": "high"
+  },
+  {
+    "id": "thalassemia",
+    "disease": "Thalassemia",
+    "recommended_foods": ["High-Protein Foods", "Fruits", "Vegetables", "Whole Grains", "Folate-Rich Foods"],
+    "avoid_foods": ["Iron-Rich Foods (if iron overload)", "Alcohol"],
+    "guidance": "Maintain adequate nutrition. Avoid excess iron. Take folic acid supplements. Monitor iron levels.",
+    "urgency": "high"
+  },
+  {
+    "id": "hemophilia",
+    "disease": "Hemophilia",
+    "recommended_foods": ["High-Protein Foods", "Fruits", "Vegetables", "Whole Grains", "Vitamin K-Rich Foods"],
+    "avoid_foods": ["Foods with High Vitamin E (in excess)", "Aspirin", "NSAIDs"],
+    "guidance": "Maintain a balanced diet. Ensure adequate vitamin K. Avoid aspirin and NSAIDs. Take factor replacement as needed.",
+    "urgency": "high"
+  },
+  {
+    "id": "varicose_veins",
+    "disease": "Varicose Veins",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Flavonoid-Rich Foods"],
+    "avoid_foods": ["Processed Foods", "Salt", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat a high-fiber diet to prevent constipation. Avoid prolonged standing. Elevate legs. Exercise regularly.",
+    "urgency": "low"
+  },
+  {
+    "id": "hemorrhoids",
+    "disease": "Hemorrhoids",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Water"],
+    "avoid_foods": ["Processed Foods", "Spicy Foods", "Caffeine", "Alcohol"],
+    "guidance": "Eat a high-fiber diet. Drink plenty of water. Avoid straining. Use stool softeners if needed.",
+    "urgency": "low"
+  },
+  {
+    "id": "diverticulosis",
+    "disease": "Diverticulosis",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Legumes"],
+    "avoid_foods": ["Processed Foods", "Fried Foods", "Refined Carbohydrates"],
+    "guidance": "Eat a high-fiber diet. Drink plenty of water. Exercise regularly. Avoid constipation.",
+    "urgency": "low"
+  },
+  {
+    "id": "psoriasis",
+    "disease": "Psoriasis",
+    "recommended_foods": ["Anti-Inflammatory Foods", "Fruits", "Vegetables", "Fish", "Nuts", "Seeds", "Whole Grains"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Red Meat", "Alcohol", "Fried Foods"],
+    "guidance": "Eat anti-inflammatory foods. Include omega-3 fatty acids. Avoid triggers. Maintain a healthy weight.",
+    "urgency": "medium"
+  },
+  {
+    "id": "eczema",
+    "disease": "Eczema (Atopic Dermatitis)",
+    "recommended_foods": ["Anti-Inflammatory Foods", "Fruits", "Vegetables", "Fish", "Probiotic Foods"],
+    "avoid_foods": ["Allergenic Foods (if identified)", "Processed Foods", "Sugary Foods"],
+    "guidance": "Identify and avoid food allergens. Eat anti-inflammatory foods. Stay hydrated. Avoid scratching.",
+    "urgency": "low"
+  },
+  {
+    "id": "acne",
+    "disease": "Acne",
+    "recommended_foods": ["Low Glycemic Foods", "Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Water"],
+    "avoid_foods": ["High Glycemic Foods", "Sugary Foods", "Dairy (in some cases)", "Fried Foods"],
+    "guidance": "Eat low glycemic foods. Stay hydrated. Avoid sugary and processed foods. Maintain a healthy skincare routine.",
+    "urgency": "low"
+  },
+  {
+    "id": "vitiligo",
+    "disease": "Vitiligo",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Zinc-Rich Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Alcohol"],
+    "guidance": "Eat a balanced diet rich in antioxidants. Consider vitamin and mineral supplementation. Avoid sunburn.",
+    "urgency": "low"
+  },
+  {
+    "id": "alopecia",
+    "disease": "Alopecia Areata",
+    "recommended_foods": ["High-Protein Foods", "Iron-Rich Foods", "Zinc-Rich Foods", "Biotin-Rich Foods", "Fruits", "Vegetables"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods"],
+    "guidance": "Eat a nutrient-dense diet. Include protein, iron, zinc, and biotin. Manage stress. Consult a dermatologist.",
+    "urgency": "low"
+  },
+  {
+    "id": "chronic_pain",
+    "disease": "Chronic Pain Syndrome",
+    "recommended_foods": ["Anti-Inflammatory Foods", "Fruits", "Vegetables", "Fish", "Nuts", "Seeds", "Whole Grains"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods", "Alcohol"],
+    "guidance": "Eat anti-inflammatory foods. Maintain a healthy weight. Stay hydrated. Manage stress.",
+    "urgency": "medium"
+  },
+  {
+    "id": "gluten_sensitivity",
+    "disease": "Non-Celiac Gluten Sensitivity",
+    "recommended_foods": ["Gluten-Free Grains (Rice, Corn, Millet)", "Fruits", "Vegetables", "Lean Protein", "Dairy"],
+    "avoid_foods": ["Wheat", "Barley", "Rye", "Oats (unless certified gluten-free)"],
+    "guidance": "Adopt a gluten-free diet. Read food labels. Monitor for other food sensitivities.",
+    "urgency": "medium"
+  },
+  {
+    "id": "lactose_intolerance",
+    "disease": "Lactose Intolerance",
+    "recommended_foods": ["Lactose-Free Milk", "Yogurt (if tolerated)", "Hard Cheeses", "Fruits", "Vegetables", "Whole Grains"],
+    "avoid_foods": ["Milk", "Ice Cream", "Soft Cheeses", "Foods with Hidden Lactose"],
+    "guidance": "Avoid lactose-containing foods. Use lactose-free alternatives. Take lactase enzyme supplements if needed.",
+    "urgency": "low"
+  },
+  {
+    "id": "hiatus_hernia",
+    "disease": "Hiatus Hernia",
+    "recommended_foods": ["Small Frequent Meals", "Oats", "Rice", "Lean Protein", "Cooked Vegetables"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Fatty Foods", "Caffeine", "Alcohol", "Large Meals"],
+    "guidance": "Eat small frequent meals. Avoid bending or lying down after eating. Elevate the head of your bed.",
+    "urgency": "medium"
+  },
+  {
+    "id": "hernia_inguinal",
+    "disease": "Inguinal Hernia (Before/After Surgery)",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Lean Protein"],
+    "avoid_foods": ["Processed Foods", "Fried Foods", "Gas-Producing Foods"],
+    "guidance": "Avoid constipation. Eat a high-fiber diet. Maintain a healthy weight. Avoid heavy lifting.",
+    "urgency": "medium"
+  },
+  {
+    "id": "benign_breast",
+    "disease": "Benign Breast Disease (Fibrocystic)",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Low-Fat Diet"],
+    "avoid_foods": ["Caffeine", "High-Fat Foods", "Processed Foods"],
+    "guidance": "Avoid caffeine. Eat a low-fat diet. Include fruits and vegetables. Manage stress.",
+    "urgency": "low"
+  },
+  {
+    "id": "premenstrual_syndrome",
+    "disease": "PMS (Premenstrual Syndrome)",
+    "recommended_foods": ["Whole Grains", "Fruits", "Vegetables", "Lean Protein", "Calcium-Rich Foods"],
+    "avoid_foods": ["Caffeine", "Salt", "Sugary Foods", "Alcohol"],
+    "guidance": "Eat small frequent meals. Reduce salt and caffeine. Include calcium and vitamin B6. Exercise regularly.",
+    "urgency": "low"
+  },
+  {
+    "id": "pmdd",
+    "disease": "PMDD (Premenstrual Dysphoric Disorder)",
+    "recommended_foods": ["Complex Carbohydrates", "Lean Protein", "Fruits", "Vegetables", "Calcium-Rich Foods"],
+    "avoid_foods": ["Caffeine", "Sugar", "Alcohol", "Salt"],
+    "guidance": "Eat regular meals. Reduce caffeine and sugar. Include calcium and magnesium. Manage stress.",
+    "urgency": "medium"
+  },
+  {
+    "id": "mastitis",
+    "disease": "Mastitis (Breastfeeding)",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Hydrating Fluids"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Caffeine (in excess)"],
+    "guidance": "Stay hydrated. Continue breastfeeding. Rest. Take antibiotics as prescribed. Apply warm compresses.",
+    "urgency": "high"
+  },
+  {
+    "id": "cystitis_interstitial",
+    "disease": "Interstitial Cystitis (Bladder Pain Syndrome)",
+    "recommended_foods": ["Low-Acid Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Water"],
+    "avoid_foods": ["Acidic Foods", "Spicy Foods", "Tomatoes", "Citrus", "Caffeine", "Alcohol"],
+    "guidance": "Identify and avoid bladder irritants. Stay hydrated. Follow a low-acid diet.",
+    "urgency": "medium"
+  },
+  {
+    "id": "stress_incontinence",
+    "disease": "Stress Urinary Incontinence",
+    "recommended_foods": ["High-Fiber Foods", "Fruits", "Vegetables", "Whole Grains", "Lean Protein"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Acidic Foods", "Spicy Foods"],
+    "guidance": "Avoid bladder irritants. Maintain a healthy weight. Do pelvic floor exercises. Stay hydrated.",
+    "urgency": "low"
+  },
+  {
+    "id": "prostatitis",
+    "disease": "Prostatitis (Acute/Chronic)",
+    "recommended_foods": ["Fruits", "Vegetables", "Whole Grains", "Lean Protein", "Hydrating Fluids"],
+    "avoid_foods": ["Spicy Foods", "Caffeine", "Alcohol", "Acidic Foods"],
+    "guidance": "Avoid bladder irritants. Stay hydrated. Eat a balanced diet. Take medications as prescribed.",
+    "urgency": "medium"
+  },
+  {
+    "id": "priapism",
+    "disease": "Priapism (Sickle Cell Related)",
+    "recommended_foods": ["Hydrating Fluids", "Fruits", "Vegetables", "Whole Grains", "Lean Protein"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Alcohol"],
+    "guidance": "Stay well-hydrated. Manage sickle cell disease. Avoid triggers. Seek immediate medical care.",
+    "urgency": "critical"
+  },
+  {
+    "id": "testicular_cancer",
+    "disease": "Testicular Cancer (Post-Treatment)",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Healthy Fats"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat a nutrient-dense diet. Maintain a healthy weight. Avoid processed foods. Exercise regularly.",
+    "urgency": "critical"
+  },
+  {
+    "id": "restless_legs",
+    "disease": "Restless Legs Syndrome",
+    "recommended_foods": ["Iron-Rich Foods", "Folate-Rich Foods", "Magnesium-Rich Foods", "Fruits", "Vegetables"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Sugary Foods"],
+    "guidance": "Check iron and ferritin levels. Avoid caffeine and alcohol. Exercise regularly. Manage stress.",
+    "urgency": "low"
+  },
+  {
+    "id": "sleep_apnea",
+    "disease": "Obstructive Sleep Apnea",
+    "recommended_foods": ["Fruits", "Vegetables", "Lean Protein", "Whole Grains", "Low-Sodium Foods"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Alcohol", "Heavy Meals Before Bed"],
+    "guidance": "Maintain a healthy weight. Avoid alcohol before bed. Elevate the head during sleep. Use CPAP.",
+    "urgency": "medium"
+  },
+  {
+    "id": "sinusitis",
+    "disease": "Chronic Sinusitis",
+    "recommended_foods": ["Spicy Foods (in some cases)", "Warm Liquids", "Fruits", "Vegetables", "Hydrating Fluids"],
+    "avoid_foods": ["Dairy (if congested)", "Processed Foods", "Sugary Foods"],
+    "guidance": "Stay hydrated. Use warm fluids. Avoid allergens. Consider nasal irrigation.",
+    "urgency": "low"
+  },
+  {
+    "id": "tinnitus",
+    "disease": "Tinnitus",
+    "recommended_foods": ["Anti-Inflammatory Foods", "Fruits", "Vegetables", "Fish", "Nuts", "Seeds"],
+    "avoid_foods": ["Excess Salt", "Caffeine", "Alcohol", "Processed Foods"],
+    "guidance": "Reduce salt and caffeine. Eat anti-inflammatory foods. Manage stress. Avoid loud noise.",
+    "urgency": "low"
+  },
+  {
+    "id": "glaucoma",
+    "disease": "Glaucoma",
+    "recommended_foods": ["Green Leafy Vegetables", "Fruits", "Nuts", "Seeds", "Fish", "Whole Grains"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "High-Carb Foods"],
+    "guidance": "Eat antioxidant-rich foods. Maintain a healthy weight. Use eye drops regularly. Avoid caffeine in excess.",
+    "urgency": "high"
+  },
+  {
+    "id": "cataract",
+    "disease": "Cataract",
+    "recommended_foods": ["Antioxidant-Rich Foods", "Fruits", "Vegetables", "Nuts", "Seeds", "Fish"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods"],
+    "guidance": "Eat foods rich in vitamins C and E. Avoid smoking. Protect eyes from UV light. Get regular eye checkups.",
+    "urgency": "medium"
+  },
+  {
+    "id": "macular_degeneration",
+    "disease": "Age-Related Macular Degeneration",
+    "recommended_foods": ["Green Leafy Vegetables", "Carrots", "Berries", "Fish", "Nuts", "Seeds"],
+    "avoid_foods": ["Processed Foods", "Sugary Foods", "Fried Foods"],
+    "guidance": "Eat foods rich in lutein, zeaxanthin, and omega-3. Avoid smoking. Protect eyes from UV light.",
+    "urgency": "medium"
+  },
+  {
+    "id": "dry_eye",
+    "disease": "Dry Eye Syndrome",
+    "recommended_foods": ["Omega-3 Rich Foods", "Fruits", "Vegetables", "Nuts", "Seeds", "Water"],
+    "avoid_foods": ["Caffeine", "Alcohol", "Processed Foods"],
+    "guidance": "Stay hydrated. Include omega-3 fatty acids. Use artificial tears. Blink frequently.",
+    "urgency": "low"
+  },
+  {
+    "id": "dysphagia",
+    "disease": "Dysphagia (Swallowing Difficulty)",
+    "recommended_foods": ["Pureed Foods", "Smoothies", "Thickened Liquids", "Soft Foods", "Nutrient-Dense Liquids"],
+    "avoid_foods": ["Hard Foods", "Crumbly Foods", "Thin Liquids (unless thickened)"],
+    "guidance": "Use thickened liquids. Eat soft, pureed foods. Sit upright while eating. Consult a speech therapist.",
+    "urgency": "critical"
+  },
+  {
+    "id": "anorexia_nervosa",
+    "disease": "Anorexia Nervosa",
+    "recommended_foods": ["Small Frequent Meals", "Calorie-Dense Foods", "Nutrient-Dense Foods", "Smoothies", "Shakes"],
+    "avoid_foods": ["Low-Calorie Foods", "Diet Foods"],
+    "guidance": "Gradual refeeding. Eat small frequent meals. Use calorie-dense foods. Seek psychological support.",
+    "urgency": "critical"
+  },
+  {
+    "id": "bulimia_nervosa",
+    "disease": "Bulimia Nervosa",
+    "recommended_foods": ["Balanced Meals", "Regular Meal Schedule", "Nutrient-Dense Foods"],
+    "avoid_foods": ["Trigger Foods (for bingeing)", "Diet Foods"],
+    "guidance": "Establish regular eating patterns. Avoid skipping meals. Seek psychological support.",
+    "urgency": "critical"
+  },
+  {
+    "id": "binge_eating",
+    "disease": "Binge Eating Disorder",
+    "recommended_foods": ["Regular Meals", "Balanced Meals", "Nutrient-Dense Foods"],
+    "avoid_foods": ["Trigger Foods", "Highly Processed Snacks"],
+    "guidance": "Eat regular meals. Avoid skipping meals. Seek psychological support. Practice mindful eating.",
+    "urgency": "high"
+  }
+]

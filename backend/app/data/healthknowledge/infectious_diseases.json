@@ -1,0 +1,2264 @@
+[
+  {
+    "id": "dengue",
+    "category": "Dengue Fever",
+    "symptoms": [
+      "high fever",
+      "severe headache",
+      "pain behind eyes",
+      "joint pain",
+      "muscle pain",
+      "rash",
+      "nausea",
+      "vomiting"
+    ],
+    "guidance": "Requires professional medical monitoring. Focus on hydration with ORS and water. Avoid NSAIDs. Seek emergency care if warning signs appear: bleeding gums, persistent vomiting, severe belly pain, rapid breathing, blood in urine or stool.",
+    "precautions": [
+      "Avoid aspirin and ibuprofen — use only paracetamol",
+      "Use mosquito nets and repellents",
+      "Eliminate stagnant water around home",
+      "Wear full-sleeve clothing"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "malaria",
+    "category": "Malaria",
+    "symptoms": [
+      "shaking chills",
+      "high fever",
+      "profuse sweating",
+      "headache",
+      "nausea",
+      "vomiting",
+      "diarrhea",
+      "cyclical fever pattern every 48-72 hours"
+    ],
+    "guidance": "Consult a doctor immediately for rapid diagnostic test (RDT) and antimalarial prescription. Recovery requires completing the full drug course (usually Artemisinin-based combination). Keep hydrated and rest. Falciparum malaria requires hospitalization.",
+    "precautions": [
+      "Strict compliance with prescribed medication — stopping early causes drug resistance",
+      "Prevent mosquito bites using repellents, nets, and full clothing",
+      "Sleep under insecticide-treated bed nets",
+      "Drain stagnant water near your home"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "typhoid",
+    "category": "Typhoid Fever",
+    "symptoms": [
+      "gradual high fever",
+      "weakness",
+      "stomach pain",
+      "constipation or diarrhea",
+      "dry cough",
+      "loss of appetite",
+      "rose-colored spots on torso"
+    ],
+    "guidance": "Consult a healthcare provider for antibiotic prescription (azithromycin or ceftriaxone). Drink only boiled or purified water. Eat plain, easy-to-digest cooked meals. Strict hand hygiene is critical.",
+    "precautions": [
+      "Wash hands before eating and after using washroom",
+      "Avoid raw foods and street food during illness",
+      "Drink only boiled or bottled water",
+      "Typhoid Vi vaccine provides good protection"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "tuberculosis",
+    "category": "Tuberculosis (TB)",
+    "symptoms": [
+      "persistent cough lasting 3+ weeks",
+      "coughing blood or mucus",
+      "chest pain",
+      "unintentional weight loss",
+      "fatigue",
+      "fever especially at night",
+      "night sweats",
+      "loss of appetite"
+    ],
+    "guidance": "TB is curable with a full 6-month DOTS (Directly Observed Treatment Short-course) medication course under RNTCP/NikshayMitra program (free in India). Never stop treatment early even if feeling better — it causes drug-resistant TB. Isolate while infectious (first 2 weeks of treatment).",
+    "precautions": [
+      "Cover mouth with tissue or elbow when coughing",
+      "Ensure good ventilation in living areas",
+      "All household contacts should be screened",
+      "HIV-positive individuals are at very high risk and need regular screening"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_a",
+    "category": "Hepatitis A",
+    "symptoms": [
+      "fatigue",
+      "nausea",
+      "vomiting",
+      "abdominal pain (right side)",
+      "loss of appetite",
+      "low-grade fever",
+      "dark urine",
+      "jaundice (yellowing of skin and eyes)",
+      "clay-colored stool"
+    ],
+    "guidance": "No specific antiviral treatment. Rest and supportive care. Maintain nutrition and hydration. Avoid alcohol completely. Most recover fully in a few weeks. Hospitalization for severe cases.",
+    "precautions": [
+      "Drink only safe, treated water",
+      "Wash hands thoroughly especially after toilet use and before eating",
+      "Eat only properly cooked food",
+      "Vaccination (2 doses) provides lifelong protection"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "hepatitis_b",
+    "category": "Hepatitis B",
+    "symptoms": [
+      "fatigue",
+      "jaundice",
+      "dark urine",
+      "joint pain",
+      "abdominal pain",
+      "nausea",
+      "vomiting",
+      "loss of appetite",
+      "many cases are initially asymptomatic"
+    ],
+    "guidance": "Acute Hepatitis B: supportive care. Chronic Hepatitis B: requires long-term antiviral therapy (tenofovir, entecavir). Regular liver function tests and monitoring are essential. Avoid alcohol. Vaccination available and recommended for all.",
+    "precautions": [
+      "Do not share needles, razors, or toothbrushes",
+      "Practice safe sex",
+      "Ensure blood transfusions are screened",
+      "All newborns should receive Hepatitis B vaccine within 24 hours of birth"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "cholera",
+    "category": "Cholera",
+    "symptoms": [
+      "sudden onset profuse watery diarrhea (rice-water stool)",
+      "vomiting",
+      "rapid dehydration",
+      "muscle cramps",
+      "weakness",
+      "sunken eyes",
+      "dry mouth",
+      "low blood pressure"
+    ],
+    "guidance": "EMERGENCY — Immediate rehydration with ORS or IV fluids is life-saving. Start ORS immediately: 1 packet in 1 liter boiled water. Antibiotics (doxycycline) shorten duration. Seek hospital care immediately. Can be fatal within hours if untreated.",
+    "precautions": [
+      "Drink only treated or boiled water",
+      "Wash hands with soap",
+      "Eat only cooked and hot food",
+      "Proper sanitation and sewage disposal",
+      "Oral cholera vaccine available in outbreak settings"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "chikungunya",
+    "category": "Chikungunya",
+    "symptoms": [
+      "sudden high fever",
+      "severe joint pain (especially hands, wrists, ankles, feet)",
+      "joint swelling",
+      "muscle pain",
+      "headache",
+      "rash",
+      "fatigue",
+      "joint pain may persist for months"
+    ],
+    "guidance": "No specific antiviral. Rest, hydration, and pain management with paracetamol. Avoid NSAIDs during fever phase. Joint pain may be prolonged — physiotherapy helps. Warm compresses on affected joints for relief.",
+    "precautions": [
+      "Mosquito prevention: repellents, long sleeves, bed nets",
+      "Eliminate water containers where mosquitoes breed",
+      "Use window and door screens",
+      "Joint pain can last weeks to months — follow up with doctor"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "covid19",
+    "category": "COVID-19",
+    "symptoms": [
+      "fever",
+      "dry cough",
+      "fatigue",
+      "loss of taste or smell",
+      "sore throat",
+      "headache",
+      "body aches",
+      "diarrhea",
+      "difficulty breathing in severe cases",
+      "chest pain"
+    ],
+    "guidance": "Mild cases: rest at home, monitor oxygen with pulse oximeter, stay hydrated. Isolate for at least 5 days. Seek emergency care if SpO2 drops below 94%, severe breathlessness, persistent chest pain, or confusion. Vaccination significantly reduces severe disease.",
+    "precautions": [
+      "Wear mask in crowded or enclosed places",
+      "Wash hands frequently",
+      "Ventilate rooms well",
+      "Get vaccinated and boosted",
+      "Isolate if positive to protect vulnerable family members"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "rabies",
+    "category": "Rabies",
+    "symptoms": [
+      "fever",
+      "headache",
+      "anxiety",
+      "confusion",
+      "agitation",
+      "hallucinations",
+      "hydrophobia (fear of water)",
+      "paralysis",
+      "excessive salivation — symptoms appear weeks to months after bite"
+    ],
+    "guidance": "EMERGENCY AFTER ANIMAL BITE: Immediately wash wound thoroughly with soap and running water for 15 minutes. Go to hospital NOW for post-exposure prophylaxis (PEP) — vaccine + immunoglobulin. PEP is nearly 100% effective if given before symptoms. Once symptoms appear, rabies is almost always fatal.",
+    "precautions": [
+      "Wash animal bite wound immediately with soap and water",
+      "Report to nearest PHC/hospital within hours of any dog/bat/monkey bite",
+      "Vaccinate pets",
+      "Do not handle wild or stray animals"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "leptospirosis",
+    "category": "Leptospirosis (Weil's Disease)",
+    "symptoms": [
+      "sudden high fever",
+      "severe headache",
+      "muscle pain especially calves",
+      "red eyes",
+      "jaundice",
+      "rash",
+      "vomiting",
+      "diarrhea",
+      "in severe cases: liver failure, kidney failure, bleeding"
+    ],
+    "guidance": "Seek medical care immediately. Antibiotics (doxycycline or penicillin) are effective early in the disease. Severe cases need hospitalization. Common after floods — avoid wading in floodwater.",
+    "precautions": [
+      "Avoid wading in floodwater or soil contaminated by rodent urine",
+      "Wear rubber boots and gloves when working in soil or water",
+      "Control rat population",
+      "Doxycycline prophylaxis can be used for high-risk exposures"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "japanese_encephalitis",
+    "category": "Japanese Encephalitis",
+    "symptoms": [
+      "sudden high fever",
+      "severe headache",
+      "vomiting",
+      "stiff neck",
+      "confusion",
+      "seizures",
+      "paralysis",
+      "coma in severe cases",
+      "many infections are mild or asymptomatic"
+    ],
+    "guidance": "No specific antiviral treatment. Intensive supportive care in hospital for severe cases. Vaccination is the most effective prevention. Common in rural rice-growing areas near pig farms and water bodies.",
+    "precautions": [
+      "Vaccination recommended for residents and travelers in endemic areas",
+      "Use mosquito repellents and bed nets",
+      "Avoid outdoor activity at dusk and dawn when mosquitoes are most active",
+      "Eliminate mosquito breeding sites"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "leprosy",
+    "category": "Leprosy (Hansen's Disease)",
+    "symptoms": [
+      "pale or reddish patches on skin with loss of sensation",
+      "numbness in hands, feet, or face",
+      "muscle weakness",
+      "eye problems",
+      "enlarged peripheral nerves",
+      "painless wounds on hands and feet"
+    ],
+    "guidance": "Leprosy is curable. Free Multi-Drug Therapy (MDT) is available at all PHCs in India under the National Leprosy Eradication Programme (NLEP). Treatment lasts 6-12 months. Early treatment prevents permanent disability. Leprosy has very low transmission.",
+    "precautions": [
+      "Early detection and treatment is key to preventing disability",
+      "MDT is available free at all government health facilities",
+      "Treat skin patches early — do not ignore numbness",
+      "Regular follow-up with health worker during treatment"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "kala_azar",
+    "category": "Kala-Azar (Visceral Leishmaniasis)",
+    "symptoms": [
+      "prolonged irregular fever lasting weeks to months",
+      "significant weight loss",
+      "enlarged spleen and liver",
+      "weakness",
+      "pallor (paleness)",
+      "darkening of skin (especially in India)",
+      "swollen lymph nodes"
+    ],
+    "guidance": "Seek medical care immediately. Kala-azar is treated with antileishmanial drugs (liposomal amphotericin B — available free under NVBDCP program). Untreated Kala-azar is almost always fatal. India aims to eliminate Kala-azar.",
+    "precautions": [
+      "Use sandfly nets (fine-mesh) as sandflies that transmit disease are tiny",
+      "Apply insecticide to walls of homes",
+      "Use insect repellent",
+      "Early reporting of fever cases to ASHA workers"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "filariasis",
+    "category": "Lymphatic Filariasis (Elephantiasis)",
+    "symptoms": [
+      "swelling of legs, arms, or genitals (lymphedema)",
+      "thickened skin",
+      "hydrocele (scrotal swelling in men)",
+      "recurring fever with swollen lymph nodes",
+      "many infections are asymptomatic for years"
+    ],
+    "guidance": "Annual Mass Drug Administration (MDA) of Albendazole + DEC tablets is available free under the National Filaria Control Programme. Lymphedema management: keep limbs clean, do exercises, elevate limbs while sleeping. Surgery for hydrocele.",
+    "precautions": [
+      "Participate in annual MDA drives in your district",
+      "Prevent mosquito bites using repellents and nets",
+      "Maintain good hygiene of affected limbs to prevent secondary infections",
+      "Report swelling of limbs to ASHA worker or PHC"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "scabies",
+    "category": "Scabies",
+    "symptoms": [
+      "intense itching especially at night",
+      "pimple-like rash",
+      "burrow tracks on skin (thin zigzag lines)",
+      "rash in skin folds (between fingers, wrists, elbows, armpits, waist, genitals)",
+      "secondary bacterial infection from scratching"
+    ],
+    "guidance": "Apply permethrin 5% cream from neck down, leave overnight, wash off next day. Treat all household members simultaneously even if asymptomatic. Wash all clothing and bedding in hot water on same day.",
+    "precautions": [
+      "Treat all household contacts at the same time",
+      "Wash all clothes, bedding, and towels in hot water",
+      "Do not share clothing or bedding",
+      "Avoid close physical contact with infected persons"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "ringworm",
+    "category": "Ringworm (Tinea / Fungal Infection)",
+    "symptoms": [
+      "circular ring-shaped red rash with clear center",
+      "itching",
+      "scaly or flaky skin",
+      "hair loss in affected area (scalp ringworm)",
+      "thickened or discolored nails (nail fungus)",
+      "athlete's foot between toes"
+    ],
+    "guidance": "Apply antifungal cream (clotrimazole, terbinafine) twice daily for 2-4 weeks. Keep area clean and dry. Do not stop treatment when rash disappears. Severe or widespread cases need oral antifungals from a doctor.",
+    "precautions": [
+      "Keep skin dry especially skin folds and between toes",
+      "Do not share combs, towels, or clothing",
+      "Wear flip-flops in public showers and pools",
+      "Treat pets if they have ringworm"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "hiv_aids",
+    "category": "HIV/AIDS",
+    "symptoms": [
+      "early: flu-like symptoms, fever, swollen lymph nodes, rash, sore throat",
+      "later: weight loss, chronic diarrhea, night sweats, recurrent infections, oral thrush, prolonged fatigue"
+    ],
+    "guidance": "HIV is manageable with lifelong Antiretroviral Therapy (ART) — available FREE at all ART centers in India under NACO. Early treatment allows near-normal lifespan. Test regularly if at risk. ART also prevents transmission to partners and children.",
+    "precautions": [
+      "Practice safe sex with condoms",
+      "Do not share needles or syringes",
+      "HIV-positive pregnant women must take ART to prevent transmission to baby",
+      "Get tested — knowing your status protects you and others"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "meningitis",
+    "category": "Meningitis",
+    "symptoms": [
+      "sudden high fever",
+      "severe headache",
+      "stiff neck",
+      "nausea and vomiting",
+      "sensitivity to light",
+      "sensitivity to noise",
+      "seizures",
+      "rash that does not fade when pressed (in bacterial meningitis)",
+      "confusion"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Go to hospital immediately. Bacterial meningitis is life-threatening and requires IV antibiotics urgently. Every hour of delay increases risk of death or permanent disability (deafness, brain damage). Do not wait.",
+    "precautions": [
+      "Meningococcal vaccine available and recommended",
+      "Avoid close contact with infected person",
+      "Practice good hand hygiene",
+      "Seek emergency care for severe headache with stiff neck and fever"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "diphtheria",
+    "category": "Diphtheria",
+    "symptoms": [
+      "sore throat",
+      "low-grade fever",
+      "gray or white membrane on throat or tonsils",
+      "swollen neck glands (bull-neck appearance)",
+      "difficulty swallowing",
+      "hoarseness",
+      "breathing difficulty"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Requires immediate hospitalization and antitoxin plus antibiotics (penicillin or erythromycin). The membrane can block airways leading to suffocation. DPT/Td vaccination is the most effective prevention.",
+    "precautions": [
+      "Ensure full DPT vaccination for children",
+      "Td booster every 10 years for adults",
+      "Isolate infected person",
+      "All contacts should receive antibiotics prophylactically"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "tetanus",
+    "category": "Tetanus",
+    "symptoms": [
+      "muscle stiffness starting in jaw (lockjaw)",
+      "difficulty swallowing",
+      "stiffness of neck, shoulders, and back",
+      "muscle spasms triggered by sound or touch",
+      "fever",
+      "sweating",
+      "high blood pressure"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Requires immediate hospitalization, tetanus antitoxin (TIG), antibiotics, and wound care. Even with treatment, tetanus has high mortality. Prevention through vaccination is critical. Wound care after injury is essential.",
+    "precautions": [
+      "Ensure TT (Tetanus Toxoid) vaccination is up to date — booster every 10 years",
+      "Clean all wounds immediately with soap and water",
+      "Seek medical care for all puncture wounds, animal bites, or dirty wounds",
+      "Pregnant women must receive TT vaccine"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "whooping_cough",
+    "category": "Whooping Cough (Pertussis)",
+    "symptoms": [
+      "runny nose",
+      "mild cough progressing to severe coughing fits",
+      "characteristic whooping sound after cough in children",
+      "vomiting after coughing",
+      "fatigue",
+      "infants may turn blue (cyanosis) during fits",
+      "coughing fits last weeks"
+    ],
+    "guidance": "Antibiotics (azithromycin) if started early reduce infectiousness. Supportive care for coughing fits. Small, frequent meals to reduce vomiting. Infants are at highest risk of severe disease and complications (pneumonia, brain damage). Hospitalize infants.",
+    "precautions": [
+      "Ensure DPT/Tdap vaccination for children and Tdap booster for pregnant women",
+      "Isolate infected person for 5 days after starting antibiotics",
+      "Caregivers of infants should be vaccinated (cocooning strategy)",
+      "Seek immediate care for any infant with severe cough"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "influenza",
+    "category": "Influenza (Flu)",
+    "symptoms": [
+      "sudden high fever",
+      "dry cough",
+      "severe body aches",
+      "headache",
+      "fatigue",
+      "sore throat",
+      "runny nose",
+      "chills",
+      "sweats",
+      "loss of appetite"
+    ],
+    "guidance": "Rest, hydration, and symptomatic relief with paracetamol. Antiviral (oseltamivir) can reduce duration if started within 48 hours. High-risk groups (elderly, pregnant, chronic illness) need prompt medical care. Annual flu vaccine is best prevention.",
+    "precautions": [
+      "Get annual flu vaccination",
+      "Wash hands frequently",
+      "Cover coughs and sneezes",
+      "Stay home when sick to avoid spreading",
+      "Ventilate indoor spaces"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "pneumonia",
+    "category": "Pneumonia",
+    "symptoms": [
+      "fever",
+      "chills",
+      "productive cough with yellow/green sputum",
+      "chest pain that worsens with breathing",
+      "shortness of breath",
+      "rapid breathing",
+      "fatigue",
+      "confusion in elderly"
+    ],
+    "guidance": "Bacterial pneumonia requires antibiotics (prescribed by doctor). Viral pneumonia requires supportive care. Hospitalization for severe cases. Pneumococcal and flu vaccines prevent many cases. Watch for difficulty breathing — seek emergency care.",
+    "precautions": [
+      "Pneumococcal vaccine (PCV13, PPSV23) for children and elderly",
+      "Flu vaccine annually",
+      "Practice hand hygiene",
+      "Avoid smoking",
+      "Seek care for persistent cough with fever"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "measles",
+    "category": "Measles",
+    "symptoms": [
+      "high fever",
+      "dry cough",
+      "runny nose",
+      "red watery eyes (conjunctivitis)",
+      "sensitivity to light",
+      "white spots inside mouth (Koplik spots)",
+      "red blotchy skin rash starting on face and spreading down",
+      "rash lasts 5-6 days"
+    ],
+    "guidance": "Supportive care — rest, hydration, fever management. Vitamin A supplementation reduces complications. Serious complications include pneumonia and encephalitis. Unvaccinated children are at highest risk. Measles is highly contagious — isolate.",
+    "precautions": [
+      "Ensure full MMR vaccination for children (2 doses)",
+      "Isolate infected person for 4 days after rash appears",
+      "Good nutrition and vitamin A",
+      "Seek care if breathing difficulty or confusion develops"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "mumps",
+    "category": "Mumps",
+    "symptoms": [
+      "fever",
+      "headache",
+      "muscle aches",
+      "fatigue",
+      "loss of appetite",
+      "swollen painful salivary glands (one or both sides)",
+      "pain while chewing or swallowing",
+      "swelling below ears"
+    ],
+    "guidance": "Supportive care — rest, hydration, pain relief (paracetamol). Apply warm or cold compresses to swollen glands. Avoid acidic foods that stimulate saliva. Rare complications: orchitis (testicle swelling), meningitis, deafness. MMR vaccine prevents.",
+    "precautions": [
+      "MMR vaccination (2 doses)",
+      "Isolate for 5 days after swelling begins",
+      "Practice hand hygiene",
+      "Avoid sharing food or utensils"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "rubella",
+    "category": "Rubella (German Measles)",
+    "symptoms": [
+      "low-grade fever",
+      "headache",
+      "stuffy nose",
+      "red rash starting on face and spreading to body",
+      "rash lasts 3 days",
+      "swollen lymph nodes behind ears",
+      "joint pain in adults",
+      "red eyes"
+    ],
+    "guidance": "Mild illness — supportive care. Main danger is to pregnant women: can cause congenital rubella syndrome in fetus (deafness, heart defects, cataracts). Rubella vaccination (MMR) is critical for women of childbearing age.",
+    "precautions": [
+      "MMR vaccination (2 doses)",
+      "Pregnant women should avoid contact with infected persons",
+      "Blood test for rubella immunity before pregnancy",
+      "Isolate for 7 days after rash appears"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "chickenpox",
+    "category": "Chickenpox (Varicella)",
+    "symptoms": [
+      "fever",
+      "fatigue",
+      "loss of appetite",
+      "headache",
+      "itchy blister-like rash starting on face, chest, back",
+      "rash progresses from red spots to fluid-filled blisters to scabs",
+      "all stages present simultaneously"
+    ],
+    "guidance": "Supportive care — calamine lotion for itching, oatmeal baths, paracetamol for fever. Avoid scratching to prevent bacterial infection. Aspirin not to be given to children (Reye's syndrome risk). Antiviral (acyclovir) for high-risk cases. Highly contagious.",
+    "precautions": [
+      "Varicella vaccination (2 doses)",
+      "Isolate until all blisters have crusted over (usually 5-7 days)",
+      "Keep fingernails short",
+      "Do not scratch to avoid scars and infection",
+      "Pregnant women and immunocompromised need prompt care"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "polio",
+    "category": "Poliomyelitis",
+    "symptoms": [
+      "most infections are asymptomatic",
+      "mild: fever, fatigue, headache, vomiting, neck stiffness",
+      "severe: sudden flaccid paralysis in arms or legs",
+      "muscle weakness",
+      "difficulty breathing (bulbar polio)",
+      "permanent disability"
+    ],
+    "guidance": "No cure for polio — treatment focuses on supportive care, physical therapy, and rehabilitation. Prevention through vaccination is the only solution. Oral Polio Vaccine (OPV) and Injectable Polio Vaccine (IPV) are used globally in eradication efforts.",
+    "precautions": [
+      "Ensure full polio vaccination as per schedule (OPV/IPV)",
+      "Maintain good sanitation and hygiene",
+      "Report any case of sudden flaccid paralysis to health authorities",
+      "Booster doses for travelers to endemic areas"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "zika_virus",
+    "category": "Zika Virus",
+    "symptoms": [
+      "fever",
+      "rash (maculopapular)",
+      "joint pain (especially hands and feet)",
+      "red eyes (conjunctivitis)",
+      "headache",
+      "muscle pain",
+      "fatigue",
+      "many cases are asymptomatic"
+    ],
+    "guidance": "No specific treatment — rest, hydration, paracetamol for fever. Main danger is to pregnant women: Zika causes microcephaly and other severe birth defects. Pregnant women must avoid travel to endemic areas and prevent mosquito bites.",
+    "precautions": [
+      "Mosquito prevention (repellents, nets, long clothing)",
+      "Pregnant women should avoid endemic areas",
+      "Practice safe sex to prevent sexual transmission",
+      "Eliminate mosquito breeding sites"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "yellow_fever",
+    "category": "Yellow Fever",
+    "symptoms": [
+      "sudden fever",
+      "severe headache",
+      "back pain",
+      "muscle aches",
+      "loss of appetite",
+      "nausea and vomiting",
+      "after a brief remission: jaundice, bleeding, kidney failure, abdominal pain (toxic phase)"
+    ],
+    "guidance": "Supportive care in hospital for severe cases. No specific antiviral. Yellow fever can be fatal (20-50% of severe cases). Prevention through vaccination is highly effective and mandatory for travel to endemic areas. Avoid mosquito bites.",
+    "precautions": [
+      "Yellow fever vaccination (single dose provides lifelong protection)",
+      "Mosquito prevention (repellents, nets)",
+      "Avoid travel to endemic areas without vaccination",
+      "Report to health authorities — yellow fever is notifiable"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "ebola_virus",
+    "category": "Ebola Virus Disease",
+    "symptoms": [
+      "sudden fever",
+      "severe headache",
+      "muscle pain",
+      "weakness",
+      "vomiting",
+      "diarrhea",
+      "stomach pain",
+      "internal and external bleeding",
+      "rash",
+      "red eyes",
+      "hiccups",
+      "organ failure"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Requires immediate isolation and intensive supportive care. Ebola has high mortality. No specific cure — experimental treatments (monoclonal antibodies) are used. Strict infection control is essential. Contact tracing crucial.",
+    "precautions": [
+      "Strict isolation of suspected cases",
+      "Health workers must wear full PPE",
+      "Avoid contact with blood and bodily fluids",
+      "Safe burials",
+      "Avoid bushmeat",
+      "Vaccine (rVSV-ZEBOV) available for outbreak settings"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "west_nile_virus",
+    "category": "West Nile Virus",
+    "symptoms": [
+      "fever",
+      "headache",
+      "body aches",
+      "skin rash",
+      "swollen lymph nodes",
+      "in severe cases: meningitis, encephalitis, paralysis"
+    ],
+    "guidance": "No specific antiviral. Supportive care. Severe cases require hospitalization. Transmission via mosquito bites. Most infections are asymptomatic.",
+    "precautions": [
+      "Mosquito prevention: repellents, long sleeves, nets",
+      "Drain standing water",
+      "Use window screens",
+      "Avoid outdoor activity at dusk and dawn"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "rift_valley_fever",
+    "category": "Rift Valley Fever",
+    "symptoms": [
+      "fever",
+      "headache",
+      "muscle pain",
+      "weakness",
+      "dizziness",
+      "back pain",
+      "in severe cases: eye damage, encephalitis, hemorrhagic fever, liver failure"
+    ],
+    "guidance": "No specific treatment. Supportive care. Most cases are mild. Severe cases require hospitalization. Transmission via mosquito bites or contact with infected animal blood/fluids. Common in livestock areas.",
+    "precautions": [
+      "Avoid contact with sick animals",
+      "Use mosquito repellents and nets",
+      "Wear gloves when handling animal blood or tissues",
+      "Vaccination for livestock"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "lassa_fever",
+    "category": "Lassa Fever",
+    "symptoms": [
+      "gradual fever",
+      "headache",
+      "sore throat",
+      "vomiting",
+      "diarrhea",
+      "severe weakness",
+      "chest and abdominal pain",
+      "facial swelling",
+      "bleeding from gums, nose, or other sites in severe cases"
+    ],
+    "guidance": "Immediate medical care. Supportive care with fluids and electrolytes. Antiviral (ribavirin) effective if started early. Transmission via contact with rat urine, feces, or contaminated food. Health worker infection risk.",
+    "precautions": [
+      "Avoid contact with rats — store food in sealed containers",
+      "Maintain cleanliness",
+      "Health workers: use universal precautions",
+      "Avoid eating or handling bushmeat"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "marburg_virus",
+    "category": "Marburg Virus Disease",
+    "symptoms": [
+      "sudden high fever",
+      "severe headache",
+      "muscle aches",
+      "vomiting",
+      "diarrhea",
+      "abdominal pain",
+      "severe bleeding",
+      "organ failure",
+      "hemorrhagic manifestations"
+    ],
+    "guidance": "EMERGENCY — Requires immediate isolation and intensive supportive care. No specific antiviral. High fatality rate. Strict infection control. Contact tracing crucial.",
+    "precautions": [
+      "Strict isolation",
+      "Full PPE for health workers",
+      "Avoid contact with bodily fluids",
+      "Safe burials",
+      "Avoid contact with bats and primates in endemic areas"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "nipah_virus",
+    "category": "Nipah Virus Infection",
+    "symptoms": [
+      "fever",
+      "headache",
+      "dizziness",
+      "vomiting",
+      "confusion",
+      "altered consciousness",
+      "seizures",
+      "respiratory distress",
+      "encephalitis (brain swelling) — high fatality rate"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Isolation and intensive supportive care. No specific antiviral. Transmission via contact with fruit bats, contaminated fruit (date palm sap), or infected person's bodily fluids. Health worker precautions critical.",
+    "precautions": [
+      "Avoid eating fruits with bite marks from bats",
+      "Avoid drinking raw date palm sap",
+      "Do not touch sick bats",
+      "Health workers: strict droplet precautions",
+      "Isolate suspected cases"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "chlamydia",
+    "category": "Chlamydia",
+    "symptoms": [
+      "often asymptomatic (especially in women)",
+      "pain or burning during urination",
+      "vaginal or penile discharge",
+      "lower abdominal pain",
+      "pain during sex",
+      "bleeding between periods",
+      "rectal pain or discharge",
+      "conjunctivitis"
+    ],
+    "guidance": "Treat with antibiotics (azithromycin or doxycycline) — partner must also be treated. Untreated chlamydia causes infertility and PID in women. Test if you have a new or multiple sexual partners. Follow-up test 3 months after treatment.",
+    "precautions": [
+      "Use condoms consistently",
+      "Get tested if changing partners",
+      "Complete full antibiotic course",
+      "Both partners must be treated simultaneously",
+      "Retesting after 3 months recommended"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "gonorrhea",
+    "category": "Gonorrhea",
+    "symptoms": [
+      "pain during urination",
+      "yellow/greenish discharge from genitals",
+      "testicular pain",
+      "pelvic pain",
+      "bleeding between periods",
+      "rectal discharge or pain",
+      "pharyngitis",
+      "often asymptomatic in women"
+    ],
+    "guidance": "Treat with dual antibiotic therapy (ceftriaxone + azithromycin) — resistance is growing. Partner treatment is essential. Untreated can cause PID, infertility, and disseminated infection. Test if at risk. Retesting 3 months after treatment.",
+    "precautions": [
+      "Use condoms consistently",
+      "Partner notification and treatment is essential",
+      "Complete full antibiotic course",
+      "Antibiotic resistance is increasing — get tested and treated properly",
+      "All pregnant women should be screened"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "syphilis",
+    "category": "Syphilis",
+    "symptoms": [
+      "PRIMARY: painless sore (chancre) at site of infection — heals in weeks",
+      "SECONDARY: rash on palms and soles, fever, swollen lymph nodes, hair loss, mouth sores",
+      "LATENT: no symptoms",
+      "TERTIARY: neurological, cardiovascular, or organ damage years later"
+    ],
+    "guidance": "Treat with penicillin — highly effective. Partner treatment essential. Can be transmitted to fetus (congenital syphilis) leading to stillbirth, deafness, and neurological damage. Screen all pregnant women. Follow-up antibody tests needed to monitor response.",
+    "precautions": [
+      "Use condoms",
+      "Pregnant women must be screened",
+      "Congenital syphilis is preventable",
+      "Take penicillin as prescribed — no alternatives for pregnant women",
+      "Regular follow-up for treatment response"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "hpv_infection",
+    "category": "HPV (Human Papillomavirus) Infection",
+    "symptoms": [
+      "most infections are asymptomatic and clear naturally",
+      "genital warts (cauliflower-like growths)",
+      "abnormal Pap smear",
+      "usually no symptoms until precancer or cancer develops"
+    ],
+    "guidance": "HPV is the most common STI and is cleared by the immune system in most women. High-risk types (16, 18) cause cervical cancer. HPV vaccine available free under government program for girls age 9-14. Pap smear/VIA screening every 3-5 years for women 30-65.",
+    "precautions": [
+      "HPV vaccine for girls 9-14 (free under government program)",
+      "Regular cervical cancer screening (Pap smear/VIA)",
+      "Use condoms (reduce but do not eliminate risk)",
+      "Do not smoke — increases cervical cancer risk in HPV-positive women"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "herpes_genital",
+    "category": "Genital Herpes (HSV-2)",
+    "symptoms": [
+      "painful blisters/sores in genital or anal area",
+      "tingling or itching before sores appear",
+      "flu-like symptoms during first outbreak",
+      "painful urination",
+      "swollen lymph nodes in groin",
+      "recurrent outbreaks are usually milder"
+    ],
+    "guidance": "Antiviral medications (acyclovir, valacyclovir) reduce outbreak severity and frequency. They do not cure but suppress the virus. Avoid sexual contact during outbreaks. Use condoms to reduce transmission. Inform partners.",
+    "precautions": [
+      "Avoid sex during active outbreaks",
+      "Use condoms consistently",
+      "Take daily suppressive antivirals if frequent outbreaks",
+      "Do not share towels during outbreaks",
+      "Pregnant women: inform doctor — may need medication at delivery"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "trichomoniasis",
+    "category": "Trichomoniasis",
+    "symptoms": [
+      "green-yellow vaginal discharge with fishy odor",
+      "genital itching and redness",
+      "pain during urination",
+      "pain during sex",
+      "often asymptomatic in men",
+      "mild discharge in men"
+    ],
+    "guidance": "Treat with single-dose oral antibiotic (metronidazole or tinidazole). Partners must be treated simultaneously to prevent reinfection. Avoid alcohol during treatment (severe reaction). It increases HIV acquisition risk.",
+    "precautions": [
+      "Both partners must be treated at the same time",
+      "Avoid alcohol during metronidazole treatment",
+      "Use condoms",
+      "Recurrence is common if partners not treated",
+      "Pregnant women require specialist advice"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "vaginal_candidiasis",
+    "category": "Vaginal Candidiasis (Yeast Infection)",
+    "symptoms": [
+      "thick white 'cottage cheese' discharge",
+      "intense vulvar itching and burning",
+      "redness and swelling",
+      "pain during sex and urination",
+      "no bad odor (distinguishes from bacterial vaginosis)"
+    ],
+    "guidance": "Antifungal cream or suppository (clotrimazole, miconazole) for 1-7 days. Oral fluconazole single dose. Avoid tight synthetic underwear. Do not douche. Recurrent infections need medical evaluation for underlying conditions (diabetes, immunosuppression).",
+    "precautions": [
+      "Do not douche — disrupts normal flora",
+      "Wear cotton underwear",
+      "Avoid antibiotics unless necessary (trigger yeast)",
+      "Treat sexual partners only if recurrent — not routine",
+      "See doctor if infection recurs within 2 months"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "bacterial_vaginosis",
+    "category": "Bacterial Vaginosis (BV)",
+    "symptoms": [
+      "thin gray-white discharge with a strong fishy odor (worse after sex)",
+      "vaginal itching or irritation",
+      "burning during urination",
+      "sometimes no symptoms"
+    ],
+    "guidance": "Treat with antibiotics (metronidazole or clindamycin) — oral or vaginal. Partners do not need routine treatment. BV increases risk of STIs and preterm birth if pregnant. Recurrence is common.",
+    "precautions": [
+      "Avoid douching",
+      "Use condoms",
+      "Do not use scented soaps or bubble baths",
+      "Complete full antibiotic course",
+      "Pregnant women: treatment reduces preterm birth risk"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "shigellosis",
+    "category": "Shigellosis (Bacillary Dysentery)",
+    "symptoms": [
+      "bloody diarrhea (often with mucus)",
+      "severe abdominal cramps",
+      "high fever",
+      "tenesmus (urgent need to defecate)",
+      "nausea and vomiting",
+      "dehydration"
+    ],
+    "guidance": "Antibiotics (ciprofloxacin, azithromycin) based on susceptibility. ORS for hydration. Handwashing is critical — highly contagious. Do not use anti-diarrheal drugs (loperamide) — they worsen infection.",
+    "precautions": [
+      "Wash hands thoroughly after toilet",
+      "Safe food and water",
+      "Isolate infected person",
+      "Cook food thoroughly",
+      "Do not prepare food for others while ill"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "campylobacter",
+    "category": "Campylobacteriosis",
+    "symptoms": [
+      "diarrhea (may be bloody)",
+      "fever",
+      "abdominal pain and cramping",
+      "nausea and vomiting",
+      "headache",
+      "symptoms last 5-7 days"
+    ],
+    "guidance": "Usually self-limiting — hydration is key. Antibiotics (azithromycin) for severe cases or immunocompromised. Common from undercooked poultry and unpasteurized milk. It can trigger Guillain-Barré syndrome.",
+    "precautions": [
+      "Cook poultry thoroughly",
+      "Avoid cross-contamination in kitchen",
+      "Handwashing after handling raw meat",
+      "Avoid unpasteurized dairy",
+      "Wash fruits and vegetables"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "giardiasis",
+    "category": "Giardiasis (Giardia Infection)",
+    "symptoms": [
+      "diarrhea",
+      "greasy foul-smelling stools",
+      "abdominal cramps and bloating",
+      "excessive gas",
+      "nausea",
+      "fatigue",
+      "weight loss",
+      "symptoms can be chronic"
+    ],
+    "guidance": "Treat with antiparasitic drugs (metronidazole, tinidazole). Avoid alcohol during treatment. Good hand hygiene prevents spread. Source: contaminated water, daycares, oral-anal sex.",
+    "precautions": [
+      "Boil or filter drinking water",
+      "Wash hands after toilet and before food",
+      "Do not swim if having diarrhea",
+      "Clean surfaces with bleach",
+      "Treat all household members if outbreak"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "amebiasis",
+    "category": "Amebiasis (Entamoeba histolytica)",
+    "symptoms": [
+      "mild diarrhea to severe dysentery (bloody stools)",
+      "abdominal pain",
+      "fever",
+      "liver abscess in extraintestinal form — fever, right upper quadrant pain",
+      "weight loss"
+    ],
+    "guidance": "Treat with metronidazole (luminal agent plus tissue agent). Intestinal infection plus liver abscess need different drug combinations. Source: contaminated food/water, especially in tropical areas.",
+    "precautions": [
+      "Safe water and food",
+      "Wash fruits and vegetables",
+      "Hand hygiene",
+      "Do not ignore liver pain with fever — seek care",
+      "Screening for asymptomatic carriers in food handlers"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "ascariasis",
+    "category": "Ascariasis (Roundworm Infection)",
+    "symptoms": [
+      "often asymptomatic",
+      "cough (during larval migration)",
+      "abdominal pain",
+      "nausea",
+      "diarrhea",
+      "intestinal obstruction (large worm mass)",
+      "passage of live worms in stool",
+      "malnutrition in children"
+    ],
+    "guidance": "Treat with single-dose albendazole or mebendazole. Deworming programs in India (National Deworming Day) for children and pregnant women. Reinfection is common in poor sanitation areas.",
+    "precautions": [
+      "Practice good hygiene",
+      "Wash vegetables and cook food",
+      "Do not defecate in open",
+      "Children should be dewormed every 6 months",
+      "Wash hands after playing in soil"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "hookworm",
+    "category": "Hookworm Infection",
+    "symptoms": [
+      "itching at site of skin penetration",
+      "cough (during pulmonary migration)",
+      "abdominal pain",
+      "iron deficiency anemia (blood loss from gut)",
+      "fatigue",
+      "pica (craving dirt)"
+    ],
+    "guidance": "Albendazole is effective. Iron supplements for anemia. Prevent by wearing shoes. Common in rural areas with poor sanitation. Anemia in women of reproductive age is a major consequence.",
+    "precautions": [
+      "Wear shoes",
+      "Sanitation: prevent fecal contamination of soil",
+      "Regular deworming for children and at-risk groups",
+      "Treat anemia with iron and folic acid",
+      "Community sanitation programs"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "whipworm",
+    "category": "Trichuriasis (Whipworm)",
+    "symptoms": [
+      "often asymptomatic",
+      "bloody diarrhea",
+      "abdominal pain",
+      "weight loss",
+      "in children: growth retardation, rectal prolapse (heavy infection)"
+    ],
+    "guidance": "Albendazole or mebendazole for 3 days. Severe infections need prolonged treatment. Associated with poverty and poor sanitation.",
+    "precautions": [
+      "Sanitation",
+      "Hand hygiene",
+      "Wash produce",
+      "Deworming programs",
+      "Safe disposal of feces"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "pinworm",
+    "category": "Enterobiasis (Pinworm)",
+    "symptoms": [
+      "intense perianal itching, especially at night",
+      "restless sleep",
+      "irritability",
+      "vaginal itching in girls",
+      "visible tiny white worms in stool or perianal area"
+    ],
+    "guidance": "Two doses of mebendazole or albendazole 2 weeks apart. Treat entire household. Hygiene: washing hands, changing underwear daily, showering in morning to remove eggs. Eggs survive on surfaces for 2-3 weeks.",
+    "precautions": [
+      "Change underwear daily and wash in hot water",
+      "Frequent handwashing",
+      "Keep fingernails short",
+      "Bathe in the morning to remove eggs from skin",
+      "Wash bedding and pajamas"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "strongyloidiasis",
+    "category": "Strongyloidiasis",
+    "symptoms": [
+      "abdominal pain",
+      "diarrhea",
+      "wheezing and cough (migrating larvae)",
+      "skin rash (larva currens — moving rash on buttocks and thighs)",
+      "in immunocompromised: hyperinfection syndrome (fatal)"
+    ],
+    "guidance": "Ivermectin is the treatment. Do not use steroids without treating — causes hyperinfection. Strongyloides can persist for decades. Screen in immunocompromised patients from endemic areas.",
+    "precautions": [
+      "Avoid walking barefoot in endemic areas",
+      "Good sanitation",
+      "If immunocompromised, get tested for Strongyloides",
+      "Do not use corticosteroids without antihelminthic if at risk"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "enteric_fever_paratyphoid",
+    "category": "Paratyphoid Fever",
+    "symptoms": [
+      "similar to typhoid but milder",
+      "fever",
+      "headache",
+      "abdominal pain",
+      "diarrhea or constipation",
+      "rose spots (less common than typhoid)"
+    ],
+    "guidance": "Antibiotics (azithromycin, ceftriaxone) based on culture sensitivity. Same precautions as typhoid. Good hand hygiene. Water and food safety.",
+    "precautions": [
+      "Same as typhoid: safe water, cooked food, handwashing",
+      "Vaccination (no specific paratyphoid vaccine — typhoid vaccine offers partial protection)",
+      "Complete antibiotic course"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "brucellosis",
+    "category": "Brucellosis (Undulant Fever)",
+    "symptoms": [
+      "prolonged fever with sweats",
+      "malaise",
+      "joint and back pain",
+      "headache",
+      "fatigue",
+      "weight loss",
+      "hepatosplenomegaly",
+      "can affect joints, heart, brain"
+    ],
+    "guidance": "Requires prolonged combination antibiotics (doxycycline + rifampicin) for 6 weeks. Relapse risk. Source: unpasteurized dairy products, contact with infected animals (farmers, butchers).",
+    "precautions": [
+      "Avoid unpasteurized milk and dairy",
+      "Wear gloves when handling animal tissues",
+      "Immunize livestock",
+      "Report febrile illness in farmers"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "q_fever",
+    "category": "Q Fever (Coxiella burnetii)",
+    "symptoms": [
+      "sudden fever",
+      "severe headache",
+      "chills",
+      "sweats",
+      "pneumonia",
+      "hepatitis",
+      "fatigue",
+      "endocarditis in chronic form"
+    ],
+    "guidance": "Doxycycline for acute infection. Endocarditis requires prolonged treatment. Source: inhalation of aerosols from infected animals (sheep, goats, cattle). Common in animal workers.",
+    "precautions": [
+      "Pasteurize milk",
+      "Wear masks when handling animal products",
+      "Good hygiene in animal facilities",
+      "Protective clothing in high-risk occupations"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "tick_typhus",
+    "category": "Tick Typhus (Rickettsial Infection)",
+    "symptoms": [
+      "fever",
+      "severe headache",
+      "muscle aches",
+      "rash (starts on wrists and ankles spreading centrally)",
+      "eschar (black crust) at tick bite site",
+      "lymphadenopathy",
+      "can cause severe complications"
+    ],
+    "guidance": "Doxycycline is effective and should be started empirically without waiting for lab results. Tick-borne diseases are increasing in India. Avoid tick bites.",
+    "precautions": [
+      "Wear long sleeves in tick areas",
+      "Use insect repellents",
+      "Check for ticks after outdoor activities",
+      "Remove ticks carefully",
+      "Doxycycline is highly effective"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "scrub_typhus",
+    "category": "Scrub Typhus",
+    "symptoms": [
+      "sudden fever",
+      "severe headache",
+      "lymphadenopathy",
+      "rash",
+      "eschar at mite bite site (often hidden)",
+      "cough",
+      "conjunctival congestion",
+      "hepatosplenomegaly",
+      "can cause multi-organ failure"
+    ],
+    "guidance": "Doxycycline or azithromycin. High index of suspicion needed — eschar may be hidden in skin folds. Common in rural areas. If untreated, mortality is high. Free treatment at PHCs in endemic areas.",
+    "precautions": [
+      "Avoid sitting on bare ground",
+      "Use insect repellents",
+      "Wear long clothing in grassy areas",
+      "Clear vegetation around homes",
+      "Doxycycline prophylaxis for high-risk activities"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "plague",
+    "category": "Plague (Yersinia pestis)",
+    "symptoms": [
+      "BUBONIC: swollen painful lymph nodes (buboes), fever, chills, weakness",
+      "SEPTICEMIC: fever, abdominal pain, shock, bleeding",
+      "PNEUMONIC: severe cough, bloody sputum, chest pain, highly contagious airborne"
+    ],
+    "guidance": "MEDICAL EMERGENCY — Immediate isolation and antibiotics (streptomycin, gentamicin, doxycycline). Pneumonic plague requires respiratory isolation. Notifiable disease. Infected rat fleas transmit.",
+    "precautions": [
+      "Control rodents",
+      "Use flea repellents",
+      "Avoid contact with dead animals",
+      "Pneumonic plague patients require airborne precautions",
+      "Chemoprophylaxis for close contacts"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "anthrax",
+    "category": "Anthrax",
+    "symptoms": [
+      "CUTANEOUS: painless skin sore turning into black eschar, with edema",
+      "PULMONARY: severe flu-like, pneumonia, hemorrhagic mediastinitis (high mortality)",
+      "GASTROINTESTINAL: nausea, vomiting, severe abdominal pain, bloody diarrhea"
+    ],
+    "guidance": "Antibiotics (ciprofloxacin, doxycycline). Cutaneous is treatable, pulmonary is often fatal despite treatment. Source: contact with infected animals or animal products. Vaccine for high-risk occupations.",
+    "precautions": [
+      "Vaccinate livestock",
+      "Wear protective gear handling animal products",
+      "Avoid handling sick animals",
+      "Report to veterinary authorities",
+      "Notifiable disease"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "leishmaniasis_cutaneous",
+    "category": "Cutaneous Leishmaniasis",
+    "symptoms": [
+      "skin sores that start as papules and develop into ulcers with raised edges",
+      "painless but may be itchy",
+      "can take weeks to months to develop",
+      "leaves scars after healing",
+      "endemic in parts of India (Rajasthan, Bihar)"
+    ],
+    "guidance": "Treatment based on species and severity — local heat therapy, intralesional drugs, or systemic antimony/amphotericin. Not usually life-threatening but causes disfiguring scars.",
+    "precautions": [
+      "Prevent sandfly bites (nets, repellents)",
+      "Wear long sleeves",
+      "Apply insect repellent",
+      "Eliminate sandfly breeding sites (cracks in walls, damp areas)"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "leishmaniasis_mucocutaneous",
+    "category": "Mucocutaneous Leishmaniasis",
+    "symptoms": [
+      "destructive lesions in nose, mouth, and throat",
+      "nasal stuffiness",
+      "bleeding",
+      "ulceration leading to disfigurement (destroys nasal septum, lips)"
+    ],
+    "guidance": "Systemic antimony or amphotericin B. Can be difficult to treat. Refer to specialist. Causes severe disfigurement if untreated. Endemic in South America, rare in India.",
+    "precautions": [
+      "Same as cutaneous — sandfly prevention",
+      "Early treatment of cutaneous lesions prevents mucosal spread",
+      "Do not ignore nasal symptoms in endemic areas"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "african_trypanosomiasis",
+    "category": "African Trypanosomiasis (Sleeping Sickness)",
+    "symptoms": [
+      "early: fever, headache, joint pain, lymphadenopathy",
+      "later: confusion, sleep disturbances, personality changes, difficulty walking, coma (meningoencephalitis)"
+    ],
+    "guidance": "Diagnosis requires CSF examination for stage. Treatment: pentamidine (early) or melarsoprol/eflornithine (late CNS). Medical emergency. Endemic in sub-Saharan Africa. Tsetse fly bite transmits.",
+    "precautions": [
+      "Avoid tsetse fly bites (repellents, neutral-colored clothing)",
+      "Insecticide-treated nets",
+      "Wear long sleeves in savannah areas",
+      "Screen travelers returning from endemic areas"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "chagas_disease",
+    "category": "Chagas Disease (American Trypanosomiasis)",
+    "symptoms": [
+      "ACUTE: fever, fatigue, swelling at bite site (Romaña's sign: eyelid swelling)",
+      "CHRONIC: cardiomyopathy (arrhythmias, heart failure), megaesophagus, megacolon, decades after infection"
+    ],
+    "guidance": "Benznidazole or nifurtimox in acute and early chronic. No effective treatment for advanced cardiac/GI complications. Transmitted by kissing bugs (reduviid) in the Americas. Also blood transfusion.",
+    "precautions": [
+      "Prevent bug bites with repellents and bed nets",
+      "Improve housing (mud walls harbor bugs)",
+      "Screen blood donors",
+      "Pregnant women at risk should be screened"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "schistosomiasis",
+    "category": "Schistosomiasis (Bilharzia)",
+    "symptoms": [
+      "first: swimmer's itch (rash)",
+      "acute: fever, cough, myalgia (Katayama syndrome)",
+      "chronic: blood in urine (S. haematobium → bladder cancer), abdominal pain, diarrhea, liver fibrosis (S. mansoni), neurological complications"
+    ],
+    "guidance": "Praziquantel is highly effective. Avoid freshwater swimming in endemic areas (Africa, Middle East). Snails are intermediate hosts. Mass drug administration in endemic areas.",
+    "precautions": [
+      "Avoid swimming in freshwater in endemic areas",
+      "Drink safe water",
+      "Schistosomiasis control programs",
+      "Treat infected individuals in endemic communities"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "cysticercosis",
+    "category": "Neurocysticercosis (Taenia solium)",
+    "symptoms": [
+      "seizures (most common)",
+      "headaches",
+      "hydrocephalus",
+      "confusion",
+      "if cysts die — inflammation, edema, increased intracranial pressure"
+    ],
+    "guidance": "Antiepileptic drugs for seizures. Albendazole/praziquantel with steroids to manage inflammation. Avoid pork tapeworm infection by cooking pork thoroughly. Prevent fecal-oral spread.",
+    "precautions": [
+      "Cook pork thoroughly",
+      "Handwashing",
+      "Sanitation to prevent fecal contamination of pig feed",
+      "Do not eat raw pork",
+      "Treat tapeworm infections in carriers"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "taeniasis",
+    "category": "Taeniasis (Tapeworm Infection)",
+    "symptoms": [
+      "often asymptomatic",
+      "abdominal discomfort",
+      "nausea",
+      "weight loss",
+      "passing segments (proglottids) in stool or clothing",
+      "slight diarrhea"
+    ],
+    "guidance": "Praziquantel or niclosamide single dose. Cook beef (T. saginata) and pork (T. solium) thoroughly. Handwashing. Prevent contamination of food with human feces.",
+    "precautions": [
+      "Cook meat to safe internal temperature",
+      "Freeze meat for 12 days to kill cysts",
+      "Handwashing after toilet",
+      "Good sanitation",
+      "Do not eat raw or undercooked meat"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "hydatid_disease",
+    "category": "Echinococcosis (Hydatid Cyst Disease)",
+    "symptoms": [
+      "liver: RUQ pain, hepatomegaly, obstructive jaundice",
+      "lung: cough, chest pain, hemoptysis",
+      "rupture: anaphylaxis, disseminated disease",
+      "often asymptomatic for years"
+    ],
+    "guidance": "Surgical removal (excision) or PAIR (puncture, aspiration, injection, reaspiration). Albendazole pre- and post-surgery. Prevent via hygiene around dogs (source of eggs).",
+    "precautions": [
+      "Wash hands after handling dogs",
+      "De-worm dogs regularly",
+      "Avoid contact with dog feces",
+      "Do not feed dogs raw offal",
+      "Community health education in pastoral areas"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "diphyllobothriasis",
+    "category": "Diphyllobothriasis (Fish Tapeworm)",
+    "symptoms": [
+      "usually asymptomatic",
+      "abdominal discomfort",
+      "diarrhea",
+      "nausea",
+      "vitamin B12 deficiency → megaloblastic anemia (due to worm consuming B12)"
+    ],
+    "guidance": "Praziquantel single dose. Cooking fish thoroughly kills larvae. Freezing at -20°C for 7 days also kills. Raw fish (sushi) is a source.",
+    "precautions": [
+      "Cook fish to 63°C internal temperature",
+      "Freeze fish for 7 days if eating raw",
+      "Avoid eating raw freshwater fish",
+      "Hand hygiene",
+      "Good sanitation"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "toxoplasmosis",
+    "category": "Toxoplasmosis",
+    "symptoms": [
+      "usually asymptomatic in healthy",
+      "flu-like: fever, lymphadenopathy, myalgia",
+      "in immunocompromised: encephalitis, confusion, seizures, focal deficits",
+      "congenital: hearing loss, intellectual disability, blindness, hydrocephalus"
+    ],
+    "guidance": "Healthy: self-limiting. Immunocompromised: treat with sulfadiazine + pyrimethamine + leucovorin. Pregnant women: spiramycin to prevent fetal transmission. Avoid cat feces and raw/undercooked meat.",
+    "precautions": [
+      "Pregnant women: avoid changing cat litter",
+      "Cook meat well",
+      "Wash vegetables thoroughly",
+      "Wear gloves when gardening",
+      "Do not consume unpasteurized goat milk"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "toxocariasis",
+    "category": "Toxocariasis (Visceral Larva Migrans)",
+    "symptoms": [
+      "fever",
+      "hepatomegaly",
+      "cough",
+      "wheezing",
+      "rash",
+      "eosinophilia",
+      "eye involvement: vision loss, retinal granuloma"
+    ],
+    "guidance": "Albendazole or mebendazole. Steroids for eye inflammation. Prevent by deworming pets, handwashing after soil contact. Children are at highest risk.",
+    "precautions": [
+      "Deworm pets regularly",
+      "Wash hands after playing in soil",
+      "Cover sandboxes when not in use",
+      "Do not let dogs defecate in children's play areas",
+      "Treat pet feces promptly"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "leptospirosis_icteric",
+    "category": "Severe Leptospirosis (Weil's Syndrome)",
+    "symptoms": [
+      "same as leptospirosis but with jaundice, renal failure, hemorrhage, pulmonary hemorrhage, myocarditis",
+      "mortality high if not treated"
+    ],
+    "guidance": "EMERGENCY — IV penicillin, doxycycline. Supportive care for organ failure. Common after floods. Dialysis may be needed. Prevention is key.",
+    "precautions": [
+      "Avoid wading in floodwaters",
+      "Wear boots and gloves",
+      "Rat control",
+      "Chemoprophylaxis for high-risk workers",
+      "Prompt treatment of early cases"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "psittacosis",
+    "category": "Psittacosis (Parrot Fever)",
+    "symptoms": [
+      "fever",
+      "headache",
+      "chills",
+      "dry cough (pneumonia)",
+      "myalgia",
+      "rarely endocarditis",
+      "transmission from infected birds (parrots, pigeons)"
+    ],
+    "guidance": "Doxycycline or azithromycin. Notify public health. Avoid contact with sick birds. Wear masks when cleaning bird cages.",
+    "precautions": [
+      "Wear masks and gloves when cleaning bird cages",
+      "Quarantine new pet birds",
+      "Avoid handling sick birds",
+      "Practice hand hygiene after bird contact"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "legionnaires_disease",
+    "category": "Legionnaires' Disease",
+    "symptoms": [
+      "fever",
+      "cough (dry or productive)",
+      "chills",
+      "shortness of breath",
+      "chest pain",
+      "confusion",
+      "GI symptoms",
+      "source: contaminated water systems (AC cooling towers, humidifiers, showers)"
+    ],
+    "guidance": "Antibiotics (azithromycin, levofloxacin). Hospitalization for severe. Outbreak investigation. Maintain water systems to prevent Legionella growth.",
+    "precautions": [
+      "Regular maintenance of AC cooling towers",
+      "Proper cleaning of shower heads",
+      "Avoid aspiration in hospitalized patients",
+      "Monitor water quality in institutions"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "melioidosis",
+    "category": "Melioidosis (Whitmore's Disease)",
+    "symptoms": [
+      "pneumonia",
+      "sepsis",
+      "abscesses in liver, spleen, skin",
+      "fever",
+      "joint pain",
+      "can be chronic mimicking tuberculosis",
+      "risk: diabetes, immunocompromised"
+    ],
+    "guidance": "Treat with IV ceftazidime or carbapenem for 2 weeks, followed by oral trimethoprim-sulfamethoxazole for 3-6 months. Source: soil and water in endemic areas (SE Asia, India).",
+    "precautions": [
+      "Avoid contact with soil and water if immunocompromised",
+      "Wear boots and gloves in endemic areas",
+      "Treat diabetes — major risk factor",
+      "Do not walk barefoot"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "tularemia",
+    "category": "Tularemia (Rabbit Fever)",
+    "symptoms": [
+      "ulceroglandular: skin ulcer + swollen lymph nodes",
+      "typhoidal: fever, septicemia without local lesion",
+      "pulmonary: pneumonia",
+      "fever, chills, headache"
+    ],
+    "guidance": "Streptomycin or gentamicin. Doxycycline or ciprofloxacin as alternatives. Source: handling infected animals (rabbits, rodents), tick bites, or contaminated water.",
+    "precautions": [
+      "Wear gloves when handling wild animals",
+      "Use tick repellents",
+      "Cook game meat thoroughly",
+      "Avoid drinking untreated water in endemic areas"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "leptospirosis_anicteric",
+    "category": "Mild Leptospirosis (Anicteric)",
+    "symptoms": [
+      "fever",
+      "severe headache",
+      "myalgia (especially calves)",
+      "red eyes",
+      "rash",
+      "nausea",
+      "vomiting",
+      "self-limiting in most"
+    ],
+    "guidance": "Doxycycline early in course. ORS. If no improvement in 48 hours, needs hospitalization. Prevention: avoid floodwater, rodent control.",
+    "precautions": [
+      "Same as leptospirosis",
+      "Report to health authorities",
+      "Prevention in flood-prone areas"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "lyme_disease",
+    "category": "Lyme Disease (Borrelia burgdorferi)",
+    "symptoms": [
+      "ERYTHEMA MIGRANS (bulls-eye rash)",
+      "fever",
+      "fatigue",
+      "headache",
+      "myalgia",
+      "arthralgia",
+      "LATE: arthritis (knee), neurological (Bell's palsy, meningitis), cardiac (AV block)"
+    ],
+    "guidance": "Doxycycline, amoxicillin, or cefuroxime for 14-21 days. Early treatment prevents late complications. Tick removal within 24-48 hours reduces transmission.",
+    "precautions": [
+      "Avoid tick-infested areas",
+      "Wear long sleeves and tuck pants",
+      "Use tick repellents",
+      "Tick checks after outdoor activities",
+      "Remove ticks promptly with tweezers"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "relapsing_fever",
+    "category": "Tick-Borne Relapsing Fever",
+    "symptoms": [
+      "sudden high fever lasting 3-5 days",
+      "followed by afebrile period (7-10 days)",
+      "recurrence (relapsing pattern)",
+      "headache, myalgia, chills, hepatosplenomegaly",
+      "transmitted by soft ticks"
+    ],
+    "guidance": "Doxycycline or erythromycin. Watch for Jarisch-Herxheimer reaction (can be severe). Prevent tick bites.",
+    "precautions": [
+      "Tick prevention",
+      "Avoid sleeping in rodent-infested cabins",
+      "Insecticide spraying",
+      "Bed net use in endemic areas"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "rat_bite_fever",
+    "category": "Rat-Bite Fever (Streptobacillus moniliformis)",
+    "symptoms": [
+      "fever",
+      "chills",
+      "joint pain",
+      "rash (maculopapular, petechial)",
+      "myalgia",
+      "vomiting",
+      "headache",
+      "history of rat bite or handling"
+    ],
+    "guidance": "Penicillin or doxycycline. Seek medical care if bitten by a rat with fever. Rat bites can also transmit other pathogens.",
+    "precautions": [
+      "Avoid handling wild rodents",
+      "Rat control",
+      "Clean and disinfect rat bites",
+      "Seek medical care for rat bites"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "trench_fever",
+    "category": "Trench Fever (Bartonella quintana)",
+    "symptoms": [
+      "fever",
+      "severe headache",
+      "bone pain (especially shins)",
+      "relapsing fever every 5 days",
+      "rash",
+      "transmitted by body lice",
+      "seen in homeless populations"
+    ],
+    "guidance": "Doxycycline or erythromycin. Treat louse infestation. Improve hygiene. Body louse control is key.",
+    "precautions": [
+      "Improve personal hygiene",
+      "Change clothes frequently",
+      "Avoid body lice",
+      "Louse control in crowded settings"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "bacillary_angiomatosis",
+    "category": "Bacillary Angiomatosis (Bartonella henselae)",
+    "symptoms": [
+      "red or purple skin lesions (vascular proliferations)",
+      "fever",
+      "swollen lymph nodes",
+      "in immunocompromised: affects liver, spleen, bone marrow"
+    ],
+    "guidance": "Erythromycin or doxycycline. Associated with cat scratch disease. Avoid cat scratches in immunocompromised.",
+    "precautions": [
+      "Avoid cat scratches",
+      "Flea control in cats",
+      "Wash cat scratches promptly",
+      "Use protective clothing"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "cat_scratch_disease",
+    "category": "Cat Scratch Disease",
+    "symptoms": [
+      "skin lesion at scratch site (papule)",
+      "swollen painful lymph nodes (regional)",
+      "fever",
+      "fatigue",
+      "headache",
+      "self-limiting in immunocompetent"
+    ],
+    "guidance": "Usually self-limiting. Azithromycin in severe cases. Prevent by treating flea infestations in cats, avoiding scratches.",
+    "precautions": [
+      "Avoid rough play with cats",
+      "Treat cats for fleas",
+      "Wash hands after handling cats",
+      "Clean cat scratches immediately"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "erysipeloid",
+    "category": "Erysipeloid (Erysipelothrix rhusiopathiae)",
+    "symptoms": [
+      "reddish-blue swelling on fingers or hands (rose-colored)",
+      "local pain",
+      "may spread to joints",
+      "occupational: fishermen, butchers, farmers"
+    ],
+    "guidance": "Penicillin or cephalexin. Wound care. Wear gloves in high-risk occupations.",
+    "precautions": [
+      "Wear gloves handling fish, meat, or poultry",
+      "Prompt wound cleaning",
+      "Seek medical care for infected injuries"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "mycetoma",
+    "category": "Mycetoma (Madura Foot)",
+    "symptoms": [
+      "swollen painless mass with sinus tracts discharging granules (fungal balls)",
+      "usually on foot",
+      "slowly progressive",
+      "causes bone destruction",
+      "disabling if untreated"
+    ],
+    "guidance": "Long-term antifungals (itraconazole, voriconazole) for eumycetoma; antibiotics (co-trimoxazole) for actinomycetoma. Surgery may be needed. Endemic in dry tropics.",
+    "precautions": [
+      "Wear shoes outdoors",
+      "Prompt treatment of foot injuries",
+      "Do not ignore chronic foot swelling",
+      "Avoid walking barefoot in endemic areas"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "chromoblastomycosis",
+    "category": "Chromoblastomycosis",
+    "symptoms": [
+      "slow-growing warty nodules or plaques on skin (usually feet or legs)",
+      "verrucous lesions",
+      "may resemble cauliflower",
+      "secondary bacterial infection"
+    ],
+    "guidance": "Long-term antifungals (itraconazole, terbinafine). Surgery or cryotherapy for small lesions. Avoid trauma to skin in endemic areas.",
+    "precautions": [
+      "Wear protective footwear",
+      "Prompt care of skin wounds",
+      "Avoid contact with soil in endemic areas",
+      "Early treatment prevents progression"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "sporotrichosis",
+    "category": "Sporotrichosis (Rose Gardener's Disease)",
+    "symptoms": [
+      "nodule at site of inoculation (often hand)",
+      "followed by lymphangitic spread (nodules along lymphatics)",
+      "ulceration",
+      "pulmonary or disseminated in immunocompromised"
+    ],
+    "guidance": "Itraconazole for 3-6 months. Potassium iodide for severe or lymphocutaneous. Avoid contact with soil and plant matter (thorns, sphagnum moss).",
+    "precautions": [
+      "Wear gloves when gardening",
+      "Cover cuts",
+      "Wash hands after soil contact",
+      "Avoid handling sphagnum moss"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "histoplasmosis",
+    "category": "Histoplasmosis",
+    "symptoms": [
+      "usually asymptomatic",
+      "acute: fever, cough, myalgia, headache (flu-like)",
+      "chronic pulmonary: similar to TB",
+      "disseminated: in immunocompromised — fever, weight loss, hepatosplenomegaly, adrenal insufficiency"
+    ],
+    "guidance": "Amphotericin B for severe; itraconazole for mild-moderate. Avoid exposure to bird/bat droppings. Endemic in soil with high nitrogen.",
+    "precautions": [
+      "Avoid disturbing bird or bat roosts",
+      "Wear masks when cleaning areas with droppings",
+      "Disinfect surfaces",
+      "Stay safe in caves"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "blastomycosis",
+    "category": "Blastomycosis",
+    "symptoms": [
+      "pulmonary: fever, cough, chest pain",
+      "skin: ulcers, verrucous lesions",
+      "bone: osteolytic lesions",
+      "prostatitis",
+      "immunocompetent and immunocompromised affected"
+    ],
+    "guidance": "Itraconazole for 6-12 months. Amphotericin B for severe. Avoid exposure to soil near waterways in endemic areas (North America, rare in India).",
+    "precautions": [
+      "Avoid activities creating dust in endemic areas",
+      "Wear masks",
+      "Protective clothing"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "paracoccidioidomycosis",
+    "category": "Paracoccidioidomycosis",
+    "symptoms": [
+      "chronic: weight loss, fever, cough, dyspnea",
+      "mucosal ulcers (especially mouth)",
+      "lymphadenopathy",
+      "skin lesions",
+      "adrenal insufficiency"
+    ],
+    "guidance": "Itraconazole, co-trimoxazole. Endemic in Latin America. Avoid dust exposure in endemic areas.",
+    "precautions": [
+      "Wear masks",
+      "Avoid soil dust in endemic areas"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "coccidioidomycosis",
+    "category": "Coccidioidomycosis (Valley Fever)",
+    "symptoms": [
+      "fever, cough, chest pain, erythema nodosum (joint pain + rash)",
+      "fatigue, headache",
+      "disseminated: meningitis, osteomyelitis, skin abscesses"
+    ],
+    "guidance": "Fluconazole, itraconazole. Amphotericin B for severe. Avoid dust storms in endemic areas (American Southwest, rare in India).",
+    "precautions": [
+      "Avoid dust exposure",
+      "Wear masks",
+      "Stay indoors during dust storms",
+      "Chemoprophylaxis for immunocompromised"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "cryptococcosis",
+    "category": "Cryptococcosis",
+    "symptoms": [
+      "meningitis: headache, fever, neck stiffness, nausea, photophobia, confusion",
+      "pulmonary: cough, dyspnea, fever",
+      "skin lesions",
+      "in immunocompromised (HIV, transplant)"
+    ],
+    "guidance": "Amphotericin B + flucytosine for meningitis, then fluconazole for maintenance. Source: soil, pigeon droppings. HIV/AIDS with CD4 < 100 should be screened.",
+    "precautions": [
+      "Avoid pigeon droppings",
+      "Wear masks when cleaning",
+      "Screen HIV patients",
+      "Cryptococcal antigen screening in HIV"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "aspergillosis",
+    "category": "Aspergillosis",
+    "symptoms": [
+      "ALLERGIC: asthma, eosinophilia, brown plugs",
+      "CHRONIC PULMONARY: cavitary lesions, weight loss, hemoptysis",
+      "INVASIVE: fever, cough, chest pain, hemoptysis (in immunocompromised)"
+    ],
+    "guidance": "Voriconazole is first-line for invasive. Itraconazole for allergic. Remove source of spores (construction, damp environments).",
+    "precautions": [
+      "Avoid dust and construction areas",
+      "Wear masks",
+      "Air filtration in high-risk patients",
+      "Environmental controls in hospitals"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "mucormycosis",
+    "category": "Mucormycosis (Black Fungus)",
+    "symptoms": [
+      "facial pain, nasal congestion, black eschar on palate or nasal mucosa",
+      "eye swelling, proptosis, vision loss",
+      "fever",
+      "headache",
+      "cough, hemoptysis",
+      "in immunocompromised, post-COVID, diabetes"
+    ],
+    "guidance": "MEDICAL EMERGENCY — IV amphotericin B. Surgical debridement of necrotic tissue. Reverse underlying risk factors (control diabetes, stop steroids). High mortality.",
+    "precautions": [
+      "Strict diabetes control",
+      "Avoid unnecessary steroids",
+      "Early recognition of nasal/eye symptoms",
+      "Prompt surgical and antifungal care",
+      "Screening in high-risk post-COVID patients"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "pneumocystis_pneumonia",
+    "category": "Pneumocystis Pneumonia (PCP)",
+    "symptoms": [
+      "progressive dyspnea",
+      "fever",
+      "dry cough",
+      "chest tightness",
+      "hypoxia",
+      "in HIV/AIDS (CD4 < 200), transplant, immunocompromised"
+    ],
+    "guidance": "Trimethoprim-sulfamethoxazole (TMP-SMX) is treatment of choice. Steroids for moderate-severe. Prophylaxis in HIV with CD4 < 200.",
+    "precautions": [
+      "HIV patients should be on TMP-SMX prophylaxis if CD4 < 200",
+      "Early testing for HIV",
+      "Avoid smoking",
+      "Seek care for persistent dry cough and dyspnea in immunocompromised"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "strongyloides_hyperinfection",
+    "category": "Strongyloides Hyperinfection Syndrome",
+    "symptoms": [
+      "severe abdominal pain",
+      "pulmonary hemorrhage",
+      "gram-negative sepsis",
+      "meningitis",
+      "eosinophilia may be absent",
+      "in immunocompromised (steroids, HTLV-1)"
+    ],
+    "guidance": "EMERGENCY — Ivermectin. Stop steroids. ICU care. Hyperinfection is often fatal. Prevent by screening at-risk patients for Strongyloides before steroid use.",
+    "precautions": [
+      "Screen for Strongyloides before immunosuppression",
+      "Avoid unnecessary steroids in endemic areas",
+      "Ivermectin in suspected cases",
+      "Good hygiene"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "tick_borne_encephalitis",
+    "category": "Tick-Borne Encephalitis (TBE)",
+    "symptoms": [
+      "fever",
+      "headache",
+      "malaise",
+      "then afebrile phase",
+      "then neurological: meningitis, encephalitis, myelitis, confusion, seizures, paralysis"
+    ],
+    "guidance": "No specific antiviral. Supportive care. Vaccination available for high-risk. Avoid tick bites.",
+    "precautions": [
+      "Tick repellents",
+      "Check for ticks",
+      "Avoid tick habitats",
+      "Vaccination in endemic areas"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "human_monkeypox",
+    "category": "Monkeypox (Mpox)",
+    "symptoms": [
+      "fever",
+      "headache",
+      "myalgia",
+      "lymphadenopathy (prominent)",
+      "rash: macules → papules → vesicles → pustules → crusts",
+      "lesions can be genital or generalized",
+      "transmission: close contact, respiratory droplets, sex"
+    ],
+    "guidance": "Supportive care. Antivirals (tecovirimat) for severe. Isolate to prevent spread. Vaccination (JYNNEOS) for post-exposure prophylaxis (within 4 days).",
+    "precautions": [
+      "Isolate infected individuals",
+      "Avoid close contact",
+      "Wear PPE in healthcare",
+      "Safe sex practices",
+      "Vaccination for at-risk contacts"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "hantavirus",
+    "category": "Hantavirus Pulmonary Syndrome (HPS)",
+    "symptoms": [
+      "fever",
+      "myalgia",
+      "headache",
+      "fatigue",
+      "then sudden onset dyspnea, cough, hypotension (cardiogenic shock)",
+      "high mortality"
+    ],
+    "guidance": "EMERGENCY — supportive care, oxygenation, hemodynamic support. No specific antiviral (ribavirin is controversial). Avoid contact with rodent urine/droppings.",
+    "precautions": [
+      "Avoid rodent-infested areas",
+      "Seal rodent entry points",
+      "Wear masks when cleaning rodent-contaminated areas",
+      "Wet cleaning with bleach",
+      "Do not sweep or vacuum (aerosolizes virus)"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "dengue_severe",
+    "category": "Severe Dengue (Dengue Hemorrhagic Fever / DSS)",
+    "symptoms": [
+      "severe abdominal pain",
+      "persistent vomiting",
+      "bleeding gums/ nose",
+      "hematemesis (vomiting blood)",
+      "melena (bloody stool)",
+      "restlessness, lethargy, sudden drop in BP",
+      "fluid accumulation (ascites, pleural effusion)"
+    ],
+    "guidance": "EMERGENCY — Hospitalize immediately. IV fluids, careful fluid management, platelet transfusion only if bleeding. Warning signs: abdominal pain, vomiting, bleeding, lethargy. Do NOT give NSAIDs. Can be fatal.",
+    "precautions": [
+      "Same as dengue prevention",
+      "Do not take aspirin/ibuprofen — only paracetamol",
+      "Monitor for warning signs",
+      "Early hospitalization saves lives"
+    ],
+    "urgency": "emergency"
+  },
+  {
+    "id": "hepatitis_c",
+    "category": "Hepatitis C",
+    "symptoms": [
+      "often asymptomatic initially",
+      "later: fatigue, jaundice, abdominal pain, nausea",
+      "chronic: cirrhosis, liver cancer (in ~20%)"
+    ],
+    "guidance": "Antiviral therapy (DAAs) cures >95% — available free under government schemes. Screen all baby boomers and high-risk individuals. Prevent: do not share needles, screen blood products. No vaccine.",
+    "precautions": [
+      "Do not share needles",
+      "Sterilize medical equipment",
+      "Screen blood donors",
+      "Practice safe sex",
+      "Avoid alcohol (accelerates cirrhosis)"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_d",
+    "category": "Hepatitis D (Delta Virus)",
+    "symptoms": [
+      "co-infection with Hepatitis B — can be severe",
+      "fatigue, jaundice, dark urine, abdominal pain, nausea",
+      "can cause rapid liver failure"
+    ],
+    "guidance": "Hepatitis D only occurs with Hepatitis B. Prevention: vaccinate against Hepatitis B. Treatment: pegylated interferon (not always effective). Supportive care. Liver transplant for advanced.",
+    "precautions": [
+      "Hepatitis B vaccination prevents Hepatitis D",
+      "Same as HBV precautions",
+      "Avoid high-risk behaviors"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "hepatitis_e",
+    "category": "Hepatitis E",
+    "symptoms": [
+      "fever, fatigue, nausea, vomiting, jaundice, dark urine, abdominal pain",
+      "similar to Hepatitis A but more severe in pregnant women (high mortality in 3rd trimester)"
+    ],
+    "guidance": "Supportive care. Pregnant women with HEV need specialized care. Avoid contaminated water. Vaccine is available in China but not yet widespread in India.",
+    "precautions": [
+      "Safe water",
+      "Handwashing",
+      "Avoid raw shellfish in endemic areas",
+      "Pregnant women: be extra cautious with food and water"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "hepatitis_g",
+    "category": "Hepatitis G (GBV-C)",
+    "symptoms": [
+      "usually asymptomatic",
+      "not known to cause significant liver disease",
+      "co-infection with HIV may improve HIV prognosis",
+      "rarely associated with hepatitis"
+    ],
+    "guidance": "No treatment needed. It does not cause chronic liver disease. No vaccine.",
+    "precautions": [
+      "None specific",
+      "Blood donor screening not routinely done"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "rotavirus",
+    "category": "Rotavirus Diarrhea",
+    "symptoms": [
+      "acute watery diarrhea",
+      "fever",
+      "vomiting",
+      "dehydration risk",
+      "severely affects young children (<2 years)"
+    ],
+    "guidance": "ORS, zinc supplementation, continued feeding. Severe dehydration: IV fluids. Rotavirus vaccine (Rotavac, RotaTeq) is part of Universal Immunization Programme in India.",
+    "precautions": [
+      "Rotavirus vaccination at 6, 10, 14 weeks (free)",
+      "Handwashing",
+      "Safe water",
+      "Proper sanitation",
+      "ORS at home"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "norovirus",
+    "category": "Norovirus (Stomach Flu)",
+    "symptoms": [
+      "sudden nausea, vomiting, watery diarrhea",
+      "abdominal cramps",
+      "low-grade fever",
+      "headache, body ache",
+      "usually resolves in 2-3 days"
+    ],
+    "guidance": "ORS hydration. No antibiotics. Highly contagious — hand hygiene with soap and water (alcohol sanitizers are less effective). Isolate for 48 hours after symptoms resolve.",
+    "precautions": [
+      "Handwashing with soap and water",
+      "Disinfect surfaces",
+      "Isolate sick person",
+      "Avoid preparing food for others while ill",
+      "Safe water"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "enterovirus",
+    "category": "Enterovirus Infections (Non-polio)",
+    "symptoms": [
+      "hand, foot, and mouth disease (HFMD)",
+      "fever, sore throat, rash",
+      "viral meningitis",
+      "conjunctivitis",
+      "respiratory illness"
+    ],
+    "guidance": "Supportive care. Good hand hygiene. No antiviral. Isolate to prevent spread. Common in children.",
+    "precautions": [
+      "Handwashing",
+      "Disinfect toys",
+      "Avoid sharing utensils",
+      "Isolate infected children from school"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "herpes_zoster",
+    "category": "Herpes Zoster (Shingles)",
+    "symptoms": [
+      "painful, blistering rash in a dermatome (nerve distribution)",
+      "preceded by shooting pain or burning",
+      "fever, headache, malaise",
+      "post-herpetic neuralgia (chronic pain after rash heals)"
+    ],
+    "guidance": "Antivirals (acyclovir, valacyclovir) within 72 hours of rash. Pain management. Zoster vaccine recommended for adults over 50. Avoid contact with pregnant women and immunocompromised.",
+    "precautions": [
+      "Zoster vaccination",
+      "Avoid contact with varicella-susceptible persons during rash",
+      "Keep rash covered",
+      "Pain management",
+      "Seek early treatment"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "infectious_mononucleosis",
+    "category": "Infectious Mononucleosis (Glandular Fever)",
+    "symptoms": [
+      "fever",
+      "severe sore throat",
+      "swollen lymph nodes (especially neck)",
+      "fatigue (can last weeks)",
+      "splenomegaly",
+      "hepatomegaly",
+      "rash",
+      "caused by EBV"
+    ],
+    "guidance": "Supportive care — rest, hydration, paracetamol. Avoid contact sports (risk of splenic rupture). No antivirals needed. Spread via saliva ('kissing disease').",
+    "precautions": [
+      "Avoid sharing saliva (utensils, drinks, kissing) during active infection",
+      "Rest",
+      "Avoid strenuous activity until spleen no longer enlarged",
+      "Good hand hygiene"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "cytomegalovirus",
+    "category": "Cytomegalovirus (CMV) Infection",
+    "symptoms": [
+      "most infections asymptomatic",
+      "fever, fatigue, sore throat, lymphadenopathy (mononucleosis-like)",
+      "congenital: hearing loss, intellectual disability, microcephaly",
+      "in immunocompromised: retinitis, pneumonia, colitis, encephalitis"
+    ],
+    "guidance": "Immunocompetent: self-limiting. Congenital: valganciclovir. Immunocompromised: ganciclovir, foscarnet. Prevention: avoid saliva contact in immunosuppressed.",
+    "precautions": [
+      "Hand hygiene",
+      "Avoid sharing food/utensils with immunocompromised",
+      "Pregnant women: avoid contact with young children's saliva",
+      "Safe sexual practices"
+    ],
+    "urgency": "medium"
+  }
+]

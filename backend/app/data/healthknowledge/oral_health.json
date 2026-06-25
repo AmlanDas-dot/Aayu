@@ -1,0 +1,802 @@
+[
+  {
+    "id": "oral_001",
+    "category": "Dental Caries (Tooth Decay)",
+    "symptoms": ["toothache (spontaneous or on biting)", "sensitivity to hot, cold, or sweet foods", "visible holes or pits in teeth", "brown, black, or white staining", "bad breath", "pain while chewing"],
+    "guidance": "Brush twice daily with fluoride toothpaste, floss daily, and limit sugary snacks and drinks. Use a fluoride mouthwash. If a cavity is present, see a dentist for filling. In early stages, fluoride treatments may reverse decay. Free dental care is available at government hospitals.",
+    "precautions": ["Brush twice daily with fluoride toothpaste", "Limit sugary snacks and beverages", "Floss daily to remove plaque between teeth", "Attend regular dental checkups every 6 months", "Consider dental sealants for children's molars"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_002",
+    "category": "Dental Plaque and Tartar (Calculus)",
+    "symptoms": ["yellow or brown deposits on teeth", "rough feeling on teeth", "bad breath", "gum irritation and bleeding", "visible tartar along the gumline"],
+    "guidance": "Plaque is a sticky film of bacteria that hardens into tartar if not removed. Brushing and flossing remove plaque; tartar requires professional scaling. Regular dental cleanings prevent gum disease and tooth decay. Use an electric toothbrush for better plaque removal.",
+    "precautions": ["Brush thoroughly twice a day", "Floss daily", "Use an antiseptic mouthwash", "Visit a dentist for scaling every 6–12 months", "Avoid smoking (increases tartar formation)"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_003",
+    "category": "Gingivitis (Mild Gum Inflammation)",
+    "symptoms": ["red, swollen, or tender gums", "bleeding when brushing or flossing", "bad breath", "receding gums", "gums may be shiny or puffy"],
+    "guidance": "Gingivitis is reversible with good oral hygiene. Brush gently, floss daily, and use an antibacterial mouthwash. If symptoms persist for more than 2 weeks, see a dentist. Professional cleaning may be needed. Untreated gingivitis can progress to periodontitis.",
+    "precautions": ["Brush gently but thoroughly twice a day", "Floss daily to remove plaque from between teeth", "Use a soft‑bristled toothbrush", "Avoid tobacco – worsens gum inflammation", "Schedule regular dental checkups"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_004",
+    "category": "Periodontitis (Advanced Gum Disease)",
+    "symptoms": ["receding gums (teeth appear longer)", "loose or shifting teeth", "persistent bad breath", "gum bleeding, swelling, or pain", "deep pockets between teeth and gums", "pus between gums and teeth", "pain when chewing"],
+    "guidance": "Periodontitis requires professional treatment: scaling and root planing, antibiotics, or surgery in severe cases. It is a leading cause of tooth loss. Manage risk factors: smoking, diabetes, and poor hygiene. Free periodontal care is available at government dental colleges.",
+    "precautions": ["Treat gingivitis early – do not ignore bleeding gums", "Maintain meticulous oral hygiene", "Quit smoking – a major risk factor", "Control diabetes – affects gum health", "Get professional deep cleaning as advised"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_005",
+    "category": "Tooth Abscess (Dentoalveolar Abscess)",
+    "symptoms": ["severe, throbbing toothache", "swelling of the face, cheek, or jaw", "fever", "bad taste in the mouth", "swollen lymph nodes", "difficulty opening the mouth", "pain when biting"],
+    "guidance": "This is a dental emergency. See a dentist immediately. Treatment: drainage of the abscess, root canal treatment, or extraction. Antibiotics may be prescribed. Do not delay – infection can spread to other parts of the body. Free emergency dental care is available.",
+    "precautions": ["Do not ignore severe tooth pain", "Seek dental treatment promptly", "Do not apply heat – use cold packs to reduce swelling", "Take prescribed antibiotics as directed", "Maintain good oral hygiene to prevent future abscesses"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_006",
+    "category": "Periapical Infection (Apical Periodontitis)",
+    "symptoms": ["dull, persistent toothache", "tenderness when biting", "gum swelling near the root", "sometimes a fistula (pimple) on the gum", "may be asymptomatic if chronic"],
+    "guidance": "Caused by infection at the root tip. Treatment: root canal therapy (endodontic treatment) or extraction. Antibiotics may be given for acute infection. Early treatment saves the tooth. Free root canal treatment may be available at government dental colleges.",
+    "precautions": ["Do not ignore dull tooth pain", "If you have a gum pimple, see a dentist", "Get root canal treatment rather than extraction if possible", "Maintain good oral hygiene", "Attend regular dental checkups"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_007",
+    "category": "Pulpitis (Tooth Nerve Inflammation)",
+    "symptoms": ["sharp, spontaneous tooth pain", "pain that lasts longer than 30 seconds to cold/hot stimuli", "pain at night", "pain on lying down", "referred pain to other areas"],
+    "guidance": "Pulpitis is inflammation of the dental pulp. Reversible pulpitis may heal with a filling; irreversible pulpitis requires root canal treatment or extraction. See a dentist promptly. Avoid hot/cold extremes. Free care available.",
+    "precautions": ["Do not delay dental visit for tooth pain", "Avoid very hot or cold foods if sensitive", "If pain is severe at night, seek urgent care", "Keep teeth clean to prevent further decay", "If you grind your teeth, use a night guard"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_008",
+    "category": "Tooth Fracture (Cracked Tooth Syndrome)",
+    "symptoms": ["pain on biting or chewing", "sensitivity to temperature changes", "intermittent pain (comes and goes)", "difficulty locating the exact tooth", "visible crack or missing piece"],
+    "guidance": "Small cracks may be repaired with bonding; larger cracks may need a crown; if the crack extends to the root, extraction may be needed. See a dentist immediately. Avoid chewing on hard foods. Do not ignore – can lead to infection.",
+    "precautions": ["Avoid chewing on hard objects (ice, bones, pens)", "If you have a cracked tooth, do not chew on that side", "Wear a mouthguard if you grind your teeth", "Seek dental care early to save the tooth", "If you have a sharp edge, cover with dental wax"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_009",
+    "category": "Enamel Erosion (Acid Wear)",
+    "symptoms": ["sensitive teeth (to hot, cold, sweet)", "teeth appear yellowish (dentin exposure)", "rounded or cupped teeth", "translucent edges", "increased tooth decay"],
+    "guidance": "Caused by acidic foods, drinks (citrus, soda), or acid reflux. Use a soft toothbrush and fluoride toothpaste. Rinse with water after acidic foods. See a dentist for bonding or veneers if severe. Treat underlying reflux.",
+    "precautions": ["Limit acidic drinks (sodas, fruit juices)", "Use a straw to reduce contact with teeth", "Wait 30 minutes after eating acidic foods before brushing", "Use fluoride rinses to strengthen enamel", "If you have acid reflux, seek treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_010",
+    "category": "Dentin Hypersensitivity (Sensitive Teeth)",
+    "symptoms": ["sharp, short pain in response to hot, cold, sweet, or sour stimuli", "pain from air or touch", "no visible decay or cracks"],
+    "guidance": "Use desensitising toothpaste (with potassium nitrate or stannous fluoride). Apply with a soft brush. Avoid acidic foods. If persistent, your dentist can apply fluoride varnish or bonding. Treat any underlying cause (gum recession, enamel loss).",
+    "precautions": ["Use a soft‑bristled toothbrush", "Avoid aggressive brushing", "Use toothpaste for sensitive teeth", "Avoid acidic foods that worsen sensitivity", "If sensitivity persists, see a dentist"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_011",
+    "category": "Bruxism (Teeth Grinding / Clenching)",
+    "symptoms": ["worn, flattened, or chipped teeth", "jaw pain or tightness", "headache (especially in the morning)", "earache (without ear infection)", "muscle tenderness in the jaw", "disrupted sleep"],
+    "guidance": "Bruxism can be caused by stress, anxiety, or sleep disorders. Treatment: custom‑made night guard to protect teeth. Stress management, relaxation techniques, and avoiding caffeine before bed. Severe cases may need Botox or splints. Free dental advice at government hospitals.",
+    "precautions": ["Wear a night guard as prescribed", "Manage stress – yoga, meditation", "Avoid caffeine and alcohol before sleep", "If you have sleep apnea, treat it", "Regular dental checkups to monitor wear"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_012",
+    "category": "Malocclusion (Crooked / Misaligned Teeth)",
+    "symptoms": ["crooked or crowded teeth", "overbite, underbite, or crossbite", "difficulty cleaning teeth", "speech difficulties", "jaw pain or clicking"],
+    "guidance": "Malocclusion can be corrected with orthodontic treatment (braces or aligners). Early intervention (age 7–12) improves outcomes. Free orthodontic treatment is available at some government dental colleges. In severe cases, surgery may be needed.",
+    "precautions": ["If you have crooked teeth, see an orthodontist", "Maintain good oral hygiene (crowded teeth trap plaque)", "Wear retainers after braces to prevent relapse", "If you have jaw pain, mention it", "Early evaluation is key"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_013",
+    "category": "Impacted Wisdom Teeth (Third Molars)",
+    "symptoms": ["pain or swelling in the back of the jaw", "difficulty opening the mouth", "bad breath", "swollen gums (pericoronitis)", "recurrent infections", "crowding of other teeth"],
+    "guidance": "Impacted wisdom teeth may need removal (extraction) if they cause pain, infection, or damage to adjacent teeth. Surgery is done by an oral surgeon. Free surgery is available at government hospitals. If asymptomatic, they may be monitored.",
+    "precautions": ["If you have pain in the back of your jaw, see a dentist", "If you have swelling, apply cold packs", "Rinse with warm salt water", "Do not ignore recurrent infections", "If surgery is planned, follow pre‑ and post‑op instructions"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_014",
+    "category": "Pericoronitis (Gum Infection Around Wisdom Tooth)",
+    "symptoms": ["pain, swelling, and redness around a partially erupted wisdom tooth", "difficulty opening the mouth", "bad breath, unpleasant taste", "fever, malaise", "pain on swallowing"],
+    "guidance": "Pericoronitis is an infection of the gum flap covering a partially erupted tooth. Treatment: cleaning, irrigating the area, antibiotics, and sometimes extraction. Warm salt water rinses and pain relief. If recurrent, remove the tooth. Free emergency care.",
+    "precautions": ["Rinse with warm salt water several times a day", "Keep the area clean", "If you have swelling, see a dentist", "Do not ignore – can spread", "If recurrent, consider extraction"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_015",
+    "category": "Tooth Discolouration (Intrinsic/Extrinsic Stains)",
+    "symptoms": ["yellow, brown, or grey teeth", "white spots (fluorosis, decalcification)", "stains from coffee, tea, tobacco", "uniform or patchy colouration"],
+    "guidance": "Extrinsic stains can be removed with professional cleaning or whitening toothpaste. Intrinsic stains (from tetracycline, fluorosis, trauma) may need bleaching, veneers, or crowns. Consult a dentist. Home whitening kits may help for mild stains.",
+    "precautions": ["Avoid excessive coffee, tea, and red wine", "Brush after consuming staining foods", "Do not smoke", "If you have fluorosis, discuss management", "Use professional bleaching under supervision"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_016",
+    "category": "Dental Erosion from Bulimia / Acid Reflux",
+    "symptoms": ["smooth, shiny, or flattened tooth surfaces", "thin, translucent edges", "sensitivity", "teeth appear shorter", "enamel loss on the palatal surfaces of front teeth"],
+    "guidance": "Erosion is caused by stomach acid. If due to bulimia, seek psychological help. If reflux, treat with PPIs. Use fluoride rinses and avoid brushing immediately after vomiting (rinse with water first). See a dentist for restorative options.",
+    "precautions": ["Rinse with water after vomiting, do not brush", "Use a fluoride mouthwash", "Treat bulimia with professional help", "If you have reflux, avoid lying down after meals", "See a dentist for bonding to protect eroded areas"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_017",
+    "category": "Oral Leukoplakia (White Patch – Precancerous)",
+    "symptoms": ["white patches or plaques in the mouth that cannot be scraped off", "usually painless", "commonly on cheeks, tongue, floor of mouth", "associated with tobacco/smoking", "may be benign or pre‑malignant"],
+    "guidance": "Leukoplakia is a precancerous lesion. Biopsy is recommended to rule out dysplasia. If benign, monitor. Stop tobacco and alcohol. If dysplastic, surgical excision. Free oral cancer screening at government hospitals. Do not ignore.",
+    "precautions": ["Stop tobacco use immediately", "If you have a white patch >2 weeks, see a dentist", "Avoid alcohol", "Biopsy is essential", "Regular follow‑up"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_018",
+    "category": "Oral Erythroplakia (Red Patch – High Risk)",
+    "symptoms": ["bright red, velvety patch in the mouth", "cannot be scraped off", "usually painless", "most common on floor of mouth, soft palate", "high risk of malignancy"],
+    "guidance": "Erythroplakia has a higher risk of malignancy than leukoplakia. Urgent biopsy is required. Stop tobacco and alcohol. If dysplastic or malignant, surgical excision. Free treatment at government hospitals. Do not delay.",
+    "precautions": ["Do not ignore red patches", "Biopsy is mandatory", "Stop tobacco and alcohol", "Early detection is life‑saving", "Regular follow‑up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_019",
+    "category": "Oral Squamous Cell Carcinoma",
+    "symptoms": ["non‑healing ulcer or growth in the mouth", "white or red patch", "pain, bleeding, or numbness", "difficulty swallowing, speaking, or chewing", "lump in the neck", "loosening of teeth", "unilateral ear pain"],
+    "guidance": "Oral cancer is common in India due to tobacco use. Immediate biopsy and referral to an oncologist. Treatment: surgery, radiation, and chemotherapy – free under PMJAY. Prevention: avoid tobacco and alcohol. Regular oral screening.",
+    "precautions": ["Stop tobacco and alcohol", "If you have an ulcer >2 weeks, seek biopsy", "Attend regular oral cancer screening", "If you have a lump in the neck, get evaluated", "Follow oncology treatment plan"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_020",
+    "category": "Oral Submucous Fibrosis (OSMF)",
+    "symptoms": ["progressive difficulty opening the mouth (trismus)", "burning sensation (especially on eating spicy food)", "white, opaque, or blanched mucosa", "difficulty swallowing", "palatal, buccal, and labial involvement", "precancerous condition"],
+    "guidance": "OSMF is strongly associated with areca nut (pan, gutkha) chewing. Treatment: stop the habit. Physiotherapy (jaw opening exercises), corticosteroids, and antioxidants. If severe, surgery may be needed. Regular monitoring for malignant transformation. Free care at government hospitals.",
+    "precautions": ["Stop areca nut, pan, and tobacco", "Practice jaw‑stretching exercises", "Avoid spicy foods", "If you have difficulty opening your mouth, see a dentist", "Regular oral cancer screening"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_021",
+    "category": "Oral Lichen Planus (Autoimmune)",
+    "symptoms": ["white, lacy (reticular) patches on the buccal mucosa, gums, or tongue", "painful erosions (in erosive form)", "burning sensation, especially with spicy foods", "may be asymptomatic", "chronic condition"],
+    "guidance": "Lichen planus is a chronic inflammatory condition. Erosive forms need treatment with topical corticosteroids or immunosuppressants. Regular monitoring – there is a small risk of malignant transformation. Avoid triggers (stress, spicy foods, alcohol). Free care at dermatology/dental departments.",
+    "precautions": ["Avoid spicy and acidic foods", "Use topical steroids as prescribed", "Do not smoke", "If you have erosive lichen planus, see a specialist regularly", "Stress management"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_022",
+    "category": "Oral Pemphigus Vulgaris (Autoimmune Blistering)",
+    "symptoms": ["painful, flaccid blisters and erosions on the oral mucosa", "skin lesions (bullae)", "positive Nikolsky sign", "involvement of gums, palate, throat", "difficulty eating and swallowing"],
+    "guidance": "Oral pemphigus is a serious autoimmune condition requiring systemic corticosteroids and immunosuppressants (azathioprine, rituximab). Prompt diagnosis by biopsy and immunofluorescence. Free rituximab at some government centres. Dental care is supportive.",
+    "precautions": ["Do not delay – can be fatal", "If you have persistent oral ulcers, see a dermatologist", "Take steroids as prescribed", "Maintain oral hygiene gently", "Avoid trauma to the mucosa"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_023",
+    "category": "Pemphigoid (Mucous Membrane Pemphigoid)",
+    "symptoms": ["chronic, painful blisters and erosions in the mouth", "may affect eyes, skin, or genitals", "scarring may occur", "positive biopsy with linear IgG at basement membrane"],
+    "guidance": "Treatment: topical or systemic corticosteroids, and sometimes dapsone or immunosuppressants. Ocular involvement needs ophthalmology referral. Good oral hygiene with soft brushing. Free care at dermatology departments.",
+    "precautions": ["If you have oral blisters, see a doctor", "Take medications as prescribed", "Use a soft toothbrush", "If you have eye symptoms, see an ophthalmologist", "Regular follow‑up"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_024",
+    "category": "Geographic Tongue (Benign Migratory Glossitis)",
+    "symptoms": ["smooth, red, irregular patches on the tongue surface", "white borders around the patches", "patches change location and shape", "may be asymptomatic or slightly sensitive to spicy foods"],
+    "guidance": "Geographic tongue is a benign condition. No treatment needed if asymptomatic. Avoid irritating foods if sensitive. Reassurance. If you have pain, topical anesthetics may help. Not associated with cancer.",
+    "precautions": ["If sensitive, avoid spicy, acidic, or hot foods", "Maintain good oral hygiene", "Reassurance – it is not dangerous", "If you have pain, see a dentist", "Monitor for any changes"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_025",
+    "category": "Fissured Tongue (Scrotal Tongue)",
+    "symptoms": ["deep grooves or fissures on the dorsal surface of the tongue", "usually asymptomatic", "may accumulate food debris leading to bad breath or irritation", "associated with age or genetics"],
+    "guidance": "Fissured tongue is benign. Keep the tongue clean by brushing or scraping it gently. If debris accumulates, clean regularly. No treatment needed. If painful, rule out infection.",
+    "precautions": ["Clean the tongue with a scraper", "Maintain good oral hygiene", "If you have bad breath, clean the grooves", "If you have pain, see a dentist", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_026",
+    "category": "Hairy Tongue (Black Hairy Tongue)",
+    "symptoms": ["black, brown, or yellow discolouration of the tongue", "elongated, hair‑like papillae", "bad breath, altered taste", "usually associated with poor oral hygiene, smoking, or antibiotics"],
+    "guidance": "Hairy tongue is benign. Improve oral hygiene: brush the tongue, use a scraper. Stop smoking. If caused by antibiotics, it usually resolves after stopping. If persistent, see a dentist.",
+    "precautions": ["Brush the tongue gently", "Use a tongue scraper", "Stop smoking", "Maintain good oral hygiene", "If discolouration persists, see a dentist"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_027",
+    "category": "Oral Candidiasis (Thrush)",
+    "symptoms": ["white, curd‑like patches on the tongue, inner cheeks, or palate", "pain, soreness, or burning", "difficulty swallowing", "loss of taste", "cracking at the corners of the mouth (angular cheilitis)"],
+    "guidance": "Oral thrush is caused by Candida. Treatment: antifungal lozenges (clotrimazole, nystatin) or oral fluconazole. Clean dentures and treat underlying diabetes. Avoid sugary foods. Free antifungals at government hospitals.",
+    "precautions": ["Maintain oral hygiene", "Clean dentures and soak in antifungal solution", "If you have diabetes, control blood sugar", "Avoid unnecessary antibiotics", "If you have dry mouth, stay hydrated"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_028",
+    "category": "Angular Cheilitis (Cracked Corners of the Mouth)",
+    "symptoms": ["red, cracked, or scaly skin at the corners of the mouth", "pain, burning, or bleeding", "may be caused by fungal (Candida) or bacterial infection, nutritional deficiency (riboflavin, iron), or ill‑fitting dentures"],
+    "guidance": "Treat with antifungal/antibiotic cream (e.g., clotrimazole + hydrocortisone). If due to nutritional deficiency, supplement with B vitamins and iron. Keep the area dry. Use lip balm. If dentures are the cause, adjust them.",
+    "precautions": ["Keep the corners of the mouth dry", "Use antifungal cream as prescribed", "Check for nutritional deficiencies", "If you have dentures, ensure they fit well", "Do not lick the corners – worsens"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_029",
+    "category": "Herpes Labialis (Cold Sores / Fever Blisters)",
+    "symptoms": ["tingling or burning sensation before eruption", "clusters of small, painful blisters on the lips or around the mouth", "rupture and crust over", "recurrent attacks", "often triggered by fever, sun, stress"],
+    "guidance": "Apply topical acyclovir or penciclovir at the first sign to reduce duration. Oral antivirals (acyclovir) for frequent recurrences. Use lip balm with SPF. Avoid sharing utensils. If you have a cold sore, avoid contact with immunocompromised.",
+    "precautions": ["Use sunscreen on lips", "Avoid touching the lesions", "Do not share lip products or utensils", "If you have a weakened immune system, seek treatment", "Wash hands after touching the sore"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_030",
+    "category": "Herpes Zoster (Shingles) – Oral Involvement",
+    "symptoms": ["vesicular rash in a dermatomal distribution (often maxillary or mandibular)", "pain, burning, itching before eruption", "may involve the oral mucosa, leading to ulcers", "post‑herpetic neuralgia in elderly"],
+    "guidance": "Antiviral (acyclovir) within 72 hours of rash onset. Pain management (gabapentin, pregabalin). If oral, use topical anesthetics and soft diet. Free antivirals. Vaccination prevents shingles.",
+    "precautions": ["If you have a rash on the face, see a doctor", "Take antivirals early", "Avoid contact with immunocompromised", "If you have severe pain, treat it", "Get vaccinated (Shingrix) if >50"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_031",
+    "category": "Recurrent Aphthous Stomatitis (Canker Sores)",
+    "symptoms": ["painful, round, shallow ulcers with a yellow‑grey centre and red halo", "usually on the inner lips, cheeks, or tongue", "minor (3–10 mm) or major (>10 mm)", "recurring at intervals", "triggered by stress, trauma, or certain foods"],
+    "guidance": "Most resolve in 1–2 weeks. Use topical anesthetics, corticosteroids (triamcinolone), or protective pastes. Avoid spicy, acidic, or rough foods. Stress management. If frequent, check for nutritional deficiencies (B12, folate, iron). Free dental care.",
+    "precautions": ["Avoid trigger foods (spicy, citrus, tomatoes)", "Use a soft toothbrush", "Apply topical treatments at the first sign", "If you have frequent ulcers, see a doctor", "Manage stress"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_032",
+    "category": "Mucocele (Oral Mucous Cyst)",
+    "symptoms": ["soft, painless, fluid‑filled swelling on the inner lip, floor of mouth, or buccal mucosa", "bluish or translucent", "often caused by trauma or blocked salivary gland", "may rupture and recur"],
+    "guidance": "Small mucoceles may resolve spontaneously. If persistent or recurrent, surgical excision is needed. Do not attempt to pop it. Free minor surgery at government hospitals. Reassurance.",
+    "precautions": ["If you have a cyst, do not try to burst it", "See a dentist for evaluation", "If it recurs, surgery may be needed", "Avoid biting the area", "Maintain good oral hygiene"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_033",
+    "category": "Salivary Gland Stones (Sialolithiasis)",
+    "symptoms": ["pain and swelling in the submandibular or parotid area, especially during meals", "dry mouth", "inflammation of the gland", "may be intermittent"],
+    "guidance": "Stones can block salivary flow. Treatment: massage, hydration, sour candies to stimulate saliva. If persistent, surgical removal (sialolithotomy) or sialendoscopy. Free ENT/dental care. If infection, antibiotics.",
+    "precautions": ["Stay well‑hydrated", "Suck on lemon drops to stimulate saliva", "If you have recurrent swelling, see a dentist", "Avoid dehydration", "If you have fever, seek antibiotics"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_034",
+    "category": "Sialadenitis (Salivary Gland Infection)",
+    "symptoms": ["painful swelling of the salivary gland (parotid or submandibular)", "fever", "redness over the gland", "dry mouth, foul taste", "pus from the duct"],
+    "guidance": "Treatment: antibiotics (penicillin or cephalexin), hydration, massage, and warm compresses. If an abscess forms, surgical drainage. Free care at government hospitals. Prevention: good oral hygiene and hydration.",
+    "precautions": ["Drink plenty of fluids", "Maintain good oral hygiene", "If you have swelling and fever, see a doctor", "Complete the antibiotic course", "If you have a stone, treat it"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_035",
+    "category": "Xerostomia (Dry Mouth) – Medication‑Induced",
+    "symptoms": ["dry, sticky feeling in the mouth", "difficulty swallowing, chewing, or speaking", "cracked lips", "increased thirst", "oral infections (thrush)", "bad breath"],
+    "guidance": "Common causes: antihistamines, decongestants, diuretics, antidepressants. Management: sip water frequently, use sugar‑free lozenges, artificial saliva, avoid caffeine/alcohol. If medication is the cause, discuss alternatives. Good oral hygiene is essential.",
+    "precautions": ["Sip water throughout the day", "Avoid caffeine and alcohol", "Use artificial saliva or moisturising mouthwash", "If you have dry mouth, brush and floss carefully", "If you have dentures, keep them moist"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_036",
+    "category": "Sjögren's Syndrome – Oral Manifestations",
+    "symptoms": ["severe dry mouth", "dry eyes", "difficulty swallowing dry foods", "oral ulcers, thrush", "enlarged salivary glands", "dental caries (due to lack of saliva)"],
+    "guidance": "Sjögren's is an autoimmune disease. Management: saliva substitutes, pilocarpine (to stimulate saliva), fluoride varnishes, and good oral hygiene. Regular dental visits. Treat dry eyes with artificial tears. Free rheumatology care.",
+    "precautions": ["Stay well‑hydrated", "Use saliva substitutes", "Attend regular dental checkups", "Treat thrush promptly", "If you have dry eyes, see an ophthalmologist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_037",
+    "category": "Dental Caries in Children (Early Childhood Caries)",
+    "symptoms": ["white spots or brown cavities on baby teeth (often on upper front teeth)", "pain, difficulty eating", "sensitivity", "early tooth loss"],
+    "guidance": "Prevention: avoid putting sugary liquids in bottles at bedtime, clean baby's gums, and introduce fluoride toothpaste. If caries develops, fillings or crowns may be needed. Free dental care for children at government hospitals.",
+    "precautions": ["Clean baby's gums with a soft cloth", "Once teeth erupt, brush with a tiny amount of fluoride toothpaste", "Do not put baby to bed with a bottle", "Limit sugary drinks", "Take your child to the dentist by age 1"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_038",
+    "category": "Eruption Cyst (Teething) in Infants",
+    "symptoms": ["swelling or bluish‑purple cyst over an erupting tooth (usually a baby molar)", "irritability, drooling", "mild fever", "difficulty sleeping"],
+    "guidance": "Teething is a normal process. Use a clean, cool teething ring. Rub the gums with a clean finger. If the cyst is large, a dentist may need to incise it. Paracetamol for pain (as per weight). No aspirin.",
+    "precautions": ["Do not give aspirin to children", "Clean teething rings", "If the cyst is large, see a dentist", "Maintain oral hygiene", "If fever is high, rule out other causes"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_039",
+    "category": "Thumb Sucking and Dental Effects",
+    "symptoms": ["open bite (front teeth do not meet)", "protruding upper front teeth", "narrow palate", "speech issues", "persistent thumb sucking beyond age 3–4"],
+    "guidance": "Most children stop thumb sucking by age 4. If it persists, encourage cessation with positive reinforcement, not punishment. In severe cases, an orthodontist may recommend a habit‑breaking appliance. Free orthodontic consultation.",
+    "precautions": ["Do not punish – encourage positive behaviour", "Use a reward system", "If persistent after age 5, see a dentist", "Monitor for dental changes", "If you have an appliance, follow the orthodontist's advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_040",
+    "category": "Mouth Breathing and Craniofacial Effects",
+    "symptoms": ["habitual mouth breathing (day or night)", "dry mouth, bad breath", "narrow dental arch, high palate", "gummy smile", "snoring, sleep apnea", "allergies or nasal obstruction"],
+    "guidance": "Treat underlying nasal obstruction (allergies, deviated septum). Myofunctional exercises may help. Orthodontic expansion may be needed in children. Early intervention improves facial development. Free ENT/dental care.",
+    "precautions": ["If you have nasal congestion, treat it", "Practice nasal breathing exercises", "If your child mouth‑breathes, see a dentist", "Manage allergies", "If you have sleep apnea, treat it"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_041",
+    "category": "Dental Trauma – Avulsed (Knocked‑Out) Tooth",
+    "symptoms": ["tooth completely displaced from socket", "bleeding from socket", "pain", "speech and eating difficulties"],
+    "guidance": "Handle the tooth by the crown (not root). Rinse with milk or saline if dirty (do not scrub). Re‑implant if possible, or store in milk. See a dentist immediately – time is critical (ideally within 30 minutes). Do not store in water.",
+    "precautions": ["Do not touch the root", "Do not scrub the tooth", "Store in milk if re‑implantation is not possible", "See a dentist immediately", "If in doubt, go to the nearest dental emergency"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_042",
+    "category": "Dental Trauma – Tooth Fracture (Chipped/Cracked)",
+    "symptoms": ["visible break or crack in the tooth", "pain (especially on biting) or sensitivity", "sharp edges", "bleeding if pulp is exposed"],
+    "guidance": "Save any broken pieces. Rinse mouth with water. Apply a cold pack to reduce swelling. See a dentist as soon as possible. If the pulp is exposed, a root canal may be needed. Free emergency care.",
+    "precautions": ["Do not chew on the injured side", "Use a cold pack", "Do not delay treatment", "If the pulp is exposed, avoid hot/cold", "See a dentist within 24 hours"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_043",
+    "category": "Dental Trauma – Tooth Luxation (Displacement)",
+    "symptoms": ["tooth pushed in, out, or sideways", "loose tooth", "pain, bleeding", "altered bite"],
+    "guidance": "Do not try to push it back. See a dentist immediately. Treatment: repositioning and splinting. If the tooth is intruded, it may need surgical repositioning. Early treatment improves outcomes.",
+    "precautions": ["Do not try to move the tooth yourself", "Use a cold pack", "Avoid chewing", "See a dentist immediately", "If the tooth is avulsed, follow avulsion protocol"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_044",
+    "category": "Dental Trauma – Soft Tissue Injury (Lips, Cheeks, Tongue)",
+    "symptoms": ["laceration, puncture, or tear of the lip, cheek, or tongue", "bleeding", "swelling", "pain"],
+    "guidance": "Apply pressure with a clean cloth to stop bleeding. Rinse the mouth with salt water. If the wound is deep or involves the lip border, seek medical/dental care. Sutures may be needed. Watch for infection.",
+    "precautions": ["Apply pressure for 5–10 minutes", "If bleeding does not stop, seek medical care", "Keep the wound clean", "If the tongue is injured, avoid hot foods", "If you have a deep wound, see a doctor"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_045",
+    "category": "Jaw Fracture (Mandibular or Maxillary)",
+    "symptoms": ["pain on opening or closing the mouth", "misalignment of the bite", "swelling, bruising", "numbness of the lower lip (mandibular fracture)", "pain on palpation", "difficulty eating and speaking"],
+    "guidance": "This is a maxillofacial emergency – go to the emergency room. Immobilise the jaw with a bandage (if possible). Do not eat or drink. Surgery (wire fixation or plates) may be needed. Free treatment at government hospitals.",
+    "precautions": ["Do not eat or drink", "Immobilise the jaw", "Seek emergency care immediately", "If you have numbness, tell the doctor", "Avoid moving the jaw"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_046",
+    "category": "Temporomandibular Joint (TMJ) Dislocation",
+    "symptoms": ["inability to close the mouth", "pain in the jaw joint", "excessive drooling", "misaligned bite"],
+    "guidance": "This is a medical emergency. Do not try to close the jaw forcefully. Go to the emergency room – manual reduction is needed. After reduction, use a soft diet and jaw exercises. Avoid wide opening.",
+    "precautions": ["Do not force the jaw closed", "Seek emergency care", "After reduction, follow your doctor's advice", "Avoid wide yawning", "Use a soft diet for a few days"],
+    "urgency": "critical"
+  },
+  {
+    "id": "oral_047",
+    "category": "TMJ Disorder (Myofascial Pain / Clicking)",
+    "symptoms": ["jaw pain or tenderness", "clicking, popping, or grating sounds in the TMJ", "difficulty or pain with chewing", "headache, earache", "locking of the jaw (open or closed)", "facial muscle pain"],
+    "guidance": "Management: soft diet, avoid extreme jaw movements, apply heat/cold packs, stress reduction, and jaw exercises. Occlusal splints (night guards) may help. If symptoms persist, see a dentist or oral surgeon. Free TMJ treatment at government dental colleges.",
+    "precautions": ["Avoid hard and chewy foods", "Do not chew gum", "Practice relaxation techniques", "Use a night guard if you grind", "If you have pain, apply heat"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_048",
+    "category": "Oral Halitosis (Bad Breath – Systemic Causes)",
+    "symptoms": ["persistent bad breath", "dry mouth", "coated tongue", "post‑nasal drip", "history of respiratory, gastrointestinal, or sinus conditions"],
+    "guidance": "Bad breath can originate from the mouth, nose, sinuses, or stomach. Maintain good oral hygiene, brush the tongue, and stay hydrated. If persistent, see a doctor to rule out sinusitis, GERD, or diabetes. Free dental checkups.",
+    "precautions": ["Brush and floss daily", "Clean the tongue", "Drink plenty of water", "Avoid tobacco and alcohol", "Treat underlying conditions (GERD, sinusitis)"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_049",
+    "category": "Burning Mouth Syndrome",
+    "symptoms": ["chronic burning sensation in the mouth (tongue, lips, palate)", "no visible lesions", "dry mouth, altered taste", "may be worse in the evening", "associated with anxiety, nutritional deficiencies, or endocrine disorders"],
+    "guidance": "Treatment: address underlying causes (nutritional deficiencies (B12, folate, iron), diabetes, thyroid, or stress). Use artificial saliva, and avoid spicy foods. Low‑dose antidepressants or gabapentin may help. Free care at government hospitals.",
+    "precautions": ["Avoid spicy, acidic, and hot foods", "Use saliva substitutes", "If you have nutritional deficiencies, supplement", "Manage stress", "If you have diabetes, control it"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_050",
+    "category": "Dysgeusia (Altered Taste)",
+    "symptoms": ["persistent bitter, metallic, or salty taste in the mouth", "reduced ability to taste (hypogeusia)", "often associated with medications, infections, or nutritional deficiencies"],
+    "guidance": "Identify and treat the cause: medications, oral infections, sinusitis, or zinc deficiency. Maintain oral hygiene. Use plastic utensils if metallic taste is due to dental metals. Free consultation at government hospitals.",
+    "precautions": ["Maintain good oral hygiene", "If you have a sinus infection, treat it", "If you have a deficiency (zinc), supplement", "Avoid strong spices", "If persistent, see a doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_051",
+    "category": "Dental Fluorosis (Enamel Mottling)",
+    "symptoms": ["white spots or streaks on tooth enamel", "brown discolouration in severe cases", "pitting of enamel", "occurs in children during tooth development (excessive fluoride intake)"],
+    "guidance": "Prevention: avoid excessive fluoride intake in children (use fluoride toothpaste in pea‑sized amounts, monitor water fluoride levels). If fluorosis is mild, bleaching or microabrasion may help. Severe cases need veneers or crowns.",
+    "precautions": ["Check fluoride levels in drinking water", "Do not swallow toothpaste", "Supervise children's brushing", "Use low‑fluoride toothpaste for children under 3", "If you have fluorosis, discuss cosmetic options"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_052",
+    "category": "Amelogenesis Imperfecta (Genetic Enamel Defect)",
+    "symptoms": ["thin, discoloured, or pitted enamel", "teeth appear yellow or brown", "sensitivity", "increased wear and decay", "family history"],
+    "guidance": "Management: protective restorations (crowns), desensitising agents, and good oral hygiene. Veneers or full crowns may be needed. Genetic counselling. Free dental care at government hospitals.",
+    "precautions": ["Maintain meticulous oral hygiene", "Use fluoride rinses", "Avoid hard and sticky foods", "If you have sensitive teeth, use desensitising toothpaste", "Regular dental checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_053",
+    "category": "Dentinogenesis Imperfecta (Genetic Dentin Defect)",
+    "symptoms": ["opalescent, greyish‑blue or brown teeth", "enamel fractures easily", "teeth wear down rapidly", "radicular cysts, periapical abscesses"],
+    "guidance": "Restorative treatment: crowns to protect teeth. Early intervention is key. Manage pain and infection. Genetic counselling. Free dental care.",
+    "precautions": ["Use a soft toothbrush", "Avoid hard foods", "If you have a toothache, see a dentist", "Regular follow‑up", "If you have a family history, consult early"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_054",
+    "category": "Tooth Eruption Problems (Impacted, Delayed, or Supernumerary)",
+    "symptoms": ["delayed eruption of permanent teeth", "teeth erupting in abnormal positions", "supernumerary teeth (extra teeth)", "crowding, pain, or infection"],
+    "guidance": "Radiographs are needed to assess. Treatment: extraction of supernumerary teeth, orthodontic exposure of impacted teeth, or space maintainers. Early intervention (age 7–9) is best. Free orthodontic care at dental colleges.",
+    "precautions": ["If your child's teeth are delayed, see a dentist", "Radiographs are essential for planning", "Do not ignore crowding", "If you have pain, seek care", "Follow the orthodontist's advice"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_055",
+    "category": "Crossbite (Dental Malocclusion)",
+    "symptoms": ["one or more upper teeth biting inside the lower teeth", "facial asymmetry", "jaw pain, TMJ issues", "uneven wear of teeth"],
+    "guidance": "Early correction (in children) may involve expansion appliances. In adults, braces or aligners. If skeletal, surgery may be needed. Free orthodontic evaluation at government dental colleges.",
+    "precautions": ["If you have a crossbite, see an orthodontist", "Early treatment in children is easier", "If you have jaw pain, mention it", "Maintain good hygiene", "Wear retainers after treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_056",
+    "category": "Open Bite (Anterior Open Bite)",
+    "symptoms": ["front teeth do not touch when biting", "speech difficulties", "tongue thrusting", "aesthetic concerns"],
+    "guidance": "Causes: thumb sucking, tongue thrusting, or skeletal. Treatment: habit modification, orthodontic appliances (cribs), or braces. In severe cases, surgery. Early intervention is key.",
+    "precautions": ["If you have an open bite, see an orthodontist", "Stop thumb sucking", "Practice tongue posture exercises", "If you have surgery, follow pre‑op instructions", "Wear retainers after treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_057",
+    "category": "Overbite (Deep Bite)",
+    "symptoms": ["upper front teeth significantly overlap the lower front teeth", "excessive wear on front teeth", "jaw pain", "gum trauma behind upper front teeth"],
+    "guidance": "Treatment: orthodontic braces to correct. In severe cases, surgery. Treat with functional appliances in children. Free orthodontic care at government dental colleges.",
+    "precautions": ["If you have a deep bite, see an orthodontist", "Early treatment prevents damage", "If you have jaw pain, mention it", "Maintain good hygiene", "Wear retainers after treatment"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_058",
+    "category": "Underbite (Prognathism / Class III)",
+    "symptoms": ["lower teeth protrude in front of upper teeth", "facial appearance (prominent chin)", "jaw pain, difficulty chewing", "speech issues"],
+    "guidance": "Treatment: orthodontic appliances (facemask) in children; braces and sometimes surgery in adults. Early treatment (age 7–10) may reduce severity. Free orthodontic consultation.",
+    "precautions": ["If you have an underbite, see an orthodontist", "Early treatment may avoid surgery", "If you have pain, mention it", "Maintain oral hygiene", "Follow treatment plan"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_059",
+    "category": "Space Maintainers – Pediatric Dentistry",
+    "symptoms": ["not a disease – preventive appliance", "used after premature loss of primary teeth to maintain space for permanent teeth"],
+    "guidance": "If a primary tooth is lost early, a space maintainer (band/loop, crown) prevents adjacent teeth from drifting. This avoids future crowding. Appliance is cemented by a dentist and should be checked regularly.",
+    "precautions": ["If your child loses a tooth early, see a dentist", "Keep the space maintainer clean", "Do not eat sticky foods", "Attend regular checkups", "If the appliance is loose, see a dentist"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_060",
+    "category": "Dental Sealants – Prevention of Caries",
+    "symptoms": ["not a disease – preventive measure", "plastic coating applied to the chewing surfaces of molars to prevent decay"],
+    "guidance": "Sealants are recommended for children and adolescents (and high‑caries adults). They are placed on permanent molars soon after eruption. The procedure is quick and painless. Free sealants in government school dental programs.",
+    "precautions": ["If you have deep grooves, ask about sealants", "Maintain regular checkups", "Sealants are not a substitute for brushing", "If a sealant falls off, get it replaced", "Good for children – prevents up to 80% of cavities"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_061",
+    "category": "Fluoride Treatment – In‑Office",
+    "symptoms": ["not a disease – preventive", "varnish, gel, or foam applied to teeth to prevent decay and remineralise early lesions"],
+    "guidance": "Fluoride varnish is applied every 3–6 months for children and high‑risk adults. It is quick and painless. Do not eat or drink for 30 minutes after application. Free at government dental clinics.",
+    "precautions": ["Get fluoride varnish if you have a high cavity risk", "Avoid eating or drinking for 30 minutes", "Do not brush for 4–6 hours", "Fluoride is safe and effective", "If you have fluorosis, use with caution"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_062",
+    "category": "Dental Radiography – Safety and Indications",
+    "symptoms": ["not a disease – diagnostic tool"],
+    "guidance": "Dental X‑rays are safe with proper shielding (lead apron and thyroid collar). They help detect cavities, bone loss, and impacted teeth. Avoid X‑rays in pregnancy unless necessary. Government dental clinics provide affordable X‑rays.",
+    "precautions": ["Do not take X‑rays unnecessarily", "If you are pregnant, inform the dentist", "Use lead apron and thyroid shield", "If you have a child, use child‑sized films", "Keep records for comparison"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_063",
+    "category": "Oral Hygiene Aids – Toothbrush, Floss, Interdental Brushes",
+    "symptoms": ["not a disease – preventive tools"],
+    "guidance": "Use a soft‑bristled toothbrush and fluoride toothpaste. Replace the brush every 3 months. Floss daily to clean between teeth. Interdental brushes are good for wider gaps. Mouthwash is optional. Free toothbrushes are distributed in some government programs.",
+    "precautions": ["Do not share toothbrushes", "Rinse and dry the brush after use", "Do not use a hard brush – it damages gums", "Floss gently to avoid bleeding", "If you have braces, use special floss threaders"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_064",
+    "category": "Toothbrushing Technique – Correct Method",
+    "symptoms": ["not a disease – technique"],
+    "guidance": "Brush with a soft brush at a 45° angle to the gumline. Use short, gentle circular motions. Brush all surfaces (outer, inner, and chewing). Brush for 2 minutes twice daily. Do not scrub too hard. Replace the brush every 3 months.",
+    "precautions": ["Use gentle pressure – not vigorous scrubbing", "Brush the tongue lightly", "Focus on the gumline", "Use a timer if needed", "If you have sensitivity, use a soft brush"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_065",
+    "category": "Interdental Cleaning – Flossing and Water Flossers",
+    "symptoms": ["not a disease – technique"],
+    "guidance": "Floss daily – break off 18 inches, wrap around fingers, guide between teeth using a gentle sawing motion, curve around each tooth, and go below the gumline. Water flossers (irrigators) are useful for braces or bridges.",
+    "precautions": ["Do not snap floss against gums", "If you have bleeding, floss gently – it may improve with time", "Use a floss holder if you have arthritis", "Water flossers are not a substitute for flossing", "Floss before brushing"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_066",
+    "category": "Tongue Cleaning – Importance and Technique",
+    "symptoms": ["not applicable"],
+    "guidance": "Clean the tongue daily with a tongue scraper or the back of the toothbrush. This removes bacteria, reduces bad breath, and improves taste. Start from the back and move forward. Rinse after each stroke.",
+    "precautions": ["Do not scrape too hard – can damage taste buds", "Rinse the scraper after each use", "If you have a fissured tongue, clean carefully", "Use a separate scraper", "If you have thrush, cleaning helps"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_067",
+    "category": "Nutrition and Oral Health",
+    "symptoms": ["not applicable"],
+    "guidance": "Eat a balanced diet with fruits, vegetables, whole grains, and lean protein. Limit sugar (sweets, soda, juice) – sugar feeds cavity‑causing bacteria. Calcium and vitamin D are important for teeth. Drink fluoridated water.",
+    "precautions": ["Limit sugary snacks and drinks", "Drink water after meals", "Eat cheese or nuts to neutralise acid", "Include calcium‑rich foods (dairy, leafy greens)", "Avoid sticky sweets (candy, caramels)"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_068",
+    "category": "Mouthguards – Prevention of Sports Injuries",
+    "symptoms": ["not applicable"],
+    "guidance": "Wear a mouthguard during contact sports (football, hockey, boxing, martial arts) to protect teeth and jaws. Custom‑made mouthguards from a dentist are best. Boil‑and‑bite types are available over‑the‑counter.",
+    "precautions": ["Wear a mouthguard when playing sports", "Clean it regularly", "Do not chew on it", "Replace if worn", "If you have braces, use a special mouthguard"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_069",
+    "category": "Dental Anxiety and Phobia – Management",
+    "symptoms": ["fear of dental visits", "avoiding dental care", "panic or distress during procedures", "sweating, palpitations"],
+    "guidance": "Dental anxiety is common. Communicate your fears with the dentist. Use relaxation techniques (deep breathing). Nitrous oxide (laughing gas) or sedation dentistry may be available. Free counselling at some dental centres.",
+    "precautions": ["Tell your dentist about your anxiety", "Take a trusted friend", "Use distraction (music, headphones)", "Start with a simple checkup to build trust", "If you have a phobia, ask about sedation options"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_070",
+    "category": "Oral Care for Denture Wearers",
+    "symptoms": ["sore spots, difficulty chewing", "loose dentures", "bad breath, fungal infections"],
+    "guidance": "Clean dentures daily with a soft brush and mild soap (not toothpaste). Remove them at night and soak in water or cleaning solution. Massage the gums. Visit the dentist for adjustments. Free denture care at government hospitals.",
+    "precautions": ["Remove dentures at night", "Clean them thoroughly daily", "Avoid using abrasive cleaners", "If you have sore spots, see a dentist", "Clean your gums with a soft brush"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_071",
+    "category": "Implant Care and Maintenance",
+    "symptoms": ["not applicable"],
+    "guidance": "Dental implants need regular care: brush around the implant, use a water flosser, and have regular professional checkups. Avoid chewing on hard objects. If you have pain or mobility, see a dentist.",
+    "precautions": ["Brush around implants gently", "Use a water flosser", "Avoid smoking – reduces implant success", "Visit your dentist twice a year", "If you have swelling or pain, see a dentist"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_072",
+    "category": "Orthodontic Braces – Care and Cleaning",
+    "symptoms": ["not applicable"],
+    "guidance": "Brush after every meal, using an interdental brush and floss threaders. Avoid hard, sticky, and sugary foods. Wear elastics as prescribed. Regular orthodontic adjustments. Free care at government dental colleges.",
+    "precautions": ["Brush after every meal", "Avoid sticky and hard foods (caramel, nuts, popcorn)", "Use wax for poking wires", "Wear elastics as directed", "Attend all adjustment appointments"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_073",
+    "category": "Oral Manifestations of Diabetes – Gingivitis, Caries, Thrush",
+    "symptoms": ["increased gum bleeding, periodontitis", "rapid tooth decay", "dry mouth, thrush", "poor wound healing after dental procedures"],
+    "guidance": "Good glycaemic control improves oral health. Brush and floss regularly. Visit the dentist every 6 months. Treat thrush promptly. If you have periodontal disease, inform your endocrinologist. Free dental care.",
+    "precautions": ["Control blood sugar", "Brush and floss daily", "If you have dry mouth, stay hydrated", "If you have thrush, treat it", "Have regular dental checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_074",
+    "category": "Oral Manifestations of HIV/AIDS",
+    "symptoms": ["oral thrush (persistent)", "hairy leukoplakia (white patches on tongue)", "Kaposi sarcoma (purple lesions)", "herpes simplex, oral ulcers", "gingivitis and periodontitis (linear gingival erythema)"],
+    "guidance": "Treat infections aggressively. Use antifungal, antiviral, and antiretroviral therapy. Maintain good oral hygiene. Regular dental follow‑up. Free ART and dental care under NACO.",
+    "precautions": ["If you have HIV, see a dentist regularly", "Treat thrush promptly", "Do not ignore oral lesions", "Adhere to ART", "Maintain meticulous oral hygiene"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_075",
+    "category": "Oral Manifestations of Blood Disorders (Anemia, Leukemia)",
+    "symptoms": ["pale, smooth tongue (iron deficiency anemia)", "ulcers, bleeding gums", "swollen gums (leukemia)", "petechiae, ecchymoses", "decreased immunity leading to oral infections"],
+    "guidance": "Treat the underlying blood disorder. Maintain meticulous oral hygiene. Avoid trauma to gums. Bleeding risk – inform dentist before procedures. Free haematology and dental care.",
+    "precautions": ["If you have anaemia, take iron supplements", "If you have a bleeding disorder, inform your dentist", "Use a soft toothbrush", "If you have ulcers, see a doctor", "Attend regular checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_076",
+    "category": "Oral Manifestations of Vitamin Deficiencies",
+    "symptoms": ["B2 deficiency – angular cheilitis, glossitis", "B3 deficiency – stomatitis, glossitis", "B12/folate deficiency – glossitis, ulcers", "Vitamin C deficiency – bleeding gums, loose teeth", "Vitamin D deficiency – delayed eruption, enamel defects"],
+    "guidance": "Supplement the deficient vitamin. Eat a balanced diet. Treat symptoms with topical agents. See a doctor for diagnosis. Free supplementation at government health centres.",
+    "precautions": ["Eat a varied diet", "If you have glossitis, check B vitamins", "If you have bleeding gums, check vitamin C", "If you have angular cheilitis, check B2 and iron", "If you have a deficiency, supplement"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_077",
+    "category": "Pregnancy Gingivitis",
+    "symptoms": ["swollen, red, bleeding gums during pregnancy", "tender gums", "pregnancy epulis (localised growth)", "worse in the second trimester"],
+    "guidance": "Brush gently with a soft brush, floss daily, and use a mild mouthwash. Visit the dentist – professional cleaning is safe during pregnancy. Control plaque. Usually resolves after delivery. Free prenatal dental care.",
+    "precautions": ["Maintain good oral hygiene", "Do not avoid dental visits – they are safe", "If you have a growth, see a dentist", "Eat a healthy diet", "If you have nausea, rinse with water after vomiting"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_078",
+    "category": "Dental Care During Pregnancy",
+    "symptoms": ["not applicable"],
+    "guidance": "Routine dental care is safe during pregnancy. Inform your dentist of your pregnancy. Elective procedures should be avoided in the first trimester and late third trimester. Local anaesthetics (lidocaine) are safe. Avoid X‑rays unless necessary.",
+    "precautions": ["Inform your dentist if you are pregnant", "Delay elective treatment until after delivery", "If you have a dental emergency, don't delay", "Use a soft brush", "Do not skip dental checkups"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_079",
+    "category": "Geriatric Oral Health – Common Issues",
+    "symptoms": ["tooth loss, dry mouth, root caries", "periodontitis, receding gums", "ill‑fitting dentures", "oral thrush, oral cancer", "decreased chewing ability"],
+    "guidance": "Elderly need regular dental visits. Manage dry mouth with saliva substitutes. Prevent root caries with fluoride. Check dentures for fit. Screen for oral cancer. Free geriatric dental care at government hospitals.",
+    "precautions": ["Attend regular dental checkups", "If you have dry mouth, use artificial saliva", "Clean dentures daily", "If you have difficulty chewing, see a dentist", "Maintain oral hygiene"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_080",
+    "category": "Polypharmacy and Oral Health (Elderly)",
+    "symptoms": ["dry mouth, altered taste", "gingival hyperplasia (e.g., from phenytoin, calcium channel blockers)", "increased caries", "oral fungal infections"],
+    "guidance": "Review medications with your doctor and dentist. Use saliva substitutes and fluoride. Maintain good hygiene. If you have gum overgrowth, discuss alternative medications. Free dental care.",
+    "precautions": ["If you have dry mouth, drink water often", "Check for drug‑induced side effects", "If you have gum overgrowth, see a dentist", "Use fluoride toothpaste", "Attend regular dental checkups"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_081",
+    "category": "Dentures – Adjustments and Relining",
+    "symptoms": ["loose dentures", "sore spots", "difficulty chewing", "speech changes"],
+    "guidance": "Ill‑fitting dentures need adjustments or relining. Do not use over‑the‑counter adhesives as a long‑term solution. See a dentist for proper fitting. Free denture services at government hospitals.",
+    "precautions": ["Do not try to adjust dentures yourself", "If you have sore spots, see a dentist", "Use adhesive only temporarily", "Remove dentures at night", "Clean them regularly"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_082",
+    "category": "Root Caries (Elderly / Gum Recession)",
+    "symptoms": ["cavities on the root surfaces of teeth (exposed due to gum recession)", "sensitivity to hot, cold, or sweet", "pain, especially near the gumline"],
+    "guidance": "Use fluoride toothpaste and mouthwash. Reduce sugar intake. Treat with fillings. If deep, root canal. Prevention: good oral hygiene and fluoride. Free dental care.",
+    "precautions": ["If you have gum recession, use fluoride", "Brush gently to avoid worsening recession", "Limit sugar", "If you have sensitivity, use desensitising toothpaste", "See a dentist for fillings"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_083",
+    "category": "Aphthous Ulcers – Recurrent (Major)",
+    "symptoms": ["large, painful ulcers (often >10 mm)", "take longer to heal (up to 6 weeks)", "may leave scars", "affect eating and speech"],
+    "guidance": "Topical corticosteroids (triamcinolone) and protective pastes. In severe cases, systemic corticosteroids or colchicine. Check for nutritional deficiencies. Avoid trauma. Free dental care.",
+    "precautions": ["Avoid spicy and acidic foods", "Use topical treatments", "If you have frequent major ulcers, see a doctor", "Stress management", "If you have a fever, rule out other causes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_084",
+    "category": "Herpetiform Ulcers",
+    "symptoms": ["recurrent, small (1–2 mm), numerous ulcers (10–100)", "painful, may coalesce", "resemble herpes but are not herpes (aphthous variant)"],
+    "guidance": "Treat with topical corticosteroids and analgesics. Usually benign. If persistent, rule out underlying systemic disease. Free care.",
+    "precautions": ["Avoid irritants", "Use topical steroids", "If you have many ulcers, see a doctor", "Manage stress", "If you have a fever, rule out infection"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_085",
+    "category": "Lichenoid Reaction (Drug‑Induced)",
+    "symptoms": ["white, reticular, or erosive lesions in the mouth", "similar to lichen planus", "associated with medications (NSAIDs, antihypertensives, antidiabetics)"],
+    "guidance": "Identify and stop the offending medication (with your doctor's advice). Use topical corticosteroids. Biopsy if persistent. Free dermatology/dental care.",
+    "precautions": ["If you have lichenoid lesions, review your medications", "Do not stop medication without consulting", "Use topical steroids as prescribed", "If you have pain, see a dentist", "Regular monitoring"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_086",
+    "category": "Oral Pemphigoid – Treatment and Monitoring",
+    "symptoms": ["chronic blistering", "scarring", "pain, difficulty eating", "involvement of eyes (conjunctival scarring)"],
+    "guidance": "Systemic corticosteroids, dapsone, or immunosuppressants. Ocular involvement needs ophthalmology. Regular monitoring. Free care.",
+    "precautions": ["If you have oral blisters, see a dermatologist", "Treat eye symptoms promptly", "Take medications as prescribed", "Use soft diet", "Regular follow‑up"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_087",
+    "category": "Cleft Lip and Palate – Dental Care",
+    "symptoms": ["cleft lip and/or palate present at birth", "feeding difficulties", "speech issues", "dental anomalies (missing, malformed teeth)"],
+    "guidance": "Multidisciplinary care: surgery, orthodontics, speech therapy. Dental care includes orthodontic treatment and prosthetics. Free treatment under government schemes. Regular dental follow‑up.",
+    "precautions": ["If you have a cleft, see a paediatric dentist", "Attend multidisciplinary clinics", "If you have speech issues, see a speech therapist", "Maintain oral hygiene", "Regular orthodontic checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_088",
+    "category": "Tongue‑Tie (Ankyloglossia)",
+    "symptoms": ["short or tight lingual frenulum", "difficulty sticking out tongue", "speech articulation problems", "difficulty breastfeeding (infants)", "notching of the tongue tip"],
+    "guidance": "If breastfeeding is affected, frenotomy (clip) may be done. For older children, if speech is affected, a frenectomy may be needed. Free procedure at government hospitals.",
+    "precautions": ["If your baby has trouble latching, see a doctor", "If you have speech issues, see a dentist", "Frenotomy is a simple procedure", "After release, do tongue exercises", "Monitor for re‑attachment"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_089",
+    "category": "Mouth Breathing – Dry Mouth and Dental Health",
+    "symptoms": ["dry mouth, bad breath", "increased caries (due to reduced saliva)", "gum disease", "snoring, sleep apnea"],
+    "guidance": "Treat the cause (allergies, deviated septum). Use a humidifier, drink water, and use saliva substitutes. Regular dental checkups. Free ENT and dental care.",
+    "precautions": ["If you mouth‑breathe, treat nasal obstruction", "Stay hydrated", "Use a humidifier", "If you have sleep apnea, treat it", "Regular dental visits"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_090",
+    "category": "Airway and Orthodontics – Sleep Apnea",
+    "symptoms": ["snoring, daytime sleepiness", "narrow airway, crowded teeth", "TMJ issues", "hypertension"],
+    "guidance": "Orthodontic expansion can improve airway. Oral appliances (mandibular advancement devices) are used for mild sleep apnea. Treat with CPAP if needed. Free orthodontic and sleep clinics.",
+    "precautions": ["If you have sleep apnea, get evaluated", "Oral appliances may help", "If you have crowded teeth, see an orthodontist", "Maintain a healthy weight", "Follow up with a sleep specialist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_091",
+    "category": "Oral Health and Cardiovascular Disease",
+    "symptoms": ["periodontitis is a risk factor for heart disease", "no direct oral symptoms, but gum disease increases systemic inflammation"],
+    "guidance": "Maintain good oral hygiene to reduce systemic inflammation. If you have heart disease, inform your dentist before procedures (need antibiotic prophylaxis). Free dental and cardiac care.",
+    "precautions": ["If you have heart disease, tell your dentist", "Maintain good oral hygiene", "If you have gum disease, treat it", "If you are on blood thinners, inform your dentist", "Regular dental checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_092",
+    "category": "Oral Health and Diabetes (Bidirectional)",
+    "symptoms": ["poorly controlled diabetes worsens periodontal disease", "periodontitis worsens glycaemic control"],
+    "guidance": "Good oral hygiene improves blood sugar control. Treat periodontal disease aggressively. Visit the dentist regularly. Free diabetes and dental care.",
+    "precautions": ["Control blood sugar", "Brush and floss daily", "If you have bleeding gums, see a dentist", "If you have dry mouth, stay hydrated", "Regular dental visits"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_093",
+    "category": "Oral Health and Respiratory Infections (Aspiration Pneumonia)",
+    "symptoms": ["poor oral hygiene can lead to aspiration of oral bacteria", "especially in elderly or nursing home residents", "fever, cough, pneumonia"],
+    "guidance": "Good oral care in elderly and disabled reduces pneumonia risk. Daily brushing, denture cleaning, and oral swabbing. Free geriatric dental care.",
+    "precautions": ["If you care for an elderly person, provide oral hygiene", "Clean dentures daily", "If you have a cough, see a doctor", "Use oral care products", "Regular dental visits"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_094",
+    "category": "Oral Health and Chronic Kidney Disease",
+    "symptoms": ["dry mouth, altered taste, bad breath", "urine‑like odour (uraemia)", "gingivitis, periodontitis", "enamel hypoplasia (in children)"],
+    "guidance": "Maintain oral hygiene. Treat gum disease – it may affect kidney function. If on dialysis, schedule dental visits on non‑dialysis days. Free dental and nephrology care.",
+    "precautions": ["If you have CKD, see a dentist regularly", "If you have dry mouth, stay hydrated", "If you have gum disease, treat it", "Inform your dentist about your kidney function", "Monitor for infection"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_095",
+    "category": "Oral Health and Osteoporosis",
+    "symptoms": ["loss of jawbone density", "loose teeth", "delayed healing after extractions", "associated with bisphosphonate use (risk of osteonecrosis)"],
+    "guidance": "If you are on bisphosphonates, inform your dentist – risk of osteonecrosis of the jaw after extractions. Maintain good hygiene. Free osteoporosis screening.",
+    "precautions": ["If you are on bisphosphonates, tell your dentist", "Avoid unnecessary extractions", "If you have loose teeth, see a dentist", "Maintain good oral hygiene", "Regular dental checkups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_096",
+    "category": "Oral Health and Rheumatoid Arthritis",
+    "symptoms": ["periodontitis is more common in RA", "dry mouth (Sjögren's)", "TMJ involvement (jaw pain, clicking)"],
+    "guidance": "Treat periodontal disease – it may improve RA symptoms. Use warm compresses for TMJ. Soft diet. Free rheumatology and dental care.",
+    "precautions": ["If you have RA, see a dentist regularly", "If you have jaw pain, use warm compresses", "If you have dry mouth, stay hydrated", "Treat gum disease", "If you have TMJ, see a specialist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oral_097",
+    "category": "Antibiotic Prophylaxis for Dental Procedures",
+    "symptoms": ["not applicable"],
+    "guidance": "Patients with certain heart conditions (valvular disease, prosthetic valves, congenital heart disease) need antibiotics before dental procedures to prevent infective endocarditis. Follow AHA guidelines. Free antibiotics at government hospitals.",
+    "precautions": ["If you have a heart condition, inform your dentist", "Take antibiotics as prescribed before procedures", "Do not skip – can be life‑saving", "If you have a prosthetic joint, discuss prophylaxis", "Keep a list of your conditions"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_098",
+    "category": "Dental Emergencies – What to Do",
+    "symptoms": ["toothache, swelling, bleeding, trauma, loose tooth, abscess"],
+    "guidance": "For pain, take paracetamol. For swelling, apply cold pack. For bleeding, apply pressure. Do not place aspirin on the tooth – burns the gum. See a dentist as soon as possible. Free emergency dental care.",
+    "precautions": ["Do not place aspirin on the gum", "If you have swelling, see a dentist", "If you have a knocked‑out tooth, see a dentist within 30 minutes", "Use cold packs for swelling", "Do not delay – infections can spread"],
+    "urgency": "high"
+  },
+  {
+    "id": "oral_099",
+    "category": "Dental Care in Developing Countries – Simple Measures",
+    "symptoms": ["not applicable"],
+    "guidance": "Use fluoridated toothpaste. Chew sugar‑free gum after meals. Avoid sticky sweets. Drink water. Visit a dentist if possible. Use traditional chewing sticks (miswak) with caution – they can help but not replace brushing. Free dental checkups at health camps.",
+    "precautions": ["Use fluoride toothpaste", "Limit sugar", "Brush twice daily", "If you use miswak, use it with toothpaste", "Attend dental health camps"],
+    "urgency": "low"
+  },
+  {
+    "id": "oral_100",
+    "category": "Dental Health Education – Community Programs",
+    "symptoms": ["not applicable"],
+    "guidance": "Community dental health education can prevent most oral diseases. Brush twice, floss, and limit sugar. Schools should teach oral hygiene. Government has school dental health programs. Participate and spread awareness.",
+    "precautions": ["Educate children about oral hygiene", "Visit school dental camps", "Encourage fluoride use", "If you have a problem, seek early care", "Spread the message"],
+    "urgency": "low"
+  }
+]

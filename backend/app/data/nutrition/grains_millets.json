@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ragi",
+    "name": "Ragi (Finger Millet)",
+    "nutrients": ["Calcium", "Iron", "Fiber", "Protein"],
+    "benefits": ["Strengthens bones", "Helps prevent anemia", "Good for diabetes management"],
+    "best_time": "Breakfast or dinner",
+    "good_for": ["Children", "Pregnant women", "Diabetes", "Elderly"]
+  },
+  {
+    "id": "bajra",
+    "name": "Bajra (Pearl Millet)",
+    "nutrients": ["Iron", "Magnesium", "Protein", "Fiber"],
+    "benefits": ["Improves digestion", "Provides sustained energy", "Supports heart health"],
+    "best_time": "Lunch",
+    "good_for": ["Anemia", "Diabetes", "Adults"]
+  },
+  {
+    "id": "jowar",
+    "name": "Jowar (Sorghum)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Helps weight management", "Provides long-lasting energy"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "Heart health"]
+  },
+  {
+    "id": "brown_rice",
+    "name": "Brown Rice",
+    "nutrients": ["Fiber", "Magnesium", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Better blood sugar control than white rice"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "General nutrition"]
+  },
+  {
+    "id": "oats",
+    "name": "Oats",
+    "nutrients": ["Fiber", "Protein", "Iron"],
+    "benefits": ["Lowers cholesterol", "Improves digestion", "Keeps stomach full longer"],
+    "best_time": "Breakfast",
+    "good_for": ["Heart health", "Weight management"]
+  },
+  {
+    "id": "wheat_whole",
+    "name": "Whole Wheat",
+    "nutrients": ["Fiber", "Protein", "B Vitamins", "Iron"],
+    "benefits": ["Supports digestion", "Provides sustained energy", "Good for heart health"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General health", "Energy", "Digestion"]
+  },
+  {
+    "id": "white_rice",
+    "name": "White Rice",
+    "nutrients": ["Carbohydrates", "B Vitamins (enriched)"],
+    "benefits": ["Provides quick energy", "Easy to digest", "Low in fiber (good for sensitive stomachs)"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Sensitive digestion"]
+  },
+  {
+    "id": "quinoa",
+    "name": "Quinoa",
+    "nutrients": ["Complete Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Contains all essential amino acids", "Supports muscle health", "Good for digestion"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["Athletes", "Vegetarians", "Vegans", "General health"]
+  },
+  {
+    "id": "amaranth",
+    "name": "Amaranth",
+    "nutrients": ["Protein", "Calcium", "Iron", "Magnesium"],
+    "benefits": ["Supports bone health", "Helps prevent anemia", "Good source of protein"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Anemia", "Bone health", "Vegetarians"]
+  },
+  {
+    "id": "barley",
+    "name": "Barley",
+    "nutrients": ["Fiber", "Selenium", "B Vitamins", "Magnesium"],
+    "benefits": ["Lowers cholesterol", "Supports digestion", "Helps control blood sugar"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Digestion"]
+  },
+  {
+    "id": "millet_foxtail",
+    "name": "Foxtail Millet",
+    "nutrients": ["Fiber", "Iron", "B Vitamins", "Protein"],
+    "benefits": ["Supports blood sugar control", "Improves digestion", "Provides energy"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Diabetes", "Weight loss", "General health"]
+  },
+  {
+    "id": "millet_proso",
+    "name": "Proso Millet",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Provides sustained energy", "Supports heart health", "Good for digestion"],
+    "best_time": "Lunch",
+    "good_for": ["General health", "Energy", "Heart health"]
+  },
+  {
+    "id": "millet_little",
+    "name": "Little Millet",
+    "nutrients": ["Fiber", "Iron", "Calcium", "Protein"],
+    "benefits": ["Aids digestion", "Strengthens bones", "Supports weight management"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Weight loss", "Bone health", "Digestion"]
+  },
+  {
+    "id": "millet_kodo",
+    "name": "Kodo Millet",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports blood sugar control", "Aids digestion", "Good for weight management"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "Digestion"]
+  },
+  {
+    "id": "millet_barnyard",
+    "name": "Barnyard Millet",
+    "nutrients": ["Fiber", "Iron", "Protein", "Calcium"],
+    "benefits": ["Supports digestion", "Good for bone health", "Helps manage diabetes"],
+    "best_time": "Breakfast or dinner",
+    "good_for": ["Diabetes", "Bone health", "Weight management"]
+  },
+  {
+    "id": "teff",
+    "name": "Teff",
+    "nutrients": ["Calcium", "Protein", "Fiber", "Iron"],
+    "benefits": ["Strengthens bones", "Supports digestion", "Provides sustained energy"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Bone health", "Anemia", "Athletes"]
+  },
+  {
+    "id": "buckwheat",
+    "name": "Buckwheat",
+    "nutrients": ["Protein", "Fiber", "Magnesium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for blood sugar control"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Heart health", "Diabetes", "Gluten-free"]
+  },
+  {
+    "id": "corn_maize",
+    "name": "Corn (Maize)",
+    "nutrients": ["Fiber", "Carbohydrates", "B Vitamins", "Iron"],
+    "benefits": ["Provides energy", "Supports digestion", "Good source of carbohydrates"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Digestion"]
+  },
+  {
+    "id": "spelt",
+    "name": "Spelt",
+    "nutrients": ["Protein", "Fiber", "B Vitamins", "Magnesium"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General health", "Digestion", "Energy"]
+  },
+  {
+    "id": "rye",
+    "name": "Rye",
+    "nutrients": ["Fiber", "Protein", "B Vitamins", "Magnesium"],
+    "benefits": ["Supports digestion", "Helps control blood sugar", "Good for heart health"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Heart health", "Diabetes", "Digestion"]
+  },
+  {
+    "id": "triticale",
+    "name": "Triticale",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Good source of protein"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Energy", "Digestion"]
+  },
+  {
+    "id": "farro",
+    "name": "Farro",
+    "nutrients": ["Fiber", "Protein", "Magnesium", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides sustained energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Heart health", "Digestion"]
+  },
+  {
+    "id": "emmer_wheat",
+    "name": "Emmer Wheat",
+    "nutrients": ["Protein", "Fiber", "Magnesium", "Iron"],
+    "benefits": ["Supports digestion", "Provides energy", "Good source of minerals"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Bone health"]
+  },
+  {
+    "id": "einkorn_wheat",
+    "name": "Einkorn Wheat",
+    "nutrients": ["Protein", "Fiber", "B Vitamins", "Minerals"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "fonio",
+    "name": "Fonio",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Provides energy", "Supports digestion", "Good source of iron"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Anemia", "General health", "Energy"]
+  },
+  {
+    "id": "black_rice",
+    "name": "Black Rice (Forbidden Rice)",
+    "nutrients": ["Fiber", "Antioxidants", "Iron", "Protein"],
+    "benefits": ["Supports heart health", "Rich in antioxidants", "Good for skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Skin health", "Anti-aging"]
+  },
+  {
+    "id": "red_rice",
+    "name": "Red Rice",
+    "nutrients": ["Fiber", "Iron", "Antioxidants", "B Vitamins"],
+    "benefits": ["Supports heart health", "Good for blood sugar control", "Provides energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Heart health", "General health"]
+  },
+  {
+    "id": "wild_rice",
+    "name": "Wild Rice",
+    "nutrients": ["Protein", "Fiber", "B Vitamins", "Antioxidants"],
+    "benefits": ["Supports heart health", "Provides energy", "Good source of protein"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Heart health", "Athletes"]
+  },
+  {
+    "id": "basmati_rice",
+    "name": "Basmati Rice",
+    "nutrients": ["Carbohydrates", "B Vitamins"],
+    "benefits": ["Provides energy", "Low glycemic index (brown basmati)", "Aromatic and flavorful"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Diabetes (brown basmati)"]
+  },
+  {
+    "id": "parboiled_rice",
+    "name": "Parboiled Rice",
+    "nutrients": ["B Vitamins", "Fiber", "Carbohydrates"],
+    "benefits": ["Provides energy", "More nutrients than white rice", "Good for digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Digestion"]
+  },
+  {
+    "id": "glutinous_rice",
+    "name": "Glutinous Rice (Sticky Rice)",
+    "nutrients": ["Carbohydrates", "Protein (small amount)"],
+    "benefits": ["Provides quick energy", "Used in desserts and traditional dishes"],
+    "best_time": "Dessert or snack",
+    "good_for": ["Energy", "General use"]
+  },
+  {
+    "id": "job_tears",
+    "name": "Job's Tears (Adlay Millet)",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Good for skin health", "Provides energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Skin health", "Digestion", "General health"]
+  },
+  {
+    "id": "browntop_millet",
+    "name": "Browntop Millet",
+    "nutrients": ["Protein", "Fiber", "Iron", "Calcium"],
+    "benefits": ["Supports bone health", "Helps manage blood sugar", "Good for digestion"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Diabetes", "Bone health", "Weight management"]
+  },
+  {
+    "id": "guinea_corn",
+    "name": "Guinea Corn (Sorghum variety)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Heart health", "Energy"]
+  },
+  {
+    "id": "pearl_millet",
+    "name": "Pearl Millet (Bajra)",
+    "nutrients": ["Iron", "Magnesium", "Protein", "Fiber"],
+    "benefits": ["Improves digestion", "Provides sustained energy", "Supports heart health"],
+    "best_time": "Lunch",
+    "good_for": ["Anemia", "Diabetes", "Adults"]
+  },
+  {
+    "id": "finger_millet",
+    "name": "Finger Millet (Ragi)",
+    "nutrients": ["Calcium", "Iron", "Fiber", "Protein"],
+    "benefits": ["Strengthens bones", "Helps prevent anemia", "Good for diabetes management"],
+    "best_time": "Breakfast or dinner",
+    "good_for": ["Children", "Pregnant women", "Diabetes", "Elderly"]
+  },
+  {
+    "id": "sorghum",
+    "name": "Sorghum (Jowar)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Helps weight management", "Provides long-lasting energy"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "Heart health"]
+  },
+  {
+    "id": "millets_mixed",
+    "name": "Mixed Millet Blend",
+    "nutrients": ["Fiber", "Protein", "Iron", "Calcium", "B Vitamins"],
+    "benefits": ["Combined benefits of multiple millets", "Supports digestion", "Provides balanced nutrition"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General health", "Diabetes", "Weight management"]
+  },
+  {
+    "id": "polished_white_rice",
+    "name": "Polished White Rice",
+    "nutrients": ["Carbohydrates"],
+    "benefits": ["Provides quick energy", "Easy to digest"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Sensitive stomachs"]
+  },
+  {
+    "id": "steel_cut_oats",
+    "name": "Steel-Cut Oats",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Lowers cholesterol", "Improves digestion", "Keeps stomach full longer"],
+    "best_time": "Breakfast",
+    "good_for": ["Heart health", "Weight management"]
+  },
+  {
+    "id": "rolled_oats",
+    "name": "Rolled Oats",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Lowers cholesterol", "Improves digestion", "Quick and easy to prepare"],
+    "best_time": "Breakfast",
+    "good_for": ["Heart health", "Weight management"]
+  },
+  {
+    "id": "instant_oats",
+    "name": "Instant Oats",
+    "nutrients": ["Fiber", "Protein (may be lower)"],
+    "benefits": ["Quick and convenient", "Easy to digest"],
+    "best_time": "Breakfast",
+    "good_for": ["Quick energy", "Busy lifestyles"]
+  },
+  {
+    "id": "maize_flour",
+    "name": "Maize Flour (Cornmeal)",
+    "nutrients": ["Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Provides energy", "Used in traditional dishes", "Gluten-free"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General energy", "Gluten-free diets"]
+  },
+  {
+    "id": "chapati_flour",
+    "name": "Whole Wheat Flour (Atta)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides sustained energy", "Staple for Indian breads"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General health", "Energy", "Digestion"]
+  },
+  {
+    "id": "multigrain_flour",
+    "name": "Multigrain Flour",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins", "Minerals"],
+    "benefits": ["Combined benefits of multiple grains", "Supports digestion", "Provides balanced nutrition"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["General health", "Digestion", "Energy"]
+  },
+  {
+    "id": "millets_flour",
+    "name": "Millet Flour (Mixed)",
+    "nutrients": ["Fiber", "Protein", "Iron", "Calcium", "B Vitamins"],
+    "benefits": ["Gluten-free", "Supports digestion", "Good for bone health"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["Gluten-free diets", "Bone health", "Digestion"]
+  },
+  {
+    "id": "ragi_flour",
+    "name": "Ragi Flour (Finger Millet Flour)",
+    "nutrients": ["Calcium", "Iron", "Fiber", "Protein"],
+    "benefits": ["Strengthens bones", "Helps prevent anemia", "Good for diabetes management"],
+    "best_time": "Breakfast or dinner",
+    "good_for": ["Children", "Pregnant women", "Diabetes", "Elderly"]
+  },
+  {
+    "id": "bajra_flour",
+    "name": "Bajra Flour (Pearl Millet Flour)",
+    "nutrients": ["Iron", "Magnesium", "Protein", "Fiber"],
+    "benefits": ["Improves digestion", "Provides sustained energy", "Supports heart health"],
+    "best_time": "Lunch",
+    "good_for": ["Anemia", "Diabetes", "Adults"]
+  },
+  {
+    "id": "jowar_flour",
+    "name": "Jowar Flour (Sorghum Flour)",
+    "nutrients": ["Fiber", "Protein", "Iron", "B Vitamins"],
+    "benefits": ["Supports digestion", "Helps weight management", "Provides long-lasting energy"],
+    "best_time": "Lunch",
+    "good_for": ["Diabetes", "Weight loss", "Heart health"]
+  },
+  {
+    "id": "brown_rice_flour",
+    "name": "Brown Rice Flour",
+    "nutrients": ["Fiber", "Magnesium", "B Vitamins"],
+    "benefits": ["Supports digestion", "Provides energy", "Gluten-free"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General nutrition", "Gluten-free diets"]
+  },
+  {
+    "id": "quinoa_flour",
+    "name": "Quinoa Flour",
+    "nutrients": ["Complete Protein", "Fiber", "Iron", "Magnesium"],
+    "benefits": ["Contains all essential amino acids", "Supports muscle health", "Good for digestion"],
+    "best_time": "Breakfast, lunch, or dinner",
+    "good_for": ["Athletes", "Vegetarians", "Vegans"]
+  },
+  {
+    "id": "amaranth_flour",
+    "name": "Amaranth Flour",
+    "nutrients": ["Protein", "Calcium", "Iron", "Magnesium"],
+    "benefits": ["Supports bone health", "Helps prevent anemia", "Good source of protein"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Anemia", "Bone health", "Vegetarians"]
+  },
+  {
+    "id": "barley_flour",
+    "name": "Barley Flour",
+    "nutrients": ["Fiber", "Selenium", "B Vitamins", "Magnesium"],
+    "benefits": ["Lowers cholesterol", "Supports digestion", "Helps control blood sugar"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Diabetes", "Digestion"]
+  },
+  {
+    "id": "buckwheat_flour",
+    "name": "Buckwheat Flour",
+    "nutrients": ["Protein", "Fiber", "Magnesium", "Antioxidants"],
+    "benefits": ["Supports heart health", "Improves digestion", "Good for blood sugar control"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Heart health", "Diabetes", "Gluten-free"]
+  },
+  {
+    "id": "fonio_flour",
+    "name": "Fonio Flour",
+    "nutrients": ["Protein", "Fiber", "Iron", "B Vitamins"],
+    "benefits": ["Provides energy", "Supports digestion", "Good source of iron"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Anemia", "General health", "Energy"]
+  },
+  {
+    "id": "couscous",
+    "name": "Couscous (Durum Wheat)",
+    "nutrients": ["Carbohydrates", "Protein", "B Vitamins"],
+    "benefits": ["Provides quick energy", "Easy to prepare", "Versatile in cooking"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General energy", "Quick meals"]
+  },
+  {
+    "id": "bulgur_wheat",
+    "name": "Bulgur Wheat",
+    "nutrients": ["Fiber", "Protein", "B Vitamins", "Minerals"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "General health"]
+  },
+  {
+    "id": "freekeh",
+    "name": "Freekeh (Green Wheat)",
+    "nutrients": ["Fiber", "Protein", "Iron", "Calcium"],
+    "benefits": ["Supports digestion", "Provides energy", "Good for bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Digestion", "Bone health"]
+  },
+  {
+    "id": "kauni_millet",
+    "name": "Kauni Millet",
+    "nutrients": ["Fiber", "Iron", "Protein", "B Vitamins"],
+    "benefits": ["Supports blood sugar control", "Aids digestion", "Good for weight management"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Diabetes", "Weight loss", "Digestion"]
+  },
+  {
+    "id": "chena_millet",
+    "name": "Chena Millet",
+    "nutrients": ["Fiber", "Calcium", "Iron", "Protein"],
+    "benefits": ["Strengthens bones", "Supports digestion", "Provides energy"],
+    "best_time": "Breakfast or lunch",
+    "good_for": ["Bone health", "Digestion", "General health"]
+  }
+]

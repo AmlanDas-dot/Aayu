@@ -1,0 +1,786 @@
+[
+  {
+    "id": "first_trimester_overview",
+    "category": "First Trimester Nutrition",
+    "focus": ["Folic Acid", "Iron", "Vitamin B6", "Vitamin C", "Zinc"],
+    "recommended_foods": ["Spinach", "Moong Dal", "Eggs", "Orange", "Banana", "Avocado", "Fortified Cereals", "Lentils"],
+    "avoid_foods": ["Alcohol", "Raw Meat", "Unpasteurized Dairy", "Raw Fish", "Excess Caffeine"],
+    "guidance": "Focus on folic acid to prevent neural tube defects. Small frequent meals help with nausea. Stay hydrated. Avoid harmful substances."
+  },
+  {
+    "id": "second_trimester_overview",
+    "category": "Second Trimester Nutrition",
+    "focus": ["Protein", "Calcium", "Iron", "Vitamin D", "Omega-3"],
+    "recommended_foods": ["Milk", "Paneer", "Fish", "Ragi", "Chickpeas", "Curd", "Eggs", "Green Leafy Vegetables"],
+    "avoid_foods": ["Excess Junk Food", "Sugary Drinks", "High-Mercury Fish"],
+    "guidance": "Baby is growing rapidly. Increase protein and calcium intake. Ensure adequate iron for increased blood volume."
+  },
+  {
+    "id": "third_trimester_overview",
+    "category": "Third Trimester Nutrition",
+    "focus": ["Protein", "Calcium", "Omega-3", "Iron", "Fiber"],
+    "recommended_foods": ["Fish", "Eggs", "Curd", "Ragi", "Green Leafy Vegetables", "Dates", "Nuts", "Oats"],
+    "avoid_foods": ["Highly Processed Foods", "Excess Caffeine", "Spicy Foods (if heartburn)", "Salty Foods (if swelling)"],
+    "guidance": "Focus on brain development (omega-3). Dates may help with cervical ripening. Stay well-hydrated. Eat small frequent meals."
+  },
+  {
+    "id": "folic_acid",
+    "category": "Folic Acid (Vitamin B9)",
+    "focus": ["Neural tube defect prevention", "Baby's brain and spinal cord development", "Red blood cell formation"],
+    "recommended_foods": ["Spinach", "Lentils", "Moong Dal", "Fortified Cereals", "Citrus Fruits", "Beans", "Avocado", "Brussels Sprouts"],
+    "avoid_foods": [],
+    "guidance": "Start folic acid at least 1 month before conception. Take 400-600 mcg daily during pregnancy. Continue through first trimester."
+  },
+  {
+    "id": "iron_pregnancy",
+    "category": "Iron During Pregnancy",
+    "focus": ["Prevents anemia", "Supports increased blood volume", "Baby's iron stores"],
+    "recommended_foods": ["Spinach", "Moringa Leaves", "Red Meat", "Dates", "Pomegranate", "Jaggery", "Lentils", "Fortified Cereals"],
+    "avoid_foods": ["Tea", "Coffee (with meals)", "Calcium supplements with iron"],
+    "guidance": "Take iron with Vitamin C for better absorption. Iron requirements double in pregnancy. Continue for 3 months postpartum."
+  },
+  {
+    "id": "calcium_pregnancy",
+    "category": "Calcium During Pregnancy",
+    "focus": ["Baby's bone development", "Maternal bone health", "Prevents preeclampsia"],
+    "recommended_foods": ["Milk", "Curd", "Paneer", "Ragi", "Sesame Seeds", "Green Leafy Vegetables", "Soy", "Tofu"],
+    "avoid_foods": ["Excess Caffeine", "Excess Salt"],
+    "guidance": "Aim for 1000-1300 mg calcium daily. Vitamin D helps absorption. Continue calcium during breastfeeding."
+  },
+  {
+    "id": "vitamin_d_pregnancy",
+    "category": "Vitamin D During Pregnancy",
+    "focus": ["Calcium absorption", "Baby's bone development", "Immune function"],
+    "recommended_foods": ["Sunlight", "Fatty Fish", "Egg Yolks", "Fortified Milk", "Mushrooms"],
+    "avoid_foods": [],
+    "guidance": "Get 15-20 minutes of sunlight daily. Supplement if deficient (often recommended in winter)."
+  },
+  {
+    "id": "protein_pregnancy",
+    "category": "Protein During Pregnancy",
+    "focus": ["Baby's growth", "Maternal tissue growth", "Placental development"],
+    "recommended_foods": ["Eggs", "Chicken", "Fish", "Paneer", "Lentils", "Soybean", "Milk", "Curd", "Nuts"],
+    "avoid_foods": [],
+    "guidance": "Aim for 70-100g protein daily. Include protein at every meal. Vegetarians should combine pulses with grains."
+  },
+  {
+    "id": "omega3_pregnancy",
+    "category": "Omega-3 Fatty Acids (DHA/EPA)",
+    "focus": ["Baby's brain development", "Eye development", "Reduces preterm birth risk"],
+    "recommended_foods": ["Fatty Fish (Salmon, Sardines)", "Flaxseeds", "Chia Seeds", "Walnuts", "Fish Oil"],
+    "avoid_foods": ["High-Mercury Fish (Shark, Swordfish, King Mackerel)"],
+    "guidance": "Aim for 200-300 mg DHA daily. Limit high-mercury fish to 2 servings per week. Vegetarian sources provide ALA (convert to DHA)."
+  },
+  {
+    "id": "zinc_pregnancy",
+    "category": "Zinc During Pregnancy",
+    "focus": ["Fetal growth", "Immune function", "DNA synthesis"],
+    "recommended_foods": ["Meat", "Seafood", "Legumes", "Nuts", "Seeds", "Eggs", "Whole Grains"],
+    "avoid_foods": [],
+    "guidance": "Zinc is crucial for fetal development. Combine with protein-rich foods for better absorption."
+  },
+  {
+    "id": "vitamin_c_pregnancy",
+    "category": "Vitamin C During Pregnancy",
+    "focus": ["Iron absorption", "Immune support", "Collagen formation", "Wound healing"],
+    "recommended_foods": ["Orange", "Lemon", "Guava", "Amla", "Bell Peppers", "Kiwi", "Strawberries", "Tomatoes"],
+    "avoid_foods": [],
+    "guidance": "Take vitamin C-rich foods with iron-rich meals to enhance absorption. Supports baby's tissue development."
+  },
+  {
+    "id": "magnesium_pregnancy",
+    "category": "Magnesium During Pregnancy",
+    "focus": ["Muscle relaxation", "Bone health", "Blood sugar regulation", "Reduces leg cramps"],
+    "recommended_foods": ["Spinach", "Nuts", "Seeds", "Banana", "Dark Chocolate", "Whole Grains", "Avocado"],
+    "avoid_foods": [],
+    "guidance": "Magnesium helps with leg cramps and sleep. Include magnesium-rich foods daily."
+  },
+  {
+    "id": "fiber_pregnancy",
+    "category": "Fiber During Pregnancy",
+    "focus": ["Prevents constipation", "Blood sugar control", "Gut health"],
+    "recommended_foods": ["Oats", "Brown Rice", "Moong Dal", "Fruits", "Vegetables", "Chickpeas", "Lentils", "Whole Grains"],
+    "avoid_foods": [],
+    "guidance": "Drink plenty of water with fiber. Increase fiber gradually to avoid bloating. Constipation is common in pregnancy."
+  },
+  {
+    "id": "folate_foods",
+    "category": "Top Folate-Rich Foods",
+    "focus": ["Neural tube defect prevention", "Cell division"],
+    "recommended_foods": ["Spinach", "Asparagus", "Broccoli", "Citrus Fruits", "Beans", "Lentils", "Avocado", "Fortified Cereals"],
+    "avoid_foods": [],
+    "guidance": "Folate is crucial in the first 28 days of pregnancy when many women don't know they are pregnant."
+  },
+  {
+    "id": "iron_rich_vegetarian",
+    "category": "Iron-Rich Vegetarian Foods",
+    "focus": ["Prevents anemia", "Plant-based iron sources"],
+    "recommended_foods": ["Spinach", "Moringa", "Jaggery", "Dates", "Pomegranate", "Black Sesame Seeds", "Lentils", "Beans"],
+    "avoid_foods": ["Tea", "Coffee with meals"],
+    "guidance": "Pair with Vitamin C. Vegetarian iron (non-heme) is less absorbed – need higher quantities."
+  },
+  {
+    "id": "protein_vegetarian_pregnancy",
+    "category": "Vegetarian Protein Sources",
+    "focus": ["Plant-based protein for pregnancy"],
+    "recommended_foods": ["Paneer", "Tofu", "Soybean", "Lentils", "Chickpeas", "Moong Dal", "Curd", "Nuts"],
+    "avoid_foods": [],
+    "guidance": "Combine grains with legumes for complete protein. Soy is an excellent source."
+  },
+  {
+    "id": "foods_to_avoid_first_trimester",
+    "category": "Foods to Avoid - First Trimester",
+    "focus": ["Food safety", "Miscarriage prevention", "Infection prevention"],
+    "recommended_foods": [],
+    "avoid_foods": ["Alcohol", "Raw Meat", "Raw Eggs", "Unpasteurized Dairy", "Raw Shellfish", "High-Mercury Fish", "Excess Caffeine"],
+    "guidance": "Avoid foodborne illness risks. Limit caffeine to 200mg/day. Complete abstinence from alcohol."
+  },
+  {
+    "id": "foods_to_avoid_all",
+    "category": "Foods to Avoid Throughout Pregnancy",
+    "focus": ["Safety guidelines"],
+    "recommended_foods": [],
+    "avoid_foods": ["Alcohol", "Raw Fish", "High-Mercury Fish", "Raw Eggs", "Unpasteurized Dairy", "Raw Sprouts", "Excess Caffeine"],
+    "guidance": "Always wash fruits and vegetables. Cook meat and eggs thoroughly. Avoid deli meats unless heated."
+  },
+  {
+    "id": "safe_fish_pregnancy",
+    "category": "Safe Fish Choices During Pregnancy",
+    "focus": ["Omega-3 intake with low mercury"],
+    "recommended_foods": ["Salmon", "Sardines", "Anchovies", "Tilapia", "Rohu (Indian Carp)", "Pomfret (in moderation)"],
+    "avoid_foods": ["Shark", "Swordfish", "King Mackerel", "Tuna (large, fresh)"],
+    "guidance": "Limit fish to 2-3 servings per week (12 ounces total). Choose low-mercury options."
+  },
+  {
+    "id": "caffeine_pregnancy",
+    "category": "Caffeine During Pregnancy",
+    "focus": ["Limit intake", "Risk of miscarriage"],
+    "recommended_foods": ["Herbal Teas", "Decaf Coffee", "Water"],
+    "avoid_foods": ["Excess Coffee", "Energy Drinks", "Sodas"],
+    "guidance": "Limit caffeine to 200mg/day (about 1 cup of coffee). Check caffeine in tea, sodas, and chocolate."
+  },
+  {
+    "id": "nausea_foods",
+    "category": "Foods for Morning Sickness (Nausea)",
+    "focus": ["Reduce nausea", "Small frequent meals"],
+    "recommended_foods": ["Crackers", "Ginger Tea", "Banana", "Lemon Water", "Dry Toast", "Oats", "Coconut Water"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Strong Smells", "Greasy Foods"],
+    "guidance": "Eat small, frequent meals. Keep dry crackers by the bed. Ginger and lemon help. Stay hydrated."
+  },
+  {
+    "id": "heartburn_foods",
+    "category": "Foods for Heartburn/GERD",
+    "focus": ["Reduce acid reflux"],
+    "recommended_foods": ["Oats", "Banana", "Melon", "Rice", "Lean Protein", "Green Vegetables", "Ginger"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Citrus", "Tomatoes", "Onions", "Garlic", "Caffeine"],
+    "guidance": "Eat small meals. Avoid lying down after eating. Identify trigger foods. Elevate head while sleeping."
+  },
+  {
+    "id": "constipation_foods",
+    "category": "Foods to Relieve Constipation",
+    "focus": ["Prevent constipation", "Fiber intake"],
+    "recommended_foods": ["Prunes", "Figs", "Oats", "Brown Rice", "Moong Dal", "Spinach", "Apples", "Water"],
+    "avoid_foods": ["Processed Foods", "Fried Foods", "Excess White Bread"],
+    "guidance": "Drink at least 8-10 glasses of water daily. Increase fiber gradually. Exercise gently."
+  },
+  {
+    "id": "leg_cramps_foods",
+    "category": "Foods for Leg Cramps",
+    "focus": ["Magnesium", "Potassium", "Calcium"],
+    "recommended_foods": ["Banana", "Coconut Water", "Spinach", "Nuts", "Milk", "Curd", "Avocado"],
+    "avoid_foods": [],
+    "guidance": "Include magnesium and potassium-rich foods. Stretch legs before bed. Stay hydrated."
+  },
+  {
+    "id": "anemia_pregnancy_diet",
+    "category": "Diet for Anemia in Pregnancy",
+    "focus": ["Increase hemoglobin", "Iron-rich diet"],
+    "recommended_foods": ["Spinach", "Moringa Leaves", "Liver", "Dates", "Pomegranate", "Jaggery", "Lentils", "Red Meat"],
+    "avoid_foods": ["Tea", "Coffee", "Calcium with Iron"],
+    "guidance": "Take iron supplements as prescribed. Combine iron-rich foods with Vitamin C. Avoid tea/coffee within 1 hour of meals."
+  },
+  {
+    "id": "gestational_diabetes_diet",
+    "category": "Diet for Gestational Diabetes",
+    "focus": ["Blood sugar control", "Low glycemic foods"],
+    "recommended_foods": ["Ragi", "Oats", "Whole Wheat", "Brown Rice", "Green Vegetables", "Lean Protein", "Guava"],
+    "avoid_foods": ["Sugar", "White Rice", "White Bread", "Sweets", "Sugary Drinks"],
+    "guidance": "Eat small frequent meals. Monitor blood sugar. Include protein with each meal. Avoid simple carbohydrates."
+  },
+  {
+    "id": "preeclampsia_prevention",
+    "category": "Diet for Preeclampsia Prevention",
+    "focus": ["Calcium", "Magnesium", "Potassium"],
+    "recommended_foods": ["Spinach", "Curd", "Milk", "Nuts", "Seeds", "Banana", "Avocado"],
+    "avoid_foods": ["Excess Salt", "Processed Foods"],
+    "guidance": "Maintain adequate calcium intake. Reduce salt. Include potassium-rich foods. Monitor blood pressure."
+  },
+  {
+    "id": "foods_to_avoid_diabetes",
+    "category": "Foods to Avoid in Gestational Diabetes",
+    "focus": ["Blood sugar control"],
+    "recommended_foods": [],
+    "avoid_foods": ["Sugar", "Honey", "Syrups", "White Rice", "White Bread", "Sweets", "Pastries", "Sugary Drinks"],
+    "guidance": "Avoid simple sugars and refined carbohydrates. Choose complex carbs with fiber. Monitor portions."
+  },
+  {
+    "id": "best_fruits_pregnancy",
+    "category": "Best Fruits for Pregnancy",
+    "focus": ["Vitamins", "Fiber", "Hydration"],
+    "recommended_foods": ["Orange", "Banana", "Guava", "Apple", "Pomegranate", "Kiwi", "Avocado", "Watermelon", "Mango"],
+    "avoid_foods": [],
+    "guidance": "Eat a variety of colorful fruits. Wash thoroughly before eating. Include high-fiber fruits."
+  },
+  {
+    "id": "best_vegetables_pregnancy",
+    "category": "Best Vegetables for Pregnancy",
+    "focus": ["Vitamins", "Minerals", "Fiber"],
+    "recommended_foods": ["Spinach", "Moringa", "Broccoli", "Cauliflower", "Bell Peppers", "Carrots", "Tomatoes", "Sweet Potatoes"],
+    "avoid_foods": [],
+    "guidance": "Eat a rainbow of vegetables. Include dark leafy greens daily. Steam or lightly cook for better nutrient absorption."
+  },
+  {
+    "id": "best_grains_pregnancy",
+    "category": "Best Grains for Pregnancy",
+    "focus": ["Fiber", "B Vitamins", "Sustained energy"],
+    "recommended_foods": ["Ragi", "Oats", "Brown Rice", "Quinoa", "Whole Wheat", "Barley", "Jowar", "Bajra"],
+    "avoid_foods": ["Refined White Flour"],
+    "guidance": "Choose whole grains over refined. Millets are excellent for pregnancy. They provide complex carbohydrates."
+  },
+  {
+    "id": "best_pulses_pregnancy",
+    "category": "Best Pulses/Legumes for Pregnancy",
+    "focus": ["Protein", "Iron", "Folate"],
+    "recommended_foods": ["Moong Dal", "Masoor Dal", "Chickpeas", "Rajma", "Soybean", "Lentils", "Lobia"],
+    "avoid_foods": [],
+    "guidance": "Pulses are excellent vegetarian protein sources. Combine with grains for complete protein. Soak before cooking."
+  },
+  {
+    "id": "best_dairy_pregnancy",
+    "category": "Best Dairy for Pregnancy",
+    "focus": ["Calcium", "Protein", "Vitamin D"],
+    "recommended_foods": ["Milk", "Curd", "Paneer", "Buttermilk", "Greek Yogurt", "Cottage Cheese"],
+    "avoid_foods": ["Unpasteurized Dairy"],
+    "guidance": "Choose pasteurized dairy. Dairy is an excellent source of calcium. Curd also provides probiotics."
+  },
+  {
+    "id": "hydration_pregnancy",
+    "category": "Hydration During Pregnancy",
+    "focus": ["Prevents dehydration", "Supports amniotic fluid"],
+    "recommended_foods": ["Water", "Coconut Water", "Buttermilk", "Lemon Water", "Fresh Juices", "Soups"],
+    "avoid_foods": ["Sugary Drinks", "Excess Caffeine"],
+    "guidance": "Drink 8-10 glasses of water daily. Increase fluid intake in hot weather. Coconut water provides electrolytes."
+  },
+  {
+    "id": "water_intake_pregnancy",
+    "category": "Water Intake Guidelines",
+    "focus": ["Hydration", "Prevents UTI"],
+    "recommended_foods": ["Plain Water"],
+    "avoid_foods": [],
+    "guidance": "Aim for 2-3 liters of water daily. Drink between meals. Dark urine indicates dehydration."
+  },
+  {
+    "id": "pregnancy_supplements",
+    "category": "Essential Supplements During Pregnancy",
+    "focus": ["Folic acid", "Iron", "Calcium", "Vitamin D"],
+    "recommended_foods": ["Supplements as prescribed"],
+    "avoid_foods": [],
+    "guidance": "Take folic acid (400-600 mcg) before and during early pregnancy. Iron, calcium, and vitamin D supplements are routinely prescribed."
+  },
+  {
+    "id": "prenatal_vitamins",
+    "category": "Prenatal Vitamins Overview",
+    "focus": ["Comprehensive nutrition"],
+    "recommended_foods": ["Prenatal Multivitamins"],
+    "avoid_foods": [],
+    "guidance": "Prenatal vitamins provide essential nutrients. Start at least 1 month before conception. Continue through breastfeeding."
+  },
+  {
+    "id": "foods_for_baby_brain",
+    "category": "Foods for Baby's Brain Development",
+    "focus": ["Omega-3", "Iron", "Iodine", "Choline"],
+    "recommended_foods": ["Fatty Fish", "Eggs", "Walnuts", "Flaxseeds", "Chia Seeds", "Spinach", "Fortified Foods"],
+    "avoid_foods": ["High-Mercury Fish"],
+    "guidance": "DHA is crucial for brain development. Choline (eggs) supports memory. Include omega-3 rich foods regularly."
+  },
+  {
+    "id": "foods_for_baby_bones",
+    "category": "Foods for Baby's Bone Development",
+    "focus": ["Calcium", "Vitamin D", "Phosphorus"],
+    "recommended_foods": ["Milk", "Curd", "Paneer", "Ragi", "Sesame Seeds", "Eggs", "Fish"],
+    "avoid_foods": [],
+    "guidance": "Calcium and vitamin D are essential. Ragi is a rich vegetarian source of calcium. Ensure adequate intake."
+  },
+  {
+    "id": "foods_to_avoid_high_mercury",
+    "category": "High-Mercury Fish to Avoid",
+    "focus": ["Mercury risk"],
+    "recommended_foods": [],
+    "avoid_foods": ["Shark", "Swordfish", "King Mackerel", "Tuna (Large/Fresh)", "Tilefish"],
+    "guidance": "Avoid high-mercury fish. Mercury can harm baby's brain development. Choose low-mercury fish instead."
+  },
+  {
+    "id": "weight_gain_pregnancy",
+    "category": "Healthy Weight Gain in Pregnancy",
+    "focus": ["Appropriate weight gain", "Nutrition"],
+    "recommended_foods": ["Nutrient-dense foods", "Lean Protein", "Whole Grains", "Fruits", "Vegetables"],
+    "avoid_foods": ["Empty Calorie Foods", "Sugary Drinks", "Processed Snacks"],
+    "guidance": "Weight gain should be gradual. Focus on nutrient-dense foods. Discuss weight goals with your doctor."
+  },
+  {
+    "id": "meal_frequency_pregnancy",
+    "category": "Meal Frequency During Pregnancy",
+    "focus": ["Small frequent meals"],
+    "recommended_foods": ["Small meals every 2-3 hours"],
+    "avoid_foods": ["Large Heavy Meals"],
+    "guidance": "Eat small, frequent meals to manage nausea, heartburn, and blood sugar. Include protein and fiber in each meal."
+  },
+  {
+    "id": "safe_herbs_pregnancy",
+    "category": "Safe Herbs During Pregnancy",
+    "focus": ["Herbal use"],
+    "recommended_foods": ["Ginger", "Chamomile (limited)", "Peppermint"],
+    "avoid_foods": ["Aloe Vera", "Saw Palmetto", "Fenugreek (large amounts)", "Black Cohosh"],
+    "guidance": "Most herbs are not well-studied in pregnancy. Ginger is safe for nausea. Avoid medicinal herbs without doctor consultation."
+  },
+  {
+    "id": "postpartum_nutrition",
+    "category": "Postpartum Nutrition",
+    "focus": ["Recovery", "Breastfeeding support"],
+    "recommended_foods": ["High-Protein Foods", "Iron-Rich Foods", "Calcium-Rich Foods", "Water", "Oats", "Brewer's Yeast", "Fenugreek"],
+    "avoid_foods": ["Alcohol", "Excess Caffeine"],
+    "guidance": "Continue healthy eating. Support breastfeeding with adequate hydration and nutrition. Rest and recover."
+  },
+  {
+    "id": "breastfeeding_diet",
+    "category": "Breastfeeding Nutrition",
+    "focus": ["Milk production", "Infant nutrition"],
+    "recommended_foods": ["Oats", "Barley", "Fennel", "Fenugreek", "Water", "Calcium-Rich Foods", "Protein-Rich Foods"],
+    "avoid_foods": ["Alcohol", "Excess Caffeine"],
+    "guidance": "Stay well-hydrated. Eat a nutrient-dense diet. Continue prenatal vitamins. Avoid alcohol and limit caffeine."
+  },
+  {
+    "id": "foods_galactagogues",
+    "category": "Galactagogues (Milk-Boosting Foods)",
+    "focus": ["Increase breast milk supply"],
+    "recommended_foods": ["Oats", "Barley", "Fenugreek", "Fennel", "Brewer's Yeast", "Moringa", "Sesame Seeds"],
+    "avoid_foods": [],
+    "guidance": "These foods may help increase milk supply. Stay well-hydrated. Frequent feeding is the best stimulant."
+  },
+  {
+    "id": "avoid_during_breastfeeding",
+    "category": "Foods to Avoid During Breastfeeding",
+    "focus": ["Infant safety"],
+    "recommended_foods": [],
+    "avoid_foods": ["Alcohol", "Excess Caffeine", "Fish High in Mercury"],
+    "guidance": "Alcohol passes into breast milk. Limit caffeine to 2 cups per day. Avoid high-mercury fish."
+  },
+  {
+    "id": "calorie_needs_pregnancy",
+    "category": "Calorie Needs During Pregnancy",
+    "focus": ["Energy requirements"],
+    "recommended_foods": ["Nutrient-dense calories"],
+    "avoid_foods": ["Empty calories"],
+    "guidance": "First trimester: no extra calories. Second trimester: +340 calories/day. Third trimester: +450 calories/day."
+  },
+  {
+    "id": "nutrition_first_trimester",
+    "category": "First Trimester Nutrition Details",
+    "focus": ["Folic acid", "Vitamin B6"],
+    "recommended_foods": ["Spinach", "Moong Dal", "Banana", "Fortified Cereals", "Avocado", "Legumes"],
+    "avoid_foods": ["Alcohol", "Raw Meat"],
+    "guidance": "Focus on folic acid. Manage nausea with small meals. Stay hydrated. Rest."
+  },
+  {
+    "id": "nutrition_second_trimester",
+    "category": "Second Trimester Nutrition Details",
+    "focus": ["Protein", "Calcium", "Iron"],
+    "recommended_foods": ["Milk", "Paneer", "Fish", "Ragi", "Chickpeas", "Eggs", "Green Leafy Vegetables"],
+    "avoid_foods": ["Excess junk food", "Sugary drinks"],
+    "guidance": "Baby is growing rapidly. Increase protein and calcium. Iron needs increase for blood volume."
+  },
+  {
+    "id": "nutrition_third_trimester",
+    "category": "Third Trimester Nutrition Details",
+    "focus": ["Protein", "Calcium", "Omega-3"],
+    "recommended_foods": ["Fish", "Eggs", "Curd", "Ragi", "Green Leafy Vegetables", "Dates"],
+    "avoid_foods": ["Highly processed foods", "Excess caffeine"],
+    "guidance": "Focus on brain development. Dates may help cervical ripening. Stay well-hydrated."
+  },
+  {
+    "id": "gestational_diabetes_carb_count",
+    "category": "Carbohydrate Counting for Gestational Diabetes",
+    "focus": ["Blood sugar management"],
+    "recommended_foods": ["Complex Carbohydrates", "High-Fiber Foods"],
+    "avoid_foods": ["Simple Sugars"],
+    "guidance": "Distribute carbohydrates evenly through the day. Eat 3 meals and 2-3 snacks. Pair carbs with protein."
+  },
+  {
+    "id": "preeclampsia_diet_tips",
+    "category": "Preeclampsia Diet Tips",
+    "focus": ["Blood pressure control"],
+    "recommended_foods": ["Calcium-Rich Foods", "Potassium-Rich Foods", "Magnesium-Rich Foods"],
+    "avoid_foods": ["Excess Salt", "Processed Foods"],
+    "guidance": "Reduce salt intake. Increase calcium and potassium. Monitor blood pressure. Report swelling/headaches."
+  },
+  {
+    "id": "hypertension_pregnancy_diet",
+    "category": "Hypertension in Pregnancy Diet",
+    "focus": ["Blood pressure control"],
+    "recommended_foods": ["Beetroot", "Banana", "Spinach", "Oats", "Garlic", "Nuts", "Berries"],
+    "avoid_foods": ["Salt", "Pickles", "Papad", "Processed Foods"],
+    "guidance": "Limit salt to <5g/day. Include potassium-rich foods. Monitor BP regularly."
+  },
+  {
+    "id": "postpartum_depression_nutrition",
+    "category": "Nutrition for Postpartum Depression",
+    "focus": ["Mental health support"],
+    "recommended_foods": ["Fish", "Nuts", "Seeds", "Whole Grains", "Fruits", "Vegetables", "Omega-3 Rich Foods"],
+    "avoid_foods": ["Sugary Foods", "Processed Foods"],
+    "guidance": "Omega-3 fatty acids support mental health. Eat nutrient-dense foods. Seek professional help if needed."
+  },
+  {
+    "id": "pregnancy_sleep_foods",
+    "category": "Foods for Better Sleep in Pregnancy",
+    "focus": ["Tryptophan", "Magnesium"],
+    "recommended_foods": ["Banana", "Oats", "Almonds", "Warm Milk", "Cherries", "Turkey"],
+    "avoid_foods": ["Caffeine", "Heavy Meals", "Spicy Foods"],
+    "guidance": "Warm milk before bed. Include magnesium-rich foods. Avoid caffeine after noon."
+  },
+  {
+    "id": "iron_absorption_tips",
+    "category": "Tips for Iron Absorption",
+    "focus": ["Maximize iron uptake"],
+    "recommended_foods": ["Vitamin C-Rich Foods with Iron-Rich Meals"],
+    "avoid_foods": ["Tea", "Coffee", "Calcium with Iron"],
+    "guidance": "Take iron with citrus juice. Separate calcium and iron supplements by 2 hours. Avoid tea/coffee with meals."
+  },
+  {
+    "id": "safe_artificial_sweeteners",
+    "category": "Artificial Sweeteners in Pregnancy",
+    "focus": ["Safety guidelines"],
+    "recommended_foods": ["Aspartame (limited)", "Stevia (natural)", "Sucralose (limited)"],
+    "avoid_foods": ["Saccharin (avoid)", "Cyclamate (avoid)"],
+    "guidance": "Use sweeteners in moderation. Natural alternatives like stevia are preferred."
+  },
+  {
+    "id": "vegetarian_pregnancy",
+    "category": "Vegetarian Pregnancy Nutrition",
+    "focus": ["Plant-based complete nutrition"],
+    "recommended_foods": ["Legumes", "Soy", "Nuts", "Seeds", "Whole Grains", "Fruits", "Vegetables", "Dairy"],
+    "avoid_foods": [],
+    "guidance": "Combine complementary proteins. Ensure adequate iron, B12, and calcium. Consider B12 supplements."
+  },
+  {
+    "id": "vegan_pregnancy",
+    "category": "Vegan Pregnancy Nutrition",
+    "focus": ["Complete plant-based nutrition"],
+    "recommended_foods": ["Legumes", "Soy", "Quinoa", "Nuts", "Seeds", "Fortified Foods", "B12 Supplements"],
+    "avoid_foods": [],
+    "guidance": "Ensure adequate B12, iron, calcium, vitamin D, and omega-3. Consider supplements. Consult a dietitian."
+  },
+  {
+    "id": "first_trimester_nausea_tips",
+    "category": "First Trimester Nausea Management",
+    "focus": ["Morning sickness relief"],
+    "recommended_foods": ["Crackers", "Ginger", "Lemon", "Small Frequent Meals"],
+    "avoid_foods": ["Spicy Foods", "Fried Foods", "Strong Odors"],
+    "guidance": "Eat before getting out of bed. Keep dry crackers. Ginger tea helps. Stay hydrated."
+  },
+  {
+    "id": "food_safety_pregnancy",
+    "category": "Food Safety During Pregnancy",
+    "focus": ["Prevent foodborne illness"],
+    "recommended_foods": ["Washed Produce", "Pasteurized Dairy", "Well-Cooked Meat"],
+    "avoid_foods": ["Raw Meat", "Raw Eggs", "Unpasteurized Dairy", "Raw Sprouts"],
+    "guidance": "Cook meat thoroughly. Wash produce. Avoid high-risk foods. Practice good hygiene."
+  },
+  {
+    "id": "toxoplasmosis_prevention",
+    "category": "Toxoplasmosis Prevention",
+    "focus": ["Avoid infection"],
+    "recommended_foods": [],
+    "avoid_foods": ["Raw Meat", "Cat Feces Exposure"],
+    "guidance": "Wear gloves for gardening. Wash hands after handling raw meat. Avoid cat litter. Cook meat thoroughly."
+  },
+  {
+    "id": "listeria_prevention",
+    "category": "Listeria Prevention",
+    "focus": ["Food safety"],
+    "recommended_foods": [],
+    "avoid_foods": ["Unpasteurized Dairy", "Deli Meats", "Soft Cheeses", "Raw Sprouts"],
+    "guidance": "Avoid deli meats unless heated. Choose pasteurized dairy. Wash all produce."
+  },
+  {
+    "id": "foods_for_healthy_weight_gain",
+    "category": "Foods for Healthy Pregnancy Weight Gain",
+    "focus": ["Nutrient-dense calories"],
+    "recommended_foods": ["Avocado", "Nuts", "Seeds", "Nut Butters", "Whole Grains", "Dairy", "Protein-Rich Foods"],
+    "avoid_foods": ["Empty Calorie Snacks", "Sugary Drinks"],
+    "guidance": "Choose nutrient-dense foods. Gain weight gradually. Follow doctor's recommendations."
+  },
+  {
+    "id": "snack_ideas_pregnancy",
+    "category": "Healthy Snack Ideas for Pregnancy",
+    "focus": ["Nutritious snacks"],
+    "recommended_foods": ["Fruits", "Nuts", "Curd", "Chickpeas", "Sprouts", "Oatmeal", "Crackers with Cheese", "Smoothies"],
+    "avoid_foods": ["Processed Snacks", "Sugary Treats"],
+    "guidance": "Choose snacks that combine protein and fiber. Keep healthy snacks handy."
+  },
+  {
+    "id": "beverages_pregnancy",
+    "category": "Beverages During Pregnancy",
+    "focus": ["Hydration and safety"],
+    "recommended_foods": ["Water", "Coconut Water", "Buttermilk", "Lemon Water", "Milk", "Herbal Teas (safe)"],
+    "avoid_foods": ["Alcohol", "Excess Caffeine", "Energy Drinks", "Herbal Teas (unsafe)"],
+    "guidance": "Stay hydrated. Limit caffeine. Avoid alcohol completely. Choose safe herbal teas (ginger, chamomile in moderation)."
+  },
+  {
+    "id": "b12_pregnancy",
+    "category": "Vitamin B12 During Pregnancy",
+    "focus": ["Nervous system development"],
+    "recommended_foods": ["Eggs", "Milk", "Fish", "Meat", "Fortified Cereals", "Nutritional Yeast"],
+    "avoid_foods": [],
+    "guidance": "B12 is crucial for brain development. Vegetarians/vegans should supplement. Monitor levels."
+  },
+  {
+    "id": "iodine_pregnancy",
+    "category": "Iodine During Pregnancy",
+    "focus": ["Thyroid function", "Brain development"],
+    "recommended_foods": ["Iodized Salt", "Seafood", "Seaweed", "Dairy", "Eggs"],
+    "avoid_foods": ["Excess Iodine"],
+    "guidance": "Use iodized salt. Iodine is essential for baby's brain development. Avoid excess supplements."
+  },
+  {
+    "id": "choline_pregnancy",
+    "category": "Choline During Pregnancy",
+    "focus": ["Brain development", "Liver function"],
+    "recommended_foods": ["Eggs", "Liver", "Peanuts", "Soy", "Broccoli", "Cauliflower"],
+    "avoid_foods": [],
+    "guidance": "Choline supports neural tube development and memory. Eggs are an excellent source."
+  },
+  {
+    "id": "selenium_pregnancy",
+    "category": "Selenium During Pregnancy",
+    "focus": ["Antioxidant", "Thyroid function"],
+    "recommended_foods": ["Brazil Nuts", "Fish", "Eggs", "Sunflower Seeds", "Mushrooms"],
+    "avoid_foods": [],
+    "guidance": "One Brazil nut provides daily selenium. Supports thyroid and immune function."
+  },
+  {
+    "id": "potassium_pregnancy",
+    "category": "Potassium During Pregnancy",
+    "focus": ["Blood pressure regulation", "Muscle function"],
+    "recommended_foods": ["Banana", "Coconut Water", "Potato", "Spinach", "Avocado", "Sweet Potato"],
+    "avoid_foods": [],
+    "guidance": "Potassium helps balance sodium. Important for blood pressure control. Include daily."
+  },
+  {
+    "id": "probiotics_pregnancy",
+    "category": "Probiotics During Pregnancy",
+    "focus": ["Gut health", "Immunity"],
+    "recommended_foods": ["Curd", "Yogurt", "Buttermilk", "Kefir", "Fermented Foods"],
+    "avoid_foods": [],
+    "guidance": "Probiotics support digestive health. Reduce risk of gestational diabetes. Good for baby's gut."
+  },
+  {
+    "id": "prebiotics_pregnancy",
+    "category": "Prebiotics During Pregnancy",
+    "focus": ["Supports probiotics", "Gut health"],
+    "recommended_foods": ["Oats", "Banana", "Onions", "Garlic", "Legumes", "Asparagus"],
+    "avoid_foods": [],
+    "guidance": "Prebiotics feed good gut bacteria. Support digestion and immune function. Combine with probiotics."
+  },
+  {
+    "id": "antioxidants_pregnancy",
+    "category": "Antioxidants During Pregnancy",
+    "focus": ["Reduce oxidative stress", "Cell protection"],
+    "recommended_foods": ["Berries", "Spinach", "Kale", "Tomatoes", "Nuts", "Green Tea (limited)"],
+    "avoid_foods": [],
+    "guidance": "Antioxidants protect cells. Eat colorful fruits and vegetables. Reduces risk of preeclampsia."
+  },
+  {
+    "id": "moringa_pregnancy",
+    "category": "Moringa During Pregnancy",
+    "focus": ["Iron", "Calcium", "Vitamins"],
+    "recommended_foods": ["Moringa Leaves", "Moringa Powder"],
+    "avoid_foods": [],
+    "guidance": "Moringa is a superfood – rich in iron, calcium, and vitamins. Use in moderation. Consult doctor."
+  },
+  {
+    "id": "amla_pregnancy",
+    "category": "Amla (Indian Gooseberry) During Pregnancy",
+    "focus": ["Vitamin C", "Iron absorption", "Immunity"],
+    "recommended_foods": ["Fresh Amla", "Amla Juice"],
+    "avoid_foods": [],
+    "guidance": "Amla is rich in Vitamin C. Enhances iron absorption. Supports immune function."
+  },
+  {
+    "id": "dates_pregnancy_labor",
+    "category": "Dates for Labor Preparation",
+    "focus": ["Cervical ripening", "Labor support"],
+    "recommended_foods": ["Dates (Medjool, Deglet Noor)"],
+    "avoid_foods": [],
+    "guidance": "Eating dates in the last 4 weeks of pregnancy may help with cervical ripening and reduce labor duration. 6 dates daily."
+  },
+  {
+    "id": "fenugreek_breastfeeding",
+    "category": "Fenugreek for Breastfeeding",
+    "focus": ["Milk supply support"],
+    "recommended_foods": ["Fenugreek Seeds", "Fenugreek Tea"],
+    "avoid_foods": [],
+    "guidance": "Fenugreek is a traditional galactagogue. May help increase milk supply. Use in moderation."
+  },
+  {
+    "id": "foods_to_avoid_heartburn",
+    "category": "Foods to Avoid with Heartburn",
+    "focus": ["Reduce reflux"],
+    "recommended_foods": [],
+    "avoid_foods": ["Spicy Foods", "Citrus", "Tomatoes", "Onions", "Garlic", "Fried Foods", "Caffeine"],
+    "guidance": "Identify personal triggers. Eat small meals. Avoid lying down after eating."
+  },
+  {
+    "id": "foods_to_avoid_bloating",
+    "category": "Foods to Avoid with Bloating",
+    "focus": ["Reduce gas"],
+    "recommended_foods": [],
+    "avoid_foods": ["Beans (in excess)", "Cabbage", "Cauliflower", "Broccoli", "Carbonated Drinks"],
+    "guidance": "Introduce gas-forming foods gradually. Drink plenty of water. Gentle exercise helps."
+  },
+  {
+    "id": "meal_plan_first_trimester",
+    "category": "Sample Meal Plan – First Trimester",
+    "focus": ["Balanced nutrition"],
+    "recommended_foods": ["Roti with Dal", "Chickpeas", "Spinach", "Curd", "Fruits", "Eggs", "Oats"],
+    "avoid_foods": ["Processed Foods"],
+    "guidance": "Eat small frequent meals. Include protein, fiber, and healthy fats. Stay hydrated."
+  },
+  {
+    "id": "meal_plan_second_trimester",
+    "category": "Sample Meal Plan – Second Trimester",
+    "focus": ["Increased protein and calcium"],
+    "recommended_foods": ["Paneer", "Fish", "Milk", "Ragi", "Chickpeas", "Green Leafy Vegetables", "Nuts"],
+    "avoid_foods": ["Sugary Drinks", "Empty Calories"],
+    "guidance": "Increase protein and calcium. Include variety. Stay active."
+  },
+  {
+    "id": "meal_plan_third_trimester",
+    "category": "Sample Meal Plan – Third Trimester",
+    "focus": ["Brain development", "Energy"],
+    "recommended_foods": ["Fish", "Eggs", "Curd", "Ragi", "Dates", "Nuts", "Oats"],
+    "avoid_foods": ["Processed Foods", "Excess Salt"],
+    "guidance": "Focus on omega-3. Dates may help. Small frequent meals due to stomach pressure."
+  },
+  {
+    "id": "pregnancy_nutrition_checklist",
+    "category": "Pregnancy Nutrition Checklist",
+    "focus": ["Daily intake"],
+    "recommended_foods": ["Folate", "Iron", "Calcium", "Vitamin D", "Omega-3", "Protein", "Fiber"],
+    "avoid_foods": ["Alcohol", "Excess Caffeine", "Raw Foods"],
+    "guidance": "Check daily: prenatal vitamin, iron-rich food, calcium-rich food, protein, fruits, vegetables, water."
+  },
+  {
+    "id": "pregnancy_appetite_changes",
+    "category": "Managing Appetite Changes in Pregnancy",
+    "focus": ["Cravings", "Aversions"],
+    "recommended_foods": ["Healthy alternatives to cravings"],
+    "avoid_foods": ["Junk Foods"],
+    "guidance": "Cravings are normal. Choose healthy alternatives. Indulge occasionally in moderation. Avoid raw/undercooked cravings."
+  },
+  {
+    "id": "food_aversions_pregnancy",
+    "category": "Managing Food Aversions",
+    "focus": ["Nutrition despite aversions"],
+    "recommended_foods": ["Alternative sources of nutrients"],
+    "avoid_foods": [],
+    "guidance": "Find alternative sources of nutrients. Eat what you can tolerate. Nutritional supplements help."
+  },
+  {
+    "id": "pica_pregnancy",
+    "category": "Pica in Pregnancy",
+    "focus": ["Craving non-food items"],
+    "recommended_foods": ["Iron-rich foods"],
+    "avoid_foods": ["Non-food items"],
+    "guidance": "Pica may indicate iron deficiency. Check iron levels. Discuss with doctor. Avoid eating non-food items."
+  },
+  {
+    "id": "gaining_healthy_weight",
+    "category": "Guidelines for Healthy Weight Gain",
+    "focus": ["Appropriate gain by BMI"],
+    "recommended_foods": ["Nutrient-dense foods"],
+    "avoid_foods": ["Empty calories"],
+    "guidance": "Normal BMI: 11-16 kg. Overweight: 7-11 kg. Obese: 5-9 kg. Twin pregnancy: 16-24 kg."
+  },
+  {
+    "id": "postpartum_anemia_diet",
+    "category": "Postpartum Anemia Diet",
+    "focus": ["Recover iron levels"],
+    "recommended_foods": ["Spinach", "Moringa", "Red Meat", "Dates", "Pomegranate", "Legumes"],
+    "avoid_foods": ["Tea", "Coffee"],
+    "guidance": "Continue iron supplements. Consume iron-rich foods. Replenish blood loss from delivery."
+  },
+  {
+    "id": "breastfeeding_calorie_needs",
+    "category": "Calorie Needs for Breastfeeding",
+    "focus": ["Energy for milk production"],
+    "recommended_foods": ["Nutrient-dense calories"],
+    "avoid_foods": ["Empty calories"],
+    "guidance": "Breastfeeding mothers need +500 calories/day. Eat nutrient-dense foods. Stay hydrated."
+  },
+  {
+    "id": "breastfeeding_supplements",
+    "category": "Supplements for Breastfeeding",
+    "focus": ["Continued nutrient needs"],
+    "recommended_foods": ["Vitamin D", "DHA", "Prenatal Vitamins"],
+    "avoid_foods": [],
+    "guidance": "Continue prenatal vitamins. Supplement vitamin D for baby. Consider DHA (brain development)."
+  },
+  {
+    "id": "postpartum_weight_loss",
+    "category": "Safe Postpartum Weight Loss",
+    "focus": ["Gradual return to weight"],
+    "recommended_foods": ["Nutrient-dense foods"],
+    "avoid_foods": ["Crash diets"],
+    "guidance": "Wait 6-8 weeks before active weight loss. Breastfeeding burns calories. Eat a balanced diet."
+  },
+  {
+    "id": "traditional_foods_pregnancy",
+    "category": "Traditional Indian Foods for Pregnancy",
+    "focus": ["Cultural nutrition"],
+    "recommended_foods": ["Ragi", "Ghee", "Turmeric Milk", "Dates", "Sesame Seeds", "Fenugreek"],
+    "avoid_foods": [],
+    "guidance": "Traditional foods have nutritional wisdom. Ragi for calcium, ghee for energy, turmeric for anti-inflammation."
+  },
+  {
+    "id": "pregnancy_nutrition_infographic",
+    "category": "Pregnancy Nutrition Summary",
+    "focus": ["Quick reference"],
+    "recommended_foods": ["Folate", "Iron", "Calcium", "Protein", "Omega-3", "Fiber", "Vitamins"],
+    "avoid_foods": ["Alcohol", "High Mercury", "Unpasteurized", "Raw Meat", "Excess Caffeine"],
+    "guidance": "Eat a rainbow. Take supplements. Stay hydrated. Listen to your body."
+  },
+  {
+    "id": "weight_management_pregnancy",
+    "category": "Weight Management in Pregnancy",
+    "focus": ["Healthy gain"],
+    "recommended_foods": ["Balanced meals", "Controlled portions"],
+    "avoid_foods": ["Excess snacking", "High sugar"],
+    "guidance": "Monitor weight. Eat balanced meals. Avoid excessive weight gain. Discuss with doctor."
+  },
+  {
+    "id": "pregnancy_nutrition_mistakes",
+    "category": "Common Pregnancy Nutrition Mistakes",
+    "focus": ["Avoid pitfalls"],
+    "recommended_foods": ["Balanced meals"],
+    "avoid_foods": ["Skipping meals", "Eating for two (double)", "Ignoring supplements"],
+    "guidance": "Eat for quality, not quantity. Don't skip meals. Take supplements. Stay hydrated."
+  },
+  {
+    "id": "trimester_specific_nutrition",
+    "category": "Trimester-Specific Nutrition Summary",
+    "focus": ["Quick guide"],
+    "recommended_foods": ["First: Folate, Iron, B6", "Second: Protein, Calcium, Iron", "Third: Protein, Calcium, Omega-3"],
+    "avoid_foods": ["Alcohol throughout", "Raw foods throughout"],
+    "guidance": "First: small frequent meals. Second: increased protein. Third: focus on brain development."
+  }
+]

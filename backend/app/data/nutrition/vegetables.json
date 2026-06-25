@@ -1,0 +1,1418 @@
+[
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "nutrients": ["Iron", "Folate", "Vitamin A", "Vitamin K"],
+    "benefits": ["Helps prevent anemia", "Supports eye health", "Supports bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Anemia", "Pregnancy", "Children"]
+  },
+  {
+    "id": "kale",
+    "name": "Kale",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["General health", "Bone health", "Immunity"]
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Promotes digestion", "Supports bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Weight management", "Immunity", "Digestion"]
+  },
+  {
+    "id": "carrot",
+    "name": "Carrot",
+    "nutrients": ["Vitamin A", "Fiber", "Vitamin K", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "Morning or as a snack",
+    "good_for": ["Eye health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Heart health", "General health"]
+  },
+  {
+    "id": "sweet_potato",
+    "name": "Sweet Potato",
+    "nutrients": ["Vitamin A", "Fiber", "Vitamin C", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Diabetes"]
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "With meals (raw or cooked)",
+    "good_for": ["Heart health", "Skin health", "General health"]
+  },
+  {
+    "id": "onion",
+    "name": "Onion",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin B6", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "nutrients": ["Vitamin C", "Vitamin B6", "Manganese", "Selenium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Has antibacterial properties"],
+    "best_time": "With meals",
+    "good_for": ["Heart health", "Immunity", "General health"]
+  },
+  {
+    "id": "bell_pepper_red",
+    "name": "Red Bell Pepper",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Vitamin B6"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "bell_pepper_green",
+    "name": "Green Bell Pepper",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Vitamin K"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "bell_pepper_yellow",
+    "name": "Yellow Bell Pepper",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Vitamin B6"],
+    "benefits": ["Boosts immunity", "Supports skin health", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Skin health", "Heart health"]
+  },
+  {
+    "id": "bell_pepper_orange",
+    "name": "Orange Bell Pepper",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Promotes skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Eye health", "Skin health"]
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Magnesium"],
+    "benefits": ["Hydrates body", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Hydration", "Skin health", "Weight management"]
+  },
+  {
+    "id": "zucchini",
+    "name": "Zucchini",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes hydration"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "Weight management"]
+  },
+  {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "nutrients": ["Vitamin A", "Fiber", "Vitamin C", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "butternut_squash",
+    "name": "Butternut Squash",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "acorn_squash",
+    "name": "Acorn Squash",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Heart health"]
+  },
+  {
+    "id": "spaghetti_squash",
+    "name": "Spaghetti Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports weight loss", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Weight loss", "Digestion", "Immunity"]
+  },
+  {
+    "id": "cabbage_green",
+    "name": "Green Cabbage",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cabbage_red",
+    "name": "Red Cabbage",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Antioxidants"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cabbage_savoy",
+    "name": "Savoy Cabbage",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "brussels_sprouts",
+    "name": "Brussels Sprouts",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "asparagus",
+    "name": "Asparagus",
+    "nutrients": ["Folate", "Vitamin K", "Vitamin C", "Fiber"],
+    "benefits": ["Supports pregnancy", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Pregnancy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "green_bean",
+    "name": "Green Bean",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "pea",
+    "name": "Green Pea",
+    "nutrients": ["Fiber", "Protein", "Vitamin C", "Vitamin A"],
+    "benefits": ["Supports digestion", "Provides protein", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Protein", "Immunity"]
+  },
+  {
+    "id": "snap_pea",
+    "name": "Sugar Snap Pea",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Vitamin K"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports bone health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "snow_pea",
+    "name": "Snow Pea",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Iron"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports energy"],
+    "best_time": "Stir-fried or in salads",
+    "good_for": ["Immunity", "Digestion", "Energy"]
+  },
+  {
+    "id": "corn",
+    "name": "Sweet Corn",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin B6", "Potassium"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Digestion", "General health"]
+  },
+  {
+    "id": "mushroom_button",
+    "name": "Button Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Selenium", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Promotes skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Bone health", "General health"]
+  },
+  {
+    "id": "mushroom_shiitake",
+    "name": "Shiitake Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Heart health", "Digestion"]
+  },
+  {
+    "id": "mushroom_portobello",
+    "name": "Portobello Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Potassium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "mushroom_oyster",
+    "name": "Oyster Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Supports immunity", "Promotes heart health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Heart health", "Digestion"]
+  },
+  {
+    "id": "mushroom_maitake",
+    "name": "Maitake Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports blood sugar control", "Promotes digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Diabetes", "Digestion"]
+  },
+  {
+    "id": "mushroom_porcini",
+    "name": "Porcini Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "mushroom_truffle",
+    "name": "Black Truffle",
+    "nutrients": ["Fiber", "Antioxidants", "B vitamins", "Vitamin C"],
+    "benefits": ["Supports immunity", "Promotes digestion", "Boosts energy"],
+    "best_time": "With meals (as a delicacy)",
+    "good_for": ["General health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "eggplant",
+    "name": "Eggplant (Brinjal)",
+    "nutrients": ["Fiber", "Vitamin B6", "Manganese", "Antioxidants"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes brain health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "General health"]
+  },
+  {
+    "id": "okra",
+    "name": "Okra (Lady Finger)",
+    "nutrients": ["Fiber", "Vitamin C", "Folate", "Vitamin A"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "bitter_gourd",
+    "name": "Bitter Gourd (Karela)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Iron"],
+    "benefits": ["Supports blood sugar control", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Diabetes", "Immunity", "Digestion"]
+  },
+  {
+    "id": "bottle_gourd",
+    "name": "Bottle Gourd (Lauki)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin B6", "Potassium"],
+    "benefits": ["Hydrates body", "Aids digestion", "Supports heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Hydration", "Digestion", "Heart health"]
+  },
+  {
+    "id": "ridged_gourd",
+    "name": "Ridge Gourd (Tori)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "smooth_gourd",
+    "name": "Smooth Gourd (Luffa)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Iron"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "snake_gourd",
+    "name": "Snake Gourd",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Potassium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "pointed_gourd",
+    "name": "Pointed Gourd (Parval)",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin A", "Calcium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "ash_gourd",
+    "name": "Ash Gourd (Petha)",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Potassium"],
+    "benefits": ["Hydrates body", "Aids digestion", "Supports heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Hydration", "Digestion", "Heart health"]
+  },
+  {
+    "id": "chayote",
+    "name": "Chayote",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes hydration"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "Hydration"]
+  },
+  {
+    "id": "radish",
+    "name": "Radish",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports skin health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "radish_daikon",
+    "name": "Daikon Radish",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Antioxidants"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports heart health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "radish_white",
+    "name": "White Radish",
+    "nutrients": ["Vitamin C", "Fiber", "Calcium", "Potassium"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Supports bone health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "beetroot",
+    "name": "Beetroot",
+    "nutrients": ["Folate", "Manganese", "Vitamin C", "Fiber"],
+    "benefits": ["Supports heart health", "Boosts exercise performance", "Promotes brain health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Athletes", "Heart health", "Brain health"]
+  },
+  {
+    "id": "turnip",
+    "name": "Turnip",
+    "nutrients": ["Vitamin C", "Fiber", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "rutabaga",
+    "name": "Rutabaga (Swede)",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "celery",
+    "name": "Celery",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Folate"],
+    "benefits": ["Supports heart health", "Aids digestion", "Promotes hydration"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Heart health", "Digestion", "Hydration"]
+  },
+  {
+    "id": "fennel",
+    "name": "Fennel",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Calcium"],
+    "benefits": ["Aids digestion", "Supports bone health", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Bone health", "Immunity"]
+  },
+  {
+    "id": "artichoke",
+    "name": "Artichoke",
+    "nutrients": ["Fiber", "Vitamin C", "Folate", "Magnesium"],
+    "benefits": ["Supports liver health", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Liver health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "leek",
+    "name": "Leek",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Manganese"],
+    "benefits": ["Supports bone health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "shallot",
+    "name": "Shallot",
+    "nutrients": ["Vitamin B6", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "scallion",
+    "name": "Scallion (Spring Onion)",
+    "nutrients": ["Vitamin K", "Vitamin C", "Fiber", "Vitamin A"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals or in salads",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "chive",
+    "name": "Chive",
+    "nutrients": ["Vitamin C", "Vitamin A", "Calcium", "Iron"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Aids digestion"],
+    "best_time": "With meals",
+    "good_for": ["Immunity", "Bone health", "Digestion"]
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "nutrients": ["Vitamin C", "Magnesium", "Potassium", "Gingerol"],
+    "benefits": ["Reduces nausea", "Supports digestion", "Reduces inflammation"],
+    "best_time": "Morning or with meals",
+    "good_for": ["Digestion", "Nausea", "Inflammation"]
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "nutrients": ["Curcumin", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Reduces inflammation", "Supports joint health", "Boosts immunity"],
+    "best_time": "With meals",
+    "good_for": ["Inflammation", "Joint health", "Immunity"]
+  },
+  {
+    "id": "horseradish",
+    "name": "Horseradish",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Calcium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes respiratory health"],
+    "best_time": "With meals (as condiment)",
+    "good_for": ["Digestion", "Immunity", "Respiratory health"]
+  },
+  {
+    "id": "wasabi",
+    "name": "Wasabi",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Has antibacterial properties"],
+    "best_time": "With meals (as condiment)",
+    "good_for": ["Digestion", "Immunity", "General health"]
+  },
+  {
+    "id": "parsnip",
+    "name": "Parsnip",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin K", "Folate"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "celery_root",
+    "name": "Celery Root (Celeriac)",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Potassium"],
+    "benefits": ["Supports bone health", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "salsify",
+    "name": "Salsify",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin B6", "Iron"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes energy"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Energy"]
+  },
+  {
+    "id": "jicama",
+    "name": "Jicama (Mexican Yam Bean)",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Iron"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes hydration"],
+    "best_time": "As a snack (raw)",
+    "good_for": ["Digestion", "Weight loss", "Hydration"]
+  },
+  {
+    "id": "yam",
+    "name": "Yam (African Yam)",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Manganese"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "taro",
+    "name": "Taro (Arbi)",
+    "nutrients": ["Fiber", "Vitamin E", "Potassium", "Manganese"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes skin health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Digestion", "Skin health"]
+  },
+  {
+    "id": "cassava",
+    "name": "Cassava (Tapioca)",
+    "nutrients": ["Carbohydrates", "Fiber", "Vitamin C", "Calcium"],
+    "benefits": ["Provides energy", "Supports digestion", "Promotes bone health"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["Energy", "Digestion", "Bone health"]
+  },
+  {
+    "id": "plantain",
+    "name": "Plantain (Cooking Banana)",
+    "nutrients": ["Fiber", "Vitamin C", "Vitamin A", "Potassium"],
+    "benefits": ["Supports digestion", "Provides energy", "Promotes heart health"],
+    "best_time": "Cooked, with meals",
+    "good_for": ["Energy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "sweet_potato_red",
+    "name": "Red Sweet Potato",
+    "nutrients": ["Vitamin A", "Fiber", "Vitamin C", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Diabetes"]
+  },
+  {
+    "id": "sweet_potato_purple",
+    "name": "Purple Sweet Potato",
+    "nutrients": ["Vitamin A", "Fiber", "Antioxidants", "Vitamin C"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Reduces inflammation"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Inflammation"]
+  },
+  {
+    "id": "sweet_potato_white",
+    "name": "White Sweet Potato",
+    "nutrients": ["Fiber", "Vitamin C", "Potassium", "Manganese"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Heart health"]
+  },
+  {
+    "id": "sweet_potato_yellow",
+    "name": "Yellow Sweet Potato",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "potato_red",
+    "name": "Red Potato",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Heart health", "General health"]
+  },
+  {
+    "id": "potato_yukon_gold",
+    "name": "Yukon Gold Potato",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Heart health", "General health"]
+  },
+  {
+    "id": "potato_fingerling",
+    "name": "Fingerling Potato",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Vitamin B6"],
+    "benefits": ["Provides energy", "Supports heart health", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Heart health", "General health"]
+  },
+  {
+    "id": "potato_purple",
+    "name": "Purple Potato",
+    "nutrients": ["Potassium", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Provides energy", "Supports heart health", "Reduces inflammation"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Energy", "Heart health", "Inflammation"]
+  },
+  {
+    "id": "lettuce_iceberg",
+    "name": "Iceberg Lettuce",
+    "nutrients": ["Vitamin K", "Vitamin A", "Fiber", "Calcium"],
+    "benefits": ["Hydrates body", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Hydration", "Bone health", "Digestion"]
+  },
+  {
+    "id": "lettuce_romaine",
+    "name": "Romaine Lettuce",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports eye health", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Eye health", "Bone health", "Digestion"]
+  },
+  {
+    "id": "lettuce_butterhead",
+    "name": "Butterhead Lettuce",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports eye health", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Eye health", "Bone health", "Digestion"]
+  },
+  {
+    "id": "lettuce_leaf",
+    "name": "Leaf Lettuce",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports eye health", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Eye health", "Bone health", "Digestion"]
+  },
+  {
+    "id": "arugula",
+    "name": "Arugula (Rocket)",
+    "nutrients": ["Vitamin A", "Vitamin K", "Calcium", "Fiber"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "watercress",
+    "name": "Watercress",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "In salads or as a garnish",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "endive",
+    "name": "Endive",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports eye health", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or as a garnish",
+    "good_for": ["Eye health", "Bone health", "Digestion"]
+  },
+  {
+    "id": "radicchio",
+    "name": "Radicchio",
+    "nutrients": ["Vitamin K", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "In salads or grilled",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "escarole",
+    "name": "Escarole",
+    "nutrients": ["Vitamin A", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports eye health", "Supports bone health", "Aids digestion"],
+    "best_time": "In salads or soups",
+    "good_for": ["Eye health", "Bone health", "Digestion"]
+  },
+  {
+    "id": "collard_greens",
+    "name": "Collard Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "mustard_greens",
+    "name": "Mustard Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "turnip_greens",
+    "name": "Turnip Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "beet_greens",
+    "name": "Beet Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "chard",
+    "name": "Swiss Chard",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Magnesium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "mizuna",
+    "name": "Mizuna",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "In salads or stir-fries",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "tatsoi",
+    "name": "Tatsoi",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "In salads or stir-fries",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "bok_choy",
+    "name": "Bok Choy",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Supports eye health"],
+    "best_time": "Stir-fried or in soups",
+    "good_for": ["Bone health", "Immunity", "Eye health"]
+  },
+  {
+    "id": "chinese_cabbage",
+    "name": "Chinese Cabbage (Napa)",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes bone health"],
+    "best_time": "Stir-fried or in soups",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "kohlrabi",
+    "name": "Kohlrabi",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Boosts immunity", "Aids digestion", "Supports heart health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "broccoli_rabe",
+    "name": "Broccoli Rabe (Rapini)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Folate"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Supports bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "broccoli_sprouting",
+    "name": "Sprouting Broccoli",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "cauliflower_purple",
+    "name": "Purple Cauliflower",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Antioxidants"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cauliflower_orange",
+    "name": "Orange Cauliflower",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Supports eye health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Eye health"]
+  },
+  {
+    "id": "cauliflower_green",
+    "name": "Green Cauliflower (Romanesco)",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Immunity", "Digestion", "Heart health"]
+  },
+  {
+    "id": "nopales",
+    "name": "Nopales (Cactus Pads)",
+    "nutrients": ["Vitamin C", "Fiber", "Magnesium", "Calcium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "sorrel",
+    "name": "Sorrel",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes skin health"],
+    "best_time": "In salads or soups",
+    "good_for": ["Immunity", "Digestion", "Skin health"]
+  },
+  {
+    "id": "lambs_quarters",
+    "name": "Lamb's Quarters",
+    "nutrients": ["Vitamin A", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Cooked or in salads",
+    "good_for": ["Eye health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "dandelion_greens",
+    "name": "Dandelion Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Vitamin K", "Calcium"],
+    "benefits": ["Supports liver health", "Aids digestion", "Boosts immunity"],
+    "best_time": "In salads or cooked",
+    "good_for": ["Liver health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "nettle",
+    "name": "Stinging Nettle",
+    "nutrients": ["Vitamin A", "Vitamin C", "Iron", "Calcium"],
+    "benefits": ["Supports joint health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "Cooked (as tea or soup)",
+    "good_for": ["Joint health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "amaranth_greens",
+    "name": "Amaranth Greens",
+    "nutrients": ["Vitamin A", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Cooked or in salads",
+    "good_for": ["Eye health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "moringa_leaves",
+    "name": "Moringa Leaves",
+    "nutrients": ["Vitamin A", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Promotes energy"],
+    "best_time": "As a tea or in cooking",
+    "good_for": ["Immunity", "Energy", "Bone health"]
+  },
+  {
+    "id": "fenugreek_greens",
+    "name": "Fenugreek Greens (Methi)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Iron", "Fiber"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes bone health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "curry_leaves",
+    "name": "Curry Leaves",
+    "nutrients": ["Vitamin A", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes hair health"],
+    "best_time": "With meals",
+    "good_for": ["Digestion", "Immunity", "Hair health"]
+  },
+  {
+    "id": "celery_leaves",
+    "name": "Celery Leaves",
+    "nutrients": ["Vitamin A", "Vitamin C", "Potassium", "Fiber"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a garnish or in salads",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "parsley",
+    "name": "Parsley",
+    "nutrients": ["Vitamin K", "Vitamin C", "Vitamin A", "Iron"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "As a garnish or in salads",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "cilantro",
+    "name": "Cilantro (Coriander Leaves)",
+    "nutrients": ["Vitamin K", "Vitamin A", "Vitamin C", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a garnish or in salads",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "mint",
+    "name": "Mint",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Promotes oral health"],
+    "best_time": "As a tea or in salads",
+    "good_for": ["Digestion", "Oral health", "Immunity"]
+  },
+  {
+    "id": "basil",
+    "name": "Basil",
+    "nutrients": ["Vitamin K", "Vitamin A", "Antioxidants", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Reduces inflammation"],
+    "best_time": "With meals or as a garnish",
+    "good_for": ["Bone health", "Immunity", "Inflammation"]
+  },
+  {
+    "id": "oregano",
+    "name": "Oregano",
+    "nutrients": ["Vitamin K", "Antioxidants", "Fiber", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Has antibacterial properties"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Bone health", "Immunity", "General health"]
+  },
+  {
+    "id": "thyme",
+    "name": "Thyme",
+    "nutrients": ["Vitamin C", "Vitamin A", "Iron", "Antioxidants"],
+    "benefits": ["Supports respiratory health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Respiratory health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "nutrients": ["Vitamin C", "Vitamin A", "Calcium", "Antioxidants"],
+    "benefits": ["Supports brain health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Brain health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "nutrients": ["Vitamin K", "Vitamin A", "Calcium", "Antioxidants"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "dill",
+    "name": "Dill",
+    "nutrients": ["Vitamin A", "Vitamin C", "Calcium", "Iron"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes bone health"],
+    "best_time": "With meals or as a garnish",
+    "good_for": ["Digestion", "Immunity", "Bone health"]
+  },
+  {
+    "id": "tarragon",
+    "name": "Tarragon",
+    "nutrients": ["Vitamin C", "Vitamin A", "Potassium", "Antioxidants"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "marjoram",
+    "name": "Marjoram",
+    "nutrients": ["Vitamin K", "Vitamin A", "Calcium", "Antioxidants"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals (as a herb)",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "lemongrass",
+    "name": "Lemongrass",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Aids digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a tea or in cooking",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "shallot",
+    "name": "Shallot",
+    "nutrients": ["Vitamin B6", "Vitamin C", "Fiber", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "scallion",
+    "name": "Scallion (Spring Onion)",
+    "nutrients": ["Vitamin K", "Vitamin C", "Fiber", "Vitamin A"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "With meals or in salads",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "chive",
+    "name": "Chive",
+    "nutrients": ["Vitamin C", "Vitamin A", "Calcium", "Iron"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Aids digestion"],
+    "best_time": "With meals",
+    "good_for": ["Immunity", "Bone health", "Digestion"]
+  },
+  {
+    "id": "garlic_scapes",
+    "name": "Garlic Scapes",
+    "nutrients": ["Vitamin C", "Vitamin B6", "Manganese", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Has antibacterial properties"],
+    "best_time": "Stir-fried or in salads",
+    "good_for": ["Heart health", "Immunity", "General health"]
+  },
+  {
+    "id": "asparagus_purple",
+    "name": "Purple Asparagus",
+    "nutrients": ["Folate", "Vitamin K", "Vitamin C", "Fiber"],
+    "benefits": ["Supports pregnancy", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Pregnancy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "asparagus_white",
+    "name": "White Asparagus",
+    "nutrients": ["Folate", "Vitamin K", "Vitamin C", "Fiber"],
+    "benefits": ["Supports pregnancy", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Pregnancy", "Digestion", "Heart health"]
+  },
+  {
+    "id": "artichoke_globe",
+    "name": "Globe Artichoke",
+    "nutrients": ["Fiber", "Vitamin C", "Folate", "Magnesium"],
+    "benefits": ["Supports liver health", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Liver health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "artichoke_baby",
+    "name": "Baby Artichoke",
+    "nutrients": ["Fiber", "Vitamin C", "Folate", "Magnesium"],
+    "benefits": ["Supports liver health", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Liver health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "cardoon",
+    "name": "Cardoon",
+    "nutrients": ["Fiber", "Vitamin C", "Folate", "Magnesium"],
+    "benefits": ["Supports liver health", "Aids digestion", "Promotes heart health"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Liver health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "rhubarb",
+    "name": "Rhubarb",
+    "nutrients": ["Vitamin K", "Fiber", "Vitamin C", "Calcium"],
+    "benefits": ["Supports bone health", "Aids digestion", "Promotes heart health"],
+    "best_time": "In desserts or as a compote",
+    "good_for": ["Bone health", "Digestion", "Heart health"]
+  },
+  {
+    "id": "horseradish_root",
+    "name": "Horseradish Root",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Calcium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes respiratory health"],
+    "best_time": "With meals (as condiment)",
+    "good_for": ["Digestion", "Immunity", "Respiratory health"]
+  },
+  {
+    "id": "wasabi_root",
+    "name": "Wasabi Root",
+    "nutrients": ["Vitamin C", "Potassium", "Fiber", "Antioxidants"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Has antibacterial properties"],
+    "best_time": "With meals (as condiment)",
+    "good_for": ["Digestion", "Immunity", "General health"]
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "nutrients": ["Vitamin C", "Magnesium", "Potassium", "Gingerol"],
+    "benefits": ["Reduces nausea", "Supports digestion", "Reduces inflammation"],
+    "best_time": "Morning or with meals",
+    "good_for": ["Digestion", "Nausea", "Inflammation"]
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "nutrients": ["Curcumin", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Reduces inflammation", "Supports joint health", "Boosts immunity"],
+    "best_time": "With meals",
+    "good_for": ["Inflammation", "Joint health", "Immunity"]
+  },
+  {
+    "id": "galangal",
+    "name": "Galangal",
+    "nutrients": ["Vitamin C", "Antioxidants", "Iron", "Potassium"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Reduces inflammation"],
+    "best_time": "In cooking",
+    "good_for": ["Digestion", "Immunity", "Inflammation"]
+  },
+  {
+    "id": "fingerroot",
+    "name": "Fingerroot (Chinese Ginger)",
+    "nutrients": ["Vitamin C", "Antioxidants", "Potassium", "Fiber"],
+    "benefits": ["Supports digestion", "Boosts immunity", "Promotes skin health"],
+    "best_time": "In cooking",
+    "good_for": ["Digestion", "Immunity", "Skin health"]
+  },
+  {
+    "id": "sprouts_bean",
+    "name": "Bean Sprouts",
+    "nutrients": ["Vitamin C", "Vitamin K", "Fiber", "Folate"],
+    "benefits": ["Supports immunity", "Aids digestion", "Promotes bone health"],
+    "best_time": "In salads or stir-fries",
+    "good_for": ["Immunity", "Digestion", "Bone health"]
+  },
+  {
+    "id": "sprouts_alfalfa",
+    "name": "Alfalfa Sprouts",
+    "nutrients": ["Vitamin K", "Vitamin C", "Fiber", "Calcium"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "sprouts_broccoli",
+    "name": "Broccoli Sprouts",
+    "nutrients": ["Vitamin C", "Vitamin K", "Sulforaphane", "Fiber"],
+    "benefits": ["Supports detoxification", "Boosts immunity", "Reduces inflammation"],
+    "best_time": "In salads or smoothies",
+    "good_for": ["Detoxification", "Immunity", "Inflammation"]
+  },
+  {
+    "id": "mushroom_enoki",
+    "name": "Enoki Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Promotes digestion"],
+    "best_time": "Soups or stir-fries",
+    "good_for": ["Immunity", "Heart health", "Digestion"]
+  },
+  {
+    "id": "mushroom_king_trumpet",
+    "name": "King Trumpet Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Supports bone health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Grilled or stir-fried",
+    "good_for": ["Bone health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "mushroom_wood_ear",
+    "name": "Wood Ear Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Soups or stir-fries",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "mushroom_cloud_ear",
+    "name": "Cloud Ear Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Soups or stir-fries",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "mushroom_morel",
+    "name": "Morel Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports bone health", "Promotes digestion"],
+    "best_time": "Sautéed or in sauces",
+    "good_for": ["Immunity", "Bone health", "Digestion"]
+  },
+  {
+    "id": "mushroom_chanterelle",
+    "name": "Chanterelle Mushroom",
+    "nutrients": ["Vitamin D", "B vitamins", "Fiber", "Antioxidants"],
+    "benefits": ["Boosts immunity", "Supports heart health", "Aids digestion"],
+    "best_time": "Sautéed or in sauces",
+    "good_for": ["Immunity", "Heart health", "Digestion"]
+  },
+  {
+    "id": "seaweed_kelp",
+    "name": "Kelp (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin K", "Fiber", "Calcium"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "In soups or as a snack",
+    "good_for": ["Thyroid health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "seaweed_nori",
+    "name": "Nori (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin A", "Vitamin C", "Calcium"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack or in sushi",
+    "good_for": ["Thyroid health", "Immunity", "Skin health"]
+  },
+  {
+    "id": "seaweed_wakame",
+    "name": "Wakame (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin K", "Fiber", "Magnesium"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "In soups or salads",
+    "good_for": ["Thyroid health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "seaweed_dulse",
+    "name": "Dulse (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin B6", "Potassium", "Iron"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes energy"],
+    "best_time": "As a snack or in soups",
+    "good_for": ["Thyroid health", "Immunity", "Energy"]
+  },
+  {
+    "id": "seaweed_arame",
+    "name": "Arame (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin K", "Fiber", "Calcium"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "In soups or salads",
+    "good_for": ["Thyroid health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "seaweed_hijiki",
+    "name": "Hijiki (Seaweed)",
+    "nutrients": ["Iodine", "Vitamin K", "Fiber", "Calcium"],
+    "benefits": ["Supports thyroid health", "Boosts immunity", "Promotes bone health"],
+    "best_time": "In soups or salads",
+    "good_for": ["Thyroid health", "Immunity", "Bone health"]
+  },
+  {
+    "id": "seaweed_spirulina",
+    "name": "Spirulina (Blue-green algae)",
+    "nutrients": ["Protein", "Vitamin B12", "Iron", "Antioxidants"],
+    "benefits": ["Boosts energy", "Supports immunity", "Promotes muscle recovery"],
+    "best_time": "In smoothies or as supplement",
+    "good_for": ["Athletes", "Energy", "Immunity"]
+  },
+  {
+    "id": "seaweed_chlorella",
+    "name": "Chlorella",
+    "nutrients": ["Protein", "Vitamin C", "Iron", "Antioxidants"],
+    "benefits": ["Supports detoxification", "Boosts immunity", "Promotes energy"],
+    "best_time": "In smoothies or as supplement",
+    "good_for": ["Detoxification", "Immunity", "Energy"]
+  },
+  {
+    "id": "tomato_cherry",
+    "name": "Cherry Tomato",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Heart health", "Skin health", "Immunity"]
+  },
+  {
+    "id": "tomato_plum",
+    "name": "Plum Tomato (Roma)",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "In cooking or sauces",
+    "good_for": ["Heart health", "Skin health", "Immunity"]
+  },
+  {
+    "id": "tomato_beefsteak",
+    "name": "Beefsteak Tomato",
+    "nutrients": ["Vitamin C", "Vitamin A", "Lycopene", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Promotes skin health"],
+    "best_time": "In salads or sandwiches",
+    "good_for": ["Heart health", "Skin health", "Immunity"]
+  },
+  {
+    "id": "tomato_green",
+    "name": "Green Tomato",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Supports heart health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Cooked or fried",
+    "good_for": ["Heart health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "tomatillo",
+    "name": "Tomatillo",
+    "nutrients": ["Vitamin C", "Vitamin A", "Fiber", "Potassium"],
+    "benefits": ["Boosts immunity", "Supports eye health", "Aids digestion"],
+    "best_time": "In salsas or sauces",
+    "good_for": ["Immunity", "Eye health", "Digestion"]
+  },
+  {
+    "id": "cucumber_persian",
+    "name": "Persian Cucumber",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Magnesium"],
+    "benefits": ["Hydrates body", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Hydration", "Skin health", "Weight management"]
+  },
+  {
+    "id": "cucumber_english",
+    "name": "English Cucumber",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Magnesium"],
+    "benefits": ["Hydrates body", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Hydration", "Skin health", "Weight management"]
+  },
+  {
+    "id": "cucumber_lemon",
+    "name": "Lemon Cucumber",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Magnesium"],
+    "benefits": ["Hydrates body", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Hydration", "Skin health", "Weight management"]
+  },
+  {
+    "id": "cucumber_armenian",
+    "name": "Armenian Cucumber",
+    "nutrients": ["Vitamin K", "Potassium", "Fiber", "Magnesium"],
+    "benefits": ["Hydrates body", "Supports skin health", "Aids digestion"],
+    "best_time": "As a snack or in salads",
+    "good_for": ["Hydration", "Skin health", "Weight management"]
+  },
+  {
+    "id": "pumpkin_butternut",
+    "name": "Butternut Pumpkin",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "pumpkin_jarrahdale",
+    "name": "Jarrahdale Pumpkin",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "pumpkin_kabocha",
+    "name": "Kabocha Pumpkin (Japanese Pumpkin)",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "pumpkin_sugar",
+    "name": "Sugar Pumpkin",
+    "nutrients": ["Vitamin A", "Vitamin C", "Fiber", "Potassium"],
+    "benefits": ["Supports eye health", "Boosts immunity", "Aids digestion"],
+    "best_time": "In baking or soups",
+    "good_for": ["Eye health", "Immunity", "Digestion"]
+  },
+  {
+    "id": "squash_pattypan",
+    "name": "Pattypan Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "squash_crookneck",
+    "name": "Crookneck Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin B6"],
+    "benefits": ["Supports heart health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Heart health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "squash_turban",
+    "name": "Turban Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin A"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "squash_hubbard",
+    "name": "Hubbard Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin A"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  },
+  {
+    "id": "squash_delicata",
+    "name": "Delicata Squash",
+    "nutrients": ["Vitamin C", "Fiber", "Potassium", "Vitamin A"],
+    "benefits": ["Supports eye health", "Aids digestion", "Boosts immunity"],
+    "best_time": "Lunch or dinner",
+    "good_for": ["Eye health", "Digestion", "Immunity"]
+  }
+]

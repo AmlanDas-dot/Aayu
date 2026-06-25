@@ -1,0 +1,170 @@
+[
+  {
+    "id": "cold",
+    "category": "Common Cold",
+    "symptoms": ["runny nose", "congestion", "sneezing", "sore throat", "cough", "mild headache", "watery eyes"],
+    "guidance": "Rest well and stay hydrated. Warm fluids like tea or soup can soothe a sore throat. Standard supportive care resolves this within 7-10 days. Saline nasal drops help with congestion.",
+    "precautions": ["Wash hands frequently", "Avoid close contact with others", "Cover mouth when coughing or sneezing", "Do not share utensils or towels"],
+    "urgency": "low"
+  },
+  {
+    "id": "fever",
+    "category": "Fever",
+    "symptoms": ["high temperature", "chills", "sweating", "headache", "muscle aches", "weakness", "loss of appetite"],
+    "guidance": "Monitor temperature regularly. Stay hydrated, rest, and keep room ventilated. Use a damp cloth on forehead. Consult a physician if fever goes above 103°F (39.4°C) or lasts more than 3 days.",
+    "precautions": ["Do not self-prescribe antibiotics", "Avoid cold baths which can trigger shivering", "Keep track of temperature readings", "Seek care if rash or seizures appear"],
+    "urgency": "medium"
+  },
+  {
+    "id": "influenza",
+    "category": "Influenza (Flu)",
+    "symptoms": ["sudden fever", "dry cough", "fatigue", "body ache", "sweats", "chills", "stuffy nose", "sore throat"],
+    "guidance": "Rest completely. Drink plenty of water and warm teas. Watch for breathing issues or chest pain. Antiviral medications work best if taken within 48 hours of symptom onset.",
+    "precautions": ["Isolate to prevent spreading", "Wash hands and sanitize frequently touched surfaces", "Annual flu vaccination recommended", "Wear mask if caring for others"],
+    "urgency": "medium"
+  },
+  {
+    "id": "headache_tension",
+    "category": "Tension Headache",
+    "symptoms": ["dull pressure around head", "tightness around forehead", "tenderness of scalp", "neck or shoulder soreness", "mild to moderate pain"],
+    "guidance": "Rest in a quiet dark room. Apply a cold or warm compress to head or neck. Drink water as dehydration is a common trigger. Over-the-counter pain relievers can help if not contraindicated.",
+    "precautions": ["Limit screen time", "Maintain good posture", "Take regular breaks from work", "Avoid skipping meals"],
+    "urgency": "low"
+  },
+  {
+    "id": "migraine",
+    "category": "Migraine",
+    "symptoms": ["throbbing one-sided headache", "nausea", "vomiting", "sensitivity to light", "sensitivity to sound", "visual disturbances (aura)", "dizziness"],
+    "guidance": "Rest in a dark, quiet room. Apply cold compress to head. Stay hydrated. Prescribed migraine medications (triptans) should be taken early in the attack for best effect.",
+    "precautions": ["Identify and avoid personal triggers (stress, certain foods, sleep changes)", "Maintain a regular sleep schedule", "Do not overuse pain medications as it can cause rebound headaches", "Keep a migraine diary"],
+    "urgency": "medium"
+  },
+  {
+    "id": "gastroenteritis",
+    "category": "Gastroenteritis (Stomach Flu)",
+    "symptoms": ["diarrhea", "nausea", "vomiting", "stomach cramps", "mild fever", "muscle aches", "loss of appetite"],
+    "guidance": "Replace fluids and electrolytes with ORS (Oral Rehydration Solution). Eat bland foods like rice, bananas, and toast (BRAT diet). Avoid dairy, fatty, or spicy foods until recovered. Usually resolves in 1-3 days.",
+    "precautions": ["Prepare ORS at home: 1 liter boiled water + 6 tsp sugar + 0.5 tsp salt", "Wash hands thoroughly especially before eating", "Avoid sharing food or drinks", "Seek care if diarrhea lasts more than 3 days or blood appears in stool"],
+    "urgency": "medium"
+  },
+  {
+    "id": "constipation",
+    "category": "Constipation",
+    "symptoms": ["infrequent bowel movements (less than 3/week)", "hard or lumpy stools", "straining during bowel movements", "bloating", "stomach pain", "feeling of incomplete evacuation"],
+    "guidance": "Increase dietary fiber intake with fruits, vegetables, and whole grains. Drink at least 8 glasses of water daily. Exercise regularly. Avoid excessive use of laxatives.",
+    "precautions": ["Do not ignore urge to use toilet", "Avoid highly processed and low-fiber foods", "Establish a regular toilet routine", "Consult doctor if constipation is persistent or accompanied by blood"],
+    "urgency": "low"
+  },
+  {
+    "id": "acidity_gerd",
+    "category": "Acidity / GERD (Gastroesophageal Reflux Disease)",
+    "symptoms": ["heartburn", "burning in chest or throat", "sour taste in mouth", "difficulty swallowing", "bloating", "nausea after meals", "regurgitation"],
+    "guidance": "Eat smaller, more frequent meals. Avoid eating 2-3 hours before bedtime. Elevate head while sleeping. Avoid trigger foods. Antacids provide short-term relief. Persistent symptoms need medical evaluation.",
+    "precautions": ["Avoid spicy, oily, and acidic foods", "Limit tea, coffee, and carbonated drinks", "Do not lie down immediately after eating", "Avoid alcohol and smoking"],
+    "urgency": "low"
+  },
+  {
+    "id": "urinary_tract_infection",
+    "category": "Urinary Tract Infection (UTI)",
+    "symptoms": ["burning sensation while urinating", "frequent urge to urinate", "cloudy or strong-smelling urine", "lower abdominal pain", "blood in urine", "mild fever"],
+    "guidance": "Drink plenty of water (2-3 liters/day) to flush bacteria. Consult a doctor for antibiotic prescription — do not self-medicate. Complete the full antibiotic course even if symptoms improve.",
+    "precautions": ["Urinate after sexual activity", "Wipe front to back", "Avoid holding urine for long periods", "Wear cotton underwear", "Avoid perfumed soaps near genital area"],
+    "urgency": "medium"
+  },
+  {
+    "id": "conjunctivitis",
+    "category": "Conjunctivitis (Pink Eye)",
+    "symptoms": ["red eyes", "itching or burning in eyes", "discharge from eyes", "swollen eyelids", "watery eyes", "sensitivity to light", "gritty feeling in eyes"],
+    "guidance": "Clean eyes gently with clean wet cloth from inner to outer corner. Wash hands frequently. Avoid touching eyes. Bacterial conjunctivitis requires antibiotic eye drops prescribed by a doctor.",
+    "precautions": ["Do not share towels, pillowcases, or eye makeup", "Wash hands before and after touching eyes", "Avoid wearing contact lenses until healed", "Discard old eye makeup"],
+    "urgency": "low"
+  },
+  {
+    "id": "skin_rash",
+    "category": "Skin Rash (Contact Dermatitis)",
+    "symptoms": ["redness", "itching", "swelling", "blisters", "dry or cracked skin", "burning sensation", "scaly patches"],
+    "guidance": "Identify and remove the trigger (soap, fabric, plant, food). Apply cool compress. Use calamine lotion or hydrocortisone cream (short term). Keep skin moisturized. See a doctor if rash spreads or becomes infected.",
+    "precautions": ["Avoid known skin irritants", "Wear protective clothing if handling chemicals", "Do not scratch rash as it worsens infection risk", "Use mild fragrance-free soaps"],
+    "urgency": "low"
+  },
+  {
+    "id": "toothache",
+    "category": "Toothache / Dental Pain",
+    "symptoms": ["sharp or throbbing tooth pain", "pain worsened by hot or cold", "swollen gum", "jaw pain", "bad breath", "sensitivity to sweets"],
+    "guidance": "Rinse with warm salt water. Clove oil applied to the tooth can temporarily reduce pain. Avoid very hot or cold foods. See a dentist as soon as possible — toothaches rarely resolve without dental treatment.",
+    "precautions": ["Brush twice daily with fluoride toothpaste", "Floss daily", "Avoid excessive sugar intake", "Do not ignore dental pain as it can spread to jaw or neck"],
+    "urgency": "medium"
+  },
+  {
+    "id": "back_pain",
+    "category": "Back Pain (Low Back Pain)",
+    "symptoms": ["dull or sharp lower back pain", "stiffness", "muscle spasms", "pain radiating to legs (sciatica)", "difficulty standing or bending", "pain worse after sitting long"],
+    "guidance": "Rest but avoid prolonged bed rest. Apply ice for first 48 hours then switch to heat. Gentle stretches and walking help recovery. Pain relievers (paracetamol) can reduce discomfort. See doctor if pain radiates below knee or comes with numbness.",
+    "precautions": ["Lift objects by bending knees not back", "Maintain good posture while sitting and standing", "Sleep on a firm mattress", "Exercise core muscles regularly"],
+    "urgency": "low"
+  },
+  {
+    "id": "ear_infection",
+    "category": "Ear Infection (Otitis Media)",
+    "symptoms": ["ear pain", "difficulty hearing", "fluid drainage from ear", "feeling of pressure in ear", "fever", "irritability in children", "pulling at ears (children)"],
+    "guidance": "Apply warm compress over the ear for pain relief. See a doctor for diagnosis — bacterial infections require antibiotics. Do not insert objects into ear. Most mild cases in adults resolve on their own in 2-3 days.",
+    "precautions": ["Dry ears after swimming or bathing", "Do not use cotton swabs inside ear canal", "Avoid exposure to cigarette smoke", "Treat respiratory infections promptly to prevent spread to ear"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sinusitis",
+    "category": "Sinusitis",
+    "symptoms": ["facial pain or pressure", "nasal congestion", "thick yellow or green nasal discharge", "reduced sense of smell", "headache", "cough", "fever", "bad breath"],
+    "guidance": "Steam inhalation helps clear sinuses. Saline nasal irrigation is very effective. Stay hydrated. Acute bacterial sinusitis (lasting more than 10 days or worsening) needs antibiotic treatment.",
+    "precautions": ["Avoid allergens and tobacco smoke", "Use humidifier in dry air", "Blow nose gently one nostril at a time", "Stay hydrated to thin mucus"],
+    "urgency": "low"
+  },
+  {
+    "id": "food_poisoning",
+    "category": "Food Poisoning",
+    "symptoms": ["sudden nausea", "vomiting", "diarrhea", "stomach cramps", "fever", "weakness", "symptoms appear within hours of eating"],
+    "guidance": "Stop eating and rest. Sip ORS or clear fluids in small amounts. Avoid solid food until vomiting stops. Seek emergency care if symptoms are severe, if there is blood in vomit/stool, or if the person cannot keep fluids down.",
+    "precautions": ["Cook meat and fish to safe internal temperatures", "Refrigerate leftovers within 2 hours", "Wash hands before cooking", "Avoid raw or undercooked eggs, meat, and shellfish", "Check expiry dates on packaged food"],
+    "urgency": "medium"
+  },
+  {
+    "id": "insomnia",
+    "category": "Insomnia (Sleep Disorder)",
+    "symptoms": ["difficulty falling asleep", "waking up frequently at night", "waking too early", "daytime sleepiness", "irritability", "difficulty concentrating", "fatigue"],
+    "guidance": "Maintain a regular sleep schedule. Avoid screens 1 hour before bed. Create a dark, quiet, cool sleep environment. Avoid caffeine after 2 PM. Relaxation techniques (deep breathing, meditation) help. See doctor if insomnia persists more than 3 weeks.",
+    "precautions": ["Avoid long daytime naps", "Do not use bed for work or watching TV", "Limit alcohol as it disrupts sleep quality", "Avoid heavy meals close to bedtime"],
+    "urgency": "low"
+  },
+  {
+    "id": "allergic_rhinitis",
+    "category": "Allergic Rhinitis (Hay Fever)",
+    "symptoms": ["sneezing", "runny nose", "itchy nose and eyes", "nasal congestion", "watery eyes", "postnasal drip", "cough"],
+    "guidance": "Identify and avoid allergens (dust, pollen, pet dander). Antihistamines (cetirizine, loratadine) provide effective relief. Nasal corticosteroid sprays work well for persistent symptoms. Keep windows closed during high pollen seasons.",
+    "precautions": ["Use allergen-proof mattress and pillow covers", "Vacuum frequently with HEPA filter", "Shower after outdoor activities to remove pollen", "Monitor air quality index in your area"],
+    "urgency": "low"
+  },
+  {
+    "id": "asthma",
+    "category": "Asthma",
+    "symptoms": ["wheezing", "shortness of breath", "chest tightness", "cough especially at night", "symptoms worsen with exercise or cold air", "difficulty sleeping due to breathlessness"],
+    "guidance": "Always carry a prescribed rescue inhaler (Salbutamol). Use controller medications as prescribed even when feeling well. Avoid known triggers. During an attack: use rescue inhaler, sit upright, stay calm. Call emergency if no improvement after inhaler use.",
+    "precautions": ["Avoid smoke, dust, pollen, mold, and pet dander", "Stay indoors during high pollution days", "Cover nose in cold weather", "Get annual flu vaccine", "Never stop controller medication without consulting doctor"],
+    "urgency": "high"
+  },
+  {
+    "id": "chickenpox",
+    "category": "Chickenpox (Varicella)",
+    "symptoms": ["itchy blister-like rash", "fever", "fatigue", "loss of appetite", "headache", "rash progresses from trunk to face and limbs", "fluid-filled blisters that crust over"],
+    "guidance": "Isolate to prevent spread. Calamine lotion and cool baths relieve itching. Cut fingernails short to reduce scratching. Avoid aspirin. Paracetamol for fever. Usually resolves in 5-10 days. Vaccination is the best prevention.",
+    "precautions": ["Do not scratch blisters to avoid scarring and secondary infection", "Wash hands frequently", "Isolate from pregnant women, newborns, and immunocompromised people", "Keep child home from school until all blisters have crusted"],
+    "urgency": "medium"
+  },
+  {
+    "id": "measles",
+    "category": "Measles",
+    "symptoms": ["high fever", "cough", "runny nose", "red eyes (conjunctivitis)", "Koplik spots inside mouth", "widespread red rash starting on face", "sensitivity to light"],
+    "guidance": "Rest and maintain hydration. Vitamin A supplementation is important especially in children. Monitor for serious complications (pneumonia, encephalitis). There is no specific antiviral treatment; care is supportive. Vaccination (MMR) is the most effective prevention.",
+    "precautions": ["Isolate patient to prevent spread — measles is highly contagious", "Ensure all household contacts are vaccinated", "Keep room well-lit but avoid harsh light if patient is light-sensitive", "Seek immediate care if breathing difficulties or seizures occur"],
+    "urgency": "high"
+  }
+]

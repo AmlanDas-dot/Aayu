@@ -22,7 +22,7 @@ from typing import Any, Optional
 logger = logging.getLogger(__name__)
 
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "schemes")
-_SCHEMES_FILE = "schemes.json"
+_SCHEMES_FILE = None  # deprecated — now auto-discovers all *.json files in schemes/
 
 
 class SchemesService:
@@ -40,12 +40,25 @@ class SchemesService:
         return cls._instance
 
     def _load_schemes(self) -> list[dict[str, Any]]:
-        path = os.path.join(_DATA_DIR, _SCHEMES_FILE)
-        if not os.path.exists(path):
-            logger.warning("[Schemes] Data file not found: %s", path)
+        """Load all schemes from all JSON files in the schemes/ directory."""
+        import glob
+        pattern = os.path.join(_DATA_DIR, "*.json")
+        files = sorted(glob.glob(pattern))
+        if not files:
+            logger.warning("[Schemes] No scheme files found in: %s", _DATA_DIR)
             return []
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+        all_schemes: list[dict[str, Any]] = []
+        for filepath in files:
+            try:
+                with open(filepath, encoding="utf-8") as f:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        all_schemes.extend(data)
+                    logger.info("[Schemes] Loaded %d schemes from %s", len(data), os.path.basename(filepath))
+            except Exception as exc:
+                logger.warning("[Schemes] Failed to load %s: %s", filepath, exc)
+        logger.info("[Schemes] Total schemes loaded: %d", len(all_schemes))
+        return all_schemes
 
     @property
     def count(self) -> int:

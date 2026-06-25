@@ -6,7 +6,7 @@ It is ARCHITECTURE ONLY — no LLM or medical reasoning is implemented here.
 
 Pipeline:
     Voice (audio blob)
-        ↓  [1] Whisper STT           → raw transcript (user language)
+        ↓  [1] STT Pipeline          → raw transcript (user language)
         ↓  [2] IndicTrans2           → English transcript
         ↓  [3] Semantic Search       → top-k knowledge chunks
         ↓  [4] Context Assembly      → prompt-ready context string
@@ -70,32 +70,24 @@ class PipelineResult:
 # Pipeline stages (interfaces)
 # --------------------------------------------------------------------------- #
 
-class _WhisperStage:
+class _STTStage:
     """
-    Stage 1: Voice → raw transcript.
+    Stage 1: Voice → raw transcript (via Sarvam/STT service).
     Stage 2: raw transcript → English (via IndicTrans2 lazy loader).
     """
 
     def run(self, audio_path: str, language: str) -> tuple[str, str, str]:
         """
         Returns (original_text, english_text, detected_language).
-        Whisper and IndicTrans2 are both lazy-loaded; first call triggers load.
+        IndicTrans2 is lazy-loaded.
         """
-        import time
-        from app.services.whisper_service import get_whisper_model
+        from app.services.speech.stt_service import transcribe_audio
         from app.services.translation_service import translate_to_english
-        from app.routers.transcribe import WHISPER_LANGUAGE_MAP
 
-        model = get_whisper_model()
-        whisper_lang = WHISPER_LANGUAGE_MAP.get(language)
-
-        segments, info = model.transcribe(
-            audio_path, language=whisper_lang, task="transcribe", beam_size=5
-        )
-        original = " ".join(seg.text for seg in segments).strip()
+        original = transcribe_audio(audio_path, language)
         english = translate_to_english(original, language)
 
-        return original, english, info.language
+        return original, english, language
 
 
 class _SearchStage:
@@ -185,7 +177,7 @@ class VoicePipeline:
     Orchestrates the full Voice → Response pipeline.
 
     Sprint 1 capabilities:
-        ✓ Whisper STT
+        ✓ Native + Sarvam STT
         ✓ IndicTrans2 translation (lazy loaded)
         ✓ Semantic Search (ChromaDB)
         ✓ Context Assembly
@@ -198,7 +190,7 @@ class VoicePipeline:
     """
 
     def __init__(self) -> None:
-        self._whisper = _WhisperStage()
+        self._stt = _STTStage()
         self._search = _SearchStage()
         self._context = _ContextAssemblyStage()
         self._llm = _LLMSlot()

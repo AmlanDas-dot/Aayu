@@ -1,0 +1,980 @@
+[
+  {
+    "id": "pneumonia_child",
+    "category": "Pneumonia (Children)",
+    "symptoms": ["fast breathing (more than 60/min in infants, 50/min in 1-5 yr, 40/min in older children)", "chest in-drawing (chest wall sinks during breathing)", "fever", "cough", "difficulty feeding", "grunting sounds", "nasal flaring", "lips or fingertips turning blue"],
+    "guidance": "Pneumonia is the single leading cause of child death under 5 in India. Seek emergency medical care immediately if fast breathing or chest in-drawing is present. Government hospitals provide free Amoxicillin or Cotrimoxazole for non-severe cases and injectable antibiotics for severe pneumonia. Do not rely on home remedies alone. Vaccination (PCV — Pneumococcal vaccine) prevents the most common cause.",
+    "precautions": [
+      "Seek immediate medical care — do not wait and watch if fast breathing is present",
+      "Ensure child is vaccinated: BCG, PCV, Hib vaccines protect against pneumonia",
+      "Exclusively breastfeed for first 6 months — breast milk protects against lung infections",
+      "Avoid indoor smoke from wood stoves, incense, and tobacco near children",
+      "Count child's breathing rate for 1 full minute if cough or difficulty breathing is present"
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "diarrhea_child",
+    "category": "Diarrhea (Children)",
+    "symptoms": ["loose watery stools 3 or more times a day", "vomiting", "stomach cramps", "fever", "signs of dehydration: sunken eyes, dry mouth, no urine for 8 hours, crying without tears, skin pinch goes back slowly", "blood in stool (dysentery)"],
+    "guidance": "Start ORS immediately — it saves lives. Prepare ORS: 1 liter clean water + 6 teaspoons sugar + 0.5 teaspoon salt. Give Zinc syrup (free at PHC) for 14 days — it reduces severity and prevents future episodes. Continue breastfeeding. Do NOT stop feeding child. Blood in stool (dysentery) needs antibiotics — see doctor. Signs of severe dehydration need hospital IV fluids urgently.",
+    "precautions": [
+      "Start ORS from the very first loose stool — do not wait",
+      "Give Zinc supplements for 14 days (available free at Anganwadi and PHC)",
+      "Wash hands with soap before feeding child and after using toilet",
+      "Use only clean drinking water (boil if unsure)",
+      "Seek immediate care if child has sunken eyes, is not passing urine, cannot drink, or has blood in stool"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "malnutrition_sam",
+    "category": "Severe Acute Malnutrition (SAM)",
+    "symptoms": ["severe wasting — visible ribs, sharp collarbones, 'old man face'", "weight-for-height Z-score below -3 SD", "MUAC (mid-upper arm circumference) below 11.5 cm", "bilateral pitting edema (swollen feet)", "sunken eyes", "thin, sparse, easily pluckable hair", "frequent infections", "irritability or extreme weakness"],
+    "guidance": "SAM is a medical emergency. Refer to Nutrition Rehabilitation Center (NRC) at district hospital — admission is free under government schemes. NRC provides therapeutic feeding with F-75 and F-100 milks, then Ready-to-Use Therapeutic Food (RUTF — Plumpy'Nut). Treatment duration is 6-8 weeks. Community-based management with RUTF is now available. Growth monitoring at Anganwadi helps early detection.",
+    "precautions": [
+      "Measure all children under 5 with MUAC tape — available at Anganwadi centers",
+      "Refer immediately to NRC if MUAC below 11.5 cm or edema present",
+      "Continue breastfeeding even in SAM children",
+      "Do not give high-protein foods rapidly — causes refeeding syndrome",
+      "Ensure complete vaccination and deworming as part of treatment"
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "stunting",
+    "category": "Stunting (Chronic Malnutrition in Children)",
+    "symptoms": ["height below -2 SD for age (height-for-age)", "appears shorter than peers of same age", "delayed developmental milestones", "poor school performance", "frequent infections", "often not apparent without measuring height"],
+    "guidance": "Stunting results from prolonged inadequate nutrition starting before birth. It causes permanent effects on brain development and height if not corrected before age 2 (the '1000 days window'). Interventions: exclusive breastfeeding till 6 months, diverse complementary feeding from 6 months (ragi, dal, eggs, green vegetables), IFA supplements, regular growth monitoring at Anganwadi. Prevention is far more effective than treatment.",
+    "precautions": [
+      "Ensure mother's nutrition during pregnancy — stunting starts in womb",
+      "Exclusively breastfeed for 6 months — introduce diverse foods after",
+      "Take child monthly for weight and height measurement at Anganwadi",
+      "Ensure all 12 vaccines under Universal Immunization Programme",
+      "Deworm every 6 months from age 1 under National Deworming Day program"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "neonatal_jaundice",
+    "category": "Neonatal Jaundice (Yellow Baby)",
+    "symptoms": ["yellowing of skin and eyes in newborn", "appears within first 2-3 days of birth", "yellow color spreading from face to chest and belly", "poor feeding", "excessive sleepiness", "high-pitched cry", "dark urine", "pale or clay-colored stools"],
+    "guidance": "Mild jaundice appearing on day 2-3 in healthy term babies is common (physiological jaundice) and often resolves by 1-2 weeks with frequent breastfeeding. Jaundice appearing in the first 24 hours, or spreading to the belly, or in premature babies is dangerous and needs immediate hospital treatment with phototherapy (blue light). Untreated severe jaundice causes brain damage (kernicterus).",
+    "precautions": [
+      "Seek immediate medical care for jaundice in first 24 hours, or yellow belly, or poor feeding",
+      "Feed baby 8-12 times per day — frequent feeding helps clear bilirubin",
+      "Do NOT expose baby to direct sunlight — this can cause heat stroke and sunburn",
+      "Phototherapy at government hospitals is free",
+      "Report yellowing spreading below navel or baby becoming very sleepy as emergency"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "febrile_seizures",
+    "category": "Febrile Seizures (Fever-Related Convulsions in Children)",
+    "symptoms": ["sudden body shaking or stiffening with fever (usually 38°C or above)", "eyes rolling back", "loss of consciousness", "child becomes unresponsive for 1-5 minutes", "confusion and sleepiness after seizure", "occurs usually in children age 6 months to 5 years"],
+    "guidance": "Most febrile seizures are benign (simple febrile seizure) and stop within 5 minutes without treatment. Lay child on side to prevent choking. Do NOT put anything in the child's mouth. Time the seizure. Call 108 if seizure lasts more than 5 minutes or if child does not recover consciousness. After seizure, control fever and seek medical evaluation to rule out meningitis.",
+    "precautions": [
+      "Lay child on their side during seizure — never put anything in the mouth",
+      "Do NOT restrain the child forcefully",
+      "Call 108 immediately if seizure lasts more than 5 minutes (status epilepticus)",
+      "Lower fever with paracetamol as directed by doctor",
+      "All children with first febrile seizure need medical evaluation to exclude meningitis"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "otitis_media_child",
+    "category": "Ear Infection / Otitis Media (Children)",
+    "symptoms": ["ear pain (child may tug or pull at ear)", "fever", "irritability", "difficulty hearing or not responding to sounds", "fluid draining from ear", "difficulty sleeping", "crying more than usual in infants"],
+    "guidance": "Most ear infections in children are caused by bacteria following a cold. Consult a doctor — bacterial infections require antibiotics. Apply warm (not hot) compress over the ear for pain relief. Do not put any drops, oil, or objects in the ear without doctor's advice. Recurrent ear infections or hearing loss need specialist (ENT) evaluation. A ruptured eardrum from untreated infection can cause permanent hearing loss.",
+    "precautions": [
+      "Do not insert cotton swabs or any object into child's ear",
+      "Complete the full antibiotic course even if child seems better",
+      "Keep water out of ears during bathing — use cotton plugs gently",
+      "Breastfeed infants — significantly reduces ear infection risk",
+      "Seek ENT evaluation if child has had 3 or more ear infections in 6 months"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "hand_foot_mouth_disease",
+    "category": "Hand, Foot and Mouth Disease (HFMD)",
+    "symptoms": ["fever", "sores inside mouth (painful)", "rash or blisters on palms, soles, and sometimes buttocks", "irritability", "loss of appetite", "sore throat", "drooling in young children due to mouth pain"],
+    "guidance": "HFMD is a common viral illness in children under 5. It is self-limiting and resolves in 7-10 days. Provide paracetamol for fever and pain. Encourage cool fluids and cold foods (ice cream, cold yogurt) to soothe mouth sores. Isolate child from school and other children while fever and blisters are present. Very rarely causes serious complications.",
+    "precautions": [
+      "Isolate child until all blisters have dried and fever resolves",
+      "Wash hands frequently and thoroughly — virus spreads by contact",
+      "Disinfect toys and surfaces the child has touched",
+      "Do not squeeze or burst blisters",
+      "Seek care if child cannot swallow, has very high fever, or appears very unwell"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "whooping_cough",
+    "category": "Whooping Cough (Pertussis)",
+    "symptoms": ["severe prolonged coughing fits ending in a 'whoop' sound", "cough until child turns red or blue", "vomiting after coughing", "extreme exhaustion after coughing spells", "runny nose initially (cold-like start)", "in infants: may not whoop but may stop breathing during cough (apnea)"],
+    "guidance": "Most dangerous in infants under 6 months who can stop breathing during episodes. Seek emergency care for infants with suspected pertussis. Antibiotics (erythromycin or azithromycin) reduce contagiousness but do not stop cough once it has started. Hospitalization needed for severe cases. Recovery can take up to 3 months (hence called '100-day cough'). DPT vaccination prevents this disease — it is available free.",
+    "precautions": [
+      "Vaccinate with DPT (Diphtheria-Pertussis-Tetanus) at 6, 10, and 14 weeks — it is free",
+      "Seek immediate care for any infant with coughing spells that stop breathing",
+      "Isolate child from infants and pregnant women",
+      "Complete antibiotic course — reduces spread even if cough continues",
+      "Pregnant women should get Tdap vaccine in third trimester to protect newborn"
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "rickets",
+    "category": "Rickets (Vitamin D Deficiency in Children)",
+    "symptoms": ["soft skull bones in infants (delayed fontanelle closure)", "bowing of legs when walking", "delayed walking and teething", "enlarged wrists, ankles, and costochondral junctions (rachitic rosary)", "short stature", "bone pain and tenderness", "muscle weakness", "dental problems"],
+    "guidance": "Caused by Vitamin D deficiency, often combined with calcium deficiency. Treatment: Vitamin D supplements (Stoss therapy — high dose or daily doses) and calcium-rich foods. Expose child to morning sunlight daily (15-20 minutes). Vitamin D supplements (Navjaat Suraksha Kit) provided free at government facilities for newborns. Breastfed babies should receive Vitamin D drops from 2 weeks of age.",
+    "precautions": [
+      "Expose child to morning sunlight daily — best between 7-9 AM",
+      "Give Vitamin D drops to all breastfed infants from 2 weeks (consult doctor for dose)",
+      "Include calcium-rich foods: milk, curd, ragi, sesame seeds (til)",
+      "Do not give excess Vitamin D without monitoring — causes toxicity",
+      "Consult doctor for any child with bowed legs or delayed walking"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "autism_spectrum",
+    "category": "Autism Spectrum Disorder (ASD)",
+    "symptoms": ["no babbling or pointing by 12 months", "no single words by 16 months", "no two-word phrases by 24 months", "loss of previously acquired language or social skills", "poor eye contact", "does not respond to own name", "repetitive movements (hand-flapping, rocking)", "unusual attachment to routines", "over or under sensitivity to senses"],
+    "guidance": "ASD is a neurodevelopmental condition — not a disease or result of bad parenting. Early identification (ideally before age 3) and early intervention dramatically improve outcomes. Government programs under Rashtriya Bal Swasthya Karyakram (RBSK) provide free screening and intervention. Therapies include Applied Behavior Analysis (ABA), speech therapy, occupational therapy, and special education. Vaccinations do NOT cause autism — this is a disproven myth.",
+    "precautions": [
+      "Monitor developmental milestones at every well-child visit — use RBSK screening",
+      "Act early — do not 'wait and see' if development seems delayed",
+      "Vaccines do NOT cause autism — continue full vaccination schedule",
+      "Contact NIMH (National Institute of Mental Health) or district early intervention center",
+      "Connect with parent support groups — improves coping and outcomes for families"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "cerebral_palsy",
+    "category": "Cerebral Palsy",
+    "symptoms": ["delayed motor milestones (not sitting by 9 months, not walking by 18 months)", "stiff or floppy muscle tone", "walking on toes or scissor gait", "using only one side of the body", "difficulty coordinating movements", "excessive drooling", "difficulty swallowing or speaking", "seizures (in some children)"],
+    "guidance": "Cerebral palsy is caused by brain injury around birth (asphyxia, prematurity, infection). It is not progressive — the brain injury does not worsen, though its effects change as the child grows. Management includes physiotherapy, speech therapy, occupational therapy, and assistive devices. Free rehabilitation services available under Persons with Disabilities Act and RBSK. Early intervention before age 3 gives best outcomes.",
+    "precautions": [
+      "Enroll child in early intervention program as early as possible",
+      "Physiotherapy should be consistent and started early",
+      "Prevent birth asphyxia — deliver in hospital with skilled birth attendants",
+      "Prevent prematurity — attend all ANC visits and manage risk factors",
+      "Apply for disability certificate — entitles child to free education and rehabilitation services"
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "intussusception",
+    "category": "Intussusception (Bowel Obstruction in Children)",
+    "symptoms": ["sudden severe cramping abdominal pain (child pulls knees to chest and cries)", "vomiting", "blood and mucus in stool (red currant jelly stool)", "abdominal mass (felt on examination)", "child becomes pale and lethargic between pain episodes", "stops passing stool or gas"],
+    "guidance": "This is a surgical emergency where one part of the intestine folds into another, cutting off blood supply. Most common in children 6 months to 3 years. Seek emergency care immediately. Treatment is air or barium enema (non-surgical) in early cases or surgery in late or complicated cases. Do not give food or water — rush to hospital immediately.",
+    "precautions": [
+      "Rush to hospital immediately — time is critical to prevent bowel death",
+      "Do not give food, water, or pain medicines — go directly to emergency",
+      "Do not apply heat pads or press the abdomen forcefully",
+      "Rotavirus vaccine reduces risk of intussusception after viral diarrhea",
+      "Early treatment (within 24 hours) avoids surgery in most cases"
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "childhood_immunization",
+    "category": "Vaccine-Preventable Diseases (Immunization Schedule)",
+    "symptoms": ["preventable diseases include: TB, polio, diphtheria, whooping cough, tetanus, hepatitis B, measles, rubella, Japanese Encephalitis, rotavirus diarrhea, pneumococcal pneumonia, typhoid"],
+    "guidance": "India's Universal Immunization Programme (UIP) provides all childhood vaccines FREE. Full schedule: BCG at birth, OPV + IPV + Pentavalent + PCV + Rotavirus at 6,10,14 weeks, MR/MMR at 9-12 months and 16-24 months, DPT booster at 16-24 months, JE vaccine at 9-12 months (in endemic areas), Typhoid vaccine at 9-12 months. Missing vaccines can be caught up — nearest PHC or Anganwadi can advise. Never miss a vaccination opportunity.",
+    "precautions": [
+      "Carry the immunization card (Mamta card) to every visit — never lose it",
+      "Child can receive vaccines even with mild cold or fever — do not postpone",
+      "Mild fever or swelling at injection site is normal — do not panic",
+      "Seek care if child develops high fever (above 40°C) within 48 hours of vaccine",
+      "All vaccines are free — do NOT pay for them at government facilities"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "adhd_children",
+    "category": "ADHD (Attention Deficit Hyperactivity Disorder)",
+    "symptoms": ["unable to sit still, runs or climbs excessively", "difficulty paying attention or listening", "easily distracted", "forgets daily activities", "interrupts others constantly", "acts without thinking of consequences", "poor school performance", "symptoms present in more than one setting (home and school)"],
+    "guidance": "ADHD is a neurodevelopmental condition affecting 5-10% of school-age children. It is NOT caused by poor parenting, too much screen time, or sugar. Diagnosis requires a comprehensive evaluation by a pediatrician or child psychiatrist. Treatment combines behavior therapy, school accommodations, and in some cases medication. Children with ADHD have average to above-average intelligence and can succeed with right support.",
+    "precautions": [
+      "Consult a pediatrician or child psychiatrist for proper diagnosis — do not self-diagnose",
+      "Work with school to provide academic accommodations",
+      "Structured routines, short tasks, and positive reinforcement help greatly",
+      "Screen time should be limited and structured",
+      "Do not use traditional 'scolding and beating' discipline — it worsens ADHD symptoms"
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "neonatal_sepsis",
+    "category": "Neonatal Sepsis",
+    "symptoms": ["poor feeding", "lethargy", "temperature instability (fever or hypothermia)", "irritability", "apnea (breathing pauses)", "grunting respirations", "pale or mottled skin", "jaundice", "abdominal distension"],
+    "guidance": "This is a medical emergency. Hospitalize immediately — sepsis is the leading cause of neonatal mortality in India. IV antibiotics (ampicillin + gentamicin) must be started within 1 hour. Supportive care: IV fluids, oxygen, temperature regulation. Prevent through clean delivery practices and handwashing.",
+    "precautions": ["Deliver in a clean facility (institutional delivery)", "Practice handwashing before touching newborn", "Keep umbilical cord clean and dry", "Do not apply traditional substances (ghee, oil) on cord", "Seek care immediately if baby stops feeding or becomes lethargic"],
+    "urgency": "critical"
+  },
+  {
+    "id": "physiological_jaundice",
+    "category": "Physiological Jaundice (Newborn)",
+    "symptoms": ["yellowing of skin and eyes on day 2-3 of life", "spreads from face to chest", "baby is alert and feeding well", "stool is yellow or green, urine is pale", "resolves by 10-14 days in term babies"],
+    "guidance": "Mild physiological jaundice is common and usually benign. Feed baby frequently (8-12 times/day) — good hydration helps clear bilirubin. Do not give water or sugar water — breast milk is best. No treatment needed for mild cases. If jaundice spreads to the belly or beyond, or if baby is lethargic, see a doctor.",
+    "precautions": ["Frequent breastfeeding", "Do not expose to direct sunlight (risk of sunburn)", "Monitor yellowing progression", "Seek care if baby is not feeding well, is sleepy, or jaundice appears in first 24 hours", "Know that phototherapy at government hospitals is free if needed"],
+    "urgency": "low"
+  },
+  {
+    "id": "pathological_jaundice",
+    "category": "Pathological Neonatal Jaundice",
+    "symptoms": ["jaundice appearing within first 24 hours of life", "rapidly spreading to hands and feet", "baby is lethargic, not feeding well, irritable, high-pitched cry", "dark urine, pale stools", "severe cases: kernicterus (brain damage) — arching of back, seizures, deafness"],
+    "guidance": "MEDICAL EMERGENCY — Hospitalization required. Treatment: phototherapy (blue light). Exchange transfusion for severe cases. Early detection prevents brain damage. Risk factors: prematurity, ABO/Rh incompatibility, G6PD deficiency.",
+    "precautions": ["Seek immediate care for jaundice in first 24 hours", "Monitor for lethargy and poor feeding", "Ensure all newborns are checked for jaundice before discharge", "Rh-negative mothers should receive anti-D immunoglobulin", "Follow up bilirubin levels as advised"],
+    "urgency": "critical"
+  },
+  {
+    "id": "birth_asphyxia",
+    "category": "Birth Asphyxia (Hypoxic-Ischemic Encephalopathy)",
+    "symptoms": ["baby does not cry immediately after birth", "pale or blue skin at birth", "poor muscle tone (floppy baby)", "weak or absent breathing", "heart rate < 100/min", "seizures in first 24-48 hours", "difficulty feeding", "irritability or lethargy"],
+    "guidance": "EMERGENCY — Requires immediate resuscitation at birth. Therapeutic hypothermia (cooling therapy) is proven to improve outcomes if started within 6 hours of birth. Prevention: good antenatal care, timely C-section for obstructed labor, skilled birth attendance.",
+    "precautions": ["Deliver in a hospital with skilled birth attendants", "Monitor fetal heart rate during labor", "Do not delay C-section if obstructed labor", "Ensure newborn resuscitation equipment is available", "All babies with birth asphyxia need neurological follow-up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "neonatal_hypoglycemia",
+    "category": "Neonatal Hypoglycemia (Low Blood Sugar in Newborns)",
+    "symptoms": ["jitteriness or tremors", "lethargy", "poor feeding", "apnea", "cyanosis", "seizures", "irritability", "hypothermia"],
+    "guidance": "At-risk babies (small for gestational age, large for gestational age, premature, maternal diabetes) need early and frequent feeding — breastfeed within 1 hour of birth. If blood sugar < 40 mg/dL, IV glucose is given in hospital. Prevention: early initiation of breastfeeding and avoiding delays.",
+    "precautions": ["Initiate breastfeeding within 1 hour of birth", "Feed at-risk babies more frequently (every 2 hours)", "Monitor blood sugar in high-risk babies", "Do not give glucose water by mouth as a substitute for breast milk", "Seek care if baby shows jitteriness or seizures"],
+    "urgency": "high"
+  },
+  {
+    "id": "neonatal_hypothermia",
+    "category": "Neonatal Hypothermia (Cold Baby)",
+    "symptoms": ["baby feels cold to touch", "cry is weak or absent", "lethargy", "poor feeding", "slow heart rate", "pale or mottled skin", "respiratory distress", "low temperature (< 36.5°C)"],
+    "guidance": "Warm the baby immediately using skin-to-skin contact (Kangaroo Mother Care). Keep room warm (25-28°C). Dry the baby thoroughly after birth. Delay the first bath for at least 24 hours. Hypothermia is a major risk for infection and death in newborns. Government facilities have warmers.",
+    "precautions": ["Keep baby skin-to-skin with mother", "Cover baby's head with a cap", "Delay bathing for 24 hours after birth", "Maintain warm room temperature", "Use a warm blanket if needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "rds_newborn",
+    "category": "Respiratory Distress Syndrome (Hyaline Membrane Disease)",
+    "symptoms": ["grunting respirations", "nasal flaring", "chest retractions (in-drawing of ribs)", "rapid breathing (tachypnea)", "cyanosis (blue color)", "poor air entry on auscultation", "worsens over first 48 hours"],
+    "guidance": "Premature babies are at highest risk due to surfactant deficiency. Treatment: antenatal steroids (given to mother before delivery if preterm birth is anticipated), surfactant replacement therapy, and respiratory support (CPAP or mechanical ventilation). This is managed in the NICU. Free care under government schemes.",
+    "precautions": ["Prevent preterm birth with good ANC", "Antenatal corticosteroids for preterm labor", "Deliver in a facility with NICU capability if preterm", "Surfactant is life-saving and available in government hospitals", "Follow-up for chronic lung disease"],
+    "urgency": "critical"
+  },
+  {
+    "id": "meconium_aspiration",
+    "category": "Meconium Aspiration Syndrome (MAS)",
+    "symptoms": ["respiratory distress in a term or post-term baby", "meconium-stained amniotic fluid", "cyanosis", "grunting", "barrel-shaped chest", "baby is large for gestational age"],
+    "guidance": "Meconium in amniotic fluid indicates fetal distress. At delivery: if baby is not vigorous, suction the airway before stimulation. Treatment: oxygen, surfactant, inhaled nitric oxide, and mechanical ventilation. Prevent post-term pregnancy by induction if indicated.",
+    "precautions": ["Monitor for post-term pregnancy", "Do not delay delivery if fetal distress is detected", "Suctioning of the airway at birth for non-vigorous babies", "NICU care is essential", "Early identification of fetal distress"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ttnb_newborn",
+    "category": "Transient Tachypnea of the Newborn (TTNB)",
+    "symptoms": ["tachypnea (breathing > 60/min) starting within hours of birth", "mild grunting", "nasal flaring", "chest retractions", "oxygen saturation normal or mildly low", "resolves within 12-72 hours"],
+    "guidance": "TTNB is a self-limiting condition due to delayed clearance of fetal lung fluid. It is more common in babies born by C-section without labor. Supportive care: supplemental oxygen, CPAP if needed. No antibiotics unless sepsis cannot be ruled out. Prognosis is excellent.",
+    "precautions": ["Avoid elective C-section without labor", "Supportive care", "Monitor for worsening", "Rule out infection", "Feeding can be started once breathing improves"],
+    "urgency": "medium"
+  },
+  {
+    "id": "necrotizing_enterocolitis",
+    "category": "Necrotizing Enterocolitis (NEC)",
+    "symptoms": ["abdominal distension", "feeding intolerance (residuals, bilious vomiting)", "bloody stools", "apnea", "lethargy", "temperature instability", "abdominal wall discoloration or redness (late sign)"],
+    "guidance": "NEC is a life-threatening bowel emergency in premature infants. Treatment: stop feeding, IV antibiotics, nasogastric decompression, IV fluids, and TPN. Surgery for perforation or intestinal necrosis. Prevention: exclusive breastfeeding (BM provides protective factors), probiotics, and standardized feeding protocols.",
+    "precautions": ["Exclusive breast milk feeding (fortified if needed)", "Avoid hyperosmolar feeds", "Follow standardized feeding advancement", "Monitor for abdominal distension", "Strict infection control in NICU"],
+    "urgency": "critical"
+  },
+  {
+    "id": "intraventricular_hemorrhage",
+    "category": "Intraventricular Hemorrhage (IVH)",
+    "symptoms": ["often asymptomatic in mild grades", "apnea", "seizures", "lethargy", "bulging fontanelle", "sudden anemia (drop in hemoglobin)", "alteration in muscle tone", "in severe cases: rapid deterioration, coma"],
+    "guidance": "IVH is common in premature infants due to fragile germinal matrix vessels. Diagnosis by cranial ultrasound. Mild IVH (grade I-II) often resolves. Severe IVH (grade III-IV) leads to hydrocephalus and cerebral palsy. Prevention: antenatal corticosteroids, maintaining stable BP, and avoiding rapid fluctuations.",
+    "precautions": ["Antenatal steroids for preterm birth", "Minimal handling of premature infants", "Maintain stable blood pressure", "Serial cranial ultrasounds for premature babies", "Early intervention for post-hemorrhagic hydrocephalus"],
+    "urgency": "critical"
+  },
+  {
+    "id": "retinopathy_prematurity",
+    "category": "Retinopathy of Prematurity (ROP)",
+    "symptoms": ["usually asymptomatic initially", "visible on ophthalmoscopy", "late: leukocoria (white pupil)", "strabismus", "vision loss, blindness"],
+    "guidance": "ROP is a potentially preventable cause of childhood blindness. All babies < 34 weeks or < 1750g birth weight must be screened for ROP starting at 4-6 weeks of age, as per national guidelines. Treatment (laser or anti-VEGF) prevents blindness. Free screening in government NICU networks.",
+    "precautions": ["Strict oxygen monitoring in preterm infants", "Scheduled retinal screening", "Follow up as advised", "Early laser treatment if indicated", "Awareness among parents of preterm babies"],
+    "urgency": "high"
+  },
+  {
+    "id": "neonatal_tetanus",
+    "category": "Neonatal Tetanus",
+    "symptoms": ["poor feeding (sucking difficulty)", "trismus (lockjaw)", "muscle spasms", "stiffness", "opisthotonos (arched back)", "hypertonia", "spasms triggered by stimuli (touch, sound)"],
+    "guidance": "EMERGENCY — High mortality. Treatment: tetanus antitoxin, antibiotics (metronidazole), diazepam for muscle spasms, wound care (umbilical stump). Prevention is key: maternal TT vaccination and clean delivery practices. India has almost eliminated neonatal tetanus.",
+    "precautions": ["Ensure all pregnant women receive 2 doses of TT vaccine", "Deliver in a clean health facility", "Use sterile instruments to cut cord", "Do not apply cow dung or other substances on cord", "Immediate medical care for stiffness"],
+    "urgency": "critical"
+  },
+  {
+    "id": "congenital_syphilis",
+    "category": "Congenital Syphilis",
+    "symptoms": ["stillbirth or preterm birth", "rhinitis (snuffles) with nasal discharge", "rash on palms and soles (copper-colored)", "hepatosplenomegaly", "jaundice", "anemia", "bone lesions (painful pseudoparalysis)", "deafness, vision loss, intellectual disability"],
+    "guidance": "Prevent by screening all pregnant women for syphilis (free at PHCs). Treatment: Penicillin is curative in fetus if mother is treated early. Congenital syphilis is a notifiable disease. Early treatment prevents long-term neurological and bone damage.",
+    "precautions": ["ANC syphilis screening", "Prompt treatment of positive mothers", "Partner treatment", "Follow-up of infants born to treated mothers", "Do not miss the VDRL/RPR test in pregnancy"],
+    "urgency": "high"
+  },
+  {
+    "id": "pediatric_hiv",
+    "category": "Pediatric HIV / AIDS",
+    "symptoms": ["failure to thrive", "persistent diarrhea", "recurrent infections (pneumonia, TB, meningitis)", "oral thrush", "parotitis", "lymphadenopathy", "developmental delay", "wasting syndrome"],
+    "guidance": "HIV is transmitted from mother to child. Prevention: maternal ART during pregnancy and breastfeeding. All HIV-exposed infants must receive prophylactic ART (nevirapine or AZT) for 6 weeks. HIV testing (DNA PCR) at 4-6 weeks. Lifelong ART is available free at ART centers under NACO.",
+    "precautions": ["Maternal ART adherence", "Exposed infants should receive prophylactic medications", "Avoid mixed feeding (exclusive breastfeeding or exclusive formula)", "Routine growth monitoring", "Early diagnosis and ART start"],
+    "urgency": "high"
+  },
+  {
+    "id": "congenital_cmv",
+    "category": "Congenital CMV Infection",
+    "symptoms": ["most are asymptomatic at birth", "sensorineural hearing loss (most common sequela)", "microcephaly", "intracranial calcifications", "hepatosplenomegaly", "jaundice", "petechiae/rash", "chorioretinitis"],
+    "guidance": "CMV is the most common cause of congenital infection. Prevention: hand hygiene (avoid saliva from young children during pregnancy). Diagnosis by urine PCR in first 2 weeks. Antiviral (valganciclovir) improves hearing outcomes in symptomatic infants.",
+    "precautions": ["Pregnant women should avoid sharing utensils and foods with young children", "Handwashing after diapering", "No vaccine yet", "Early hearing screening in newborns", "Antiviral therapy for symptomatic infants"],
+    "urgency": "high"
+  },
+  {
+    "id": "down_syndrome",
+    "category": "Down Syndrome (Trisomy 21)",
+    "symptoms": ["flat facial profile", "epicanthal folds", "single palmar crease", "clinodactyly (curved 5th finger)", "hypotonia", "developmental delay", "congenital heart defects (VSD, AVSD)", "duodenal atresia", "hearing loss, vision issues"],
+    "guidance": "Diagnosis: karyotype or FISH. Management: regular growth and developmental monitoring, cardiac evaluation, thyroid screening (annual), vision and hearing checkups. Early intervention (physiotherapy, speech therapy, special education) improves quality of life. Government facilities provide free care and support.",
+    "precautions": ["Diagnose early (prenatal or at birth)", "Cardiac evaluation in first few weeks", "Thyroid screening annually", "Regular hearing and vision screening", "Supportive therapies and education"],
+    "urgency": "medium"
+  },
+  {
+    "id": "turner_syndrome",
+    "category": "Turner Syndrome (45,X)",
+    "symptoms": ["short stature", "webbed neck", "low posterior hairline", "broad chest with wide-set nipples", "lymphedema (swelling of hands and feet)", "coarctation of the aorta", "primary amenorrhea", "streak ovaries", "hearing loss"],
+    "guidance": "Diagnosis: karyotype. Growth hormone therapy can improve height. Estrogen replacement for puberty induction. Regular cardiac monitoring. Hearing and eye checkups. Most have normal intelligence but may have learning difficulties in math.",
+    "precautions": ["Growth hormone therapy", "Cardiac evaluation (MRI aorta)", "Estrogen therapy at puberty", "Regular BP monitoring", "Support for learning difficulties"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cleft_lip_palate",
+    "category": "Cleft Lip and Palate",
+    "symptoms": ["facial cleft at birth (lip, palate, or both)", "difficulty feeding (nasal regurgitation)", "failure to gain weight", "recurrent ear infections", "speech difficulties"],
+    "guidance": "Early management: specialized feeding techniques (pigeon bottle, palatal obturator). Surgical repair: cleft lip at 3-6 months, palate at 9-18 months. Ongoing speech therapy, dental care, and audiology. Free surgeries under government schemes like Rashtriya Bal Swasthya Karyakram (RBSK).",
+    "precautions": ["Specialized feeding support", "Prevent aspiration", "Hearing checks", "Surgical repair at recommended ages", "Dental and orthodontic care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "clubfoot",
+    "category": "Clubfoot (Talipes Equinovarus)",
+    "symptoms": ["foot is turned inward and downward", "calf muscle is smaller", "foot has a rigid posture", "usually visible at birth", "can be bilateral or unilateral"],
+    "guidance": "Treat with Ponseti method (serial casting and bracing) — it is highly effective (90% success). Start within first few weeks of life. Free treatment available under RBSK. Neglected clubfoot leads to permanent disability.",
+    "precautions": ["Early referral (within first month)", "Ponseti casting by trained practitioner", "Do not attempt traditional manipulation (can cause fractures)", "Adherence to brace-wearing schedule", "Long-term follow-up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ddh",
+    "category": "Developmental Dysplasia of Hip (DDH)",
+    "symptoms": ["limitation of hip abduction", "asymmetric skin folds", "leg length discrepancy", "click or clunk on Ortolani/Barlow tests", "late: limp, waddling gait", "pain in adolescence"],
+    "guidance": "Screen all newborns with clinical hip examination. Ultrasound for high-risk (breech, family history). Treatment: Pavlik harness (if <6 months), closed or open reduction for older. Early detection prevents long-term hip arthritis and disability.",
+    "precautions": ["Clinical screening at birth", "Ultrasound if risk factors", "Pavlik harness therapy", "Avoid swaddling with legs extended", "Follow-up until skeletal maturity"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hypospadias",
+    "category": "Hypospadias",
+    "symptoms": ["urethral opening on the underside of the penis", "hooded foreskin", "downward curvature of penis (chordee)", "abnormal spraying of urine", "meatal stenosis"],
+    "guidance": "Surgical correction (urethroplasty) is usually performed between 6-18 months of age. Do not circumcise before surgical repair (foreskin is used in surgery). Good outcomes with experienced pediatric surgeons.",
+    "precautions": ["Do not circumcise without consulting a pediatric surgeon", "Surgical repair at recommended age", "Follow-up for stricture or fistula", "Do not delay surgery beyond 18 months for psychological reasons", "Family support"],
+    "urgency": "medium"
+  },
+  {
+    "id": "congenital_heart_defect",
+    "category": "Congenital Heart Defects (VSD, ASD, PDA, TOF)",
+    "symptoms": ["cyanosis (blue color)", "tachypnea", "poor feeding", "failure to thrive", "frequent respiratory infections", "heart murmur", "sweating during feeding", "pulmonary hypertension"],
+    "guidance": "Suspected heart defects need echocardiography. Treatment ranges from medical management (diuretics) to surgical repair or catheter intervention (coil occlusion, balloon valvuloplasty). Government hospitals provide free surgery under PMJAY and RBSK screening.",
+    "precautions": ["Regular follow-up with pediatric cardiologist", "Antibiotic prophylaxis for infective endocarditis before procedures", "Monitor for cyanosis and failure to thrive", "Do not miss newborn pulse oximetry screening (critical CHD)", "Timely surgical referral"],
+    "urgency": "high"
+  },
+  {
+    "id": "infantile_colic",
+    "category": "Infantile Colic",
+    "symptoms": ["crying for >3 hours per day, >3 days per week, for >3 weeks", "crying episodes often in the evening", "knees pulled to chest", "facial flushing", "passing gas", "baby is otherwise healthy and gaining weight"],
+    "guidance": "Colic is self-limiting, usually resolving by 3-4 months. Soothe baby with gentle rocking, swaddling, white noise, and a warm bath. Burp baby well during and after feeds. Dietary changes (eliminate cow's milk if formula-fed) may help. Check for reflux or cow's milk protein allergy.",
+    "precautions": ["Do not overfeed or underfeed", "Hold baby upright for 30 min after feeds", "Use anti-colic bottles", "Avoid changing formulas frequently", "Seek care if fever, poor weight gain, or bilious vomiting develops"],
+    "urgency": "low"
+  },
+  {
+    "id": "gerd_infants",
+    "category": "Gastroesophageal Reflux Disease (GERD) in Infants",
+    "symptoms": ["frequent spit-up or vomiting", "irritability", "arching back during/after feeds", "poor weight gain", "refusal to feed", "cough, wheezing", "apnea"],
+    "guidance": "Positional management (upright after feeds). Thickening feeds (with rice cereal). If severe, medication (antacids, H2 blockers, PPIs) under medical supervision. Most resolve by 12-18 months. Identify cow's milk protein allergy (CMPA) as a common cause.",
+    "precautions": ["Do not overfeed", "Burp baby frequently", "Keep baby upright for 30 minutes after feeding", "Do not put baby to sleep flat on back with reflux (but still back sleeping for SIDS prevention)", "Consult a pediatrician for persistent symptoms"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pyloric_stenosis",
+    "category": "Hypertrophic Pyloric Stenosis",
+    "symptoms": ["progressive non-bilious projectile vomiting at 2-8 weeks of age", "constant hunger after vomiting", "weight loss", "dehydration", "visible peristalsis (waves across abdomen)", "palpable olive-shaped mass in abdomen"],
+    "guidance": "Surgical condition — requires pyloromyotomy. Correct dehydration and electrolytes (hypochloremic, hypokalemic metabolic alkalosis) before surgery. Surgery is curative. Do not delay.",
+    "precautions": ["Seek immediate care for projectile vomiting in infants", "Preoperative hydration is critical", "Surgery is safe and effective", "Good outcomes", "Do not try home remedies for projectile vomiting"],
+    "urgency": "critical"
+  },
+  {
+    "id": "intussusception_child",
+    "category": "Intussusception (Bowel Obstruction)",
+    "symptoms": ["sudden severe intermittent abdominal pain (colic)", "vomiting", "red currant jelly stool (blood and mucus)", "lethargy between pain episodes", "palpable sausage-shaped mass", "fever"],
+    "guidance": "MEDICAL EMERGENCY. Early cases can be treated with air or barium enema (non-surgical). If diagnosed late, surgery is needed. Do not give anything by mouth. Time is critical to prevent bowel ischemia and perforation.",
+    "precautions": ["Seek emergency care immediately", "Do not give food or water", "Rotavirus vaccine is associated with a slight risk — but benefits outweigh risks", "Early diagnosis saves bowel", "Follow-up after reduction"],
+    "urgency": "critical"
+  },
+  {
+    "id": "malrotation_volvulus",
+    "category": "Intestinal Malrotation with Volvulus",
+    "symptoms": ["bilious vomiting (green) in a newborn", "abdominal distension", "bloody stools", "abdominal pain", "failure to pass meconium or delayed", "shock"],
+    "guidance": "EMERGENCY — Midgut volvulus leads to bowel necrosis within hours. Upper GI series or contrast enema for diagnosis. Emergency surgery (Ladd's procedure) is needed. Prognosis depends on time to diagnosis.",
+    "precautions": ["Any bilious vomiting in a newborn is a surgical emergency", "Do not delay imaging", "Urgent surgical consultation", "Good outcomes if treated early", "Long-term follow-up for short gut if extensive resection"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hirschsprung_disease",
+    "category": "Hirschsprung Disease (Congenital Megacolon)",
+    "symptoms": ["failure to pass meconium within 48 hours of birth", "chronic progressive constipation", "abdominal distension", "bilious vomiting", "enterocolitis (fever, explosive diarrhea, sepsis)", "failure to thrive"],
+    "guidance": "Diagnosis: rectal biopsy (absence of ganglion cells). Surgical treatment: pull-through procedure (Swenson, Soave, Duhamel). Early surgery prevents enterocolitis. Stoma may be needed in sick babies.",
+    "precautions": ["Diagnose early if delayed meconium", "Rectal washouts for enterocolitis", "Surgical correction", "Long-term functional outcome", "Family support"],
+    "urgency": "high"
+  },
+  {
+    "id": "celiac_disease_child",
+    "category": "Celiac Disease in Children",
+    "symptoms": ["chronic diarrhea", "abdominal bloating", "failure to thrive", "vomiting", "anemia", "growth failure", "irritability", "dermatitis herpetiformis (itchy rash)", "short stature"],
+    "guidance": "Diagnosis: tissue transglutaminase IgA (ttg IgA), total IgA, and duodenal biopsy for confirmation. Treatment: strict lifelong gluten-free diet (avoid wheat, barley, rye). Follow-up: growth monitoring, bone density, and nutritional status.",
+    "precautions": ["Strict gluten-free diet", "Avoid cross-contamination", "Regular growth monitoring", "Vitamin and mineral supplements", "Educate school and family"],
+    "urgency": "medium"
+  },
+  {
+    "id": "failure_to_thrive",
+    "category": "Failure to Thrive",
+    "symptoms": ["weight below the 3rd percentile", "weight falling off growth curve", "poor weight gain despite adequate intake", "delayed development", "irritability", "lethargy", "recurrent infections"],
+    "guidance": "Investigate the cause: inadequate intake, malabsorption, increased losses, increased requirements, or psychosocial factors. Treatment: nutritional rehabilitation, feeding support, and addressing underlying medical or social issues. Regular follow-up in nutritional rehabilitation programs.",
+    "precautions": ["Regular growth monitoring (monthly)", "Use growth charts (WHO/India)", "Ensure adequate caloric and protein intake", "Monitor development", "Refer if not improving"],
+    "urgency": "high"
+  },
+  {
+    "id": "iron_deficiency_anemia_child",
+    "category": "Iron Deficiency Anemia in Children",
+    "symptoms": ["pale skin and conjunctiva", "fatigue and weakness", "irritability", "decreased appetite", "pica (eating dirt, chalk, ice)", "poor weight gain", "tachycardia", "delayed growth"],
+    "guidance": "Treatment: oral iron supplements (3-6 mg/kg/day) for 3 months. Dietary sources: green leafy vegetables, jaggery, eggs, meat, fortified cereals. Iron supplementation is given to all children aged 6-60 months under the National Anaemia Mukt Bharat program.",
+    "precautions": ["Regular hemoglobin screening", "Iron supplementation in high-risk groups", "Deworming (every 6 months)", "Improve dietary iron intake", "Vitamin C rich foods to enhance absorption"],
+    "urgency": "medium"
+  },
+  {
+    "id": "rickets_child",
+    "category": "Rickets (Vitamin D Deficiency)",
+    "symptoms": ["bowed legs (genu varum)", "knock-knees (genu valgum)", "widened wrists and ankles (rachitic rosary)", "delayed motor milestones", "muscle weakness", "bone pain", "poor growth", "dental hypoplasia", "craniotabes (soft skull)"],
+    "guidance": "Treatment: Vitamin D (Stoss therapy or daily doses) and calcium supplements. Ensure 15-30 min of sunlight exposure daily. Dietary sources: fortified milk, egg yolk, fish. Government programs provide free Vitamin D supplements.",
+    "precautions": ["Sunlight exposure", "Vitamin D supplementation for breastfed infants", "Dietary calcium", "Monitor for hypercalcemia during treatment", "Early detection prevents deformities"],
+    "urgency": "medium"
+  },
+  {
+    "id": "childhood_obesity",
+    "category": "Childhood Obesity",
+    "symptoms": ["BMI > 95th percentile", "excess body fat", "shortness of breath on exertion", "joint pain", "acanthosis nigricans (dark skin folds)", "hypertension", "early puberty", "sleep apnea"],
+    "guidance": "Treatment: lifestyle modification — balanced diet, reduced screen time, 1 hour of physical activity daily. Family-based intervention is most effective. Screen for comorbidities (hypertension, diabetes, fatty liver). Prevention is key.",
+    "precautions": ["Limit sugary drinks and processed food", "Screen time < 2 hours/day", "Encourage outdoor play", "Family involvement", "Monitor BP and blood sugar"],
+    "urgency": "medium"
+  },
+  {
+    "id": "lead_poisoning_child",
+    "category": "Lead Poisoning in Children",
+    "symptoms": ["abdominal pain", "constipation", "headache", "irritability", "loss of appetite", "weight loss", "developmental delay", "learning difficulties", "pica", "pale skin (anemia)"],
+    "guidance": "Identify and remove source of lead (old paint, contaminated soil, lead pipes, traditional cosmetics). Chelation therapy for severe cases (BAL, EDTA, succimer). Prevention: avoid lead exposure, use lead-free paint, and check for lead in water.",
+    "precautions": ["Avoid lead-based paints", "Do not use traditional cosmetics (kohl, sindoor) with lead", "Wash hands and toys frequently", "Use lead-free plumbing", "Screen high-risk children"],
+    "urgency": "high"
+  },
+  {
+    "id": "fluorosis_child",
+    "category": "Dental and Skeletal Fluorosis",
+    "symptoms": ["dental: white/ brown stains, mottled enamel, pitting", "skeletal: joint stiffness, bone pain, curvature of spine, crippling deformities", "muscle weakness", "excessive thirst", "hypermineralization"],
+    "guidance": "Prevent by using safe drinking water (low fluoride). For dental fluorosis: cosmetic dental treatments. For skeletal: orthopedic management, reduce fluoride intake, and ensure good calcium and vitamin D intake.",
+    "precautions": ["Use low-fluoride water sources", "If high fluoride, install defluoridation plants", "Avoid fluoride toothpaste in young children (until they can spit)", "Monitor fluoride levels in drinking water", "Treat skeletal symptoms"],
+    "urgency": "medium"
+  },
+  {
+    "id": "acute_post_strep_gn",
+    "category": "Acute Post-Streptococcal Glomerulonephritis (APSGN)",
+    "symptoms": ["dark or tea-colored urine (hematuria)", "puffiness of face, eyelids, and feet (edema)", "oliguria (decreased urine output)", "hypertension", "headache", "nausea, vomiting", "recent history of sore throat or skin infection (2-3 weeks prior)"],
+    "guidance": "Treatment: supportive care — fluid and sodium restriction, antihypertensives, diuretics, and antibiotics (penicillin) to clear streptococcal infection. Usually resolves completely in children. Regular blood pressure monitoring.",
+    "precautions": ["Prompt treatment of strep throat and impetigo", "Monitor urine output and BP", "Sodium and fluid restriction", "Avoid NSAIDs", "Long-term follow-up for proteinuria"],
+    "urgency": "high"
+  },
+  {
+    "id": "nephrotic_syndrome_child",
+    "category": "Nephrotic Syndrome in Children",
+    "symptoms": ["massive edema (swelling of eyelids, feet, abdomen)", "frothy urine (proteinuria)", "hypoalbuminemia", "hyperlipidemia", "frequent infections", "fatigue"],
+    "guidance": "First-line treatment: oral corticosteroids (prednisolone) for 12 weeks (tapering). Most children respond (steroid-sensitive). Frequent relapses need second-line drugs (levamisole, cyclophosphamide, calcineurin inhibitors). Long-term monitoring for complications (infections, thrombosis).",
+    "precautions": ["Low-salt diet", "Daily urine protein monitoring", "Prevent infections (pneumococcal vaccine, varicella vaccine)", "Steroid side effects (monitor weight, BP, bone health)", "Do not stop steroids abruptly"],
+    "urgency": "high"
+  },
+  {
+    "id": "uti_child",
+    "category": "Urinary Tract Infection (UTI) in Children",
+    "symptoms": ["fever (without any source in infants)", "vomiting", "diarrhea", "irritability", "poor feeding", "frequent urination", "burning or pain during urination", "foul-smelling urine", "abdominal pain"],
+    "guidance": "Diagnosis: urine culture. Treatment: oral antibiotics (cotrimoxazole, amoxicillin, cefalexin) for 7-10 days. Infants < 3 months require IV antibiotics and hospitalization. Investigate for VUR if recurrent UTI or febrile UTI.",
+    "precautions": ["Good perineal hygiene", "Adequate hydration", "Prompt treatment of constipation", "Complete antibiotic course", "Renal and bladder ultrasound after first febrile UTI"],
+    "urgency": "high"
+  },
+  {
+    "id": "vesicoureteral_reflux",
+    "category": "Vesicoureteral Reflux (VUR)",
+    "symptoms": ["recurrent febrile UTIs", "renal scarring", "hypertension", "poor growth", "may be asymptomatic until complications"],
+    "guidance": "Diagnosis: VCUG (voiding cystourethrogram). Treatment: low-grade VUR may resolve spontaneously; prophylactic antibiotics reduce UTIs. High-grade VUR or breakthrough infections need surgical correction (ureteral reimplantation or endoscopic injection).",
+    "precautions": ["Prophylactic antibiotics", "Monitor renal function", "Regular urine cultures", "Surgical referral for high-grade", "Prevent constipation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cerebral_palsy_child",
+    "category": "Cerebral Palsy (CP)",
+    "symptoms": ["delayed motor milestones (not sitting by 9 months, not walking by 18 months)", "stiff or floppy muscle tone", "scissoring gait", "toe walking", "fisting and flexed postures", "excessive drooling", "difficulty swallowing", "speech delay", "seizures in some", "learning difficulties"],
+    "guidance": "Management is multidisciplinary: physiotherapy (Bobath, Vojta), occupational therapy, speech therapy, orthotics, and medications (antispasticity). Early intervention improves outcomes. Free rehabilitation available under RPWD Act 2016 and RBSK. Apply for disability certificate.",
+    "precautions": ["Start therapy as early as possible", "Use appropriate assistive devices (wheelchair, walker)", "Prevent contractures with regular stretching", "Monitor nutritional status", "Scoliosis and hip dislocation need surgical evaluation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "autism_child",
+    "category": "Autism Spectrum Disorder (ASD)",
+    "symptoms": ["no babbling or pointing by 12 months", "no single words by 16 months", "loss of language or social skills", "poor eye contact", "does not respond to name", "repetitive movements (hand-flapping, rocking)", "insistence on sameness", "hyper- or hyposensitivity to sensory inputs"],
+    "guidance": "Early diagnosis is key. Behavioral interventions (ABA — Applied Behavior Analysis), speech therapy, occupational therapy, and social skills training. Parent training is crucial. Children with ASD can learn and thrive with appropriate support. Government: RBSK provides screening, District Early Intervention Centers offer therapy.",
+    "precautions": ["Watch developmental milestones", "Do not delay assessment", "Vaccines do NOT cause autism — continue immunization", "Build routines to reduce anxiety", "Connect with parent support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "adhd_child",
+    "category": "ADHD (Attention Deficit Hyperactivity Disorder)",
+    "symptoms": ["inattention: difficulty focusing, easily distracted, forgetful", "hyperactivity: fidgeting, cannot sit still, running/climbing excessively", "impulsivity: interrupts others, acting without thinking", "poor school performance", "difficulty following instructions"],
+    "guidance": "Diagnosis: comprehensive assessment by a psychiatrist or pediatrician. Treatment: behavioral therapy, parent training, school accommodations, and medications (methylphenidate) if severe. ADHD is not caused by bad parenting or sugar.",
+    "precautions": ["Structured routines", "Break tasks into small steps", "Positive reinforcement", "Limit screen time", "Avoid punishment-based discipline"],
+    "urgency": "low"
+  },
+  {
+    "id": "intellectual_disability_child",
+    "category": "Intellectual Disability (ID)",
+    "symptoms": ["IQ below 70", "difficulty with daily living skills (dressing, eating, communication)", "delayed developmental milestones", "poor problem-solving and abstract thinking", "impaired social skills", "onset before age 18"],
+    "guidance": "Diagnosis: psychological testing. Management: special education, life skills training, vocational training. Under RPWD Act 2016, free education and rehabilitation services are provided. Apply for disability certificate.",
+    "precautions": ["Early intervention", "Special education", "Life skills training", "Plan for adult life (sheltered workshops, group homes)", "Caregiver support"],
+    "urgency": "medium"
+  },
+  {
+    "id": "learning_disability",
+    "category": "Specific Learning Disability (Dyslexia, Dyscalculia, Dysgraphia)",
+    "symptoms": ["difficulty reading (dyslexia): slow reading, confusion with similar letters (b/d, p/q), skipping words", "difficulty with math (dyscalculia): understanding numbers, memorizing tables", "difficulty writing (dysgraphia): poor handwriting, spelling errors", "normal intelligence but underperforming academically", "frustration, low self-esteem"],
+    "guidance": "Diagnosis: educational psychologist assessment. Remedial education: multi-sensory teaching, extra time in exams, use of assistive technology. Under RTE Act, children with SLD have the right to reasonable accommodations in school.",
+    "precautions": ["Early recognition by teachers", "Avoid labeling as 'lazy'", "Use multi-sensory learning approaches", "Build self-esteem", "Provide academic accommodations"],
+    "urgency": "low"
+  },
+  {
+    "id": "speech_delay",
+    "category": "Speech and Language Delay",
+    "symptoms": ["no babbling by 9 months", "no single words by 16 months", "no two-word phrases by 24 months", "difficulty understanding simple instructions", "poor articulation", "limited vocabulary"],
+    "guidance": "Evaluate hearing first. Speech therapy is the mainstay. Encourage language-rich environment — talk, read, and sing to the child. Most cases improve with early intervention. Screen for autism and intellectual disability.",
+    "precautions": ["Hearing assessment", "Encourage communication (sign language, gestures)", "Speech therapy", "Reduce screen time", "Interactive play"],
+    "urgency": "medium"
+  },
+  {
+    "id": "global_developmental_delay",
+    "category": "Global Developmental Delay (GDD)",
+    "symptoms": ["delay in two or more developmental domains (gross motor, fine motor, speech, cognitive, social)", "failure to meet milestones", "hypotonia or hypertonia", "poor feeding", "microcephaly or macrocephaly"],
+    "guidance": "GDD is diagnosed before age 5. Investigation: hearing/vision tests, genetic tests, thyroid, metabolic screening, MRI brain, EEG. Early intervention (physio, speech, occupational) is crucial. Under RBSK, free comprehensive evaluation and therapy are available.",
+    "precautions": ["Multidisciplinary approach", "Family-centered intervention", "Regular monitoring", "Genetic counseling", "Apply for disability benefits if permanent"],
+    "urgency": "medium"
+  },
+  {
+    "id": "childhood_epilepsy",
+    "category": "Childhood Epilepsy",
+    "symptoms": ["recurrent unprovoked seizures", "types: generalized tonic-clonic (jerking), absence (staring spells), focal (jerking of one limb, confusion)", "loss of consciousness", "post-ictal confusion", "cyanosis"],
+    "guidance": "Antiepileptic drugs (AEDs) — sodium valproate, carbamazepine, levetiracetam. Medication is FREE at government hospitals. Most children outgrow epilepsy. Avoid triggers: fever, sleep deprivation, photic stimuli. Seizure safety: no unsupervised baths or swimming.",
+    "precautions": ["Medication adherence", "Regular drug level monitoring", "Avoid triggers", "Seizure first aid (side lying, do not put anything in mouth)", "School and family education"],
+    "urgency": "high"
+  },
+  {
+    "id": "febrile_seizures_child",
+    "category": "Febrile Seizures",
+    "symptoms": ["convulsion with fever (38°C or above)", "generalized jerking of arms and legs", "eyes rolling back", "loss of consciousness", "post-ictal drowsiness", "age 6 months to 5 years"],
+    "guidance": "Simple febrile seizures: self-limiting, no long-term complications. Lay child on side, do not put anything in mouth. Control fever with paracetamol. If seizure lasts > 5 minutes, call 108 (status epilepticus). A single short seizure does not require AEDs.",
+    "precautions": ["Seizure first aid", "Paracetamol for fever", "Do not put fingers or objects in mouth", "Seek care if first seizure", "Vaccination does not cause febrile seizures"],
+    "urgency": "high"
+  },
+  {
+    "id": "breath_holding_spells",
+    "category": "Breath-Holding Spells",
+    "symptoms": ["child cries vigorously then stops breathing", "turns blue (cyanotic) or pale (pallid)", "brief loss of consciousness", "then resumes breathing", "occurs in children 6 months to 5 years", "provoked by anger, fear, or pain"],
+    "guidance": "These spells are frightening but benign — the child always recovers. Do not overreact or punish. Stay calm. If prolonged, perform CPR if needed. Most children outgrow by 5-6 years. No medication needed.",
+    "precautions": ["Remain calm during episode", "Avoid triggering situations", "Do not shake or slap child", "Reassure parents", "Rule out seizures or arrhythmias if atypical"],
+    "urgency": "low"
+  },
+  {
+    "id": "reye_syndrome",
+    "category": "Reye Syndrome",
+    "symptoms": ["following viral infection (flu, chickenpox)", "persistent vomiting", "confusion, lethargy", "seizures", "coma", "signs of liver dysfunction (jaundice, elevated ammonia)"],
+    "guidance": "Reye syndrome is associated with aspirin use in children with viral infections. NEVER give aspirin to children under 18 with fever or viral illness. Prevention: use paracetamol or ibuprofen. Treatment is supportive in ICU.",
+    "precautions": ["Avoid aspirin in children", "Use paracetamol for fever", "Prompt treatment of viral infections", "Monitor for vomiting and altered consciousness", "Seek emergency care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "kawasaki_disease",
+    "category": "Kawasaki Disease",
+    "symptoms": ["fever lasting > 5 days", "bilateral conjunctival injection (red eyes)", "red cracked lips, strawberry tongue", "polymorphous rash", "swollen hands and feet (edema/erythema)", "cervical lymphadenopathy (>1.5 cm)", "later: peeling of skin on fingers and toes", "coronary artery aneurysms"],
+    "guidance": "Kawasaki disease is a vasculitis — timely treatment with IVIG (intravenous immunoglobulin) and aspirin prevents coronary artery aneurysms. If untreated, risk of heart attack. Early diagnosis is crucial. Echocardiography must be done.",
+    "precautions": ["Seek care for unexplained prolonged fever", "Echocardiogram to assess coronary arteries", "IVIG treatment", "Long-term cardiac follow-up", "Aspirin therapy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "henoch_schonlein",
+    "category": "Henoch-Schonlein Purpura (HSP) / IgA Vasculitis",
+    "symptoms": ["palpable purpura (rash) on buttocks, legs, and arms", "joint pain and swelling", "abdominal pain", "gastrointestinal bleeding (melena, bloody stool)", "kidney involvement (proteinuria, hematuria)"],
+    "guidance": "HSP is self-limiting in most children. Treatment: supportive — hydration, pain relief, steroids for severe abdominal or renal involvement. Monitor urine protein and BP for months to detect nephritis.",
+    "precautions": ["Monitor urine for protein and blood", "Regular BP monitoring", "Avoid NSAIDs initially (GI irritation)", "Steroids for severe GI symptoms", "Good prognosis in children"],
+    "urgency": "medium"
+  },
+  {
+    "id": "juvenile_arthritis",
+    "category": "Juvenile Idiopathic Arthritis (JIA)",
+    "symptoms": ["joint swelling and pain", "morning stiffness (lasting > 30 min)", "limping", "fever (in systemic onset)", "rash (maculopapular)", "eye inflammation (uveitis, redness, photophobia)", "growth retardation"],
+    "guidance": "Refer to pediatric rheumatologist. NSAIDs, DMARDs (methotrexate), and biologics. Uveitis requires slit-lamp examination. Monitor for eye involvement regularly. Early treatment prevents joint destruction.",
+    "precautions": ["Physiotherapy", "Eye examinations (slit-lamp)", "Medication adherence", "Physical activity", "Monitor growth"],
+    "urgency": "medium"
+  },
+  {
+    "id": "acute_rheumatic_fever",
+    "category": "Acute Rheumatic Fever (ARF)",
+    "symptoms": ["history of sore throat 2-4 weeks prior", "fever", "migratory polyarthritis", "carditis (new murmur, tachycardia)", "subcutaneous nodules", "erythema marginatum (rash)", "chorea (involuntary movements)"],
+    "guidance": "Diagnosis: Jones criteria. Treat with aspirin or steroids, penicillin to eradicate strep. Prevention of recurrence: regular benzathine penicillin injections (secondary prophylaxis) until age 20. Untreated, it progresses to rheumatic heart disease — a major cause of morbidity in India.",
+    "precautions": ["Treat sore throats with antibiotics", "Secondary prophylaxis is essential", "Echocardiography for carditis", "Regular follow-up for heart valves", "Dental hygiene to prevent infective endocarditis"],
+    "urgency": "high"
+  },
+  {
+    "id": "pediatric_tb",
+    "category": "Pediatric Tuberculosis",
+    "symptoms": ["persistent cough > 2 weeks", "fever for > 2 weeks", "weight loss or failure to thrive", "night sweats", "easy fatigability", "lymphadenopathy (scrofula)", "meningeal signs in TB meningitis"],
+    "guidance": "Diagnosis: tuberculin skin test (Mantoux), IGRA, chest X-ray, GeneXpert (preferred). Treatment: 6-month DOTS regimen (2HRZE + 4HR). Free under RNTCP. All household contacts should be screened. TB in children is curable.",
+    "precautions": ["Cough hygiene", "Ventilation", "Nutritional support", "DOTS adherence", "Contact screening"],
+    "urgency": "high"
+  },
+  {
+    "id": "childhood_asthma",
+    "category": "Childhood Asthma",
+    "symptoms": ["recurrent episodes of wheezing", "coughing (worse at night)", "shortness of breath", "chest tightness", "triggered by viral infections, cold air, allergens, exercise"],
+    "guidance": "Inhaled corticosteroids (ICS) are the mainstay. Use a spacer with the MDI. Rescue bronchodilator (salbutamol) for acute attacks. Asthma action plan — written by doctor. Identify and avoid triggers. Asthma is manageable.",
+    "precautions": ["Use spacer with inhalers for better delivery", "Avoid smoke and dust", "Annual flu vaccination", "Asthma action plan", "Do not stop controller medications without advice"],
+    "urgency": "high"
+  },
+  {
+    "id": "allergic_rhinitis_child",
+    "category": "Allergic Rhinitis in Children",
+    "symptoms": ["sneezing", "runny nose (clear discharge)", "nasal congestion", "itchy nose, eyes, and throat", "snoring", "mouth breathing", "frequent sinus infections", "sleep disturbances"],
+    "guidance": "Avoid allergens (dust mites, pollen, pet dander). Intranasal corticosteroids and antihistamines. Saline nasal rinses. If severe, allergy testing (skin prick) and immunotherapy.",
+    "precautions": ["Allergen avoidance (dust-proof covers)", "Saline nasal irrigation", "Antihistamines", "Intranasal steroids", "Do not overuse decongestants"],
+    "urgency": "low"
+  },
+  {
+    "id": "atopic_dermatitis_child",
+    "category": "Atopic Dermatitis (Eczema) in Children",
+    "symptoms": ["dry, itchy, red patches on skin (face, neck, flexures)", "scratching leads to lichenification", "skin infections (weeping, crusting)", "sleep disturbance"],
+    "guidance": "Moisturizers (emollients) are key — apply frequently. Topical steroids for flares. Avoid triggers (harsh soaps, perfumes, allergens). Identify food triggers in infants (cow's milk, egg).",
+    "precautions": ["Bath with lukewarm water", "Apply moisturizer within 3 minutes of bath", "Use mild soap (soap-free cleansers)", "Keep nails short", "Wear cotton clothes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "impetigo_child",
+    "category": "Impetigo (Bacterial Skin Infection)",
+    "symptoms": ["red sores or blisters", "honey-colored crusts", "usually on face, hands, or feet", "itchy", "may have fever", "highly contagious"],
+    "guidance": "Topical antibiotics (mupirocin) for localized, oral antibiotics (cephalexin) for extensive. Wash lesions with warm water. Prevent spread: avoid sharing towels, good hand hygiene.",
+    "precautions": ["Handwashing", "Do not scratch", "Avoid sharing personal items", "Complete antibiotic course", "Keep lesions covered"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cellulitis_child",
+    "category": "Cellulitis in Children",
+    "symptoms": ["red, warm, swollen skin", "tenderness", "fever", "chills", "rapid spread", "skin may be tight and shiny"],
+    "guidance": "Oral or IV antibiotics (cephalexin, amoxicillin-clavulanate). Hospitalization for infants or severe cases. Elevate the affected limb. Monitor for abscess or sepsis.",
+    "precautions": ["Wound care", "Good hygiene", "Antibiotic compliance", "Monitor for spread", "Seek care if fever or worsening"],
+    "urgency": "high"
+  },
+  {
+    "id": "osteomyelitis_child",
+    "category": "Osteomyelitis in Children (Bone Infection)",
+    "symptoms": ["deep bone pain", "fever", "refusal to bear weight", "localized tenderness, swelling, redness", "decreased range of motion"],
+    "guidance": "IV antibiotics (anti-staphylococcal) as per culture. Surgical drainage for abscess. CRP and ESR for monitoring. Prompt treatment prevents bone necrosis. Common in long bones (femur, tibia).",
+    "precautions": ["Prompt treatment of wounds", "Antibiotic stewardship", "Early imaging", "Complete treatment", "Monitor for recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "septic_arthritis_child",
+    "category": "Septic Arthritis (Joint Infection)",
+    "symptoms": ["swollen, hot, painful joint", "refusal to move the joint", "fever", "limp", "irritability"],
+    "guidance": "Emergent condition requiring arthrocentesis and IV antibiotics. Hip joint is most critical (avascular necrosis risk). Surgical washout may be needed. Prevent joint destruction.",
+    "precautions": ["Emergency referral", "Do not delay aspiration", "IV antibiotics", "Orthopedic evaluation", "Monitor for sequelae"],
+    "urgency": "critical"
+  },
+  {
+    "id": "appendicitis_child",
+    "category": "Acute Appendicitis in Children",
+    "symptoms": ["abdominal pain starting around the umbilicus, migrating to the right lower quadrant", "nausea, vomiting", "loss of appetite", "fever", "tenderness at McBurney's point", "rebound tenderness", "guarding"],
+    "guidance": "Surgical emergency — appendectomy. Diagnosis: ultrasound or CT. Perforated appendicitis is common in young children. Do not give analgesics before surgical evaluation.",
+    "precautions": ["Seek care for persistent abdominal pain", "Do not give pain relief before evaluation", "Surgical consultation", "Post-operative care", "Prevent complications (abscess, ileus)"],
+    "urgency": "critical"
+  },
+  {
+    "id": "intestinal_parasites_child",
+    "category": "Intestinal Parasitic Infections in Children",
+    "symptoms": ["abdominal pain", "diarrhea", "weight loss", "passing worms in stool", "anal itching (pinworm)", "nausea, vomiting", "malabsorption"],
+    "guidance": "Deworming with albendazole (single dose) every 6 months under National Deworming Day. Good hygiene, handwashing, safe water. Iron and nutritional support for anemia.",
+    "precautions": ["Handwashing", "Wash fruits and vegetables", "Safe disposal of feces", "Deworming in school health programs", "Do not walk barefoot"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pinworm_child",
+    "category": "Pinworm Infection (Enterobiasis)",
+    "symptoms": ["intense perianal itching (worse at night)", "restless sleep", "irritability", "vaginal itching in girls", "visible white worms in stool or near anus"],
+    "guidance": "Treat the whole family with mebendazole or albendazole (2 doses 2 weeks apart). Maintain strict hygiene: daily bathing, frequent handwashing, daily change of underwear, and washing bedding.",
+    "precautions": ["Change underwear daily", "Handwashing", "Keep nails short", "Wash bedding in hot water", "Avoid scratching"],
+    "urgency": "low"
+  },
+  {
+    "id": "head_lice",
+    "category": "Head Lice (Pediculosis)",
+    "symptoms": ["intense itching of the scalp", "visible nits (eggs) attached to hair shafts", "live lice on scalp", "scratch marks", "secondary infections"],
+    "guidance": "Permethrin 1% lotion or pyrethrin shampoo — apply to scalp, leave for 10 minutes, rinse, comb with a fine-toothed comb. Repeat in 7-10 days. Wash all bedding, hats, and brushes in hot water.",
+    "precautions": ["Do not share combs, hats, scarves", "Fine-tooth combing", "Hot water wash of belongings", "Treat all family members", "School awareness"],
+    "urgency": "low"
+  },
+  {
+    "id": "tinea_capitis",
+    "category": "Tinea Capitis (Ringworm of the Scalp)",
+    "symptoms": ["patchy hair loss with scaling", "black dots (broken hairs)", "itching", "inflamed plaques", "kerion (inflammatory mass) with purulent discharge"],
+    "guidance": "Oral antifungal therapy is required (griseofulvin or terbinafine) for 6-12 weeks. Topical antifungals alone are ineffective for scalp. Do not use steroid creams (worsens fungal growth).",
+    "precautions": ["Do not share combs", "Wash hair regularly", "Complete oral course", "Monitor for liver toxicity (if griseofulvin)", "Treat pets if source"],
+    "urgency": "medium"
+  },
+  {
+    "id": "herpangina",
+    "category": "Herpangina (Viral Mouth Infection)",
+    "symptoms": ["sudden fever", "sore throat", "vesicular lesions in the back of the mouth (uvula, tonsils)", "painful swallowing", "headache, loss of appetite", "self-limiting"],
+    "guidance": "Supportive care — paracetamol for fever, cold fluids, and soft foods. Mouth ulcer gels for pain. It is caused by Coxsackie virus. Resolves in 3-5 days.",
+    "precautions": ["Hydration", "Soft diet", "Isolate from other children", "Good hand hygiene", "Seek care if dehydration"],
+    "urgency": "medium"
+  },
+  {
+    "id": "conjunctivitis_child",
+    "category": "Conjunctivitis (Pink Eye) in Children",
+    "symptoms": ["redness of the eye", "discharge (watery or purulent)", "itching or irritation", "swollen eyelids", "photophobia", "crusting of eyelids in morning"],
+    "guidance": "Viral: self-limiting, no antibiotics. Bacterial: antibiotic eye drops (chloramphenicol). Allergic: antihistamine drops. Good hygiene is key — highly contagious. Wash hands frequently and avoid touching eyes.",
+    "precautions": ["Handwashing", "Do not share towels", "Eye discharge care", "Antibiotics if bacterial", "School exclusion while symptomatic"],
+    "urgency": "medium"
+  },
+  {
+    "id": "otitis_media_child",
+    "category": "Otitis Media (Middle Ear Infection)",
+    "symptoms": ["ear pain, pulling at the ear", "fever", "irritability", "difficulty sleeping", "fluid drainage", "hearing difficulty"],
+    "guidance": "Amoxicillin is first-line for bacterial. Analgesics for pain. Watchful waiting for mild (48 hours) in older children. Recurrent episodes may need ENT evaluation and possible myringotomy tubes.",
+    "precautions": ["Avoid bottle propping", "Breastfeed (reduces risk)", "Avoid tobacco smoke", "Complete antibiotic course", "Hearing assessment if recurrent"],
+    "urgency": "medium"
+  },
+  {
+    "id": "sinusitis_child",
+    "category": "Sinusitis in Children",
+    "symptoms": ["nasal congestion", "purulent nasal discharge", "facial pain (over cheeks, forehead)", "headache", "cough (worse at night)", "fever", "halitosis (bad breath)"],
+    "guidance": "Amoxicillin for 10-14 days. Saline nasal rinses, decongestants, and hydration. Persistent cases need CT scan and ENT consultation.",
+    "precautions": ["Allergy management", "Adequate hydration", "Nasal irrigation", "Antibiotic compliance", "Avoid smoke"],
+    "urgency": "medium"
+  },
+  {
+    "id": "tonsillitis_child",
+    "category": "Acute Tonsillitis / Pharyngitis",
+    "symptoms": ["sore throat", "fever", "difficulty swallowing", "red and swollen tonsils with or without exudate (white patches)", "swollen lymph nodes", "cough", "headache"],
+    "guidance": "Most are viral (no antibiotics). Bacterial (Group A strep) needs penicillin/amoxicillin for 10 days to prevent rheumatic fever. Rapid strep test or throat culture is recommended.",
+    "precautions": ["Analgesics for pain", "Warm saline gargles", "Ensure hydration", "Complete antibiotic course if bacterial", "Seek care for respiratory distress or trismus"],
+    "urgency": "medium"
+  },
+  {
+    "id": "scarlet_fever",
+    "category": "Scarlet Fever",
+    "symptoms": ["sore throat, fever", "strawberry tongue", "rash: fine red bumps (sandpaper-like) on chest, abdomen, flexures", "flushed face with pale area around the mouth", "peeling skin on hands and feet in later stages"],
+    "guidance": "Group A Streptococcus infection. Treat with penicillin/amoxicillin for 10 days. Good hand hygiene. Complications: acute glomerulonephritis, rheumatic fever if untreated.",
+    "precautions": ["Complete antibiotic course", "Symptom relief", "Hand hygiene", "Contact tracing in schools", "Monitor for complications"],
+    "urgency": "medium"
+  },
+  {
+    "id": "nocturnal_enuresis",
+    "category": "Nocturnal Enuresis (Bedwetting)",
+    "symptoms": ["involuntary urination during sleep in a child over 5 years", "at least 2 times per week for 3 months", "may be primary (never dry) or secondary (after 6 months of dryness)"],
+    "guidance": "Rule out UTI, constipation, or diabetes. Behavioral: reward for dry nights, limiting fluids in evening, waking to void. Alarm therapy is effective. Desmopressin for short-term use. Most resolve with age.",
+    "precautions": ["Do not punish or shame", "Positive reinforcement", "Evening fluid restriction", "Void before bedtime", "Use waterproof mattress covers"],
+    "urgency": "low"
+  },
+  {
+    "id": "constipation_child",
+    "category": "Constipation in Children",
+    "symptoms": ["hard, dry, pellet-like stools", "painful passage of stools", "decreased frequency (< 3 per week)", "abdominal pain", "fecal impaction (overflow soiling / encopresis)", "blood on toilet paper"],
+    "guidance": "Increase dietary fiber (fruits, vegetables, whole grains), adequate water intake, and physical activity. If impaction: PEG 4000 (polyethylene glycol) or lactulose is safe. Toilet training schedule (after meals).",
+    "precautions": ["High-fiber diet", "Adequate hydration", "Regular toilet time", "Avoid withholding", "Medical consultation for refractory cases"],
+    "urgency": "low"
+  },
+  {
+    "id": "encopresis",
+    "category": "Encopresis (Fecal Soiling)",
+    "symptoms": ["involuntary passage of stool in inappropriate places (often liquid soiling) in a child > 4 years", "associated with chronic constipation and overflow incontinence", "hiding soiled underwear"],
+    "guidance": "First, treat the underlying constipation with stool softeners. Toilet training and positive reinforcement. Avoid punishment. Often resolves once constipation is managed. Family counseling may help.",
+    "precautions": ["Treat constipation", "Do not punish", "Scheduled toileting", "Fiber-rich diet", "Psychological support"],
+    "urgency": "low"
+  },
+  {
+    "id": "pica_child",
+    "category": "Pica (Eating Non-Food Items)",
+    "symptoms": ["persistent eating of non-nutritive substances (dirt, chalk, paper, paint, ice) for at least 1 month", "age > 2 years", "may be associated with iron or zinc deficiency", "may lead to lead poisoning or bowel obstruction"],
+    "guidance": "Check and treat iron and zinc deficiency. Behavioral interventions. Childproof the home to remove harmful substances. Lead screening is important. Provide alternative sensory stimulation.",
+    "precautions": ["Store harmful substances out of reach", "Treat nutritional deficiencies", "Behavioral therapy", "Lead screening", "Positive reinforcement for appropriate eating"],
+    "urgency": "medium"
+  },
+  {
+    "id": "strabismus_child",
+    "category": "Strabismus (Crossed Eyes / Squint)",
+    "symptoms": ["eye turns inward (esotropia) or outward (exotropia)", "eyes appear to point in different directions", "double vision (in older children)", "head tilting", "light reflection off-center", "family history"],
+    "guidance": "Early evaluation by an ophthalmologist. Patching the good eye (amblyopia treatment), glasses, and eye exercises. Surgery may be needed if not improved by glasses. Early treatment (< 6 years) prevents amblyopia.",
+    "precautions": ["Early diagnosis is crucial", "Glasses if refractive error", "Patching therapy", "Surgery if needed", "Follow-up for binocular vision"],
+    "urgency": "medium"
+  },
+  {
+    "id": "amblyopia_child",
+    "category": "Amblyopia (Lazy Eye)",
+    "symptoms": ["reduced vision in one eye not correctable by glasses", "eye turns (strabismus)", "squinting", "head tilting", "poor depth perception"],
+    "guidance": "Treatment: optical correction (glasses), patching of the good eye (2-6 hours/day), atropine drops to blur the good eye. Best response before age 7-8. Vision screening in schools is essential.",
+    "precautions": ["Vision screening for all children", "Patching therapy", "Glasses compliance", "Early intervention", "Amblyopia is preventable if detected early"],
+    "urgency": "medium"
+  },
+  {
+    "id": "dental_caries_child",
+    "category": "Early Childhood Caries (Dental Cavities)",
+    "symptoms": ["white spots or brown cavities on teeth", "pain when eating hot/cold/sweet", "swelling of gums", "bad breath", "refusal to eat"],
+    "guidance": "Prevention: brushing with fluoride toothpaste twice a day, avoid night-time bottle-feeding, limit sugary snacks and juices. Dental treatment: fillings, crowns, or extractions. Early dental visit by age 1.",
+    "precautions": ["Brush twice daily", "Supervise brushing", "Avoid sweetened drinks in bottles", "Regular dental checkups", "Promote healthy snacks"],
+    "urgency": "low"
+  },
+  {
+    "id": "g6pd_deficiency",
+    "category": "G6PD Deficiency (Glucose-6-Phosphate Dehydrogenase Deficiency)",
+    "symptoms": ["neonatal jaundice", "hemolytic anemia after exposure to triggers (fava beans, certain drugs, infections)", "pallor, fatigue, dark urine", "jaundice in older children"],
+    "guidance": "Avoid triggers: fava beans, certain drugs (sulfonamides, aspirin, nitrofurantoin, primaquine, dapsone), mothballs (naphthalene). In acute hemolysis, supportive care (blood transfusion). Screening at birth in high-prevalence populations.",
+    "precautions": ["Avoid food and drug triggers", "Avoid mothballs", "Inform all healthcare providers of G6PD status", "Prompt treatment of infections", "Genetic counseling"],
+    "urgency": "medium"
+  },
+  {
+    "id": "thalassemia_child",
+    "category": "Thalassemia Major (Beta-Thalassemia)",
+    "symptoms": ["severe anemia presenting in early infancy (3-6 months)", "pale skin, poor feeding, growth retardation", "jaundice", "hepatosplenomegaly (large liver and spleen)", "prominent forehead (frontal bossing)", "maxillary overgrowth", "severe bone deformities"],
+    "guidance": "Lifelong regular blood transfusions (every 3-4 weeks) and chelation therapy (deferasirox, deferoxamine) to prevent iron overload. Bone marrow transplant is the only cure. Prevention: screening of couples (thalassemia carrier detection) and prenatal diagnosis.",
+    "precautions": ["Regular transfusions", "Iron chelation is critical to prevent organ damage", "Splenectomy if hypersplenism", "Prevention through carrier screening", "Genetic counseling"],
+    "urgency": "high"
+  },
+  {
+    "id": "sickle_cell_disease",
+    "category": "Sickle Cell Disease in Children",
+    "symptoms": ["sickle cell crises (severe pain in bones, chest, abdomen)", "fever", "dactylitis (painful hand-foot swelling in infants)", "pallor, jaundice", "splenic sequestration (sudden enlargement of spleen, shock)", "acute chest syndrome (fever, chest pain, respiratory distress)"],
+    "guidance": "Treatment: hydration, pain management, hydroxyurea reduces crisis frequency. Penicillin prophylaxis until age 5 to prevent sepsis. Pneumococcal and meningococcal vaccines. Crisis management at hospital. Newborn screening and comprehensive care.",
+    "precautions": ["Penicillin prophylaxis", "Hydroxyurea therapy", "Pain crisis management", "Avoid dehydration and cold", "Splenic sequestration is an emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "growth_hormone_deficiency",
+    "category": "Growth Hormone Deficiency",
+    "symptoms": ["short stature (height < -3 SD)", "slow growth velocity (< 5 cm/year)", "increased adiposity (central obesity)", "delayed bone age", "delayed puberty", "hypoglycemia in neonates", "poor muscle mass"],
+    "guidance": "Diagnosis: growth hormone stimulation test, IGF-1 levels, bone age X-ray, MRI brain (pituitary). Treatment: daily growth hormone injections (available free under some state programs). Good response if started early.",
+    "precautions": ["Growth hormone therapy", "Regular monitoring of height and IGF-1", "Thyroid function monitoring", "Psychological support", "Early diagnosis is key"],
+    "urgency": "medium"
+  },
+  {
+    "id": "precocious_puberty",
+    "category": "Precocious Puberty (Early Puberty)",
+    "symptoms": ["breast development before 8 years", "pubic hair before 8 years", "menstruation before 10 years", "testicular enlargement before 9 years", "rapid growth spurt", "bone age advanced"],
+    "guidance": "GnRH analog therapy can pause puberty to allow for normal height. Underlying causes (tumor, infection) need evaluation. Psychological support. Refer to pediatric endocrinologist.",
+    "precautions": ["Endocrine evaluation", "GnRH analogue treatment", "Monitor bone age", "Psychological counseling", "Treat underlying cause if found"],
+    "urgency": "medium"
+  },
+  {
+    "id": "delayed_puberty",
+    "category": "Delayed Puberty",
+    "symptoms": ["no breast development by 13 years", "no testicular enlargement by 14 years", "no pubic hair by 14 years", "short stature (if constitutional delay)", "lack of growth spurt", "primary amenorrhea"],
+    "guidance": "Most cases are constitutional delay (family history). Evaluate: bone age, gonadotropins, testosterone/estradiol. Treat underlying cause (hypogonadism, Kallmann syndrome, chronic disease). Hormonal replacement may be indicated.",
+    "precautions": ["Supportive counseling", "Rule out pathology", "Bone age assessment", "Hormonal therapy if hypogonadism", "Monitor psychological well-being"],
+    "urgency": "medium"
+  },
+  {
+    "id": "malrotation_newborn",
+    "category": "Malrotation with Volvulus (Neonatal)",
+    "symptoms": ["bilious vomiting (green)", "abdominal distension", "failure to pass meconium", "blood in stool", "lethargy, shock"],
+    "guidance": "SURGICAL EMERGENCY. Upper GI contrast study. Emergency surgery (Ladd's procedure). Time to diagnosis is critical for bowel survival. Do not feed.",
+    "precautions": ["Bilious vomiting in newborn = emergency", "Immediate surgical referral", "Do not feed", "IV fluids", "Prognosis depends on time"],
+    "urgency": "critical"
+  },
+  {
+    "id": "tracheoesophageal_fistula",
+    "category": "Tracheoesophageal Fistula (TEF)",
+    "symptoms": ["excessive drooling", "coughing and choking with first feed", "cyanosis with feeding", "aspiration", "respiratory distress", "difficulty passing a feeding tube"],
+    "guidance": "Suspected prenatally or at birth. Confirm with X-ray (NG tube coiled). Surgical repair is the only treatment. Avoid oral feeding until repaired. Good outcomes with early surgery.",
+    "precautions": ["Do not feed suspected TEF", "Place NG tube for decompression", "Surgical repair", "Post-op feeding support", "Monitor for stricture"],
+    "urgency": "critical"
+  },
+  {
+    "id": "diaphragmatic_hernia",
+    "category": "Congenital Diaphragmatic Hernia (CDH)",
+    "symptoms": ["respiratory distress at birth", "scaphoid abdomen (concave belly)", "bowel sounds in chest", "cyanosis", "shift of heart sounds to the right"],
+    "guidance": "Prenatal diagnosis is possible. At birth: immediate intubation, NG tube to decompress stomach. ECMO for severe cases. Surgical repair of the defect. Survival is 70-80% in high-volume centers.",
+    "precautions": ["Prenatal diagnosis", "Delivery in a tertiary center", "Do not bag-mask ventilate (gastric distension)", "Surgical repair", "Long-term follow-up for pulmonary hypertension and reflux"],
+    "urgency": "critical"
+  },
+  {
+    "id": "sudden_infant_death_syndrome",
+    "category": "Sudden Infant Death Syndrome (SIDS) Prevention",
+    "symptoms": ["unexplained death of an infant < 1 year", "occurs during sleep", "no warning signs", "prevention is key"],
+    "guidance": "Back to sleep: place baby on the back for every sleep. Avoid soft bedding, pillows, toys, and bumper pads in the crib. Share a room (not bed) for first 6 months. Breastfeeding reduces risk. Avoid overheating.",
+    "precautions": ["Sleep on back", "Firm mattress", "No soft objects", "Room sharing", "Breastfeeding", "Avoid smoke exposure"],
+    "urgency": "low"
+  },
+  {
+    "id": "pediatric_diabetes_type1",
+    "category": "Type 1 Diabetes in Children",
+    "symptoms": ["polyuria (frequent urination)", "polydipsia (excessive thirst)", "polyphagia (extreme hunger)", "unexplained weight loss", "fatigue", "bedwetting (new onset)", "blurry vision", "fruity breath (DKA)"],
+    "guidance": "Lifelong insulin therapy (basal-bolus or insulin pump). Blood glucose monitoring 4-6 times daily. HbA1c every 3 months. Education on hypoglycemia and sick-day rules. Free insulin at government hospitals.",
+    "precautions": ["Insulin adherence", "Monitor blood glucose", "Carry fast sugar for hypoglycemia", "Ketone testing during illness", "School and family education"],
+    "urgency": "high"
+  },
+  {
+    "id": "pediatric_celiac_crisis",
+    "category": "Celiac Crisis (Severe Celiac Disease)",
+    "symptoms": ["profuse diarrhea", "severe dehydration", "electrolyte imbalance (hypokalemia)", "acidosis", "malnutrition", "weight loss", "abdominal distension", "lethargy"],
+    "guidance": "Medical emergency. IV fluids, electrolyte correction. Strict gluten-free diet. Hospitalization for stabilization. Recovery is excellent with treatment.",
+    "precautions": ["Emergency care", "IV hydration", "Avoid gluten", "Nutritional support", "Monitor for complications"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pediatric_hypertension",
+    "category": "Pediatric Hypertension (High BP in Children)",
+    "symptoms": ["usually asymptomatic", "headache", "blurred vision", "seizures", "facial flushing", "nosebleeds", "failure to thrive", "underlying renal disease is common"],
+    "guidance": "Measure BP annually in children > 3 years (or earlier if high-risk). Investigate cause: renal, vascular, endocrine. Treatment: lifestyle (diet, exercise), antihypertensives (ACE inhibitors, calcium blockers).",
+    "precautions": ["Regular BP checks", "Weight management", "Salt restriction", "Screen for secondary causes", "Medication adherence"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pediatric_hyperlipidemia",
+    "category": "Familial Hyperlipidemia / Dyslipidemia in Children",
+    "symptoms": ["xanthomas (fatty deposits on skin)", "corneal arcus", "family history of premature heart disease", "obesity", "unexplained abdominal pain (pancreatitis risk)"],
+    "guidance": "Screen if family history of hyperlipidemia or early heart disease. Lifestyle: healthy diet, exercise. Statins for children > 8 years with LDL > 160 mg/dL and family history.",
+    "precautions": ["Healthy diet", "Physical activity", "Screen high-risk families", "Statin therapy if indicated", "Monitor lipid levels"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pediatric_obstructive_sleep_apnea",
+    "category": "Obstructive Sleep Apnea (OSA) in Children",
+    "symptoms": ["snoring", "restless sleep", "mouth breathing", "observed apnea (pauses in breathing)", "daytime fatigue", "hyperactivity", "enuresis", "hypertension"],
+    "guidance": "Most common cause: adenotonsillar hypertrophy. Refer to ENT for tonsillectomy/adenoidectomy. Weight loss if obese. CPAP for persistent or non-surgical candidates.",
+    "precautions": ["ENT evaluation", "Adenotonsillectomy if indicated", "Weight management", "Avoid sedatives", "Monitor for growth and behavior"],
+    "urgency": "medium"
+  }
+]

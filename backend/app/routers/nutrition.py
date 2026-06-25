@@ -1,108 +1,78 @@
 """
-Nutrition API Router.
+Nutrition API Router — serves disease-diet nutrition guidance.
 
-Endpoints:
-    GET  /nutrition                        — List all foods (with optional category filter)
-    GET  /nutrition/search?q=              — Search foods by query
-    GET  /nutrition/high-protein           — High-protein food list
-    GET  /nutrition/low-calorie            — Low-calorie food list
-    GET  /nutrition/diet-plan/{goal}       — Diet suggestions for a health goal
-    GET  /nutrition/food/{name}            — Nutrition info for a specific food
-
-Valid diet goals: Weight Loss, Weight Gain, Diabetes, High Protein, General Health
+GET /nutrition                  → list all nutrition entries
+GET /nutrition/search?q=        → search by disease/condition name
+GET /nutrition/disease/{name}   → get guidance for a specific condition
 """
 
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel
 
-from app.services.nutrition_service import NutritionService, VALID_GOALS
+from app.services.nutrition_service import NutritionService
 
 router = APIRouter(prefix="/nutrition", tags=["nutrition"])
 
 
-# --------------------------------------------------------------------------- #
-# Response models
-# --------------------------------------------------------------------------- #
-
-class FoodItem(BaseModel):
-    name: str
-    category: str
-    calories: float
-    protein: float
-    carbs: float
-    fat: float
-    fiber: float
-    serving_size: str
-    rich_in: list[str] = []
-    good_for: list[str] = []
-    avoid_if: list[str] = []
+class NutritionEntry(BaseModel):
+    id: str = ""
+    display_name: str = ""
+    type: str = ""
+    recommended_foods: list[str] = []
+    avoid_foods: list[str] = []
+    guidance: str = ""
+    urgency: str = "low"
+    source: str = ""
 
 
-class FoodListResponse(BaseModel):
+class NutritionListResponse(BaseModel):
     count: int
-    items: list[FoodItem]
+    items: list[NutritionEntry]
 
 
-# --------------------------------------------------------------------------- #
-# Endpoints
-# --------------------------------------------------------------------------- #
+def _to_entry(raw: dict) -> NutritionEntry:
+    """Convert any normalised dict to NutritionEntry safely — never raises."""
+    return NutritionEntry(
+        id=str(raw.get("id", "")),
+        display_name=str(raw.get("display_name", raw.get("disease", raw.get("name", "")))),
+        type=str(raw.get("type", "")),
+        recommended_foods=raw.get("recommended_foods", []),
+        avoid_foods=raw.get("avoid_foods", []),
+        guidance=str(raw.get("guidance", "")),
+        urgency=str(raw.get("urgency", "low")),
+        source=str(raw.get("source", "")),
+    )
 
-@router.get("", response_model=FoodListResponse, summary="List all foods (optional category filter)")
-async def list_all_foods(
-    category: str | None = Query(default=None, description="Filter by category, e.g. 'Grains', 'Vegetables'")
-) -> FoodListResponse:
-    """GET /nutrition or GET /nutrition?category=Legumes"""
+
+@router.get("", response_model=NutritionListResponse, summary="List all nutrition entries")
+async def list_all_nutrition() -> NutritionListResponse:
     svc = NutritionService.get_instance()
-    items = svc.get_foods_by_category(category) if category else svc.get_all_foods()
-    return FoodListResponse(count=len(items), items=[FoodItem(**f) for f in items])
+    items = svc.get_all_foods()
+    return NutritionListResponse(
+        count=len(items),
+        items=[_to_entry(f) for f in items],
+    )
 
 
-@router.get("/search", response_model=FoodListResponse, summary="Search foods by query")
-async def search_foods(
-    q: str = Query(..., min_length=1, description="Search query — matches name, category, good_for, rich_in"),
-    limit: int = Query(default=10, ge=1, le=50),
-) -> FoodListResponse:
-    """GET /nutrition/search?q=anemia"""
+@router.get("/search", response_model=NutritionListResponse, summary="Search by disease or food")
+async def search_nutrition(
+    q: str = Query(..., min_length=1, description="e.g. diabetes, anemia, pregnancy"),
+    limit: int = Query(default=20, ge=1, le=100),
+) -> NutritionListResponse:
     svc = NutritionService.get_instance()
     items = svc.search_foods(q)[:limit]
-    return FoodListResponse(count=len(items), items=[FoodItem(**f) for f in items])
+    return NutritionListResponse(
+        count=len(items),
+        items=[_to_entry(f) for f in items],
+    )
 
 
-@router.get("/high-protein", response_model=FoodListResponse, summary="List high-protein foods")
-async def high_protein(limit: int = Query(default=10, ge=1, le=50)) -> FoodListResponse:
+@router.get("/disease/{name}", response_model=NutritionEntry, summary="Get nutrition for a specific condition")
+async def get_nutrition_for_disease(name: str) -> NutritionEntry:
     svc = NutritionService.get_instance()
-    items = svc.suggest_high_protein_foods(limit)
-    return FoodListResponse(count=len(items), items=[FoodItem(**f) for f in items])
-
-
-@router.get("/low-calorie", response_model=FoodListResponse, summary="List low-calorie foods")
-async def low_calorie(limit: int = Query(default=10, ge=1, le=50)) -> FoodListResponse:
-    svc = NutritionService.get_instance()
-    items = svc.suggest_low_calorie_foods(limit)
-    return FoodListResponse(count=len(items), items=[FoodItem(**f) for f in items])
-
-
-@router.get("/diet-plan/{goal}", response_model=FoodListResponse, summary="Get diet suggestions for a health goal")
-async def diet_plan(goal: str, limit: int = Query(default=10, ge=1, le=50)) -> FoodListResponse:
-    """
-    GET /nutrition/diet-plan/Weight%20Loss
-    Valid goals: Weight Loss, Weight Gain, Diabetes, High Protein, General Health
-    """
-    svc = NutritionService.get_instance()
-    try:
-        items = svc.suggest_diet_for_goal(goal, limit)
-    except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc))
-    return FoodListResponse(count=len(items), items=[FoodItem(**f) for f in items])
-
-
-@router.get("/food/{name}", response_model=FoodItem, summary="Get nutrition info for a specific food item")
-async def get_food(name: str) -> FoodItem:
-    """GET /nutrition/food/roti -> nutrition info for 'Roti (Chapati)'."""
-    svc = NutritionService.get_instance()
-    food = svc.get_food_nutrition(name)
-    if food is None:
-        raise HTTPException(status_code=404, detail=f"No nutrition data found for '{name}'")
-    return FoodItem(**food)
+    results = svc.search_foods(name)
+    if not results:
+        raise HTTPException(status_code=404, detail=f"No nutrition guidance found for '{name}'")
+    return _to_entry(results[0])

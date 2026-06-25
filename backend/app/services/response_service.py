@@ -268,6 +268,7 @@ class TemplateResponseService:
         query: str,
         triage: dict[str, Any],
         context_chunks: list[dict[str, Any]],
+        llm_response: str = "",   # NEW
     ) -> HealthResponse:
         risk_level   = triage.get("risk_level", "routine")
         matched_rules = triage.get("matched_rules", [])
@@ -278,6 +279,11 @@ class TemplateResponseService:
             matched_rules=matched_rules,
             context_chunks=context_chunks,
         )
+
+        # If an LLM response was generated, use it as the primary response
+        # but keep the triage header and disclaimer.
+        if llm_response and len(llm_response.strip()) > 20:
+            response_text = llm_response.strip()
 
         # Format retrieved docs for frontend display
         retrieved_docs = [

@@ -1,0 +1,922 @@
+[
+  {
+    "id": "anemia_pregnancy",
+    "category": "Anemia in Pregnancy",
+    "symptoms": ["extreme fatigue", "pale skin and gums", "dizziness or fainting", "shortness of breath", "rapid heartbeat", "cold hands and feet", "brittle nails", "headache"],
+    "guidance": "Take Iron-Folic Acid (IFA) tablets daily as prescribed — these are free at Anganwadi and PHC centers under government programs. Eat iron-rich foods: spinach, moringa leaves, black gram, eggs, fish, and jaggery. Drink lemon water with meals to boost iron absorption. Severe anemia in pregnancy requires immediate medical attention and may need iron infusions.",
+    "precautions": ["Do not skip IFA tablets — take even if they cause mild nausea (take after meals)", "Avoid tea or coffee within 1 hour of taking iron tablets as they block absorption", "Consume Vitamin C rich foods (amla, guava, lemon) alongside iron-rich meals", "Report severe breathlessness or palpitations to doctor immediately", "Attend all Antenatal Care (ANC) checkups for hemoglobin monitoring"],
+    "urgency": "high"
+  },
+  {
+    "id": "preeclampsia",
+    "category": "Preeclampsia (High BP in Pregnancy)",
+    "symptoms": ["sudden swelling of face, hands, or feet", "severe headache during pregnancy", "blurred or changed vision", "upper abdominal pain (right side)", "sudden weight gain", "decreased fetal movement", "nausea and vomiting in late pregnancy"],
+    "guidance": "This is a medical emergency. Go to the nearest government hospital or CHC immediately. Do not attempt home management. Preeclampsia can rapidly progress to eclampsia (seizures) and threaten both mother and baby's life. Monitoring blood pressure at every ANC visit is crucial for early detection.",
+    "precautions": ["Attend all ANC checkups without fail — BP is checked each visit", "Report sudden swelling, headache, or visual changes to ASHA or doctor immediately", "Avoid self-medicating with any BP drugs during pregnancy", "Low-dose aspirin may be prescribed by doctor from 12 weeks in high-risk cases — take as prescribed", "Call 108 (ambulance) immediately if seizures occur"],
+    "urgency": "critical"
+  },
+  {
+    "id": "eclampsia",
+    "category": "Eclampsia (Seizures in Pregnancy/Preeclampsia)",
+    "symptoms": ["generalized tonic-clonic seizures in a woman with preeclampsia", "post-seizure confusion", "high blood pressure", "proteinuria", "headache", "visual disturbances", "can occur during pregnancy, labor, or postpartum"],
+    "guidance": "MEDICAL EMERGENCY — Call 108 immediately. Eclampsia is a leading cause of maternal death. Treatment: IV magnesium sulfate (anticonvulsant) and antihypertensives. Immediate delivery is often needed. Do not attempt to stop the seizure at home — protect the woman from injury during the seizure.",
+    "precautions": ["Magnesium sulfate is the drug of choice — give at the first sign of seizure", "Monitor urine output, respiratory rate, and knee reflexes", "Do not give any oral medicines if seizure is active", "Prepare for emergency delivery", "Follow up for postpartum preeclampsia"],
+    "urgency": "critical"
+  },
+  {
+    "id": "gestational_diabetes",
+    "category": "Gestational Diabetes",
+    "symptoms": ["increased thirst", "frequent urination", "unusual fatigue", "blurred vision", "often asymptomatic — detected on screening", "recurrent infections"],
+    "guidance": "Diagnosed through oral glucose tolerance test (OGTT) usually between 24-28 weeks. Manage with diet: avoid sugar, white rice, refined flour; eat high-fiber foods, whole grains, vegetables. Monitor blood sugar at home if advised. Some cases need insulin during pregnancy. Usually resolves after delivery but increases future risk of Type 2 diabetes.",
+    "precautions": ["Attend glucose screening test at 24-28 weeks of pregnancy", "Avoid sweet drinks, sugary snacks, and processed foods", "Exercise gently (walking 20-30 min daily) if no complications — consult doctor first", "Monitor fetal movements daily", "Get blood sugar tested again 6-8 weeks after delivery"],
+    "urgency": "medium"
+  },
+  {
+    "id": "postpartum_hemorrhage",
+    "category": "Postpartum Hemorrhage (PPH)",
+    "symptoms": ["heavy vaginal bleeding after delivery (soaking more than 1 pad per hour)", "sudden drop in blood pressure", "rapid heartbeat", "dizziness or loss of consciousness", "pale or cold clammy skin", "uterus feels soft and boggy"],
+    "guidance": "This is a life-threatening emergency. Call 108 immediately and get to the nearest hospital with blood bank facilities. PPH is the leading cause of maternal death in India. Every woman should deliver in an institution where this can be managed. Oxytocin is given routinely after delivery to prevent PPH at government facilities.",
+    "precautions": ["Deliver in a government hospital or health facility — do NOT plan home delivery", "Inform doctors of any clotting disorders or history of PPH", "Know your blood group before delivery", "Arrange blood donors from family before due date", "ASHA worker or 108 ambulance should be pre-alerted near due date"],
+    "urgency": "critical"
+  },
+  {
+    "id": "morning_sickness",
+    "category": "Morning Sickness (Nausea and Vomiting in Pregnancy)",
+    "symptoms": ["nausea especially in first trimester", "vomiting (can occur any time of day)", "food aversions", "heightened sense of smell", "fatigue", "salivation", "dizziness"],
+    "guidance": "Usually peaks between 6-12 weeks and improves by 14-16 weeks. Eat small frequent meals every 2 hours. Keep dry crackers or biscuits nearby to eat before getting out of bed. Ginger tea, lemon water, or cold plain foods may help. Avoid spicy or strong-smelling foods. Severe vomiting (hyperemesis gravidarum) with inability to keep fluids down needs hospital treatment with IV fluids.",
+    "precautions": ["Eat small amounts frequently rather than large meals", "Avoid lying down immediately after eating", "Stay hydrated — sip ORS or coconut water if unable to drink much", "Seek hospital care if unable to keep any food or fluids down for more than 24 hours", "Do not take any anti-nausea medications without doctor's prescription"],
+    "urgency": "low"
+  },
+  {
+    "id": "hyperemesis_gravidarum",
+    "category": "Hyperemesis Gravidarum (Severe Vomiting in Pregnancy)",
+    "symptoms": ["severe persistent nausea and vomiting", "inability to keep food or fluids down", "weight loss (>5% of pre-pregnancy weight)", "dehydration (dry mouth, decreased urine, sunken eyes)", "electrolyte imbalance", "ketosis", "dizziness, fainting"],
+    "guidance": "This is a serious condition requiring hospital admission. Treatment: IV fluids, electrolyte correction, thiamine supplementation, antiemetics (ondansetron, promethazine). Do not delay — it can lead to Wernicke's encephalopathy and severe weight loss. Early treatment is key.",
+    "precautions": ["Seek care if you cannot keep any food/water down for 24 hours", "Do not stop taking prenatal vitamins without consulting", "Small frequent meals with bland foods", "Avoid triggers (smells, greasy foods)", "Monitor urine output and weight"],
+    "urgency": "high"
+  },
+  {
+    "id": "ectopic_pregnancy",
+    "category": "Ectopic Pregnancy",
+    "symptoms": ["sharp stabbing pain on one side of abdomen", "vaginal bleeding (may be light or heavy)", "shoulder tip pain (blood tracking upward)", "sudden collapse or fainting", "dizziness and weakness", "positive pregnancy test with these symptoms"],
+    "guidance": "This is a medical emergency. The fertilized egg has implanted outside the uterus (usually in fallopian tube). If the tube ruptures, internal bleeding is life-threatening. Go to the emergency room immediately. Treated by surgery or medication depending on how early it is caught.",
+    "precautions": ["Get an early ultrasound at 6-8 weeks to confirm intrauterine pregnancy location", "Report any pain or bleeding in early pregnancy to a doctor immediately", "Women with history of ectopic pregnancy, PID, or tubal surgery are at higher risk", "Do not delay seeking care if sharp abdominal pain occurs in early pregnancy", "Call 108 and go directly to a hospital with surgical facilities"],
+    "urgency": "critical"
+  },
+  {
+    "id": "miscarriage",
+    "category": "Miscarriage (Spontaneous Abortion)",
+    "symptoms": ["vaginal bleeding during pregnancy", "cramping or pain in lower abdomen or back", "passage of tissue or clots from vagina", "sudden disappearance of pregnancy symptoms", "fever (if infection present)"],
+    "guidance": "Seek medical care for any bleeding in pregnancy. Early miscarriage (before 12 weeks) is common and often occurs due to chromosomal abnormalities — it is not the mother's fault. Hospital evaluation confirms complete vs incomplete miscarriage. Incomplete miscarriage needs medical or surgical management. Emotional support and grief counseling are equally important.",
+    "precautions": ["Do not attempt to manage miscarriage at home — go to hospital", "All bleeding in pregnancy needs medical evaluation", "Do not insert anything into vagina during bleeding", "Wait at least 2-3 menstrual cycles before trying to conceive again (as advised by doctor)", "Seek counseling support — miscarriage causes significant grief and loss"],
+    "urgency": "high"
+  },
+  {
+    "id": "postpartum_depression",
+    "category": "Postpartum Depression (PPD)",
+    "symptoms": ["persistent sadness or crying after childbirth", "feeling detached from baby", "extreme fatigue beyond normal new-parent tiredness", "anxiety and panic attacks", "difficulty sleeping even when baby sleeps", "thoughts of harming self or baby", "irritability and anger", "loss of interest in everything"],
+    "guidance": "PPD is a medical condition — not a sign of weakness or bad motherhood. It affects 1 in 5 new mothers. Talk to a doctor or ANM at your health center. Counseling and support groups help greatly. In moderate-severe cases, medication may be needed (safe during breastfeeding if prescribed). Strong family support and sharing baby care responsibilities are key to recovery.",
+    "precautions": ["Screen all new mothers at 2 weeks and 6 weeks postpartum for depression symptoms", "NEVER leave mother alone if she expresses thoughts of harming herself or baby — seek emergency help", "Family members should actively share baby care to prevent exhaustion", "Do not dismiss postpartum mood changes as 'just hormones' — seek medical evaluation", "SNEHI helpline: 91529-87821 for mental health support"],
+    "urgency": "high"
+  },
+  {
+    "id": "mastitis",
+    "category": "Mastitis (Breast Infection in Breastfeeding Mothers)",
+    "symptoms": ["red, warm, swollen area on one breast", "breast pain and tenderness", "flu-like symptoms (fever, body ache, chills)", "hardened breast tissue", "burning pain during breastfeeding", "nipple discharge"],
+    "guidance": "Continue breastfeeding — stopping abruptly worsens mastitis. Nurse frequently to drain the affected breast. Apply warm compresses before feeding and cold compress after. Antibiotics are usually needed — consult a doctor. Most women recover fully within 10 days with proper treatment. If a lump remains with fever, abscess may have formed requiring drainage.",
+    "precautions": ["Do not stop breastfeeding — continue feeding from affected breast", "Ensure baby is latching correctly — poor latch causes nipple damage and mastitis", "Wear supportive but not tight-fitting bras", "Complete the full antibiotic course even if feeling better", "See doctor if symptoms don't improve within 12-24 hours of starting antibiotics"],
+    "urgency": "medium"
+  },
+  {
+    "id": "breast_abscess",
+    "category": "Breast Abscess",
+    "symptoms": ["painful, tender, fluctuant lump in breast", "high fever, chills", "erythema and swelling over the lump", "malaise, body aches", "often follows untreated mastitis"],
+    "guidance": "Seek medical care immediately. Ultrasound confirms abscess. Treatment: needle aspiration or incision and drainage. Continue breastfeeding on the unaffected side; the affected side can be pumped (but empty the breast). Antibiotics are needed.",
+    "precautions": ["Do not delay treatment of mastitis", "Keep the breast empty to prevent abscess", "Surgical drainage if needed", "Maintain good hand hygiene", "Follow up for recurrence"],
+    "urgency": "high"
+  },
+  {
+    "id": "postpartum_psychosis",
+    "category": "Postpartum Psychosis",
+    "symptoms": ["delusions (false beliefs)", "hallucinations (hearing/seeing things)", "rapid mood swings", "confusion and disorganization", "extreme agitation or withdrawal", "sleep disturbances (unable to sleep even when baby sleeps)", "thoughts of harming baby or self", "onset within 2 weeks of delivery"],
+    "guidance": "This is a psychiatric emergency. Requires immediate hospitalization and medication. Postpartum psychosis is rare but serious — risk is higher in women with a history of bipolar disorder. Do not leave the mother alone with the baby until treated. Treatment: antipsychotics, mood stabilizers, and hospitalization.",
+    "precautions": ["Emergency psychiatric referral", "Do not leave mother alone", "Secure the baby with another caregiver", "Medication is life-saving", "Long-term psychiatric follow-up"],
+    "urgency": "critical"
+  },
+  {
+    "id": "obstetric_fistula",
+    "category": "Obstetric Fistula",
+    "symptoms": ["continuous uncontrollable leaking of urine or stool from vagina", "inability to control urination or defecation", "skin sores from constant wetness", "emotional withdrawal and depression", "occurs after prolonged difficult labor or birth injury"],
+    "guidance": "Obstetric fistula is caused by prolonged obstructed labor, mostly preventable by timely C-section. It is fully curable with surgery. Free surgical repair is available at government hospitals under the National Health Mission. Counseling and support groups help women cope with stigma and isolation. Report cases to district hospital.",
+    "precautions": ["Prevent by delivering in hospital — obstructed labor managed by C-section prevents fistula", "Girls should not marry or become pregnant before age 18", "Seek care at district hospital — do not hide condition due to stigma", "Proper skin care with petroleum jelly prevents pressure sores", "Surgery has over 90% success rate — full recovery is possible"],
+    "urgency": "high"
+  },
+  {
+    "id": "rubella_pregnancy",
+    "category": "Rubella (German Measles) in Pregnancy",
+    "symptoms": ["mild fever", "pink-red rash starting on face spreading to body", "swollen lymph nodes behind ears and neck", "joint pain", "red eyes", "in fetus: congenital rubella syndrome — deafness, heart defects, vision loss, intellectual disability"],
+    "guidance": "Rubella in the first trimester causes severe birth defects (Congenital Rubella Syndrome) in up to 90% of cases. Vaccination before pregnancy is the only prevention. If contracted in pregnancy, seek immediate specialist care. Women of childbearing age should check vaccination status and get MMR vaccine before conceiving.",
+    "precautions": ["Get MMR (measles-mumps-rubella) vaccine before pregnancy if not already vaccinated", "Do NOT get MMR vaccine during pregnancy — avoid pregnancy for 1 month after vaccination", "Avoid contact with anyone who has measles or rubella during pregnancy", "All children should receive 2 doses of MMR under the Universal Immunization Programme", "Report any rash during pregnancy immediately to doctor"],
+    "urgency": "high"
+  },
+  {
+    "id": "cervical_cancer",
+    "category": "Cervical Cancer",
+    "symptoms": ["abnormal vaginal bleeding (between periods, after sex, after menopause)", "unusual vaginal discharge (watery, bloody, foul-smelling)", "pelvic pain", "pain during sexual intercourse", "early stages often have NO symptoms"],
+    "guidance": "Cervical cancer is almost entirely preventable. Free cervical cancer screening (VIA — Visual Inspection with Acetic Acid) is available at PHCs and CHCs under NPCDCS. HPV vaccine available for girls age 9-14 at government schools. Early-stage cervical cancer is curable. All women aged 30-65 should be screened every 5 years.",
+    "precautions": ["Get screened — free VIA screening at nearest PHC or CHC", "HPV vaccination for girls age 9-14 before sexual debut", "Report any abnormal vaginal bleeding to a doctor immediately", "Do not ignore any symptoms due to stigma or embarrassment", "Smoking increases cervical cancer risk — avoid tobacco"],
+    "urgency": "medium"
+  },
+  {
+    "id": "preterm_labor",
+    "category": "Preterm Labor (Labor Before 37 Weeks)",
+    "symptoms": ["regular uterine contractions before 37 weeks", "lower back pain that is dull or rhythmic", "pelvic pressure", "vaginal discharge (watery, bloody, or mucus)", "rupture of membranes (water breaking) before 37 weeks", "cramping"],
+    "guidance": "If you have signs of preterm labor, go to the hospital immediately. Tocolytics (to stop contractions) and corticosteroids (to mature fetal lungs) are given. Prevention: good ANC, avoid smoking, treat infections, bed rest if cervical insufficiency.",
+    "precautions": ["Seek care immediately for contractions before 37 weeks", "Avoid heavy lifting", "Manage stress", "Ensure adequate hydration", "Attend all ANC visits for cervical monitoring"],
+    "urgency": "critical"
+  },
+  {
+    "id": "premature_rupture_membranes",
+    "category": "Premature Rupture of Membranes (PROM)",
+    "symptoms": ["sudden gush or continuous trickle of fluid from vagina", "fluid is clear or slightly blood-tinged", "no pain associated with fluid loss", "may be accompanied by infection (fever, foul-smelling discharge)"],
+    "guidance": "Go to the hospital immediately. There is a risk of cord prolapse, infection, and preterm labor. If term (≥37 weeks), induction is usually done. If preterm, management depends on gestational age and infection status. Monitor for signs of chorioamnionitis.",
+    "precautions": ["Do not use tampons or have sex after membrane rupture", "Call doctor immediately", "Avoid vaginal exams at home", "Hospital evaluation", "Antibiotics may be given if infection risk"],
+    "urgency": "critical"
+  },
+  {
+    "id": "chorioamnionitis",
+    "category": "Chorioamnionitis (Infection of Amniotic Sac)",
+    "symptoms": ["maternal fever (≥38°C)", "uterine tenderness", "foul-smelling amniotic fluid", "maternal tachycardia", "fetal tachycardia", "sometimes no symptoms in early stages"],
+    "guidance": "Immediate antibiotics (IV) and prompt delivery. It is a major cause of maternal sepsis and neonatal infection. Do not delay delivery once diagnosed. Usually occurs with prolonged rupture of membranes or prolonged labor.",
+    "precautions": ["Avoid prolonged labor", "Limit vaginal exams after rupture", "Antibiotic prophylaxis for PROM", "Early recognition of fever", "Monitor fetal heart rate"],
+    "urgency": "critical"
+  },
+  {
+    "id": "antepartum_hemorrhage",
+    "category": "Antepartum Hemorrhage (Bleeding in Late Pregnancy)",
+    "symptoms": ["vaginal bleeding after 20 weeks of pregnancy", "may be painless (placenta previa) or painful (placental abruption)", "bleeding can be light to heavy", "abdominal pain with abruption", "contractions"],
+    "guidance": "Any vaginal bleeding in the second half of pregnancy is an emergency. Go to the hospital immediately. Do not do a vaginal examination at home. Causes: placenta previa, placental abruption, cervical polyps. Ultrasound to locate the placenta. Treatment depends on cause and severity.",
+    "precautions": ["Do not ignore bleeding — seek care immediately", "Do not have sexual intercourse if placenta previa is diagnosed", "Avoid strenuous activity", "In case of abruption, immediate C-section may be needed", "Monitor fetal movements"],
+    "urgency": "critical"
+  },
+  {
+    "id": "placenta_previa",
+    "category": "Placenta Previa (Low-Lying Placenta)",
+    "symptoms": ["painless bright red vaginal bleeding in second or third trimester", "bleeding can be massive", "uterus is non-tender", "fetal presentation may be abnormal"],
+    "guidance": "Diagnosis by ultrasound. Management: rest, avoid intercourse, and no vaginal exams. If bleeding is heavy or at term, C-section is required. In mild cases, admission for monitoring and corticosteroids to mature fetal lungs. Emergency blood transfusion may be needed.",
+    "precautions": ["Avoid sex if placenta previa is diagnosed", "No vaginal examinations", "Immediate hospital evaluation for any bleeding", "Deliver at a facility with blood bank and C-section capability", "Plan for C-section delivery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "placental_abruption",
+    "category": "Placental Abruption (Abruptio Placentae)",
+    "symptoms": ["sudden severe abdominal pain", "vaginal bleeding (may be hidden)", "uterine tenderness and rigidity (board-like abdomen)", "fetal distress (decreased heart rate)", "contractions", "shock"],
+    "guidance": "Medical emergency. Immediate delivery is often needed. Management: IV fluids, blood transfusion, and emergency C-section. Abruption can cause maternal and fetal death. Risk factors: hypertension, trauma, smoking, cocaine use.",
+    "precautions": ["Seek care for sudden abdominal pain in late pregnancy", "Monitor blood pressure", "Avoid trauma", "Do not delay seeking care", "Emergency delivery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "uterine_rupture",
+    "category": "Uterine Rupture",
+    "symptoms": ["sudden severe abdominal pain (tearing pain)", "cessation of contractions", "vaginal bleeding", "fetal heart rate abnormalities (bradycardia)", "signs of shock (tachycardia, hypotension)", "fetus may be easily palpable (abnormal position)"],
+    "guidance": "Life-threatening emergency. Requires immediate emergency laparotomy and repair or hysterectomy. Most common in women with previous C-section scars. Prevention: avoid unnecessary C-sections, vaginal birth after C-section (VBAC) should be in a hospital with immediate surgical backup.",
+    "precautions": ["Avoid unsupervised vaginal delivery with previous C-section", "Monitor scar tenderness", "Early recognition", "Emergency surgical intervention", "Blood transfusion readiness"],
+    "urgency": "critical"
+  },
+  {
+    "id": "shoulder_dystocia",
+    "category": "Shoulder Dystocia (Difficult Delivery of Shoulders)",
+    "symptoms": ["head delivers but shoulders are stuck behind pubic symphysis", "fetal chin retraction (turtle sign)", "inability to deliver shoulders after head", "requires specific maneuvers (McRoberts, suprapubic pressure, Woods screw)"],
+    "guidance": "This is an obstetric emergency. The delivery team will perform maneuvers. Prevent: avoid excessive fetal weight (gestational diabetes control), and assess for risk factors (fetal macrosomia, maternal diabetes, prolonged labor). If diagnosed, specific emergency maneuvers are needed.",
+    "precautions": ["Control gestational diabetes", "Avoid excessive birth weight", "Be prepared for shoulder dystocia", "Do not pull on the head", "Trained staff"],
+    "urgency": "critical"
+  },
+  {
+    "id": "cord_prolapse",
+    "category": "Umbilical Cord Prolapse",
+    "symptoms": ["visualization or palpation of cord in the vagina after membrane rupture", "fetal heart rate abnormalities (variable or prolonged decelerations)", "absence of fetal movements"],
+    "guidance": "Emergency. Relieve pressure on the cord by elevating the presenting part (hand in vagina), place mother in Trendelenburg or knee-chest position. Immediate delivery (often C-section) is needed. Do not attempt to push cord back in. Call for emergency help.",
+    "precautions": ["Avoid artificial rupture of membranes if presenting part is not engaged", "If cord prolapse occurs, call for immediate help", "Maintain pressure on presenting part until delivery", "Emergency C-section", "Monitor fetal heart rate"],
+    "urgency": "critical"
+  },
+  {
+    "id": "amniotic_fluid_embolism",
+    "category": "Amniotic Fluid Embolism (AFE)",
+    "symptoms": ["sudden onset of respiratory distress", "hypotension (low BP)", "cyanosis (blue color)", "cardiac arrest", "hemorrhage (DIC — bleeding disorder)", "seizures", "occurs during labor, delivery, or immediately postpartum"],
+    "guidance": "This is a rare but catastrophic emergency. Immediate cardiopulmonary resuscitation, oxygenation, IV fluids, and treatment of DIC. Requires intensive care. Most deaths occur within 1 hour. Survival is low, but prompt intensive care improves outcomes.",
+    "precautions": ["No specific prevention — rare and unpredictable", "Be prepared for emergency response", "Rapid diagnosis", "ICU care", "Multidisciplinary approach"],
+    "urgency": "critical"
+  },
+  {
+    "id": "retained_placenta",
+    "category": "Retained Placenta",
+    "symptoms": ["delayed expulsion of placenta (>30 minutes after delivery)", "continuous bleeding", "uterus remains distended", "signs of hemorrhage"],
+    "guidance": "Manual removal of placenta under anesthesia is required. If heavy bleeding, it is an emergency. Prevent with active management of the third stage of labor (oxytocin). Delayed recognition leads to PPH.",
+    "precautions": ["Active management of third stage", "Do not pull on cord", "If retained, call for skilled assistance", "Manual removal", "Antibiotic prophylaxis after removal"],
+    "urgency": "high"
+  },
+  {
+    "id": "perineal_tear",
+    "category": "Perineal Tears (During Vaginal Delivery)",
+    "symptoms": ["tear of perineum during delivery (1st, 2nd, 3rd, or 4th degree)", "pain, bleeding", "difficulty sitting", "fecal incontinence if 3rd/4th degree"],
+    "guidance": "Repair under local or regional anesthesia. For 3rd/4th degree tears, repair by an experienced surgeon. Good wound care: sitz baths, pain relief. Prevent episiotomy only if needed; perineal massage during pregnancy can reduce tears.",
+    "precautions": ["Perineal massage during pregnancy", "Control pushing during delivery", "Episiotomy only when needed", "Proper repair", "Good hygiene to prevent infection"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cervical_tear",
+    "category": "Cervical Laceration (Tear)",
+    "symptoms": ["bleeding after delivery that is not due to uterine atony or retained products", "examination reveals cervical tear", "may be large or deep"],
+    "guidance": "Suturing of cervical tear under good visualization. Prevent by avoiding rapid and forceful deliveries. Monitor for bleeding and infection.",
+    "precautions": ["Careful delivery", "Avoid excessive traction", "Inspect cervix for tears after delivery", "Proper suturing", "Postpartum monitoring"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hematoma_puerperal",
+    "category": "Puerperal (Vulvar/Vaginal) Hematoma",
+    "symptoms": ["severe pain in perineum or vagina after delivery", "tender, bulging, bluish swelling", "difficulty urinating", "pain on sitting", "may cause shock if extensive"],
+    "guidance": "Surgical evacuation of hematoma and control of bleeding. Analgesia. Some small hematomas may be managed conservatively. Prevent by avoiding trauma during delivery and good hemostasis after episiotomy.",
+    "precautions": ["Careful repair of lacerations", "Avoid birth injuries", "Monitor for swelling after delivery", "Surgical drainage if large", "Blood transfusion if needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "urinary_retention_postpartum",
+    "category": "Postpartum Urinary Retention",
+    "symptoms": ["inability to urinate after vaginal delivery (within 6 hours)", "bladder distension (palpable above pubis)", "discomfort", "overflow incontinence"],
+    "guidance": "Catheterization may be needed. Preventive measures: encourage early ambulation, provide privacy for voiding, and avoid excessive fluids in early postpartum. If retention persists, bladder training.",
+    "precautions": ["Encourage voiding early", "Palpate bladder", "Catheterize if needed", "Monitor for infection", "Prevent bladder overdistension"],
+    "urgency": "medium"
+  },
+  {
+    "id": "postpartum_infection_uterine",
+    "category": "Postpartum Endometritis (Uterine Infection)",
+    "symptoms": ["fever (≥38°C) within 24-48 hours of delivery", "uterine tenderness", "foul-smelling lochia", "chills, malaise", "tachycardia"],
+    "guidance": "Treat with broad-spectrum IV antibiotics (gentamicin + clindamycin or ampicillin). May need to add metronidazole. Usually caused by retained placental fragments or prolonged labor. Prevention: sterile delivery techniques.",
+    "precautions": ["Sterile delivery practices", "Remove all placental fragments", "Monitor temperature postpartum", "Early antibiotic treatment", "Consider imaging for retained products"],
+    "urgency": "high"
+  },
+  {
+    "id": "wound_infection_csection",
+    "category": "Cesarean Section Wound Infection",
+    "symptoms": ["redness, swelling, pain, discharge from C-section wound", "fever", "wound dehiscence (opening)", "tenderness"],
+    "guidance": "Wound care, antibiotics, and sometimes surgical drainage. Good hygiene, keep wound dry, and early detection. Risk factors: obesity, diabetes, emergency C-section.",
+    "precautions": ["Good wound care", "Diabetes control", "Antibiotic prophylaxis in C-section", "Monitor for signs of infection", "Do not delay seeking care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "postpartum_thyroiditis",
+    "category": "Postpartum Thyroiditis",
+    "symptoms": ["fatigue", "weight changes", "palpitations or bradycardia", "mood swings", "goiter", "joint aches", "usually occurs 1-6 months postpartum"],
+    "guidance": "Can present with hyperthyroid then hypothyroid phase. Often self-limiting. If hypothyroid, may need levothyroxine. Monitor TSH. Usually resolves within 12 months.",
+    "precautions": ["Monitor thyroid symptoms", "Check TSH if symptoms", "Thyroid hormone replacement if needed", "Reassess after 12 months", "Differentiate from depression"],
+    "urgency": "medium"
+  },
+  {
+    "id": "breast_engorgement",
+    "category": "Breast Engorgement",
+    "symptoms": ["painful, swollen, hard breasts", "warmth", "breast tenderness", "difficulty latching", "may have low-grade fever", "occurs 2-5 days postpartum"],
+    "guidance": "Frequent and effective breastfeeding or pumping. Apply cold compresses after feeding, warm before feeding. Supportive bra. If not resolved, can progress to mastitis. Avoid stopping feeds.",
+    "precautions": ["Feed frequently", "Do not restrict fluids", "Warm compresses before feeding", "Cool compresses after", "Ensure good latch"],
+    "urgency": "low"
+  },
+  {
+    "id": "nipple_crack_pain",
+    "category": "Nipple Crack and Pain (Breastfeeding)",
+    "symptoms": ["sore, cracked, or bleeding nipples", "pain during breastfeeding", "fissures", "sometimes infection (fungal)"],
+    "guidance": "Ensure correct latch and positioning. Use expressed breast milk on nipple, let air dry. Hydrogel pads or nipple cream. If fungal (thrush), antifungal treatment for mother and baby. Do not stop breastfeeding.",
+    "precautions": ["Correct latch", "Use varied feeding positions", "Air dry nipples", "Apply lanolin or breast milk", "Treat fungal infections"],
+    "urgency": "low"
+  },
+  {
+    "id": "galactocele",
+    "category": "Galactocele (Milk Cyst)",
+    "symptoms": ["painless or slightly tender lump in the breast", "may be fluctuant", "usually in a lactating woman", "often resolves with continued breastfeeding"],
+    "guidance": "Ultrasound to confirm. Continue breastfeeding to empty the breast. If persistent, aspiration may be needed. Reassure that it is benign.",
+    "precautions": ["Frequent breastfeeding", "Avoid unnecessary biopsy", "Reassurance", "Follow-up if persistent", "Maintain good milk flow"],
+    "urgency": "low"
+  },
+  {
+    "id": "diastasis_recti",
+    "category": "Diastasis Recti (Separation of Abdominal Muscles) in Pregnancy",
+    "symptoms": ["visible bulge or ridge in the midline of the abdomen when straining", "lower back pain", "weakness of abdominal muscles", "often asymptomatic", "common in late pregnancy"],
+    "guidance": "Postpartum exercises to strengthen the core (e.g., pelvic tilts, deep abdominal contractions). Avoid heavy lifting and sit-ups that worsen separation. Most resolve within 6-12 months.",
+    "precautions": ["Avoid sit-ups and heavy lifting", "Core strengthening exercises", "Supportive garments", "Monitor for hernias", "Consult physiotherapist"],
+    "urgency": "low"
+  },
+  {
+    "id": "carpal_tunnel_pregnancy",
+    "category": "Carpal Tunnel Syndrome in Pregnancy",
+    "symptoms": ["tingling, numbness, or pain in fingers (thumb, index, middle)", "worse at night", "wrist pain", "weak grip"],
+    "guidance": "Wrist splints at night, avoid repetitive wrist movements, elevate hands. Usually resolves after delivery. If severe, local corticosteroid injection may be used.",
+    "precautions": ["Wrist splints", "Avoid repetitive motions", "Ice packs", "Postpartum recovery", "Rarely needs surgery"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_induced_hypertension",
+    "category": "Pregnancy-Induced Hypertension (PIH)",
+    "symptoms": ["high blood pressure after 20 weeks without proteinuria", "headache", "blurred vision", "may progress to preeclampsia"],
+    "guidance": "Monitor BP regularly. Salt restriction, rest. If BP > 160/110, antihypertensives (labetalol, methyldopa). Close monitoring for progression to preeclampsia.",
+    "precautions": ["Regular BP monitoring", "Attend all ANC visits", "Medication compliance", "Watch for warning signs of preeclampsia", "Do not stop antihypertensives without advice"],
+    "urgency": "high"
+  },
+  {
+    "id": "pulmonary_embolism_pregnancy",
+    "category": "Pulmonary Embolism (PE) in Pregnancy",
+    "symptoms": ["sudden onset of chest pain", "shortness of breath", "tachycardia", "hemoptysis", "syncope", "usually associated with deep vein thrombosis (leg pain, swelling)"],
+    "guidance": "Medical emergency. Call 108. Immediate anticoagulation (LMWH) and supportive care. Risk is higher in pregnancy and postpartum. Prevent with early mobilization, compression stockings, and anticoagulation in high-risk.",
+    "precautions": ["Early mobilization after delivery", "Hydration", "Compression stockings", "Anticoagulation for high-risk women", "Do not ignore leg swelling or chest pain"],
+    "urgency": "critical"
+  },
+  {
+    "id": "deep_vein_thrombosis_pregnancy",
+    "category": "Deep Vein Thrombosis (DVT) in Pregnancy",
+    "symptoms": ["pain, swelling, redness, and warmth in one leg (usually calf or thigh)", "tenderness", "elevated skin temperature", "Homans' sign (pain on dorsiflexion)"],
+    "guidance": "Urgent Doppler ultrasound. Treatment: therapeutic anticoagulation (LMWH). Prevent by compression stockings and early mobility. DVT can lead to PE.",
+    "precautions": ["Avoid prolonged sitting/standing", "Compression stockings", "Hydration", "Seek care for leg swelling and pain", "Anticoagulation if indicated"],
+    "urgency": "high"
+  },
+  {
+    "id": "symphysis_pubis_dysfunction",
+    "category": "Symphysis Pubis Dysfunction (SPD)",
+    "symptoms": ["pain in the pubic area", "pain radiating to the groin or inner thighs", "difficulty walking or turning", "pain with weight-bearing activities", "worse at night"],
+    "guidance": "Pelvic support belts, avoid asymmetrical movements (stairs, getting in/out of car). Rest, physical therapy. Usually resolves postpartum. Use of crutches in severe cases.",
+    "precautions": ["Pelvic belt", "Avoid heavy lifting", "Ice packs", "Rest", "Consult physiotherapist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hemorrhoids_pregnancy",
+    "category": "Hemorrhoids in Pregnancy",
+    "symptoms": ["painful, swollen veins around the anus", "itching", "bleeding during bowel movements", "discomfort while sitting"],
+    "guidance": "Prevent constipation with high-fiber diet and adequate fluids. Topical creams (hydrocortisone, witch hazel), cold compresses, and sitz baths. Usually resolves postpartum.",
+    "precautions": ["High-fiber diet", "Drink plenty of water", "Avoid straining", "Sitz baths", "Do not use laxatives without advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "varicose_veins_pregnancy",
+    "category": "Varicose Veins in Pregnancy",
+    "symptoms": ["swollen, twisted veins in legs (blue or purple)", "leg pain, heaviness", "itching over veins", "worsen with standing", "often improve postpartum"],
+    "guidance": "Elevate legs, wear compression stockings, avoid prolonged standing. Exercise (walking) helps. Rarely, thrombosis can occur.",
+    "precautions": ["Compression stockings", "Elevate legs", "Avoid standing for long periods", "Exercise", "Monitor for signs of thrombosis"],
+    "urgency": "low"
+  },
+  {
+    "id": "obstetric_cholestasis",
+    "category": "Obstetric Cholestasis (Intrahepatic Cholestasis of Pregnancy — ICP)",
+    "symptoms": ["severe itching (pruritus) especially on palms and soles, worse at night", "no rash", "jaundice (yellowing of skin/eyes)", "dark urine, pale stool", "fatigue, nausea"],
+    "guidance": "This is a high-risk condition — can lead to fetal distress and stillbirth. Report itching immediately. Diagnosis: elevated bile acids. Treatment: ursodeoxycholic acid, monitoring fetal well-being, and early delivery (often at 37-38 weeks).",
+    "precautions": ["Immediate reporting of itching", "Regular bile acid tests", "Fetal monitoring (NST)", "Early delivery to prevent stillbirth", "Medication (ursodeoxycholic acid)"],
+    "urgency": "critical"
+  },
+  {
+    "id": "acute_fatty_liver_pregnancy",
+    "category": "Acute Fatty Liver of Pregnancy (AFLP)",
+    "symptoms": ["nausea, vomiting, abdominal pain (epigastric)", "jaundice", "fatigue", "headache", "hypoglycemia", "coagulopathy", "encephalopathy", "occurs in third trimester"],
+    "guidance": "Medical emergency. Immediate delivery is required. Supportive care: correction of coagulation, glucose, and liver failure. Liver transplant may be needed. Early recognition is crucial.",
+    "precautions": ["Suspect if liver enzymes elevated with coagulopathy", "Emergency delivery", "ICU care", "Supportive treatment", "Monitor liver function"],
+    "urgency": "critical"
+  },
+  {
+    "id": "hellp_syndrome",
+    "category": "HELLP Syndrome (Hemolysis, Elevated Liver enzymes, Low Platelets)",
+    "symptoms": ["right upper quadrant pain", "nausea, vomiting", "headache", "blurred vision", "malaise", "bleeding tendency", "often occurs with preeclampsia"],
+    "guidance": "Medical emergency. Immediate delivery is the definitive treatment. Corticosteroids may improve platelets. Transfusion for severe thrombocytopenia. Monitor liver and renal function.",
+    "precautions": ["Suspect in preeclampsia with epigastric pain", "Immediate lab testing (hemolysis, liver enzymes, platelets)", "Delivery is the only cure", "Prepare for blood products", "ICU monitoring"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregestational_diabetes",
+    "category": "Pregestational Diabetes (Type 1 or Type 2 in Pregnancy)",
+    "symptoms": ["polyuria, polydipsia, weight loss (Type 1)", "fatigue, recurrent infections (Type 2)", "may be asymptomatic", "higher risk of congenital anomalies"],
+    "guidance": "Preconception care: optimize glycemic control (HbA1c < 6.5%) before pregnancy. During pregnancy: tight glucose control, frequent monitoring, insulin (Type 1 and often Type 2), and fetal surveillance. High risk of macrosomia, preeclampsia, and stillbirth.",
+    "precautions": ["Preconception planning", "Tight glucose control", "Fetal monitoring", "Blood pressure control", "Prevent hypoglycemia"],
+    "urgency": "high"
+  },
+  {
+    "id": "gestational_hypertension",
+    "category": "Gestational Hypertension (No Proteinuria)",
+    "symptoms": ["BP ≥ 140/90 after 20 weeks without proteinuria", "usually asymptomatic", "may progress to preeclampsia"],
+    "guidance": "Monitor BP regularly. No treatment unless BP > 160/110. Delivery at 37 weeks if no progression. Watch for preeclampsia warning signs.",
+    "precautions": ["Regular BP checks", "Attend ANC", "Watch for proteinuria", "Medication if severe", "Early delivery if indicated"],
+    "urgency": "high"
+  },
+  {
+    "id": "postdate_pregnancy",
+    "category": "Post-term Pregnancy (≥42 weeks)",
+    "symptoms": ["pregnancy lasting 42 weeks or more", "reduced fetal movements", "risk of macrosomia, oligohydramnios, fetal distress"],
+    "guidance": "Induction of labor is recommended after 41 weeks to prevent complications. Fetal monitoring (BPP, NST). Prevent by accurate dating and timely induction.",
+    "precautions": ["Accurate dating", "Fetal monitoring", "Induction of labor at 41-42 weeks", "Do not delay beyond 42 weeks", "Monitor for meconium"],
+    "urgency": "high"
+  },
+  {
+    "id": "oligohydramnios",
+    "category": "Oligohydramnios (Low Amniotic Fluid)",
+    "symptoms": ["reduced fetal movements", "fundal height smaller than gestational age", "risk of cord compression", "often asymptomatic"],
+    "guidance": "Diagnosed by ultrasound (AFI < 5 cm). Management: increased hydration (oral or IV), close fetal monitoring, and consider delivery if compromised. In term, induction is often recommended.",
+    "precautions": ["Monitor fetal movements", "Ultrasound for AFI", "Hydration", "Fetal surveillance", "Delivery if indicated"],
+    "urgency": "medium"
+  },
+  {
+    "id": "polyhydramnios",
+    "category": "Polyhydramnios (Excess Amniotic Fluid)",
+    "symptoms": ["rapid uterine growth", "shortness of breath", "abdominal discomfort", "preterm labor", "difficulty palpating the baby"],
+    "guidance": "Ultrasound diagnosis (AFI > 25 cm). Causes include fetal anomaly, maternal diabetes, or idiopathic. Management: treat underlying cause, amnioreduction if severe, or NSAIDs to reduce fluid. Monitor for preterm labor.",
+    "precautions": ["Investigate cause", "Monitor for preterm labor", "Amnioreduction if needed", "Manage gestational diabetes", "Regular fetal surveillance"],
+    "urgency": "medium"
+  },
+  {
+    "id": "multiple_pregnancy",
+    "category": "Multiple Pregnancy (Twins, Triplets)",
+    "symptoms": ["excessive nausea/vomiting", "larger fundal height than dates", "more fetal movements", "weight gain more than singleton"],
+    "guidance": "High-risk pregnancy. Needs frequent ANC, ultrasound for chorionicity, growth monitoring, and cervical length measurement. Delivery often preterm. Discuss mode of delivery. Extra folic acid and iron are needed.",
+    "precautions": ["Frequent ANC visits", "Growth scans", "Cervical monitoring", "Manage anemia", "Plan for preterm delivery"],
+    "urgency": "high"
+  },
+  {
+    "id": "preterm_premature_rupture",
+    "category": "Preterm Premature Rupture of Membranes (PPROM)",
+    "symptoms": ["leakage of fluid before 37 weeks", "vaginal discharge (clear/watery)", "not associated with contractions", "may be with or without infection"],
+    "guidance": "Hospital admission. Corticosteroids for fetal lung maturity, antibiotics for infection, and close monitoring for chorioamnionitis. Delivery if signs of infection or fetal distress. Prolonged PPROM can lead to cord compression.",
+    "precautions": ["Hospitalize", "Corticosteroids", "Antibiotics", "Monitor for signs of infection", "Prepare for preterm delivery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "cervical_insufficiency",
+    "category": "Cervical Insufficiency (Cervical Incompetence)",
+    "symptoms": ["painless cervical dilation in second trimester", "recurrent second-trimester miscarriages", "preterm labor", "often asymptomatic"],
+    "guidance": "Diagnosis by transvaginal ultrasound (cervical length < 25 mm before 24 weeks). Cerclage (stitch) is used if indicated. Progesterone supplementation. Close monitoring.",
+    "precautions": ["Transvaginal ultrasound monitoring", "Cerclage if indicated", "Progesterone", "Avoid heavy lifting", "Bed rest"],
+    "urgency": "high"
+  },
+  {
+    "id": "gestational_high_bp",
+    "category": "Chronic Hypertension in Pregnancy",
+    "symptoms": ["high BP before pregnancy or before 20 weeks", "may be asymptomatic", "risk of preeclampsia and fetal growth restriction"],
+    "guidance": "Continue antihypertensives (avoid ACE inhibitors, ARBs; use labetalol, methyldopa). Monitor for superimposed preeclampsia. Frequent growth scans.",
+    "precautions": ["Continue BP medications (safe ones)", "Regular BP monitoring", "Growth scans", "Watch for proteinuria", "Adjust medications as needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "fetal_growth_restriction",
+    "category": "Fetal Growth Restriction (FGR / IUGR)",
+    "symptoms": ["fundal height < 2 cm below gestational age", "decreased fetal movements", "abnormal Doppler studies (umbilical artery)", "low birth weight (< 10th percentile)"],
+    "guidance": "Identify cause: preeclampsia, placental insufficiency, infections, smoking. Serial growth scans and Doppler. Manage hypertension. Delivery if fetal distress or severe growth restriction (often before term).",
+    "precautions": ["Regular ultrasound for growth", "Doppler studies", "Manage maternal conditions", "Avoid smoking", "Delivery when indicated"],
+    "urgency": "high"
+  },
+  {
+    "id": "fetal_macrosomia",
+    "category": "Fetal Macrosomia (Large Baby > 4 kg)",
+    "symptoms": ["excessive fundal height", "increased amniotic fluid", "maternal diabetes", "difficulty in labor (shoulder dystocia risk)"],
+    "guidance": "If suspected, avoid post-term pregnancy. Consider elective C-section if estimated fetal weight > 4.5 kg (especially with diabetes). Control maternal blood sugar to prevent.",
+    "precautions": ["Control gestational diabetes", "Accurate fetal weight estimation", "Discuss mode of delivery", "Be prepared for shoulder dystocia", "Avoid excessive weight gain in pregnancy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "maternal_sepsis",
+    "category": "Maternal Sepsis",
+    "symptoms": ["fever (or hypothermia)", "tachycardia", "hypotension", "altered mental state", "organ dysfunction (renal, hepatic, respiratory)", "source: chorioamnionitis, endometritis, wound infection"],
+    "guidance": "Medical emergency. Immediate IV antibiotics, IV fluids, vasopressors, and source control. ICU care. Early recognition and treatment reduce mortality.",
+    "precautions": ["Early recognition of infection", "Aggressive antibiotic therapy", "Source control", "ICU monitoring", "Screen for sepsis in febrile postpartum women"],
+    "urgency": "critical"
+  },
+  {
+    "id": "obstetric_dic",
+    "category": "Disseminated Intravascular Coagulation (DIC) in Obstetrics",
+    "symptoms": ["bleeding from puncture sites, gums, wound, vagina", "petechiae", "shock", "fever", "laboratory: low platelets, high PT/APTT, low fibrinogen"],
+    "guidance": "Occurs with placental abruption, amniotic fluid embolism, sepsis, PPH. Treat the underlying cause. Supportive: blood products (platelets, FFP, cryoprecipitate).",
+    "precautions": ["Early recognition of DIC trigger", "Blood product support", "Treat underlying cause", "ICU care", "Monitor coagulation parameters"],
+    "urgency": "critical"
+  },
+  {
+    "id": "postpartum_eclampsia",
+    "category": "Postpartum Eclampsia (Seizures After Delivery)",
+    "symptoms": ["seizures occurring within 48 hours to 6 weeks postpartum", "may have preeclampsia features (or not)", "headache, visual disturbances before seizure"],
+    "guidance": "Treatment: magnesium sulfate. Continue for 24 hours. Antihypertensives if needed. Monitor for underlying causes (stroke, epilepsy).",
+    "precautions": ["Continue BP monitoring postpartum", "Magnesium sulfate if indicated", "Check for neurological causes", "Do not delay treatment", "Monitor for recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "postpartum_cardiomyopathy",
+    "category": "Peripartum Cardiomyopathy (PPCM)",
+    "symptoms": ["shortness of breath (especially at night)", "orthopnea", "edema (legs, feet)", "palpitations", "chest pain", "cough", "fatigue", "occurs in last month of pregnancy or up to 5 months postpartum"],
+    "guidance": "Echocardiography for diagnosis. Treatment: heart failure management (diuretics, ACE inhibitors/ARBs, beta-blockers), bromocriptine may help. Prognosis is variable. Do not get pregnant again if LV function not recovered.",
+    "precautions": ["Echocardiogram for unexplained dyspnea", "Heart failure treatment", "Contraception advice", "Monitor for recovery", "Do not ignore postpartum dyspnea"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_rh_isoimmunization",
+    "category": "Rh Isoimmunization (Rh-Negative Mother, Rh-Positive Baby)",
+    "symptoms": ["mother is Rh-negative, father Rh-positive", "fetal anemia, hydrops fetalis", "jaundice in newborn", "stillbirth risk"],
+    "guidance": "Give Rh immunoglobulin (anti-D) at 28 weeks and within 72 hours of any bleeding, abortion, or delivery. If already sensitized, monitor fetal MCA Doppler for anemia and consider intrauterine transfusions.",
+    "precautions": ["Know blood group in first trimester", "Give anti-D at 28 weeks", "Give anti-D after any bleeding episode", "Monitor for fetal anemia", "Do not miss anti-D administration"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_uti",
+    "category": "Urinary Tract Infection in Pregnancy",
+    "symptoms": ["painful urination", "frequent urination", "fever", "loin pain", "nausea", "asymptomatic bacteriuria is common"],
+    "guidance": "Screen for asymptomatic bacteriuria at 12-16 weeks (urine culture). Treat with safe antibiotics (nitrofurantoin, amoxicillin, cephalosporins). Pyelonephritis requires hospitalization and IV antibiotics.",
+    "precautions": ["Screen urine at ANC", "Finish antibiotic course", "Drink plenty of fluids", "If fever/loin pain, seek care", "Prevent with good hydration and hygiene"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_anxiety",
+    "category": "Antenatal Anxiety (Pregnancy-Related Anxiety)",
+    "symptoms": ["excessive worry about baby's health", "sleep disturbances", "tension", "panic attacks", "difficulty concentrating", "physical symptoms: palpitations, sweating"],
+    "guidance": "Normalize feelings but if excessive, seek counseling. Relaxation techniques, mindfulness, and CBT. Support from family. If severe, medication (SSRIs like sertraline) may be safe under supervision.",
+    "precautions": ["Open communication with doctor", "Prenatal counseling", "Avoid self-medication", "Support groups", "Watch for postpartum depression"],
+    "urgency": "low"
+  },
+  {
+    "id": "sciatica_pregnancy",
+    "category": "Sciatica in Pregnancy",
+    "symptoms": ["sharp pain radiating from lower back down the leg", "tingling or numbness", "worse with sitting or bending", "often due to pressure on sciatic nerve"],
+    "guidance": "Gentle stretching, warm packs, and good posture. Side-lying with pillows between knees. Physiotherapy. Usually resolves postpartum.",
+    "precautions": ["Avoid prolonged sitting", "Use a lumbar support", "Gentle exercises", "Heat therapy", "Consult physiotherapist"],
+    "urgency": "low"
+  },
+  {
+    "id": "iron_overload_pregnancy",
+    "category": "Iron Overload in Pregnancy (Hemochromatosis)",
+    "symptoms": ["fatigue", "joint pain", "dark skin", "diabetes", "liver dysfunction", "may be asymptomatic"],
+    "guidance": "Avoid iron supplements unless indicated. Monitor serum ferritin. Phlebotomy may be needed. Genetic counseling.",
+    "precautions": ["Avoid routine iron supplementation", "Monitor ferritin", "Manage diabetes", "Genetic screening", "Regular liver function tests"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_hypothyroidism",
+    "category": "Hypothyroidism in Pregnancy",
+    "symptoms": ["fatigue", "weight gain", "cold intolerance", "constipation", "dry skin", "goiter", "slower heart rate"],
+    "guidance": "Thyroid hormone replacement (levothyroxine) is essential. Dose often increases during pregnancy. Monitor TSH every 4-6 weeks. Untreated hypothyroidism increases risk of fetal neurodevelopmental issues.",
+    "precautions": ["Check thyroid before and during pregnancy", "Increase dose as pregnancy progresses", "Regular TSH monitoring", "Do not stop thyroxine", "Avoid iodine deficiency"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_hyperthyroidism",
+    "category": "Hyperthyroidism in Pregnancy (Graves' Disease)",
+    "symptoms": ["weight loss despite increased appetite", "palpitations", "heat intolerance", "nervousness", "tremor", "goiter", "proptosis (eye bulging)"],
+    "guidance": "Antithyroid drugs (PTU in first trimester, methimazole in second) are used. Avoid radioactive iodine. Monitor fetal thyroid (maternal antibodies can cross). Surgery for severe cases after first trimester.",
+    "precautions": ["Monitor thyroid function monthly", "Adjust medication as needed", "Watch for fetal tachycardia", "Treat with PTU in first trimester", "Postpartum Graves' may flare"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_hepatitis_b",
+    "category": "Hepatitis B in Pregnancy",
+    "symptoms": ["often asymptomatic", "fatigue, jaundice, nausea", "may have chronic infection", "transmission to baby at delivery"],
+    "guidance": "Screen all pregnant women for HBsAg. If positive, give baby HBIG and Hepatitis B vaccine within 12 hours of birth. If viral load > 200,000 IU/mL, start antiviral (tenofovir) in third trimester.",
+    "precautions": ["Screen at first ANC visit", "Vaccinate baby at birth", "HBIG + vaccine", "Breastfeeding is safe if baby vaccinated", "Antiviral if high viral load"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_hepatitis_c",
+    "category": "Hepatitis C in Pregnancy",
+    "symptoms": ["often asymptomatic", "fatigue", "rarely jaundice", "vertical transmission rate ~5%"],
+    "guidance": "Screen if risk factors. No vaccine. No treatment during pregnancy (DAAs not yet approved in pregnancy). Monitor liver function. Baby tested at 18 months. Breastfeeding is safe.",
+    "precautions": ["Screen high-risk women", "Avoid invasive procedures during labor", "Do not delay delivery", "Baby testing at 18 months", "Postpartum treatment for mother"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_chickenpox",
+    "category": "Chickenpox (Varicella) in Pregnancy",
+    "symptoms": ["itchy vesicles, fever, malaise", "can be severe in pregnancy (pneumonia)", "risk to fetus: congenital varicella syndrome (limb hypoplasia, skin scarring, eye defects) if infection in early pregnancy"],
+    "guidance": "If exposed and non-immune, give VZIG within 96 hours. If infected, treat with acyclovir. Severe cases require hospitalization. Prevent by vaccinating women before pregnancy (avoid pregnancy for 1 month after vaccine).",
+    "precautions": ["Vaccinate before pregnancy", "If exposed, VZIG", "Acyclovir for infection", "Monitor for pneumonia", "Congenital syndrome screening"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_influenza",
+    "category": "Influenza in Pregnancy",
+    "symptoms": ["fever, cough, body aches, fatigue, sore throat", "pregnancy increases risk of severe disease (pneumonia, ICU admission)"],
+    "guidance": "Antiviral (oseltamivir) should be started as soon as possible, regardless of vaccination status. Flu vaccine is safe and recommended in pregnancy (any trimester).",
+    "precautions": ["Get flu vaccine (any trimester)", "If flu symptoms, start oseltamivir", "Monitor for dyspnea", "Avoid aspirin (use paracetamol)", "Hydration and rest"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_zika",
+    "category": "Zika Virus in Pregnancy",
+    "symptoms": ["fever, rash, joint pain, red eyes", "often asymptomatic", "risk of microcephaly and other birth defects"],
+    "guidance": "Avoid travel to Zika-endemic areas during pregnancy. Use mosquito repellent. If exposure, fetal ultrasound and amniocentesis may be considered. No specific treatment.",
+    "precautions": ["Avoid endemic areas", "Mosquito prevention", "Safe sex", "Ultrasound monitoring", "Pregnancy testing before travel"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_toxoplasmosis",
+    "category": "Toxoplasmosis in Pregnancy",
+    "symptoms": ["usually asymptomatic or mild flu-like", "congenital: hydrocephalus, calcifications, chorioretinitis, intellectual disability"],
+    "guidance": "Prevent: avoid raw/undercooked meat, wash vegetables, and avoid cat litter. If seroconversion in pregnancy, treat with spiramycin (early) or pyrimethamine+sulfadiazine (late) to reduce fetal infection.",
+    "precautions": ["Avoid cat litter", "Cook meat well", "Wash hands after gardening", "Wash fruits and vegetables", "If exposed, test and treat"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_cytomegalovirus",
+    "category": "CMV Infection in Pregnancy",
+    "symptoms": ["usually asymptomatic", "mononucleosis-like", "congenital: hearing loss, intellectual disability, microcephaly"],
+    "guidance": "Prevent: avoid sharing food/utensils with young children, handwashing. Antiviral (valganciclovir) for neonatal treatment. No proven prevention of vertical transmission.",
+    "precautions": ["Hand hygiene", "Avoid saliva contact with young children", "Use separate utensils", "No vaccine yet", "Monitor fetus if primary infection in pregnancy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_parvovirus_b19",
+    "category": "Parvovirus B19 (Fifth Disease) in Pregnancy",
+    "symptoms": ["mild rash, fever, joint pain", "fetal: risk of hydrops fetalis (severe anemia) if infected in first half of pregnancy"],
+    "guidance": "If exposed, test for IgG/IgM. If acute, monitor fetal MCA Doppler for anemia. Intrauterine transfusion for severe fetal anemia. Most infections do not cause adverse outcomes.",
+    "precautions": ["Monitor fetal anemia", "Avoid exposure to infected children if non-immune", "Ultrasound and Doppler monitoring", "Intrauterine transfusion if needed", "Reassurance"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_listeriosis",
+    "category": "Listeriosis in Pregnancy",
+    "symptoms": ["fever, muscle aches, sometimes GI symptoms", "can be asymptomatic", "fetal: abortion, premature delivery, neonatal sepsis"],
+    "guidance": "Avoid foods: unpasteurized dairy, deli meats, raw sprouts, soft cheeses. If infection, treat with ampicillin + gentamicin. Early treatment improves outcomes.",
+    "precautions": ["Avoid unpasteurized dairy", "Heat deli meats before eating", "Avoid raw sprouts", "Good food handling", "Seek care for fever"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_tuberculosis",
+    "category": "Tuberculosis in Pregnancy",
+    "symptoms": ["cough > 2 weeks, fever, night sweats, weight loss", "may be asymptomatic", "can cause preterm labor and low birth weight"],
+    "guidance": "Screen with chest X-ray (protected) and GeneXpert. Treatment: standard anti-TB drugs (rifampicin, isoniazid, ethambutol, pyrazinamide) are safe in pregnancy. Breastfeeding is allowed on treatment.",
+    "precautions": ["Screen for TB if symptoms", "Complete DOTS treatment", "Monitor for hepatotoxicity", "TB is not a reason for termination", "Cough hygiene"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_malaria",
+    "category": "Malaria in Pregnancy",
+    "symptoms": ["fever, chills, headache, myalgia", "can cause severe anemia, preterm labor, low birth weight, maternal death"],
+    "guidance": "Prompt diagnosis (RDT, microscopy) and treatment. Treat with antimalarials (artemisinin combinations are safe in 2nd and 3rd trimester). Prevention: use insecticide-treated nets and chemoprophylaxis in high-risk areas.",
+    "precautions": ["Use mosquito nets", "Chemoprophylaxis in endemic areas (sulfadoxine-pyrimethamine)", "Prompt treatment of fever", "Avoid self-medication", "Monitor for anemia"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_dengue",
+    "category": "Dengue in Pregnancy",
+    "symptoms": ["high fever, headache, joint pain, rash", "risk of severe dengue (plasma leakage, hemorrhage)", "can cause preterm labor, abruptio placentae"],
+    "guidance": "Supportive care: hydration, paracetamol for fever. Avoid NSAIDs. Hospitalization for monitoring. Maintain hydration. No antiviral.",
+    "precautions": ["Mosquito prevention", "Hydration", "Monitor for bleeding", "Do not take aspirin/ibuprofen", "Seek care for warning signs"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_zika",
+    "category": "Zika Virus in Pregnancy",
+    "symptoms": ["fever, rash, joint pain, red eyes", "often asymptomatic", "risk of microcephaly and other birth defects"],
+    "guidance": "Avoid travel to Zika-endemic areas during pregnancy. Use mosquito repellent. If exposure, fetal ultrasound and amniocentesis may be considered. No specific treatment.",
+    "precautions": ["Avoid endemic areas", "Mosquito prevention", "Safe sex", "Ultrasound monitoring", "Pregnancy testing before travel"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_typhoid",
+    "category": "Typhoid Fever in Pregnancy",
+    "symptoms": ["prolonged fever, headache, constipation/diarrhea, abdominal pain, rose spots"],
+    "guidance": "Treat with azithromycin or ceftriaxone (safe in pregnancy). Avoid chloramphenicol (risk of gray baby syndrome). Hydration and nutrition. Prevent with food and water hygiene.",
+    "precautions": ["Safe water and food", "Handwashing", "Antibiotic compliance", "Monitor for complications (bowel perforation)", "Vaccination before pregnancy if travel"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_hepatitis_e",
+    "category": "Hepatitis E in Pregnancy",
+    "symptoms": ["acute hepatitis: fever, nausea, vomiting, jaundice, dark urine", "particularly severe in third trimester (fulminant hepatitis, mortality 20-30%)"],
+    "guidance": "Supportive care. Pregnant women with HEV need hospitalization. There is no specific antiviral. Prevention: safe water, hygiene. No vaccine widely available in India.",
+    "precautions": ["Safe water", "Handwashing", "Avoid raw shellfish", "Pregnant women should avoid travel to HEV endemic areas", "Prompt medical attention for jaundice"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_appendicitis",
+    "category": "Appendicitis in Pregnancy",
+    "symptoms": ["abdominal pain (may be in right lower quadrant, but location varies with gestational age)", "nausea, vomiting", "fever", "rebound tenderness", "laboratory: leukocytosis (normal in pregnancy, so difficult)"],
+    "guidance": "Surgical emergency. Laparoscopic appendectomy is safe in pregnancy. Delay increases risk of perforation and peritonitis. Do not delay imaging (ultrasound/MRI).",
+    "precautions": ["Suspect appendicitis in any acute abdomen", "Imaging", "Emergency surgery", "Monitor for preterm labor", "Good outcomes with timely surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_pancreatitis",
+    "category": "Acute Pancreatitis in Pregnancy",
+    "symptoms": ["severe epigastric pain", "radiating to back", "nausea, vomiting", "fever", "tachycardia", "risk factors: gallstones, hyperlipidemia, alcohol"],
+    "guidance": "Diagnosis: elevated lipase/amylase. Treatment: supportive (IV fluids, pain relief, fasting). Gallstone pancreatitis may need endoscopic retrograde cholangiopancreatography (ERCP). Hyperlipidemia requires lipid-lowering and diet.",
+    "precautions": ["Gallstone screening", "Manage triglycerides", "Avoid alcohol", "Nutritional support", "Intensive care if severe"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_dvt_prophylaxis",
+    "category": "Thromboprophylaxis in Pregnancy (High Risk)",
+    "symptoms": ["no symptoms — for prevention", "risk factors: previous DVT/PE, thrombophilia, immobility, obesity, preeclampsia"],
+    "guidance": "Low-molecular-weight heparin (LMWH) prophylaxis is given to high-risk women. Usually started in pregnancy and continued for 6 weeks postpartum. Dose based on weight.",
+    "precautions": ["Assess risk factors", "LMWH if high risk", "Monitor for bleeding", "Do not stop abruptly", "Postpartum continuation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_renal_stones",
+    "category": "Renal Stones in Pregnancy",
+    "symptoms": ["renal colic: severe flank pain radiating to groin", "hematuria", "nausea, vomiting", "dysuria"],
+    "guidance": "Ultrasound is first-line imaging. Management: hydration, pain relief (opioids safe), and if obstructed, may need ureteral stent or ureteroscopy. Most pass spontaneously.",
+    "precautions": ["Hydration", "Pain management", "Monitor for infection", "Urology consultation", "Avoid CT if possible"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_sleep_apnea",
+    "category": "Obstructive Sleep Apnea in Pregnancy",
+    "symptoms": ["snoring, gasping during sleep", "daytime sleepiness", "fatigue", "morning headache", "worse in third trimester"],
+    "guidance": "Diagnosis: sleep study. Treatment: CPAP (continuous positive airway pressure) is safe. Weight gain exacerbates. May increase risk of preeclampsia.",
+    "precautions": ["Sleep on side", "Weight management", "Avoid alcohol/sedatives", "If symptoms, refer for sleep study", "Consider CPAP"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_skin_conditions",
+    "category": "Pregnancy Dermatoses (Skin Conditions)",
+    "symptoms": ["PUPPP (pruritic urticarial papules and plaques of pregnancy): itchy, red, hive-like rash on stretch marks", "prurigo of pregnancy: itchy papules", "eczema", "herpes gestationis (rare autoimmune blistering)"],
+    "guidance": "Most are benign and resolve postpartum. Treatment: topical corticosteroids, antihistamines, emollients. PUPPP usually starts on the abdomen and spreads.",
+    "precautions": ["Moisturizers", "Avoid hot showers", "Topical steroids (safe)", "Antihistamines (chlorpheniramine)", "Reassurance that it resolves after delivery"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_itching",
+    "category": "Pruritus in Pregnancy (Without Rash)",
+    "symptoms": ["generalized itching, worse at night", "no visible skin rash", "may be due to obstetric cholestasis (bile acids)", "or due to dry skin, cholestasis"],
+    "guidance": "If itching without rash, rule out obstetric cholestasis by checking bile acids and liver function. If negative, treat with emollients and antihistamines.",
+    "precautions": ["Rule out cholestasis", "Bile acid test", "If cholestasis, treat", "Emollients", "Antihistamines"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_gastroesophageal_reflux",
+    "category": "GERD / Heartburn in Pregnancy",
+    "symptoms": ["burning sensation in chest (heartburn)", "acid regurgitation", "worse after meals or lying down", "common in third trimester"],
+    "guidance": "Avoid large meals, spicy/fried foods, eat small frequent meals. Don't lie down immediately after eating. Antacids (calcium carbonate) and ranitidine (safe) or omeprazole if needed.",
+    "precautions": ["Small meals", "Avoid triggers", "Antacids", "Upright after meals", "Do not use sodium bicarbonate"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_constipation",
+    "category": "Constipation in Pregnancy",
+    "symptoms": ["hard, dry stools", "difficulty passing stools", "less frequent than normal", "straining", "often due to hormonal changes and iron supplements"],
+    "guidance": "Increase fiber (fruits, vegetables, whole grains), drink plenty of water, exercise. Stool softeners (docusate) and laxatives (lactulose) are safe if needed. Do not use stimulant laxatives.",
+    "precautions": ["High-fiber diet", "Hydration", "Physical activity", "Stool softeners", "Avoid straining"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_urinary_incontinence",
+    "category": "Stress Urinary Incontinence in Pregnancy",
+    "symptoms": ["leakage of urine with cough, sneeze, laugh, or exercise", "common in pregnancy and postpartum", "not a sign of infection"],
+    "guidance": "Pelvic floor exercises (Kegels) help. Avoid heavy lifting. Most resolves postpartum, but may persist. If persistent, physiotherapy and sometimes surgery.",
+    "precautions": ["Pelvic floor exercises", "Avoid constipation", "Weight management", "Bladder training", "Do not ignore — it can be treated"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_breast_lump",
+    "category": "Breast Lump in Pregnancy",
+    "symptoms": ["palpable lump", "tenderness or pain", "may be benign (fibroadenoma, lactating adenoma)", "requires evaluation"],
+    "guidance": "Ultrasound is the first-line imaging (mammography is safe but rarely needed). Biopsy if suspicious. Most are benign. Reassurance.",
+    "precautions": ["Ultrasound", "Biopsy if needed", "Reassurance", "Avoid unnecessary surgery", "Monitor for changes"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_pelvic_pain",
+    "category": "Pelvic Girdle Pain in Pregnancy",
+    "symptoms": ["pain in the pelvis (front or back)", "difficulty walking", "pain with activities", "worse at night"],
+    "guidance": "Physiotherapy, pelvic support belts, gentle exercise. Avoid asymmetric activities. Usually resolves postpartum.",
+    "precautions": ["Pelvic belt", "Avoid heavy lifting", "Physiotherapy", "Use sitting if possible", "Do not stop all activity"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_falling",
+    "category": "Falls in Pregnancy",
+    "symptoms": ["trauma from fall", "risk of placental abruption, preterm labor, fracture"],
+    "guidance": "Seek medical evaluation after any fall, especially if abdominal pain, bleeding, or decreased fetal movements. Monitor for uterine contractions.",
+    "precautions": ["Wear low-heeled shoes", "Avoid slippery surfaces", "Use handrails", "Take time to stand up", "Seek care after any fall"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_domestic_violence",
+    "category": "Domestic Violence in Pregnancy",
+    "symptoms": ["repeated injuries", "late ANC visits", "depression, anxiety", "partner controlling behavior", "substance use"],
+    "guidance": "Screen all pregnant women for domestic violence. Offer safety planning, counseling, and referral to shelters and legal aid. If in immediate danger, call helplines (1091, 181).",
+    "precautions": ["Screen at ANC visits", "Ensure private conversation", "Safety plan", "Refer to support services", "Do not confront the abuser"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_substance_abuse",
+    "category": "Substance Use in Pregnancy (Alcohol, Tobacco, Drugs)",
+    "symptoms": ["history of use", "signs of intoxication or withdrawal", "poor weight gain", "fetal growth restriction", "preterm labor"],
+    "guidance": "Counseling and cessation support. Tobacco: nicotine replacement. Alcohol: complete abstinence. Opioid dependence: methadone or buprenorphine maintenance. Neonatal abstinence syndrome requires special care.",
+    "precautions": ["Screen for substance use", "Counseling", "Nicotine replacement if needed", "Supervised withdrawal", "Neonatal monitoring"],
+    "urgency": "high"
+  },
+  {
+    "id": "pregnancy_twin_twin_transfusion",
+    "category": "Twin-Twin Transfusion Syndrome (TTTS)",
+    "symptoms": ["monochorionic twins with discordant size", "polyhydramnios in one sac, oligohydramnios in the other", "fetal distress", "preterm labor", "diagnosed by ultrasound"],
+    "guidance": "Refer to fetal medicine specialist. Treatment options: amnioreduction, laser ablation of placental vessels, or septostomy. Monitored closely.",
+    "precautions": ["Early diagnosis in monochorionic twins", "Serial ultrasounds", "Specialist referral", "Consider laser therapy", "Fetal surveillance"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_single_umbilical_artery",
+    "category": "Single Umbilical Artery (Two-Vessel Cord)",
+    "symptoms": ["found on ultrasound", "only one artery in the cord", "may be associated with fetal anomalies or growth restriction"],
+    "guidance": "Usually an isolated finding with no clinical significance. But need to check for fetal anomalies and growth. Monitor growth and do anomaly scan.",
+    "precautions": ["Detailed anomaly scan", "Serial growth scans", "Reassurance", "Check fetal kidneys", "Follow up"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_velamentous_umbilical",
+    "category": "Velamentous Cord Insertion and Vasa Previa",
+    "symptoms": ["cord inserts into membranes, not the placenta", "vasa previa: fetal vessels cross over the cervical os", "risk of fetal hemorrhage with membrane rupture"],
+    "guidance": "Diagnosed by ultrasound (color Doppler). Vasa previa requires elective C-section before rupture of membranes. Velamentous insertion may increase risk of growth restriction.",
+    "precautions": ["Ultrasound diagnosis", "If vasa previa, hospital admission", "Elective C-section", "Avoid internal exams", "Monitor for bleeding"],
+    "urgency": "critical"
+  },
+  {
+    "id": "pregnancy_cervical_cerclage",
+    "category": "Cervical Cerclage (Cervical Stitch)",
+    "symptoms": ["not a disease but a procedure for cervical insufficiency", "history of painless cervical dilation", "short cervix on ultrasound"],
+    "guidance": "Cerclage is placed between 12-16 weeks. Monitor for infection and preterm labor. Remove at 37 weeks. Bed rest may be recommended.",
+    "precautions": ["Prophylactic cerclage", "Monitor for signs of infection", "No intercourse", "Watch for preterm labor", "Removal at 37 weeks"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_amniocentesis",
+    "category": "Amniocentesis (Diagnostic Procedure)",
+    "symptoms": ["procedure for genetic testing (amniocentesis)", "risk of miscarriage (< 1%)", "usually done at 15-20 weeks", "results in 2-3 weeks"],
+    "guidance": "Offer for chromosomal anomalies, neural tube defects, Rh disease. Counseling about risks and benefits. Procedure under ultrasound guidance.",
+    "precautions": ["Genetic counseling", "RhoGAM for Rh-negative", "Post-procedure rest", "Watch for leakage, bleeding, contractions", "Cytogenetic analysis"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_chorionic_villus_sampling",
+    "category": "Chorionic Villus Sampling (CVS)",
+    "symptoms": ["procedure for early genetic testing (10-13 weeks)", "risk of miscarriage (~1%)", "faster results than amniocentesis"],
+    "guidance": "Offer for genetic disorders. Transabdominal or transcervical. Rh-negative receive RhoGAM. Ultrasound guided. Results in 1-2 weeks.",
+    "precautions": ["Genetic counseling", "Rh-negative treatment", "Post-procedure monitoring", "Infectious risk", "Miscarriage risk"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_blood_group_incompatibility",
+    "category": "ABO Incompatibility in Pregnancy",
+    "symptoms": ["mother blood group O, baby A or B", "risk of hemolytic disease of newborn (usually mild)", "jaundice in newborn"],
+    "guidance": "Usually mild. Monitor newborn for jaundice. Phototherapy if needed. Rarely severe. No prenatal treatment needed.",
+    "precautions": ["Monitor newborn jaundice", "Phototherapy if needed", "Blood group testing of mother and father", "Reassurance", "Prevent kernicterus"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_kleihauer_test",
+    "category": "Kleihauer-Betke Test (Feto-Maternal Hemorrhage)",
+    "symptoms": ["not a disease, a test to detect fetal red cells in maternal circulation", "used in Rh-negative mothers after trauma/bleeding", "to calculate additional RhIg dose"],
+    "guidance": "Done in Rh-negative women after any antenatal hemorrhage, trauma, or abdominal injury. Determines the amount of RhIg needed.",
+    "precautions": ["Perform after sensitizing events", "Calculate extra anti-D needed", "Send to lab urgently", "Do not miss", "Prevents Rh immunization"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_ecv",
+    "category": "External Cephalic Version (ECV) for Breech",
+    "symptoms": ["breech presentation at term", "procedure to turn baby to head-down"],
+    "guidance": "ECV is attempted at 37 weeks under ultrasound guidance. Success rate 50-60%. Tocolytics may be given. If failed, C-section is planned.",
+    "precautions": ["Ultrasound-guided", "No vaginal delivery of breech without expertise", "Consider ECV", "Monitor fetal heart rate", "If failed, elective C-section"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_vbac",
+    "category": "Vaginal Birth After Cesarean (VBAC)",
+    "symptoms": ["trial of labor after previous C-section", "risk of uterine rupture (0.5-1%)"],
+    "guidance": "VBAC is safe in selected women. Contraindications: classical scar, >2 previous C-sections, placenta previa. Use continuous fetal monitoring. Have emergency readiness.",
+    "precautions": ["Counseling on risks", "In-hospital delivery", "Continuous monitoring", "Emergency readiness", "Do not induce with prostaglandins"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_amniotomy",
+    "category": "Amniotomy (Artificial Rupture of Membranes)",
+    "symptoms": ["procedure to induce or augment labor", "break the bag of waters", "risk of cord prolapse, infection"],
+    "guidance": "Done when cervix is favorable. Monitor for cord prolapse and meconium. If not in labor, induction may be needed.",
+    "precautions": ["Use aseptic technique", "Check for cord presentation", "Monitor fetal heart", "Do not if non-engaged", "Observe for infection"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_episiotomy",
+    "category": "Episiotomy",
+    "symptoms": ["surgical cut in perineum during delivery", "mediolateral or midline", "to prevent severe tears or expedite delivery"],
+    "guidance": "Use only when indicated (fetal distress, shoulder dystocia, assisted vaginal delivery). Restrictive use reduces postpartum pain and perineal trauma.",
+    "precautions": ["Restrictive use", "Proper repair", "Good hygiene", "Pain management", "Monitor for infection"],
+    "urgency": "low"
+  },
+  {
+    "id": "pregnancy_vacuum_delivery",
+    "category": "Vacuum-Assisted Delivery",
+    "symptoms": ["use of vacuum cup to aid delivery", "indications: prolonged second stage, fetal distress, maternal exhaustion"],
+    "guidance": "Requires trained provider. Contraindications: prematurity (<34 weeks), breech, face presentation. Risk of cephalohematoma and scalp laceration.",
+    "precautions": ["Training needed", "Avoid if <34 weeks", "Contraindicated for breech", "Monitor neonatal", "Inform mother"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_forceps_delivery",
+    "category": "Forceps-Assisted Delivery",
+    "symptoms": ["use of forceps for delivery", "higher maternal trauma than vacuum", "but fewer neonatal injuries"],
+    "guidance": "Used in selected cases. Requires skilled operator. For outlet/midpelvic. C-section is alternative.",
+    "precautions": ["Skilled operator", "Avoid in prematurity", "Monitor neonatal", "Episiotomy often needed", "Maternal pelvic floor damage"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pregnancy_internal_monitoring",
+    "category": "Fetal Scalp Electrode and Intrauterine Pressure Catheter",
+    "symptoms": ["internal fetal monitoring during labor", "used for more accurate fetal heart rate and contraction pressure"],
+    "guidance": "Used when external monitoring is inadequate. Require ruptured membranes and cervical dilation. Risk of infection and scalp injury.",
+    "precautions": ["Used only when necessary", "Aseptic placement", "Monitor for infection", "Remove if infection", "Alternative if possible"],
+    "urgency": "medium"
+  }
+]

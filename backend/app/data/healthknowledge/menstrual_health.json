@@ -1,0 +1,898 @@
+[
+  {
+    "id": "dysmenorrhea",
+    "category": "Dysmenorrhea (Painful Periods)",
+    "symptoms": ["cramping pain in lower abdomen before or during periods", "pain radiating to lower back and thighs", "nausea", "vomiting", "diarrhea during periods", "headache", "dizziness", "fatigue", "pain begins 1-2 days before period and lasts 2-3 days"],
+    "guidance": "Primary dysmenorrhea (no underlying disease) is very common and manageable. Apply a heating pad or hot water bottle to lower abdomen – it is as effective as painkillers. Ibuprofen or Mefenamic acid (if not contraindicated) taken at the start of period gives good relief. Light exercise like walking actually reduces cramps. If pain is severe enough to miss school or work, consult a doctor – it may be secondary dysmenorrhea due to endometriosis or fibroids.",
+    "precautions": ["Start pain relief medication at the very first sign of cramps – do not wait for pain to peak", "Apply heat (hot water bottle, heated pad) to lower abdomen for 20 minutes", "Avoid salty foods and caffeine in the days before period – they worsen cramps", "Light yoga or walking during period helps reduce prostaglandin levels causing cramps", "See a doctor if pain is not controlled by OTC medicines or is worsening over time"],
+    "urgency": "medium"
+  },
+  {
+    "id": "irregular_periods",
+    "category": "Irregular Periods (Oligomenorrhea / Irregular Menstrual Cycle)",
+    "symptoms": ["cycle shorter than 21 days or longer than 35 days", "periods that vary significantly month to month", "unpredictable or missed periods", "very light or very heavy flow when periods do come", "may or may not have associated symptoms like acne or hair growth"],
+    "guidance": "Irregular periods are very common especially in the first 2 years after puberty and again approaching menopause. Common causes include stress, weight changes, thyroid problems, PCOS, and excessive exercise. Track your cycle for 3 months using a diary or app. Consult a doctor if irregularity persists beyond 3 months, if periods stop for more than 3 months, or if associated with other symptoms like weight gain, hair growth, or nipple discharge.",
+    "precautions": ["Track your menstrual cycle with dates for at least 3 months before doctor visit", "Manage stress – it is one of the most common causes of irregular periods", "Maintain a healthy weight – both underweight and overweight disrupt hormones", "Do not self-medicate with hormonal pills without medical evaluation", "Irregular periods in a sexually active person should prompt a pregnancy test first"],
+    "urgency": "low"
+  },
+  {
+    "id": "amenorrhea_primary",
+    "category": "Primary Amenorrhea (No Periods by Age 16)",
+    "symptoms": ["no menstruation by age 15-16 with breast development present", "no menstruation by age 13-14 with no signs of puberty at all", "no secondary sexual characteristics (no breast development, no pubic hair)", "short stature", "may have cyclical abdominal pain (if outflow obstruction)"],
+    "guidance": "Primary amenorrhea requires medical evaluation. Causes range from hormonal conditions, structural abnormalities, genetic conditions (Turner syndrome), to imperforate hymen (outflow obstruction). Do not dismiss it as 'late development' beyond age 15. Evaluation includes physical exam, hormone blood tests, and ultrasound. Most causes are treatable.",
+    "precautions": ["Consult a gynecologist if no periods by age 15 with breast development, or age 13 without any puberty signs", "Do not delay evaluation – some structural causes worsen if untreated", "Bring record of any other symptoms: headache, vision changes, weight changes", "Cyclical lower abdominal pain without periods may indicate outflow blockage – needs urgent care", "Do not start hormonal treatment without proper diagnosis"],
+    "urgency": "medium"
+  },
+  {
+    "id": "amenorrhea_secondary",
+    "category": "Secondary Amenorrhea (Periods Stopping for 3+ Months)",
+    "symptoms": ["previously regular periods stopping for 3 or more months", "weight loss or excessive exercise history", "stress", "nipple discharge", "hot flashes in young women", "acne and excessive hair growth", "headaches and visual disturbances (pituitary cause)"],
+    "guidance": "First step: rule out pregnancy with a home pregnancy test. Other common causes include high stress, extreme weight loss or overexercise, PCOS, thyroid disorders, prolactin excess (pituitary adenoma), and premature ovarian insufficiency. Evaluation requires blood tests: pregnancy test, thyroid, prolactin, FSH, LH, AMH. Do not ignore amenorrhea – prolonged estrogen deficiency causes osteoporosis even in young women.",
+    "precautions": ["Always do a pregnancy test first before any other investigation", "Do not over-exercise or restrict calories severely – athletic amenorrhea causes bone loss", "Seek evaluation after 3 months of missed periods in a woman who previously had periods", "Prolonged amenorrhea causes bone thinning – calcium and Vitamin D are essential", "Do not self-prescribe progesterone pills to 'bring on' periods without diagnosis"],
+    "urgency": "medium"
+  },
+  {
+    "id": "menorrhagia",
+    "category": "Menorrhagia (Heavy Periods)",
+    "symptoms": ["soaking through a pad or tampon every hour for several consecutive hours", "needing to use double protection (pad + tampon)", "bleeding lasting more than 7 days", "passing blood clots larger than a 50-paise coin", "anemia symptoms: fatigue, dizziness, shortness of breath", "needing to change pad at night", "restricting activities due to heavy flow"],
+    "guidance": "Heavy periods are one of the most common causes of iron deficiency anemia in Indian women. Keep a period diary noting number of pads used per day. Causes include fibroids, endometrial polyps, adenomyosis, thyroid disorders, blood clotting problems, and hormonal imbalance. Treatment depends on cause: iron supplements for anemia, hormonal management, or surgery for structural causes. Do not accept heavy periods as 'just your fate.'",
+    "precautions": ["Start iron supplements immediately – heavy periods cause serious anemia", "Track pad usage per day for your doctor visit (1 fully soaked pad = ~5-10 ml blood)", "Avoid NSAIDs like aspirin as they can worsen bleeding", "Ibuprofen or Mefenamic acid actually reduce heavy period bleeding – ask your doctor", "Seek emergency care for soaking more than 1 pad per hour for 2+ consecutive hours"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pcos",
+    "category": "PCOS (Polycystic Ovary Syndrome)",
+    "symptoms": ["irregular or absent periods", "excess facial or body hair (hirsutism)", "acne on face, chest, or back", "thinning scalp hair or male-pattern hair loss", "weight gain especially around abdomen", "darkened skin patches in skin folds (acanthosis nigricans)", "difficulty getting pregnant", "mood changes and depression", "multiple small cysts on ovaries on ultrasound"],
+    "guidance": "PCOS affects 1 in 5 Indian women and is the most common hormonal disorder in women of reproductive age. It is a syndrome – not all women have all symptoms. Weight loss of even 5-10% of body weight significantly restores hormone balance and periods. Dietary changes (low glycemic index foods, less refined carbs) and regular exercise are first-line treatments. Medications include Metformin (improves insulin resistance), hormonal pills to regularize periods, and anti-androgens for hair and acne. PCOS increases lifelong risk of diabetes and heart disease.",
+    "precautions": ["Losing even 5-10% of body weight dramatically improves PCOS symptoms", "Get screened for diabetes and prediabetes – PCOS causes insulin resistance", "Do not rely on birth control pills alone long-term without addressing root cause", "Exercise 30 minutes at least 5 days a week – proven to restore ovulation in PCOS", "Annual screening for diabetes, cholesterol, and blood pressure is important in PCOS"],
+    "urgency": "medium"
+  },
+  {
+    "id": "endometriosis",
+    "category": "Endometriosis",
+    "symptoms": ["severe painful periods (disproportionate to flow)", "chronic pelvic pain", "pain during or after sex (deep dyspareunia)", "pain with bowel movements or urination during period", "heavy periods or spotting between periods", "difficulty getting pregnant", "fatigue", "bloating during periods", "pain may worsen progressively over years"],
+    "guidance": "Endometriosis affects 1 in 10 women but diagnosis takes an average of 7-10 years in India because symptoms are dismissed as 'normal period pain.' The tissue lining the uterus grows outside it – on ovaries, fallopian tubes, bowel, and bladder. It cannot be seen on ultrasound in early stages – diagnosis requires laparoscopy. Treatments: hormonal (birth control pills, GnRH agonists) or surgical. It does not always cause infertility but increases the risk.",
+    "precautions": ["Do not accept severe debilitating period pain as 'normal' – seek second opinion if needed", "Track symptoms and severity with dates to show your gynecologist", "Early diagnosis and treatment preserves fertility and prevents progression", "Anti-inflammatory medications (ibuprofen, naproxen) help manage pain", "Hormonal treatment suppresses the disease – do not stop without medical advice"],
+    "urgency": "medium"
+  },
+  {
+    "id": "premenstrual_syndrome",
+    "category": "PMS (Premenstrual Syndrome)",
+    "symptoms": ["bloating and water retention", "breast tenderness and swelling", "headaches", "mood swings and irritability", "anxiety and feeling overwhelmed", "food cravings (especially sweets or salty)", "fatigue", "acne flare", "difficulty concentrating", "symptoms appear 5-10 days before period and disappear within 2-3 days of period starting"],
+    "guidance": "PMS is caused by hormonal fluctuations in the second half of the menstrual cycle and affects up to 75% of menstruating women to varying degrees. Lifestyle measures help significantly: reduce salt, sugar, and caffeine in the 2 weeks before period; exercise regularly; ensure adequate sleep; calcium supplements (1000mg/day) have strong evidence for reducing PMS symptoms. Severe PMS (PMDD) that impairs daily functioning should be evaluated by a doctor.",
+    "precautions": ["Track symptoms for 2-3 months to confirm the cyclic pattern (defines PMS)", "Reduce salt and caffeine intake in the 2 weeks before period", "Take calcium 1000mg daily – proven to reduce PMS mood and physical symptoms", "Avoid alcohol in the premenstrual phase – it worsens mood symptoms", "If symptoms are severe enough to impact work, relationships, or daily life – this is PMDD, seek medical help"],
+    "urgency": "low"
+  },
+  {
+    "id": "pmdd",
+    "category": "PMDD (Premenstrual Dysphoric Disorder)",
+    "symptoms": ["severe depression, hopelessness, or self-deprecating thoughts in the week before period", "marked anxiety or tension", "marked irritability or anger", "markedly depressed mood", "decreased interest in usual activities", "difficulty concentrating", "fatigue", "appetite changes or food cravings", "feeling out of control", "symptoms resolve within a few days of period starting and are absent the rest of the month"],
+    "guidance": "PMDD is a severe form of PMS that significantly impairs functioning and is classified as a depressive disorder – not 'just bad PMS.' It is caused by abnormal brain sensitivity to normal hormonal fluctuations. SSRIs (antidepressants) taken either throughout the cycle or only in the luteal phase are highly effective – 60-70% response rate. Hormonal treatments are also used. Seek psychiatric or gynecological evaluation – it is very treatable.",
+    "precautions": ["Track symptoms daily for 2 cycles with a mood diary – essential for diagnosis", "PMDD is a real medical condition – do not dismiss it as 'being emotional'", "SSRIs work faster for PMDD than for regular depression – sometimes relief in first cycle", "Avoid alcohol, excess caffeine, and sleep deprivation in the luteal phase", "Aerobic exercise and CBT have evidence for PMDD – use alongside medical treatment"],
+    "urgency": "medium"
+  },
+  {
+    "id": "uterine_fibroids",
+    "category": "Uterine Fibroids (Leiomyomas)",
+    "symptoms": ["heavy and prolonged menstrual bleeding", "pelvic pressure or fullness", "frequent urination", "difficulty emptying bladder completely", "constipation", "backache or leg pain", "enlarged abdomen", "pain during periods", "may cause no symptoms at all (incidental finding)"],
+    "guidance": "Fibroids are benign (non-cancerous) muscle tumors of the uterus affecting up to 40% of women over 40. Most cause no symptoms. Management depends on symptoms, size, location, and desire for future pregnancy. Options range from observation (small asymptomatic fibroids) to medication (to shrink or manage bleeding) to minimally invasive procedures (UAE – uterine artery embolization) to surgery (myomectomy preserves uterus, hysterectomy removes it). Fibroids do not become cancerous.",
+    "precautions": ["Do not panic – fibroids are almost always benign (non-cancerous)", "Not all fibroids need treatment – many can be safely monitored", "Maintain iron levels if bleeding is heavy – take iron supplements", "Get follow-up ultrasound every 6-12 months to monitor size if not treated", "Seek second opinion before agreeing to hysterectomy – many women can be managed with less invasive options"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ovarian_cyst",
+    "category": "Ovarian Cyst (Functional or Benign)",
+    "symptoms": ["most are asymptomatic", "dull aching lower abdominal pain on one side", "bloating or abdominal fullness", "pain during sex", "irregular periods", "frequent urination", "sudden severe sharp pain (if cyst ruptures or twists – ovarian torsion)", "nausea and vomiting with severe pain (torsion)"],
+    "guidance": "Most ovarian cysts are functional (develop as part of the normal cycle) and resolve on their own within 2-3 menstrual cycles without treatment. Ultrasound confirms diagnosis. Large cysts (over 5cm), persistent cysts, cysts in post-menopausal women, or those with concerning features need follow-up or surgical evaluation. Ovarian torsion (twisted ovary) is a surgical emergency – sudden severe one-sided pain with vomiting needs immediate hospital care.",
+    "precautions": ["Follow up with repeat ultrasound in 6-8 weeks for simple cysts – most resolve naturally", "Seek EMERGENCY care for sudden severe one-sided lower abdominal pain with vomiting – may be torsion", "Post-menopausal women with any ovarian cyst need prompt specialist evaluation", "Do not Google your ultrasound report – ovarian cyst descriptions sound scarier than most are", "PCOS cysts are different from simple ovarian cysts – they do not rupture or twist"],
+    "urgency": "low"
+  },
+  {
+    "id": "ovarian_torsion",
+    "category": "Ovarian Torsion (Twisted Ovary)",
+    "symptoms": ["sudden severe one-sided lower abdominal or pelvic pain", "nausea and vomiting", "pain may come in waves initially then become constant", "low-grade fever", "abdomen is tender on one side", "pain may radiate to back or thigh"],
+    "guidance": "Ovarian torsion is a surgical emergency where the ovary twists on its blood supply. If not operated within 4-6 hours, the ovary loses its blood supply and dies. Rush to hospital emergency immediately. Do not take painkillers and 'wait and see.' Doppler ultrasound helps diagnosis but a normal scan does NOT rule out torsion. Emergency laparoscopic surgery to untwist the ovary can save it if done quickly.",
+    "precautions": ["Seek EMERGENCY care immediately – do not wait for pain to subside", "Do not take painkillers to manage at home – this masks a surgical emergency", "A normal Doppler ultrasound does NOT rule out torsion – if pain persists, insist on surgical evaluation", "Women with ovarian cysts or PCOS are at higher risk", "Time to surgery directly determines whether the ovary can be saved"],
+    "urgency": "critical"
+  },
+  {
+    "id": "intermenstrual_bleeding",
+    "category": "Intermenstrual Bleeding (Spotting Between Periods)",
+    "symptoms": ["light bleeding or spotting between regular periods", "bleeding after sexual intercourse", "bleeding after menopause (any amount)", "staining on underwear mid-cycle", "pink or brown discharge between periods"],
+    "guidance": "Causes range from benign (mid-cycle ovulation spotting, hormonal contraception side effects, implantation bleeding in early pregnancy) to serious (cervical polyps, cervical erosion, endometrial polyps, or rarely cervical or uterine cancer). Any bleeding after menopause must be evaluated urgently. Bleeding after sex should always be evaluated to rule out cervical pathology. Track when spotting occurs in relation to your cycle.",
+    "precautions": ["Any post-menopausal bleeding requires urgent gynecology evaluation – do not delay", "Bleeding after sex should be evaluated to rule out cervical problems", "Track exact timing in cycle – mid-cycle spotting at ovulation is often normal", "Do a pregnancy test – implantation bleeding occurs around expected period time", "Report to doctor if spotting occurs for more than 3 consecutive cycles"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vaginal_discharge_abnormal",
+    "category": "Abnormal Vaginal Discharge",
+    "symptoms": ["NORMAL: clear to white, odorless or mild smell, increases around ovulation", "BACTERIAL VAGINOSIS: grey-white watery discharge with strong fishy odor, worse after sex", "YEAST INFECTION: thick white cottage-cheese-like discharge, intense itching and burning, no bad odor", "TRICHOMONIASIS: yellow-green frothy discharge with foul smell, itching, redness", "STI (chlamydia/gonorrhea): yellow or green discharge, may have pelvic pain or no symptoms"],
+    "guidance": "Normal vaginal discharge varies throughout the cycle – it is the vagina's self-cleaning mechanism. Do not douche – it destroys protective bacteria and worsens infections. Yeast infections are common after antibiotics and can be treated with antifungal cream or suppository (clotrimazole available OTC). Bacterial vaginosis and STIs require prescription antibiotics. STIs need partner treatment too. If in doubt – get examined rather than self-treating.",
+    "precautions": ["Do NOT douche – it disrupts the vaginal microbiome and promotes infections", "Wear breathable cotton underwear and avoid tight synthetic clothing", "Do not self-treat with antifungals more than once without diagnosis – recurring infections need evaluation", "STIs often have no symptoms – get tested if you have a new or multiple partners", "Complete the full antibiotic course for bacterial infections even if discharge resolves"],
+    "urgency": "medium"
+  },
+  {
+    "id": "menopause",
+    "category": "Menopause and Perimenopause",
+    "symptoms": ["hot flashes (sudden intense heat, sweating, flushing)", "night sweats", "irregular periods (perimenopause)", "vaginal dryness and discomfort during sex", "mood changes: irritability, anxiety, low mood", "sleep disturbances", "brain fog and memory lapses", "decreased libido", "urinary symptoms: urgency, frequency, recurrent UTIs", "joint aches and pains", "menopause = 12 consecutive months without periods"],
+    "guidance": "Menopause is a natural transition, not a disease, typically occurring between age 45-55 in Indian women. Perimenopause (transition phase) can last 2-10 years before periods stop. Hormone Replacement Therapy (HRT) is the most effective treatment for hot flashes and vaginal symptoms – discuss risks and benefits with doctor. Non-hormonal options: CBT for hot flashes, vaginal moisturizers for dryness, regular exercise for mood and bones. Calcium and Vitamin D are essential for bone health. This is a crucial time for cardiovascular and bone health monitoring.",
+    "precautions": ["Menopause before age 40 is Premature Ovarian Insufficiency – needs urgent medical evaluation", "Any bleeding after 12 months of no periods must be evaluated for uterine cancer", "Ensure adequate calcium (1200mg/day) and Vitamin D (600-800 IU/day) for bone protection", "Get bone density (DEXA) scan at menopause especially with risk factors", "Do not use herbal supplements claiming to 'balance hormones' without medical advice"],
+    "urgency": "low"
+  },
+  {
+    "id": "premature_ovarian_insufficiency",
+    "category": "Premature Ovarian Insufficiency (POI) / Early Menopause",
+    "symptoms": ["irregular or absent periods before age 40", "hot flashes in a young woman", "vaginal dryness", "difficulty getting pregnant", "mood changes", "sleep disturbances", "blood tests show high FSH and low estrogen"],
+    "guidance": "POI is not the same as early menopause – some women with POI can still ovulate intermittently and get pregnant. It requires urgent medical evaluation and treatment. Without estrogen replacement, young women with POI face high risk of osteoporosis, heart disease, and cognitive decline. Hormone replacement therapy (HRT) is recommended until average age of menopause (51 years). Causes include autoimmune conditions, genetic factors, and cancer treatment.",
+    "precautions": ["Start HRT early – unprotected estrogen deficiency at young age causes serious long-term harm", "Pregnancy is still possible intermittently – use contraception if pregnancy not desired", "Get bone density test and cardiovascular evaluation", "Seek genetic counseling if POI is diagnosed under age 30", "Psychological support is important – POI can cause grief and identity issues especially regarding fertility"],
+    "urgency": "high"
+  },
+  {
+    "id": "toxic_shock_syndrome",
+    "category": "Toxic Shock Syndrome (TSS)",
+    "symptoms": ["sudden high fever (above 39°C)", "low blood pressure causing dizziness or fainting", "sunburn-like red rash especially on palms and soles", "vomiting and diarrhea", "muscle aches", "redness of eyes, mouth, and throat", "confusion", "associated with prolonged tampon or menstrual cup use"],
+    "guidance": "TSS is a rare but life-threatening bacterial toxin emergency. Do NOT attempt home management – call 108 and go to hospital immediately. Remove tampon or menstrual cup immediately if wearing one. TSS requires IV antibiotics, IV fluids, and intensive care. Prevention: change tampons every 4-8 hours, use lowest absorbency needed, alternate with pads, and properly clean menstrual cups.",
+    "precautions": ["Change tampons every 4-8 hours – never leave overnight", "Use lowest absorbency tampon for your flow on each day", "Remove tampon immediately and go to emergency if fever develops while using one", "Clean menstrual cups properly with boiling between cycles", "Alternate tampon use with sanitary pads, especially overnight"],
+    "urgency": "critical"
+  },
+  {
+    "id": "period_hygiene",
+    "category": "Menstrual Hygiene and Infection Prevention",
+    "symptoms": ["not a disease – preventive guidance for all menstruating individuals"],
+    "guidance": "Good menstrual hygiene prevents infections, rashes, and Reproductive Tract Infections (RTIs) which are very common in rural India. Change sanitary pads every 4-6 hours even with light flow. Wash hands before and after changing pad. Clean the genital area with plain water only – no soap inside the vagina. Dispose of pads properly (wrap and bin – do not flush). Menstrual cups and cloth pads are eco-friendly and cost-effective alternatives. Free pads are distributed under Rashtriya Kishor Swasthya Karyakram (RKSK) at PHCs for adolescent girls.",
+    "precautions": ["Change pad every 4-6 hours even if flow is light – old blood breeds bacteria", "Wash genital area with clean water only – no soap, no douching inside vagina", "Wash hands before and after every pad change", "Do not flush sanitary pads – wrap in paper and dispose in bin", "Free sanitary pads available for adolescent girls at PHCs under RKSK program"],
+    "urgency": "low"
+  },
+  {
+    "id": "adenomyosis",
+    "category": "Adenomyosis",
+    "symptoms": ["heavy painful periods that worsen over years", "enlarged boggy uterus", "chronic pelvic pressure and bloating", "pain during sex", "prolonged periods", "passage of large blood clots", "symptoms worsen with each cycle progressively", "typically in women over 35 who have had children"],
+    "guidance": "Adenomyosis occurs when the endometrial tissue grows into the uterine muscle wall, causing it to enlarge and bleed internally during periods. It is often confused with fibroids but is a different condition. Diagnosis is by MRI or transvaginal ultrasound. Management: anti-inflammatory medicines, hormonal treatments (Mirena IUS is very effective), or hysterectomy in severe cases in women who have completed family. Adenomyosis resolves naturally after menopause.",
+    "precautions": ["Keep a pain and bleeding diary to monitor progression", "Mirena IUS (hormonal coil) significantly reduces bleeding and pain – ask your doctor", "Iron supplements are essential due to heavy blood loss", "Hysterectomy is curative but should be last resort after other options tried", "Symptoms improve dramatically after menopause – this information helps with management decisions"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cervical_polyp",
+    "category": "Cervical Polyp",
+    "symptoms": ["light bleeding between periods", "bleeding after sex", "heavy periods", "unusual vaginal discharge", "often no symptoms – found on routine examination"],
+    "guidance": "Cervical polyps are benign (non-cancerous) finger-like growths on the cervix, common in women over 40 and those who have been pregnant. They are almost always benign but can cause abnormal bleeding. Removal is simple (done in clinic without anesthesia) and curative. The removed polyp should be sent for histology to confirm it is benign. Regular Pap smears and VIA screening help detect polyps along with cervical cancer.",
+    "precautions": ["Get a Pap smear or VIA test regularly – free at PHC/CHC", "Report any bleeding after sex to a gynecologist", "Polyp removal is a simple outpatient procedure – do not delay", "All removed polyps should be sent for histopathology examination", "Do not confuse cervical polyps with cervical cancer – they are almost always benign"],
+    "urgency": "low"
+  },
+  {
+    "id": "pelvic_inflammatory_disease",
+    "category": "Pelvic Inflammatory Disease (PID)",
+    "symptoms": ["lower abdominal or pelvic pain", "fever", "unusual vaginal discharge with bad odor", "pain during sex", "irregular bleeding", "pain on urination", "nausea and vomiting in severe cases", "tenderness in lower abdomen"],
+    "guidance": "PID is an infection of the uterus, fallopian tubes, and ovaries, usually caused by sexually transmitted bacteria (chlamydia, gonorrhea) or vaginal bacteria traveling upward. It must be treated promptly with antibiotics to prevent permanent damage to fallopian tubes causing infertility and ectopic pregnancy. Both partners must be treated for STI-related PID. Free treatment available at government hospitals. Tubo-ovarian abscess (severe PID with abscess) may need hospitalization.",
+    "precautions": ["Seek treatment early – delay causes scarring and infertility", "Both sexual partners must be treated simultaneously", "Complete the full antibiotic course even if pain improves", "Avoid sex until both partners have completed treatment and symptoms resolved", "IUD insertion in the setting of active STI can cause PID – get tested before IUD placement"],
+    "urgency": "high"
+  },
+  {
+    "id": "menstrual_migraine",
+    "category": "Menstrual Migraine",
+    "symptoms": ["severe one-sided throbbing headache occurring 2 days before to 3 days after period starts", "nausea and vomiting", "sensitivity to light and sound", "visual aura in some women", "worse than non-menstrual migraines", "can last 1-3 days", "predictable cyclic pattern linked to menstrual cycle"],
+    "guidance": "Menstrual migraines are triggered by the drop in estrogen just before menstruation. They tend to be more severe and longer-lasting than non-menstrual migraines. Treatment: take prescribed migraine medication (triptan) at first sign of attack. Prevention: Frovatriptan taken 2 days before expected migraine can prevent it. NSAIDs (naproxen) started 2 days before period also help. Hormonal management to stabilize estrogen levels (continuous pill use) can eliminate menstrual migraines entirely.",
+    "precautions": ["Track migraine dates relative to period dates for 3 months to confirm menstrual trigger", "Take triptan or NSAID at the very first sign of headache – do not wait", "Ensure adequate sleep and hydration around period time", "Avoid known migraine triggers in days before period: alcohol, stress, skipping meals", "Discuss preventive medication options with neurologist or gynecologist"],
+    "urgency": "medium"
+  },
+  {
+    "id": "period_poverty",
+    "category": "Period Poverty and Access to Menstrual Products",
+    "symptoms": ["using cloth, ash, sand, or unhygienic materials due to lack of access to sanitary products", "missing school or work during periods", "shame and stigma around menstruation", "recurrent reproductive tract infections from unhygienic practices"],
+    "guidance": "Period poverty is a public health issue affecting millions of girls and women in India, leading to school dropout, RTIs, and long-term health impacts. Government programs: Pradhan Mantri Surakshit Matritva Abhiyan, RKSK provide free or subsidized pads. Reusable cloth pads, when properly washed and dried in sunlight, are safe and cost-effective. Menstrual cups are highly cost-effective (one-time purchase lasting 10 years). ASHA workers and Anganwadi centers can connect to free pad distribution programs.",
+    "precautions": ["Cloth pads must be washed with soap, rinsed thoroughly, and dried in DIRECT SUNLIGHT", "Never dry cloth pads indoors or in the dark – promotes bacterial growth", "Menstrual cups are safe, reusable for 10 years, and available for under Rs. 300", "Contact nearest Anganwadi or PHC for free sanitary pad access under RKSK", "Talk openly with girls about menstrual hygiene – breaking stigma saves health"],
+    "urgency": "low"
+  },
+  {
+    "id": "mittelschmerz",
+    "category": "Mittelschmerz (Ovulation Pain)",
+    "symptoms": ["mid-cycle lower abdominal pain (around day 14 of a 28-day cycle)", "pain on one side, can be sharp or dull", "may last a few minutes to a few hours", "sometimes mild spotting", "no fever or other signs of infection"],
+    "guidance": "Mittelschmerz is normal ovulation pain caused by the stretching of the ovarian capsule before the egg is released. It is harmless. For pain relief: heat packs and NSAIDs. If the pain is severe or lasts more than 2-3 days, rule out ovarian cyst or torsion.",
+    "precautions": ["Track cycle to identify if it is mid-cycle", "Pain is typically mild – if severe, seek evaluation", "Avoid heavy exercise during pain", "Heat application for relief", "Do not take painkillers excessively"],
+    "urgency": "low"
+  },
+  {
+    "id": "hypomenorrhea",
+    "category": "Hypomenorrhea (Light Periods)",
+    "symptoms": ["very scant blood flow", "periods lasting less than 2 days", "minimum pad usage (1-2 pads per day)", "may be accompanied by brownish discharge", "may indicate hormonal imbalance or uterine scarring"],
+    "guidance": "Light periods can be due to genetic variation, hormonal imbalance (low estrogen), excessive exercise, stress, or Asherman's syndrome (intrauterine adhesions). Evaluate if periods are suddenly lighter. Treat underlying cause: hormonal therapy, or hysteroscopy for adhesions.",
+    "precautions": ["If always light and regular, may be normal", "If recent change, seek evaluation", "Check thyroid and prolactin", "Do not stop contraception if recently started – it may cause light periods", "Monitor for pregnancy if light bleeding occurs"],
+    "urgency": "low"
+  },
+  {
+    "id": "polymenorrhea",
+    "category": "Polymenorrhea (Frequent Periods)",
+    "symptoms": ["cycles shorter than 21 days", "frequent periods", "may be regular but too frequent", "sometimes with heavy flow"],
+    "guidance": "Causes include uterine fibroids, polyps, endometriosis, or thyroid disorders. Evaluate with pelvic ultrasound and hormonal tests. Treatment addresses the underlying cause – hormonal therapy or surgical removal of pathology.",
+    "precautions": ["Track cycle length accurately", "Check for anemia if bleeding is frequent", "Rule out organic causes", "Do not ignore if causing iron deficiency", "Seek gynecological evaluation"],
+    "urgency": "medium"
+  },
+  {
+    "id": "dysfunctional_uterine_bleeding",
+    "category": "Dysfunctional Uterine Bleeding (DUB)",
+    "symptoms": ["irregular, unpredictable bleeding", "heavy periods, frequent periods, or spotting between periods", "not due to pregnancy or other organic causes", "often due to anovulation (no egg release)", "common in adolescents and perimenopause"],
+    "guidance": "DUB is a diagnosis of exclusion after ruling out structural causes. Treatment: hormonal therapy (progestins, birth control pills) to regulate cycles. NSAIDs reduce bleeding. In severe cases, endometrial ablation or hysterectomy. Address underlying anovulation.",
+    "precautions": ["Rule out pregnancy, fibroids, polyps", "Do not delay seeking care", "Iron supplementation for anemia", "Hormonal therapy is effective", "If bleeding is excessive, emergency care"],
+    "urgency": "medium"
+  },
+  {
+    "id": "postmenopausal_bleeding",
+    "category": "Postmenopausal Bleeding",
+    "symptoms": ["any vaginal bleeding after 12 months of amenorrhea", "spotting, heavy bleeding, or staining", "may be pink, red, or brown"],
+    "guidance": "Postmenopausal bleeding is a warning sign for endometrial cancer. Urgent evaluation is required. Transvaginal ultrasound to measure endometrial thickness, and endometrial biopsy if thickness > 4-5 mm. Other causes: atrophy, polyps, HRT. Do not delay.",
+    "precautions": ["Seek immediate evaluation", "Do not ignore any postmenopausal spotting", "Transvaginal ultrasound is first-line", "Endometrial biopsy is essential if thickened", "Most cases are benign but early detection saves lives"],
+    "urgency": "critical"
+  },
+  {
+    "id": "endometrial_hyperplasia",
+    "category": "Endometrial Hyperplasia (Without Atypia)",
+    "symptoms": ["heavy menstrual bleeding", "intermenstrual bleeding", "postmenopausal bleeding", "often asymptomatic"],
+    "guidance": "Endometrial hyperplasia is a thickening of the uterine lining, often due to unopposed estrogen (PCOS, obesity, HRT). Without atypia – progestin therapy is effective (IUCD or oral). With atypia – risk of cancer; often hysterectomy. Regular follow-up with biopsy.",
+    "precautions": ["If obesity, lose weight", "Progestin therapy", "Regular endometrial surveillance", "Avoid unopposed estrogen", "Discuss risk factors with doctor"],
+    "urgency": "high"
+  },
+  {
+    "id": "endometrial_cancer",
+    "category": "Endometrial (Uterine) Cancer",
+    "symptoms": ["postmenopausal bleeding (most common)", "heavy abnormal bleeding in premenopausal women", "pelvic pain", "watery or blood-tinged discharge", "pain during urination or sex"],
+    "guidance": "Endometrial cancer is the most common gynecologic cancer. It is highly curable if detected early. Treatment: hysterectomy, sometimes radiation/chemotherapy. Prevention: maintain healthy weight, manage diabetes, use progesterone with estrogen HRT. Early diagnosis saves lives.",
+    "precautions": ["Any postmenopausal bleeding = urgent evaluation", "Transvaginal ultrasound", "Endometrial biopsy", "Hysterectomy is curative in early stages", "Discuss with a gynecologic oncologist"],
+    "urgency": "critical"
+  },
+  {
+    "id": "ovarian_cancer",
+    "category": "Ovarian Cancer",
+    "symptoms": ["early stages: often asymptomatic or vague", "abdominal bloating or pressure", "pelvic pain", "difficulty eating or feeling full quickly", "frequent urination", "menstrual changes", "weight loss"],
+    "guidance": "Ovarian cancer is often diagnosed late (silent killer). Screening: transvaginal ultrasound and CA-125 in high-risk (BRCA, family history). Treatment: surgery and chemotherapy. Maintain healthy weight and lifestyle. BRCA testing and risk-reducing salpingo-oophorectomy for carriers.",
+    "precautions": ["If family history, genetic testing", "Do not ignore persistent bloating", "Regular pelvic exams", "CA-125 and ultrasound for high-risk", "Discuss risk-reducing surgery with geneticist"],
+    "urgency": "high"
+  },
+  {
+    "id": "vulvodynia",
+    "category": "Vulvodynia (Chronic Vulvar Pain)",
+    "symptoms": ["burning, stinging, or rawness in the vulvar area", "pain worse with sitting, sex, or tampon insertion", "no visible infection or skin disease", "may be provoked or generalized", "can be constant or intermittent"],
+    "guidance": "Vulvodynia is poorly understood but real. Multidisciplinary: gynecology, pelvic floor physiotherapy, and pain management. Topical lidocaine, tricyclic antidepressants, gabapentin. Avoid irritants (soaps, tight clothing). CBT helps coping.",
+    "precautions": ["Avoid irritants", "Wear cotton underwear", "Pelvic floor physiotherapy", "Medication for nerve pain", "Seek support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vaginismus",
+    "category": "Vaginismus (Involuntary Pelvic Floor Spasm)",
+    "symptoms": ["involuntary contraction of pelvic muscles preventing vaginal penetration", "pain with attempted intercourse, tampon insertion, or speculum exam", "fear of pain", "often associated with anxiety or trauma"],
+    "guidance": "Vaginismus is highly treatable. Pelvic floor physiotherapy, vaginal dilators (progressive use), CBT, and sex therapy. Address anxiety and build trust. Education and partner involvement. Success rate is high.",
+    "precautions": ["Pelvic floor physiotherapy", "Dilator therapy", "CBT for anxiety", "Partner involvement", "Do not force penetration"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vulvar_vestibulitis",
+    "category": "Vulvar Vestibulitis (Provoked Vestibulodynia)",
+    "symptoms": ["pain localized to the vaginal opening (vestibule)", "pain provoked by touch, sexual intercourse, or tampon insertion", "redness of vestibular area", "no infection"],
+    "guidance": "A subtype of vulvodynia. Topical treatments (lidocaine, estrogen), physical therapy, and avoidance of irritants. Surgical vestibulectomy in refractory cases.",
+    "precautions": ["Avoid irritants", "Pelvic floor therapy", "Topical treatments", "Pain management", "Counseling for sexual health"],
+    "urgency": "medium"
+  },
+  {
+    "id": "lichen_sclerosus",
+    "category": "Lichen Sclerosus (Vulvar Skin Condition)",
+    "symptoms": ["white, wrinkled, thinned skin on vulvar area", "intense itching", "pain, especially with sex", "easy bruising or bleeding", "cracking and scarring", "clitoral hood adhesions"],
+    "guidance": "Lichen sclerosus is an autoimmune inflammatory condition. Treatment: high-potency topical corticosteroids (clobetasol) is effective. Lifelong maintenance. In severe cases, surgery. Risk of vulvar cancer is increased – regular follow-up.",
+    "precautions": ["Consistent steroid application", "Regular follow-up for skin changes", "Do not scratch – worsens scarring", "Avoid irritants", "Vulvar self-exam"],
+    "urgency": "medium"
+  },
+  {
+    "id": "vaginal_atrophy",
+    "category": "Vaginal Atrophy (Genitourinary Syndrome of Menopause)",
+    "symptoms": ["vaginal dryness", "burning or itching", "pain during sex (dyspareunia)", "urinary urgency, frequency, recurrent UTIs", "thin, pale vaginal tissue", "occurs due to estrogen deficiency"],
+    "guidance": "Vaginal estrogen therapy (creams, tablets, rings) is the gold standard. Systemic HRT also helps. Lubricants and moisturizers for symptom relief. Regular sexual activity improves blood flow.",
+    "precautions": ["Vaginal estrogen is safe and effective", "Use lubricants for comfort", "Regular pelvic exams", "Manage UTIs", "Discuss HRT with doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "pelvic_congestion_syndrome",
+    "category": "Pelvic Congestion Syndrome",
+    "symptoms": ["chronic pelvic pain (dull, aching)", "worse with standing, at end of day", "pain during or after sex", "varicose veins visible in pelvis", "may be associated with ovarian vein reflux"],
+    "guidance": "Diagnosed by ultrasound or MRI with venography. Treatment: lifestyle (avoid prolonged standing), pain management, hormonal therapy, or ovarian vein embolization (minimally invasive).",
+    "precautions": ["Avoid prolonged standing", "Pain management", "Pelvic physiotherapy", "Embolization if severe", "Hormonal therapy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "asherman_syndrome",
+    "category": "Asherman Syndrome (Intrauterine Adhesions)",
+    "symptoms": ["light periods or no periods (amenorrhea)", "decreased fertility", "recurrent miscarriages", "often after dilation and curettage (D&C) or postpartum infections"],
+    "guidance": "Diagnosis by hysteroscopy. Treatment: hysteroscopic adhesiolysis under direct vision. Followed by estrogen therapy to promote endometrial growth and prevent recurrence. Insertion of an intrauterine balloon or IUCD may help.",
+    "precautions": ["Avoid unnecessary D&C", "If adhesiolysis done, post-op estrogen", "Monitor menstrual flow", "Consider infertility workup", "Early treatment improves fertility"],
+    "urgency": "medium"
+  },
+  {
+    "id": "uterine_anomaly_septate",
+    "category": "Septate Uterus (Müllerian Anomaly)",
+    "symptoms": ["may be asymptomatic", "recurrent miscarriages", "infertility", "preterm labor"],
+    "guidance": "A septate uterus has a fibrous band dividing the uterine cavity. Diagnosis by MRI or 3D ultrasound. Hysteroscopic resection of septum (metroplasty) is performed in women with recurrent miscarriage or infertility.",
+    "precautions": ["If recurrent miscarriage, investigate", "3D ultrasound", "Hysteroscopic surgery if indicated", "Improves reproductive outcomes", "Follow-up for scarring"],
+    "urgency": "medium"
+  },
+  {
+    "id": "uterine_anomaly_bicornuate",
+    "category": "Bicornuate Uterus",
+    "symptoms": ["often asymptomatic", "may cause recurrent miscarriage or preterm labor", "heart-shaped uterus"],
+    "guidance": "Usually no treatment needed. If recurrent miscarriage, surgical unification (Strassman's procedure) is rarely done. Manage pregnancies as high-risk.",
+    "precautions": ["Monitor pregnancy closely", "If recurrent miscarriage, consult specialist", "No routine surgical repair", "Manage preterm labor risks", "Obstetric surveillance"],
+    "urgency": "low"
+  },
+  {
+    "id": "imperforate_hymen",
+    "category": "Imperforate Hymen",
+    "symptoms": ["no menstrual flow at puberty (primary amenorrhea)", "cyclical abdominal pain (monthly)", "bulging bluish hymen", "urinary retention", "pelvic mass (hematocolpos)"],
+    "guidance": "Surgical incision of the hymen (hymenotomy) is curative. Drain the collected menstrual blood. It is a simple day procedure. If untreated, can cause infection and endometriosis.",
+    "precautions": ["Surgical hymenotomy", "Drain hematocolpos", "Good outcomes", "No long-term issues", "Follow-up for menstrual flow"],
+    "urgency": "high"
+  },
+  {
+    "id": "transverse_vaginal_septum",
+    "category": "Transverse Vaginal Septum",
+    "symptoms": ["primary amenorrhea", "cyclical abdominal pain", "may have normal external genitalia", "difficulty with tampon use"],
+    "guidance": "Surgical resection of the septum. May be a transverse or longitudinal septum. Post-operative dilation to prevent stenosis.",
+    "precautions": ["Surgical resection", "Post-op dilation", "Menstrual flow should start", "Check for other anomalies", "Long-term follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "mullerian_agenesis",
+    "category": "Müllerian Agenesis (Mayer-Rokitansky-Küster-Hauser Syndrome)",
+    "symptoms": ["primary amenorrhea", "normal external genitalia", "shortened vagina", "absent or rudimentary uterus", "normal ovaries and secondary sexual characteristics"],
+    "guidance": "No surgical intervention for uterus (no pregnancy possible with own uterus). Vaginal dilators for functional vagina. Psychological support. Surrogacy or adoption options for family building.",
+    "precautions": ["Vaginal dilation therapy", "Counseling", "Evaluate renal and skeletal anomalies", "Surrogacy options", "Hormonal support (no estrogen needed as ovaries work)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "catamenial_epilepsy",
+    "category": "Catamenial Epilepsy (Seizures Related to Menstrual Cycle)",
+    "symptoms": ["increase in seizure frequency around menstruation (peri-menstrual or mid-cycle)", "often in women with epilepsy", "seizures are more frequent during the perimenstrual phase when estrogen drops"],
+    "guidance": "Identify if seizures are catamenial. Hormonal therapy (progesterone) may help. Adjust anti-epileptic drugs (AEDs) during the perimenstrual phase (clobazam, lorazepam). Neurosurgeon/neurologist consultation.",
+    "precautions": ["Track seizure calendar relative to cycle", "Adjust AEDs with doctor", "Consider progesterone supplementation", "Avoid triggers", "Regular neurology follow-up"],
+    "urgency": "high"
+  },
+  {
+    "id": "catamenial_asthma",
+    "category": "Catamenial Asthma (Asthma Flares with Menstruation)",
+    "symptoms": ["worsening of asthma symptoms in the premenstrual or perimenstrual phase", "cough, wheeze, dyspnea, chest tightness", "associated with prostaglandin changes"],
+    "guidance": "Adjust asthma medications before menstruation (controller therapy). NSAIDs (mefenamic acid) to reduce prostaglandins may help. Treat underlying allergic triggers. If severe, hormonal therapy.",
+    "precautions": ["Track symptom diary", "Increase controller medications premenstrually", "NSAIDs for pain may help asthma", "Avoid triggers", "Pulmonologist review"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hyperprolactinemia",
+    "category": "Hyperprolactinemia (High Prolactin) Causing Menstrual Irregularity",
+    "symptoms": ["galactorrhea (milk discharge from breasts not during breastfeeding)", "amenorrhea or irregular periods", "headache, visual field defects (pituitary tumor)", "decreased libido", "infertility"],
+    "guidance": "Check prolactin levels. If elevated, do MRI pituitary. Treatment: dopamine agonists (cabergoline, bromocriptine) to lower prolactin and restore periods. If tumor is macroadenoma, surgery.",
+    "precautions": ["Check prolactin in secondary amenorrhea", "MRI if elevated", "Cabergoline is effective", "Restores fertility", "Monitor for tumor size"],
+    "urgency": "medium"
+  },
+  {
+    "id": "galactorrhea",
+    "category": "Galactorrhea (Non-Pregnancy Breast Discharge)",
+    "symptoms": ["milky nipple discharge not associated with breastfeeding", "unilateral or bilateral", "often with amenorrhea if hyperprolactinemia", "may be due to medications, stress, or prolactinoma"],
+    "guidance": "Stop offending drugs (antidepressants, antipsychotics). If prolactin is high, treat with dopamine agonists. Reassurance if idiopathic. Rule out breast pathology.",
+    "precautions": ["Breast exam", "Check prolactin", "Stop drugs causing it", "If persistent, MRI", "Do not ignore blood-tinged discharge"],
+    "urgency": "medium"
+  },
+  {
+    "id": "fibroadenoma_breast",
+    "category": "Fibroadenoma (Benign Breast Lump) – Menstrual Hormone Influence",
+    "symptoms": ["smooth, firm, rubbery, mobile lump in breast", "painless", "size may vary with menstrual cycle (hormone sensitive)", "most common in women 15-35 years"],
+    "guidance": "Fibroadenomas are benign. If asymptomatic, can be monitored. If growing or causing distress, remove (excision or cryoablation). Ultrasound is diagnostic. Reassurance.",
+    "precautions": ["Breast self-exam", "Ultrasound to confirm", "Monitor for growth", "If enlarging, surgical consult", "No cancer risk"],
+    "urgency": "low"
+  },
+  {
+    "id": "breast_cyst",
+    "category": "Breast Cysts (Fluid-Filled Sacs) – Hormonal Sensitivity",
+    "symptoms": ["round or oval breast lump", "smooth, moveable, and may be tender", "increase before periods, decrease after", "often multiple", "common in perimenopause"],
+    "guidance": "Ultrasound confirms simple cyst. Aspiration if painful or large. No cancer risk if simple. Fine-needle aspiration if complex. Reassurance.",
+    "precautions": ["Ultrasound", "Aspiration if needed", "Monitor for changes", "Cysts usually benign", "Hormonal therapy may reduce recurrence"],
+    "urgency": "low"
+  },
+  {
+    "id": "mastalgia_cyclic",
+    "category": "Cyclic Mastalgia (Breast Pain with Menstrual Cycle)",
+    "symptoms": ["breast pain, heaviness, tenderness, swelling in the week before periods", "symptoms improve after menstruation starts", "bilateral", "worse in women with PMS"],
+    "guidance": "Cyclical breast pain is normal and benign. Manage with: good support bra, avoid caffeine, evening primrose oil, and NSAIDs. If severe, hormonal therapy (danazol, tamoxifen) may be used.",
+    "precautions": ["Wear a well-fitted supportive bra", "Reduce caffeine", "Apply warm or cold compresses", "Evening primrose oil may help", "If persistent, check for cysts"],
+    "urgency": "low"
+  },
+  {
+    "id": "endometrioma",
+    "category": "Endometrioma (Chocolate Cyst of Ovary)",
+    "symptoms": ["pelvic pain, especially around periods", "adnexal mass on ultrasound (classic 'ground glass' appearance)", "infertility", "may be asymptomatic", "ovarian endometriotic cyst filled with old blood"],
+    "guidance": "Endometriomas are associated with endometriosis. Surgical removal (cystectomy) is indicated if > 4 cm or causing pain/infertility. Hormonal suppression (GnRH agonists) may reduce recurrence. IVF may be needed.",
+    "precautions": ["Ultrasound diagnosis", "Surgical cystectomy", "Hormonal therapy", "Fertility preservation", "Monitor for recurrence"],
+    "urgency": "medium"
+  },
+  {
+    "id": "uterine_sarcoma",
+    "category": "Uterine Sarcoma (Rare Uterine Malignancy)",
+    "symptoms": ["abnormal bleeding (postmenopausal or heavy)", "rapidly growing uterus", "pelvic pain", "palpable mass", "may have no symptoms"],
+    "guidance": "Uterine sarcoma is aggressive. Treatment: hysterectomy, sometimes radiation and chemotherapy. A biopsy (endometrial biopsy or hysteroscopy) is essential. Prognosis depends on stage. Prompt evaluation of postmenopausal bleeding.",
+    "precautions": ["Any abnormal bleeding = evaluation", "Imaging and biopsy", "Multidisciplinary oncology", "Early hysterectomy", "Follow-up for recurrence"],
+    "urgency": "critical"
+  },
+  {
+    "id": "vaginal_cancer",
+    "category": "Vaginal Cancer",
+    "symptoms": ["vaginal bleeding (often postmenopausal)", "watery or bloody discharge", "pain or mass in vagina", "pain during sex", "urinary symptoms"],
+    "guidance": "Rare, associated with HPV. Treatment: radiation, surgery, or a combination. Routine pelvic exams and Pap smears can detect. HPV vaccine prevents vaginal cancer.",
+    "precautions": ["HPV vaccination", "Pelvic exams", "Pap smears", "Biopsy of suspicious lesions", "Oncology referral"],
+    "urgency": "high"
+  },
+  {
+    "id": "vulvar_cancer",
+    "category": "Vulvar Cancer",
+    "symptoms": ["persistent vulvar itching", "pain, burning, or bleeding", "lump, sore, or ulcer on vulva", "changes in skin color (white, red, or dark)", "may be associated with lichen sclerosus or HPV"],
+    "guidance": "Suspicious lesion needs biopsy. Treatment: surgery (wide local excision or vulvectomy), radiation. HPV vaccine prevents HPV-related vulvar cancer. Early detection is key.",
+    "precautions": ["Vulvar self-exam", "Any persistent sore = biopsy", "HPV vaccination", "Treat lichen sclerosus", "Oncology referral"],
+    "urgency": "critical"
+  },
+  {
+    "id": "bartholin_cyst_abscess",
+    "category": "Bartholin Cyst and Abscess",
+    "symptoms": ["painful swelling at the vaginal opening (lower labia)", "tender mass", "difficulty sitting or walking", "fever if infected (abscess)", "recurrent"],
+    "guidance": "Small asymptomatic cyst: may resolve. Infected abscess: incision and drainage, or Word catheter placement for 4-6 weeks. Antibiotics (if cellulitis). Marsupialization for recurrent.",
+    "precautions": ["Sitz baths for pain", "Incision and drainage if abscess", "Antibiotics if signs of infection", "Recurrence common", "Marsupialization for recurrent"],
+    "urgency": "medium"
+  },
+  {
+    "id": "atrophic_vaginitis",
+    "category": "Atrophic Vaginitis (Postmenopausal)",
+    "symptoms": ["vaginal dryness, burning, itching", "pain during sex", "discharge (yellowish)", "urinary frequency, urgency, recurrent UTIs", "thin, pale vaginal mucosa"],
+    "guidance": "Vaginal estrogen cream (estradiol) is most effective. Systemic HRT also helps. Non-hormonal lubricants/moisturizers. Regular use of vaginal estrogen prevents UTIs and improves quality of life.",
+    "precautions": ["Vaginal estrogen is safe", "Use lubricants", "Regular sexual activity helps", "Monitor for endometrial hyperplasia (with systemic HRT)", "Discuss risks and benefits"],
+    "urgency": "low"
+  },
+  {
+    "id": "pelvic_floor_dysfunction",
+    "category": "Pelvic Floor Dysfunction (Menstrual-related Exacerbation)",
+    "symptoms": ["pelvic heaviness", "incontinence (urine or stool)", "difficulty emptying bowel/bladder", "pain in pelvis or lower back", "can worsen around menstruation"],
+    "guidance": "Pelvic floor physiotherapy (Kegel exercises, biofeedback) is first-line. Avoid constipation and heavy lifting. Pessary for support. Surgery if severe.",
+    "precautions": ["Kegel exercises", "Avoid heavy lifting", "Manage constipation", "Pelvic floor physiotherapy", "If severe, surgical option"],
+    "urgency": "low"
+  },
+  {
+    "id": "uterine_prolapse",
+    "category": "Uterine Prolapse",
+    "symptoms": ["sensation of something coming down from the vagina", "heaviness in pelvis", "urinary incontinence or retention", "difficulty with bowel movements", "backache", "may worsen around menstruation"],
+    "guidance": "Grade 1-2: physiotherapy (Kegels), ring pessary. Grade 3-4: surgery (hysterectomy or uterine suspension). Treat constipation and avoid straining.",
+    "precautions": ["Kegel exercises", "Avoid heavy lifting", "Manage weight", "Pessary if not surgical candidate", "Surgical repair if symptomatic"],
+    "urgency": "medium"
+  },
+  {
+    "id": "cystocele_rectocele",
+    "category": "Cystocele and Rectocele (Pelvic Organ Prolapse)",
+    "symptoms": ["Cystocele: urinary frequency, urgency, incomplete voiding", "Rectocele: constipation, sensation of bulging, need to splint vaginally to defecate", "heaviness in vagina"],
+    "guidance": "Pelvic floor physiotherapy. Pessary for support. Surgery (anterior/posterior repair) for significant symptoms. Avoid straining.",
+    "precautions": ["Kegels", "Avoid constipation", "Pessary", "Surgical repair if needed", "Monitor for recurrence"],
+    "urgency": "medium"
+  },
+  {
+    "id": "stress_incontinence_menstrual",
+    "category": "Stress Urinary Incontinence – Menstrual Exacerbation",
+    "symptoms": ["leakage of urine with coughing, sneezing, laughing, or exertion", "may worsen during menstruation due to hormonal changes", "common in postmenopausal women"],
+    "guidance": "Kegel exercises, pelvic floor physiotherapy, weight loss, and avoiding straining. Vaginal estrogen may help in postmenopausal women. Surgical: mid-urethral sling.",
+    "precautions": ["Kegels", "Estrogen therapy if postmenopausal", "Weight loss", "Avoid heavy lifting", "Surgical option if severe"],
+    "urgency": "low"
+  },
+  {
+    "id": "overactive_bladder",
+    "category": "Overactive Bladder (Exacerbated by Menstrual Cycle)",
+    "symptoms": ["urinary urgency, frequency, nocturia", "with or without urge incontinence", "may worsen before periods (hormonal effects)"],
+    "guidance": "Bladder training, pelvic floor exercises, anticholinergics or beta-3 agonists (mirabegron). Limit caffeine. Treat with behavioral therapy first.",
+    "precautions": ["Bladder training", "Limit caffeine", "Kegels", "Medication if needed", "Monitor for UTIs"],
+    "urgency": "low"
+  },
+  {
+    "id": "interstitial_cystitis",
+    "category": "Interstitial Cystitis / Bladder Pain Syndrome (Menstrual Flare)",
+    "symptoms": ["chronic pelvic pain, pressure, or discomfort in the bladder", "worse with bladder filling, relieved by voiding", "pain during sex", "worsens around menstruation", "no infection"],
+    "guidance": "Multidisciplinary: pain management, dietary modifications (avoid acidic foods), pelvic floor physiotherapy, and medications (amitriptyline, hydroxyzine). Bladder instillations (DMSO).",
+    "precautions": ["Avoid bladder irritants (caffeine, citrus)", "Pelvic floor therapy", "Pain management", "Stress reduction", "Support groups"],
+    "urgency": "medium"
+  },
+  {
+    "id": "congenital_adrenal_hyperplasia",
+    "category": "Congenital Adrenal Hyperplasia (CAH) – Menstrual Effects",
+    "symptoms": ["ambiguous genitalia at birth (in classic)", "primary amenorrhea or irregular periods", "virilization (excess hair, deep voice)", "infertility", "salt-wasting crisis in infants"],
+    "guidance": "Diagnosed by elevated 17-OH progesterone. Treatment: corticosteroids (dexamethasone) to suppress adrenal androgens. Fertility treatment with ovulation induction. Genetic counseling.",
+    "precautions": ["Corticosteroid therapy", "Monitor electrolytes", "Fertility counseling", "Genetic counseling", "Surgical correction of ambiguous genitalia if needed"],
+    "urgency": "high"
+  },
+  {
+    "id": "thyroid_menstrual_disorder",
+    "category": "Thyroid Disorders Affecting Menstruation",
+    "symptoms": ["Hypothyroid: heavy periods (menorrhagia) or irregular periods, fatigue, cold intolerance", "Hyperthyroid: light periods (hypomenorrhea) or amenorrhea, palpitations, weight loss", "both can cause infertility"],
+    "guidance": "Screen with TSH. Treat hypothyroidism with levothyroxine (restores periods). Treat hyperthyroidism with antithyroid drugs (methimazole). Regular monitoring of thyroid function.",
+    "precautions": ["Screen thyroid in menstrual disorders", "Medication adherence", "Monitor TSH every 6-12 months", "If planning pregnancy, pre-conception consultation", "Hyperthyroid: avoid pregnancy during active disease"],
+    "urgency": "medium"
+  },
+  {
+    "id": "diabetes_menstrual_effects",
+    "category": "Diabetes Mellitus Effects on Menstrual Cycle",
+    "symptoms": ["irregular periods", "anovulation", "oligomenorrhea", "may be associated with PCOS-like features", "increased risk of UTIs and yeast infections"],
+    "guidance": "Tight glycemic control improves menstrual regularity. Manage diabetes with diet, exercise, and medications. If PCOS coexists, metformin may help. Regular gynecological checkups.",
+    "precautions": ["Good glucose control", "Weight management", "Treat infections promptly", "Monitor for PCOS", "Preconception counseling"],
+    "urgency": "medium"
+  },
+  {
+    "id": "obesity_menstrual_dysfunction",
+    "category": "Obesity-Related Menstrual Dysfunction",
+    "symptoms": ["irregular or absent periods", "anovulation", "infertility", "heavy periods (due to endometrial hyperplasia)", "worsening of PCOS"],
+    "guidance": "Weight loss (5-10% of body weight) significantly improves periods and ovulation. Diet and exercise are first-line. Treat associated conditions (PCOS, diabetes). Bariatric surgery in severe obesity.",
+    "precautions": ["Weight loss", "Monitor endometrial thickness (risk of cancer)", "Treat PCOS if present", "Avoid fad diets", "Regular exercise"],
+    "urgency": "medium"
+  },
+  {
+    "id": "eating_disorder_amenorrhea",
+    "category": "Eating Disorder-Induced Amenorrhea (Functional Hypothalamic Amenorrhea)",
+    "symptoms": ["amenorrhea for ≥3 months", "weight loss, low BMI", "excessive exercise", "food restriction", "stress", "low estrogen (hot flashes, vaginal dryness)"],
+    "guidance": "Treatment: nutritional rehabilitation, weight restoration, and reduction of exercise. Cognitive-behavioral therapy (CBT) for eating disorder. Estrogen replacement to protect bone health (HRT) until weight normalizes.",
+    "precautions": ["Nutritional rehabilitation", "CBT for eating disorder", "HRT to prevent bone loss", "Monitor bone density", "Do not ignore amenorrhea – causes osteoporosis"],
+    "urgency": "high"
+  },
+  {
+    "id": "exercise_induced_amenorrhea",
+    "category": "Exercise-Induced (Athletic) Amenorrhea",
+    "symptoms": ["amenorrhea in athletes (running, dance, gymnastics)", "low body fat", "caloric deficit", "high energy expenditure", "low estrogen levels"],
+    "guidance": "Reduce intensity, increase caloric intake (especially carbohydrates), and rest. Calcium and Vitamin D supplementation. HRT if bone density is affected. Educate on female athlete triad (disordered eating, amenorrhea, osteoporosis).",
+    "precautions": ["Nutritional support", "Adjust training load", "Bone density monitoring", "HRT if indicated", "Address psychological factors"],
+    "urgency": "medium"
+  },
+  {
+    "id": "luteal_phase_defect",
+    "category": "Luteal Phase Defect (Short Luteal Phase)",
+    "symptoms": ["short luteal phase (< 10 days)", "premenstrual spotting", "infertility", "recurrent miscarriage", "often associated with high prolactin or thyroid disorders"],
+    "guidance": "Diagnosis: endometrial biopsy or progesterone level on day 21. Treatment: progesterone supplementation (vaginal or oral) in the luteal phase. Clomiphene citrate or hCG may be used to support ovulation.",
+    "precautions": ["Progesterone supplementation", "Treat underlying thyroid/prolactin", "Monitor luteal phase length", "Fertility evaluation", "If recurrent miscarriage, workup"],
+    "urgency": "medium"
+  },
+  {
+    "id": "anovulatory_cycles",
+    "category": "Anovulatory Cycles (No Ovulation)",
+    "symptoms": ["irregular periods or amenorrhea", "heavy bleeding (due to unopposed estrogen)", "infertility", "may have PCOS, thyroid, or stress as causes"],
+    "guidance": "Treat underlying cause. Ovulation induction with clomiphene or letrozole for fertility. Progestins to prevent endometrial hyperplasia. Lifestyle changes.",
+    "precautions": ["Monitor for endometrial hyperplasia", "Fertility treatment if needed", "Progestin withdrawal every 2-3 months", "Weight management", "Treat PCOS"],
+    "urgency": "medium"
+  },
+  {
+    "id": "infertility_evaluation",
+    "category": "Infertility – Gynecological Evaluation",
+    "symptoms": ["inability to conceive after 1 year of regular unprotected sex (6 months if >35)", "irregular periods, pelvic pain, previous STI history"],
+    "guidance": "Evaluation: ovulation assessment, semen analysis, ultrasound (ovarian reserve, tubal patency), and hysteroscopy/laparoscopy if needed. Free fertility services at some government hospitals under NHP. Treat underlying cause.",
+    "precautions": ["Early evaluation if age >35", "Male partner should also be evaluated", "Don't delay – fertility declines with age", "Consider lifestyle changes (stop smoking, reduce alcohol)", "Counseling for emotional support"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hirsutism_menstrual",
+    "category": "Hirsutism (Excess Hair Growth) – Menstrual Association",
+    "symptoms": ["excess terminal hair on face, chest, back, or abdomen", "associated with PCOS or CAH", "irregular periods", "acne, scalp hair thinning"],
+    "guidance": "Evaluate for PCOS and CAH (17-OH progesterone). Treatment: weight loss, oral contraceptives, anti-androgens (spironolactone, finasteride), and cosmetic hair removal (laser, electrolysis).",
+    "precautions": ["Do not self-treat with unknown supplements", "Anti-androgens are teratogenic – use contraception", "PCOS management", "Cosmetic removal", "Address psychological distress"],
+    "urgency": "medium"
+  },
+  {
+    "id": "acne_menstrual_flare",
+    "category": "Menstrual Flare of Acne",
+    "symptoms": ["acne worsening in the 7-10 days before periods", "papules, pustules, or cystic acne", "clears after periods", "common in PCOS or women with high androgens"],
+    "guidance": "Treat with topical retinoids, benzoyl peroxide, or antibiotics. For severe flares, oral contraceptives or spironolactone. Avoid picking lesions. Use non-comedogenic skincare.",
+    "precautions": ["Consistent skincare routine", "Avoid picking", "Oral contraceptives if indicated", "Spironolactone for resistant", "Dermatology consult"],
+    "urgency": "low"
+  },
+  {
+    "id": "catamenial_depression",
+    "category": "Catamenial Depression (Depression Flaring with Menstrual Cycle)",
+    "symptoms": ["worsening of depressive symptoms in the premenstrual phase", "increased irritability, sadness, anxiety", "suicidal ideation may increase", "not meeting full PMDD criteria but significant"],
+    "guidance": "Antidepressants (SSRIs) can be taken continuously or just in the luteal phase (symptomatic treatment). CBT. Manage stress. Hormonal therapy (OCPs) may help.",
+    "precautions": ["SSRI therapy", "Cycle tracking", "CBT", "Avoid alcohol", "If suicidal, emergency"],
+    "urgency": "high"
+  },
+  {
+    "id": "hormonal_iud_side_effects",
+    "category": "Hormonal IUD (Mirena/Levonorgestrel) Side Effects – Menstrual Changes",
+    "symptoms": ["irregular bleeding or spotting in the first 3-6 months", "reduction in menstrual flow", "oligomenorrhea or amenorrhea", "breast tenderness, mood changes, acne"],
+    "guidance": "Most side effects diminish after 3-6 months. If irregular bleeding is bothersome, NSAIDs may help. If amenorrhea is acceptable, it's normal. If persistent heavy bleeding after 6 months, rule out malposition.",
+    "precautions": ["Wait 3-6 months for adjustment", "Check threads monthly", "NSAIDs for spotting", "If pregnancy suspected, check", "If severe pain, ultrasound"],
+    "urgency": "low"
+  },
+  {
+    "id": "copper_iud_menorrhagia",
+    "category": "Copper IUD (Paragard) – Increased Menstrual Bleeding",
+    "symptoms": ["menstrual periods become heavier and longer", "intermenstrual spotting", "cramping increases", "symptoms may improve after 6 months"],
+    "guidance": "NSAIDs (mefenamic acid, ibuprofen) reduce blood loss by 20-50%. If bleeding is excessive or causing anemia, consider switching to hormonal IUD or other contraception. Always check for expulsion.",
+    "precautions": ["NSAIDs at menstruation", "Monitor for anemia", "If heavy bleeding persists >6 months, consider removal", "Check threads", "Rule out pregnancy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ocp_breakthrough_bleeding",
+    "category": "Breakthrough Bleeding on Combined Oral Contraceptives (OCPs)",
+    "symptoms": ["irregular spotting or bleeding while on active OCP pills", "common in the first 3 months", "may indicate inconsistent pill-taking or malabsorption"],
+    "guidance": "Reassure most women; it often resolves. If persistent, try a different OCP (higher estrogen dose) or change progestin. Ensure consistent pill-taking (same time daily).",
+    "precautions": ["Take pill at the same time daily", "Rule out pregnancy if missed pills", "If smoker, consider switching", "Check for drug interactions", "If >3 months, change pill type"],
+    "urgency": "low"
+  },
+  {
+    "id": "ocp_amenorrhea",
+    "category": "OCP-Induced Amenorrhea (Absence of Withdrawal Bleeding)",
+    "symptoms": ["no withdrawal bleeding during the placebo pills", "after months of use", "normal if on continuous pills", "usually due to endometrial thinning"],
+    "guidance": "If on continuous use, amenorrhea is normal. If on cyclic pills and no withdrawal bleed, do a pregnancy test (rule out pregnancy). If repeatedly negative, no concern.",
+    "precautions": ["Pregnancy test if no withdrawal bleed", "No need for treatment if pregnancy ruled out", "Consider if she wants withdrawal bleeding", "Change to different pill if desired", "Reassurance"],
+    "urgency": "low"
+  },
+  {
+    "id": "post_pill_amenorrhea",
+    "category": "Post-Pill Amenorrhea (After Stopping OCPs)",
+    "symptoms": ["no periods for 3+ months after stopping OCPs", "may be associated with underlying PCOS or hypothalamic amenorrhea", "ovulation may take time to resume"],
+    "guidance": "Most women resume periods within 3 months. If no period, evaluate for PCOS, hyperprolactinemia, or thyroid. Induction of ovulation may be needed if fertility desired. Reassurance is key.",
+    "precautions": ["Rule out pregnancy", "TSH, prolactin", "Ultrasound for PCOS", "If overweight, lifestyle changes", "Fertility consultation if needed"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hrt_menstrual_effects",
+    "category": "HRT (Hormone Replacement Therapy) – Effects on Bleeding",
+    "symptoms": ["cyclic or irregular bleeding on HRT", "bleeding pattern depends on regimen (continuous vs. sequential)", "breakthrough bleeding is common in first 6 months"],
+    "guidance": "If on sequential HRT, predictable withdrawal bleeding. If on continuous, may have irregular spotting. Any bleeding after 6 months of continuous HRT needs endometrial biopsy. Postmenopausal bleeding must be evaluated.",
+    "precautions": ["Monitor bleeding pattern", "Rule out endometrial hyperplasia", "If persistent, endometrial biopsy", "Progestin prevents hyperplasia", "Review HRT regimen"],
+    "urgency": "medium"
+  },
+  {
+    "id": "breast_self_examination",
+    "category": "Breast Self-Examination (BSE) – Timing with Menstrual Cycle",
+    "symptoms": ["not a disease – preventive screening", "best performed 5-7 days after period ends (when breasts are least lumpy)"],
+    "guidance": "Teach BSE: look for changes, palpate all quadrants, axilla, and check for nipple discharge. If any lump or change, seek medical evaluation. Breast cancer screening: mammography for women >40.",
+    "precautions": ["Do BSE monthly", "Best time: 5-7 days after periods", "Report any persistent lump", "Don't panic – most lumps are benign", "Mammography if ≥40"],
+    "urgency": "low"
+  },
+  {
+    "id": "cervical_screening_via",
+    "category": "VIA (Visual Inspection with Acetic Acid) – Cervical Cancer Screening",
+    "symptoms": ["not a disease – screening method", "VIA is done for cervical cancer screening", "may detect precancerous lesions"],
+    "guidance": "VIA is done at PHCs and CHCs free of cost. If VIA positive, colposcopy and biopsy. HPV DNA testing is also available. Screening every 5 years for women 30-65. HPV vaccine for girls 9-14.",
+    "precautions": ["Free screening available", "Do not skip screening", "If positive, follow up", "HPV vaccine", "Early detection saves lives"],
+    "urgency": "low"
+  },
+  {
+    "id": "hpv_testing_counseling",
+    "category": "HPV Testing and Counseling",
+    "symptoms": ["not a disease – HPV DNA test for high-risk types (16, 18)", "positive test indicates high risk for cervical cancer"],
+    "guidance": "HPV testing is done in women >30 years. If positive, triage with Pap or colposcopy. Most HPV infections clear spontaneously. Persistent high-risk HPV needs follow-up. HPV vaccine is preventive.",
+    "precautions": ["If HPV positive, do not panic – most clear", "Follow-up with colposcopy", "HPV vaccine for girls", "Use condoms (reduces transmission)", "Regular screening"],
+    "urgency": "low"
+  },
+  {
+    "id": "colposcopy_procedure",
+    "category": "Colposcopy (Cervical Examination)",
+    "symptoms": ["not a disease – procedure to examine cervix, vagina, and vulva", "done after abnormal Pap/VIA", "allows directed biopsy"],
+    "guidance": "Colposcopy is an outpatient procedure. Biopsy may cause mild cramping and spotting. Results in 1-2 weeks. If abnormal, LEEP or conization may be done. It is safe and accurate.",
+    "precautions": ["Follow up after abnormal Pap", "Post-procedure: avoid sex, tampons for 1 week", "Mild spotting is normal", "If heavy bleeding, seek care", "Early treatment prevents cancer"],
+    "urgency": "medium"
+  },
+  {
+    "id": "endometrial_biopsy_procedure",
+    "category": "Endometrial Biopsy (Sampling of Uterine Lining)",
+    "symptoms": ["not a disease – procedure to sample endometrium", "for abnormal bleeding, postmenopausal bleeding, or hyperplasia evaluation"],
+    "guidance": "Office procedure. Mild cramping and bleeding post-procedure. Results in a week. Used to diagnose endometrial cancer or hyperplasia. Essential for postmenopausal bleeding.",
+    "precautions": ["Post-procedure: mild cramping/bleeding", "If heavy bleeding or fever, seek care", "No sex for 1-2 days", "Do not delay if recommended", "Early detection of cancer"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hysteroscopy_procedure",
+    "category": "Diagnostic and Operative Hysteroscopy",
+    "symptoms": ["not a disease – visualization of uterine cavity", "for abnormal bleeding, polyps, fibroids, or retained products"],
+    "guidance": "Outpatient or day-care. Can be diagnostic or operative (remove polyps, fibroids, adhesions). Minimal recovery. Good for diagnosing Asherman's syndrome and septate uterus.",
+    "precautions": ["Post-procedure: mild cramping, discharge", "If fever or heavy bleeding, seek care", "Rest for 1-2 days", "No sex or tampons for 1 week", "Treatment of findings"],
+    "urgency": "medium"
+  },
+  {
+    "id": "laparoscopy_endometriosis",
+    "category": "Laparoscopy for Endometriosis Diagnosis and Treatment",
+    "symptoms": ["not a disease – surgical procedure", "used to diagnose and treat endometriosis, ovarian cysts, adhesions"],
+    "guidance": "Laparoscopy is the gold standard for endometriosis diagnosis. Can also treat (excision or ablation). Recovery: 1-2 weeks. If pregnancy is desired, surgery can improve fertility. Government hospitals offer laparoscopy.",
+    "precautions": ["Post-op: rest, avoid heavy lifting", "Shoulder pain (gas) is normal", "If fever or wound infection, seek care", "Fertility window after surgery", "Discuss risks (infection, bleeding)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "menstrual_cup_safety",
+    "category": "Menstrual Cup Safety and Use",
+    "symptoms": ["not a disease – guidance for safe use", "benefits: eco-friendly, cost-effective, reusable for 10 years"],
+    "guidance": "Menstrual cups are safe if properly cleaned. Boil before first use and after each cycle. Wash with mild soap and water between changes. Change every 8-12 hours. If TSS symptoms (fever, rash), remove immediately. Do not use if IUD strings are long (risk of dislodgment).",
+    "precautions": ["Clean with boiling water between cycles", "Wash hands before insertion/removal", "Empty and wash every 8-12 hours", "If fever or rash, remove and seek care", "Trim IUD strings"],
+    "urgency": "low"
+  },
+  {
+    "id": "pad_dermatitis",
+    "category": "Pad Dermatitis (Irritation from Sanitary Pads)",
+    "symptoms": ["rash, redness, itching, or burning in the vulvar/perineal area", "worse during menstruation", "may be due to fragrance, dyes, or prolonged pad use"],
+    "guidance": "Change pads frequently (every 4-6 hours). Use unscented, hypoallergenic pads. Wash with plain water and pat dry. Apply barrier cream (zinc oxide) or hydrocortisone. If persistent, switch to cotton pads or menstrual cups.",
+    "precautions": ["Change pads frequently", "Avoid scented pads", "Keep area dry", "Barrier creams", "If severe, see doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "iron_deficiency_anemia_menstrual",
+    "category": "Iron Deficiency Anemia due to Heavy Menstrual Bleeding",
+    "symptoms": ["fatigue, weakness, pale skin, dizziness, shortness of breath, palpitations, cold hands, brittle nails, pica (craving ice/dirt)"],
+    "guidance": "Treat with oral iron supplements (ferrous sulfate) and folic acid. Dietary: leafy greens, jaggery, meat, and vitamin C for absorption. If anemia is severe, IV iron or blood transfusion. Control menstrual bleeding to prevent recurrence.",
+    "precautions": ["Start iron immediately", "Take with vitamin C", "Avoid tea/coffee within 1 hour of iron", "Monitor Hb monthly", "If heavy periods persist, treat the cause"],
+    "urgency": "high"
+  },
+  {
+    "id": "ocp_thrombosis_risk",
+    "category": "Combined OCP and Risk of Venous Thromboembolism (VTE)",
+    "symptoms": ["not a disease – risk awareness", "OCPs increase VTE risk 3-5 fold", "higher with obesity, smoking, age >35, family history"],
+    "guidance": "Screening before prescribing OCPs: BP, BMI, smoking, and family history. If risk factors, use progestin-only methods. If on OCPs and develop leg pain, swelling, or chest pain – seek emergency.",
+    "precautions": ["Check for contraindications", "Do not smoke on OCPs", "If >35 and smoker, avoid", "If family history of DVT, avoid", "Know warning signs (leg swelling, chest pain)"],
+    "urgency": "medium"
+  },
+  {
+    "id": "ocp_migraine_with_aura",
+    "category": "OCP Use in Women with Migraine with Aura",
+    "symptoms": ["not a disease – contraindication", "women with migraine with aura are at increased stroke risk on combined OCPs", "also risk if >35 with any migraine"],
+    "guidance": "Combined OCPs are contraindicated in women with migraine with aura. Use progestin-only pills, IUDs, or implant. If already on OCP, consider switching. Stroke risk is real.",
+    "precautions": ["Contraindicated in migraine with aura", "Switch to progestin-only", "If aura develops on OCP, stop", "Neurologist consult", "Use non-hormonal methods"],
+    "urgency": "medium"
+  },
+  {
+    "id": "pelvic_ultrasound_scan",
+    "category": "Pelvic Ultrasound – Routine Gynecology Imaging",
+    "symptoms": ["not a disease – diagnostic tool", "used to evaluate ovaries, uterus, endometrium, and adnexa", "can be transabdominal or transvaginal"],
+    "guidance": "Common indications: pelvic pain, abnormal bleeding, fibroids, cysts, infertility. Transvaginal gives better resolution. Timing: best done in follicular phase for ovarian evaluation (days 5-10).",
+    "precautions": ["Timing matters", "Transvaginal gives better images", "No risk; non-invasive", "If pain during scan, may indicate pathology", "Follow-up as advised"],
+    "urgency": "low"
+  },
+  {
+    "id": "transvaginal_ultrasound",
+    "category": "Transvaginal Ultrasound (TVS)",
+    "symptoms": ["not a disease – internal scan", "better visualization of endometrium, ovaries, and myometrium", "used for early pregnancy, ectopic, bleeding, and IUD localization"],
+    "guidance": "TVS is safe, even in pregnancy. Empty bladder before scan. Comfortable but may be slightly uncomfortable. Provides high-resolution images. Essential for evaluating endometrial thickness.",
+    "precautions": ["Empty bladder", "Inform if allergic to latex", "Minimal discomfort", "If severe pain, stop", "Essential for accurate diagnosis"],
+    "urgency": "low"
+  },
+  {
+    "id": "ca125_test",
+    "category": "CA-125 Test – Ovarian Cancer Screening",
+    "symptoms": ["not a disease – blood test", "elevated in ovarian cancer, but also in endometriosis, pregnancy, or infection", "not a screening test for average-risk women"],
+    "guidance": "Used in high-risk women (BRCA carriers, strong family history) or to monitor ovarian cancer treatment. Not recommended for general screening due to low specificity. If elevated, do transvaginal ultrasound.",
+    "precautions": ["Use only for high-risk", "Not a general screening test", "If elevated, ultrasound", "False positives common", "Discuss with doctor"],
+    "urgency": "low"
+  },
+  {
+    "id": "endometrial_ablation",
+    "category": "Endometrial Ablation (Treatment for Heavy Periods)",
+    "symptoms": ["not a disease – procedure to destroy endometrial lining", "used for menorrhagia in women who have completed family", "reduces or stops bleeding"],
+    "guidance": "Outpatient procedure. Good success rate (80-90%). Failure may need hysterectomy. Not for women desiring pregnancy. Also not for women with endometriosis (pain not resolved).",
+    "precautions": ["Effective for heavy periods", "No future pregnancy", "May still need contraception (tubal if permanent)", "If fails, hysterectomy", "Good alternative to hysterectomy"],
+    "urgency": "medium"
+  },
+  {
+    "id": "myomectomy_procedure",
+    "category": "Myomectomy (Fibroid Removal) – Fertility Preserving",
+    "symptoms": ["not a disease – surgical removal of fibroids", "preserves uterus for fertility", "can be open or laparoscopic"],
+    "guidance": "Myomectomy is preferred for women desiring future pregnancy. It can be performed via laparoscopy, hysteroscopy (submucous), or open. Recovery 2-6 weeks. Risk of recurrence (up to 50%).",
+    "precautions": ["Preserves fertility", "Recurrence risk", "Post-op: avoid heavy lifting", "Monitor for adhesions", "Discuss with surgeon"],
+    "urgency": "medium"
+  },
+  {
+    "id": "hysterectomy_considerations",
+    "category": "Hysterectomy – Indications and Considerations",
+    "symptoms": ["not a disease – surgical removal of uterus", "indications: fibroids, adenomyosis, endometriosis, cancer, prolapse, heavy bleeding"],
+    "guidance": "Hysterectomy is a major surgery. Types: total (removes cervix) or subtotal. Routes: abdominal, laparoscopic, vaginal. Recovery 4-6 weeks. Preoperative counseling: permanent infertility, possible ovarian failure if ovaries removed, and pelvic floor implications.",
+    "precautions": ["Last resort after other treatments", "Discuss emotional impact", "Ovarian conservation if possible", "Hormone replacement if ovaries removed", "Recovery time"],
+    "urgency": "medium"
+  },
+  {
+    "id": "oophorectomy_salpingectomy",
+    "category": "Oophorectomy and Salpingectomy (Ovary/Tube Removal)",
+    "symptoms": ["not a disease – surgical removal of ovary/fallopian tube", "for ovarian cysts, cancer risk reduction, or ectopic pregnancy"],
+    "guidance": "Bilateral salpingo-oophorectomy (BSO) causes surgical menopause if premenopausal. Hormone replacement is needed. Used in BRCA carriers to reduce cancer risk. Laparoscopic approach is common.",
+    "precautions": ["If premenopausal, HRT needed", "Cancer risk reduction in BRCA", "Bone health monitoring", "Surgical menopause symptoms", "Psychological impact"],
+    "urgency": "medium"
+  },
+  {
+    "id": "tubal_ligation_contraception",
+    "category": "Tubal Ligation – Sterilization (Permanent Contraception)",
+    "symptoms": ["not a disease – surgical contraception", "cuts or blocks fallopian tubes", "permanent", "available free in government hospitals under family planning"],
+    "guidance": "Tubal ligation is 99% effective. It does not affect hormones or menstruation. It is irreversible (though reversal is possible but not guaranteed). Counseling is essential. Done laparoscopically or postpartum.",
+    "precautions": ["Permanent – ensure no future pregnancy desire", "Minimally invasive", "Free at government facilities", "Menstrual pattern unchanged", "Risk of ectopic pregnancy if failure"],
+    "urgency": "low"
+  },
+  {
+    "id": "reversible_contraception",
+    "category": "Reversible Contraception Options (OCP, Implant, Injectable, IUD)",
+    "symptoms": ["not a disease – guidance on reversible methods", "combined OCP, progestin-only pill, implant, injectable (DMPA), copper IUD, hormonal IUD"],
+    "guidance": "Choice depends on age, risk factors, and preferences. OCPs regulate periods. DMPA causes amenorrhea. IUDs have different bleeding patterns. All are highly effective. Free at government family planning clinics.",
+    "precautions": ["Choose based on lifestyle", "Know side effects", "IUD needs insertion", "DMPA causes weight gain", "Regular follow-up"],
+    "urgency": "low"
+  },
+  {
+    "id": "iud_insertion",
+    "category": "IUD Insertion (Copper or Hormonal) – Procedure",
+    "symptoms": ["not a disease – insertion procedure", "can cause cramping and spotting", "performed by trained provider", "best during menstruation"],
+    "guidance": "IUD insertion is done in the clinic. May have pain (cramping) and spotting. Advise NSAIDs before the procedure. Check threads after next period. Ultrasound for confirmation if needed.",
+    "precautions": ["NSAIDs for pain", "Check threads monthly", "If pain or fever, seek care", "Rule out pregnancy before", "Good long-term contraception"],
+    "urgency": "low"
+  },
+  {
+    "id": "iud_removal",
+    "category": "IUD Removal – Procedure",
+    "symptoms": ["not a disease – removal", "can cause mild cramping", "no special preparation"],
+    "guidance": "IUD removal is simple. Usually done at any time. Slight cramping. New IUD can be inserted immediately. If strings not visible, ultrasound guidance may be needed.",
+    "precautions": ["Mild cramping", "If strings not visible, ultrasound", "Can replace immediately", "Fertility returns immediately", "Safe"],
+    "urgency": "low"
+  },
+  {
+    "id": "depo_provera_side_effects",
+    "category": "Depo-Provera (DMPA) Injection – Side Effects on Menstruation",
+    "symptoms": ["irregular bleeding, spotting, or amenorrhea", "often after 6-12 months, many become amenorrheic", "weight gain", "mood changes"],
+    "guidance": "DMPA is highly effective. Menstrual changes are common; reassure that it is not harmful. If bleeding is excessive, rule out other causes. Calcium and Vitamin D are important (BMD effect).",
+    "precautions": ["Weight gain common", "Amenorrhea is normal", "Calcium/Vitamin D for bone", "If bleeding heavy, evaluate", "Change method if intolerable"],
+    "urgency": "low"
+  },
+  {
+    "id": "implant_side_effects",
+    "category": "Contraceptive Implant (Etonogestrel) – Side Effects",
+    "symptoms": ["irregular bleeding (most common)", "spotting, amenorrhea", "headache", "breast tenderness", "weight change", "acne"],
+    "guidance": "Irregular bleeding is the most common reason for removal. Reassure that bleeding is not harmful. If bleeding is unacceptable, consider add-on NSAIDs or OCPs. If persists, removal.",
+    "precautions": ["Irregular bleeding is normal", "If prolonged, OCP added", "Do not remove without discussion", "Acne can be managed", "Good for 3 years"],
+    "urgency": "low"
+  },
+  {
+    "id": "menstrual_cycle_tracking",
+    "category": "Menstrual Cycle Tracking – Apps and Diaries",
+    "symptoms": ["not a disease – health tool", "tracks period dates, flow, symptoms, ovulation", "helps in fertility, PMS, and irregular cycles"],
+    "guidance": "Use a diary or app (e.g., Flo, Clue, Ovia). Track: start date, end date, flow, pain, mood, and any symptoms. Useful for doctor visits and identifying menstrual disorders. Also helpful for avoiding pregnancy or conceiving.",
+    "precautions": ["Track at least 3 months", "Apps not foolproof for ovulation", "Use for symptoms correlation", "Share with doctor", "Do not rely solely for contraception"],
+    "urgency": "low"
+  },
+  {
+    "id": "basal_body_temperature",
+    "category": "Basal Body Temperature (BBT) Tracking for Ovulation",
+    "symptoms": ["not a disease – fertility awareness method", "temperature rises after ovulation (progesterone effect)", "detects ovulation retrospectively"],
+    "guidance": "Measure temperature daily at waking (before any activity). A sustained rise of 0.2-0.5°C indicates ovulation. Useful for fertility planning. It is not a predictor (confirms after ovulation).",
+    "precautions": ["Needs consistency", "Affected by illness, sleep", "Confirms ovulation after the fact", "Helps plan timing", "Combine with other methods"],
+    "urgency": "low"
+  },
+  {
+    "id": "ovulation_prediction",
+    "category": "Ovulation Prediction Kits (OPKs)",
+    "symptoms": ["not a disease – test for LH surge", "detects LH surge 24-48 hours before ovulation", "helps in timing intercourse for pregnancy"],
+    "guidance": "Test daily from day 10 of cycle (or as per cycle length). Positive LH surge is the best predictor. Use with BBT to confirm ovulation. Helpful in fertility treatment.",
+    "precautions": ["Follow test instructions", "Positive = ovulation in 24-48 hrs", "False positives possible", "Best used with BBT", "Available at pharmacies"],
+    "urgency": "low"
+  },
+  {
+    "id": "cervical_mucus_method",
+    "category": "Cervical Mucus (Billings) Method – Fertility Awareness",
+    "symptoms": ["not a disease – tracking cervical mucus changes", "changes from dry to wet, stretchy (egg-white) around ovulation"],
+    "guidance": "Observe mucus consistency daily. Egg-white (stretchy, slippery) indicates peak fertility. Dry = no fertility. Useful for natural family planning. Accurate when taught properly.",
+    "precautions": ["Teaching is essential", "Vaginal infections confuse", "Use with other signs for accuracy", "Good for avoidance or conception", "Do not douche (masks mucus)"],
+    "urgency": "low"
+  },
+  {
+    "id": "lactational_amenorrhea",
+    "category": "Lactational Amenorrhea (No Periods During Breastfeeding)",
+    "symptoms": ["amenorrhea during exclusive breastfeeding", "may last up to 6 months", "provided feeds are frequent, day and night"],
+    "guidance": "Lactational amenorrhea is a natural contraceptive method (LAM) if: exclusive breastfeeding, <6 months, and amenorrhea. It suppresses ovulation. When periods return, fertility returns.",
+    "precautions": ["Effective if breastfeeding is exclusive", "When periods return, use contraception", "If no period after 6 months, pregnancy test if sexually active", "Hormonal contraception may be used while breastfeeding", "Consult for family planning"],
+    "urgency": "low"
+  },
+  {
+    "id": "postpartum_menstruation",
+    "category": "Postpartum Menstruation – Return of Periods",
+    "symptoms": ["return of menses after childbirth", "may be irregular initially", "heavy periods common in postpartum", "varies depending on breastfeeding"],
+    "guidance": "Non-breastfeeding: return around 6-12 weeks. Breastfeeding: may be 6-12 months. First periods may be heavy or irregular. Ensure adequate iron. Use contraception if not planning pregnancy.",
+    "precautions": ["Can conceive before first period", "Use contraception", "Iron supplementation if heavy", "If prolonged or excessively heavy, see doctor", "Monitor for anemia"],
+    "urgency": "low"
+  },
+  {
+    "id": "perimenopausal_bleeding",
+    "category": "Perimenopausal Bleeding Changes",
+    "symptoms": ["irregular cycles (shorter or longer)", "heavy bleeding", "spotting between periods", "menstrual migraines, hot flashes, mood changes", "hormonal fluctuations"],
+    "guidance": "Perimenopause is the transition (usually age 40-55). Bleeding changes are normal but must be investigated if heavy or prolonged. Rule out endometrial hyperplasia. Hormonal therapy (progestins, OCPs) can help manage symptoms.",
+    "precautions": ["Any very heavy bleeding needs evaluation", "Track cycles", "Hormonal therapy can help", "If spotting between periods, check", "Do not assume all changes are menopause"],
+    "urgency": "medium"
+  }
+]

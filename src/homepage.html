@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+/>
+
+<title>AAYU UI Mockup</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f8fa;
+    color:#1f2937;
+}
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:250px;
+    background:#ffffff;
+    border-right:1px solid #e2e8f0;
+    padding:14px 16px 20px;
+    position:sticky;
+    top:0;
+    height:100vh;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px;
+    text-align:left;
+}
+
+.logo-icon{
+    width:50px;
+    height:50px;
+    border-radius:14px;
+    background:#0f766e;
+}
+
+.logo h2{
+    font-size:36px;
+    font-weight:800;
+    color:#0f766e;
+}
+
+.logo p{
+    font-size:13px;
+    color:#64748b;
+    margin-top:4px;
+}
+
+
+.logo img{
+    width: 90px;
+    object-fit:contain;
+    margin-bottom:0;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:12px;
+}
+
+.menu-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 16px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:all .25s ease;
+    font-weight:700;
+    color:#344267;
+    font-size:15px;
+    line-height:1;
+}
+
+.menu-item:hover{
+    background:#f8fbff;
+    transform:translateX(2px);
+}
+
+.menu-item.active{
+    background:linear-gradient(90deg,#157c79 0%,#1397a4 100%);
+    color:white;
+    box-shadow:0 8px 18px rgba(15,118,110,.25);
+}
+
+.menu-item i{
+    width:20px;
+    text-align:center;
+    font-size:16px;
+}
+
+.whatsapp{
+    margin-top:25px;
+    background:white;
+    border:1px solid #dbeafe;
+    border-radius:16px;
+    padding:16px;
+}
+
+.whatsapp img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    margin-bottom:1px;
+}
+
+.whatsapp-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+    width:30px;
+    height:30px;
+}
+
+.whatsapp-header img{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+}
+
+.whatsapp-header h4{
+    margin:0;
+    font-size:18px;
+    font-weight:700;
+    line-height: 1.2;
+}
+
+.offline{
+    margin-top:20px;
+    background:#ecfdf5;
+    color:#065f46;
+    padding:14px;
+    border-radius:12px;
+    font-size:14px;
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+}
+
+/* TOPBAR */
+
+.topbar{
+    height:82px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+}
+
+.search{
+    width:620px;
+    background:#ffffff;
+    border:1px solid #e7edf5;
+    border-radius:22px;
+    padding:0 18px;
+    color:#94a3b8;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 8px 20px rgba(15,23,42,.04);
+}
+
+.search span{
+    font-size:14px;
+    color:#9aa8bc;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-weight:600;
+    color:#475569;
+}
+
+.profile-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#475569;
+    font-size:14px;
+}
+
+.profile-item i{
+    font-size:15px;
+    color:#64748b;
+}
+
+/* HERO */
+
+.hero{
+    padding:0;
+}
+
+.hero-card{
+    display:grid;
+    grid-template-columns:1fr;
+    justify-content:space-between;
+    gap:30px;
+
+    box-shadow:0 15px 35px rgba(15,118,110,.08);
+    border:1px solid #e8f5f3;
+    background: url("Hero bg.png") right center / contain no-repeat;
+
+    border-radius:28px;
+    padding: 33px;
+}
+
+.hero-card{
+    align-items:center;
+}
+
+.subtitle{
+    color:#0f766e;
+    font-weight:600;
+}
+
+.hero-title{
+    font-size:56px;
+    line-height:1.05;
+    margin-top:12px;
+    font-weight:800;
+}
+
+.hero-desc{
+    margin-top:18px;
+    color:#64748b;
+    line-height:1.8;
+}
+
+.content-layout{
+    display:flex;
+    align-items:flex-start;
+    gap:24px;
+    margin:0;
+    padding:30px;
+}
+
+.main-content{
+    flex:1;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+}
+
+.side-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.side-card h3{
+    margin-bottom:16px;
+}
+
+.side-card ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.alert-item{
+    padding:14px;
+    border-radius:14px;
+    margin-top:12px;
+}
+
+.alert-item.high{
+    background:#fef2f2;
+}
+
+.alert-item.medium{
+    background:#fffbeb;
+}
+
+.alert-item span{
+    font-size:11px;
+    font-weight:700;
+    color:#dc2626;
+}
+
+.health-banner{
+    background:#0f766e url("stay_alert.jpeg") center/cover no-repeat;
+    color:white;
+    padding:24px;
+    border-radius:20px;
+    min-height:220px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+.health-banner button{
+    margin-top:16px;
+    background:white;
+    color:#0f766e;
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.right-panel{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    width:340px;
+    flex:0 0 340px;
+}
+
+.alerts-panel{
+    background:white;
+    border-radius:22px;
+    border:1px solid #eceff3;
+    box-shadow:0 8px 22px rgba(15,23,42,.05);
+    overflow:hidden;
+}
+
+.panel-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 18px 14px;
+}
+
+.panel-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:.02em;
+    color:#7f1d1d;
+    text-transform:uppercase;
+}
+
+.panel-title i{
+    color:#d32f2f;
+    font-size:18px;
+}
+
+.panel-link{
+    color:#0f766e;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.featured-alert{
+    margin:0 10px 10px;
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(180deg,#fff8f7 0%,#fff3f1 100%);
+    border:1px solid #fde3df;
+}
+
+.featured-alert h4{
+    font-size:18px;
+    line-height:1.45;
+    margin:0;
+    color:#991b1b;
+}
+
+.featured-alert p{
+    margin:14px 0 0;
+    color:#475569;
+    line-height:1.7;
+}
+
+.pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.04em;
+}
+
+.pill.high{
+    color:#b91c1c;
+    background:#fde7e4;
+}
+
+.pill.seasonal{
+    color:#a16207;
+    background:#fef3c7;
+}
+
+.pill.heat{
+    color:#15803d;
+    background:#dcfce7;
+}
+
+.featured-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.featured-action{
+    margin-top:16px;
+    background:white;
+    border:1px solid #f1c8c0;
+    color:#9a3412;
+    padding:10px 14px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.stack-card{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:16px 18px;
+    border-top:1px solid #eef2f7;
+}
+
+.stack-icon{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 38px;
+    font-size:18px;
+}
+
+.stack-icon.blue{
+    background:#e0f2fe;
+    color:#0369a1;
+}
+
+.stack-icon.yellow{
+    background:#fef3c7;
+    color:#ca8a04;
+}
+
+.stack-icon.teal{
+    background:#dcfce7;
+    color:#0f766e;
+}
+
+.stack-copy{
+    flex:1;
+    min-width:0;
+}
+
+.stack-row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.stack-row h5{
+    margin:0;
+    font-size:17px;
+    color:#1f2937;
+}
+
+.stack-copy p{
+    margin:4px 0 0;
+    color:#475569;
+    line-height:1.5;
+}
+
+.notify-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:18px;
+    border-top:1px solid #eef2f7;
+}
+
+.notify-copy{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.notify-copy i{
+    color:#0f766e;
+    font-size:20px;
+    margin-top:2px;
+}
+
+.notify-copy h5{
+    margin:0;
+    font-size:18px;
+    color:#1f2937;
+}
+
+.notify-copy p{
+    margin:4px 0 0;
+    color:#475569;
+    line-height:1.5;
+}
+
+.toggle{
+    width:54px;
+    height:32px;
+    border-radius:999px;
+    background:#0f766e;
+    position:relative;
+    flex:0 0 54px;
+}
+
+.toggle::after{
+    content:"";
+    position:absolute;
+    top:4px;
+    left:26px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.why-panel{
+    background:white;
+    border-radius:22px;
+    border:1px solid #eceff3;
+    box-shadow:0 8px 22px rgba(15,23,42,.05);
+    padding:20px;
+}
+
+.why-panel h3{
+    margin:0 0 16px;
+    color:#0f172a;
+}
+
+.why-panel ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.why-panel li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    color:#1f2937;
+    line-height:1.6;
+    margin-top:14px;
+}
+
+.why-panel li::before{
+    content:"✓";
+    color:#0f766e;
+    font-weight:800;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:30px;
+    width: auto;
+}
+
+.tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#ffffff;
+    color:#0f766e;
+
+    border:1px solid #cceee8;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    font-size:14px;
+    font-weight:600;
+
+    box-shadow:
+        0 2px 8px rgba(15,118,110,.06);
+
+    transition:all .25s ease;
+}
+
+.tag:hover{
+    transform:translateY(-2px);
+
+    background:#0f766e;
+    color:white;
+
+    box-shadow:
+        0 8px 20px rgba(15,118,110,.15);
+}
+
+.hero-right{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-right img{
+    height: 365px;
+    object-fit:contain;
+}
+
+@media (max-width:991.98px){
+    .hero-card{
+        grid-template-columns:1fr;
+    }
+}
+
+.alerts{
+    width:300px;
+}
+
+.high-alert{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.medium-alert{
+    background:#fef3c7;
+    color:#d97706;
+}
+
+.low-alert{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.alert-card{
+    background:white;
+    padding:16px;
+    border-radius:16px;
+    margin-top:12px;
+    border:1px solid #e2e8f0;
+}
+
+/* CHAT BOX */
+
+.chat-box{
+    margin-top:25px;
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(15,118,110,.08);
+    border:1px solid #eef2f7;
+}
+
+.chat-title{
+    font-size:22px;
+    font-weight:700;
+}
+
+.chat-sub{
+    color:#64748b;
+    margin-top:5px;
+}
+
+
+/**/
+
+.chat-input{
+    display:flex;
+    align-items:center;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+    padding:8px;
+    margin-top:18px;
+}
+
+.chat-input input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:18px 20px;
+    font-size:16px;
+}
+
+.send-btn{
+    width:54px;
+    height:54px;
+    border:none;
+    border-radius:16px;
+    background:#0f766e;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.send-btn:hover{
+    background:#115e59;
+}
+
+.quick-actions{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:28px;
+}
+
+.action-btn{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:#475569;
+    font-size:14px;
+    font-weight:500;
+}
+
+.action-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    background:white;
+    border:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    transition:.2s;
+}
+
+.action-btn:hover .action-icon{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(15,118,110,.12);
+}
+
+/* FEATURES */
+
+.section{
+    padding:0 0 30px;
+}
+
+.section-title{
+    margin:25px 0;
+    font-size:26px;
+    font-weight:700;
+}
+
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+}
+
+.section-layout{
+    display:flex;
+    align-items:stretch;
+    gap:14px;
+}
+
+.section-layout .grid{
+    flex:1;
+    align-content:flex-start;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    flex:0 0 calc(50% - 11px);
+    min-height:180px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    transition:.25s;
+    border:1px solid transparent;
+}
+
+.card-icon{
+    width:92px;
+    height:72px;
+    object-fit:contain;
+}
+
+.map-card{
+    min-width:320px;
+    flex:1;
+    background:white;
+    border-radius:20px;
+    padding:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    border:1px solid #e5e7eb;
+    display:flex;
+}
+
+.map-card img{
+    width:100%;
+    height:100%;
+    min-height:382px;
+    object-fit:cover;
+    border-radius:16px;
+    display:block;
+    flex:1;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#d1fae5;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-top:10px;
+    color:#0f766e;
+}
+
+.card p{
+    margin-top:10px;
+    color:#64748b;
+    line-height:1.6;
+}
+
+@media (max-width:1199.98px){
+    .content-layout{
+        flex-direction:column;
+    }
+
+    .right-panel{
+        width:100%;
+        flex:none;
+    }
+
+    .section-layout{
+        flex-direction:column;
+    }
+
+    .card{
+        flex:0 0 calc(50% - 11px);
+    }
+
+    .map-card{
+        width:100%;
+        flex:none;
+        min-width:0;
+    }
+
+    .map-card img{
+        min-height:260px;
+    }
+}
+
+@media (max-width:767.98px){
+    .card{
+        flex:0 0 100%;
+    }
+}
+
+.footer-banner{
+    margin:30px;
+    background:#0f766e;
+    color:white;
+    border-radius:22px;
+    padding:28px;
+    text-align:center;
+}
+
+
+.why-aayu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin-top:35px;
+}
+
+.why-aayu div{
+    background:white;
+    padding:18px;
+    border-radius:16px;
+}
+
+.partners{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin:30px;
+}
+
+.partners div{
+    background:white;
+    border:1px solid #e2e8f0;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    font-weight:700;
+}
+
+/* AI SCREENING */
+.screening-section{background:white;border-radius:24px;padding:36px 40px;margin:0 0 30px;border:1px solid #e8f5f3;box-shadow:0 8px 28px rgba(15,118,110,.06);}
+.screening-section h2{font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px;}
+.screening-section h2 span{color:#0f766e;}
+.screening-top{display:flex;gap:32px;align-items:flex-start;}
+.screening-left{flex:0 0 280px;}
+.screening-left ul{list-style:none;padding:0;margin:16px 0 0;}
+.screening-left ul li{display:flex;align-items:flex-start;gap:10px;color:#475569;line-height:1.7;margin-bottom:8px;font-size:14px;}
+.screening-left ul li i{color:#0f766e;margin-top:4px;font-size:13px;}
+.screening-flow{display:flex;align-items:flex-start;gap:0;flex:1;}
+.screening-step{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;}
+.screening-step img{width:100px;height:100px;object-fit:contain;border-radius:18px;background:#f0fdfa;padding:8px;margin-bottom:10px;}
+.screening-step span{font-size:13px;font-weight:600;color:#1f2937;max-width:130px;line-height:1.4;}
+.screening-arrow{display:flex;align-items:center;padding-top:30px;color:#0f766e;font-size:22px;}
+.screening-disclaimer{display:flex;align-items:center;gap:10px;background:#f0fdfa;border:1px solid #ccfbf1;border-radius:12px;padding:12px 18px;margin-top:24px;font-size:13px;color:#0f766e;}
+.screening-disclaimer i{font-size:16px;}
+/* DISEASE */
+.disease-section{margin:0 0 30px;}
+.disease-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.disease-header h2{font-size:24px;font-weight:800;color:#0f172a;}
+.disease-header a{color:#0f766e;font-weight:700;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.disease-carousel-wrap{position:relative;}
+.disease-carousel{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding:4px 0;scrollbar-width:none;}
+.disease-carousel::-webkit-scrollbar{display:none;}
+.disease-card{flex:0 0 180px;background:white;border-radius:20px;padding:20px 16px;text-align:center;border:1px solid #e5e7eb;box-shadow:0 4px 16px rgba(0,0,0,.04);transition:.25s;cursor:pointer;}
+.disease-card:hover{transform:translateY(-4px);border-color:#d1fae5;box-shadow:0 12px 28px rgba(15,118,110,.1);}
+.disease-card img{width:90px;height:90px;object-fit:contain;border-radius:16px;margin-bottom:10px;}
+.disease-card h4{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:4px;}
+.disease-card p{font-size:12px;color:#64748b;line-height:1.5;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid #e5e7eb;background:white;box-shadow:0 4px 12px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;font-size:16px;color:#475569;transition:.2s;}
+.carousel-btn:hover{background:#f0fdfa;border-color:#0f766e;color:#0f766e;}
+.carousel-btn.prev{left:-16px;}
+.carousel-btn.next{right:-16px;}
+/* HEALTHCARE ROW */
+.healthcare-row{display:flex;gap:24px;margin:0 0 30px;}
+.healthcare-card{flex:1;background:white;border-radius:24px;padding:28px;border:1px solid #e5e7eb;box-shadow:0 6px 22px rgba(0,0,0,.04);}
+.healthcare-card h2{font-size:22px;font-weight:800;color:#0f172a;margin-bottom:20px;}
+.healthcare-body{display:flex;gap:24px;}
+.healthcare-map-placeholder{flex:0 0 220px;height:220px;border-radius:16px;overflow:hidden;background:#e8f4f8;position:relative;}
+.healthcare-map-placeholder svg{width:100%;height:100%;}
+.healthcare-list{flex:1;}
+.healthcare-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
+.hc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 36px;}
+.hc-icon.red{background:#fef2f2;color:#dc2626;}
+.hc-icon.blue{background:#e0f2fe;color:#0369a1;}
+.hc-icon.green{background:#dcfce7;color:#16a34a;}
+.hc-icon.rose{background:#ffe4e6;color:#be123c;}
+.healthcare-item h5{margin:0;font-size:14px;font-weight:700;color:#1f2937;}
+.healthcare-item p{margin:2px 0 0;font-size:13px;color:#64748b;}
+.whatsapp-connect{flex:0 0 340px;background:white;border-radius:24px;padding:28px;border:1px solid #e5e7eb;box-shadow:0 6px 22px rgba(0,0,0,.04);}
+.wa-header{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.wa-header h3{font-size:20px;font-weight:800;color:#0f172a;}
+.wa-brand{display:flex;align-items:center;gap:12px;background:#dcfce7;border-radius:14px;padding:14px 16px;margin:14px 0;}
+.wa-brand-icon{width:42px;height:42px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:white;font-size:22px;}
+.wa-brand div h4{margin:0;font-size:15px;font-weight:700;color:#1f2937;}
+.wa-brand div p{margin:2px 0 0;font-size:12px;color:#64748b;}
+.wa-features{list-style:none;padding:0;margin:0;}
+.wa-features li{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;color:#475569;}
+.wa-features li i{color:#0f766e;font-size:13px;}
+.wa-chat-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 20px;border-radius:12px;border:1px solid #e5e7eb;background:white;font-weight:700;font-size:14px;color:#1f2937;cursor:pointer;transition:.2s;}
+.wa-chat-btn:hover{background:#f0fdfa;border-color:#0f766e;}
+/* TRUSTED */
+.trusted-section{margin:0 0 30px;}
+.trusted-section h2{font-size:22px;font-weight:800;color:#0f172a;margin-bottom:20px;}
+.trusted-logos{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px;}
+.trusted-logo{flex:1 1 160px;background:white;border:1px solid #e5e7eb;border-radius:16px;padding:18px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,.03);transition:.2s;}
+.trusted-logo:hover{border-color:#d1fae5;box-shadow:0 8px 20px rgba(15,118,110,.08);}
+.trusted-logo-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;}
+.trusted-logo-icon.who{background:#e0f2fe;color:#0369a1;}
+.trusted-logo-icon.icmr{background:#fef3c7;color:#ca8a04;}
+.trusted-logo-icon.mohfw{background:#dcfce7;color:#16a34a;}
+.trusted-logo-icon.icd{background:#f3e8ff;color:#7c3aed;}
+.trusted-logo-icon.medline{background:#e0f2fe;color:#0ea5e9;}
+.trusted-logo h5{margin:0;font-size:13px;font-weight:700;color:#1f2937;line-height:1.3;}
+.trusted-logo p{margin:1px 0 0;font-size:11px;color:#94a3b8;}
+.feature-badges{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px;}
+.feature-badge{flex:1 1 160px;display:flex;align-items:center;gap:10px;background:white;border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.03);transition:.2s;}
+.feature-badge:hover{border-color:#d1fae5;transform:translateY(-2px);}
+.fb-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;background:#f0fdfa;color:#0f766e;flex:0 0 34px;}
+.feature-badge h5{margin:0;font-size:13px;font-weight:700;color:#1f2937;}
+.feature-badge p{margin:1px 0 0;font-size:11px;color:#94a3b8;}
+/* FOOTER */
+.footer-new{margin:0 0 30px;background:#0f172a;color:white;border-radius:24px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;}
+.footer-left{display:flex;align-items:center;gap:16px;}
+.footer-logo{width:56px;height:56px;border-radius:16px;background:#0f766e;display:flex;align-items:center;justify-content:center;}
+.footer-logo img{width:40px;height:40px;object-fit:contain;}
+.footer-brand h3{margin:0;font-size:20px;font-weight:800;}
+.footer-brand p{margin:2px 0 0;font-size:12px;color:#94a3b8;}
+.footer-center{text-align:center;flex:1;}
+.footer-center h3{font-size:20px;font-weight:800;margin-bottom:4px;}
+.footer-center p{font-size:13px;color:#94a3b8;margin-bottom:12px;}
+.footer-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.footer-pill{padding:8px 16px;border-radius:999px;border:1px solid #334155;font-size:12px;font-weight:600;color:#cbd5e1;background:transparent;transition:.2s;}
+.footer-pill:hover{border-color:#0f766e;color:white;}
+.footer-shield{width:60px;height:60px;border-radius:50%;background:rgba(15,118,110,.2);border:2px solid #0f766e;display:flex;align-items:center;justify-content:center;font-size:26px;color:#0f766e;}
+@media (max-width:1199.98px){.healthcare-row{flex-direction:column;}.whatsapp-connect{flex:none;}.footer-new{flex-direction:column;gap:20px;text-align:center;}.footer-left{justify-content:center;}.screening-top{flex-direction:column;}}
+@media (max-width:767.98px){.screening-flow{flex-wrap:wrap;gap:12px;}.screening-arrow{display:none;}.trusted-logos{flex-direction:column;}.feature-badges{flex-direction:column;}}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper d-flex">
+
+    <aside class="sidebar flex-shrink-0">
+
+        <div class="logo">
+            <div class="logo-image">
+                <img src="Aayu Logo.png" alt="AAYU Logo">
+            </div>
+        
+            <div class="logo-text">
+                <p>AI Powered Public Health Assistant</p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="homepage.html" style="text-decoration:none;" class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="screening.html" style="text-decoration:none;" class="menu-item">
+                <i class="fa-regular fa-clipboard"></i>
+                <span>Screening</span>
+            </a>
+            <div class="menu-item">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Nutrition</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Schemes</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Nearby Care</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Records</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-solid fa-person-drowning"></i>
+                <span>Disaster Aid</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-regular fa-bell"></i>
+                <span>Alerts & Updates</span>
+            </div>
+            <div class="menu-item">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Admin Dashboard</span>
+            </div>
+        </div>
+
+        <div class="whatsapp">
+            <div class="whatsapp-header">
+
+                <img src="icons/Whatsapp.png" alt="WhatsApp icon">
+
+                <h4>Chat on WhatsApp</h4>
+
+            </div>
+
+            <p style="margin-top:10px;color:#64748b">
+                Ask questions, upload reports and receive guidance.
+            </p>
+        </div>
+
+        <div class="offline">
+            🟢 Offline Mode Enabled
+        </div>
+
+    </aside>
+
+    <main class="main flex-grow-1">
+
+        <div class="topbar d-flex align-items-center justify-content-between">
+
+            <div class="search">
+                <span>Search for diseases, symptoms, articles, schemes...</span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="profile">
+                <div class="profile-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>English</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="profile-item">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="profile-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Account</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-layout">
+
+            <!-- LEFT SIDE -->
+
+            <div class="main-content">
+
+                <div class="hero">
+                    <div class="hero-card">
+
+                        <div class="hero-left">
+
+                            <div class="subtitle">
+                                Your AI Health Assistant
+                            </div>
+
+                            <div class="hero-title">
+                                Information.<br>
+                                Guidance.<br>
+                                Care.
+                            </div>
+
+                            <div class="hero-desc">
+                                Ask anything about symptoms, disease prevention,
+                                nutrition, government schemes or nearby healthcare
+                                facilities in your own language.
+                            </div>
+
+                            <div class="tags">
+                                <div class="tag">Multilingual</div>
+                                <div class="tag">Offline First</div>
+                                <div class="tag">Trusted Sources</div>
+                                <div class="tag">Privacy Focused</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="chat-box">
+
+                        <div class="chat-title">
+                            Talk to AAYU
+                        </div>
+            
+                        <p class="chat-sub">
+                            Voice, text or image-based healthcare assistance.
+                        </p>
+            
+                        <div class="chat-input">
+                
+                            <input placeholder="Ask about symptoms, nutrition, schemes..." />
+                
+                            <button class="send-btn">
+                                ➤
+                            </button>
+                
+                        </div>
+            
+                        <div class="quick-actions">
+                
+                            <button class="action-btn">
+                                <div class="action-icon">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                                <span>Speak</span>
+                            </button>
+                
+                            <button class="action-btn">
+                                <div class="action-icon">
+                                    <i class="fa-solid fa-camera text-xl"></i> 
+                                </div>
+                                <span>Scan / Upload</span>
+                            </button>
+                
+                            <button class="action-btn">
+                                <div class="action-icon">
+                                    <i class="fa-solid fa-headphones text-xl"></i>
+                                </div>
+                                <span>Listen</span>
+                            </button>
+                
+                        </div>
+            
+                    </div>
+
+                </div>
+
+                <div class="section">
+                
+                    <div class="section-title">
+                        Start Here — What Would You Like To Do?
+                    </div>
+
+                    <div class="section-layout">
+
+                        <div class="grid">
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Docs.png" alt="My Health Records icon">
+                                <h3>My Health Records</h3>
+                                <p>
+                                    Vaccination records, prescriptions and reports.
+                                </p>
+                            </div>
+
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Screening.png" alt="Screening & Guidance icon">
+                                <h3>Screening & Guidance</h3>
+                                <p>
+                                    Symptom assessment and healthcare guidance.
+                                </p>
+                            </div>
+
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Nearby.png" alt="Nearby Healthcare icon">
+                                <h3>Nearby Healthcare</h3>
+                                <p>
+                                    Hospitals, clinics and health camps.
+                                </p>
+                            </div>
+
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Nutrition.png" alt="Nutrition icon">
+                                <h3>Nutrition</h3>
+                                <p>
+                                    Personalized food and diet guidance.
+                                </p>
+                            </div>
+
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Family_health.png" alt="Family Health icon">
+                                <h3>Family Health</h3>
+                                <p>
+                                    Manage health information for family members.
+                                </p>
+                            </div>
+
+                            <div class="card col-12 col-md-6 col-xl-4">
+                                <img class="card-icon" src="icons\Schemes.png" alt="Government Schemes icon">
+                                <h3>Government Schemes</h3>
+                                <p>
+                                    Discover benefits and eligibility information.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div style="display:flex;flex-direction:column;gap:0;min-width:320px;flex:1;align-self:stretch;">
+                            <div class="map-card" style="flex:1;border-radius:20px 20px 0 0;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15489.039243794621!2d85.83363572524317!3d19.816389349047885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20%26%20clinics%20in%20puri!5e0!3m2!1sen!2sin!4v1781807694205!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div style="background:white;border-radius:0 0 20px 20px;border:1px solid #e5e7eb;border-top:none;padding:16px 18px;box-shadow:0 5px 20px rgba(0,0,0,.04);">
+                                <div class="healthcare-item">
+                                    <div class="hc-icon red"><i class="fa-solid fa-hospital"></i></div>
+                                    <div><h5>Hospitals</h5><p>Find multi-speciality hospitals near you</p></div>
+                                </div>
+                                <div class="healthcare-item">
+                                    <div class="hc-icon blue"><i class="fa-solid fa-house-medical"></i></div>
+                                    <div><h5>PHC / CHC</h5><p>Locate Primary &amp; Community Health Centers</p></div>
+                                </div>
+                                <div class="healthcare-item">
+                                    <div class="hc-icon green"><i class="fa-solid fa-campground"></i></div>
+                                    <div><h5>Health Camps</h5><p>Find upcoming health camps in your area</p></div>
+                                </div>
+                                <div class="healthcare-item" style="margin-bottom:0;">
+                                    <div class="hc-icon rose"><i class="fa-solid fa-droplet"></i></div>
+                                    <div><h5>Blood Banks</h5><p>Search blood banks and donate blood</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="right-panel">
+
+                <div class="alerts-panel">
+
+                    <div class="panel-header">
+                        <div class="panel-title">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Health Alerts</span>
+                        </div>
+                        <a class="panel-link" href="#">View all</a>
+                    </div>
+
+                    <div class="featured-alert">
+                        <div class="featured-top">
+                            <h4>Dengue cases rising in some districts</h4>
+                            <span class="pill high">HIGH ALERT</span>
+                        </div>
+
+                        <p>
+                            Stay safe and follow preventive measures. Use mosquito
+                            repellents and keep surroundings clean.
+                        </p>
+
+                        <button class="featured-action">
+                            See Advisory →
+                        </button>
+                    </div>
+
+                    <div class="stack-card">
+                        <div class="stack-icon blue">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="stack-copy">
+                            <div class="stack-row">
+                                <h5>Seasonal Flu</h5>
+                                <span class="pill seasonal">SEASONAL</span>
+                            </div>
+                            <p>Cases tracking in some areas.</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-card">
+                        <div class="stack-icon yellow">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div class="stack-copy">
+                            <div class="stack-row">
+                                <h5>Heat Wave Advisory</h5>
+                                <span class="pill heat">HEAT</span>
+                            </div>
+                            <p>Stay hydrated and avoid direct sunlight.</p>
+                        </div>
+                    </div>
+
+                    <div class="notify-card">
+                        <div class="notify-copy">
+                            <i class="fa-solid fa-bell"></i>
+                            <div>
+                                <h5>Enable notifications</h5>
+                                <p>Get timely alerts and updates</p>
+                            </div>
+                        </div>
+                        <div class="toggle"></div>
+                    </div>
+                </div>
+
+                <div class="health-banner">
+
+                    <h3>Stay Ahead,<br>Stay Healthy!</h3>
+
+                    <p>
+                        Real-time updates on seasonal alerts and important
+                        health news.
+                    </p>
+
+                    <button>
+                        View All Updates →
+                    </button>
+
+                </div>
+
+                <div class="why-panel">
+
+                    <h3>Why AAYU?</h3>
+
+                    <ul>
+                        <li>Verified medical knowledge from trusted sources</li>
+                        <li>Voice based interaction for everyone</li>
+                        <li>Works offline, your health always with you</li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+        <!-- AI SCREENING & GUIDANCE -->
+        <div class="screening-section" style="margin:0 30px 30px;">
+            <h2>AI Screening & Guidance – <span>Simple, Safe & Helpful</span></h2>
+            <div class="screening-top">
+                <div class="screening-left">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Answer easy questions about your symptoms</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Get possible health risk insights</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Receive guidance and preventive tips</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Consult a healthcare professional for confirmation</li>
+                    </ul>
+                </div>
+                <div class="screening-flow">
+                    <div class="screening-step">
+                        <img src="icons/step_tell.png" alt="Tell AAYU">
+                        <span>Tell AAYU how you are feeling</span>
+                    </div>
+                    <div class="screening-arrow">→</div>
+                    <div class="screening-step">
+                        <img src="icons/step_questions.png" alt="Answer questions">
+                        <span>Answer a few simple questions</span>
+                    </div>
+                    <div class="screening-arrow">→</div>
+                    <div class="screening-step">
+                        <img src="icons/step_guidance.png" alt="Get guidance">
+                        <span>Get AI-driven guidance</span>
+                    </div>
+                    <div class="screening-arrow">→</div>
+                    <div class="screening-step">
+                        <img src="icons/step_consult.png" alt="Consult professional">
+                        <span>Consult a healthcare professional</span>
+                    </div>
+                </div>
+            </div>
+            <div class="screening-disclaimer">
+                <i class="fa-solid fa-shield-halved"></i>
+                AAYU provides information and guidance only. It does not diagnose medical conditions or replace professional medical advice.
+            </div>
+        </div>
+
+        <!-- DISEASE AWARENESS CENTRE -->
+        <div class="disease-section" style="margin:0 30px 30px;">
+            <div class="disease-header">
+                <h2>Disease Awareness Centre</h2>
+                <a href="#">View all diseases <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="disease-carousel-wrap">
+                <button class="carousel-btn prev" onclick="document.getElementById('diseaseCarousel').scrollBy(-200,0)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="disease-carousel" id="diseaseCarousel">
+                    <div class="disease-card">
+                        <img src="icons/dengue.png" alt="Dengue">
+                        <h4>Dengue</h4>
+                        <p>Symptoms, prevention and care tips</p>
+                    </div>
+                    <div class="disease-card">
+                        <img src="icons/malaria.png" alt="Malaria">
+                        <h4>Malaria</h4>
+                        <p>Symptoms, prevention and care tips</p>
+                    </div>
+                    <div class="disease-card">
+                        <img src="icons/tuberculosis.png" alt="Tuberculosis">
+                        <h4>Tuberculosis</h4>
+                        <p>Symptoms, prevention and care tips</p>
+                    </div>
+                    <div class="disease-card">
+                        <img src="icons/flu.png" alt="Seasonal Flu">
+                        <h4>Seasonal Flu</h4>
+                        <p>Symptoms, prevention and care tips</p>
+                    </div>
+                    <div class="disease-card">
+                        <img src="icons/maternal.png" alt="Maternal Health">
+                        <h4>Maternal Health</h4>
+                        <p>Care during pregnancy and beyond</p>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="document.getElementById('diseaseCarousel').scrollBy(200,0)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- CONNECT ON WHATSAPP -->
+        <div class="healthcare-row" style="margin:0 30px 30px;">
+            <div class="whatsapp-connect">
+                <div class="wa-header">
+                    <h3>Connect on WhatsApp</h3>
+                </div>
+                <div class="wa-brand">
+                    <div class="wa-brand-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <h4>AAYU is now on WhatsApp!</h4>
+                        <p>Your health assistant in your pocket.</p>
+                    </div>
+                </div>
+                <ul class="wa-features">
+                    <li><i class="fa-solid fa-check"></i> Ask questions</li>
+                    <li><i class="fa-solid fa-check"></i> Send voice notes</li>
+                    <li><i class="fa-solid fa-check"></i> Upload documents & images (OCR)</li>
+                    <li><i class="fa-solid fa-check"></i> Get information on schemes & centers</li>
+                </ul>
+                <button class="wa-chat-btn">Chat on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+            </div>
+        </div>
+
+        <!-- POWERED BY TRUSTED KNOWLEDGE -->
+        <div class="trusted-section" style="margin:0 30px 30px;">
+            <h2>Powered by Trusted Knowledge</h2>
+            <div class="trusted-logos">
+                <div class="trusted-logo">
+                    <div class="trusted-logo-icon who"><i class="fa-solid fa-globe"></i></div>
+                    <div><h5>World Health Organization</h5><p>WHO</p></div>
+                </div>
+                <div class="trusted-logo">
+                    <div class="trusted-logo-icon icmr"><i class="fa-solid fa-flask"></i></div>
+                    <div><h5>Indian Council of Medical Research</h5><p>ICMR</p></div>
+                </div>
+                <div class="trusted-logo">
+                    <div class="trusted-logo-icon mohfw"><i class="fa-solid fa-building-columns"></i></div>
+                    <div><h5>Ministry of Health & Family Welfare</h5><p>Government of India</p></div>
+                </div>
+                <div class="trusted-logo">
+                    <div class="trusted-logo-icon icd"><i class="fa-solid fa-book-medical"></i></div>
+                    <div><h5>ICD-11</h5><p>International Classification of Diseases</p></div>
+                </div>
+                <div class="trusted-logo">
+                    <div class="trusted-logo-icon medline"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div><h5>MedlinePlus</h5><p>Trusted Health Information</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURE BADGES -->
+        <div class="feature-badges" style="margin:0 30px 30px;">
+            <div class="feature-badge">
+                <div class="fb-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div><h5>Verified Medical Knowledge (FAQ)</h5><p>Answers from trusted medical sources</p></div>
+            </div>
+            <div class="feature-badge">
+                <div class="fb-icon"><i class="fa-solid fa-language"></i></div>
+                <div><h5>Multilingual Support</h5><p>Gujarati, Hindi, English, Odia & more</p></div>
+            </div>
+            <div class="feature-badge">
+                <div class="fb-icon"><i class="fa-solid fa-microphone"></i></div>
+                <div><h5>Voice First</h5><p>Speak naturally, get replies easily</p></div>
+            </div>
+            <div class="feature-badge">
+                <div class="fb-icon"><i class="fa-solid fa-wifi"></i></div>
+                <div><h5>Offline First</h5><p>Works even without internet</p></div>
+            </div>
+            <div class="feature-badge">
+                <div class="fb-icon"><i class="fa-solid fa-lock"></i></div>
+                <div><h5>Privacy & Security</h5><p>Your data is protected</p></div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-new" style="margin:0 30px 30px;">
+            <div class="footer-left">
+                <img src="Aayu Logo.png" alt="AAYU" style="width:48px;height:48px;object-fit:contain;border-radius:8px;">
+                <div class="footer-brand">
+                    <h3>AAYU</h3>
+                    <p>AI-Powered Public<br>Health Assistant</p>
+                </div>
+            </div>
+            <div class="footer-center">
+                <h3>Your Health. Your Data. Your Control.</h3>
+                <p>Secure. Private. Built for everyone.</p>
+                <div class="footer-pills">
+                    <span class="footer-pill">Secure & Private</span>
+                    <span class="footer-pill">You Stay in Control</span>
+                    <span class="footer-pill">Guidance, Not Diagnosis</span>
+                    <span class="footer-pill">Consult Professionals</span>
+                </div>
+            </div>
+            <div class="footer-shield">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

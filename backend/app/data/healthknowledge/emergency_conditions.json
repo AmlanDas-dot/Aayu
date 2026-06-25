@@ -1,0 +1,802 @@
+[
+  {
+    "id": "em_001",
+    "category": "Cardiac Arrest – Out‑of‑Hospital",
+    "symptoms": ["sudden collapse", "unresponsiveness", "no normal breathing", "no pulse", "gasping respirations (agonal breathing)", "cyanosis (blue skin)"],
+    "first_aid": "Call 108 immediately. Start hands‑only CPR at 100–120 compressions per minute. If an AED is available, attach and follow voice prompts. Continue CPR until emergency services arrive. Do not stop unless the person wakes or you are physically exhausted.",
+    "precautions": ["Do not check for a pulse for more than 10 seconds", "If unsure, start CPR – it is better than doing nothing", "Use an AED if available – it will only shock if needed", "Ensure scene safety before approaching", "If the person vomits, roll them to the side, clear the airway, and resume CPR"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_002",
+    "category": "Acute Myocardial Infarction (Heart Attack)",
+    "symptoms": ["crushing chest pain or pressure, lasting >20 minutes", "pain radiating to left arm, jaw, neck, or back", "shortness of breath", "cold sweats, nausea, vomiting", "dizziness or lightheadedness", "feeling of impending doom", "atypical symptoms in women: fatigue, jaw pain, epigastric pain"],
+    "first_aid": "Call 108 immediately. Have the person sit down and rest. If not allergic, chew one adult aspirin (325 mg). Loosen tight clothing. Keep them calm. Do not give food or water. If they become unresponsive, begin CPR.",
+    "precautions": ["Do not let the person walk or exert themselves", "Do not wait to see if symptoms improve – call 108 immediately", "If they have prescribed nitroglycerin, assist with one dose", "Note the time of symptom onset – critical for treatment decisions", "Know the nearest hospital with a cath lab"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_003",
+    "category": "Acute Heart Failure / Pulmonary Oedema",
+    "symptoms": ["severe shortness of breath (dyspnoea) at rest or on minimal exertion", "orthopnoea (cannot lie flat)", "paroxysmal nocturnal dyspnoea (waking up gasping)", "pink, frothy sputum", "profuse sweating", "anxiety, restlessness", "crackles on lung auscultation", "rapid heart rate"],
+    "first_aid": "Call 108 immediately. Sit the person upright (high Fowler's position) with legs dangling to reduce venous return. Apply oxygen if available. Do not give fluids. If they have prescribed diuretics, assist with the dose as directed. Monitor breathing and pulse.",
+    "precautions": ["Do not lie the person flat – worsens breathing", "Do not give any oral medications without medical advice", "If breathing stops, begin CPR", "Reassure the person – anxiety worsens the condition", "Be prepared for intubation if respiratory failure occurs"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_004",
+    "category": "Hypertensive Emergency (Malignant Hypertension)",
+    "symptoms": ["very high blood pressure (>180/120 mmHg)", "severe headache", "blurred vision or visual loss", "chest pain", "shortness of breath", "nausea, vomiting", "seizures", "altered consciousness"],
+    "first_aid": "Call 108 immediately. Keep the person calm and at rest. Do not give any oral antihypertensives at home (can cause rapid drop). Monitor level of consciousness. If seizures occur, protect from injury. Do not give aspirin (may worsen if stroke).",
+    "precautions": ["Do not lower BP rapidly at home – this can cause stroke", "Do not give clonidine or nifedipine without medical supervision", "If visual disturbances, protect the person from injury", "Monitor for signs of stroke or heart failure", "Prepare for IV antihypertensives in hospital"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_005",
+    "category": "Aortic Dissection (Acute)",
+    "symptoms": ["sudden, severe, tearing chest or back pain", "pain that migrates or radiates", "syncope (fainting)", "pulse deficit (difference in BP between arms)", "neurological deficits (stroke, paraplegia)", "shortness of breath", "hoarseness", "diaphoresis"],
+    "first_aid": "Call 108 immediately. Keep the person supine with legs elevated (if not short of breath). Do not give aspirin – it may worsen bleeding. Monitor pulse and blood pressure. Do not give food or drink. Prepare for emergency surgical intervention.",
+    "precautions": ["Do not delay – aortic dissection is rapidly fatal", "If chest pain is sudden and severe, do not assume it is a heart attack", "Check BP in both arms – a difference >20 mmHg is a warning sign", "Do not give thrombolytics", "Ensure rapid transport to a centre with cardiac surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_006",
+    "category": "Pulmonary Embolism (Massive)",
+    "symptoms": ["sudden severe shortness of breath", "sharp chest pain (pleuritic)", "tachycardia (rapid heart rate)", "cough with haemoptysis (coughing blood)", "dizziness, syncope", "low oxygen saturation", "signs of DVT (leg swelling, pain) in some cases", "hypotension (if massive)"],
+    "first_aid": "Call 108 immediately. Keep the person sitting upright to ease breathing. Administer oxygen if available. Do not give aspirin – may not help. If they have a known DVT, do not massage the leg. Monitor for cardiac arrest.",
+    "precautions": ["Do not delay – PE can be fatal within minutes", "If the person is on anticoagulants, inform the emergency team", "Do not give food or water", "Keep the person calm to reduce cardiac demand", "If they become unresponsive, start CPR"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_007",
+    "category": "Cardiac Tamponade (Acute)",
+    "symptoms": ["muffled heart sounds", "distended neck veins", "hypotension (low BP)", "paradoxical pulse (BP drops during inspiration)", "chest pain, shortness of breath", "anxiety, restlessness", "signs of shock"],
+    "first_aid": "Call 108 immediately. Keep the person lying flat or in a semi‑reclined position. Administer oxygen if available. Do not give any fluid at home. This is a surgical emergency – pericardiocentesis is needed. Rapid transport is critical.",
+    "precautions": ["Do not delay – tamponade can cause sudden cardiac arrest", "Do not give diuretics (worsens hypotension)", "If the person is on anticoagulants, inform the team", "Monitor for loss of consciousness", "Prepare for emergency procedure"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_008",
+    "category": "Supraventricular Tachycardia (SVT) – Unstable",
+    "symptoms": ["sudden onset of rapid, regular heart rate (150–250 bpm)", "palpitations", "dizziness, lightheadedness", "chest pain", "shortness of breath", "hypotension (if unstable)", "syncope or near‑syncope"],
+    "first_aid": "If the person is unstable (chest pain, hypotension, syncope): call 108 immediately. If stable, try vagal manoeuvres: ask them to bear down (Valsalva) or apply a cold pack to the face. If they become unconscious, start CPR. Do not give adenosine without medical supervision.",
+    "precautions": ["Do not perform vagal manoeuvres in an unstable patient", "If the person has a pacemaker or known heart disease, avoid vagal manoeuvres", "Do not give any oral medications", "Monitor pulse and BP", "Prepare for cardioversion if needed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_009",
+    "category": "Ventricular Tachycardia / Fibrillation (Cardiac Arrest)",
+    "symptoms": ["sudden collapse", "unconsciousness", "no pulse", "no breathing", "seizure‑like activity (in some)", "agonal gasps"],
+    "first_aid": "Call 108 immediately. Start CPR. If an AED is available, apply and shock as advised. Do not stop CPR except for defibrillation. If the person is conscious with VT (rare), do not delay – call 108. This is a shockable rhythm.",
+    "precautions": ["Do not delay defibrillation – every minute decreases survival", "Ensure good CPR quality (depth 5–6 cm, rate 100–120/min)", "If no AED, continue CPR until ambulance arrives", "Do not give food or water", "Prepare for advanced cardiac life support"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_010",
+    "category": "Acute Severe Bradycardia (Heart Block)",
+    "symptoms": ["slow heart rate (<40 bpm)", "dizziness, syncope", "chest pain", "shortness of breath", "hypotension", "confusion", "fatigue"],
+    "first_aid": "Call 108 immediately. Keep the person lying flat. If they have atropine or a pacemaker, assist as per emergency plan. Do not give beta‑blockers or calcium channel blockers. If they become unconscious, start CPR.",
+    "precautions": ["Do not give any medications that slow the heart further", "If they have a pacemaker, check for battery or lead issues", "Do not delay – may need emergency pacing", "Monitor level of consciousness", "Prepare for emergency pacing or atropine"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_011",
+    "category": "Status Epilepticus (Prolonged Seizure)",
+    "symptoms": ["seizure lasting more than 5 minutes", "seizures occurring without recovery of consciousness", "generalized tonic‑clonic movements", "focal seizures with impaired awareness", "cyanosis", "injuries from convulsion"],
+    "first_aid": "Call 108 immediately. Place the person on the floor on their side. Protect the head. Do not put anything in the mouth. Time the seizure. If convulsions continue, do not attempt to stop them at home. If the person stops breathing, start CPR. Benzodiazepines (diazepam, lorazepam) are given in hospital.",
+    "precautions": ["Do not restrain the person", "Do not put fingers or objects in the mouth", "If the seizure lasts >5 minutes, this is a medical emergency", "If they have a known epilepsy rescue medication (midazolam), administer as directed", "Monitor for post‑ictal confusion and injury"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_012",
+    "category": "Acute Stroke (Ischemic or Haemorrhagic)",
+    "symptoms": ["sudden numbness or weakness of face, arm, or leg (one side)", "sudden confusion, trouble speaking or understanding", "sudden trouble seeing in one or both eyes", "sudden severe headache with no known cause", "sudden trouble walking, dizziness, loss of balance", "FAST: Face, Arms, Speech, Time"],
+    "first_aid": "Call 108 immediately – note the exact time of symptom onset. Keep the person lying flat (or side if vomiting). Do NOT give aspirin, food, or water. If unconscious, place in recovery position. Thrombolysis (tPA) must be given within 4.5 hours of symptom onset.",
+    "precautions": ["Do not give aspirin – it may worsen haemorrhagic stroke", "Do not let the person 'sleep it off'", "Do not give food or drink – risk of aspiration", "If the person is on anticoagulants, inform the team", "Time is brain – do not delay"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_013",
+    "category": "Subarachnoid Haemorrhage (Brain Bleed)",
+    "symptoms": ["sudden, severe, 'thunderclap' headache", "neck stiffness", "photophobia (sensitivity to light)", "nausea, vomiting", "loss of consciousness or confusion", "seizures", "focal neurological deficits"],
+    "first_aid": "Call 108 immediately. Keep the person still and quiet. Do not give aspirin or NSAIDs. Do not give food or water. If vomiting, place on side. This is a neurovascular emergency – CT scan and lumbar puncture are needed. Rapid transport to a centre with neurosurgery.",
+    "precautions": ["Do not delay – re‑bleeding can be fatal", "Do not give any painkillers without medical advice", "If severe headache, do not assume migraine", "Monitor for deterioration in consciousness", "Prepare for surgical or endovascular intervention"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_014",
+    "category": "Traumatic Brain Injury (Severe)",
+    "symptoms": ["loss of consciousness (any duration)", "persistent headache", "vomiting", "unequal pupils", "seizures", "clear fluid from nose or ears (CSF leak)", "confusion, agitation, or drowsiness", "numbness or weakness"],
+    "first_aid": "Call 108 immediately. Stabilise the neck (do not move unless necessary). If unconscious, place in recovery position if breathing. Do not remove a helmet if present. If there is bleeding, apply pressure (avoid if skull fracture is suspected). Monitor breathing and pulse.",
+    "precautions": ["Do not move the person unless absolutely necessary", "Do not give any food or water", "If CSF leak (clear fluid from nose/ears), do not plug – cover with sterile gauze", "Monitor for signs of increased ICP (pupil changes, vomiting)", "Do not allow the person to fall asleep without medical evaluation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_015",
+    "category": "Spinal Cord Injury (Acute)",
+    "symptoms": ["neck or back pain after trauma", "numbness, tingling, or weakness in limbs", "inability to move arms or legs (paralysis)", "loss of bladder/bowel control", "priapism (in men)", "respiratory difficulty (if high cervical injury)"],
+    "first_aid": "Call 108 immediately. Do NOT move the person – stabilise the head and neck manually. Do not remove a helmet. If airway is compromised, use jaw thrust (not head tilt). If breathing stops, begin CPR with jaw thrust. Maintain in‑line stabilisation.",
+    "precautions": ["Do not move or twist the neck – can cause permanent paralysis", "If the person is lying face down, do not roll over unless airway is compromised", "Do not give food or water", "If unconscious, open airway with jaw thrust", "Transport with spine board"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_016",
+    "category": "Acute Meningitis / Encephalitis",
+    "symptoms": ["high fever", "severe headache", "neck stiffness (nuchal rigidity)", "photophobia", "nausea, vomiting", "confusion, drowsiness", "seizures", "rash (non‑blanching in meningococcal)", "irritability (in children)"],
+    "first_aid": "Call 108 immediately. Do not delay – bacterial meningitis can be fatal within hours. Keep the person comfortable, reduce light. If vomiting, place on side. Do not give aspirin or NSAIDs – may mask fever. If the rash is non‑blanching, this is a medical emergency. Hospitalisation for IV antibiotics.",
+    "precautions": ["Do not delay – every hour increases risk of death and disability", "If neck stiffness with fever, call 108", "Do not give food or water if confused", "If meningococcal rash, do not wait – go to emergency", "Prepare for lumbar puncture and empiric antibiotics"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_017",
+    "category": "Severe Asthma (Status Asthmaticus)",
+    "symptoms": ["severe breathlessness, unable to speak in full sentences", "use of accessory muscles (neck, chest)", "silent chest (no wheezing – ominous sign)", "cyanosis (blue lips/fingertips)", "confusion, exhaustion", "pulsus paradoxus", "rescue inhaler not providing relief"],
+    "first_aid": "Call 108 immediately. Sit the person upright. Give 4–8 puffs of salbutamol inhaler through a spacer every 20 minutes. If no inhaler, do not delay. Do not give sedatives. If they stop breathing, begin CPR. Hospitalisation for nebulised bronchodilators, steroids, and oxygen is essential.",
+    "precautions": ["Do not wait – silent chest is an emergency", "Do not give sedatives or antihistamines – they depress respiration", "Do not use oral steroids at home without medical guidance", "If available, give oxygen (if trained)", "If they become unconscious, start CPR"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_018",
+    "category": "Tension Pneumothorax (Acute)",
+    "symptoms": ["sudden severe shortness of breath", "sharp chest pain (usually unilateral)", "tachycardia", "hypotension", "decreased breath sounds on one side", "distended neck veins", "tracheal deviation (late sign)", "cyanosis"],
+    "first_aid": "Call 108 immediately. This is a life‑threatening emergency – needle decompression may be needed (by trained personnel). Do not delay transport. If the person becomes unconscious, begin CPR. Keep them sitting upright if possible. Do not give oxygen if not available.",
+    "precautions": ["Do not delay – tension pneumothorax can cause cardiac arrest", "Do not give positive pressure ventilation unless intubated", "If a chest drain is not available, transport urgently", "Do not give food or water", "Prepare for emergency chest drain insertion"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_019",
+    "category": "Flail Chest (Traumatic)",
+    "symptoms": ["paradoxical chest wall movement (segment moves inward during inspiration)", "severe chest pain", "shortness of breath", "tachycardia", "cyanosis", "history of blunt chest trauma"],
+    "first_aid": "Call 108 immediately. Apply a firm pad or large bandage to stabilise the flail segment (or support with a pillow). Do not tape restrictively. Monitor breathing. If respiratory distress worsens, prepare for intubation. Oxygen if available.",
+    "precautions": ["Do not wrap the chest too tightly – can restrict breathing", "Do not give food or water", "Monitor for signs of pneumothorax or haemothorax", "If unconscious, place in recovery position", "Rapid transport to a trauma centre"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_020",
+    "category": "Massive Haemoptysis (Coughing Blood)",
+    "symptoms": ["coughing up large amounts of bright red blood (>100 ml)", "shortness of breath", "dizziness, lightheadedness", "tachycardia", "hypotension", "clots in sputum", "signs of underlying lung disease (TB, bronchiectasis, cancer)"],
+    "first_aid": "Call 108 immediately. Have the person sit upright and lean forward to cough out blood. Do not lie them flat (risk of aspiration). Do not give anything by mouth. If they become unconscious, place on side. Massive haemoptysis can lead to asphyxiation.",
+    "precautions": ["Do not give cough suppressants – they may cause blood to clot and obstruct airways", "Do not give aspirin or anticoagulants", "If the person is on anticoagulants, inform the team", "Do not delay – urgent bronchoscopy or surgery may be needed", "Monitor for airway obstruction"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_021",
+    "category": "Acute Respiratory Distress Syndrome (ARDS)",
+    "symptoms": ["severe shortness of breath (dyspnoea)", "rapid, shallow breathing", "low oxygen saturation (hypoxaemia)", "cyanosis", "confusion, restlessness", "crackles on lung examination", "often precipitated by sepsis, trauma, or pneumonia"],
+    "first_aid": "Call 108 immediately. This is a critical condition requiring ICU care. Administer oxygen if available. Keep the person sitting upright. Do not give any fluids at home. If they become unconscious, start CPR. Mechanical ventilation is required.",
+    "precautions": ["Do not delay – ARDS has high mortality", "Do not give any medications without medical advice", "If the person has a known underlying condition (sepsis), inform the team", "Do not give food or water", "Prepare for intubation and mechanical ventilation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_022",
+    "category": "Acute Epiglottitis (Airway Obstruction)",
+    "symptoms": ["sudden onset of high fever", "severe sore throat, difficulty swallowing (dysphagia)", "drooling (inability to swallow saliva)", "stridor (high‑pitched respiratory sound)", "tripod position (leaning forward, mouth open)", "respiratory distress", "rapid onset (hours)"],
+    "first_aid": "Call 108 immediately. Keep the person calm – do not lie them flat. Do not try to examine the throat with a spatula – can trigger total airway obstruction. Do not give anything by mouth. If breathing stops, prepare for emergency cricothyroidotomy. This is a paediatric and adult emergency.",
+    "precautions": ["Do not attempt to examine the throat with a tongue depressor", "Do not give food or water", "If the person is in tripod position, do not force them to lie down", "Do not delay – airway can close completely", "Prepare for intubation or tracheostomy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_023",
+    "category": "Croup (Acute Laryngotracheobronchitis) – Severe",
+    "symptoms": ["barking cough", "stridor (inspiratory, worse at night)", "hoarseness", "fever", "respiratory distress (chest retractions, tachypnoea)", "cyanosis in severe cases", "usually in children 6 months – 3 years"],
+    "first_aid": "Call 108 if the child has severe stridor, retractions, or cyanosis. Keep the child calm – do not upset them. Sit them upright. If the child is in distress, do not try to examine the throat. Cool mist from a humidifier or steam may help (but do not delay if severe). Hospitalisation for nebulised adrenaline and steroids.",
+    "precautions": ["Do not give cough syrup – can worsen", "Do not give sedatives – depress breathing", "Do not force the child to lie down", "If stridor is present at rest, it is severe – call 108", "Prepare for emergency airway management"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_024",
+    "category": "Foreign Body Aspiration (Airway Obstruction)",
+    "symptoms": ["sudden onset of choking", "coughing, wheezing, or inability to speak", "stridor", "cyanosis", "respiratory distress", "the child may have a history of eating small objects or nuts"],
+    "first_aid": "Call 108 immediately. If the person is conscious but cannot cough effectively, perform back blows and chest thrusts (infants) or Heimlich (adults and children over 1 year). If unconscious, start CPR. Do not try to remove blindly with fingers. Urgent bronchoscopy is needed.",
+    "precautions": ["Do not perform blind finger sweeps – can push object deeper", "Do not give food or water", "If the object is partially blocking (can speak, cough), encourage coughing", "If complete obstruction, act immediately", "Transport urgently – bronchoscopy is required"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_025",
+    "category": "Diabetic Ketoacidosis (DKA) – Severe",
+    "symptoms": ["nausea, vomiting, severe abdominal pain", "fruity‑smelling breath (acetone)", "deep, rapid breathing (Kussmaul breathing)", "extreme thirst, frequent urination", "confusion, drowsiness, or coma", "high blood sugar (usually >250 mg/dL)", "positive urine ketones"],
+    "first_aid": "Call 108 immediately. Do not give insulin at home without medical supervision – this is dangerous. If the person is conscious, give sips of water (not juice). Do not give food. If unconscious, place on side. Hospitalisation for IV fluids, insulin, and electrolyte correction is essential.",
+    "precautions": ["Do not give insulin at home – risk of hypoglycaemia or cerebral oedema", "Do not give food or sugary drinks", "If you have a glucose meter, check blood sugar", "If vomiting, do not give fluids orally – risk of aspiration", "Prepare for ICU admission"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_026",
+    "category": "Hyperglycaemic Hyperosmolar State (HHS)",
+    "symptoms": ["extreme thirst, polyuria", "weakness, confusion, drowsiness", "very high blood sugar (>600 mg/dL)", "severe dehydration (dry mouth, sunken eyes)", "no or mild ketosis", "neurological symptoms (seizures, coma)", "often in Type 2 diabetes with precipitating illness"],
+    "first_aid": "Call 108 immediately. This is a medical emergency. Do not give insulin at home. Give sips of water if conscious. Do not give food. If unconscious, place on side. Hospitalisation for IV fluids and insulin is needed.",
+    "precautions": ["Do not give insulin at home – risk of hypoglycaemia", "Do not give sugary drinks", "If the person is on diuretics, inform the team", "Monitor for signs of dehydration", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_027",
+    "category": "Severe Hypoglycaemia (Unconscious)",
+    "symptoms": ["unconsciousness or inability to swallow", "cold, clammy skin", "sweating", "tremors", "confusion before losing consciousness", "seizures", "known diabetes and on insulin/oral hypoglycaemics"],
+    "first_aid": "Call 108 immediately. Do NOT give anything by mouth. If you have glucagon injection, administer as directed. If not, apply honey or glucose gel to the gums (not forced). If the person stops breathing, start CPR. Hospitalisation for IV glucose is needed.",
+    "precautions": ["Do not put anything in the mouth of an unconscious person", "If the person has a diabetes kit, use the glucagon if available", "Do not give insulin – would worsen hypoglycaemia", "If they regain consciousness, give fast sugar (juice, glucose) immediately", "Monitor blood sugar after recovery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_028",
+    "category": "Thyroid Storm (Acute Hyperthyroidism)",
+    "symptoms": ["high fever (>38.5°C)", "tachycardia (heart rate >140 bpm)", "agitation, confusion, or psychosis", "nausea, vomiting, diarrhoea", "jaundice", "profuse sweating", "arrhythmias (atrial fibrillation)", "precipitated by infection, trauma, or stopping antithyroid drugs"],
+    "first_aid": "Call 108 immediately. Keep the person calm and cool (reduce fever with cold packs). Do not give any medications without medical supervision. If they have antithyroid drugs, do not stop. Hospitalisation for beta‑blockers, antithyroid drugs, and supportive care is essential.",
+    "precautions": ["Do not give aspirin (may displace thyroid hormones from proteins)", "Do not give any herbal supplements", "If fever, use paracetamol and cooling", "Do not delay – thyroid storm is life‑threatening", "Inform the team if the person has Graves' disease"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_029",
+    "category": "Myxedema Coma (Severe Hypothyroidism)",
+    "symptoms": ["profound lethargy, confusion, or coma", "hypothermia (low body temperature)", "bradycardia (slow heart rate)", "hypotension", "hyponatraemia", "periorbital oedema", "coarse, dry skin", "non‑pitting oedema", "precipitated by cold exposure, infection, or stopping thyroxine"],
+    "first_aid": "Call 108 immediately. Keep the person warm (cover with blankets, but do not use direct heat). Do not give any food or drink. Do not give thyroxine at home. Hospitalisation for IV thyroid hormone and supportive care is essential.",
+    "precautions": ["Do not use heating pads directly – can cause burns", "Do not give sedatives – can worsen respiratory depression", "If the person is on thyroxine, inform the team", "Monitor for respiratory failure", "Prepare for ICU admission"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_030",
+    "category": "Adrenal Crisis (Addisonian Crisis)",
+    "symptoms": ["severe fatigue, weakness", "nausea, vomiting, abdominal pain", "hypotension, shock", "fever", "confusion, coma", "hyperpigmentation of skin (in chronic Addison's)", "precipitated by infection, surgery, or stress in those on steroids"],
+    "first_aid": "Call 108 immediately. If the person has a known adrenal insufficiency and a steroid emergency kit, administer hydrocortisone IM/IV as directed. If not, do not delay. Do not give food or water if vomiting. Hospitalisation for IV steroids, fluids, and glucose is essential.",
+    "precautions": ["Do not stop steroids suddenly – can precipitate crisis", "If the person is on steroids, they may need stress doses", "Do not give fluids if vomiting – risk of aspiration", "If they have a MedicAlert bracelet, check it", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_031",
+    "category": "Hypercalcaemic Crisis (Severe Hypercalcaemia)",
+    "symptoms": ["nausea, vomiting, constipation", "polyuria, polydipsia (excessive thirst and urination)", "confusion, lethargy, coma", "muscle weakness", "arrhythmias", "bone pain", "history of malignancy, hyperparathyroidism, or excessive Vitamin D"],
+    "first_aid": "Call 108 immediately. Keep the person well‑hydrated (give oral fluids if conscious and not vomiting). Do not give calcium supplements. If they are on diuretics, stop thiazides. Hospitalisation for IV fluids, bisphosphonates, and calcitonin is needed.",
+    "precautions": ["Do not give calcium or Vitamin D supplements", "If vomiting, do not give oral fluids", "Monitor for cardiac arrhythmias", "If on lithium or thiazides, inform the team", "Prepare for emergency treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_032",
+    "category": "Acute Hyponatraemia (Severe Low Sodium)",
+    "symptoms": ["nausea, vomiting", "headache, confusion", "seizures", "coma", "muscle cramps, weakness", "increased risk in marathon runners, psychogenic polydipsia, or SIADH"],
+    "first_aid": "Call 108 immediately. Do not give large amounts of plain water. If conscious and not vomiting, give salty snacks or ORS. If the person has seizures, protect from injury. Hospitalisation for controlled correction of sodium with hypertonic saline is essential.",
+    "precautions": ["Do not give large volumes of plain water", "Do not correct sodium too rapidly (risk of central pontine myelinolysis)", "If the person is on diuretics, inform the team", "Monitor for signs of cerebral oedema", "If coma, prepare for ICU"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_033",
+    "category": "Acute Hyperkalaemia (Life‑Threatening High Potassium)",
+    "symptoms": ["muscle weakness, paralysis", "palpitations, arrhythmias", "nausea, vomiting", "ECG changes (peaked T waves, widened QRS)", "often asymptomatic until severe", "risk factors: renal failure, ACE inhibitors, potassium supplements"],
+    "first_aid": "Call 108 immediately. If the person is on potassium supplements, stop them. Do not give any oral medications at home. If the person has cardiac arrest, start CPR. Hospitalisation for emergency treatment: calcium gluconate (cardioprotection), insulin+glucose, sodium bicarbonate, and dialysis.",
+    "precautions": ["Do not give potassium supplements", "Do not use salt substitutes (KCl)", "If ECG changes or weakness, this is life‑threatening", "If on ACE inhibitors or ARBs, inform the team", "Prepare for emergency dialysis"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_034",
+    "category": "Acute Hypokalaemia (Severe Low Potassium)",
+    "symptoms": ["severe muscle weakness, paralysis", "arrhythmias, palpitations", "constipation", "cramps", "respiratory muscle weakness", "ECG: flattened T waves, U waves"],
+    "first_aid": "Call 108 immediately. If the person is conscious and not vomiting, give potassium‑rich foods (banana, coconut water) – but this will not correct severe hypokalaemia. Do not give potassium supplements without medical supervision. Hospitalisation for IV or oral potassium is needed.",
+    "precautions": ["Do not give potassium supplements without ECG monitoring", "If the person is on diuretics, stop them temporarily", "Monitor for arrhythmias", "If respiratory weakness, prepare for ventilation", "Do not delay – cardiac arrest risk"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_035",
+    "category": "Acute Pancreatitis (Severe)",
+    "symptoms": ["sudden severe epigastric pain (radiating to back)", "nausea, vomiting", "fever", "tachycardia", "abdominal tenderness, guarding", "signs of shock (hypotension, confusion)"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Do not give any painkillers without medical advice (may mask symptoms). If vomiting, place on side. Hospitalisation for IV fluids, pain management, and fasting is essential. Monitor for complications.",
+    "precautions": ["Do not give food or water – may worsen", "If the person is on alcohol, inform the team", "Do not give aspirin or NSAIDs without medical advice", "If severe pain, do not delay", "Prepare for ICU if organ failure"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_036",
+    "category": "Acute Cholecystitis (Severe)",
+    "symptoms": ["severe right upper quadrant pain (biliary colic) lasting >6 hours", "fever, chills", "nausea, vomiting", "positive Murphy's sign (pain on deep inspiration)", "tachycardia", "jaundice (if obstruction)"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Do not give painkillers before medical evaluation. If vomiting, place on side. Hospitalisation for IV antibiotics and possible emergency cholecystectomy.",
+    "precautions": ["Do not give food or water – may need surgery", "If pain is severe, do not delay", "Do not give aspirin or NSAIDs without medical advice", "If jaundice, inform the team", "Prepare for surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_037",
+    "category": "Acute Appendicitis (Perforation Risk)",
+    "symptoms": ["pain starting in the periumbilical area, migrating to the right lower quadrant (McBurney's point)", "nausea, vomiting", "fever", "rebound tenderness", "guarding (muscle tightness)", "loss of appetite"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Do not give painkillers – may mask symptoms. If vomiting, place on side. Hospitalisation for surgical evaluation. Do not delay – perforation leads to peritonitis.",
+    "precautions": ["Do not give food or water – may need surgery", "Do not give painkillers before surgical evaluation", "If pain is severe, do not delay", "Do not apply heat to the abdomen – can cause perforation", "Prepare for appendectomy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_038",
+    "category": "Bowel Obstruction (Acute)",
+    "symptoms": ["colicky abdominal pain (waxing and waning)", "vomiting (bilious or faeculent)", "abdominal distension", "constipation and obstipation (no flatus or stool)", "tender, tympanic abdomen", "signs of dehydration"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Do not give laxatives – can cause perforation. If vomiting, place on side. Hospitalisation for NG tube decompression, IV fluids, and possible surgery. Do not delay.",
+    "precautions": ["Do not give food or water", "Do not give laxatives or enemas", "If vomiting, place on side", "Do not use heat on abdomen", "Monitor for signs of peritonitis (rigid abdomen)"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_039",
+    "category": "Gastrointestinal Bleeding – Massive",
+    "symptoms": ["haematemesis (vomiting blood – coffee‑ground or fresh)", "melena (black, tarry stools)", "haematochezia (bright red blood per rectum)", "signs of shock (tachycardia, hypotension, dizziness)", "pallor, weakness", "collapse"],
+    "first_aid": "Call 108 immediately. Keep the person lying flat with legs elevated. Do not give food or water. Do not give aspirin – may worsen bleeding. If vomiting, turn head to side. Hospitalisation for urgent endoscopy, blood transfusion, and IV fluids is essential.",
+    "precautions": ["Do not give food or water", "Do not give any antiplatelet or anticoagulant drugs", "If the person is on warfarin, inform the team", "Monitor for loss of consciousness", "Prepare for blood transfusion"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_040",
+    "category": "Oesophageal Variceal Bleeding (Cirrhosis)",
+    "symptoms": ["sudden massive haematemesis (vomiting large amounts of blood)", "melena", "signs of shock (hypotension, tachycardia)", "jaundice (in cirrhosis)", "ascites", "altered consciousness (hepatic encephalopathy)"],
+    "first_aid": "Call 108 immediately. Lay the person flat. Do not give food or water. If vomiting, side position. Do not give aspirin. Hospitalisation for urgent endoscopy with band ligation, IV fluids, and blood transfusion is essential.",
+    "precautions": ["Do not give food or water", "If the person has cirrhosis, this is a known risk", "Do not give any medications without medical advice", "Monitor for airway protection – risk of aspiration", "Prepare for emergency endoscopy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_041",
+    "category": "Acute Renal Failure (Oliguric/Anuric)",
+    "symptoms": ["sudden decrease in urine output (<400 ml/day or <0.5 ml/kg/hr)", "fluid overload (oedema, pulmonary congestion)", "uraemic symptoms (nausea, confusion, pruritus)", "hyperkalaemia", "metabolic acidosis", "hypertension"],
+    "first_aid": "Call 108 immediately. Restrict fluid intake. Do not give any over‑the‑counter medications (especially NSAIDs). If the person has a known cause (sepsis, dehydration, nephrotoxins), inform the team. Hospitalisation for dialysis and supportive care.",
+    "precautions": ["Do not give NSAIDs – worsen renal function", "Do not give potassium‑rich foods or supplements", "If the person is on diuretics, stop (unless prescribed for AKI)", "Monitor for fluid overload (breathlessness)", "Prepare for dialysis"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_042",
+    "category": "Rhabdomyolysis (Acute Muscle Breakdown)",
+    "symptoms": ["severe muscle pain (especially calves, thighs, lower back)", "muscle weakness", "dark red or cola‑coloured urine (myoglobinuria)", "reduced urine output", "fever, malaise", "signs of compartment syndrome", "caused by crush injury, prolonged immobilisation, statin use, or drugs"],
+    "first_aid": "Call 108 immediately. Do not give any food or water (may need IV fluids). If the person has a crush injury, do not remove the crushed object without medical supervision. Hospitalisation for aggressive IV hydration, urine alkalinisation, and monitoring of renal function is needed.",
+    "precautions": ["Do not give NSAIDs – worsen kidney injury", "If on statins, stop them", "Do not give potassium supplements (may cause hyperkalaemia)", "If the urine is dark, this is an emergency", "Prepare for dialysis if severe"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_043",
+    "category": "Eclampsia (Seizures in Pregnancy/Preeclampsia)",
+    "symptoms": ["generalised tonic‑clonic seizures in a pregnant or postpartum woman", "high blood pressure", "proteinuria", "headache", "visual disturbances", "hyperreflexia", "confusion after seizure"],
+    "first_aid": "Call 108 immediately. Protect from injury, place on side. Do not put anything in the mouth. Do not give any oral medications. Hospitalisation for IV magnesium sulfate, antihypertensives, and immediate delivery if indicated. Do not delay.",
+    "precautions": ["Do not give oral medications – may aspirate", "Do not restrain – can cause injury", "If seizures do not stop, this is a medical emergency", "Prepare for immediate delivery", "Magnesium sulfate is the drug of choice – available in all government hospitals"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_044",
+    "category": "Postpartum Haemorrhage (Massive Bleeding)",
+    "symptoms": ["heavy vaginal bleeding after delivery (soaking 1 pad per hour or more)", "hypotension (low BP)", "tachycardia (rapid pulse)", "dizziness, syncope", "pale, cold, clammy skin", "uterus soft and boggy"],
+    "first_aid": "Call 108 immediately. If the woman is still in the delivery room, the medical team will manage. If at home, lie her flat, elevate legs, and apply fundal massage (to contract the uterus). Do not give anything by mouth. Hospitalisation for IV fluids, oxytocin, and blood transfusion is essential.",
+    "precautions": ["Do not delay – PPH is a leading cause of maternal death", "If the woman is at home, call 108", "Do not give food or water", "If you are trained, do uterine massage", "Prepare for blood transfusion and possible surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_045",
+    "category": "Ectopic Pregnancy – Ruptured",
+    "symptoms": ["sudden severe lower abdominal pain (one‑sided, sharp, stabbing)", "vaginal bleeding (may be light or heavy)", "shoulder tip pain (referred pain from blood tracking to the diaphragm)", "syncope (fainting)", "dizziness, weakness", "positive pregnancy test", "signs of internal bleeding (shock)"],
+    "first_aid": "Call 108 immediately. Lay the woman flat and keep her still. Do not give food or water. Do not give painkillers. If she becomes unconscious, place on side. Hospitalisation for emergency surgery. This is life‑threatening.",
+    "precautions": ["Do not delay – ruptured ectopic is fatal if untreated", "Do not give food or water – may need surgery", "If the woman is pregnant and has sudden pain, call 108", "Do not try to treat at home", "Prepare for emergency laparotomy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_046",
+    "category": "Ovarian Torsion (Acute)",
+    "symptoms": ["sudden severe one‑sided lower abdominal pain", "nausea, vomiting", "pain may be intermittent initially", "tender adnexal mass on examination", "fever", "usually in women with ovarian cysts or PCOS"],
+    "first_aid": "Call 108 immediately. Do not give food or water (may need surgery). Do not give painkillers – may mask symptoms. If vomiting, side position. Hospitalisation for emergency laparoscopic detorsion.",
+    "precautions": ["Do not delay – ovary can die within 4‑6 hours", "Do not give painkillers before surgical evaluation", "If the woman has a known cyst, be alert", "Do not apply heat", "Prepare for surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_047",
+    "category": "Uterine Rupture (in Labour)",
+    "symptoms": ["sudden severe abdominal pain (tearing sensation)", "cessation of uterine contractions", "vaginal bleeding", "fetal heart rate abnormalities (bradycardia)", "signs of shock (hypotension, tachycardia)", "easy palpation of fetal parts"],
+    "first_aid": "Call 108 immediately. This is a life‑threatening obstetric emergency. Lay the woman flat. Do not give food or water. Prepare for emergency C‑section and possible hysterectomy. Do not delay.",
+    "precautions": ["Do not delay – uterine rupture is fatal for mother and baby", "If the woman has a previous C‑section scar, be alert", "Do not give food or water", "Prepare for blood transfusion", "Emergency surgical team needed"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_048",
+    "category": "Placental Abruption (Acute)",
+    "symptoms": ["sudden severe abdominal pain", "vaginal bleeding (may be concealed)", "uterine tenderness and rigidity (board‑like abdomen)", "fetal distress (bradycardia)", "signs of shock", "preterm labour or contractions"],
+    "first_aid": "Call 108 immediately. Lay the woman on her side. Do not give food or water. Do not give painkillers. Hospitalisation for immediate delivery. This is an obstetric emergency.",
+    "precautions": ["Do not delay – abruption can cause fetal death and maternal shock", "If bleeding is concealed, it is even more dangerous", "Do not give food or water", "Prepare for emergency C‑section", "Blood transfusion readiness"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_049",
+    "category": "Cord Prolapse (Obstetric Emergency)",
+    "symptoms": ["umbilical cord visible in the vagina or perineum after membrane rupture", "fetal heart rate decelerations (variable or prolonged)", "fetal distress", "the cord may be pulsating or not"],
+    "first_aid": "Call 108 immediately. Do not push the cord back. If possible, use a sterile gloved hand to lift the presenting part off the cord (relieve pressure). Place the mother in knee‑chest or Trendelenburg position. Do not give anything by mouth. Emergency C‑section is needed.",
+    "precautions": ["Do not push the cord back – worsens compression", "Do not give food or water", "Do not delay – time is critical", "If the cord is not pulsating, this is a neonatal emergency", "Prepare for emergency delivery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_050",
+    "category": "Amniotic Fluid Embolism (AFE)",
+    "symptoms": ["sudden onset of respiratory distress", "hypotension (low BP)", "cyanosis (blue colour)", "cardiac arrest", "haemorrhage (DIC – bleeding from multiple sites)", "seizures", "occurs during labour, delivery, or immediately postpartum"],
+    "first_aid": "Call 108 immediately. This is a catastrophic obstetric emergency. If cardiac arrest occurs, start CPR. Do not give any oral medications. Hospitalisation for ICU care, mechanical ventilation, blood products, and management of DIC is needed. Survival is low.",
+    "precautions": ["Do not delay – AFE is often fatal", "If the woman is in labour and has sudden collapse, call 108", "Do not give food or water", "Prepare for massive blood transfusion", "This is a medical emergency requiring multidisciplinary care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_051",
+    "category": "Severe Burns – Major ( >20% TBSA)",
+    "symptoms": ["large areas of skin with deep burns (white, charred, or blistered)", "severe pain (or no pain in 3rd degree)", "signs of shock (hypotension, tachycardia)", "inhalation injury (singed nasal hairs, hoarse voice, sooty sputum)", "difficulty breathing", "altered consciousness"],
+    "first_aid": "Call 108 immediately. Cool the burn with running water for 20 minutes. Do NOT use ice. Remove jewellery. Cover with a clean, moist cloth. Do not apply any ointments. Keep the person warm (to prevent hypothermia). If inhalation injury, sit upright. Hospitalisation for fluid resuscitation, wound care, and possible intubation.",
+    "precautions": ["Do not apply ice – worsens damage", "Do not use butter, toothpaste, or oil", "Do not remove clothing stuck to the burn", "If the person has inhalation injury, do not lie flat", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_052",
+    "category": "Crush Injury (Traumatic)",
+    "symptoms": ["severe pain, swelling, deformity in the crushed area", "numbness or tingling", "pale or blue skin distal to the injury", "absent pulse distal to the injury (vascular compromise)", "signs of compartment syndrome (tense, shiny skin, severe pain on passive stretch)"],
+    "first_aid": "Call 108 immediately. Do not remove the crushing object unless trained – may cause reperfusion injury and cardiac arrest. If you must remove, be prepared for crush syndrome. Do not give food or water. Hospitalisation for IV fluids, fasciotomy, and dialysis may be needed.",
+    "precautions": ["Do not remove heavy crushing objects without medical support", "Do not give food or water", "If the limb is pale, do not elevate", "Monitor for signs of rhabdomyolysis", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_053",
+    "category": "Amputation – Traumatic (Limb)",
+    "symptoms": ["complete severance of a limb or digit", "severe bleeding from the stump", "shock (pale, dizzy, tachycardia)", "pain", "the amputated part may be recovered or not"],
+    "first_aid": "Call 108 immediately. Control bleeding with a tourniquet (if life‑threatening) or direct pressure. Do not put the amputated part directly on ice – wrap it in a clean moist cloth, place in a sealed bag, then in another container with ice. Bring it to the hospital. Do not give food or water.",
+    "precautions": ["Do not place the amputated part directly on ice", "Do not wash the amputated part", "Do not give food or water", "If you use a tourniquet, note the time of application", "Time is critical for reattachment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_054",
+    "category": "Penetrating Chest Injury (Stab/Gunshot)",
+    "symptoms": ["wound in the chest", "shortness of breath", "sucking chest wound (air entering through the wound)", "hypotension", "tachycardia", "cyanosis", "distended neck veins (if tamponade)"],
+    "first_aid": "Call 108 immediately. Do not remove the object. Cover an open wound with a non‑porous dressing (plastic) taped on three sides to allow air to escape but not enter. Keep the person sitting upright. Do not give food or water. Hospitalisation for surgery is essential.",
+    "precautions": ["Do not remove the impaled object", "Do not apply pressure that occludes the wound completely – risk of tension pneumothorax", "Do not give food or water", "Monitor for tension pneumothorax", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_055",
+    "category": "Penetrating Abdominal Injury (Stab/Gunshot)",
+    "symptoms": ["wound in the abdomen", "severe pain", "signs of internal bleeding (hypotension, tachycardia, pallor)", "peritoneal signs (rigidity, guarding)", "evisceration (protrusion of abdominal contents)"],
+    "first_aid": "Call 108 immediately. Do not remove the object. If organs are protruding, do not push them back – cover with a moist sterile dressing. Do not give food or water. Place the person in a supine position with knees bent. Hospitalisation for emergency surgery.",
+    "precautions": ["Do not remove the impaled object", "Do not push protruding organs back", "Do not give food or water", "If vomiting, place on side", "Prepare for emergency laparotomy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_056",
+    "category": "Pelvic Fracture – Unstable",
+    "symptoms": ["history of major trauma", "pelvic pain", "inability to bear weight", "shortening or rotation of a leg", "signs of internal bleeding (shock)", "blood at the urethral meatus", "ecchymosis over the pelvis"],
+    "first_aid": "Call 108 immediately. Stabilise the pelvis with a pelvic binder or sheet wrapped snugly around the hips. Do not log roll unless necessary. Do not give food or water. Hospitalisation for trauma team and possible surgery.",
+    "precautions": ["Do not move the person unnecessarily", "Do not give food or water", "If the person is unstable, treat for shock", "Do not apply pressure to the pelvis without stabilisation", "Prepare for pelvic angiography or surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_057",
+    "category": "Femur Fracture (Open/Closed)",
+    "symptoms": ["severe thigh pain, deformity (shortened, rotated leg)", "inability to bear weight", "swelling, bruising", "signs of shock (if open or large blood loss)"],
+    "first_aid": "Call 108 immediately. Immobilise the leg with a splint (traction splint if available). Do not try to straighten the bone. If open, cover the wound. Do not give food or water. Hospitalisation for traction or surgery.",
+    "precautions": ["Do not try to straighten or align the bone", "Do not give food or water", "If you have a traction splint, use it", "Monitor for signs of fat embolism (confusion, petechiae, respiratory distress)", "Prepare for surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_058",
+    "category": "Fat Embolism Syndrome (Trauma)",
+    "symptoms": ["confusion, agitation", "respiratory distress (hypoxaemia)", "petechial rash (especially on chest, axillae, conjunctiva)", "fever", "tachycardia", "occurs 24–72 hours after long bone or pelvic fractures"],
+    "first_aid": "Call 108 immediately. This is a complication of trauma. Do not give any oral medications. Keep the person in a semi‑upright position. Hospitalisation for ICU care, supportive ventilation, and management of the underlying fracture is essential.",
+    "precautions": ["Do not delay – fat embolism can be fatal", "If the person has a fracture and develops confusion, call 108", "Do not give food or water", "Monitor oxygen saturation", "Prepare for ICU admission"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_059",
+    "category": "Compartment Syndrome (Acute)",
+    "symptoms": ["severe pain out of proportion to the injury", "pain on passive stretch of the muscles", "tense, swollen, shiny skin", "paresthesia (numbness, tingling)", "decreased pulse (late sign)", "pallor of the extremity"],
+    "first_aid": "Call 108 immediately. Remove any constricting bandages or casts. Keep the limb at heart level (do not elevate, as this reduces perfusion). Do not apply ice. Do not give food or water. Hospitalisation for emergency fasciotomy.",
+    "precautions": ["Do not elevate the limb – worsens ischaemia", "Do not apply heat or ice", "Do not give food or water", "Time is muscle – fasciotomy within 6 hours is ideal", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_060",
+    "category": "Facial Fractures (Le Fort, Orbital)",
+    "symptoms": ["facial swelling, bruising, deformity", "epistaxis (nosebleed)", "malocclusion (teeth not aligning)", "diplopia (double vision) if orbital", "numbness in the face (infraorbital nerve)", "CSF rhinorrhoea (clear fluid from nose)"],
+    "first_aid": "Call 108 immediately. If the person is conscious, keep them sitting upright. Do not blow the nose (risk of pneumocephalus). Do not give food or water – may need surgery. If there is bleeding, apply pressure (avoid if fracture is suspected). Hospitalisation for facial reconstruction.",
+    "precautions": ["Do not blow the nose", "Do not give food or water", "Do not apply pressure to the nose if CSF leak is suspected", "Monitor for airway obstruction", "Prepare for facial surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_061",
+    "category": "Penetrating Eye Injury (Globe Rupture)",
+    "symptoms": ["visible laceration or foreign body in the eye", "severe pain", "loss of vision", "blood in the eye (hyphema)", "irregular pupil", "protrusion of intraocular contents"],
+    "first_aid": "Call 108 immediately. Do NOT apply pressure to the eye. Protect the eye with a rigid shield (e.g., paper cup taped over the eye). Do not irrigate. Do not give aspirin. Do not give food or water. Hospitalisation for emergency ophthalmology surgery.",
+    "precautions": ["Do not press on the eye", "Do not remove any foreign body", "Do not apply eye drops", "Do not give food or water", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_062",
+    "category": "Acute Angle‑Closure Glaucoma",
+    "symptoms": ["sudden, severe eye pain", "blurred vision, halos around lights", "red eye (conjunctival injection)", "fixed, mid‑dilated pupil", "nausea, vomiting", "headache", "hard (stony) eye on palpation"],
+    "first_aid": "Call 108 immediately. This is an ophthalmic emergency. Do not give any eye drops without medical advice. Keep the person calm and in a darkened room. Do not give food or water if vomiting. Hospitalisation for urgent pressure‑lowering therapy and possible laser iridotomy.",
+    "precautions": ["Do not use mydriatic eye drops (dilating drops) – worsens", "Do not delay – vision can be lost in hours", "Do not give aspirin", "If nausea, place on side", "Prepare for emergency ophthalmology care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_063",
+    "category": "Retinal Detachment (Acute)",
+    "symptoms": ["sudden onset of flashing lights (photopsia)", "floaters (black spots, cobwebs) in vision", "shadow or curtain in the peripheral or central visual field", "painless", "progressive vision loss"],
+    "first_aid": "Call an ophthalmologist immediately or go to the nearest eye hospital. This is a medical emergency. Avoid head movements that may worsen the detachment. Do not give any medications. Do not rub the eye. Surgical repair is needed.",
+    "precautions": ["Do not delay – retinal detachment can lead to permanent blindness", "Do not rub the eye", "Do not give aspirin", "Do not do heavy lifting", "Prepare for emergency surgery (scleral buckle or vitrectomy)"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_064",
+    "category": "Chemical Burn to the Eye (Alkali/Acid)",
+    "symptoms": ["severe pain, redness, tearing", "blurred vision", "swelling of eyelids", "chemical splatter or powder in the eye", "alkali burns are more severe than acid burns"],
+    "first_aid": "Call 108 immediately. Immediately rinse the eye with copious amounts of water or saline for at least 20 minutes. Hold the eyelid open. Do not stop to neutralise. Continue rinsing while transporting to hospital. Do not apply any ointment. Hospitalisation for further irrigation and specialist care.",
+    "precautions": ["Do not delay – alkali burns can penetrate the eye quickly", "Do not try to neutralise with acid/alkali – use water only", "Do not apply any ointment before irrigation", "Do not rub the eye", "If dry powder, brush it off before irrigating"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_065",
+    "category": "Heat Stroke (Exertional) – Emergency",
+    "symptoms": ["core temperature >40°C", "hot, dry skin (may be sweaty in exertional type)", "confusion, delirium, seizures, coma", "tachycardia, hypotension", "nausea, vomiting", "central nervous system dysfunction"],
+    "first_aid": "Call 108 immediately. Move to a cool place. Remove clothing. Cool rapidly using any method: immerse in cold water, apply ice packs to neck, armpits, groin, and fan vigorously. Do not give anything by mouth if unconscious. Do not give aspirin or paracetamol. Hospitalisation for IV fluids and cooling.",
+    "precautions": ["Do not use ice directly on skin without a cloth – can cause frostbite", "Do not give oral medications", "Do not delay – heat stroke has high mortality", "If conscious, give cool water (not iced)", "Monitor for seizures"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_066",
+    "category": "Severe Hypothermia (Core Temperature <32°C)",
+    "symptoms": ["body temperature <32°C (89.6°F)", "shivering (may be absent in severe)", "confusion, slurred speech", "slow heart rate, slow breathing", "weak pulse", "coma", "skin cold and pale"],
+    "first_aid": "Call 108 immediately. Move to a warm, dry place. Remove wet clothing. Use passive warming (blankets) and active warming (warm compresses on chest, neck, groin – avoid extremities). Do not give alcohol. Do not give hot drinks or food if unconscious. If not breathing, start CPR. Hospitalisation for active rewarming.",
+    "precautions": ["Do not use direct heat (heating pads) on arms and legs – can cause afterdrop", "Do not give alcohol", "Do not rub or massage the person – can cause cardiac arrhythmias", "Do not give food or water if unconscious", "Handle gently – risk of ventricular fibrillation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_067",
+    "category": "Frostbite – Severe (Blisters, Gangrene)",
+    "symptoms": ["white, waxy, numb, or hard skin", "blistering after rewarming", "blackening of skin (gangrene)", "loss of sensation", "joint stiffness"],
+    "first_aid": "Call 108 immediately. Immerse the affected part in warm water (37–40°C, not hot) for 15–30 minutes. Do not rub or massage. Do not use dry heat. Do not walk on affected feet. Elevate the limb and cover with dry, sterile gauze. Hospitalisation for wound care and possible amputation.",
+    "precautions": ["Do not rub or massage – damages tissue", "Do not use direct heat (fire, heating pad) – burns", "Do not thaw if there is a risk of refreezing", "Do not walk on frostbitten feet", "Prepare for surgical debridement or amputation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_068",
+    "category": "High‑Altitude Pulmonary Oedema (HAPE)",
+    "symptoms": ["breathlessness at rest", "dry cough progressing to frothy sputum", "fatigue, weakness", "tachycardia", "cyanosis", "low oxygen saturation", "occurs at altitudes >2,500 m, often within 2–4 days of ascent"],
+    "first_aid": "Descend immediately to a lower altitude (this is the most important treatment). Administer oxygen if available. If no descent possible, use a portable hyperbaric bag. Do not give sleeping pills. Hospitalisation for oxygen, diuretics, and possibly nifedipine. Do not delay.",
+    "precautions": ["Do not stay at altitude – descent is the priority", "Do not give sedatives", "Do not give alcohol", "Do not smoke", "If symptoms, do not ascend further"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_069",
+    "category": "High‑Altitude Cerebral Oedema (HACE)",
+    "symptoms": ["severe headache", "ataxia (loss of coordination)", "confusion, disorientation", "hallucinations", "vomiting", "decreased level of consciousness, coma", "occurs at altitudes >2,500 m"],
+    "first_aid": "Descend immediately – this is a medical emergency. Administer oxygen. Give dexamethasone (if available and trained). Do not give sedatives. Hospitalisation for further management. Do not leave the person alone.",
+    "precautions": ["Do not stay at altitude – descend", "Do not give sedatives", "Do not give alcohol", "If the person is confused, do not leave them", "Prepare for helicopter evacuation if possible"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_070",
+    "category": "Decompression Sickness (Caisson Disease)",
+    "symptoms": ["joint pain (bends)", "dizziness, vertigo", "numbness, tingling", "confusion", "shortness of breath (chokes)", "skin rash (mottling)", "paralysis", "occurs after scuba diving or rapid ascent from depth"],
+    "first_aid": "Call 108 immediately. Administer 100% oxygen if available. Do not give any oral fluids. Do not give painkillers without medical advice. Recompress in a hyperbaric chamber as soon as possible. Keep the person supine. Do not fly.",
+    "precautions": ["Do not delay – recompression is time‑critical", "Do not give alcohol or sedatives", "Do not fly (makes it worse)", "If the person is unconscious, place on side", "Prepare for emergency hyperbaric treatment"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_071",
+    "category": "Drowning – Delayed (Secondary Drowning)",
+    "symptoms": ["history of submersion", "persistent coughing, shortness of breath", "fever", "confusion, lethargy", "crackles on lung auscultation", "symptoms may appear hours after the event"],
+    "first_aid": "Call 108 immediately. All near‑drowning victims must be evaluated, even if they seemed fine initially. If the person has respiratory distress, sit them upright. Administer oxygen if available. Do not give food or water. Hospitalisation for observation and possible oxygen therapy.",
+    "precautions": ["Do not assume the person is fine because they coughed up water", "Do not give food or water", "Monitor for respiratory distress", "If symptoms worsen, call 108", "Prepare for hospital admission"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_072",
+    "category": "Lightning Strike – Cardiac/Neurological",
+    "symptoms": ["loss of consciousness", "cardiac arrest", "confusion, amnesia", "seizures", "burn marks (linear, Lichtenberg figures)", "ruptured eardrums", "paralysis", "signs of trauma from fall"],
+    "first_aid": "Call 108 immediately. Check for breathing and pulse – if absent, start CPR. Treat burns. Do not give food or water. Hospitalisation for cardiac monitoring, neurological evaluation, and treatment of burns. Lightning survivors need thorough assessment.",
+    "precautions": ["Do not delay – cardiac arrest is common", "Do not assume the person is dead – start CPR", "Do not give food or water if unconscious", "Monitor for arrhythmias", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_073",
+    "category": "Electrical Shock – High Voltage",
+    "symptoms": ["loss of consciousness", "cardiac arrest", "burns (entry and exit wounds)", "muscle contractions", "neurological symptoms (numbness, paralysis)", "internal organ damage", "fractures from fall"],
+    "first_aid": "Call 108 immediately. Ensure the power source is turned off. Do not touch the person if they are still connected. If not breathing, start CPR. Treat burns. Do not give food or water. Hospitalisation for cardiac monitoring, rhabdomyolysis monitoring, and burn care.",
+    "precautions": ["Do not touch the person until the power is off", "Do not give food or water if unconscious", "Monitor for cardiac arrhythmias", "If the person is on a ladder, do not move them until spinal injury is ruled out", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_074",
+    "category": "Carbon Monoxide Poisoning (Severe)",
+    "symptoms": ["headache, dizziness, nausea", "confusion, loss of consciousness", "cherry‑red skin (classic but not always present)", "seizures", "coma", "history of being in an enclosed space with a fuel‑burning appliance"],
+    "first_aid": "Call 108 immediately. Move the person to fresh air immediately. If not breathing, start CPR. Administer 100% oxygen if available. Do not give food or water. Hospitalisation for hyperbaric oxygen therapy if available. Do not re‑enter the area.",
+    "precautions": ["Do not stay in the contaminated area – risk to rescuer", "Do not give food or water if unconscious", "Do not use smoke alarms as a replacement for CO detectors", "If the person is confused, do not leave them", "Prepare for hyperbaric oxygen if indicated"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_075",
+    "category": "Opioid Overdose (Respiratory Depression)",
+    "symptoms": ["pinpoint pupils", "respiratory depression (slow, shallow breathing, or apnea)", "cyanosis (blue lips/nails)", "unconsciousness", "slow heart rate", "history of opioid use (heroin, morphine, methadone)"],
+    "first_aid": "Call 108 immediately. If you have naloxone (Narcan) and are trained, administer intranasal or IM. Start CPR if no breathing. Place on side. Do not give food or water. Hospitalisation for observation and supportive care.",
+    "precautions": ["Do not give food or water – risk of aspiration", "Do not use opioids to 'reverse' – only naloxone works", "If you give naloxone, stay with the person until help arrives (may wear off)", "Do not delay calling 108", "Prepare for ventilatory support"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_076",
+    "category": "Acute Benzodiazepine Overdose",
+    "symptoms": ["drowsiness, confusion, ataxia", "slurred speech", "hypotension", "respiratory depression (mild to severe, if combined with alcohol)", "coma"],
+    "first_aid": "Call 108 immediately. Maintain airway – place on side. If not breathing, start CPR. Do not give food or water. Flumazenil can reverse but is not given at home – carries seizure risk. Hospitalisation for supportive care and possible flumazenil.",
+    "precautions": ["Do not give any sedatives", "Do not give food or water", "Monitor for respiratory depression", "If the person is on other CNS depressants (alcohol), inform the team", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_077",
+    "category": "Tricyclic Antidepressant (TCA) Overdose",
+    "symptoms": ["agitation, confusion, seizures", "dilated pupils", "dry mouth, urinary retention", "tachycardia, arrhythmias (widened QRS, prolonged QT)", "hypotension", "respiratory depression", "coma"],
+    "first_aid": "Call 108 immediately. Do not induce vomiting. If unconscious, place on side. If not breathing, start CPR. Do not give food or water. Hospitalisation for cardiac monitoring, sodium bicarbonate (for arrhythmias), and supportive care. TCA overdose is life‑threatening.",
+    "precautions": ["Do not induce vomiting – risk of aspiration", "Do not give any medications at home", "Monitor for seizures", "If the person has cardiac symptoms, this is critical", "Prepare for ICU and possible intubation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_078",
+    "category": "Paracetamol Overdose (Acute)",
+    "symptoms": ["nausea, vomiting (initial phase)", "then asymptomatic for 12–24 hours", "then right upper quadrant pain (liver damage)", "jaundice, confusion (hepatic encephalopathy)", "elevated liver enzymes, coagulopathy"],
+    "first_aid": "Call 108 immediately or go to hospital. If within 1 hour of ingestion, you may be given activated charcoal. Do not induce vomiting. Hospitalisation for N‑acetylcysteine (NAC) treatment – this is time‑critical (best within 8 hours). Do not delay.",
+    "precautions": ["Do not induce vomiting at home", "Do not give any other medications", "Do not assume it's mild – paracetamol toxicity is delayed", "If the person is chronic alcohol user, the toxic dose is lower", "Prepare for IV NAC"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_079",
+    "category": "Organophosphate Poisoning (Acute)",
+    "symptoms": ["DUMBELLS: Diarrhoea, Urination, Miosis (pinpoint pupils), Bradycardia, Bronchospasm, Emesis, Lacrimation, Salivation, Sweating", "muscle fasciculations, weakness", "confusion, seizures, coma", "history of pesticide exposure"],
+    "first_aid": "Call 108 immediately. Move the person to fresh air. If on skin, remove contaminated clothing and wash with soap and water. Do not induce vomiting. If not breathing, start CPR. Hospitalisation for atropine and pralidoxime. This is a life‑threatening emergency.",
+    "precautions": ["Do not induce vomiting (risk of aspiration)", "Do not give food or water if unconscious", "Wear gloves if washing the person – secondary exposure risk", "If the person has a chemical smell, inform the team", "Prepare for atropine therapy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_080",
+    "category": "Corrosive Poisoning (Acid/Alkali)",
+    "symptoms": ["severe burning pain in the mouth, throat, and chest", "drooling, dysphagia (difficulty swallowing)", "vomiting (bloody)", "respiratory distress", "shock", "perforation (acute abdomen, mediastinitis)"],
+    "first_aid": "Call 108 immediately. Do NOT induce vomiting – can cause further burns. Do not attempt to neutralise (produces heat). If the person is conscious, give small sips of water or milk to dilute. Do not give charcoal. Hospitalisation for endoscopy and supportive care.",
+    "precautions": ["Do not induce vomiting – can cause perforation", "Do not give acid/alkali neutralisers", "Do not give charcoal", "If the person has stridor, airway obstruction is imminent", "Prepare for emergency endoscopy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_081",
+    "category": "Snake Bite – Systemic Envenoming (Neurotoxic)",
+    "symptoms": ["ptosis (drooping eyelids)", "diplopia (double vision)", "dysphagia (difficulty swallowing)", "dysarthria (slurred speech)", "descending paralysis", "respiratory failure", "history of snake bite (especially krait, cobra)"],
+    "first_aid": "Call 108 immediately. Keep the person calm and immobilise the bitten limb. Do NOT cut or suck the wound. Do NOT apply a tourniquet. Rush to a government hospital – anti‑snake venom (ASV) is available free. Do not give food or water if swallowing is difficult.",
+    "precautions": ["Do not delay – neurotoxic paralysis can involve respiratory muscles", "Do not give herbal remedies", "Do not apply ice", "Do not give food or water if dysphagia", "Prepare for mechanical ventilation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_082",
+    "category": "Snake Bite – Systemic Envenoming (Haemotoxic)",
+    "symptoms": ["bleeding from gums, puncture sites, or wounds", "haematuria (blood in urine)", "haematemesis (vomiting blood)", "ecchymosis (bruising)", "hypotension, shock", "history of viper bite", "local swelling, blistering"],
+    "first_aid": "Call 108 immediately. Immobilise the limb. Do not cut or suck. Do not apply a tourniquet. Rush to a government hospital for ASV. Do not give aspirin or NSAIDs (increase bleeding). Prepare for blood transfusion if needed.",
+    "precautions": ["Do not give aspirin or NSAIDs", "Do not delay – haemotoxic envenoming can cause DIC", "Do not give any herbal remedies", "If the person has bleeding, apply pressure", "Prepare for ASV and blood products"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_083",
+    "category": "Scorpion Sting – Severe (Cardiovascular)",
+    "symptoms": ["severe pain at the sting site", "sweating, salivation", "tachycardia or bradycardia", "hypertension or hypotension", "pulmonary oedema", "priapism (in men)", "vomiting", "especially dangerous in children"],
+    "first_aid": "Call 108 immediately. Apply a cold pack to the sting site. Do not cut or suck. Do not apply tourniquet. Hospitalisation for antivenom and supportive care (prazosin for sympathetic overactivity). Children need urgent care.",
+    "precautions": ["Do not delay – scorpion stings can be fatal in children", "Do not give aspirin", "Do not apply ice directly – wrap in cloth", "If the person has breathing difficulty, sit upright", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_084",
+    "category": "Anaphylactic Shock (Severe Allergic Reaction)",
+    "symptoms": ["sudden hives, swelling of lips/face/throat", "difficulty breathing, wheezing", "dizziness, hypotension", "tachycardia", "abdominal pain, vomiting", "feeling of impending doom", "loss of consciousness", "trigger: food, insect sting, medication"],
+    "first_aid": "Call 108 immediately. If the person has an EpiPen, administer it IM in the lateral thigh (hold for 3 seconds). Lay flat with legs elevated (if breathing is not compromised). If breathing is difficult, sit them upright. Give a second dose after 5–15 minutes if no improvement. If not breathing, start CPR.",
+    "precautions": ["Do not give oral medications – may aspirate", "Do not delay using the EpiPen", "Do not give antihistamines as the primary treatment – they are too slow", "If symptoms worsen, call 108", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_085",
+    "category": "Septic Shock (Severe Sepsis)",
+    "symptoms": ["fever or hypothermia", "tachycardia (rapid heart rate)", "hypotension (low BP)", "confusion, altered mental state", "tachypnoea (rapid breathing)", "cold, clammy skin or warm, flushed skin", "decreased urine output", "signs of infection (pneumonia, UTI, wound)"],
+    "first_aid": "Call 108 immediately. If the person is not breathing, start CPR. Do not give food or water. Keep them warm. Hospitalisation for IV antibiotics, IV fluids, and vasopressors. Septic shock has high mortality – do not delay.",
+    "precautions": ["Do not give oral antibiotics at home", "Do not give food or water", "If the person has a source of infection, inform the team", "Monitor for signs of organ failure", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_086",
+    "category": "Toxic Shock Syndrome (TSS)",
+    "symptoms": ["sudden high fever (>39°C)", "hypotension (shock)", "sunburn‑like rash (desquamation later)", "vomiting, diarrhoea", "muscle aches", "confusion", "mucous membrane hyperaemia (red eyes, throat)", "often associated with tampon use, wounds, or surgery"],
+    "first_aid": "Call 108 immediately. Remove any tampon or foreign body if present. Do not give food or water. Hospitalisation for IV fluids, antibiotics, and vasopressors. This is a life‑threatening emergency.",
+    "precautions": ["Do not delay – TSS can be fatal", "If the person has a tampon, remove it", "Do not give aspirin or NSAIDs", "Do not give food or water", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_087",
+    "category": "Severe Dengue (Dengue Haemorrhagic Fever / DSS)",
+    "symptoms": ["high fever, severe headache, retro‑orbital pain", "abdominal pain, persistent vomiting", "bleeding (gums, nose, petechiae, haematemesis)", "lethargy, restlessness", "hypotension (shock)", "fluid accumulation (ascites, pleural effusion)"],
+    "first_aid": "Call 108 immediately. Do NOT give aspirin or ibuprofen – use only paracetamol. Give oral fluids if conscious. If there is bleeding, apply pressure. Hospitalisation for IV fluids and monitoring is essential. Dengue shock syndrome is life‑threatening.",
+    "precautions": ["Do not give aspirin or ibuprofen (increases bleeding)", "Do not give food or water if vomiting", "If the person is lethargic, do not delay", "Monitor urine output", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_088",
+    "category": "Severe Malaria (Cerebral / Falciparum)",
+    "symptoms": ["high fever, chills, profuse sweating", "confusion, seizures, coma (cerebral malaria)", "jaundice (liver dysfunction)", "haemoglobinuria (blackwater fever – dark urine)", "anaemia (pallor, fatigue)", "respiratory distress (acidosis)"],
+    "first_aid": "Call 108 immediately. Do not give any antimalarials at home without diagnosis. If the person is unconscious, place on side. Do not give food or water. Hospitalisation for IV artesunate, supportive care, and monitoring. Falciparum malaria is a medical emergency.",
+    "precautions": ["Do not give oral antimalarials at home – may cause vomiting", "Do not delay – cerebral malaria can be fatal", "If the person has seizures, protect from injury", "Do not give aspirin", "Prepare for ICU care"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_089",
+    "category": "Meningococcaemia (Meningococcal Septicaemia)",
+    "symptoms": ["high fever, chills", "non‑blanching purpuric/petechial rash (classic)", "headache, neck stiffness", "hypotension, shock", "confusion, coma", "signs of sepsis"],
+    "first_aid": "Call 108 immediately. Do not delay – this is a medical emergency. If the rash does not fade with a glass, immediate antibiotics are needed. Do not give food or water. Hospitalisation for IV antibiotics (penicillin) and ICU care.",
+    "precautions": ["Do not delay – meningococcaemia can be fatal within hours", "If the rash is non‑blanching, call 108 immediately", "Do not give aspirin", "Do not give food or water if unconscious", "Prepare for ICU care and antibiotics"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_090",
+    "category": "Gas Gangrene (Clostridial Myonecrosis)",
+    "symptoms": ["severe pain at the wound site (out of proportion)", "crepitus (gas in tissues – crackling sensation)", "foul‑smelling, thin, dark discharge", "edema, skin discoloration (bronze to black)", "systemic toxicity (fever, tachycardia, confusion)"],
+    "first_aid": "Call 108 immediately. This is a surgical emergency. Do not apply any ointment. Do not give food or water. Hospitalisation for surgical debridement, antibiotics (penicillin, clindamycin), and hyperbaric oxygen. Do not delay.",
+    "precautions": ["Do not delay – gas gangrene can be fatal in 24–48 hours", "Do not apply heat", "Do not give food or water", "Do not give painkillers without medical advice – may mask symptoms", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_091",
+    "category": "Testicular Torsion (Acute)",
+    "symptoms": ["sudden severe testicular pain (usually unilateral)", "swelling, tenderness", "nausea, vomiting", "abdominal pain", "high‑riding testis (horizontal lie)", "loss of cremasteric reflex", "occurs in adolescents and young adults"],
+    "first_aid": "Call 108 immediately – this is a surgical emergency. Do not give painkillers – may mask the need for surgery. Do not apply heat. If possible, gently elevate the scrotum. Hospitalisation for emergency surgery (detorsion and orchidopexy). Time is testicle – necrosis occurs within 4–6 hours.",
+    "precautions": ["Do not delay – testicle can die within 4–6 hours", "Do not give painkillers before surgical evaluation", "Do not apply heat", "If the person has a history of intermittent pain, still go to emergency", "Prepare for surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_092",
+    "category": "Priapism (Prolonged Erection)",
+    "symptoms": ["persistent, painful erection lasting >4 hours", "not associated with sexual arousal", "penile pain", "distal glans is firm, corpora cavernosa rigid", "flaccid glans", "can cause ischaemic injury and fibrosis"],
+    "first_aid": "Call 108 immediately. Do not attempt to treat with ice or exercise at home. Do not wait – this is a urological emergency. Hospitalisation for aspiration and injection of phenylephrine. Do not give food or water.",
+    "precautions": ["Do not delay – ischaemic priapism can cause permanent erectile dysfunction", "Do not apply ice without medical advice", "Do not give painkillers – may mask", "If the person has sickle cell disease, inform the team", "Prepare for urological intervention"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_093",
+    "category": "Acute Urinary Retention (Severe)",
+    "symptoms": ["inability to urinate despite full bladder", "severe lower abdominal pain (suprapubic)", "distended, palpable bladder", "restlessness, agitation", "overflow incontinence (dribbling)", "often in men with BPH"],
+    "first_aid": "Call 108 immediately or go to the emergency department. Do not give any medications. Do not try to force urination – can cause rupture. Hospitalisation for Foley catheterisation. This is a urological emergency.",
+    "precautions": ["Do not force urination – risk of bladder rupture", "Do not give diuretics – worsens", "Do not give food or water", "Do not apply heat to the abdomen", "Prepare for catheterisation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_094",
+    "category": "Acute Psychosis (Severe Agitation)",
+    "symptoms": ["hallucinations (hearing/seeing things)", "delusions (fixed false beliefs)", "disorganised speech or behaviour", "severe agitation, aggression", "self‑harm or harm to others", "catatonia (stupor or excitement)"],
+    "first_aid": "Call 108 immediately. Do not leave the person alone if they are a danger to themselves or others. Speak calmly and avoid confrontation. Do not restrain unless necessary for safety – can cause injury. Do not give any oral medications. Hospitalisation for psychiatric assessment and sedation.",
+    "precautions": ["Do not argue with delusions – validate feelings", "Do not leave the person alone if suicidal or violent", "Do not give any medications without medical advice", "If the person has a weapon, call police", "Prepare for psychiatric evaluation and sedation"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_095",
+    "category": "Suicidal Ideation – Imminent Risk",
+    "symptoms": ["talking about wanting to die or kill oneself", "making a plan (e.g., acquiring means)", "saying goodbye to loved ones", "giving away possessions", "sudden calmness after severe depression (may have decided)", "hopelessness, trapped feeling"],
+    "first_aid": "Call 108 immediately. Do not leave the person alone. Remove access to means (medications, sharp objects, weapons). Listen without judgment – do not dismiss their feelings. Stay with them until professional help arrives. If they have a plan, this is a medical emergency.",
+    "precautions": ["Do not leave the person alone", "Do not argue or lecture", "Do not promise to keep it a secret", "If they have a weapon, call police", "Take them to the nearest hospital emergency or call 108"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_096",
+    "category": "Acute Violent Patient (Agitation)",
+    "symptoms": ["threatening behaviour", "verbal or physical aggression", "restlessness, pacing", "intense anger", "intoxication or psychiatric episode"],
+    "first_aid": "Ensure your own safety. Do not approach if they have a weapon. Call 108 and police if needed. Speak calmly and clearly. Give space. Do not argue. If necessary, seclusion or restraint by trained personnel is used in hospital. Do not attempt to restrain alone.",
+    "precautions": ["Do not confront the person alone", "Do not argue", "Remove bystanders from the area", "Do not use physical restraint unless trained", "If the person is a danger to others, call authorities"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_097",
+    "category": "Acute Confusion – Delirium (Medical Cause)",
+    "symptoms": ["acute onset of confusion, inattention", "fluctuating level of consciousness", "hallucinations, agitation or lethargy", "disorganised thinking", "often due to infection, metabolic disturbance, medication, or hypoxia"],
+    "first_aid": "Call 108 immediately. Do not leave the person alone. Remove any hazards. Do not give any medications. If the person is agitated, speak calmly and reduce stimulation. Hospitalisation to identify and treat the underlying cause.",
+    "precautions": ["Do not assume dementia – delirium is reversible", "Do not give sedatives without medical advice", "Do not leave the person unattended", "If the person is on new medications, inform the team", "Prepare for diagnostic workup"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_098",
+    "category": "Acute Abdominal Aortic Aneurysm (Ruptured)",
+    "symptoms": ["sudden, severe abdominal or back pain (tearing)", "hypotension, shock", "pulsatile abdominal mass", "syncope", "pain radiating to the groin"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Lay the person flat. Do not give aspirin. Hospitalisation for emergency surgery. This is a surgical emergency with very high mortality.",
+    "precautions": ["Do not delay – ruptured AAA is fatal without surgery", "Do not give food or water", "Do not give painkillers – may mask", "If the person has a known AAA, inform the team", "Prepare for emergency surgery"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_099",
+    "category": "Mesenteric Ischaemia (Acute Bowel Ischaemia)",
+    "symptoms": ["sudden severe abdominal pain (out of proportion to physical findings)", "nausea, vomiting", "diarrhoea or bloody stools", "signs of shock (hypotension, tachycardia)", "distended, tender abdomen (late)", "often in elderly with cardiovascular disease"],
+    "first_aid": "Call 108 immediately. Do not give food or water. Do not give painkillers – may mask. Hospitalisation for CT angiography and emergency surgery. This is a surgical emergency.",
+    "precautions": ["Do not delay – mesenteric ischaemia is often fatal", "Do not give food or water", "Do not give painkillers before surgical evaluation", "If the person has atrial fibrillation, inform the team", "Prepare for emergency laparotomy"],
+    "urgency": "critical"
+  },
+  {
+    "id": "em_100",
+    "category": "Acute Allergic Reaction to Medication (Severe)",
+    "symptoms": ["rash, hives, itching", "swelling of face, lips, tongue, throat", "wheezing, difficulty breathing", "dizziness, hypotension", "nausea, vomiting", "occurring within minutes to hours after taking a medication"],
+    "first_aid": "Call 108 immediately. Stop the medication. If the person has an EpiPen, administer it. If not, keep them comfortable. If breathing difficulty, sit them upright. If they become unconscious, start CPR. Do not give any other medications at home. Hospitalisation for further care.",
+    "precautions": ["Do not take any more of the suspected medication", "Do not delay – severe reactions can progress rapidly", "Do not give oral antihistamines as the primary treatment", "If the person has a history of drug allergy, inform the team", "Prepare for emergency treatment"],
+    "urgency": "critical"
+  }
+]
