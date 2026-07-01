@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { 
   NutritionHero, 
   NutritionSnapshot, 
@@ -6,24 +7,29 @@ import {
   NutritionCharts, 
   FoodCarousel, 
   NutritionSideWidgets, 
-  FooterBanner 
+  FooterBanner,
+  NutritionProfileFinder,
+  NUTRITION_PROFILES
 } from "../components/Nutrition/NutritionComponents";
 
 export function NutritionPage() {
+  const [profileType, setProfileType] = useState<"default" | "pregnant" | "child">("default");
+  const profileData = NUTRITION_PROFILES[profileType];
+
   return (
     <div className="nutrition-page">
       <div className="nutrition-layout">
         <main className="nutrition-main">
           <NutritionHero />
-          <NutritionSnapshot />
-          <SwapRecommendations />
-          <MealPlanGrid />
-          <NutritionCharts />
+          <NutritionSnapshot profile={profileData} />
+          <SwapRecommendations profile={profileData} />
+          <MealPlanGrid profile={profileData} />
+          <NutritionCharts profile={profileData} />
           <FoodCarousel />
           <FooterBanner />
         </main>
         
-        <NutritionSideWidgets />
+        <NutritionSideWidgets profileType={profileType} setProfileType={setProfileType} />
       </div>
     </div>
   );

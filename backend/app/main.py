@@ -18,6 +18,13 @@ Services loaded at startup (minimal VRAM):
 Future architecture plug-in points:
   Voice → STT → IndicTrans2 → ChromaDB → Triage Engine → Ollama → Response
 """
+#===========TEMP ADDITION===========#
+import sys
+
+print("=" * 60)
+print(sys.executable)
+print("=" * 60)
+#===========TEMP ADDITION===========#
 
 import logging
 import time
@@ -81,7 +88,7 @@ async def lifespan(app: FastAPI):
     logger.info("┌─ Knowledge Base")
     try:
         from app.services.indexer import index_knowledge_base
-        indexed = index_knowledge_base(force_reindex=True)  # temporary — change back to False after first successful run
+        indexed = index_knowledge_base(force_reindex=False)  # temporary — change back to False after first successful run
         total = sum(indexed.values())
         for col, count in indexed.items():
             logger.info("│  ✓ %-28s %d docs", col, count)
@@ -220,7 +227,7 @@ async def health_check():
     from app.services.translation_service import get_model_status, is_model_loaded
     from app.services.nutrition_service import NutritionService
     from app.services.schemes_service import SchemesService
-    from app.services.llm_service import check_connectivity, OLLAMA_BASE_URL, GEMINI_API_KEY
+    from app.services.llm_service import check_connectivity, OLLAMA_BASE_URL, OPENAI_API_KEY
 
     is_online = await check_connectivity()
 
@@ -251,8 +258,8 @@ async def health_check():
         },
         "connectivity": "online" if is_online else "offline",
         "llm": {
-            "preferred": "gemini" if is_online and GEMINI_API_KEY else "ollama",
+            "preferred": "openai" if is_online and OPENAI_API_KEY else "ollama",
             "ollama": ollama_status,
-            "gemini": "configured" if GEMINI_API_KEY else "no_key",
+            "openai": "configured" if OPENAI_API_KEY else "no_key",
         },
     }

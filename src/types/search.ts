@@ -55,7 +55,7 @@ export interface ChatApiResponse {
   processing_time_ms: number;
   disclaimer: string;
   mode?: "online" | "offline";
-  llm_provider?: "gemini" | "ollama" | "template" | "none";
+  llm_provider?: "openai" | "gemini" | "ollama" | "template" | "none";
   emergency?: {
     is_emergency: boolean;
     risk_level: "critical" | "high" | "medium" | "low";

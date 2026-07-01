@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { HospitalMap } from "../Map/HospitalMap";
+import { type HospitalFacility } from "../../services/api";
+import mapsImage from "../../assets/maps.jpeg";
 
 const ALERTS = [
   { id: "dengue", title: "Dengue Outbreak", desc: "High risk in 8 districts of Maharashtra", priority: "High Priority", color: "#ef4444", icon: "🦟", bg: "#fef2f2" },
@@ -34,14 +37,7 @@ export function AdminAlertCards() {
         </div>
         <div className="ai-prediction-body">
           <div className="ai-map-placeholder">
-            <div className="map-india-bg">
-              <div className="india-outline">🗺️</div>
-              <div className="risk-dots">
-                <span className="risk-dot-high" style={{ top: "40%", left: "55%" }} />
-                <span className="risk-dot-high" style={{ top: "52%", left: "48%" }} />
-                <span className="risk-dot-medium" style={{ top: "35%", left: "70%" }} />
-              </div>
-            </div>
+            <div className="map-placeholder-box"></div>
           </div>
           <div className="ai-alert-box">
             <p className="ai-alert-text">AI predicts elevated dengue risk in <strong>3 districts</strong> in the next 2 weeks.</p>
@@ -106,11 +102,11 @@ const SCREENING_DATA = {
 };
 
 const RISK_DISTRICTS = [
-  { name: "Pune, Maharashtra", risk: "Very High", color: "#ef4444" },
-  { name: "Thane, Maharashtra", risk: "High", color: "#f59e0b" },
-  { name: "Nagpur, Maharashtra", risk: "High", color: "#f59e0b" },
-  { name: "Patna, Bihar", risk: "High", color: "#f59e0b" },
-  { name: "Nashik, Maharashtra", risk: "Medium", color: "#eab308" },
+  { name: "Pune, Maharashtra", risk: "Very High", color: "#0b537c" },
+  { name: "Thane, Maharashtra", risk: "High", color: "#2b7a9b" },
+  { name: "Nagpur, Maharashtra", risk: "High", color: "#2b7a9b" },
+  { name: "Patna, Bihar", risk: "High", color: "#2b7a9b" },
+  { name: "Nashik, Maharashtra", risk: "Medium", color: "#5c9eb2" },
 ];
 
 export function AnalyticsAndMaps() {
@@ -164,13 +160,15 @@ export function AnalyticsAndMaps() {
         </div>
         <p className="endemic-map-label">Dengue Risk Map (India)</p>
         <div className="endemic-map-placeholder">
-          <div className="india-map-art">🗺️</div>
+          <div className="map-placeholder-box" style={{ padding: 0, border: "none" }}>
+            <img src={mapsImage} alt="Dengue Risk Map" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "12px" }} />
+          </div>
           <div className="map-legend-endemic">
-            <div className="mle-item"><span className="mle-dot" style={{ background: "#ef4444" }} />Very High</div>
-            <div className="mle-item"><span className="mle-dot" style={{ background: "#f97316" }} />High</div>
-            <div className="mle-item"><span className="mle-dot" style={{ background: "#eab308" }} />Medium</div>
-            <div className="mle-item"><span className="mle-dot" style={{ background: "#10b981" }} />Low</div>
-            <div className="mle-item"><span className="mle-dot" style={{ background: "#e2e8f0" }} />No Data</div>
+            <div className="mle-item"><span className="mle-dot" style={{ background: "#0b537c", borderRadius: "4px" }} />Very High</div>
+            <div className="mle-item"><span className="mle-dot" style={{ background: "#2b7a9b", borderRadius: "4px" }} />High</div>
+            <div className="mle-item"><span className="mle-dot" style={{ background: "#5c9eb2", borderRadius: "4px" }} />Medium</div>
+            <div className="mle-item"><span className="mle-dot" style={{ background: "#d2e8ef", borderRadius: "4px" }} />Low</div>
+            <div className="mle-item"><span className="mle-dot" style={{ background: "#cccccc", borderRadius: "4px" }} />No Data</div>
           </div>
         </div>
         <div className="top-risk-districts">
@@ -209,8 +207,8 @@ export function ResourceAllocation() {
             <circle cx="50" cy="50" r="38" fill="none" stroke="#10b981" strokeWidth="18" strokeDasharray="152 87" strokeDashoffset="-15" />
             <circle cx="50" cy="50" r="38" fill="none" stroke="#f59e0b" strokeWidth="18" strokeDasharray="54 185" strokeDashoffset="-167" />
             <circle cx="50" cy="50" r="38" fill="none" stroke="#ef4444" strokeWidth="18" strokeDasharray="33 206" strokeDashoffset="-221" />
-            <text x="50" y="47" textAnchor="middle" fill="#0f172a" fontSize="13" fontWeight="800">72%</text>
-            <text x="50" y="57" textAnchor="middle" fill="#64748b" fontSize="5">Optimal Allocation</text>
+            <text x="50" y="47" textAnchor="middle" fill="#0f172a" fontSize="13" fontWeight="800" className="alloc-text-center">72%</text>
+            <text x="50" y="57" textAnchor="middle" fill="#64748b" fontSize="5" className="alloc-text-center">Optimal Allocation</text>
           </svg>
           <div className="alloc-legend">
             <div className="al-item"><span className="al-dot" style={{ background: "#10b981" }} />Optimal (1,234)</div>
@@ -310,6 +308,13 @@ const HEALTHCARE_REFS = [
   { name: "Sahyadri Hospital – Pune", type: "Hospital", dist: "12.3 km", hours: "Open 24x7" },
 ];
 
+const MOCK_USER_LOCATION = { lat: 18.5204, lon: 73.8567 };
+const HEALTHCARE_FACILITIES: HospitalFacility[] = [
+  { name: "Primary Health Centre – Shindwadi", address: "Shindwadi", type: "PHC", lat: 18.51, lon: 73.84, distance_km: 2.1 },
+  { name: "Community Health Centre – Haveli", address: "Haveli", type: "CHC", lat: 18.55, lon: 73.89, distance_km: 6.8 },
+  { name: "Sahyadri Hospital – Pune", address: "Pune", type: "Hospital", lat: 18.52, lon: 73.86, distance_km: 12.3 },
+];
+
 export function ReferralMap() {
   return (
     <section className="admin-card">
@@ -317,12 +322,12 @@ export function ReferralMap() {
         <h2 className="admin-section-title">📍 Nearest Healthcare Access</h2>
         <button className="admin-view-all">View Referral Map →</button>
       </div>
-      <div className="healthcare-map-placeholder">
-        <div className="map-area">
-          <span className="map-pin-big">📍</span>
-          <div className="map-route-line" />
-          <span className="map-dest-pin">🏥</span>
-        </div>
+      <div className="healthcare-map-placeholder admin-map-wrapper" style={{ margin: "16px 0", borderRadius: "12px", overflow: "hidden", height: "180px", display: "block" }}>
+        <HospitalMap 
+          userLocation={MOCK_USER_LOCATION} 
+          facilities={HEALTHCARE_FACILITIES} 
+          selectedFacility={null} 
+        />
       </div>
       <div className="healthcare-refs">
         {HEALTHCARE_REFS.map(h => (

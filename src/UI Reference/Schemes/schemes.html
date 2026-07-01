@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAYU - Government Schemes</title>
+    <link rel="stylesheet" href="schemes.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="brand">
+                <div class="brand-logo-placeholder">A</div>
+                <div>
+                    <h1 class="brand-title">AAYU</h1>
+                    <p class="brand-subtitle">AI-Powered Public Health Assistant</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item"><span class="icon">🏠</span> Home</a>
+                <a href="#" class="nav-item"><span class="icon">🤖</span> AI Assistant</a>
+                <a href="#" class="nav-item"><span class="icon">📋</span> Screening</a>
+                <a href="#" class="nav-item"><span class="icon">🥗</span> Nutrition</a>
+                <a href="#" class="nav-item active"><span class="icon">📄</span> Schemes</a>
+                <a href="#" class="nav-item"><span class="icon">📍</span> Nearby Care</a>
+                <a href="#" class="nav-item"><span class="icon">📁</span> Records</a>
+                <a href="#" class="nav-item"><span class="icon">📚</span> Resources</a>
+                <a href="#" class="nav-item"><span class="icon">🔔</span> Alerts & Updates</a>
+                <a href="#" class="nav-item"><span class="icon">👥</span> Family & Sharing</a>
+            </nav>
+
+            <div class="sidebar-promo">
+                <h3>Need Help?</h3>
+                <p>Chat with AAYU on WhatsApp</p>
+                <span class="text-xs text-muted">Get help to find and apply for schemes.</span>
+                <button class="btn btn-outline-wa mt-2">
+                    Chat Now <span class="wa-icon">💬</span>
+                </button>
+            </div>
+
+            <div class="offline-mode-card">
+                <span class="icon">📶</span>
+                <div>
+                    <h4>Offline Mode</h4>
+                    <p>Works even without internet connection.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content + Right Sidebar Wrap -->
+        <div class="main-layout-wrap">
+
+            <!-- Top Search Bar Header -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for schemes, benefits, eligibility...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn">🌐 ▾</button>
+                    <button class="action-btn">☀️</button>
+                    <button class="profile-btn">
+                        <span class="profile-icon">👤</span> My Account ▾
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-grid">
+                <!-- Center Main Content -->
+                <main class="center-content">
+
+                    <!-- Hero Section -->
+                    <section class="hero-card">
+                        <div class="hero-text">
+                            <h2>Government Schemes,<br>Better Health for All</h2>
+                            <p>Find and access health & nutrition schemes you are eligible for. Simplified. Guided.
+                                Empowering.</p>
+                            <button class="btn btn-primary">Explore Schemes</button>
+                        </div>
+                        <div class="hero-image-box">
+                            <img src="assets/hero-bg.png" alt="Government Schemes"
+                                onerror="this.parentNode.classList.add('placeholder-fallback')">
+                        </div>
+                    </section>
+
+                    <!-- Did You Know Card -->
+                    <section class="card did-you-know-card mt-4">
+                        <div class="dyk-left">
+                            <div class="bulb-icon">💡</div>
+                            <div class="dyk-content">
+                                <h3>Did You Know?</h3>
+                                <p>More than 31 crore people have benefited from government health and nutrition schemes
+                                    across India.</p>
+                                <span class="source-tag">Source: Govt. of India (2023-24)</span>
+                            </div>
+                        </div>
+                        <div class="pagination-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </section>
+
+                    <!-- Feature Icon Row -->
+                    <section class="feature-row mt-4">
+                        <div class="feature-item-card">
+                            <div class="feature-icon text-primary">👤</div>
+                            <h4>Personalised for You</h4>
+                            <p>Schemes based on your profile & needs</p>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon text-teal">📋</div>
+                            <h4>Easy to Apply</h4>
+                            <p>Step-by-step guidance in your language</p>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon text-blue">🔄</div>
+                            <h4>Track Application</h4>
+                            <p>Check status & get real-time updates</p>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon text-yellow">🔔</div>
+                            <h4>Stay Informed</h4>
+                            <p>New schemes & updates in one place</p>
+                        </div>
+                    </section>
+
+                    <!-- Top Schemes Section -->
+                    <section class="mt-5">
+                        <div class="section-title-container">
+                            <div>
+                                <h3>Top Schemes for You</h3>
+                                <p class="text-sm text-muted">Based on your profile and location</p>
+                            </div>
+                            <a href="#" class="view-all-link">View all Schemes →</a>
+                        </div>
+
+                        <div class="top-schemes-grid mt-4">
+                            <!-- Card 1 -->
+                            <div class="scheme-item-card">
+                                <div class="scheme-logo-placeholder">🏢</div>
+                                <h4>Ayushman Bharat PM-JAY</h4>
+                                <p>Free health cover up to ₹5 lakh per family</p>
+                                <span class="badge text-blue">Health Insurance</span>
+                                <div class="eligibility-info">
+                                    <strong>Who can apply?</strong>
+                                    <span>Families (All age groups)</span>
+                                </div>
+                                <button class="btn-text-arrow">Apply Now →</button>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="scheme-item-card">
+                                <div class="scheme-logo-placeholder">🤰</div>
+                                <h4>Pradhan Mantri Matru Vandana Yojana</h4>
+                                <p>₹5,000 benefit for pregnant women</p>
+                                <span class="badge text-teal">Maternity Benefit</span>
+                                <div class="eligibility-info">
+                                    <strong>Who can apply?</strong>
+                                    <span>Pregnant Women</span>
+                                </div>
+                                <button class="btn-text-arrow">Apply Now →</button>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="scheme-item-card">
+                                <div class="scheme-logo-placeholder">👶</div>
+                                <h4>POSHAN Abhiyaan (Saksham Anganwadi)</h4>
+                                <p>Improving nutrition for children & mothers</p>
+                                <span class="badge text-green">Nutrition Support</span>
+                                <div class="eligibility-info">
+                                    <strong>Who can apply?</strong>
+                                    <span>Children (0-6 yrs), Pregnant & Lactating Women</span>
+                                </div>
+                                <button class="btn-text-arrow">Apply Now →</button>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="scheme-item-card">
+                                <div class="scheme-logo-placeholder">🏥</div>
+                                <h4>Janani Suraksha Yojana (JSY)</h4>
+                                <p>Financial assistance for safe delivery</p>
+                                <span class="badge text-green">Nutrition Support</span>
+                                <div class="eligibility-info">
+                                    <strong>Who can apply?</strong>
+                                    <span>Pregnant Women</span>
+                                </div>
+                                <button class="btn-text-arrow">Apply Now →</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- How It Works -->
+                    <section class="card mt-5">
+                        <h3>How It Works?</h3>
+                        <p class="text-sm text-muted mb-4">Simple steps to access your benefits</p>
+                        <div class="timeline-container">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-details">
+                                    <h5>Find Schemes</h5>
+                                    <p>Discover schemes you're eligible for →</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-details">
+                                    <h5>Check Eligibility</h5>
+                                    <p>See requirements & documents →</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-details">
+                                    <h5>Apply Easily</h5>
+                                    <p>Step-by-step guidance to apply →</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-details">
+                                    <h5>Track & Receive</h5>
+                                    <p>Track status and receive benefits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Personalized Recommendations -->
+                    <section class="mt-5">
+                        <h3>Personalized Recommendations</h3>
+                        <p class="text-sm text-muted mb-4">Plans based on your age, gender, activity level, health goals
+                            & preferences.</p>
+                        <div class="category-pills">
+                            <button class="pill active">All</button>
+                            <button class="pill">Pregnancy</button>
+                            <button class="pill">Children</button>
+                            <button class="pill">Senior Citizen</button>
+                            <button class="pill">Chronic Conditions</button>
+                            <button class="pill">General Wellness</button>
+                        </div>
+                    </section>
+
+                    <!-- Explore By Category -->
+                    <section class="mt-5">
+                        <h3>Explore by Category</h3>
+                        <p class="text-sm text-muted mb-4">Browse schemes by your needs</p>
+                        <div class="category-grid">
+                            <div class="cat-card">
+                                <div class="cat-icon text-blue">🛡️</div>
+                                <h5>Health Insurance</h5>
+                                <p>Schemes for financial protection</p>
+                            </div>
+                            <div class="cat-card">
+                                <div class="cat-icon text-teal">🤰</div>
+                                <h5>Maternity & Child</h5>
+                                <p>Benefits for mothers and children</p>
+                            </div>
+                            <div class="cat-card">
+                                <div class="cat-icon text-green">🍏</div>
+                                <h5>Nutrition Support</h5>
+                                <p>Food & nutrition assistance</p>
+                            </div>
+                            <div class="cat-card">
+                                <div class="cat-icon text-yellow">👴</div>
+                                <h5>Senior Citizen</h5>
+                                <p>Get guided support for elderly citizens</p>
+                            </div>
+                            <div class="cat-card">
+                                <div class="cat-icon text-primary">♿</div>
+                                <h5>Disability Support</h5>
+                                <p>Schemes for specially abled persons</p>
+                            </div>
+                            <div class="cat-card align-center justify-center">
+                                <div class="cat-icon text-light">•••</div>
+                                <h5>More</h5>
+                                <p>View more schemes</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Documents You May Need -->
+                    <section class="card mt-5">
+                        <h3>Documents You May Need</h3>
+                        <p class="text-sm text-muted mb-4">Keep these documents handy to apply for most schemes</p>
+                        <div class="documents-row">
+                            <div class="doc-item">
+                                <div class="doc-icon">🆔</div>
+                                <h5>Aadhaar Card</h5>
+                                <span class="text-xs text-muted">Identity Proof</span>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">🏦</div>
+                                <h5>Bank Passbook</h5>
+                                <span class="text-xs text-muted">Bank Details</span>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">📄</div>
+                                <h5>Income Certificate</h5>
+                                <span class="text-xs text-muted">(If applicable)</span>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">📍</div>
+                                <h5>Address Proof</h5>
+                                <span class="text-xs text-muted">Residence Proof</span>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">👤</div>
+                                <h5>Photo</h5>
+                                <span class="text-xs text-muted">Passport Size</span>
+                            </div>
+                        </div>
+                        <div class="tip-banner mt-4">
+                            <span class="tip-label">💡 Tip:</span> Keep scanned or clear photos of documents ready for
+                            faster application.
+                        </div>
+                    </section>
+
+                    <!-- Still Have Questions -->
+                    <section class="banner-card question-banner mt-5">
+                        <div class="banner-content">
+                            <h3>Still have questions?</h3>
+                            <p>Ask AAYU your scheme questions in your language.</p>
+                            <button class="btn btn-wa mt-4">Chat on WhatsApp</button>
+                        </div>
+                        <div class="banner-image-container">
+                            <img src="assets/doctor-banner.png" alt="Doctor Assistant"
+                                onerror="this.parentNode.classList.add('placeholder-fallback')">
+                        </div>
+                    </section>
+
+                </main>
+
+                <!-- Right Sidebar -->
+                <aside class="sidebar-right">
+
+                    <!-- Card 1: Find Schemes Form -->
+                    <div class="card form-card">
+                        <h4>Find Schemes for You</h4>
+                        <p class="text-xs text-muted mb-4">Tell us about yourself</p>
+                        <form class="sidebar-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label>Age Group</label>
+                                <select>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>State</label>
+                                <select>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>District</label>
+                                <select>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Special Condition <span class="text-light">(Optional)</span></label>
+                                <select>
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-2">Show My Schemes</button>
+                        </form>
+                    </div>
+
+                    <!-- Card 2: Scheme Alerts -->
+                    <div class="card alert-card mt-4">
+                        <h4>Scheme Alerts</h4>
+                        <div class="alert-list mt-3">
+                            <div class="alert-item">
+                                <div class="alert-title-row">
+                                    <strong>PM Matru Vandana Yojana</strong>
+                                    <span class="badge-new">New</span>
+                                </div>
+                                <p class="text-xs text-muted">New updated increase in benefit amount. <a href="#">Know
+                                        more</a></p>
+                            </div>
+                            <div class="alert-item">
+                                <div class="alert-title-row">
+                                    <strong>Ayushman Bharat Yojana</strong>
+                                    <span class="badge-new">New</span>
+                                </div>
+                                <p class="text-xs text-muted">Free treatment cover up to ₹5 lakh per family.</p>
+                            </div>
+                            <div class="alert-item">
+                                <div class="alert-title-row">
+                                    <strong>Poshan Abhiyaan</strong>
+                                </div>
+                                <p class="text-xs text-muted">Check nutrition support programs in your area.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="view-alerts-link">View All Alerts →</a>
+                    </div>
+
+                    <!-- Card 3: Need Help Applying -->
+                    <div class="card help-apply-card mt-4">
+                        <div class="help-apply-content">
+                            <h4>Need Help Applying?</h4>
+                            <p class="text-xs mt-2">Our AI Assistant can guide you step-by-step to apply for any scheme.
+                            </p>
+                            <button class="btn btn-white btn-sm mt-4">Ask Assistant 💬</button>
+                        </div>
+                        <div class="help-apply-img">
+                            <img src="assets/girl-phone.png" alt="Assistant"
+                                onerror="this.parentNode.classList.add('placeholder-fallback')">
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+            <!-- Master Footer -->
+            <footer class="master-footer mt-5">
+                <div class="footer-banner-bg" style="background-image: url('assets/footer-bg.png');">
+                    <div class="footer-banner-overlay">
+                        <div class="footer-left-brand">
+                            <div class="brand-logo-placeholder inverse">A</div>
+                            <div>
+                                <h2>AAYU</h2>
+                                <p class="text-xs">AI-Powered Public Health Assistant</p>
+                            </div>
+                        </div>
+                        <div class="footer-trust-block">
+                            <h3>Your Health. Your Data. Your Control.</h3>
+                            <p class="text-xs text-muted-light">Secure. Private. Built for everyone.</p>
+                            <div class="trust-badges mt-3">
+                                <span class="trust-badge">Secure & Private</span>
+                                <span class="trust-badge">You Stay In Control</span>
+                                <span class="trust-badge">Guidance, Not Diagnosis</span>
+                                <span class="trust-badge">Consult Professionals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-bar">
+                    <p>© 2026 AAYU. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Disclaimer</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Help</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="footer-offline-status">
+                        📶 Offline Mode: ON
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

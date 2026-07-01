@@ -12,6 +12,7 @@ import {
   SchemeNeedHelp 
 } from "../components/Schemes/SchemesComponents";
 import { Lightbulb, RefreshCw, Bell, User, ClipboardList } from "lucide-react";
+import { LoadingStatus } from "../components/LoadingStatus";
 
 export function SchemesPage() {
   const [allSchemes, setAllSchemes] = useState<GovernmentScheme[]>([]);
@@ -125,7 +126,7 @@ export function SchemesPage() {
             </div>
             {!query.trim() && (
               <div className="state-filters">
-                {[{id:"all",label:"All States"},{id:"national",label:"🇮🇳 National"},{id:"odisha",label:"🏛️ Odisha"}].map(f => (
+                {[{id:"all",label:"All States"},{id:"national",label:"🇮🇳 National"},{id:"odisha",label:"🏛️ Odisha"},{id:"gujarat",label:"🏛️ Gujarat"}].map(f => (
                   <button key={f.id} className={`state-filter-btn ${stateFilter===f.id?"state-btn-active":""}`} onClick={() => setStateFilter(f.id)}>{f.label}</button>
                 ))}
               </div>
@@ -138,9 +139,11 @@ export function SchemesPage() {
               {error && <div className="schemes-error">⚠️ {error}</div>}
               {!loading && <p className="results-count-text">{displayed.length} scheme{displayed.length !== 1?"s":""} found{query.trim()?` for "${query}"`:""}</p>}
               {loading ? (
-                <div className="schemes-loading"><div className="loading-spinner" /><p>Loading schemes…</p></div>
+                <div style={{ maxWidth: 400, margin: "20px auto" }}>
+                  <LoadingStatus icon="📑" status="Searching government schemes..." />
+                </div>
               ) : displayed.length === 0 ? (
-                <div className="schemes-empty"><div className="empty-icon-big">📭</div><h3>No schemes found</h3><p>Try different keywords or select a different state filter.</p></div>
+                <div className="schemes-empty"><div className="empty-icon-big">🏛</div><h3>No schemes found</h3><p>🏛 Search government health schemes available to you.</p></div>
               ) : (
                 <div className="schemes-results-list">
                   {displayed.map(scheme => <SchemeCard key={scheme.name} scheme={scheme} />)}
@@ -161,7 +164,14 @@ export function SchemesPage() {
             ageGroup={ageGroup} setAgeGroup={setAgeGroup} 
             gender={gender} setGender={setGender} 
             state={userState} setState={setUserState} 
-            district={district} setDistrict={setDistrict} 
+            onFindSchemes={() => {
+              if (userState) {
+                const targetState = userState === "all" ? "national" : userState.toLowerCase();
+                setStateFilter(userState === "all" ? "all" : targetState);
+                setQuery("");
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+              }
+            }}
           />
           <SchemeAlerts />
           <SchemeNeedHelp />

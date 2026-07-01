@@ -282,7 +282,7 @@ class TemplateResponseService:
 
         # If an LLM response was generated, use it as the primary response
         # but keep the triage header and disclaimer.
-        if llm_response and len(llm_response.strip()) > 20:
+        if llm_response and len(llm_response.strip()) > 0:
             response_text = llm_response.strip()
 
         # Format retrieved docs for frontend display

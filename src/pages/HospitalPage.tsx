@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   findNearbyHospitals,
   getUserLocation,
   type HospitalFacility,
 } from "../services/api";
+import { LoadingStatus } from "../components/LoadingStatus";
+import { HospitalMap } from "../components/Map/HospitalMap";
 
 const TYPE_ICONS: Record<string, string> = {
   Hospital: "🏥",
@@ -14,11 +16,11 @@ const TYPE_ICONS: Record<string, string> = {
 };
 
 const FACILITY_FILTERS = [
-  { id: "all",          label: "All" },
-  { id: "hospital",     label: "🏥 Hospitals" },
-  { id: "clinic",       label: "🏪 Clinics" },
-  { id: "health_centre",label: "🏛️ PHCs" },
-  { id: "pharmacy",     label: "💊 Pharmacies" },
+  { id: "all",           label: "All",          icon: "" },
+  { id: "hospital",      label: "Hospitals",    icon: "fa-solid fa-hospital" },
+  { id: "clinic",        label: "Clinics",      icon: "fa-solid fa-stethoscope" },
+  { id: "health_centre", label: "PHCs",         icon: "fa-solid fa-house-medical" },
+  { id: "pharmacy",      label: "Pharmacies",   icon: "fa-solid fa-pills" },
 ];
 
 const RADIUS_OPTIONS = [
@@ -28,46 +30,35 @@ const RADIUS_OPTIONS = [
   { value: 25000, label: "25 km" },
 ];
 
-function FacilityCard({ f }: { f: HospitalFacility }) {
+function FacilityCard({ f, onClick, isSelected }: { f: HospitalFacility; onClick?: () => void; isSelected?: boolean }) {
   const icon = TYPE_ICONS[f.type] ?? "🏥";
+  const distClass = f.distance_km <= 1 ? "close" : f.distance_km <= 3 ? "mid" : "far";
+
   return (
-    <div className="search-result-card" style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-      <div className="card-header">
-        <div>
-          <h3 className="card-title">{icon} {f.name}</h3>
-          <span className="card-category">{f.type} · {f.distance_km} km away</span>
-        </div>
-        <span style={{
-          fontSize: "1.1rem",
-          fontWeight: 700,
-          color: f.distance_km <= 1 ? "#10b981" : f.distance_km <= 3 ? "#f59e0b" : "#6b7280",
-        }}>
-          {f.distance_km} km
-        </span>
+    <div className={`nc-facility-card ${isSelected ? "selected" : ""}`} onClick={onClick}>
+      <div className="nc-facility-icon">{icon}</div>
+      <div className="nc-facility-info">
+        <div className="nc-facility-name">{f.name}</div>
+        <div className="nc-facility-type">{f.type}</div>
+        {f.address && (
+          <div className="nc-facility-address">📍 {f.address}</div>
+        )}
+        {f.phone && (
+          <a
+            href={`tel:${f.phone}`}
+            className="nc-facility-phone"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📞 {f.phone}
+          </a>
+        )}
       </div>
-
-      {f.address && (
-        <p style={{ fontSize: "0.78rem", color: "var(--text-muted, #aaa)", margin: 0 }}>
-          📍 {f.address}
-        </p>
-      )}
-
-      {f.phone && (
-        <a
-          href={`tel:${f.phone}`}
-          style={{
-            fontSize: "0.82rem",
-            color: "#10b981",
-            fontWeight: 600,
-            textDecoration: "none",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          📞 {f.phone}
-        </a>
-      )}
+      <div className="nc-facility-distance">
+        <span className={`nc-distance-value ${distClass}`}>
+          {f.distance_km}
+        </span>
+        <span className="nc-distance-unit">km away</span>
+      </div>
     </div>
   );
 }
@@ -80,14 +71,20 @@ export function HospitalPage() {
   const [filter, setFilter]         = useState("all");
   const [radius, setRadius]         = useState(5000);
   const [coords, setCoords]         = useState<{ lat: number; lon: number } | null>(null);
+  const [processingStage, setProcessingStage] = useState<{icon: string, text: string} | null>(null);
+  const [selectedFacility, setSelectedFacility] = useState<HospitalFacility | null>(null);
 
   async function handleFind() {
     setLoading(true);
+    setProcessingStage({ icon: "📍", text: "Finding nearby healthcare..." });
     setError("");
     try {
+      setProcessingStage({ icon: "📍", text: "Obtaining your location..." });
       const loc = await getUserLocation();
       setCoords(loc);
+      setProcessingStage({ icon: "🏥", text: "Searching nearby facilities..." });
       const resp = await findNearbyHospitals(loc.lat, loc.lon, radius, filter);
+      setProcessingStage({ icon: "💬", text: "Preparing results..." });
       setFacilities(resp.facilities);
       setFetched(true);
     } catch (e: any) {
@@ -104,12 +101,22 @@ export function HospitalPage() {
     }
   }
 
+  // Handle URL parameters for automatic search (Screening -> Hospital Flow)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("autoSearch") === "true" && !fetched && !loading && !coords) {
+      handleFind();
+    }
+  }, []);
+
   async function handleRefresh() {
     if (!coords) return handleFind();
     setLoading(true);
+    setProcessingStage({ icon: "🏥", text: "Searching nearby facilities..." });
     setError("");
     try {
       const resp = await findNearbyHospitals(coords.lat, coords.lon, radius, filter);
+      setProcessingStage({ icon: "💬", text: "Preparing results..." });
       setFacilities(resp.facilities);
     } catch (e: any) {
       const msg = e.message ?? "";
@@ -126,109 +133,147 @@ export function HospitalPage() {
   }
 
   return (
-    <div className="search-page">
-      <div className="search-hero">
-        <h1 className="search-hero-title">🏥 Nearby Healthcare</h1>
-        <p className="search-hero-sub">
-          Find hospitals, clinics, PHCs and pharmacies near you using OpenStreetMap
-        </p>
+    <div className="nc-page-container">
+
+      {/* Disclaimer Banner */}
+      <div className="nc-warning-banner">
+        <i className="fa-solid fa-triangle-exclamation"></i>
+        <p>AAYU provides general health information and guidance only. It does not diagnose conditions or replace professional medical advice. Always consult a qualified healthcare professional.</p>
       </div>
 
-      {/* Controls */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: "1.25rem", alignItems: "center" }}>
-        {/* Facility type filter */}
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {FACILITY_FILTERS.map((f) => (
-            <button
-              key={f.id}
-              onClick={() => setFilter(f.id)}
-              style={{
-                padding: "6px 14px",
-                borderRadius: 9999,
-                border: "none",
-                cursor: "pointer",
-                fontWeight: 600,
-                fontSize: "0.78rem",
-                background: filter === f.id ? "var(--accent, #10b981)" : "rgba(255,255,255,0.08)",
-                color: filter === f.id ? "#fff" : "var(--text-muted, #aaa)",
-                transition: "all 0.2s",
-              }}
-            >
-              {f.label}
-            </button>
-          ))}
+      {/* Main Tool Card */}
+      <div className="nc-tool-card">
+
+        {/* Header */}
+        <div className="nc-tool-header">
+          <div className="nc-title-wrapper">
+            <div className="nc-icon-box">
+              <i className="fa-solid fa-hospital-user"></i>
+            </div>
+            <div>
+              <h2>Nearby Healthcare</h2>
+              <p>Find hospitals, clinics, PHCs and pharmacies near you</p>
+            </div>
+          </div>
         </div>
 
-        {/* Radius select */}
-        <select
-          value={radius}
-          onChange={(e) => setRadius(Number(e.target.value))}
-          className="search-collection-select"
-          style={{ minWidth: 90 }}
-        >
-          {RADIUS_OPTIONS.map((r) => (
-            <option key={r.value} value={r.value}>{r.label}</option>
-          ))}
-        </select>
-
-        {/* Search button */}
-        <button
-          id="hospital-find-btn"
-          className="search-submit-btn"
-          onClick={fetched ? handleRefresh : handleFind}
-          disabled={loading}
-          style={{ padding: "8px 20px" }}
-        >
-          {loading ? "⏳" : fetched ? "🔄 Refresh" : "📍 Find Near Me"}
-        </button>
-      </div>
-
-      {coords && (
-        <p style={{ fontSize: "0.72rem", color: "var(--text-muted, #888)", marginBottom: "0.75rem" }}>
-          📍 Using your location: {coords.lat.toFixed(4)}, {coords.lon.toFixed(4)}
-        </p>
-      )}
-
-      {error && <div className="search-error">⚠️ {error}</div>}
-
-      {loading && (
-        <div className="search-loading">
-          <div className="loading-spinner" />
-          <p>Searching nearby facilities…</p>
-        </div>
-      )}
-
-      {!loading && fetched && facilities.length === 0 && (
-        <div className="search-empty">
-          <span className="empty-icon">🏥</span>
-          <h3>No facilities found</h3>
-          <p>Try increasing the search radius or check your internet connection.</p>
-        </div>
-      )}
-
-      {!loading && facilities.length > 0 && (
-        <>
-          <p className="results-count">
-            {facilities.length} facilit{facilities.length !== 1 ? "ies" : "y"} within {radius / 1000} km
-          </p>
-          <div className="results-grid">
-            {facilities.map((f, i) => (
-              <FacilityCard key={`${f.name}-${i}`} f={f} />
+        {/* Controls / Filters */}
+        <div className="nc-tool-controls">
+          <div className="nc-filter-pills">
+            {FACILITY_FILTERS.map((f) => (
+              <button
+                key={f.id}
+                className={`nc-pill ${filter === f.id ? "active" : ""}`}
+                onClick={() => setFilter(f.id)}
+              >
+                {f.icon && <i className={f.icon}></i>}
+                {f.label}
+              </button>
             ))}
           </div>
-        </>
-      )}
 
-      {!fetched && !loading && (
-        <div className="search-placeholder">
-          <span className="placeholder-icon">📍</span>
-          <h3>Find Healthcare Near You</h3>
-          <p>Click "Find Near Me" to locate hospitals, clinics, and pharmacies using your GPS location.</p>
-          <p style={{ fontSize: "0.75rem", color: "var(--text-muted, #aaa)", marginTop: 8 }}>
-            Requires internet connection and location permission.
-          </p>
+          <div className="nc-action-group">
+            <select
+              className="nc-radius-select"
+              value={radius}
+              onChange={(e) => setRadius(Number(e.target.value))}
+            >
+              {RADIUS_OPTIONS.map((r) => (
+                <option key={r.value} value={r.value}>{r.label}</option>
+              ))}
+            </select>
+
+            <button
+              id="hospital-find-btn"
+              className="nc-btn-primary"
+              onClick={fetched ? handleRefresh : handleFind}
+              disabled={loading}
+            >
+              <i className={loading ? "fa-solid fa-spinner fa-spin" : fetched ? "fa-solid fa-rotate" : "fa-solid fa-map-pin"}></i>
+              {loading ? "Searching..." : fetched ? "Refresh" : "Find Near Me"}
+            </button>
+          </div>
         </div>
-      )}
+
+        {/* Status */}
+        <div className="nc-status-container">
+          {coords && (
+            <div className="nc-location-status">
+              <i className="fa-solid fa-location-crosshairs"></i>
+              Using your location: {coords.lat.toFixed(4)}, {coords.lon.toFixed(4)}
+            </div>
+          )}
+
+          {error && (
+            <div className="nc-error-banner">
+              <i className="fa-solid fa-triangle-exclamation"></i>
+              <p>{error}</p>
+            </div>
+          )}
+        </div>
+
+        {/* Loading */}
+        {loading && processingStage && (
+          <div className="nc-loading-wrap">
+            <LoadingStatus icon={processingStage.icon} status={processingStage.text} />
+          </div>
+        )}
+
+        {/* Interactive Map */}
+        {!loading && fetched && coords && facilities.length > 0 && (
+          <div className="nc-map-area">
+            <HospitalMap
+              userLocation={coords}
+              facilities={facilities}
+              selectedFacility={selectedFacility}
+              onSelectFacility={setSelectedFacility}
+            />
+          </div>
+        )}
+
+        {/* Empty State (before search) */}
+        {!fetched && !loading && (
+          <div className="nc-empty-state">
+            <div className="nc-empty-content">
+              <div className="nc-pin-icon">
+                <i className="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h3>Find Healthcare Near You</h3>
+              <p>📍 Find nearby hospitals, PHCs and pharmacies using your current location.</p>
+              <span className="nc-sub-text">Requires internet connection and location permission.</span>
+            </div>
+          </div>
+        )}
+
+        {/* No results */}
+        {!loading && fetched && facilities.length === 0 && (
+          <div className="nc-no-results">
+            <span className="nc-no-icon">🏥</span>
+            <h3>No facilities found</h3>
+            <p>Try increasing the search radius or check your internet connection.</p>
+          </div>
+        )}
+
+        {/* Results */}
+        {!loading && facilities.length > 0 && (
+          <>
+            <p className="nc-results-header">
+              {facilities.length} facilit{facilities.length !== 1 ? "ies" : "y"} within {radius / 1000} km
+            </p>
+            <div className="nc-results-grid">
+              {facilities.map((f, i) => (
+                <FacilityCard
+                  key={`${f.name}-${i}`}
+                  f={f}
+                  onClick={() => setSelectedFacility(f)}
+                  isSelected={selectedFacility?.name === f.name}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+      </div>
     </div>
   );
 }

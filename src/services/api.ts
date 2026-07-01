@@ -35,24 +35,44 @@ export async function checkBackendHealth(): Promise<boolean> {
 // Calls POST /chat — full pipeline: translate → search → triage → response
 
 export async function sendChatMessage(
-  req: ChatRequest & { session_id?: string }
+  req: ChatRequest & { session_id?: string; history?: any[] },
+  onEvent?: (event: "HEADERS_RECEIVED" | "JSON_PARSED") => void
 ): Promise<ChatApiResponse> {
+  const payload = {
+      message: req.message,
+      language: req.language || "en",
+      top_k: req.top_k || 5,
+      collection: req.collection || "all",
+      session_id: req.session_id ?? "",
+      history: req.history ?? [],
+  };
+  console.log("========== SENDING CHAT REQUEST ==========");
+  console.log("Request Payload:", payload);
+
   const res = await fetch(`${API_BASE}/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      message: req.message,
-      language: req.language ?? "en",
-      top_k: req.top_k ?? 5,
-      collection: req.collection ?? "all",
-      session_id: req.session_id ?? "",
-    }),
+    body: JSON.stringify(payload),
   });
+  onEvent?.("HEADERS_RECEIVED");
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: "Unknown error" }));
     throw new Error(err.detail ?? "Chat request failed");
   }
-  return res.json();
+  const rawText = await res.text();
+  console.log("Raw Response Body:", rawText);
+
+  let data;
+  try {
+    data = JSON.parse(rawText);
+  } catch (err) {
+    console.error("Failed to parse response as JSON:", err);
+    throw new Error("Invalid JSON response from server");
+  }
+
+  console.log("Parsed Response:", data);
+  onEvent?.("JSON_PARSED");
+  return data;
 }
 
 // ── Fallback mock (kept for offline/dev use) ──────────────────────────────────
@@ -156,9 +176,9 @@ export interface SystemStatus {
   status: string;
   connectivity: "online" | "offline";
   llm: {
-    preferred: "gemini" | "ollama";
+    preferred: "openai" | "gemini" | "ollama";
     ollama: "running" | "unavailable" | "error";
-    gemini: "configured" | "no_key";
+    openai: "configured" | "no_key";
   };
 }
 
@@ -252,7 +272,8 @@ export async function transcribeAudio(
 export async function submitScreeningAnswer(
   sessionId: string,
   questionId: string,
-  answer: string
+  answer: string,
+  onEvent?: (event: "HEADERS_RECEIVED" | "JSON_PARSED") => void
 ): Promise<ChatApiResponse> {
   const res = await fetch(`${API_BASE}/chat/screening/answer`, {
     method: "POST",
@@ -263,11 +284,14 @@ export async function submitScreeningAnswer(
       answer: answer,
     }),
   });
+  onEvent?.("HEADERS_RECEIVED");
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: "Unknown error" }));
     throw new Error(err.detail ?? "Failed to submit screening answer");
   }
-  return res.json();
+  const data = await res.json();
+  onEvent?.("JSON_PARSED");
+  return data;
 }
 
 export async function clearChatSession(
@@ -280,6 +304,17 @@ export async function clearChatSession(
     throw new Error("Failed to clear chat session on server");
   }
   return res.json();
+}
+
+export async function generateChatTitle(message: string): Promise<string> {
+  const res = await fetch(`${API_BASE}/chat/title`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message }),
+  });
+  if (!res.ok) return "Health Chat";
+  const data = await res.json();
+  return data.title;
 }
 
 export { API_BASE };

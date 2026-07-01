@@ -58,8 +58,12 @@ export function AayuSidebar({ isOpen, onToggle }: AayuSidebarProps) {
         </p>
       </div>
 
+      <div style={{ marginTop: 'auto', padding: '16px', fontSize: '0.65rem', color: '#94a3b8', textAlign: 'center', lineHeight: 1.5 }}>
+        Powered by OpenAI, Sarvam AI, Google Places, Verified Medical Knowledge
+      </div>
+
       <div className="offline">
-        {isOpen ? "🟢 Offline Mode Enabled" : "🟢"}
+        {isOpen ? "" : ""}
       </div>
     </aside>
   );

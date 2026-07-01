@@ -34,12 +34,18 @@ _logger = logging.getLogger(__name__)
 
 _lock = threading.Lock()
 _state: str = "unloaded"   # "unloaded" | "loaded" | "failed"
+_state_en: str = "unloaded" # "unloaded" | "loaded" | "failed"
 _INDIC_AVAILABLE: bool | None = None  # None = unchecked, True/False = result cached
 
 # Actual model objects — populated on first use
 _ip = None        # IndicProcessor
 _tokenizer = None
 _model = None
+
+_ip_en = None
+_tokenizer_en = None
+_model_en = None
+
 _device: str = "cpu"
 
 import os
@@ -50,6 +56,10 @@ import os
 MODEL_PATH: str = os.getenv(
     "INDICTRANS2_MODEL_PATH",
     "ai4bharat/indictrans2-indic-en-1B",   # HuggingFace repo ID — auto-downloads
+)
+MODEL_PATH_EN: str = os.getenv(
+    "INDICTRANS2_MODEL_PATH_EN",
+    "ai4bharat/indictrans2-en-indic-1B",
 )
 _LOCAL_ONLY: bool = os.path.isabs(MODEL_PATH)  # True only if user gave a real path
 
@@ -82,13 +92,15 @@ def _load_model() -> None:
         try:
             import IndicTransToolkit  # noqa: F401
             _INDIC_AVAILABLE = True
-        except ImportError:
+        except ImportError as e:
+            import traceback
+            traceback.print_exc()
             _INDIC_AVAILABLE = False
             _state = "unavailable"
             _logger.warning(
-                "[Translation] IndicTransToolkit not installed. "
-                "Translation disabled — English passthrough only. "
-                "Install with: pip install IndicTransToolkit"
+                f"[Translation] IndicTransToolkit not installed. "
+                f"Translation disabled — English passthrough only. "
+                f"Error: {e}"
             )
             return
 
@@ -139,6 +151,49 @@ def _load_model() -> None:
             "Error: %s",
             exc,
         )
+
+def _load_model_en_indic() -> None:
+    global _state_en, _ip_en, _tokenizer_en, _model_en, _device
+
+    global _INDIC_AVAILABLE
+    if _INDIC_AVAILABLE is None:
+        try:
+            import IndicTransToolkit  # noqa: F401
+            _INDIC_AVAILABLE = True
+        except ImportError as e:
+            _INDIC_AVAILABLE = False
+            _state_en = "unavailable"
+            return
+
+    if _state_en != "unloaded":
+        return
+
+    _logger.info("[Translation] Loading IndicTrans2 EN-Indic model…")
+    t0 = time.time()
+
+    try:
+        from IndicTransToolkit import IndicProcessor
+        from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+        import torch
+
+        _device = "cuda" if torch.cuda.is_available() else "cpu"
+        _ip_en = IndicProcessor(inference=True)
+
+        _tokenizer_en = AutoTokenizer.from_pretrained(
+            MODEL_PATH_EN, trust_remote_code=True, local_files_only=_LOCAL_ONLY
+        )
+        _model_en = AutoModelForSeq2SeqLM.from_pretrained(
+            MODEL_PATH_EN, trust_remote_code=True, local_files_only=_LOCAL_ONLY
+        )
+        _model_en = _model_en.to(_device)
+        _model_en.eval()
+
+        _state_en = "loaded"
+        _logger.info("[Translation] EN-Indic loaded in %.2f s on %s.", time.time() - t0, _device)
+    except Exception as exc:
+        _state_en = "failed"
+        _logger.warning("[Translation] EN-Indic failed to load: %s", exc)
+
 
 
 # ───────────────────────────────────────────────────────────────
@@ -223,12 +278,12 @@ def translate_from_english(text: str, target_lang: str) -> str:
     Translate English text to the target language using IndicTrans2.
     Falls back to the original English text if translation fails or model is not loaded.
     """
-    if _state == "unavailable":
+    if _state_en == "unavailable":
         return text   # passthrough — no repeated warnings
 
-    _load_model()
+    _load_model_en_indic()
 
-    if _state != "loaded":
+    if _state_en != "loaded":
         return text
 
     if target_lang == "en":
@@ -242,12 +297,12 @@ def translate_from_english(text: str, target_lang: str) -> str:
     with _lock:
         try:
             import torch
-            batch = _ip.preprocess_batch(
+            batch = _ip_en.preprocess_batch(
                 [text],
                 src_lang="eng_Latn",
                 tgt_lang=indic_lang,
             )
-            inputs = _tokenizer(
+            inputs = _tokenizer_en(
                 batch,
                 truncation=True,
                 padding="longest",
@@ -255,7 +310,7 @@ def translate_from_english(text: str, target_lang: str) -> str:
                 return_attention_mask=True,
             ).to(_device)
             with torch.no_grad():
-                generated_tokens = _model.generate(
+                generated_tokens = _model_en.generate(
                     **inputs,
                     use_cache=True,
                     min_length=0,
@@ -263,13 +318,13 @@ def translate_from_english(text: str, target_lang: str) -> str:
                     num_beams=5,
                     num_return_sequences=1,
                 )
-            with _tokenizer.as_target_tokenizer():
-                decoded = _tokenizer.batch_decode(
+            with _tokenizer_en.as_target_tokenizer():
+                decoded = _tokenizer_en.batch_decode(
                     generated_tokens.detach().cpu().tolist(),
                     skip_special_tokens=True,
                     clean_up_tokenization_spaces=True,
                 )
-            return _ip.postprocess_batch(decoded, lang=indic_lang)[0]
+            return _ip_en.postprocess_batch(decoded, lang=indic_lang)[0]
         except Exception as exc:
             _logger.error("[Translation] translate_from_english failed: %s", exc)
             return text

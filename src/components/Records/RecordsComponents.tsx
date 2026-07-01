@@ -1,5 +1,5 @@
 import { FileText, Share2, Shield, Folder, Activity, Search, UploadCloud } from "lucide-react";
-import heroFamilyImg from "../../assets/hero-family.png";
+import heroFamilyImg from "../../assets/reports.png";
 
 export function HealthVaultHeader() {
   return (
@@ -12,7 +12,7 @@ export function HealthVaultHeader() {
         <UploadButtons />
       </div>
       <div className="records-hero-img">
-         <img src={heroFamilyImg} alt="Family Health" className="records-family-img" />
+        <img src={heroFamilyImg} alt="Family Health" className="records-family-img" />
       </div>
     </section>
   );
@@ -46,8 +46,8 @@ export function RecordCategories({ activeTab, setActiveTab }: any) {
         {CATEGORIES.map(c => {
           const Icon = c.icon;
           return (
-            <button 
-              key={c.id} 
+            <button
+              key={c.id}
               className={`cat-card ${activeTab === c.id ? "cat-card-active" : ""}`}
               onClick={() => setActiveTab(c.id)}
             >
@@ -81,10 +81,11 @@ export function RecordCards({ search, setSearch }: any) {
           <input type="text" placeholder="Search records..." value={search} onChange={e => setSearch(e.target.value)} className="records-search-input" />
         </div>
       </div>
-      
+
       <div className="records-list">
-        {RECENT_RECORDS.map(record => (
-          <div key={record.id} className="record-item-card">
+        {RECENT_RECORDS.filter(r => !search || r.name.toLowerCase().includes(search.toLowerCase())).length > 0 ? (
+          RECENT_RECORDS.filter(r => !search || r.name.toLowerCase().includes(search.toLowerCase())).map(record => (
+            <div key={record.id} className="record-item-card">
               <div className="record-icon-wrap">
                 <FileText size={24} />
               </div>
@@ -95,8 +96,14 @@ export function RecordCards({ search, setSearch }: any) {
                 </div>
               </div>
               <button className="record-action-btn">View</button>
+            </div>
+          ))
+        ) : (
+          <div style={{ padding: "40px 20px", textAlign: "center", color: "#64748b" }}>
+            <div style={{ fontSize: "2rem", marginBottom: "12px" }}>📄</div>
+            <p>Your health records will appear here.</p>
           </div>
-        ))}
+        )}
       </div>
     </section>
   );
@@ -108,7 +115,7 @@ export function InsightsPanel() {
       <div className="rail-title">Storage Usage</div>
       <p className="rail-sub">Your digital locker</p>
       <div className="storage-bar" style={{ background: "#e2e8f0", height: "8px", borderRadius: "4px", marginTop: "12px" }}>
-          <div className="storage-fill" style={{ width: "25%", background: "#0d9488", height: "8px", borderRadius: "4px" }}></div>
+        <div className="storage-fill" style={{ width: "25%", background: "#0d9488", height: "8px", borderRadius: "4px" }}></div>
       </div>
       <div className="storage-text" style={{ marginTop: "12px", fontWeight: "600" }}>25% Used (1.25 GB of 5 GB)</div>
       <p className="storage-sub" style={{ fontSize: "0.85rem", color: "#64748b", marginTop: "8px" }}>All records are backed up securely to the cloud and encrypted.</p>
@@ -120,13 +127,13 @@ export function ShareSection() {
   return (
     <div className="rail-help-card">
       <div className="rhc-inner">
-          <div className="rhc-content">
-            <div className="rhc-title">Share with Doctor</div>
-            <p className="rhc-desc">Securely share your records with your doctor using a unique code or QR.</p>
-            <button className="rhc-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Share2 size={16} /> Share Now
-            </button>
-          </div>
+        <div className="rhc-content">
+          <div className="rhc-title">Share with Doctor</div>
+          <p className="rhc-desc">Securely share your records with your doctor using a unique code or QR.</p>
+          <button className="rhc-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Share2 size={16} /> Share Now
+          </button>
+        </div>
       </div>
     </div>
   );

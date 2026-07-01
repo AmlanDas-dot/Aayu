@@ -1,0 +1,609 @@
+/* ==========================================================================
+   CSS Variables & Design System
+   ========================================================================== */
+:root {
+    --primary-color: #0f766e;
+    --primary-light: #1397a4;
+    --primary-bg: #f0fdfa;
+    --bg-body: #f4f7f9;
+    --bg-card: #ffffff;
+
+    --text-dark: #1e293b;
+    --text-main: #334155;
+    --text-muted: #64748b;
+
+    --border-color: #e2e8f0;
+
+    --warning-bg: #fef9c3;
+    --warning-border: #fef08a;
+    --warning-text: #854d0e;
+
+    --error-bg: #fee2e2;
+    --error-border: #fca5a5;
+    --error-text: #991b1b;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Layout Structure
+   ========================================================================== */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Sidebar (Provided CSS directly merged)
+   ========================================================================== */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 14px 16px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: #0f766e;
+}
+
+.logo h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f766e;
+}
+
+.logo p {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+.logo img {
+    width: 90px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all .25s ease;
+    font-weight: 700;
+    color: #344267;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.menu-item:hover {
+    background: #f8fbff;
+    transform: translateX(2px);
+}
+
+.menu-item.active {
+    background: linear-gradient(90deg, #157c79 0%, #1397a4 100%);
+    color: white;
+    box-shadow: 0 8px 18px rgba(15, 118, 110, .25);
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.whatsapp {
+    margin-top: 25px;
+    background: white;
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.whatsapp img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-bottom: 1px;
+}
+
+.whatsapp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    height: 30px;
+}
+
+.whatsapp-header img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.whatsapp-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1e293b;
+}
+
+.offline {
+    margin-top: 16px;
+    background: #ecfdf5;
+    color: #065f46;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   Main Content & Header
+   ========================================================================== */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-header {
+    background: var(--bg-card);
+    height: 70px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: var(--bg-body);
+    padding: 10px 16px;
+    border-radius: var(--radius-full);
+    width: 400px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.search-container:focus-within {
+    border-color: var(--border-color);
+    background: var(--bg-card);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    margin-right: 12px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-main);
+}
+
+.lang-selector,
+.profile-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    transition: background 0.2s;
+}
+
+.lang-selector:hover,
+.profile-dropdown:hover {
+    background: var(--bg-body);
+}
+
+.lang-selector i:not(:last-child),
+.profile-dropdown i:not(:last-child) {
+    color: var(--primary-color);
+}
+
+.lang-selector i:last-child,
+.profile-dropdown i:last-child {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background: var(--bg-body);
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Page Content Core
+   ========================================================================== */
+.page-container {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.alert-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.alert-banner i {
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.warning-banner {
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-border);
+    color: var(--warning-text);
+}
+
+.error-banner {
+    background: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--error-text);
+    margin-top: 12px;
+}
+
+/* ==========================================================================
+   Tool Card Styling
+   ========================================================================== */
+.tool-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.title-wrapper h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.title-wrapper p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Controls & Filters */
+.tool-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-pills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pill i {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.pill:hover {
+    background: var(--bg-body);
+}
+
+.pill.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.pill.active i {
+    color: #fff;
+}
+
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dropdown-select {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    background: var(--bg-card);
+}
+
+.dropdown-select i {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+}
+
+/* Status & Map Area */
+.status-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-status {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.location-status i {
+    color: var(--primary-color);
+}
+
+.map-container {
+    width: 100%;
+    min-height: 450px;
+    background: var(--bg-body);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.empty-state-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    max-width: 400px;
+}
+
+.pin-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 16px;
+}
+
+.pin-icon-wrapper i {
+    font-size: 28px;
+    color: #e11d48;
+    /* Red/pink hue from original */
+}
+
+.empty-state-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.empty-state-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.empty-state-content .sub-text {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .tool-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .action-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        /* In a real app, handled by a hamburger menu */
+    }
+
+    .search-container {
+        width: 250px;
+    }
+
+    .header-actions .lang-selector span,
+    .header-actions .profile-dropdown span {
+        display: none;
+    }
+
+    .action-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-group .dropdown-select {
+        justify-content: space-between;
+    }
+}

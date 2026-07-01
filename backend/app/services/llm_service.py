@@ -10,9 +10,12 @@ Usage:
 
 from __future__ import annotations
 
+import sys
+print("Interpreter:", sys.executable)
 import logging
 import os
 import time
+import traceback
 from typing import Any
 
 import httpx
@@ -21,13 +24,46 @@ logger = logging.getLogger(__name__)
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
-GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
+OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL    = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 
 _SYSTEM_PROMPT = """You are AAYU, an AI health assistant designed to help rural populations in India.
 You provide clear, simple, actionable health guidance in plain language.
 Always recommend consulting a healthcare professional for serious conditions.
 Keep responses concise — 3 to 5 sentences maximum unless the condition is an emergency.
 Never diagnose. Never prescribe specific medications by name."""
+
+PROMPT_GENERAL_HEALTH = _SYSTEM_PROMPT
+
+PROMPT_MENTAL_HEALTH = """You are AAYU, a highly empathetic and supportive AI health assistant.
+The user is seeking emotional support or mental health guidance.
+Your tone must be warm, reassuring, and non-judgmental.
+Listen to them and validate their feelings.
+Do not diagnose mental health conditions.
+Encourage them to speak to loved ones or a mental health professional if they are in distress."""
+
+PROMPT_CASUAL_CHAT = """You are AAYU, a friendly and conversational AI health assistant.
+The user is making casual conversation or greeting you.
+Respond warmly and naturally. Keep it brief.
+If they ask how you are, reply cheerfully and ask how you can help them with their health, nutrition, or government schemes today."""
+
+PROMPT_DISEASE_INFO = """You are AAYU, an AI health assistant.
+The user is asking about a specific disease or health condition.
+Use the provided knowledge base context to explain the disease simply and clearly.
+Avoid medical jargon. Keep responses concise — 3 to 5 sentences.
+Always recommend consulting a doctor for actual medical concerns."""
+
+PROMPT_NUTRITION = """You are AAYU, an AI health assistant specializing in nutrition.
+The user is asking about food, diet, or nutrition.
+Use the provided nutrition context to give relevant dietary advice.
+Suggest specific local foods if they are in the context.
+Keep your response concise, practical, and easy to understand."""
+
+PROMPT_SCHEMES = """You are AAYU, an AI health assistant knowledgeable about government schemes.
+The user is asking about health or welfare schemes.
+Use the provided context to explain the scheme, its benefits, and basic eligibility.
+Keep the explanation clear and straightforward. Avoid bureaucratic jargon."""
+
 
 _CONNECTIVITY_CACHE: dict[str, Any] = {"online": None, "checked_at": 0.0}
 _CONNECTIVITY_TTL = 30.0  # re-check every 30 seconds
@@ -63,10 +99,10 @@ def _build_prompt(query: str, context: str) -> str:
     )
 
 
-async def _ollama(query: str, context: str, history: list[dict[str, str]] = None) -> str:
+async def _ollama(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300) -> str:
     """Call Ollama local API."""
     prompt = _build_prompt(query, context)
-    messages = [{"role": "system", "content": _SYSTEM_PROMPT}]
+    messages = [{"role": "system", "content": system_prompt or _SYSTEM_PROMPT}]
     if history:
         messages.extend(history)
     messages.append({"role": "user", "content": prompt})
@@ -75,7 +111,7 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
         "model": OLLAMA_MODEL,
         "messages": messages,
         "stream": False,
-        "options": {"temperature": 0.3, "num_predict": 300},
+        "options": {"temperature": 0.3, "num_predict": max_tokens},
     }
     try:
         async with httpx.AsyncClient(timeout=60.0) as client:
@@ -91,35 +127,42 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
         raise RuntimeError(f"Ollama error: {exc}") from exc
 
 
-async def _gemini(query: str, context: str, history: list[dict[str, str]] = None) -> str:
-    """Call Gemini API."""
-    if not GEMINI_API_KEY:
-        raise RuntimeError("GEMINI_API_KEY not set in environment.")
+async def _openai(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300) -> str:
+    """Call OpenAI API."""
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=GEMINI_API_KEY)
+        from openai import OpenAI
+    except ImportError as exc:
+        raise RuntimeError("OpenAI error: No module named 'openai'") from exc
+
+    if not OPENAI_API_KEY:
+        raise RuntimeError("OPENAI_API_KEY not set in environment.")
+
+    try:
+        client = OpenAI(api_key=OPENAI_API_KEY)
         
-        # Structure the chat/contents with history
-        contents = []
+        messages = [{"role": "system", "content": system_prompt or _SYSTEM_PROMPT}]
         if history:
-            for turn in history:
-                role = "user" if turn["role"] == "user" else "model"
-                contents.append({"role": role, "parts": [turn["content"]]})
-        
+            messages.extend(history)
+            
         prompt = _build_prompt(query, context)
-        contents.append({"role": "user", "parts": [prompt]})
-        
-        model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
-            system_instruction=_SYSTEM_PROMPT,
+        messages.append({"role": "user", "content": prompt})
+
+        response = client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=messages,
+            temperature=0.3,
+            max_tokens=max_tokens,
         )
-        response = model.generate_content(
-            contents,
-            generation_config={"temperature": 0.3, "max_output_tokens": 300},
-        )
-        return response.text.strip()
+
+        response_text = response.choices[0].message.content
+        if not response_text:
+            raise RuntimeError("OpenAI returned an empty response.")
+
+        return response_text.strip()
+
     except Exception as exc:
-        raise RuntimeError(f"Gemini error: {exc}") from exc
+        logger.error("[LLM] OpenAI raw exception:\n%s", traceback.format_exc())
+        raise RuntimeError(f"OpenAI error: {exc}") from exc
 
 
 async def get_llm_response(
@@ -128,29 +171,32 @@ async def get_llm_response(
     language: str = "en",
     prefer_online: bool = False,
     history: list[dict[str, str]] = None,
+    system_prompt: str = None,
+    max_tokens: int = 300,
 ) -> tuple[str, str]:
     """
-    Generate a response using Gemini (online) or Ollama (offline).
+    Generate a response using OpenAI (online) or Ollama (offline).
 
-    Returns (response_text, provider_used) where provider_used is "gemini" or "ollama".
+    Returns (response_text, provider_used) where provider_used is "openai" or "ollama".
 
-    Falls back to Ollama if Gemini fails, and vice versa.
+    Falls back to Ollama if OpenAI fails, and vice versa.
     Falls back to empty string if both fail (caller handles the fallback gracefully).
     """
-    providers = (["gemini", "ollama"] if prefer_online else ["ollama", "gemini"])
+    providers = (["openai", "ollama"] if prefer_online else ["ollama", "openai"])
 
     for provider in providers:
         try:
             t0 = time.time()
-            if provider == "gemini":
-                text = await _gemini(query, context, history)
+            if provider == "openai":
+                logger.info("[LLM] Using OpenAI")
+                text = await _openai(query, context, history, system_prompt, max_tokens)
             else:
-                text = await _ollama(query, context, history)
+                text = await _ollama(query, context, history, system_prompt, max_tokens)
             elapsed_ms = round((time.time() - t0) * 1000)
             logger.info("[LLM] %s responded in %d ms.", provider, elapsed_ms)
             return text, provider
         except RuntimeError as exc:
-            logger.warning("[LLM] %s failed: %s — trying next provider.", provider, exc)
+            logger.warning("[LLM] %s failed:\n%s\nTrying next provider.", provider, traceback.format_exc())
 
     logger.error("[LLM] All providers failed.")
-    return "", "none"
+    return "The AI service is currently unavailable.", "none"

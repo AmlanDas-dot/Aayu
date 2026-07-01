@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   sendChatMessage,
   transcribeAudio,
   submitScreeningAnswer,
   clearChatSession,
+  generateChatTitle,
 } from "../services/api";
 import { speak, stopSpeaking } from "../services/tts";
 import { EmergencyAlert } from "../components/EmergencyAlert";
+import { LoadingStatus } from "../components/LoadingStatus";
 import type { RiskLevel, RetrievedDocument, ChatApiResponse } from "../types/search";
 
 import logoHeart from "../assets/logo-heart.png";
@@ -26,7 +29,7 @@ interface ChatMessage {
   disclaimer?: string;
   processing_time_ms?: number;
   mode?: "online" | "offline";
-  llm_provider?: "gemini" | "ollama" | "template" | "none";
+  llm_provider?: "openai" | "gemini" | "ollama" | "template" | "none";
 }
 
 interface Conversation {
@@ -35,6 +38,19 @@ interface Conversation {
   timestamp: string;
   lastMessageSnippet: string;
   messages: ChatMessage[];
+  icon?: string;
+}
+
+function determineIcon(title: string, messages: ChatMessage[]): string {
+   const text = (title + " " + messages.map(m=>m.text).join(" ")).toLowerCase();
+   if (/\b(food|diet|nutrition|eat|protein|vitamin)\b/.test(text)) return "fa-seedling";
+   if (/\b(fever|temperature|headache|ache|symptom|disease|dengue|malaria|flu)\b/.test(text)) return "fa-heart-pulse";
+   if (/\b(scheme|ayushman|pmjay|government|insurance)\b/.test(text)) return "fa-file-medical";
+   if (/\b(hospital|clinic|phc|chc|doctor|ambulance)\b/.test(text)) return "fa-hospital";
+   if (/\b(scared|anxious|lonely|sad|failed|lost|die|stress)\b/.test(text)) return "fa-face-smile";
+   if (/\b(record|report)\b/.test(text)) return "fa-folder";
+   if (/\b(medicine|pill|tablet)\b/.test(text)) return "fa-pills";
+   return "fa-comments";
 }
 
 function makeId() {
@@ -94,7 +110,7 @@ const getDefaultWelcomeSession = (): Conversation => ({
     {
       id: "welcome",
       role: "assistant",
-      text: "Namaste! 🙏 I am AAYU.\n\nI can help you with:\n• Understanding symptoms\n• Health guidance\n• Disease awareness\n• Preventive care information\n• Government health schemes\n\nPlease describe how you are feeling.",
+      text: "Hello! I'm AAYU.\n\nI can help you with:\n🩺 Symptom guidance\n🥗 Nutrition advice\n🏥 Nearby healthcare facilities\n📋 Government schemes\n\nDescribe how you're feeling or ask me a health-related question.",
       timestamp: new Date(),
     },
   ],
@@ -191,6 +207,7 @@ function KnowledgeCard({ doc }: { doc: any }) {
 }
 
 export function ChatPage() {
+  const navigate = useNavigate();
   // --- History State ---
   const [conversations, setConversations] = useState<Conversation[]>(() => {
     const saved = localStorage.getItem("aayu_chat_conversations");
@@ -223,6 +240,7 @@ export function ChatPage() {
   const [input, setInput] = useState("");
   const [language, setLanguage] = useState(() => localStorage.getItem("aayu_language") || "en");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [processingStage, setProcessingStage] = useState<{icon: string, text: string} | null>(null);
 
   // --- Voice Input (Whisper) State ---
   const [isRecording, setIsRecording] = useState(false);
@@ -230,6 +248,11 @@ export function ChatPage() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const recognitionRef = useRef<any>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, processingStage]);
 
   // --- Text-To-Speech State ---
   const [speakingMsgId, setSpeakingMsgId] = useState<string | null>(null);
@@ -258,7 +281,7 @@ export function ChatPage() {
     if (active) {
       setMessages(active.messages);
     }
-  }, [sessionId, conversations]);
+  }, [sessionId]);
 
   // --- Auto-scroll ---
   useEffect(() => {
@@ -338,9 +361,25 @@ export function ChatPage() {
   };
 
   // --- Send Message Handler ---
-  async function handleSend(text?: string) {
+  async function handleSend(text?: string, wasVoice?: boolean) {
     const msg = (text ?? input).trim();
     if (!msg || isProcessing) return;
+
+    const lowerMsg = msg.toLowerCase();
+    const isEmergency = /\b(emergency|heart attack|suicide|bleeding|stroke|poison|accident|unconscious|not breathing)\b/i.test(lowerMsg);
+    const isNutrition = /\b(food|diet|nutrition|eat|protein|vitamin)\b/i.test(lowerMsg);
+    const isSchemes = /\b(scheme|ayushman|pmjay|government|insurance)\b/i.test(lowerMsg);
+    const isDisease = /\b(fever|temperature|headache|ache|symptom|disease|dengue|malaria|flu|vomiting|diarrhea|cough)\b/i.test(lowerMsg);
+
+    if (wasVoice) {
+       setProcessingStage({ icon: "🧠", text: "Thinking..." });
+    } else {
+       if (isEmergency) setProcessingStage({ icon: "🚨", text: "Emergency detected" });
+       else if (isNutrition) setProcessingStage({ icon: "🍎", text: "Finding nutrition guidance..." });
+       else if (isSchemes) setProcessingStage({ icon: "📑", text: "Searching government schemes..." });
+       else if (isDisease) setProcessingStage({ icon: "🔍", text: "Searching verified medical knowledge..." });
+       else setProcessingStage({ icon: "📝", text: "Understanding your message..." });
+    }
 
     // Stop speaking currently reading message
     stopSpeaking();
@@ -360,12 +399,31 @@ export function ChatPage() {
       { id: typingId, role: "assistant", text: "", timestamp: new Date(), isTyping: true },
     ]);
 
+    const llmHistory = messages
+      .filter((m) => m.role === "user" || ["openai", "gemini", "ollama"].includes(m.llm_provider || ""))
+      .slice(-10)
+      .map((m) => ({ role: m.role, content: m.text }));
+
     try {
       const apiResp: ChatApiResponse = await sendChatMessage({
         message: msg,
         language,
         session_id: sessionId,
+        history: llmHistory,
+      }, (event) => {
+          if (event === "HEADERS_RECEIVED") {
+             if (isEmergency) setProcessingStage({ icon: "☎️", text: "Preparing emergency guidance..." });
+             else if (isDisease) setProcessingStage({ icon: "🧠", text: "Preparing evidence-based response..." });
+             else if (!isNutrition && !isSchemes) setProcessingStage({ icon: "🧠", text: "Thinking..." });
+          } else if (event === "JSON_PARSED") {
+             if (isNutrition) setProcessingStage({ icon: "💬", text: "Preparing recommendations..." });
+             else if (isSchemes) setProcessingStage({ icon: "💬", text: "Preparing explanation..." });
+             else if (!isEmergency) setProcessingStage({ icon: "💬", text: "Preparing response..." });
+          }
       });
+
+      console.log("========== RENDERING RESPONSE ==========");
+      console.log("Setting assistant message text to:", apiResp.response);
 
       const assistantId = makeId();
       setMessages((prev) => {
@@ -387,6 +445,29 @@ export function ChatPage() {
             : m
         );
         updateConversations(afterMsgs);
+
+        // Title Generation Hook
+        const activeConv = JSON.parse(localStorage.getItem("aayu_chat_conversations") || "[]").find((c: any) => c.sessionId === sessionId);
+        if (activeConv && (activeConv.title === "New Chat" || activeConv.title === "Fever & Headache Guidance" || activeConv.title.includes("..."))) {
+           const userMsgs = afterMsgs.filter((m) => m.role === "user");
+           if (userMsgs.length >= 2 || (userMsgs.length === 1 && userMsgs[0].text.length > 15)) {
+              const lastUserMsg = userMsgs[userMsgs.length - 1].text;
+              const promptMsg = `User: ${lastUserMsg}\nAssistant: ${apiResp.response}`;
+              generateChatTitle(promptMsg).then((t) => {
+                 setConversations(prev => {
+                    const updated = [...prev];
+                    const idx = updated.findIndex((c) => c.sessionId === sessionId);
+                    if (idx >= 0) {
+                       updated[idx].title = t;
+                       updated[idx].icon = determineIcon(t, updated[idx].messages);
+                       localStorage.setItem("aayu_chat_conversations", JSON.stringify(updated));
+                    }
+                    return updated;
+                 });
+              }).catch(() => {});
+           }
+        }
+
         return afterMsgs;
       });
 
@@ -431,6 +512,7 @@ export function ChatPage() {
       );
     } finally {
       setIsProcessing(false);
+      setProcessingStage(null);
     }
   }
 
@@ -452,6 +534,7 @@ export function ChatPage() {
 
     // Set processing and typing state
     setIsProcessing(true);
+    setProcessingStage({ icon: "📋", text: "Preparing health screening..." });
     const typingId = makeId();
 
     let updatedMsgs = [...messages, userMsg];
@@ -467,7 +550,12 @@ export function ChatPage() {
       const apiResp: ChatApiResponse = await submitScreeningAnswer(
         sessionId,
         screeningQuestion.id,
-        answer
+        answer,
+        (event) => {
+           if (event === "JSON_PARSED") {
+              setProcessingStage({ icon: "❓", text: "Preparing next question..." });
+           }
+        }
       );
 
       const assistantId = makeId();
@@ -527,6 +615,7 @@ export function ChatPage() {
       );
     } finally {
       setIsProcessing(false);
+      setProcessingStage(null);
     }
   }
 
@@ -542,12 +631,6 @@ export function ChatPage() {
     setConfidenceLabel("");
 
     const newId = generateSessionId();
-
-    try {
-      await clearChatSession(sessionId);
-    } catch (e) {
-      console.warn("Failed to clear session on backend", e);
-    }
 
     setSessionId(newId);
 
@@ -567,9 +650,45 @@ export function ChatPage() {
     };
 
     setConversations((prev) => {
-      // Remove any empty chats (only welcome message with no user interactions) to keep sidebar clean
-      const filtered = prev.filter(c => c.messages.length > 1 || c.sessionId === sessionId);
-      const updated = [newConv, ...filtered];
+      // Create a brand new conversation without removing or overwriting previous ones
+      const updated = [newConv, ...prev];
+      localStorage.setItem("aayu_chat_conversations", JSON.stringify(updated));
+      return updated;
+    });
+  }
+
+  // --- Delete Conversation Handler ---
+  function handleDeleteConversation(e: React.MouseEvent, id: string) {
+    e.stopPropagation();
+    if (!window.confirm("Delete this conversation?")) return;
+
+    setConversations((prev) => {
+      const updated = prev.filter(c => c.sessionId !== id);
+      
+      if (updated.length === 0) {
+        const newId = generateSessionId();
+        const welcomeMsg: ChatMessage = {
+          id: makeId(),
+          role: "assistant",
+          text: "Welcome back! A new chat session has started. Describe how you are feeling.",
+          timestamp: new Date(),
+        };
+        const newConv: Conversation = {
+          sessionId: newId,
+          title: "New Chat",
+          timestamp: "Today",
+          lastMessageSnippet: "Welcome back!...",
+          messages: [welcomeMsg],
+        };
+        localStorage.setItem("aayu_chat_conversations", JSON.stringify([newConv]));
+        setSessionId(newId);
+        return [newConv];
+      }
+
+      if (sessionId === id) {
+        setSessionId(updated[0].sessionId);
+      }
+
       localStorage.setItem("aayu_chat_conversations", JSON.stringify(updated));
       return updated;
     });
@@ -621,9 +740,11 @@ export function ChatPage() {
 
       recognition.onend = () => {
         setIsRecording(false);
+        setProcessingStage(null);
       };
 
       try {
+        setProcessingStage({ icon: "🎤", text: "Listening..." });
         recognition.start();
       } catch (err) {
         alert("Microphone permission denied or not available.");
@@ -649,17 +770,21 @@ export function ChatPage() {
         stream.getTracks().forEach((track) => track.stop()); // release mic
 
         setTranscribing(true);
+        setProcessingStage({ icon: "📝", text: "Converting speech to text..." });
         const transcribeTimeout = setTimeout(() => {
           setTranscribing(false);
+          setProcessingStage(null);
           console.warn("[Transcribe] Timed out after 30s");
         }, 30000);
 
         try {
           const res = await transcribeAudio(audioBlob, language);
-          setInput(res.transcript);
+          setProcessingStage({ icon: "✓", text: "Speech recognized" });
+          setTimeout(() => handleSend(res.transcript, true), 300);
         } catch (e: any) {
           alert("Speech recognition failed");
           setInput("");
+          setProcessingStage(null);
         } finally {
           clearTimeout(transcribeTimeout);
           setTranscribing(false);
@@ -668,6 +793,7 @@ export function ChatPage() {
 
       mediaRecorder.start();
       setIsRecording(true);
+      setProcessingStage({ icon: "🎤", text: "Listening..." });
     } catch (err) {
       alert("Microphone permission denied or not available.");
     }
@@ -693,12 +819,46 @@ export function ChatPage() {
     localStorage.setItem("aayu_language", lang);
   }
 
-  // Filter history conversations based on search search input
+  // Filter and sort conversations for better search ranking
   const filteredConversations = conversations.filter(
     (c) =>
       c.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       c.messages.some((m) => m.text.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  ).sort((a, b) => {
+    if (!searchTerm) {
+      return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+    }
+    const aTitleMatch = a.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const bTitleMatch = b.title.toLowerCase().includes(searchTerm.toLowerCase());
+    if (aTitleMatch && !bTitleMatch) return -1;
+    if (!aTitleMatch && bTitleMatch) return 1;
+    return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+  });
+
+  // Group conversations by date
+  const groupedConversations: Record<string, typeof conversations> = {
+    "Today": [],
+    "Yesterday": [],
+    "Last 7 Days": [],
+    "Earlier This Month": [],
+    "Older": [],
+  };
+
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+
+  filteredConversations.forEach(conv => {
+    const d = new Date(conv.timestamp);
+    d.setHours(0, 0, 0, 0);
+    const diffTime = Math.abs(now.getTime() - d.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) groupedConversations["Today"].push(conv);
+    else if (diffDays === 1) groupedConversations["Yesterday"].push(conv);
+    else if (diffDays <= 7) groupedConversations["Last 7 Days"].push(conv);
+    else if (d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear()) groupedConversations["Earlier This Month"].push(conv);
+    else groupedConversations["Older"].push(conv);
+  });
 
   return (
     <div className="content-layout">
@@ -726,22 +886,50 @@ export function ChatPage() {
             </div>
 
             <div className="history-list">
-              {filteredConversations.map((conv) => (
-                <button
-                  key={conv.sessionId}
-                  onClick={() => setSessionId(conv.sessionId)}
-                  className={`history-card ${conv.sessionId === sessionId ? "active" : ""}`}
-                >
-                  <div className="history-card-icon">
-                    <i className="fa-solid fa-message"></i>
+              {Object.entries(groupedConversations).map(([groupName, convs]) => {
+                if (convs.length === 0) return null;
+                return (
+                  <div key={groupName} className="history-group">
+                    <div className="history-group-header" style={{ fontSize: "0.8rem", color: "#888", padding: "8px 16px", fontWeight: "bold" }}>
+                      {groupName}
+                    </div>
+                    {convs.map((conv) => (
+                      <div
+                        key={conv.sessionId}
+                        onClick={() => setSessionId(conv.sessionId)}
+                        className={`history-card ${conv.sessionId === sessionId ? "active" : ""}`}
+                        style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", cursor: "pointer" }}
+                      >
+                        <div style={{ display: "flex", gap: "12px", flex: 1, overflow: "hidden" }}>
+                          <div className="history-card-icon">
+                            <i className={`fa-solid ${conv.icon || determineIcon(conv.title, conv.messages)}`}></i>
+                          </div>
+                          <div className="history-card-content" style={{ flex: 1 }}>
+                            <h4>{conv.title}</h4>
+                            <span>{conv.timestamp}</span>
+                            <p>{conv.lastMessageSnippet}</p>
+                          </div>
+                        </div>
+                        <button 
+                          onClick={(e) => handleDeleteConversation(e, conv.sessionId)}
+                          className="delete-conv-btn"
+                          title="Delete Conversation"
+                          style={{
+                            background: "transparent", border: "none", color: "#94a3b8", cursor: "pointer",
+                            padding: "4px", display: "flex", alignItems: "center", justifyContent: "center",
+                            borderRadius: "4px", fontSize: "0.85rem", opacity: conv.sessionId === sessionId ? 0.8 : 0.4,
+                            transition: "opacity 0.2s"
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = "#94a3b8")}
+                        >
+                          <i className="fa-solid fa-trash-can"></i>
+                        </button>
+                      </div>
+                    ))}
                   </div>
-                  <div className="history-card-content">
-                    <h4>{conv.title}</h4>
-                    <span>{conv.timestamp}</span>
-                    <p>{conv.lastMessageSnippet}</p>
-                  </div>
-                </button>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -773,12 +961,10 @@ export function ChatPage() {
                   ) : null}
 
                   <div className="message-card">
-                    {msg.isTyping ? (
-                      <div className="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
+                    {msg.isTyping && processingStage ? (
+                      <LoadingStatus icon={processingStage.icon} status={processingStage.text} />
+                    ) : msg.isTyping ? (
+                      <LoadingStatus icon="fa-brain" status="🩺 AAYU is analyzing your request..." />
                     ) : (
                       <>
                         {/* Risk Level Badge */}
@@ -789,23 +975,24 @@ export function ChatPage() {
                           </div>
                         )}
 
-                        {/* Model Mode Details */}
-                        {msg.role === "assistant" && (msg.mode || msg.llm_provider) && (
+
+                        {/* Verified Knowledge Badge */}
+                        {msg.role === "assistant" && msg.retrieved_documents && msg.retrieved_documents.length > 0 && (
                           <div style={{
                             fontSize: "0.68rem",
                             padding: "2px 8px",
                             borderRadius: "9999px",
-                            background: msg.mode === "online" ? "rgba(16,185,129,0.1)" : "rgba(100,116,139,0.1)",
-                            color: msg.mode === "online" ? "#10b981" : "#64748b",
-                            border: `1px solid ${msg.mode === "online" ? "rgba(16,185,129,0.2)" : "rgba(100,116,139,0.2)"}`,
+                            background: "rgba(16, 185, 129, 0.1)",
+                            color: "#0f766e",
+                            border: "1px solid rgba(16, 185, 129, 0.3)",
                             display: "inline-flex",
                             alignItems: "center",
                             gap: 4,
                             marginBottom: 8,
-                            fontWeight: 700,
-                            textTransform: "capitalize"
+                            marginLeft: (msg.mode || msg.llm_provider) ? 8 : 0,
+                            fontWeight: 700
                           }}>
-                            {msg.mode === "online" ? "⚡ Online" : "🔌 Offline"} · {msg.llm_provider}
+                            <i className="fa-solid fa-check-circle"></i> Verified Medical Knowledge
                           </div>
                         )}
 
@@ -1009,17 +1196,52 @@ export function ChatPage() {
                 </div>
               </div>
             )}
+            <div ref={messagesEndRef} />
+            
+            {/* SCREENING COMPLETE & CTA */}
+            {screeningComplete && (() => {
+              const lastMsg = messages.slice().reverse().find(m => m.role === "assistant");
+              const showCTA = lastMsg && (lastMsg.risk_level === "emergency" || lastMsg.risk_level === "urgent" || lastMsg.risk_level === "high");
+              if (!showCTA) return null;
+              
+              return (
+                <div style={{ margin: "0 20px 20px", textAlign: "center" }}>
+                  <button 
+                    onClick={() => navigate("/hospitals?autoSearch=true")}
+                    style={{
+                      background: "#ef4444",
+                      color: "white",
+                      padding: "14px 24px",
+                      borderRadius: "12px",
+                      border: "none",
+                      fontSize: "1rem",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                      boxShadow: "0 4px 12px rgba(239, 68, 68, 0.3)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      transition: "all 0.2s"
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+                    onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
+                  >
+                    📍 Find Nearby Hospitals
+                  </button>
+                </div>
+              );
+            })()}
 
             {/* Bottom input area */}
             <div className="chat-input-area">
               {/* Quick Prompt Chips (hidden if screening is active) */}
               {!screeningActive && (
                 <div className="quick-chips">
-                  <button className="chip" onClick={() => handleSend("Fever and headache")}>Fever and headache</button>
-                  <button className="chip" onClick={() => handleSend("Stomach pain")}>Stomach pain</button>
-                  <button className="chip" onClick={() => handleSend("Skin rash")}>Skin rash</button>
-                  <button className="chip" onClick={() => handleSend("Nutrition advice")}>Nutrition advice</button>
-                  <button className="chip" onClick={() => handleSend("Nearby hospital")}>Nearby hospital</button>
+                  <button className="chip" disabled={isProcessing} onClick={() => handleSend("Fever and headache")}>Fever and headache</button>
+                  <button className="chip" disabled={isProcessing} onClick={() => handleSend("Stomach pain")}>Stomach pain</button>
+                  <button className="chip" disabled={isProcessing} onClick={() => handleSend("Skin rash")}>Skin rash</button>
+                  <button className="chip" disabled={isProcessing} onClick={() => handleSend("Nutrition advice")}>Nutrition advice</button>
+                  <button className="chip" disabled={isProcessing} onClick={() => handleSend("Nearby hospital")}>Nearby hospital</button>
                 </div>
               )}
 
@@ -1046,9 +1268,11 @@ export function ChatPage() {
                   className="input-action-btn mic-btn"
                   title={isRecording ? "Stop Recording" : "Voice message"}
                   onClick={isRecording ? stopRecording : startRecording}
+                  disabled={isProcessing}
                   style={{
                     color: isRecording ? "#ef4444" : "#0f766e",
                     animation: isRecording ? "pulse-red 1.5s infinite" : "none",
+                    opacity: isProcessing ? 0.5 : 1,
                   }}
                 >
                   <i className={isRecording ? "fa-solid fa-circle-stop" : "fa-solid fa-microphone"}></i>

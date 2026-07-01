@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import doctorImg from "../../assets/doctor-leaves.png";
-import { getAllFoods, type FoodNutrition } from "../../services/api";
+import { getAllFoods, searchNutrition, type FoodNutrition } from "../../services/api";
 
 export function NutritionHero() {
   return (
@@ -25,7 +25,7 @@ export function NutritionHero() {
   );
 }
 
-export function NutritionSnapshot() {
+export function NutritionSnapshot({ profile }: { profile: any }) {
   return (
     <section className="nutrition-snapshot">
       <h2 className="section-heading">Your Nutrition Snapshot</h2>
@@ -42,7 +42,7 @@ export function NutritionSnapshot() {
                 strokeLinecap="round"
                 transform="rotate(-90 40 40)"
               />
-              <text x="40" y="44" textAnchor="middle" fill="#0d9488" fontSize="14" fontWeight="800">72</text>
+              <text x="40" y="44" textAnchor="middle" fill="#0d9488" fontSize="14" fontWeight="800">{profile.score}</text>
             </svg>
           </div>
           <div className="snap-label">Nutrition Score</div>
@@ -52,49 +52,43 @@ export function NutritionSnapshot() {
         </div>
 
         <div className="snap-card">
-          <div className="snap-big">1,650 <span className="snap-unit">kcal</span></div>
+          <div className="snap-big">{profile.calories.val} <span className="snap-unit">kcal</span></div>
           <div className="snap-label">Calories Estimate</div>
           <div className="snap-progress-bar">
-            <div className="snap-bar-fill" style={{ width: "82%", background: "#f59e0b" }} />
+            <div className="snap-bar-fill" style={{ width: `${profile.calories.pct}%`, background: "#f59e0b" }} />
           </div>
-          <div className="snap-sub-label">302 kcal remaining</div>
+          <div className="snap-sub-label">{profile.calories.remaining} remaining</div>
         </div>
 
         <div className="snap-card">
-          <div className="snap-big">56 <span className="snap-unit">g</span></div>
+          <div className="snap-big">{profile.protein.val} <span className="snap-unit">g</span></div>
           <div className="snap-label">Protein Intake</div>
           <div className="snap-progress-bar">
-            <div className="snap-bar-fill" style={{ width: "69%", background: "#0d9488" }} />
+            <div className="snap-bar-fill" style={{ width: `${profile.protein.pct}%`, background: "#0d9488" }} />
           </div>
-          <div className="snap-sub-label">69% of goal</div>
+          <div className="snap-sub-label">{profile.protein.pct}% of goal</div>
         </div>
 
         <div className="snap-card">
-          <div className="snap-big">12 <span className="snap-unit">mg</span></div>
+          <div className="snap-big">{profile.iron.val} <span className="snap-unit">mg</span></div>
           <div className="snap-label">Iron Intake</div>
           <div className="snap-progress-bar">
-            <div className="snap-bar-fill" style={{ width: "71%", background: "#ef4444" }} />
+            <div className="snap-bar-fill" style={{ width: `${profile.iron.pct}%`, background: "#ef4444" }} />
           </div>
-          <div className="snap-sub-label">71% of goal</div>
+          <div className="snap-sub-label">{profile.iron.pct}% of goal</div>
         </div>
       </div>
     </section>
   );
 }
 
-const SWAP_IDEAS = [
-  { from: { icon: "🥬", name: "Leafy Greens", note: "Dairy" }, to: { icon: "🌽", name: "Roasted Chana", note: "Rich in protein & fibre" } },
-  { from: { icon: "🍟", name: "Chips", note: "(High in fat & salt)" }, to: { icon: "🧃", name: "Sugary Drinks", note: "(High in sugar)" } },
-  { from: { icon: "🥛", name: "Buttermilk", note: "(Good for gut & hydration)" }, to: null },
-];
-
-export function SwapRecommendations() {
+export function SwapRecommendations({ profile }: { profile: any }) {
   return (
     <section className="nutrition-swap-section">
       <h2 className="section-heading">What to Add or Swap?</h2>
       <p className="section-sub">Small changes, big impact.</p>
       <div className="swap-grid">
-        {SWAP_IDEAS.map((item, i) => (
+        {profile.swaps.map((item: any, i: number) => (
           <div key={i} className="swap-card">
             <div className="swap-item">
               <div className="swap-food-icon">{item.from.icon}</div>
@@ -121,17 +115,9 @@ export function SwapRecommendations() {
 
 const BUDGET_OPTIONS = [50, 100, 150, 200];
 
-const MEAL_PLAN = [
-  { meal: "Breakfast", name: "Poha + Milk", icon: "🍚", price: 20, note: "Energy-rich start" },
-  { meal: "Mid-Morning", name: "Guava", icon: "🍈", price: 10, note: "Rich in Vitamin C" },
-  { meal: "Lunch", name: "Rice + Dal + Seasonal Salad", icon: "🥗", price: 35, note: "Balanced & filling" },
-  { meal: "Evening Snack", name: "Roasted Chana + Banana", icon: "🍌", price: 15, note: "Keeps you active" },
-  { meal: "Dinner", name: "2 Rotis + Mixed Vegetables", icon: "🫓", price: 20, note: "Light & nutritious" },
-];
-
-export function MealPlanGrid() {
+export function MealPlanGrid({ profile }: { profile: any }) {
   const [selectedBudget, setSelectedBudget] = useState(100);
-  const totalCost = MEAL_PLAN.reduce((sum, m) => sum + m.price, 0);
+  const totalCost = profile.mealPlan.reduce((sum: number, m: any) => sum + m.price, 0);
 
   return (
     <section className="meal-plan-section">
@@ -163,7 +149,7 @@ export function MealPlanGrid() {
       </div>
 
       <div className="meal-cards-grid">
-        {MEAL_PLAN.map((meal) => (
+        {profile.mealPlan.map((meal: any) => (
           <div key={meal.meal} className="meal-card">
             <div className="meal-time">{meal.meal}</div>
             <div className="meal-icon">{meal.icon}</div>
@@ -185,14 +171,7 @@ export function MealPlanGrid() {
   );
 }
 
-const TOP_NUTRIENTS = [
-  { name: "Protein", current: "51g", target: "77g", pct: 66, color: "#0d9488" },
-  { name: "Iron", current: "10mg", target: "21mg", pct: 48, color: "#f59e0b" },
-  { name: "Calcium", current: "450mg", target: "1000mg", pct: 45, color: "#3b82f6" },
-  { name: "Fibre", current: "14g", target: "25g", pct: 56, color: "#10b981" },
-];
-
-export function NutritionCharts() {
+export function NutritionCharts({ profile }: { profile: any }) {
   return (
     <section className="nutrient-breakdown-section">
       <div className="nutrient-breakdown-grid">
@@ -220,7 +199,7 @@ export function NutritionCharts() {
         <div className="nutrient-right">
           <h3 className="section-heading">Top Nutrients</h3>
           <p className="section-sub">Your intake vs recommended.</p>
-          {TOP_NUTRIENTS.map((n) => (
+          {profile.topNutrients.map((n: any) => (
             <div key={n.name} className="top-nutrient-row">
               <span className="tn-name">{n.name}</span>
               <span className="tn-values">{n.current} / {n.target}</span>
@@ -230,7 +209,7 @@ export function NutritionCharts() {
               <span className="tn-pct" style={{ color: n.color }}>{n.pct}%</span>
             </div>
           ))}
-          <p className="nutrient-tip">💡 Eat more iron-rich foods like leafy greens, dates and millets.</p>
+          <p className="nutrient-tip">{profile.tip}</p>
         </div>
       </div>
     </section>
@@ -248,10 +227,30 @@ const LOCAL_FOODS_MOCK = [
 
 export function FoodCarousel() {
   const [foods, setFoods] = useState<FoodNutrition[]>([]);
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getAllFoods().then(setFoods).catch(() => {});
-  }, []);
+    let active = true;
+    const run = async () => {
+      setLoading(true);
+      try {
+        let res = [];
+        if (query.trim().length >= 2) {
+          res = await searchNutrition(query.trim());
+        } else {
+          res = await getAllFoods();
+        }
+        if (active) setFoods(res);
+      } catch (e) {
+        // ignore
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+    const t = setTimeout(run, query ? 300 : 0);
+    return () => { active = false; clearTimeout(t); };
+  }, [query]);
 
   return (
     <section className="local-foods-section">
@@ -260,17 +259,33 @@ export function FoodCarousel() {
           <h2 className="section-heading">Local & Seasonal Foods Near You</h2>
           <p className="section-sub">Nutritious, affordable and easy to find.</p>
         </div>
-        <button className="view-all-link">View All Arrivals</button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '1.2rem' }}>🔍</span>
+          <input 
+            type="text" 
+            placeholder="Search foods..." 
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #cbd5e1', outline: 'none', fontSize: '0.9rem' }}
+          />
+        </div>
       </div>
       <div className="local-foods-scroll">
-        {foods.length > 0 ? (
+        {loading ? (
+          <div style={{ padding: '20px', color: '#64748b' }}>Searching foods...</div>
+        ) : foods.length > 0 ? (
           foods.map((f) => (
             <div key={f.id} className="local-food-card">
               <div className="local-food-icon">🍏</div>
               <div className="local-food-name">{f.display_name}</div>
-              <div className="local-food-cal" style={{fontSize: "0.8rem", color: "#64748b", marginTop: "4px"}}>{f.guidance.substring(0, 30)}...</div>
+              <div className="local-food-cal" style={{fontSize: "0.8rem", color: "#64748b", marginTop: "4px"}}>{f.guidance.substring(0, 40)}...</div>
             </div>
           ))
+        ) : query.trim().length >= 2 ? (
+          <div style={{ padding: '40px 20px', textAlign: 'center', color: '#64748b', width: '100%' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🥗</div>
+            <p>Search foods, nutrients and healthy meal suggestions.</p>
+          </div>
         ) : (
           LOCAL_FOODS_MOCK.map((f) => (
             <div key={f.name} className="local-food-card">
@@ -292,9 +307,10 @@ const COMMUNITY_INSIGHTS = [
   { condition: "Undernutrition in Children", prevalence: "Under 5 Years", pct: 28, color: "#0d9488", trend: "↓" },
 ];
 
-export function NutritionSideWidgets() {
+export function NutritionSideWidgets({ profileType, setProfileType }: any) {
   return (
     <aside className="nutrition-rail">
+      <NutritionProfileFinder profileType={profileType} setProfileType={setProfileType} />
       <div className="rail-card">
         <h3 className="rail-title">Community Insights</h3>
         <p className="rail-sub">(Local data)</p>
@@ -342,5 +358,100 @@ export function FooterBanner() {
         <img src={doctorImg} alt="Nutrition Help" className="wa-banner-doc" />
       </div>
     </section>
+  );
+}
+
+export const NUTRITION_PROFILES = {
+  default: {
+    score: 72,
+    calories: { val: "1,650", max: 2000, pct: 82, remaining: "350 kcal" },
+    protein: { val: "56", max: 60, pct: 69 },
+    iron: { val: "12", max: 18, pct: 71 },
+    swaps: [
+      { from: { icon: "🍟", name: "Chips", note: "(High in fat)" }, to: { icon: "🌽", name: "Roasted Chana", note: "(Rich in protein & fibre)" } },
+      { from: { icon: "🧃", name: "Sugary Drinks", note: "(High sugar)" }, to: { icon: "🥛", name: "Buttermilk", note: "(Good for gut & hydration)" } },
+      { from: { icon: "🥬", name: "Leafy Greens", note: "Dairy" }, to: { icon: "🌽", name: "Roasted Chana", note: "Rich in protein & fibre" } },
+    ],
+    mealPlan: [
+      { meal: "Breakfast", name: "Poha + Milk", icon: "🍚", price: 20, note: "Energy-rich start" },
+      { meal: "Mid-Morning", name: "Guava", icon: "🍈", price: 10, note: "Rich in Vitamin C" },
+      { meal: "Lunch", name: "Rice + Dal + Seasonal Salad", icon: "🥗", price: 35, note: "Balanced & filling" },
+      { meal: "Evening Snack", name: "Roasted Chana + Banana", icon: "🍌", price: 15, note: "Keeps you active" },
+      { meal: "Dinner", name: "2 Rotis + Mixed Vegetables", icon: "🫓", price: 20, note: "Light & nutritious" },
+    ],
+    topNutrients: [
+      { name: "Protein", current: "51g", target: "60g", pct: 85, color: "#0d9488" },
+      { name: "Iron", current: "10mg", target: "18mg", pct: 55, color: "#f59e0b" },
+      { name: "Calcium", current: "450mg", target: "1000mg", pct: 45, color: "#3b82f6" },
+      { name: "Fibre", current: "14g", target: "25g", pct: 56, color: "#10b981" },
+    ],
+    tip: "💡 Eat more iron-rich foods like leafy greens, dates and millets."
+  },
+  pregnant: {
+    score: 65,
+    calories: { val: "2,100", max: 2500, pct: 84, remaining: "400 kcal" },
+    protein: { val: "68", max: 75, pct: 90 },
+    iron: { val: "15", max: 27, pct: 55 },
+    swaps: [
+      { from: { icon: "☕", name: "Tea/Coffee with meals", note: "(Blocks iron)" }, to: { icon: "🍋", name: "Lemon Water", note: "(Boosts iron absorption)" } },
+      { from: { icon: "🍚", name: "White Rice", note: "(Low nutrient)" }, to: { icon: "🌾", name: "Ragi/Millets", note: "(High Calcium & Iron)" } },
+    ],
+    mealPlan: [
+      { meal: "Breakfast", name: "Ragi Dosa + Egg", icon: "🥞", price: 25, note: "High protein & calcium" },
+      { meal: "Mid-Morning", name: "Amla + Dates", icon: "🫐", price: 15, note: "Iron + Vitamin C combo" },
+      { meal: "Lunch", name: "Rice + Spinach Dal", icon: "🍛", price: 40, note: "Folic acid rich" },
+      { meal: "Evening Snack", name: "Sprouted Moong Salad", icon: "🥗", price: 15, note: "Easy to digest" },
+      { meal: "Dinner", name: "Rotis + Paneer/Soybean", icon: "🫓", price: 30, note: "Protein rich" },
+    ],
+    topNutrients: [
+      { name: "Protein", current: "68g", target: "75g", pct: 90, color: "#0d9488" },
+      { name: "Iron", current: "15mg", target: "27mg", pct: 55, color: "#ef4444" },
+      { name: "Calcium", current: "800mg", target: "1000mg", pct: 80, color: "#3b82f6" },
+      { name: "Folic Acid", current: "400mcg", target: "600mcg", pct: 66, color: "#10b981" },
+    ],
+    tip: "💡 Iron is crucial right now! Pair your iron supplements with vitamin C (like lemon juice) and avoid tea/coffee with meals."
+  },
+  child: {
+    score: 80,
+    calories: { val: "1,200", max: 1400, pct: 85, remaining: "200 kcal" },
+    protein: { val: "30", max: 35, pct: 85 },
+    iron: { val: "8", max: 10, pct: 80 },
+    swaps: [
+      { from: { icon: "🍬", name: "Candies/Chocolates", note: "(Empty calories)" }, to: { icon: "🥜", name: "Peanut Chikki", note: "(Protein & Iron rich)" } },
+      { from: { icon: "🍞", name: "White Bread", note: "(Low fibre)" }, to: { icon: "🌾", name: "Dalia/Oats", note: "(Complex carbs)" } },
+    ],
+    mealPlan: [
+      { meal: "Breakfast", name: "Milk + Upma", icon: "🥣", price: 20, note: "Energy for the day" },
+      { meal: "Mid-Morning", name: "Apple/Banana", icon: "🍎", price: 10, note: "Natural sugars" },
+      { meal: "Lunch", name: "Khichdi + Curd", icon: "🍛", price: 25, note: "Easy to digest" },
+      { meal: "Evening Snack", name: "Boiled Egg/Chana", icon: "🥚", price: 10, note: "Muscle growth" },
+      { meal: "Dinner", name: "Roti + Dal + Veggies", icon: "🫓", price: 25, note: "Balanced nutrition" },
+    ],
+    topNutrients: [
+      { name: "Protein", current: "30g", target: "35g", pct: 85, color: "#0d9488" },
+      { name: "Iron", current: "8mg", target: "10mg", pct: 80, color: "#f59e0b" },
+      { name: "Calcium", current: "500mg", target: "600mg", pct: 83, color: "#3b82f6" },
+      { name: "Vitamin A", current: "300mcg", target: "400mcg", pct: 75, color: "#10b981" },
+    ],
+    tip: "💡 Growing kids need protein and calcium. Ensure 2 servings of dairy/eggs/pulses daily!"
+  }
+};
+
+export function NutritionProfileFinder({ profileType, setProfileType }: any) {
+  return (
+    <div className="rail-card">
+      <div className="rail-title">Nutrition Profile</div>
+      <p className="rail-sub">View customized nutrition plan</p>
+      <div className="find-scheme-fields">
+        <label className="find-scheme-label">
+          <span className="fsl-text">Profile Type</span>
+          <select className="fsl-select" value={profileType} onChange={e => setProfileType(e.target.value)}>
+            <option value="default">Adult (General Health)</option>
+            <option value="pregnant">Pregnant/Lactating Mother</option>
+            <option value="child">Child (0-12 Years)</option>
+          </select>
+        </label>
+      </div>
+    </div>
   );
 }

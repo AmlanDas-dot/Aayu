@@ -79,40 +79,42 @@ export function PlaceholderPages({ page }: { page: string }) {
 
   return (
     <div className="placeholder-page">
-      <div className="placeholder-hero">
-        <div className="placeholder-icon-wrap">
-          <span className="placeholder-big-icon">{config.icon}</span>
-        </div>
-        <div className="placeholder-text">
-          <span className="placeholder-badge">Coming Soon</span>
-          <h1 className="placeholder-title">{config.title}</h1>
-          <p className="placeholder-desc">{config.desc}</p>
-        </div>
-      </div>
+      <div className="placeholder-layout">
+        <main className="placeholder-main">
+          <div className={`placeholder-hero hero-${page}`}>
+            <div className="placeholder-icon-wrap">
+              <span className="placeholder-big-icon">{config.icon}</span>
+            </div>
+            <div className="placeholder-text">
+              <span className="placeholder-badge">Coming Soon</span>
+              <h1 className="placeholder-title">{config.title}</h1>
+              <p className="placeholder-desc">{config.desc}</p>
+            </div>
+          </div>
 
-      {config.features.length > 0 && (
-        <div className="placeholder-features">
-          <h3 className="placeholder-features-title">What you'll be able to do:</h3>
-          <div className="placeholder-features-grid">
-            {config.features.map((f, i) => (
-              <div key={i} className="placeholder-feature-card">
-                <span className="placeholder-check">✅</span>
-                <span>{f}</span>
+          {config.features.length > 0 && (
+            <div className="placeholder-features">
+              <h3 className="placeholder-features-title">What you'll be able to do:</h3>
+              <div className="placeholder-features-grid">
+                {config.features.map((f, i) => (
+                  <div key={i} className="placeholder-feature-card">
+                    <span className="placeholder-check">✅</span>
+                    <span>{f}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          )}
+        </main>
+        
+        <aside className="placeholder-rail">
+          <div className="placeholder-cta-card">
+            <div className="cta-icon-wrap">✨</div>
+            <h3>Early Access</h3>
+            <p>Want to be the first to know when <strong>{config.title}</strong> goes live? Sign up for our beta waitlist.</p>
+            <button className="placeholder-notify-btn">Notify me when it's ready 🔔</button>
           </div>
-        </div>
-      )}
-
-      <div className="placeholder-cta">
-        <div className="placeholder-cta-card">
-          <span className="cta-wa-icon">💬</span>
-          <div>
-            <div className="cta-title">In the meantime, ask AAYU on WhatsApp</div>
-            <p className="cta-desc">Get help with any health questions right now.</p>
-          </div>
-          <button className="cta-btn">Chat Now →</button>
-        </div>
+        </aside>
       </div>
     </div>
   );
