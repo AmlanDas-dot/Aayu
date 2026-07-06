@@ -6,11 +6,13 @@ import {
   submitScreeningAnswer,
   clearChatSession,
   generateChatTitle,
+  sendImageChatMessage,
 } from "../services/api";
 import { speak, stopSpeaking } from "../services/tts";
 import { EmergencyAlert } from "../components/EmergencyAlert";
 import { LoadingStatus } from "../components/LoadingStatus";
 import type { RiskLevel, RetrievedDocument, ChatApiResponse } from "../types/search";
+import { CameraComponent } from "../components/Chat/CameraComponent";
 
 import logoHeart from "../assets/logo-heart.png";
 import Whatsapp from "../assets/whatsapp.png";
@@ -30,6 +32,10 @@ interface ChatMessage {
   processing_time_ms?: number;
   mode?: "online" | "offline";
   llm_provider?: "openai" | "gemini" | "ollama" | "template" | "none";
+  image?: string;
+  imageDescription?: string;
+  warnings?: string[];
+  confidence?: string;
 }
 
 interface Conversation {
@@ -275,6 +281,107 @@ export function ChatPage() {
 
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  // --- Image Integration States ---
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
+  const [imageThumbnail, setImageThumbnail] = useState<string | null>(null);
+  const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Resize helper for local storage persistence
+  const resizeImageToDataUrl = (file: File, maxDim = 300): Promise<string> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let width = img.width;
+          let height = img.height;
+          if (width > height) {
+            if (width > maxDim) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            }
+          } else {
+            if (height > maxDim) {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            resolve(canvas.toDataURL("image/jpeg", 0.7));
+          } else {
+            resolve("");
+          }
+        };
+        img.onerror = () => resolve("");
+        img.src = e.target?.result as string;
+      };
+      reader.onerror = () => resolve("");
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageSelection = (file: File) => {
+    const allowed = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
+    if (!allowed.includes(file.type)) {
+      alert("Unsupported format. Please select a PNG, JPEG, or WebP image.");
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      alert("File size exceeds 10MB limit. Please choose a smaller image.");
+      return;
+    }
+    setSelectedImage(file);
+    const previewUrl = URL.createObjectURL(file);
+    setImagePreviewUrl(previewUrl);
+    
+    resizeImageToDataUrl(file).then(dataUrl => {
+      setImageThumbnail(dataUrl);
+    });
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.dataTransfer.types.includes("Files")) {
+      setIsDragging(true);
+    }
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      const file = e.dataTransfer.files[0];
+      handleImageSelection(file);
+    }
+  };
+
+  const findCachedImageDescription = (): string | null => {
+    for (let i = messages.length - 1; i >= 0; i--) {
+      if (messages[i].imageDescription) {
+        return messages[i].imageDescription;
+      }
+    }
+    return null;
+  };
+
   // --- Sync Messages with Active Session ---
   useEffect(() => {
     const active = conversations.find((c) => c.sessionId === sessionId);
@@ -362,8 +469,9 @@ export function ChatPage() {
 
   // --- Send Message Handler ---
   async function handleSend(text?: string, wasVoice?: boolean) {
+    const hasImage = !!selectedImage;
     const msg = (text ?? input).trim();
-    if (!msg || isProcessing) return;
+    if ((!msg && !hasImage) || isProcessing) return;
 
     const lowerMsg = msg.toLowerCase();
     const isEmergency = /\b(emergency|heart attack|suicide|bleeding|stroke|poison|accident|unconscious|not breathing)\b/i.test(lowerMsg);
@@ -371,7 +479,9 @@ export function ChatPage() {
     const isSchemes = /\b(scheme|ayushman|pmjay|government|insurance)\b/i.test(lowerMsg);
     const isDisease = /\b(fever|temperature|headache|ache|symptom|disease|dengue|malaria|flu|vomiting|diarrhea|cough)\b/i.test(lowerMsg);
 
-    if (wasVoice) {
+    if (hasImage) {
+      setProcessingStage({ icon: "👁️", text: "Analyzing image with Gemini Vision..." });
+    } else if (wasVoice) {
        setProcessingStage({ icon: "🧠", text: "Thinking..." });
     } else {
        if (isEmergency) setProcessingStage({ icon: "🚨", text: "Emergency detected" });
@@ -385,7 +495,24 @@ export function ChatPage() {
     stopSpeaking();
     setSpeakingMsgId(null);
 
-    const userMsg: ChatMessage = { id: makeId(), role: "user", text: msg, timestamp: new Date() };
+    // Keep image thumbnail for rendering
+    const imagePreview = imageThumbnail;
+    const imageFile = selectedImage;
+
+    // Clear selection
+    setSelectedImage(null);
+    setImagePreviewUrl(null);
+    setImageThumbnail(null);
+
+    const userMsgText = msg || (hasImage ? "Describe this image." : "");
+    const userMsg: ChatMessage = {
+      id: makeId(),
+      role: "user",
+      text: userMsgText,
+      timestamp: new Date(),
+      image: imagePreview || undefined
+    };
+    
     const nextMsgs = [...messages, userMsg];
     setMessages(nextMsgs);
     updateConversations(nextMsgs);
@@ -405,25 +532,82 @@ export function ChatPage() {
       .map((m) => ({ role: m.role, content: m.text }));
 
     try {
-      const apiResp: ChatApiResponse = await sendChatMessage({
-        message: msg,
-        language,
-        session_id: sessionId,
-        history: llmHistory,
-      }, (event) => {
-          if (event === "HEADERS_RECEIVED") {
-             if (isEmergency) setProcessingStage({ icon: "☎️", text: "Preparing emergency guidance..." });
-             else if (isDisease) setProcessingStage({ icon: "🧠", text: "Preparing evidence-based response..." });
-             else if (!isNutrition && !isSchemes) setProcessingStage({ icon: "🧠", text: "Thinking..." });
-          } else if (event === "JSON_PARSED") {
-             if (isNutrition) setProcessingStage({ icon: "💬", text: "Preparing recommendations..." });
-             else if (isSchemes) setProcessingStage({ icon: "💬", text: "Preparing explanation..." });
-             else if (!isEmergency) setProcessingStage({ icon: "💬", text: "Preparing response..." });
+      let apiResp: any;
+      if (hasImage && imageFile) {
+        console.log("[ImageChat] hasImage=true, starting image upload flow");
+        console.log("[ImageChat] imageFile:", imageFile.name, imageFile.size, imageFile.type);
+        console.log("[ImageChat] question:", userMsgText, "language:", language, "sessionId:", sessionId);
+        setUploadProgress(0);
+        console.log("[ImageChat] Calling sendImageChatMessage...");
+        apiResp = await sendImageChatMessage(
+          imageFile,
+          userMsgText,
+          language,
+          sessionId,
+          llmHistory,
+          (progress) => {
+            console.log("[ImageChat] Upload progress:", progress + "%");
+            setUploadProgress(progress);
           }
-      });
+        );
+        console.log("[ImageChat] sendImageChatMessage returned:", apiResp);
+        setUploadProgress(null);
+      } else {
+        const cachedDesc = findCachedImageDescription();
+        const payloadMessage = cachedDesc ? `${msg}\n[Image context: ${cachedDesc}]` : msg;
+        
+        apiResp = await sendChatMessage({
+          message: payloadMessage,
+          language,
+          session_id: sessionId,
+          history: llmHistory,
+        }, (event) => {
+            if (event === "HEADERS_RECEIVED") {
+               if (isEmergency) setProcessingStage({ icon: "☎️", text: "Preparing emergency guidance..." });
+               else if (isDisease) setProcessingStage({ icon: "🧠", text: "Preparing evidence-based response..." });
+               else if (!isNutrition && !isSchemes) setProcessingStage({ icon: "🧠", text: "Thinking..." });
+            } else if (event === "JSON_PARSED") {
+               if (isNutrition) setProcessingStage({ icon: "💬", text: "Preparing recommendations..." });
+               else if (isSchemes) setProcessingStage({ icon: "💬", text: "Preparing explanation..." });
+               else if (!isEmergency) setProcessingStage({ icon: "💬", text: "Preparing response..." });
+            }
+        });
+      }
 
       console.log("========== RENDERING RESPONSE ==========");
-      console.log("Setting assistant message text to:", apiResp.response);
+      
+      let assistantText = "";
+      let riskLevel: RiskLevel = "routine";
+      let imageDescription: string | undefined = undefined;
+      let warnings: string[] = [];
+      let confidence: string | undefined = undefined;
+      let retrievedDocs: RetrievedDocument[] = [];
+      let matchedRules: string[] = [];
+      let disclaimer: string = "";
+      let processingTimeMs: number = 0;
+      let mode: "online" | "offline" = "offline";
+      let llmProvider: any = "template";
+
+      if (hasImage) {
+        assistantText = apiResp.answer || apiResp.response || "";
+        riskLevel = (apiResp.triage || "routine") as RiskLevel;
+        imageDescription = apiResp.image_description;
+        warnings = apiResp.warnings || [];
+        confidence = apiResp.confidence;
+        mode = "online";
+        llmProvider = "gemini";
+      } else {
+        assistantText = apiResp.response;
+        riskLevel = apiResp.risk_level;
+        retrievedDocs = apiResp.retrieved_documents || [];
+        matchedRules = apiResp.matched_rules || [];
+        disclaimer = apiResp.disclaimer || "";
+        processingTimeMs = apiResp.processing_time_ms || 0;
+        mode = apiResp.mode;
+        llmProvider = apiResp.llm_provider;
+      }
+
+      console.log("Setting assistant message text to:", assistantText);
 
       const assistantId = makeId();
       setMessages((prev) => {
@@ -432,15 +616,18 @@ export function ChatPage() {
             ? {
               ...m,
               id: assistantId,
-              text: apiResp.response,
+              text: assistantText,
               isTyping: false,
-              risk_level: apiResp.risk_level,
-              retrieved_documents: apiResp.retrieved_documents,
-              matched_rules: apiResp.matched_rules,
-              disclaimer: apiResp.disclaimer,
-              processing_time_ms: apiResp.processing_time_ms,
-              mode: apiResp.mode,
-              llm_provider: apiResp.llm_provider,
+              risk_level: riskLevel,
+              retrieved_documents: retrievedDocs,
+              matched_rules: matchedRules,
+              disclaimer: disclaimer,
+              processing_time_ms: processingTimeMs,
+              mode: mode,
+              llm_provider: llmProvider,
+              imageDescription: imageDescription,
+              warnings: warnings,
+              confidence: confidence
             }
             : m
         );
@@ -452,7 +639,7 @@ export function ChatPage() {
            const userMsgs = afterMsgs.filter((m) => m.role === "user");
            if (userMsgs.length >= 2 || (userMsgs.length === 1 && userMsgs[0].text.length > 15)) {
               const lastUserMsg = userMsgs[userMsgs.length - 1].text;
-              const promptMsg = `User: ${lastUserMsg}\nAssistant: ${apiResp.response}`;
+              const promptMsg = `User: ${lastUserMsg}\nAssistant: ${assistantText}`;
               generateChatTitle(promptMsg).then((t) => {
                  setConversations(prev => {
                     const updated = [...prev];
@@ -951,7 +1138,35 @@ export function ChatPage() {
             </div>
 
             {/* Scrollable messages feed */}
-            <div className="chat-messages">
+            <div
+              className="chat-messages"
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              style={{ position: "relative" }}
+            >
+              {isDragging && (
+                <div style={{
+                  position: "absolute",
+                  inset: "12px",
+                  borderRadius: "12px",
+                  backgroundColor: "rgba(15, 118, 110, 0.15)",
+                  border: "2px dashed #0f766e",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#0f766e",
+                  fontWeight: 600,
+                  zIndex: 999,
+                  backdropFilter: "blur(2px)",
+                  transition: "all 0.2s",
+                  pointerEvents: "none"
+                }}>
+                  <i className="fa-solid fa-cloud-arrow-up" style={{ fontSize: "2.5rem", marginBottom: "12px" }}></i>
+                  Drop symptom image here to upload
+                </div>
+              )}
               {emergencyAlert && <EmergencyAlert emergency={emergencyAlert} />}
 
               {messages.map((msg) => (
@@ -993,6 +1208,50 @@ export function ChatPage() {
                             fontWeight: 700
                           }}>
                             <i className="fa-solid fa-check-circle"></i> Verified Medical Knowledge
+                          </div>
+                        )}
+
+                        {/* Warnings Badge */}
+                        {msg.role === "assistant" && msg.warnings && msg.warnings.length > 0 && (
+                          <div style={{
+                            fontSize: "0.72rem",
+                            padding: "6px 10px",
+                            borderRadius: "6px",
+                            background: "rgba(245, 158, 11, 0.1)",
+                            color: "#d97706",
+                            border: "1px solid rgba(245, 158, 11, 0.3)",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 6,
+                            marginBottom: 8,
+                            fontWeight: 600,
+                            width: "100%"
+                          }}>
+                            <i className="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                              {msg.warnings.map((w, idx) => (
+                                <div key={idx}>{w}</div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Image display */}
+                        {msg.image && (
+                          <div style={{ marginBottom: "10px", marginTop: "4px" }}>
+                            <img
+                              src={msg.image}
+                              alt="Symptom preview"
+                              style={{
+                                maxWidth: "240px",
+                                maxHeight: "180px",
+                                borderRadius: "8px",
+                                objectFit: "cover",
+                                border: "1px solid #e2e8f0",
+                                display: "block",
+                                boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+                              }}
+                            />
                           </div>
                         )}
 
@@ -1245,10 +1504,106 @@ export function ChatPage() {
                 </div>
               )}
 
+              {/* Image Preview Area */}
+              {imagePreviewUrl && (
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "8px 12px",
+                  background: "#f8fafc",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "8px",
+                  marginBottom: "8px",
+                  gap: "12px",
+                  position: "relative"
+                }}>
+                  <div style={{ position: "relative", width: "60px", height: "60px" }}>
+                    <img
+                      src={imagePreviewUrl}
+                      alt="Upload preview"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "6px",
+                        border: "1px solid #cbd5e1"
+                      }}
+                    />
+                    <button
+                      onClick={() => {
+                        setSelectedImage(null);
+                        setImagePreviewUrl(null);
+                        setImageThumbnail(null);
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: "-6px",
+                        right: "-6px",
+                        background: "#ef4444",
+                        color: "#ffffff",
+                        border: "none",
+                        borderRadius: "50%",
+                        width: "18px",
+                        height: "18px",
+                        fontSize: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        cursor: "pointer",
+                        boxShadow: "0 2px 4px rgba(0,0,0,0.15)"
+                      }}
+                    >
+                      <i className="fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ margin: 0, fontSize: "0.8rem", fontWeight: 600, color: "#334155", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {selectedImage?.name || "camera_capture.jpg"}
+                    </p>
+                    <p style={{ margin: 0, fontSize: "0.7rem", color: "#64748b" }}>
+                      {selectedImage ? `${(selectedImage.size / (1024 * 1024)).toFixed(2)} MB` : "Ready to send"}
+                    </p>
+                  </div>
+                  {uploadProgress !== null && (
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px" }}>
+                      <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#0f766e" }}>{uploadProgress}%</span>
+                      <div style={{ width: "80px", height: "6px", background: "#e2e8f0", borderRadius: "3px", overflow: "hidden" }}>
+                        <div style={{ width: `${uploadProgress}%`, height: "100%", background: "#0f766e", transition: "width 0.1s" }}></div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Text input, mic and attachments */}
               <div className="input-box">
-                <button className="input-action-btn" title="Take photo"><i className="fa-solid fa-camera"></i></button>
-                <button className="input-action-btn" title="Attach file"><i className="fa-solid fa-paperclip"></i></button>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  accept="image/png, image/jpeg, image/jpg, image/webp"
+                  style={{ display: "none" }}
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files.length > 0) {
+                      handleImageSelection(e.target.files[0]);
+                    }
+                  }}
+                />
+                <button
+                  className="input-action-btn"
+                  title="Take photo"
+                  onClick={() => setIsCameraOpen(true)}
+                  disabled={isProcessing}
+                >
+                  <i className="fa-solid fa-camera"></i>
+                </button>
+                <button
+                  className="input-action-btn"
+                  title="Attach file"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isProcessing}
+                >
+                  <i className="fa-solid fa-paperclip"></i>
+                </button>
 
                 <input
                   type="text"
@@ -1280,7 +1635,7 @@ export function ChatPage() {
                 <button
                   className="send-msg-btn"
                   onClick={() => handleSend()}
-                  disabled={isProcessing || transcribing || !input.trim()}
+                  disabled={isProcessing || transcribing || (!input.trim() && !selectedImage)}
                 >
                   <i className="fa-solid fa-paper-plane"></i>
                 </button>
@@ -2039,6 +2394,11 @@ export function ChatPage() {
         }
       `}
       </style>
+      <CameraComponent
+        isOpen={isCameraOpen}
+        onClose={() => setIsCameraOpen(false)}
+        onCapture={handleImageSelection}
+      />
     </div>
   );
 }
