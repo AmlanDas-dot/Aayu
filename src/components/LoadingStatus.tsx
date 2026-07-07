@@ -1,5 +1,3 @@
-import React from "react";
-
 export function LoadingStatus({ icon, status, subtitle }: { icon: string, status: string, subtitle?: string }) {
   const hasDots = status.endsWith("...");
   const baseStatus = hasDots ? status.slice(0, -3) : status;

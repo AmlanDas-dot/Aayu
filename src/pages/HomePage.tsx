@@ -1,26 +1,25 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AayuSidebar } from "../components/navigation/AayuSidebar";
-import "../aayu-home.css";
+import { AayuSidebar } from "@/components/navigation/AayuSidebar";
+import "@/aayu-home.css";
 
-import logoHeart from "../assets/logo-heart.png";
+import logoHeart from "@/assets/logo-heart.png";
 
-import Docs from "../assets/Docs.png";
-import Screening from "../assets/Screening.png";
-import Nearby from "../assets/Nearby.png";
-import Nutrition from "../assets/Nutrition.png";
-import FamilyHealth from "../assets/Family_health.png";
-import Schemes from "../assets/Schemes.png";
-import Dengue from "../assets/dengue.png";
-import Malaria from "../assets/malaria.png";
-import Tuberculosis from "../assets/tuberculosis.png";
-import Flu from "../assets/flu.png";
-import Maternal from "../assets/maternal.png";
-import Whatsapp from "../assets/whatsapp.png";
-import StepTell from "../assets/step_tell.png";
-import StepQuestions from "../assets/step_questions.png";
-import StepGuidance from "../assets/step_guidance.png";
-import StepConsult from "../assets/step_consult.png";
+import Docs from "@/assets/Docs.png";
+import Screening from "@/assets/Screening.png";
+import Nearby from "@/assets/Nearby.png";
+import Nutrition from "@/assets/Nutrition.png";
+import FamilyHealth from "@/assets/Family_health.png";
+import Schemes from "@/assets/Schemes.png";
+import Dengue from "@/assets/dengue.png";
+import Malaria from "@/assets/malaria.png";
+import Tuberculosis from "@/assets/tuberculosis.png";
+import Flu from "@/assets/flu.png";
+import Maternal from "@/assets/maternal.png";
+import StepTell from "@/assets/step_tell.png";
+import StepQuestions from "@/assets/step_questions.png";
+import StepGuidance from "@/assets/step_guidance.png";
+import StepConsult from "@/assets/step_consult.png";
 
 export function HomePage() {
     const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { LANGUAGES } from "../constants/languages";
-import type { LanguageCode } from "../constants/languages";
-import { checkBackendHealth } from "../services/api";
+import { LANGUAGES } from "@/constants/languages";
+import type { LanguageCode } from "@/constants/languages";
+import { checkBackendHealth } from "@/services/api";
 
 export function SettingsPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");

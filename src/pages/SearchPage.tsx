@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { searchKnowledgeBase, getCollections } from "../services/api";
-import type { SearchResult, CollectionName } from "../types/search";
+import { searchKnowledgeBase, getCollections } from "@/services/api";
+import type { SearchResult, CollectionName } from "@/types/search";
 
 function ResultCard({ result }: { result: SearchResult }) {
   const [expanded, setExpanded] = useState(false);

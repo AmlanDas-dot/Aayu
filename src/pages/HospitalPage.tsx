@@ -3,9 +3,9 @@ import {
   findNearbyHospitals,
   getUserLocation,
   type HospitalFacility,
-} from "../services/api";
-import { LoadingStatus } from "../components/LoadingStatus";
-import { HospitalMap } from "../components/Map/HospitalMap";
+} from "@/services/api";
+import { LoadingStatus } from "@/components/LoadingStatus";
+import { HospitalMap } from "@/features/hospitals/components/HospitalMap";
 
 const TYPE_ICONS: Record<string, string> = {
   Hospital: "🏥",

@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { 
-  HealthVaultHeader, 
-  RecordCategories, 
-  RecordCards, 
-  InsightsPanel, 
-  ShareSection, 
-  QuickActions, 
-  MissingDocuments, 
-  RecordsFooterBanner 
-} from "../components/Records/RecordsComponents";
+import { HealthVaultHeader } from "@/features/records/components/HealthVaultHeader";
+import { RecordCategories } from "@/features/records/components/RecordCategories";
+import { RecordCards } from "@/features/records/components/RecordCards";
+import { InsightsPanel } from "@/features/records/components/InsightsPanel";
+import { ShareSection } from "@/features/records/components/ShareSection";
+import { QuickActions } from "@/features/records/components/QuickActions";
+import { MissingDocuments } from "@/features/records/components/MissingDocuments";
+import { RecordsFooterBanner } from "@/features/records/components/RecordsFooterBanner";
 
 export function RecordsPage() {
   const [activeTab, setActiveTab] = useState("all");

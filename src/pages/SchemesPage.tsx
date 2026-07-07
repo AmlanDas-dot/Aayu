@@ -1,32 +1,28 @@
 import { useState, useEffect } from "react";
-import { getAllSchemes, getStateSchemes, searchScheme, type GovernmentScheme } from "../services/api";
-import { 
-  SchemesHero, 
-  SchemeCard, 
-  TopSchemes, 
-  SchemeCategoryGrid, 
-  DocumentsRequired, 
-  ProfileFinder, 
-  SchemeAlerts, 
-  SchemesFooterBanner, 
-  SchemeNeedHelp 
-} from "../components/Schemes/SchemesComponents";
+import { getAllSchemes, getStateSchemes, searchScheme, type GovernmentScheme } from "@/services/api";
+import { SchemesHero } from "@/features/schemes/components/SchemesHero";
+import { SchemeCard } from "@/features/schemes/components/SchemeCard";
+import { TopSchemes } from "@/features/schemes/components/TopSchemes";
+import { SchemeCategoryGrid } from "@/features/schemes/components/SchemeCategoryGrid";
+import { DocumentsRequired } from "@/features/schemes/components/DocumentsRequired";
+import { ProfileFinder } from "@/features/schemes/components/ProfileFinder";
+import { SchemeAlerts } from "@/features/schemes/components/SchemeAlerts";
+import { SchemesFooterBanner } from "@/features/schemes/components/SchemesFooterBanner";
+import { SchemeNeedHelp } from "@/features/schemes/components/SchemeNeedHelp";
 import { Lightbulb, RefreshCw, Bell, User, ClipboardList } from "lucide-react";
-import { LoadingStatus } from "../components/LoadingStatus";
+import { LoadingStatus } from "@/components/LoadingStatus";
 
 export function SchemesPage() {
   const [allSchemes, setAllSchemes] = useState<GovernmentScheme[]>([]);
   const [displayed, setDisplayed] = useState<GovernmentScheme[]>([]);
   const [query, setQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("all");
-  const [activeTab, setActiveTab] = useState("All");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const [ageGroup, setAgeGroup] = useState("");
   const [gender, setGender] = useState("");
   const [userState, setUserState] = useState("");
-  const [district, setDistrict] = useState("");
 
   useEffect(() => {
     const load = async () => {

@@ -1,5 +1,4 @@
-import { LANGUAGES } from "../../constants/languages";
-import type { LanguageCode } from "../../constants/languages";
+import { LANGUAGES } from "@/constants/languages";
 import { StatusBar } from "../StatusBar";
 
 interface AayuHeaderProps {

@@ -1,11 +1,9 @@
-import { 
-  AdminAlertCards, 
-  PatientSearchAndStats, 
-  AnalyticsAndMaps, 
-  ResourceAllocation, 
-  NgoSection, 
-  ReferralMap 
-} from "../components/Admin/AdminComponents";
+import { AdminAlertCards } from "@/features/admin/components/AdminAlertCards";
+import { PatientSearchAndStats } from "@/features/admin/components/PatientSearchAndStats";
+import { AnalyticsAndMaps } from "@/features/admin/components/AnalyticsAndMaps";
+import { ResourceAllocation } from "@/features/admin/components/ResourceAllocation";
+import { NgoSection } from "@/features/admin/components/NgoSection";
+import { ReferralMap } from "@/features/admin/components/ReferralMap";
 
 export function AdminDashboardPage() {
   return (

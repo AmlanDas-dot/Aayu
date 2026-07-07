@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import logoHeart from "../../assets/logo-heart.png";
-import Whatsapp from "../../assets/whatsapp.png";
+import logoHeart from "@/assets/logo-heart.png";
+import Whatsapp from "@/assets/whatsapp.png";
 
 interface AayuSidebarProps {
   isOpen: boolean;

@@ -230,7 +230,7 @@ body {
 }
 
 .health-banner {
-    background: #0f766e url("stay_alert.jpeg") center/cover no-repeat;
+    background: linear-gradient(135deg, #0f766e 0%, #115e59 55%, #0c4a44 100%);
     color: white;
     padding: 24px;
     border-radius: 20px;
