@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   sendChatMessage,
   submitScreeningAnswer,
   generateChatTitle,
-  sendImageChatMessage,
+  //sendImageChatMessage,
 } from "@/services/api";
 import { stopSpeaking } from "@/services/tts";
 import { EmergencyAlert } from "@/components/EmergencyAlert";
@@ -27,6 +27,7 @@ import type { RiskLevel, RetrievedDocument } from "@/types/search";
 
 export function ChatPage() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Custom Hooks
   const {
@@ -35,7 +36,7 @@ export function ChatPage() {
     setSessionId,
     searchTerm,
     setSearchTerm,
-    filteredConversations,
+    //filteredConversations,
     groupedConversations,
     updateConversations,
     handleStartNewSession: sessionStartNew,
@@ -69,6 +70,17 @@ export function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, processingStage]);
 
+  // --- Initial Message from Navigation State (from Incoming/main) ---
+  useEffect(() => {
+    if (location.state?.initialMessage) {
+      const msg = location.state.initialMessage;
+      // Clear the state so it doesn't trigger again on reload
+      navigate(location.pathname, { replace: true, state: {} });
+      // Small timeout to allow state to settle before triggering send
+      setTimeout(() => handleSend(msg), 100);
+    }
+  }, [location.state, navigate, location.pathname]);
+
   // TTS Hook
   const {
     speakingMsgId,
@@ -100,17 +112,17 @@ export function ChatPage() {
   // Image capture hook
   const {
     selectedImage,
-    setSelectedImage,
+    //setSelectedImage,
     imagePreviewUrl,
-    setImagePreviewUrl,
+    //setImagePreviewUrl,
     imageThumbnail,
-    setImageThumbnail,
-    isCameraOpen,
-    setIsCameraOpen,
+    //setImageThumbnail,
     uploadProgress,
-    setUploadProgress,
-    isDragging,
+    //setUploadProgress,
     fileInputRef,
+    isCameraOpen,
+    isDragging,
+    setIsCameraOpen,
     handleImageSelection,
     handleDragOver,
     handleDragLeave,
@@ -131,6 +143,18 @@ export function ChatPage() {
   // Emergency Alert
   const [emergencyAlert, setEmergencyAlert] = useState<any | null>(null);
 
+  // --- Export Chat to Text (from Incoming/main) ---
+  const handleExport = () => {
+    const text = messages.map(m => `[${m.role.toUpperCase()}] ${new Date(m.timestamp).toLocaleString()}\n${m.text}`).join('\n\n');
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `AAYU_Chat_${new Date().toISOString().split('T')[0]}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   // Start New Chat Session
   function handleStartNewSession() {
     stopSpeaking();
@@ -145,7 +169,7 @@ export function ChatPage() {
   }
 
   // Delete Conversation
-  function handleDeleteConversation(e: React.MouseEvent, id: string) {
+  function handleDeleteConversation(_e: React.MouseEvent, id: string) {
     sessionDeleteConv(id, () => {
       stopSpeaking();
       setSpeakingMsgId(null);
@@ -229,18 +253,10 @@ export function ChatPage() {
     try {
       let apiResp: any;
       if (hasImage && imageFile) {
-        setUploadProgress(0);
-        apiResp = await sendImageChatMessage(
-          imageFile,
-          userMsgText,
-          language,
-          sessionId,
-          llmHistory,
-          (progress) => {
-            setUploadProgress(progress);
-          }
-        );
-        setUploadProgress(null);
+        // TODO: Re-enable after camera/image upload API is integrated.
+        alert("Image upload is temporarily disabled while the camera integration is being merged.");
+        //setIsLoading(false);
+        return;
       } else {
         const cachedDesc = findCachedImageDescription(messages);
         const payloadMessage = cachedDesc ? `${msg}\n[Image context: ${cachedDesc}]` : msg;
@@ -302,21 +318,21 @@ export function ChatPage() {
         const afterMsgs = prev.map((m) =>
           m.id === typingId
             ? {
-                ...m,
-                id: assistantId,
-                text: assistantText,
-                isTyping: false,
-                risk_level: riskLevel,
-                retrieved_documents: retrievedDocs,
-                matched_rules: matchedRules,
-                disclaimer: disclaimer,
-                processing_time_ms: processingTimeMs,
-                mode: mode,
-                llm_provider: llmProvider,
-                imageDescription: imageDescription,
-                warnings: warnings,
-                confidence: confidence,
-              }
+              ...m,
+              id: assistantId,
+              text: assistantText,
+              isTyping: false,
+              risk_level: riskLevel,
+              retrieved_documents: retrievedDocs,
+              matched_rules: matchedRules,
+              disclaimer: disclaimer,
+              processing_time_ms: processingTimeMs,
+              mode: mode,
+              llm_provider: llmProvider,
+              imageDescription: imageDescription,
+              warnings: warnings,
+              confidence: confidence,
+            }
             : m
         );
         updateConversations(afterMsgs);
@@ -348,7 +364,7 @@ export function ChatPage() {
                   return updated;
                 });
               })
-              .catch(() => {});
+              .catch(() => { });
           }
         }
 
@@ -447,18 +463,18 @@ export function ChatPage() {
         const nextMsgs = prev.map((m) =>
           m.id === typingId
             ? {
-                ...m,
-                id: assistantId,
-                text: apiResp.response,
-                isTyping: false,
-                risk_level: apiResp.risk_level,
-                retrieved_documents: apiResp.retrieved_documents,
-                matched_rules: apiResp.matched_rules,
-                disclaimer: apiResp.disclaimer,
-                processing_time_ms: apiResp.processing_time_ms,
-                mode: apiResp.mode,
-                llm_provider: apiResp.llm_provider,
-              }
+              ...m,
+              id: assistantId,
+              text: apiResp.response,
+              isTyping: false,
+              risk_level: apiResp.risk_level,
+              retrieved_documents: apiResp.retrieved_documents,
+              matched_rules: apiResp.matched_rules,
+              disclaimer: apiResp.disclaimer,
+              processing_time_ms: apiResp.processing_time_ms,
+              mode: apiResp.mode,
+              llm_provider: apiResp.llm_provider,
+            }
             : m
         );
         updateConversations(nextMsgs);
@@ -526,7 +542,7 @@ export function ChatPage() {
               <div className="assistant-info">
                 <img src={logoHeart} alt="AAYU Avatar" className="assistant-avatar" />
                 <div>
-                  <h2>AI Screening & Guidance</h2>
+                  <h2>AI Screening &amp; Guidance</h2>
                   <div className="assistant-status">
                     <span className="status-dot"></span> Online
                     <span className="status-sep">•</span>
@@ -534,6 +550,12 @@ export function ChatPage() {
                   </div>
                 </div>
               </div>
+              {/* Export Chat button (from Incoming/main) */}
+              <button
+                onClick={handleExport}
+                style={{ marginLeft: 'auto', padding: '6px 12px', borderRadius: '8px', border: '1px solid #cbd5e1', background: 'white', color: '#475569', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <i className="fa-solid fa-download"></i> Export Chat
+              </button>
             </div>
 
             {/* Scrollable messages feed */}

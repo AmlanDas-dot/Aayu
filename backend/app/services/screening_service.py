@@ -20,6 +20,10 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+import os
+import json
+import glob
+
 # ---------------------------------------------------------------------------
 # Screening questions
 # ---------------------------------------------------------------------------
@@ -27,32 +31,32 @@ logger = logging.getLogger(__name__)
 QUESTIONS: list[dict[str, Any]] = [
     {
         "id": "fever_duration",
-        "text": "How long have you been experiencing this fever?",
-        "hint": "Duration helps narrow down the most likely cause.",
-        "options": ["Less than 24 hours", "1–3 days", "More than 3 days"],
+        "text": "Have you been experiencing a fever, and if so, for how long?",
+        "hint": "Fever duration helps narrow down the most likely cause.",
+        "options": ["Less than 24 hours", "1–3 days", "More than 3 days", "No fever"],
     },
     {
-        "id": "eye_pain",
-        "text": "Do you have pain behind your eyes or an intense headache that worsens with eye movement?",
-        "hint": "This is a distinctive sign of certain conditions.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-    {
-        "id": "shaking_chills",
-        "text": "Do you experience shaking chills or alternating episodes of sweating and high fever?",
-        "hint": "Cyclical fever patterns are clinically significant.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-    {
-        "id": "cold_symptoms",
-        "text": "Do you have a sore throat, runny nose, or severe body and muscle aches?",
-        "hint": "These are typical upper respiratory symptoms.",
+        "id": "respiratory_symptoms",
+        "text": "Are you experiencing a cough, sore throat, runny nose, or difficulty breathing?",
+        "hint": "These indicate respiratory involvement.",
         "options": ["Yes", "No", "Not sure"],
     },
     {
         "id": "gi_symptoms",
-        "text": "Do you have stomach pain, constipation, or did your fever develop gradually over several days?",
-        "hint": "Gastrointestinal symptoms can indicate specific infections.",
+        "text": "Are you experiencing nausea, vomiting, diarrhea, or stomach pain?",
+        "hint": "Gastrointestinal symptoms can indicate specific infections or conditions.",
+        "options": ["Yes", "No", "Not sure"],
+    },
+    {
+        "id": "pain_symptoms",
+        "text": "Do you have a severe headache, body aches, joint pain, or pain behind your eyes?",
+        "hint": "These pains are hallmarks of certain viral and bacterial infections.",
+        "options": ["Yes", "No", "Not sure"],
+    },
+    {
+        "id": "skin_systemic_symptoms",
+        "text": "Have you noticed any rashes, severe weakness, chills, or sudden sweating?",
+        "hint": "Systemic symptoms can point to generalized infections or specific diseases.",
         "options": ["Yes", "No", "Not sure"],
     },
 ]
@@ -60,174 +64,99 @@ QUESTIONS: list[dict[str, Any]] = [
 TOTAL_QUESTIONS = len(QUESTIONS)
 
 # ---------------------------------------------------------------------------
-# Scoring system
+# Scoring system & Disease Metadata
 # ---------------------------------------------------------------------------
-# Base scores — all conditions start equal
-_BASE_SCORES: dict[str, float] = {
-    "dengue":    1.0,
-    "malaria":   1.0,
-    "influenza": 1.0,
-    "typhoid":   1.0,
-}
-
-# Per-question, per-answer, per-disease score deltas
-# Structure: { question_id: { answer_text_lower: { disease: delta } } }
+_BASE_SCORES: dict[str, float] = {}
 _SCORE_MATRIX: dict[str, dict[str, dict[str, float]]] = {
     "fever_duration": {
-        "less than 24 hours": {
-            "influenza": 2.0,   # flu often starts suddenly
-            "dengue":    1.5,
-            "malaria":   0.5,
-            "typhoid":   0.0,   # typhoid is gradual
-        },
-        "1–3 days": {
-            "dengue":    3.0,
-            "influenza": 2.5,
-            "malaria":   1.5,
-            "typhoid":   0.5,
-        },
-        "more than 3 days": {
-            "typhoid":   4.0,   # typhoid step-ladder fever
-            "malaria":   3.0,   # malaria persists
-            "dengue":    1.5,
-            "influenza": 0.5,
-        },
+        "less than 24 hours": {},
+        "1–3 days": {},
+        "more than 3 days": {},
+        "no fever": {},
     },
-    "eye_pain": {
-        "yes": {
-            "dengue":    4.0,   # hallmark of dengue — "breakbone"
-            "influenza": 1.0,   # mild headache common
-            "malaria":   0.5,
-            "typhoid":   0.0,
-        },
-        "not sure": {
-            "dengue":    1.5,
-            "influenza": 0.5,
-            "malaria":   0.0,
-            "typhoid":   0.0,
-        },
-        "no": {},  # no delta
-    },
-    "shaking_chills": {
-        "yes": {
-            "malaria":   4.5,   # pathognomonic for malaria
-            "influenza": 1.5,   # flu can cause chills
-            "dengue":    0.5,
-            "typhoid":   0.5,
-        },
-        "not sure": {
-            "malaria":   2.0,
-            "influenza": 0.5,
-            "dengue":    0.0,
-            "typhoid":   0.0,
-        },
-        "no": {},
-    },
-    "cold_symptoms": {
-        "yes": {
-            "influenza": 4.5,   # defining feature of flu
-            "dengue":    0.5,   # slight body aches can occur
-            "malaria":   0.0,
-            "typhoid":   0.0,
-        },
-        "not sure": {
-            "influenza": 2.0,
-            "dengue":    0.5,
-            "malaria":   0.0,
-            "typhoid":   0.0,
-        },
-        "no": {},
-    },
-    "gi_symptoms": {
-        "yes": {
-            "typhoid":   4.5,   # hallmark of typhoid
-            "malaria":   1.0,   # can cause GI symptoms
-            "dengue":    0.5,
-            "influenza": 0.0,
-        },
-        "not sure": {
-            "typhoid":   2.0,
-            "malaria":   0.5,
-            "dengue":    0.0,
-            "influenza": 0.0,
-        },
-        "no": {},
-    },
+    "respiratory_symptoms": {"yes": {}, "no": {}, "not sure": {}},
+    "gi_symptoms": {"yes": {}, "no": {}, "not sure": {}},
+    "pain_symptoms": {"yes": {}, "no": {}, "not sure": {}},
+    "skin_systemic_symptoms": {"yes": {}, "no": {}, "not sure": {}},
 }
+_DISEASE_META: dict[str, dict[str, Any]] = {}
 
-# ---------------------------------------------------------------------------
-# Disease metadata
-# ---------------------------------------------------------------------------
-_DISEASE_META: dict[str, dict[str, Any]] = {
-    "dengue": {
-        "name": "Dengue Fever",
-        "icon": "🦟",
-        "urgency": "urgent",
-        "risk_label": "🟡 Moderate–High Risk",
-        "actions": [
-            "See a doctor today for a CBC blood test (platelet count)",
-            "Use only paracetamol for fever — do NOT take aspirin or ibuprofen",
-            "Rest completely and drink ORS or plenty of fluids",
-        ],
-        "warning_signs": [
-            "Bleeding gums or nose",
-            "Severe stomach pain or vomiting",
-            "Blood in urine or stools",
-            "Sudden drop in alertness or confusion",
-        ],
-    },
-    "malaria": {
-        "name": "Malaria",
-        "icon": "🦠",
-        "urgency": "urgent",
-        "risk_label": "🟡 Moderate–High Risk",
-        "actions": [
-            "See a doctor immediately for a blood smear or Rapid Diagnostic Test (RDT)",
-            "Do NOT self-treat — specific anti-malarial medication is required",
-            "Sleep under a treated mosquito net tonight",
-        ],
-        "warning_signs": [
-            "Severe confusion or disorientation",
-            "Extreme weakness or inability to stand",
-            "Seizures",
-            "High fever above 40°C / 104°F",
-        ],
-    },
-    "influenza": {
-        "name": "Influenza (Flu)",
-        "icon": "🤧",
-        "urgency": "routine",
-        "risk_label": "🟢 Low–Moderate Risk",
-        "actions": [
-            "Rest at home and isolate to prevent spreading",
-            "Drink plenty of warm fluids and stay hydrated",
-            "Paracetamol can help with fever and body aches",
-        ],
-        "warning_signs": [
-            "Difficulty breathing or shortness of breath",
-            "Chest pain or pressure",
-            "Symptoms worsen significantly after Day 3",
-            "Confusion or unusual behaviour",
-        ],
-    },
-    "typhoid": {
-        "name": "Typhoid Fever",
-        "icon": "🌡️",
-        "urgency": "urgent",
-        "risk_label": "🟡 Moderate–High Risk",
-        "actions": [
-            "See a doctor for a Widal blood test or blood culture",
-            "Only a doctor can prescribe the correct antibiotic — do not self-medicate",
-            "Drink only boiled or sealed bottled water",
-        ],
-        "warning_signs": [
-            "Intestinal bleeding or perforation (severe abdominal pain)",
-            "Extreme confusion or delirium",
-            "Do NOT stop antibiotics early — complete the full course",
-            "Rash of rose-coloured spots on the torso",
-        ],
-    },
-}
+def _init_screening_data():
+    global _BASE_SCORES, _DISEASE_META, _SCORE_MATRIX
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "data", "healthknowledge")
+    json_files = glob.glob(os.path.join(data_dir, "*.json"))
+    
+    # Mapping for keywords to our questions
+    respiratory_kw = {"cough", "sore throat", "runny nose", "congestion", "sneezing", "breathing", "shortness of breath", "wheezing"}
+    gi_kw = {"nausea", "vomiting", "diarrhea", "stomach", "abdominal pain", "cramps", "constipation"}
+    pain_kw = {"headache", "body ache", "joint pain", "muscle", "eye pain"}
+    skin_kw = {"rash", "itching", "redness", "weakness", "chills", "sweats", "fatigue"}
+    
+    for file_path in json_files:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                for item in data:
+                    did = item.get("id")
+                    if not did:
+                        continue
+                    
+                    _BASE_SCORES[did] = 1.0
+                    
+                    # Create meta
+                    _DISEASE_META[did] = {
+                        "name": item.get("category", did.replace("_", " ").title()),
+                        "icon": "🩺",
+                        "urgency": item.get("urgency", "routine"),
+                        "risk_label": "🟡 Moderate Risk" if item.get("urgency") != "low" else "🟢 Low Risk",
+                        "actions": item.get("guidance", "Consult a doctor for further advice.").split(". ")[:3],
+                        "warning_signs": item.get("precautions", []),
+                    }
+                    
+                    # Update score matrix
+                    symptoms_list = item.get("symptoms", [])
+                    symptoms = " ".join(symptoms_list).lower() if isinstance(symptoms_list, list) else ""
+                    
+                    # Fever
+                    if "fever" in symptoms:
+                        _SCORE_MATRIX["fever_duration"]["less than 24 hours"][did] = 1.0
+                        _SCORE_MATRIX["fever_duration"]["1–3 days"][did] = 2.0
+                        _SCORE_MATRIX["fever_duration"]["more than 3 days"][did] = 3.0
+                    else:
+                        _SCORE_MATRIX["fever_duration"]["no fever"][did] = 1.0
+                        
+                    # Respiratory
+                    if any(kw in symptoms for kw in respiratory_kw):
+                        _SCORE_MATRIX["respiratory_symptoms"]["yes"][did] = 3.0
+                        _SCORE_MATRIX["respiratory_symptoms"]["not sure"][did] = 1.0
+                    else:
+                        _SCORE_MATRIX["respiratory_symptoms"]["no"][did] = 0.5
+                        
+                    # GI
+                    if any(kw in symptoms for kw in gi_kw):
+                        _SCORE_MATRIX["gi_symptoms"]["yes"][did] = 3.0
+                        _SCORE_MATRIX["gi_symptoms"]["not sure"][did] = 1.0
+                    else:
+                        _SCORE_MATRIX["gi_symptoms"]["no"][did] = 0.5
+                        
+                    # Pain
+                    if any(kw in symptoms for kw in pain_kw):
+                        _SCORE_MATRIX["pain_symptoms"]["yes"][did] = 3.0
+                        _SCORE_MATRIX["pain_symptoms"]["not sure"][did] = 1.0
+                    else:
+                        _SCORE_MATRIX["pain_symptoms"]["no"][did] = 0.5
+                        
+                    # Skin / Systemic
+                    if any(kw in symptoms for kw in skin_kw):
+                        _SCORE_MATRIX["skin_systemic_symptoms"]["yes"][did] = 3.0
+                        _SCORE_MATRIX["skin_systemic_symptoms"]["not sure"][did] = 1.0
+                    else:
+                        _SCORE_MATRIX["skin_systemic_symptoms"]["no"][did] = 0.5
+                        
+        except Exception as e:
+            logger.error(f"Failed to load {file_path}: {e}")
+
+_init_screening_data()
 
 # ---------------------------------------------------------------------------
 # In-memory session store
@@ -355,14 +284,17 @@ def calculate_result(session_id: str) -> dict[str, Any]:
 
     # Build confirmed symptom list
     confirmed_symptoms = [s.title() for s in reported]
-    if answers.get("eye_pain", "").lower() == "yes":
-        confirmed_symptoms.append("Pain behind eyes")
-    if answers.get("shaking_chills", "").lower() == "yes":
-        confirmed_symptoms.append("Shaking chills / cyclical fever")
-    if answers.get("cold_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Sore throat / body aches / runny nose")
+    
+    if answers.get("fever_duration", "").lower() in ["less than 24 hours", "1–3 days", "more than 3 days"]:
+        confirmed_symptoms.append("Fever")
+    if answers.get("respiratory_symptoms", "").lower() == "yes":
+        confirmed_symptoms.append("Cough / Sore throat / Breathing issues")
     if answers.get("gi_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Stomach pain / constipation")
+        confirmed_symptoms.append("Stomach pain / Nausea / Diarrhea")
+    if answers.get("pain_symptoms", "").lower() == "yes":
+        confirmed_symptoms.append("Severe Headache / Body aches")
+    if answers.get("skin_systemic_symptoms", "").lower() == "yes":
+        confirmed_symptoms.append("Rashes / Weakness / Chills")
 
     # Only show conditions that have meaningful likelihood
     possible_conditions = [c for c in ranked if c["score"] >= 0.45]

@@ -53,14 +53,8 @@ import os
 # Priority: env var (set in .env or shell) → HuggingFace auto-download cache.
 # Set INDICTRANS2_MODEL_PATH to a local snapshot folder if you have it downloaded;
 # otherwise the model is downloaded from HuggingFace on first use.
-MODEL_PATH: str = os.getenv(
-    "INDICTRANS2_MODEL_PATH",
-    "ai4bharat/indictrans2-indic-en-1B",   # HuggingFace repo ID — auto-downloads
-)
-MODEL_PATH_EN: str = os.getenv(
-    "INDICTRANS2_MODEL_PATH_EN",
-    "ai4bharat/indictrans2-en-indic-1B",
-)
+MODEL_PATH: str = os.getenv("INDICTRANS2_MODEL_PATH") or "ai4bharat/indictrans2-indic-en-1B"
+MODEL_PATH_EN: str = os.getenv("INDICTRANS2_MODEL_PATH_EN") or "ai4bharat/indictrans2-en-indic-1B"
 _LOCAL_ONLY: bool = os.path.isabs(MODEL_PATH)  # True only if user gave a real path
 
 LANGUAGE_MAP: dict[str, str] = {
@@ -281,7 +275,9 @@ def translate_from_english(text: str, target_lang: str) -> str:
     if _state_en == "unavailable":
         return text   # passthrough — no repeated warnings
 
-    _load_model_en_indic()
+    with _lock:
+        if _state_en == "unloaded":
+            _load_model_en_indic()
 
     if _state_en != "loaded":
         return text

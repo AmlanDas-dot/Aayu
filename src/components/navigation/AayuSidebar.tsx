@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { path: "/hospitals", label: "Nearby care", icon: "fa-solid fa-location-dot" },
   { path: "/records", label: "Records", icon: "fa-regular fa-file-lines" },
   { path: "/resources", label: "Resources", icon: "fa-solid fa-book-open" },
+  { path: "/environment", label: "Environmental Health", icon: "fa-solid fa-leaf" },
   { path: "/alerts", label: "Alerts & Updates", icon: "fa-regular fa-bell" },
   { path: "/family", label: "Family and sharing", icon: "fa-solid fa-users" },
   { path: "/disaster", label: "Disaster aid", icon: "fa-solid fa-person-drowning" },

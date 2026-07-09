@@ -38,21 +38,21 @@ export function HomePage() {
 
                     <div className="topbar d-flex align-items-center justify-content-between">
 
-                        <div className="search">
+                        <div className="search" onClick={() => navigate('/search')} style={{ cursor: 'pointer' }}>
                             <span>Search for diseases, symptoms, articles, schemes...</span>
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
 
                         <div className="profile">
-                            <div className="profile-item">
+                            <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
                                 <i className="fa-solid fa-globe"></i>
                                 <span>English</span>
                                 <i className="fa-solid fa-chevron-down"></i>
                             </div>
-                            <div className="profile-item">
+                            <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
                                 <i className="fa-solid fa-gear"></i>
                             </div>
-                            <div className="profile-item">
+                            <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
                                 <i className="fa-regular fa-user"></i>
                                 <span>My Account</span>
                                 <i className="fa-solid fa-chevron-down"></i>
@@ -156,7 +156,7 @@ export function HomePage() {
                                 <div className="section-layout">
 
                                     <div className="grid">
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/records')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/records')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={Docs} alt="My Health Records icon" />
                                             <h3>My Health Records</h3>
                                             <p>
@@ -164,7 +164,7 @@ export function HomePage() {
                                             </p>
                                         </div>
 
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/screening')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/screening')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={Screening} alt="Screening & Guidance icon" />
                                             <h3>Screening & Guidance</h3>
                                             <p>
@@ -172,7 +172,7 @@ export function HomePage() {
                                             </p>
                                         </div>
 
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/hospitals')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/hospitals')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={Nearby} alt="Nearby Healthcare icon" />
                                             <h3>Nearby Healthcare</h3>
                                             <p>
@@ -180,7 +180,7 @@ export function HomePage() {
                                             </p>
                                         </div>
 
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/nutrition')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/nutrition')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={Nutrition} alt="Nutrition icon" />
                                             <h3>Nutrition</h3>
                                             <p>
@@ -188,7 +188,7 @@ export function HomePage() {
                                             </p>
                                         </div>
 
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/family')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/family')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={FamilyHealth} alt="Family Health icon" />
                                             <h3>Family Health</h3>
                                             <p>
@@ -196,7 +196,7 @@ export function HomePage() {
                                             </p>
                                         </div>
 
-                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/schemes')} style={{cursor:'pointer'}}>
+                                        <div className="card col-12 col-md-6 col-xl-4" onClick={() => navigate('/schemes')} style={{ cursor: 'pointer' }}>
                                             <img className="card-icon" src={Schemes} alt="Government Schemes icon" />
                                             <h3>Government Schemes</h3>
                                             <p>
@@ -386,30 +386,45 @@ export function HomePage() {
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
                             <div className="disease-carousel" id="diseaseCarousel">
-                                <div className="disease-card">
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Dengue' } })} style={{ cursor: 'pointer' }}>
                                     <img src={Dengue} alt="Dengue" />
                                     <h4>Dengue</h4>
                                     <p>Symptoms, prevention and care tips</p>
                                 </div>
-                                <div className="disease-card">
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Malaria' } })} style={{ cursor: 'pointer' }}>
                                     <img src={Malaria} alt="Malaria" />
                                     <h4>Malaria</h4>
                                     <p>Symptoms, prevention and care tips</p>
                                 </div>
-                                <div className="disease-card">
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Tuberculosis' } })} style={{ cursor: 'pointer' }}>
                                     <img src={Tuberculosis} alt="Tuberculosis" />
                                     <h4>Tuberculosis</h4>
                                     <p>Symptoms, prevention and care tips</p>
                                 </div>
-                                <div className="disease-card">
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Seasonal Flu' } })} style={{ cursor: 'pointer' }}>
                                     <img src={Flu} alt="Seasonal Flu" />
                                     <h4>Seasonal Flu</h4>
                                     <p>Symptoms, prevention and care tips</p>
                                 </div>
-                                <div className="disease-card">
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Maternal Health' } })} style={{ cursor: 'pointer' }}>
                                     <img src={Maternal} alt="Maternal Health" />
                                     <h4>Maternal Health</h4>
                                     <p>Care during pregnancy and beyond</p>
+                                </div>
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Diabetes' } })} style={{ cursor: 'pointer' }}>
+                                    <img src={Screening} alt="Diabetes" />
+                                    <h4>Diabetes</h4>
+                                    <p>Management, diet and lifestyle</p>
+                                </div>
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Hypertension' } })} style={{ cursor: 'pointer' }}>
+                                    <img src={Screening} alt="Hypertension" />
+                                    <h4>Hypertension</h4>
+                                    <p>Blood pressure control and tips</p>
+                                </div>
+                                <div className="disease-card" onClick={() => navigate('/chat', { state: { initialMessage: 'Tell me about Asthma' } })} style={{ cursor: 'pointer' }}>
+                                    <img src={Flu} alt="Asthma" />
+                                    <h4>Asthma</h4>
+                                    <p>Triggers, inhalers and prevention</p>
                                 </div>
                             </div>
                             <button className="carousel-btn next" onClick={() => document.getElementById('diseaseCarousel')?.scrollBy(200, 0)}>
@@ -437,7 +452,7 @@ export function HomePage() {
                                 <li><i className="fa-solid fa-check"></i> Upload documents & images (OCR)</li>
                                 <li><i className="fa-solid fa-check"></i> Get information on schemes & centers</li>
                             </ul>
-                            <button className="wa-chat-btn">Chat on WhatsApp <i className="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button className="wa-chat-btn" onClick={() => window.open('https://wa.me/?text=Emergency:%20I%20need%20medical%20assistance.%20Please%20help.', '_blank')}>Chat on WhatsApp <i className="fa-solid fa-arrow-up-right-from-square"></i></button>
                         </div>
                     </div>
 

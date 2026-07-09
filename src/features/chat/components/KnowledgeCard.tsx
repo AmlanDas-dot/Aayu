@@ -4,13 +4,7 @@ import type { RetrievedDocument } from "@/types/search";
 export function KnowledgeCard({ doc }: { doc: RetrievedDocument }) {
   const [open, setOpen] = useState(false);
 
-  const urgencyColor = {
-    critical: "#ef4444",
-    high: "#f59e0b",
-    medium: "#3b82f6",
-    low: "#10b981",
-    emergency: "#ef4444",
-  }[doc.urgency as string] ?? "#6b7280";
+  const badgeColor = "#0f766e";
 
   const content: string = doc.content || "";
   const parseSection = (label: string): string => {
@@ -42,7 +36,7 @@ export function KnowledgeCard({ doc }: { doc: RetrievedDocument }) {
         <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1 }}>
           <span style={{
             fontSize: "0.7rem", fontWeight: 700, padding: "2px 8px",
-            borderRadius: 9999, background: `${urgencyColor}22`, color: urgencyColor,
+            borderRadius: 9999, background: `${badgeColor}22`, color: badgeColor,
             whiteSpace: "nowrap",
           }}>
             {Math.round((doc.score ?? 0) * 100)}%

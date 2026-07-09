@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './HospitalMap.css';
-import { type HospitalFacility } from '@/services/api';
+import { type HospitalFacility } from "@/services/api";
 
 const createIcon = (color: 'blue' | 'red', isHighlighted: boolean = false) => {
   return L.divIcon({
@@ -43,17 +43,61 @@ export function HospitalMap({ userLocation, facilities, selectedFacility, onSele
 
   return (
     <div className="hospital-map-container">
-      <MapContainer center={[userLocation.lat, userLocation.lon]} zoom={13} scrollWheelZoom={true} style={{ height: '100%', width: '100%' }}>
-        <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <MapContainer
+        center={[userLocation.lat, userLocation.lon]}
+        zoom={13}
+        scrollWheelZoom={true}
+        style={{ height: '100%', width: '100%' }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
         <MapUpdater selectedFacility={selectedFacility} userLocation={userLocation} />
+
         <Marker position={[userLocation.lat, userLocation.lon]} icon={userIcon} zIndexOffset={1000}>
           <Popup>You are here</Popup>
         </Marker>
+
         {facilities.map((facility, index) => (
-          <Marker key={`${facility.name}-${index}`} position={[facility.lat, facility.lon]} icon={selectedFacility?.name === facility.name ? highlightedIcon : facilityIcon} zIndexOffset={selectedFacility?.name === facility.name ? 500 : 0} eventHandlers={{ click: () => onSelectFacility && onSelectFacility(facility) }}>
+          <Marker
+            key={`${facility.name}-${index}`}
+            position={[facility.lat, facility.lon]}
+            icon={selectedFacility?.name === facility.name ? highlightedIcon : facilityIcon}
+            zIndexOffset={selectedFacility?.name === facility.name ? 500 : 0}
+            eventHandlers={{
+              click: () => onSelectFacility && onSelectFacility(facility),
+            }}
+          >
             <Popup>
-              <strong>{facility.name}</strong><br />
-              {facility.type} · {facility.distance_km} km away
+              <div style={{ marginBottom: '4px' }}>
+                <strong>{facility.name}</strong>
+              </div>
+              <div style={{ fontSize: '12px', marginBottom: '8px' }}>
+                {facility.type} · {facility.distance_km} km away
+                {facility.open_now !== undefined && facility.open_now !== null && (
+                  <span style={{ marginLeft: '6px', color: facility.open_now ? '#22c55e' : '#ef4444', fontWeight: 'bold' }}>
+                    {facility.open_now ? "🟢 Open" : "🔴 Closed"}
+                  </span>
+                )}
+              </div>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lon}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-block',
+                  background: 'var(--primary-color)',
+                  color: 'white',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '12px'
+                }}
+              >
+                🗺️ Directions
+              </a>
             </Popup>
           </Marker>
         ))}

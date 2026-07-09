@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { ChatMessage, Conversation } from "../types/chat";
-import { 
-  getDefaultWelcomeSession, 
-  generateSessionId, 
-  makeId, 
-  determineIcon,
-  DEFAULT_WELCOME_SESSION_ID 
+import {
+  getDefaultWelcomeSession,
+  generateSessionId,
+  makeId,
+  //determineIcon,
+  DEFAULT_WELCOME_SESSION_ID
 } from "../utils/chatUtils";
 
 export function useChatSession() {
@@ -119,7 +119,7 @@ export function useChatSession() {
 
     setConversations((prev) => {
       const updated = prev.filter(c => c.sessionId !== id);
-      
+
       if (updated.length === 0) {
         const newId = generateSessionId();
         const welcomeMsg: ChatMessage = {

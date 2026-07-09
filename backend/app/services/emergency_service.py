@@ -12,20 +12,19 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any
 
-# Emergency condition patterns (keyword → condition name)
 _EMERGENCY_PATTERNS: list[tuple[str, str]] = [
-    (r"\b(heart attack|chest pain|chest tightness|myocardial)\b", "Possible Heart Attack"),
-    (r"\b(stroke|sudden weakness|face drooping|arm weakness|speech)\b", "Possible Stroke"),
-    (r"\b(snake bite|snakebite|snake bit)\b", "Snake Bite"),
-    (r"\b(seizure|convulsion|fits|epilepsy|shaking uncontrolled)\b", "Seizure"),
-    (r"\b(unconscious|unresponsive|not breathing|no pulse|collapsed)\b", "Unconscious Patient"),
-    (r"\b(severe bleeding|bleeding won.t stop|heavy blood loss)\b", "Severe Bleeding"),
-    (r"\b(anaphylaxis|severe allergic|throat closing|can.t breathe)\b", "Anaphylaxis"),
-    (r"\b(choking|can.t swallow|airway blocked)\b", "Choking"),
-    (r"\b(drowning|near drowning)\b", "Drowning"),
-    (r"\b(severe burn|burns over|chemical burn)\b", "Severe Burn"),
-    (r"\b(suicide|kill myself|end my life|want to die)\b", "Mental Health Crisis"),
-    (r"\b(labour|giving birth|baby coming|water broke|contractions)\b", "Emergency Childbirth"),
+    (r"\b(heart attack|chest pain|chest tightness|myocardial|seene mein dard|chhati me dard|seena dard|छाती में दर्द|सीने में दर्द|dil ka daura|दिल का दौरा)\b", "Possible Heart Attack"),
+    (r"\b(stroke|sudden weakness|face drooping|arm weakness|speech|lakwa|लकवा|paralysis)\b", "Possible Stroke"),
+    (r"\b(snake bite|snakebite|snake bit|saamp ne kata|सांप ने काटा|सांप)\b", "Snake Bite"),
+    (r"\b(seizure|convulsion|fits|epilepsy|shaking uncontrolled|daura|दौरा|मिरगी)\b", "Seizure"),
+    (r"\b(unconscious|unresponsive|not breathing|no pulse|collapsed|behosh|बेहोश)\b", "Unconscious Patient"),
+    (r"\b(severe bleeding|bleeding won.t stop|heavy blood loss|khoon|खून|bleeding)\b", "Severe Bleeding"),
+    (r"\b(anaphylaxis|severe allergic|throat closing|can.t breathe|saans lene mein|सांस लेने में)\b", "Anaphylaxis"),
+    (r"\b(choking|can.t swallow|airway blocked|gala rukh|गला रुंध)\b", "Choking"),
+    (r"\b(drowning|near drowning|doob|डूब)\b", "Drowning"),
+    (r"\b(severe burn|burns over|chemical burn|jal gaya|जल गया|aag|आग)\b", "Severe Burn"),
+    (r"\b(suicide|kill myself|end my life|want to die|suicide|आत्महत्या|मरना|marne)\b", "Mental Health Crisis"),
+    (r"\b(labour|giving birth|baby coming|water broke|contractions|delivery|pain|डिलीवरी|प्रसव)\b", "Emergency Childbirth"),
 ]
 
 _RISK_LEVELS = {

@@ -124,6 +124,19 @@ export async function searchNutrition(query: string): Promise<FoodNutrition[]> {
   return data.items ?? [];
 }
 
+export async function getNutritionProfile(profileType: string): Promise<any> {
+  const res = await fetch(`${API_BASE}/nutrition/profile/${encodeURIComponent(profileType)}`);
+  if (!res.ok) throw new Error("Failed to load nutrition profile.");
+  return res.json();
+}
+
+export async function getDietPlan(goal: string): Promise<FoodNutrition[]> {
+  const res = await fetch(`${API_BASE}/nutrition/diet-plan/${encodeURIComponent(goal)}`);
+  if (!res.ok) throw new Error("Failed to load diet plan.");
+  const data = await res.json();
+  return data.items ?? [];
+}
+
 // ── Schemes types & calls ─────────────────────────────────────────────────────
 
 export interface GovernmentScheme {
@@ -136,15 +149,22 @@ export interface GovernmentScheme {
   official_link: string;
 }
 
-export async function getAllSchemes(): Promise<GovernmentScheme[]> {
-  const res = await fetch(`${API_BASE}/schemes`);
+export async function getAllSchemes(age?: string, gender?: string): Promise<GovernmentScheme[]> {
+  const params = new URLSearchParams();
+  if (age) params.append("age", age);
+  if (gender) params.append("gender", gender);
+  const q = params.toString() ? `?${params.toString()}` : "";
+  const res = await fetch(`${API_BASE}/schemes${q}`);
   if (!res.ok) throw new Error("Failed to load schemes. Is the backend running?");
   const data = await res.json();
   return data.items;
 }
 
-export async function getStateSchemes(state: string): Promise<GovernmentScheme[]> {
-  const res = await fetch(`${API_BASE}/schemes?state=${encodeURIComponent(state)}`);
+export async function getStateSchemes(state: string, age?: string, gender?: string): Promise<GovernmentScheme[]> {
+  const params = new URLSearchParams({ state });
+  if (age) params.append("age", age);
+  if (gender) params.append("gender", gender);
+  const res = await fetch(`${API_BASE}/schemes?${params.toString()}`);
   if (!res.ok) throw new Error("Failed to load schemes for that state.");
   const data = await res.json();
   return data.items;
@@ -209,6 +229,7 @@ export interface HospitalFacility {
   address: string;
   phone: string;
   distance_km: number;
+  open_now?: boolean | null;
 }
 
 export interface HospitalResponse {

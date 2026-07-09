@@ -5810,3 +5810,14 @@
     text-align: left;
   }
 }
+
+/* Added for Hospital Map Directions and Status */
+.nc-facility-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.nc-facility-status { font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 12px; }
+.nc-facility-status.open { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+.nc-facility-status.closed { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.nc-facility-actions { display: flex; gap: 8px; margin-top: 10px; }
+.nc-action-link { font-size: 0.85rem; font-weight: 500; text-decoration: none; padding: 6px 12px; border-radius: 6px; transition: all 0.2s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+.nc-action-link.phone { background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color); }
+.nc-action-link.directions { background: var(--primary-color); color: white; }
+.nc-action-link:hover { opacity: 0.85; transform: translateY(-1px); }
