@@ -1,4 +1,6 @@
-export function NutritionSnapshot({ profile }: { profile: any }) {
+import { type NutritionProfile } from "@/features/nutrition/types";
+
+export function NutritionSnapshot({ profile }: { profile: NutritionProfile }) {
   return (
     <section className="nutrition-snapshot">
       <h2 className="section-heading">Your Nutrition Snapshot</h2>

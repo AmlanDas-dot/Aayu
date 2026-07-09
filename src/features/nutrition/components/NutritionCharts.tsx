@@ -1,4 +1,6 @@
-export function NutritionCharts({ profile }: { profile: any }) {
+import { type NutritionProfile } from "@/features/nutrition/types";
+
+export function NutritionCharts({ profile }: { profile: NutritionProfile }) {
   return (
     <section className="nutrient-breakdown-section">
       <div className="nutrient-breakdown-grid">
@@ -26,7 +28,7 @@ export function NutritionCharts({ profile }: { profile: any }) {
         <div className="nutrient-right">
           <h3 className="section-heading">Top Nutrients</h3>
           <p className="section-sub">Your intake vs recommended.</p>
-          {profile.topNutrients.map((n: any) => (
+          {profile.topNutrients.map((n) => (
             <div key={n.name} className="top-nutrient-row">
               <span className="tn-name">{n.name}</span>
               <span className="tn-values">{n.current} / {n.target}</span>

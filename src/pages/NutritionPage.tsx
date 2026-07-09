@@ -8,10 +8,11 @@ import { FoodCarousel } from "@/features/nutrition/components/FoodCarousel";
 import { NutritionSideWidgets } from "@/features/nutrition/components/NutritionSideWidgets";
 import { FooterBanner } from "@/features/nutrition/components/FooterBanner";
 import { getNutritionProfile } from "@/services/api";
+import { type NutritionProfile } from "@/features/nutrition/types";
 
 export function NutritionPage() {
   const [profileType, setProfileType] = useState<"default" | "pregnant" | "child">("default");
-  const [profileData, setProfileData] = useState<any>(null);
+  const [profileData, setProfileData] = useState<NutritionProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

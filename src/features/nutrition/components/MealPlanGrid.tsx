@@ -2,9 +2,11 @@ import { useState } from "react";
 
 const BUDGET_OPTIONS = [50, 100, 150, 200];
 
-export function MealPlanGrid({ profile }: { profile: any }) {
+import { type NutritionProfile } from "@/features/nutrition/types";
+
+export function MealPlanGrid({ profile }: { profile: NutritionProfile }) {
   const [selectedBudget, setSelectedBudget] = useState(100);
-  const totalCost = profile.mealPlan.reduce((sum: number, m: any) => sum + m.price, 0);
+  const totalCost = profile.mealPlan.reduce((sum: number, m) => sum + m.price, 0);
 
   return (
     <section className="meal-plan-section">
@@ -36,7 +38,7 @@ export function MealPlanGrid({ profile }: { profile: any }) {
       </div>
 
       <div className="meal-cards-grid">
-        {profile.mealPlan.map((meal: any) => (
+        {profile.mealPlan.map((meal) => (
           <div key={meal.meal} className="meal-card">
             <div className="meal-time">{meal.meal}</div>
             <div className="meal-icon">{meal.icon}</div>

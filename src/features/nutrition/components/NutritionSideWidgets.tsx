@@ -6,7 +6,7 @@ const COMMUNITY_INSIGHTS = [
   { condition: "Undernutrition in Children", prevalence: "Under 5 Years", pct: 28, color: "#0d9488", trend: "↓" },
 ];
 
-export function NutritionSideWidgets({ profileType, setProfileType }: any) {
+export function NutritionSideWidgets({ profileType, setProfileType }: { profileType: "default" | "pregnant" | "child", setProfileType: (t: "default" | "pregnant" | "child") => void }) {
   return (
     <aside className="nutrition-rail">
       <NutritionProfileFinder profileType={profileType} setProfileType={setProfileType} />

@@ -149,7 +149,7 @@ export function SchemesPage() {
             </section>
           )}
 
-          {!query.trim() && stateFilter === "all" && <TopSchemes />}
+          {!query.trim() && stateFilter === "all" && <TopSchemes schemes={allSchemes} />}
           <SchemeCategoryGrid />
           <DocumentsRequired />
           <SchemesFooterBanner />

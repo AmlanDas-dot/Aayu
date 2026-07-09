@@ -12,7 +12,12 @@ export function SchemeCard({ scheme }: { scheme: GovernmentScheme }) {
           <h3 className="scheme-card-name">{scheme.name}</h3>
           <span className={`scheme-state-badge ${isNational ? "badge-national" : "badge-state"}`}>{scheme.state}</span>
         </div>
-        <button className="scheme-expand-btn" onClick={() => setExpanded(e => !e)}>{expanded ? "▲ Less" : "▼ More"}</button>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+          {scheme.official_link && (
+            <button className="ts-apply-btn" style={{ padding: "4px 12px", fontSize: "0.85rem", height: "fit-content" }} onClick={() => window.open(scheme.official_link, "_blank")}>Apply Now</button>
+          )}
+          <button className="scheme-expand-btn" onClick={() => setExpanded(e => !e)}>{expanded ? "▲ Less" : "▼ More"}</button>
+        </div>
       </div>
       <p className="scheme-card-desc">{scheme.description}</p>
       <div className="scheme-card-grid">

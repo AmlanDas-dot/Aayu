@@ -6,6 +6,7 @@ import type {
   ChatRequest,
   ChatApiResponse,
 } from "../types/search";
+import type { NutritionProfile } from "@/features/nutrition/types";
 
 // ── Search ──────────────────────────────────────────────────────────────────
 
@@ -124,7 +125,7 @@ export async function searchNutrition(query: string): Promise<FoodNutrition[]> {
   return data.items ?? [];
 }
 
-export async function getNutritionProfile(profileType: string): Promise<any> {
+export async function getNutritionProfile(profileType: string): Promise<NutritionProfile> {
   const res = await fetch(`${API_BASE}/nutrition/profile/${encodeURIComponent(profileType)}`);
   if (!res.ok) throw new Error("Failed to load nutrition profile.");
   return res.json();
