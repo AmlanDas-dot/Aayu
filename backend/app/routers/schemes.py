@@ -42,11 +42,13 @@ class SchemeListResponse(BaseModel):
 
 @router.get("", response_model=SchemeListResponse, summary="List all government schemes")
 async def list_schemes(
-    state: str | None = Query(default=None, description="Filter by state, e.g. 'National' or 'Odisha'")
+    state: str | None = Query(default=None, description="Filter by state, e.g. 'National' or 'Odisha'"),
+    age: str | None = Query(default=None, description="Filter heuristically by age group"),
+    gender: str | None = Query(default=None, description="Filter heuristically by gender")
 ) -> SchemeListResponse:
-    """GET /schemes or GET /schemes?state=Odisha"""
+    """GET /schemes or GET /schemes?state=Odisha&age=0-5&gender=Female"""
     svc = SchemesService.get_instance()
-    items = svc.list_schemes(state)
+    items = svc.list_schemes(state, age, gender)
     return SchemeListResponse(count=len(items), items=[Scheme(**s) for s in items])
 
 

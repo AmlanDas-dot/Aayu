@@ -24,6 +24,7 @@ class HospitalResult(BaseModel):
     address: str = ""
     phone: str = ""
     distance_km: float = 0.0
+    open_now: bool | None = None
 
 class HospitalResponse(BaseModel):
     count: int
@@ -51,7 +52,7 @@ async def find_nearby(
 
     headers = {
         "X-Goog-Api-Key": GOOGLE_PLACES_API_KEY,
-        "X-Goog-FieldMask": "places.displayName,places.location,places.formattedAddress,places.primaryType,places.nationalPhoneNumber"
+        "X-Goog-FieldMask": "places.displayName,places.location,places.formattedAddress,places.primaryType,places.nationalPhoneNumber,places.regularOpeningHours"
     }
 
     body = {
@@ -85,29 +86,16 @@ async def find_nearby(
     try:
         async with httpx.AsyncClient(timeout=15.0) as client:
             
-            # 1. Exact request URL
-            print(f"\n[DEBUG] Request URL: {_GOOGLE_PLACES_URL}")
-            
-            # 2. Complete request headers (masking API key)
-            masked_key = GOOGLE_PLACES_API_KEY[:4] + "*" * (len(GOOGLE_PLACES_API_KEY) - 8) + GOOGLE_PLACES_API_KEY[-4:]
-            debug_headers = headers.copy()
-            debug_headers["X-Goog-Api-Key"] = masked_key
-            print(f"[DEBUG] Headers: {json.dumps(debug_headers, indent=2)}")
-            
-            # 3. Complete JSON request body
-            print(f"[DEBUG] Request Body: {json.dumps(body, indent=2)}")
+
 
             resp = await client.post(_GOOGLE_PLACES_URL, json=body, headers=headers)
             
             # 4. HTTP status code returned by Google
-            print(f"[DEBUG] HTTP Status Code: {resp.status_code}")
-            
             # 5. Complete JSON response from Google
             try:
                 data = resp.json()
-                print(f"[DEBUG] Response JSON: {json.dumps(data, indent=2)}")
             except Exception:
-                print(f"[DEBUG] Response text (not JSON): {resp.text}")
+                logger.error(f"[Hospitals] Response text (not JSON): {resp.text}")
                 data = {}
                 
             resp.raise_for_status()
@@ -116,16 +104,15 @@ async def find_nearby(
                 logger.error(f"Google API Error: {data['error'].get('status')} - {data['error'].get('message')}")
                 raise HTTPException(status_code=502, detail=f"Google Places error: {data['error'].get('status')}")
     except httpx.TimeoutException:
-        print("[DEBUG] Exception: TimeoutException")
+        logger.error("[Hospitals] TimeoutException")
         raise HTTPException(status_code=504, detail="Google Places took too long. Try a smaller radius.")
     except httpx.HTTPStatusError as exc:
-        print(f"[DEBUG] HTTPStatusError: {exc.response.status_code}")
-        print(f"[DEBUG] Error response text: {exc.response.text}")
+        logger.error(f"[Hospitals] HTTPStatusError: {exc.response.status_code}")
         raise HTTPException(status_code=502, detail=f"Google Places error: {exc.response.status_code}")
     except Exception as exc:
         if isinstance(exc, HTTPException):
             raise exc
-        print(f"[DEBUG] Exception:\n{traceback.format_exc()}")
+        logger.error(f"[Hospitals] Exception:\n{traceback.format_exc()}")
         raise HTTPException(status_code=502, detail=f"Hospital search failed: {exc}")
 
     facilities: list[HospitalResult] = []
@@ -147,6 +134,10 @@ async def find_nearby(
         address = element.get("formattedAddress", "")
         phone = element.get("nationalPhoneNumber", "")
         
+        open_now = None
+        if "regularOpeningHours" in element and "openNow" in element["regularOpeningHours"]:
+            open_now = element["regularOpeningHours"]["openNow"]
+        
         primary_type = element.get("primaryType", "")
         if primary_type == "hospital":
             display_type = "Hospital"
@@ -167,6 +158,7 @@ async def find_nearby(
             address=address,
             phone=phone, 
             distance_km=round(_haversine(lat, lon, f_lat, f_lon), 2),
+            open_now=open_now,
         ))
 
     facilities.sort(key=lambda f: f.distance_km)

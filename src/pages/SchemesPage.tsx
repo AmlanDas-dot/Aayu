@@ -28,18 +28,20 @@ export function SchemesPage() {
   const [userState, setUserState] = useState("");
   const [district, setDistrict] = useState("");
 
+  const [triggerFetch, setTriggerFetch] = useState(0);
+
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await getAllSchemes();
+        const res = await getAllSchemes(ageGroup, gender);
         setAllSchemes(res);
-        setDisplayed(res);
+        if (stateFilter === "all") setDisplayed(res);
       } catch (e) {
         setError("Failed to load schemes.");
       }
     };
     load();
-  }, []);
+  }, [triggerFetch]);
 
   useEffect(() => {
     let active = true;
@@ -49,7 +51,7 @@ export function SchemesPage() {
         let result: GovernmentScheme[];
         if (query.trim().length >= 2) result = await searchScheme(query.trim());
         else if (stateFilter === "all") result = allSchemes;
-        else result = await getStateSchemes(stateFilter.charAt(0).toUpperCase() + stateFilter.slice(1));
+        else result = await getStateSchemes(stateFilter.charAt(0).toUpperCase() + stateFilter.slice(1), ageGroup, gender);
         if (active) setDisplayed(result);
       } catch (e: any) {
         if (active) setError(e.message ?? "Search failed.");
@@ -57,7 +59,6 @@ export function SchemesPage() {
         if (active) setLoading(false);
       }
     };
-    if (allSchemes.length === 0) return;
     const t = setTimeout(run, query ? 300 : 0);
     return () => { active = false; clearTimeout(t); };
   }, [query, stateFilter, allSchemes]);
@@ -152,7 +153,7 @@ export function SchemesPage() {
             </section>
           )}
 
-          {!query.trim() && stateFilter === "all" && <TopSchemes />}
+          {!query.trim() && stateFilter === "all" && <TopSchemes schemes={allSchemes} />}
           <SchemeCategoryGrid />
           <DocumentsRequired />
           <SchemesFooterBanner />
@@ -165,10 +166,11 @@ export function SchemesPage() {
             gender={gender} setGender={setGender} 
             state={userState} setState={setUserState} 
             onFindSchemes={() => {
-              if (userState) {
-                const targetState = userState === "all" ? "national" : userState.toLowerCase();
+              if (userState || ageGroup || gender) {
+                const targetState = userState === "all" ? "national" : (userState ? userState.toLowerCase() : stateFilter);
                 setStateFilter(userState === "all" ? "all" : targetState);
                 setQuery("");
+                setTriggerFetch(t => t + 1);
                 window.scrollTo({ top: 300, behavior: 'smooth' });
               }
             }}

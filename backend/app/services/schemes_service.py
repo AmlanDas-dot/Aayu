@@ -68,12 +68,40 @@ class SchemesService:
     # Queries
     # ------------------------------------------------------------------ #
 
-    def list_schemes(self, state: Optional[str] = None) -> list[dict[str, Any]]:
+    def list_schemes(self, state: Optional[str] = None, age: Optional[str] = None, gender: Optional[str] = None) -> list[dict[str, Any]]:
         """All schemes, or only those for a given state (e.g. 'National', 'Odisha')."""
-        if state is None:
-            return self._schemes
-        target = state.lower().strip()
-        return [s for s in self._schemes if s.get("state", "").lower() == target]
+        results = self._schemes
+        
+        if state and state.lower().strip() != "all":
+            target_state = state.lower().strip()
+            results = [s for s in results if s.get("state", "").lower() == target_state]
+
+        if gender:
+            target_gender = gender.lower().strip()
+            if target_gender == "female":
+                keywords = ["women", "girl", "mother", "maternity", "pregnant", "lactating", "female", "beti", "matru"]
+                # Match if keywords exist in any of the fields
+                results = [s for s in results if any(kw in str(s).lower() for kw in keywords)]
+            elif target_gender == "male":
+                keywords_exclude = ["maternity", "pregnant", "lactating", "matru"]
+                results = [s for s in results if not any(kw in s.get("eligibility", "").lower() for kw in keywords_exclude)]
+
+        if age:
+            target_age = age.lower().strip()
+            if "0-5" in target_age:
+                keywords = ["child", "infant", "baby", "children", "0-5", "pediatric"]
+                results = [s for s in results if any(kw in str(s).lower() for kw in keywords)]
+            elif "6-18" in target_age:
+                keywords = ["student", "school", "adolescent", "girl child", "education"]
+                # Include general schemes too, but try to prioritize
+                matched = [s for s in results if any(kw in str(s).lower() for kw in keywords)]
+                if matched: results = matched
+            elif "45+" in target_age or "senior" in target_age:
+                keywords = ["senior", "elderly", "pension", "old age"]
+                matched = [s for s in results if any(kw in str(s).lower() for kw in keywords)]
+                if matched: results = matched
+
+        return results
 
     def get_scheme(self, name: str) -> Optional[dict[str, Any]]:
         """Exact match first, then substring match (handles 'kalia' -> 'KALIA Scheme')."""

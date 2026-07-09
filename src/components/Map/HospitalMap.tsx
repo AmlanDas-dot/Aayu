@@ -71,8 +71,33 @@ export function HospitalMap({ userLocation, facilities, selectedFacility, onSele
             }}
           >
             <Popup>
-              <strong>{facility.name}</strong><br />
-              {facility.type} · {facility.distance_km} km away
+              <div style={{ marginBottom: '4px' }}>
+                <strong>{facility.name}</strong>
+              </div>
+              <div style={{ fontSize: '12px', marginBottom: '8px' }}>
+                {facility.type} · {facility.distance_km} km away
+                {facility.open_now !== undefined && facility.open_now !== null && (
+                  <span style={{ marginLeft: '6px', color: facility.open_now ? '#22c55e' : '#ef4444', fontWeight: 'bold' }}>
+                    {facility.open_now ? "🟢 Open" : "🔴 Closed"}
+                  </span>
+                )}
+              </div>
+              <a 
+                href={`https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lon}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-block',
+                  background: 'var(--primary-color)',
+                  color: 'white',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '12px'
+                }}
+              >
+                🗺️ Directions
+              </a>
             </Popup>
           </Marker>
         ))}

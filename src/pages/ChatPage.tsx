@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   sendChatMessage,
   transcribeAudio,
@@ -9,11 +9,11 @@ import {
 } from "../services/api";
 import { speak, stopSpeaking } from "../services/tts";
 import { EmergencyAlert } from "../components/EmergencyAlert";
-import { LoadingStatus } from "../components/LoadingStatus";
 import type { RiskLevel, RetrievedDocument, ChatApiResponse } from "../types/search";
+import { ChatSidebar } from "../components/Chat/ChatSidebar";
+import { ChatMessageItem } from "../components/Chat/ChatMessageItem";
 
 import logoHeart from "../assets/logo-heart.png";
-import Whatsapp from "../assets/whatsapp.png";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
@@ -63,11 +63,7 @@ function generateSessionId() {
     : Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
 
-const RISK_CONFIG: Record<RiskLevel, { label: string; className: string; icon: string }> = {
-  emergency: { label: "EMERGENCY", className: "risk-level emergency", icon: "🚨" },
-  urgent: { label: "URGENT", className: "risk-level urgent", icon: "⚠️" },
-  routine: { label: "ROUTINE", className: "risk-level routine", icon: "✅" },
-};
+
 
 const LABELS: Record<string, {
   healthScreening: string;
@@ -116,98 +112,10 @@ const getDefaultWelcomeSession = (): Conversation => ({
   ],
 });
 
-function KnowledgeCard({ doc }: { doc: any }) {
-  const [open, setOpen] = useState(false);
-
-  const urgencyColor = {
-    critical: "#ef4444",
-    high: "#f59e0b",
-    medium: "#3b82f6",
-    low: "#10b981",
-    emergency: "#ef4444",
-  }[doc.urgency as string] ?? "#6b7280";
-
-  const content: string = doc.content || "";
-  const parseSection = (label: string): string => {
-    const match = content.match(new RegExp(`${label}[:\\s]+([^.]+(?:\\.[^S][^.]+)*)`, "i"));
-    return match ? match[1].trim() : "";
-  };
-
-  const symptoms = parseSection("Symptoms");
-  const guidance = parseSection("Guidance");
-  const precautions = parseSection("Precautions");
-
-  return (
-    <div style={{
-      border: "1px solid rgba(15, 118, 110, 0.15)",
-      borderRadius: 12,
-      overflow: "hidden",
-      marginBottom: 8,
-      backgroundColor: "#ffffff",
-    }}>
-      <button
-        onClick={() => setOpen((o) => !o)}
-        style={{
-          width: "100%", display: "flex", justifyContent: "space-between",
-          alignItems: "center", padding: "10px 14px",
-          background: "#f0fdfa", border: "none", cursor: "pointer",
-          textAlign: "left", gap: 8,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1 }}>
-          <span style={{
-            fontSize: "0.7rem", fontWeight: 700, padding: "2px 8px",
-            borderRadius: 9999, background: `${urgencyColor}22`, color: urgencyColor,
-            whiteSpace: "nowrap",
-          }}>
-            {Math.round((doc.score ?? 0) * 100)}%
-          </span>
-          <span style={{ fontWeight: 600, fontSize: "0.85rem", color: "#0f766e" }}>
-            {doc.title || doc.category || "Health Information"}
-          </span>
-        </div>
-        <span style={{ fontSize: "0.75rem", color: "#64748b", whiteSpace: "nowrap" }}>
-          {doc.collection?.replace(/_/g, " ")} {open ? "▲" : "▼"}
-        </span>
-      </button>
-
-      {open && (
-        <div style={{ padding: "12px 14px", borderTop: "1px solid rgba(15, 118, 110, 0.1)" }}>
-          {symptoms && (
-            <div style={{ marginBottom: 10 }}>
-              <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#d97706", marginBottom: 4, textTransform: "uppercase" }}>
-                🤒 Signs & Symptoms
-              </p>
-              <p style={{ fontSize: "0.83rem", color: "#334155", lineHeight: 1.6 }}>{symptoms}</p>
-            </div>
-          )}
-          {guidance && (
-            <div style={{ marginBottom: 10 }}>
-              <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#16a34a", marginBottom: 4, textTransform: "uppercase" }}>
-                💊 What To Do
-              </p>
-              <p style={{ fontSize: "0.83rem", color: "#334155", lineHeight: 1.6 }}>{guidance}</p>
-            </div>
-          )}
-          {precautions && (
-            <div>
-              <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#2563eb", marginBottom: 4, textTransform: "uppercase" }}>
-                ⚠️ Precautions
-              </p>
-              <p style={{ fontSize: "0.83rem", color: "#334155", lineHeight: 1.6 }}>{precautions}</p>
-            </div>
-          )}
-          {!symptoms && !guidance && !precautions && (
-            <p style={{ fontSize: "0.83rem", color: "#334155", lineHeight: 1.6 }}>{content}</p>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
 
 export function ChatPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   // --- History State ---
   const [conversations, setConversations] = useState<Conversation[]>(() => {
     const saved = localStorage.getItem("aayu_chat_conversations");
@@ -234,6 +142,28 @@ export function ChatPage() {
   });
 
   const [searchTerm, setSearchTerm] = useState("");
+
+  const handleExport = () => {
+    const text = messages.map(m => `[${m.role.toUpperCase()}] ${new Date(m.timestamp).toLocaleString()}\n${m.text}`).join('\n\n');
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `AAYU_Chat_${new Date().toISOString().split('T')[0]}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // --- Initial Message Effect ---
+  useEffect(() => {
+    if (location.state?.initialMessage) {
+      const msg = location.state.initialMessage;
+      // Clear the state so it doesn't trigger again on reload
+      navigate(location.pathname, { replace: true, state: {} });
+      // Small timeout to allow state to settle before triggering send
+      setTimeout(() => handleSend(msg), 100);
+    }
+  }, [location.state, navigate, location.pathname]);
 
   // --- Active Chat States ---
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -422,8 +352,7 @@ export function ChatPage() {
           }
       });
 
-      console.log("========== RENDERING RESPONSE ==========");
-      console.log("Setting assistant message text to:", apiResp.response);
+
 
       const assistantId = makeId();
       setMessages((prev) => {
@@ -867,71 +796,16 @@ export function ChatPage() {
         <div className="chat-layout">
 
           {/* 1. HISTORY PANEL */}
-          <div className="history-panel">
-            <div className="history-header">
-              <h3>Conversation History</h3>
-              <button className="new-chat-btn" onClick={handleStartNewSession} title="New Conversation">
-                <i className="fa-solid fa-plus"></i>
-              </button>
-            </div>
-
-            <div className="history-search">
-              <i className="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="text"
-                placeholder="Search conversations..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-
-            <div className="history-list">
-              {Object.entries(groupedConversations).map(([groupName, convs]) => {
-                if (convs.length === 0) return null;
-                return (
-                  <div key={groupName} className="history-group">
-                    <div className="history-group-header" style={{ fontSize: "0.8rem", color: "#888", padding: "8px 16px", fontWeight: "bold" }}>
-                      {groupName}
-                    </div>
-                    {convs.map((conv) => (
-                      <div
-                        key={conv.sessionId}
-                        onClick={() => setSessionId(conv.sessionId)}
-                        className={`history-card ${conv.sessionId === sessionId ? "active" : ""}`}
-                        style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", cursor: "pointer" }}
-                      >
-                        <div style={{ display: "flex", gap: "12px", flex: 1, overflow: "hidden" }}>
-                          <div className="history-card-icon">
-                            <i className={`fa-solid ${conv.icon || determineIcon(conv.title, conv.messages)}`}></i>
-                          </div>
-                          <div className="history-card-content" style={{ flex: 1 }}>
-                            <h4>{conv.title}</h4>
-                            <span>{conv.timestamp}</span>
-                            <p>{conv.lastMessageSnippet}</p>
-                          </div>
-                        </div>
-                        <button 
-                          onClick={(e) => handleDeleteConversation(e, conv.sessionId)}
-                          className="delete-conv-btn"
-                          title="Delete Conversation"
-                          style={{
-                            background: "transparent", border: "none", color: "#94a3b8", cursor: "pointer",
-                            padding: "4px", display: "flex", alignItems: "center", justifyContent: "center",
-                            borderRadius: "4px", fontSize: "0.85rem", opacity: conv.sessionId === sessionId ? 0.8 : 0.4,
-                            transition: "opacity 0.2s"
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = "#94a3b8")}
-                        >
-                          <i className="fa-solid fa-trash-can"></i>
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <ChatSidebar
+            groupedConversations={groupedConversations}
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            onStartNewSession={handleStartNewSession}
+            onSelectSession={setSessionId}
+            currentSessionId={sessionId}
+            onDeleteSession={handleDeleteConversation}
+            getIcon={determineIcon}
+          />
 
           {/* 2. CHAT CONTAINER */}
           <div className="chat-container">
@@ -948,6 +822,11 @@ export function ChatPage() {
                   </div>
                 </div>
               </div>
+              <button 
+                onClick={handleExport}
+                style={{ marginLeft: 'auto', padding: '6px 12px', borderRadius: '8px', border: '1px solid #cbd5e1', background: 'white', color: '#475569', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <i className="fa-solid fa-download"></i> Export Chat
+              </button>
             </div>
 
             {/* Scrollable messages feed */}
@@ -955,104 +834,13 @@ export function ChatPage() {
               {emergencyAlert && <EmergencyAlert emergency={emergencyAlert} />}
 
               {messages.map((msg) => (
-                <div key={msg.id} className={`message-wrapper ${msg.role}`}>
-                  {msg.role === "assistant" ? (
-                    <img src={logoHeart} alt="AAYU avatar" className="message-avatar" />
-                  ) : null}
-
-                  <div className="message-card">
-                    {msg.isTyping && processingStage ? (
-                      <LoadingStatus icon={processingStage.icon} status={processingStage.text} />
-                    ) : msg.isTyping ? (
-                      <LoadingStatus icon="fa-brain" status="🩺 AAYU is analyzing your request..." />
-                    ) : (
-                      <>
-                        {/* Risk Level Badge */}
-                        {msg.role === "assistant" && msg.risk_level && (
-                          <div className={RISK_CONFIG[msg.risk_level].className}>
-                            <i className={msg.risk_level === "emergency" ? "fa-solid fa-triangle-exclamation" : msg.risk_level === "urgent" ? "fa-solid fa-circle-exclamation" : "fa-solid fa-circle-check"}></i>
-                            Risk Level: <strong>{RISK_CONFIG[msg.risk_level].label}</strong>
-                          </div>
-                        )}
-
-
-                        {/* Verified Knowledge Badge */}
-                        {msg.role === "assistant" && msg.retrieved_documents && msg.retrieved_documents.length > 0 && (
-                          <div style={{
-                            fontSize: "0.68rem",
-                            padding: "2px 8px",
-                            borderRadius: "9999px",
-                            background: "rgba(16, 185, 129, 0.1)",
-                            color: "#0f766e",
-                            border: "1px solid rgba(16, 185, 129, 0.3)",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: 4,
-                            marginBottom: 8,
-                            marginLeft: (msg.mode || msg.llm_provider) ? 8 : 0,
-                            fontWeight: 700
-                          }}>
-                            <i className="fa-solid fa-check-circle"></i> Verified Medical Knowledge
-                          </div>
-                        )}
-
-                        {/* Text Content */}
-                        <p style={{ whiteSpace: "pre-line" }}>{msg.text}</p>
-
-                        {/* TTS Speaker playback */}
-                        {msg.role === "assistant" && msg.text && (
-                          <div style={{ marginTop: 8, display: "flex", gap: 10, alignItems: "center" }}>
-                            <button
-                              onClick={() => handleToggleSpeak(msg.id, msg.text)}
-                              style={{
-                                background: speakingMsgId === msg.id ? "#ccfbf1" : "#f1f5f9",
-                                border: "none",
-                                borderRadius: "6px",
-                                cursor: "pointer",
-                                padding: "4px 8px",
-                                fontSize: "0.75rem",
-                                color: speakingMsgId === msg.id ? "#0f766e" : "#64748b",
-                                fontWeight: 600,
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: 4,
-                              }}
-                            >
-                              {speakingMsgId === msg.id ? "⏹️ Stop" : "🔊 Speak"}
-                            </button>
-                          </div>
-                        )}
-
-                        {/* Knowledge Grounding Cards */}
-                        {msg.retrieved_documents && msg.retrieved_documents.length > 0 && (
-                          <div style={{ marginTop: 12, borderTop: "1px solid #e2e8f0", paddingTop: 12 }}>
-                            <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#64748b", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                              📚 Related Health Groundings ({msg.retrieved_documents.length})
-                            </p>
-                            {msg.retrieved_documents.map((doc: any, i: number) => (
-                              <KnowledgeCard key={i} doc={doc} />
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Safety Warning Disclaimer */}
-                        {msg.disclaimer && (
-                          <div className="response-disclaimer">
-                            <i className="fa-solid fa-circle-info"></i>
-                            {msg.disclaimer}
-                          </div>
-                        )}
-
-                        <span className="message-time">
-                          {new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", })}
-                          {msg.processing_time_ms != null && (
-                            <span style={{ opacity: 0.7 }}> · {msg.processing_time_ms}ms</span>
-                          )}
-                        </span>
-                      </>
-                    )}
-                  </div>
-                </div>
+                <ChatMessageItem 
+                  key={msg.id}
+                  msg={msg}
+                  processingStage={processingStage}
+                  speakingMsgId={speakingMsgId}
+                  handleToggleSpeak={handleToggleSpeak}
+                />
               ))}
               <div ref={bottomRef} />
             </div>

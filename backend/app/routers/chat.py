@@ -28,11 +28,35 @@ from app.services.screening_service import (
     submit_answer,
     is_screening_active,
     TOTAL_QUESTIONS,
+    _DISEASE_META
 )
 from app.services.nutrition_service import NutritionService
 from app.services.schemes_service import SchemesService
 
 logger = logging.getLogger(__name__)
+
+# Build a dynamic set of disease keywords from _DISEASE_META
+_DISEASE_KEYWORDS = set()
+for m in _DISEASE_META.values():
+    n = m.get('name', '').lower()
+    n = re.sub(r'[^a-z ]', ' ', n)
+    words = n.split()
+    if len(words) == 1:
+        _DISEASE_KEYWORDS.add(words[0])
+    else:
+        _DISEASE_KEYWORDS.add(' '.join(words))
+        for w in words:
+            if len(w) > 4:
+                _DISEASE_KEYWORDS.add(w)
+
+_STOP_WORDS = {
+    'elderly', 'disease', 'disorder', 'syndrome', 'acute', 'chronic', 'severe', 'mild',
+    'pregnancy', 'child', 'infant', 'neonatal', 'adult', 'women', 'management', 'screening',
+    'prevention', 'health', 'care', 'treatment', 'symptoms', 'causes', 'what', 'about',
+    'explain', 'condition', 'effects', 'infections', 'infection', 'viral', 'bacterial', 'fungal',
+    'possible', 'suspected', 'probable', 'known', 'history', 'family', 'related', 'associated'
+}
+_DISEASE_KEYWORDS = _DISEASE_KEYWORDS - _STOP_WORDS
 
 # ---------------------------------------------------------------------------
 # Deterministic Keyword Detectors
@@ -40,13 +64,13 @@ logger = logging.getLogger(__name__)
 
 _SCREENING_TRIGGER_PATTERN = re.compile(
     r"\b(fever|temperature|bukhar|tez bukhar|headache|sir dard|body ache|chills|"
-    r"dengue|malaria|typhoid|flu|influenza|thanda lagana|sardard|vomiting|diarrhea|cough|breathing difficulty|dizzy|nauseous|nausea|weak|weakness|fatigue|pain)\b",
+    r"dengue|malaria|typhoid|flu|influenza|thanda lagana|sardard|vomiting|diarrhea|cough|breathing difficulty|dizzy|nauseous|nausea|weak|weakness|fatigue|pain|rash|rashes|stomach ache|stomach pain|chest pain|joint pain|muscle pain|eye pain|toothache|bleeding|swelling|itch|itching|sweating|sneezing|बुखार|सिरदर्द|दर्द|चकत्ते|खुजली|उल्टी|दस्त|खांसी)\b",
     re.IGNORECASE,
 )
 
 _SICK_QUALIFIER = re.compile(
-    r"\b(have|has|feel|feeling|suffering|since|days|week|ill|sick|my|me|husband|wife|"
-    r"child|baby|mujhe|mujhko|hain|ho raha|lag raha)\b",
+    r"\b(have|having|has|feel|feeling|suffering|experiencing|getting|got|diagnosed|since|days|week|ill|sick|my|me|husband|wife|"
+    r"child|baby|mujhe|mujhko|hain|ho raha|lag raha|है|मुझे)\b",
     re.IGNORECASE,
 )
 
@@ -70,14 +94,41 @@ _DISEASE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+_SCREENING_EXPLICIT_PATTERN = re.compile(
+    r"\b(screen|screening|diagnose|diagnosis|checkup|test)\b",
+    re.IGNORECASE,
+)
+
 def _should_trigger_screening(text: str) -> tuple[bool, list[str]]:
+    text_lower = text.lower()
+    
+    # Always trigger if they explicitly ask for a screening
+    is_explicit = bool(_SCREENING_EXPLICIT_PATTERN.search(text))
+    
     trigger_matches = _SCREENING_TRIGGER_PATTERN.findall(text)
-    if not trigger_matches:
+    
+    # Check dynamic backend disease keywords
+    text_words = set(re.findall(r'\b[a-z]+\b', text_lower))
+    matched_diseases = text_words.intersection(_DISEASE_KEYWORDS)
+    for dk in _DISEASE_KEYWORDS:
+        if ' ' in dk and dk in text_lower:
+            matched_diseases.add(dk)
+            
+    if is_explicit:
+        symptoms = [m.lower() for m in trigger_matches] if trigger_matches else []
+        symptoms.extend(list(matched_diseases))
+        return True, list(set(symptoms))
+        
+    if not trigger_matches and not matched_diseases:
         return False, []
+        
     has_qualifier = bool(_SICK_QUALIFIER.search(text))
-    if not has_qualifier and len(trigger_matches) < 2:
+    total_triggers = len(trigger_matches) + len(matched_diseases)
+    
+    if not has_qualifier and total_triggers < 2:
         return False, []
-    symptoms = [m.lower() for m in trigger_matches]
+        
+    symptoms = [m.lower() for m in trigger_matches] + list(matched_diseases)
     return True, list(set(symptoms))
 
 def _is_nutrition_query(text: str) -> bool:
@@ -169,11 +220,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
     logger.info("========== CHAT REQUEST RECEIVED ==========")
     logger.info("Request body: %s", body.model_dump_json())
 
-    # ── Step 1: Emergency pre-check ──────────────────────────────────────────
-    emergency_classifier = EmergencyClassifier.get_instance()
-    emergency_result = emergency_classifier.classify(body.message)
-
-    # Translation
+    # ── Step 1: Translation ──────────────────────────────────────────────────
     original_message = body.message.strip()
     english_message = original_message
 
@@ -184,6 +231,10 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
         except Exception as exc:
             logger.error("[Chat] Translation failed:\n%s", traceback.format_exc())
             english_message = original_message
+
+    # ── Step 1.5: Emergency pre-check ────────────────────────────────────────
+    emergency_classifier = EmergencyClassifier.get_instance()
+    emergency_result = emergency_classifier.classify(english_message)
 
     # ── Step 2: Active Screening check ────────────────────────────────────────
     if body.session_id and is_screening_active(body.session_id):
@@ -359,11 +410,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
             history=history,
             system_prompt=system_prompt
         )
-        print("=" * 80)
-        print("IN CHAT.PY IMMEDIATELY AFTER GET_LLM_RESPONSE")
-        print("repr(llm_response_text):", repr(llm_response_text))
-        print("type(llm_response_text):", type(llm_response_text))
-        print("=" * 80)
+
         if llm_response_text and body.language and body.language != "en":
             try:
                 llm_response_text = translate_from_english(llm_response_text, body.language)

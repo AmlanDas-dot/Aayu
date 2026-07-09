@@ -10,6 +10,7 @@ import { HospitalPage } from "./pages/HospitalPage";
 import { AdminDashboardPage } from "./pages/AdminDashboardPage";
 import { PlaceholderPages } from "./pages/PlaceholderPages";
 import { RecordsPage } from "./pages/RecordsPage";
+import { EnvironmentPage } from "./pages/EnvironmentPage";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/schemes" element={<SchemesPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
+          <Route path="/environment" element={<EnvironmentPage />} />
           <Route path="/screening" element={<PlaceholderPages page="screening" />} />
           <Route path="/records" element={<RecordsPage />} />
           <Route path="/resources" element={<PlaceholderPages page="resources" />} />
