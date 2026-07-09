@@ -76,6 +76,86 @@ export async function sendChatMessage(
   return data;
 }
 
+// ── Image Chat integration (Sprint 3) ─────────────────────────────────────────
+
+export interface ImageChatApiResponse {
+  success: boolean;
+  image_description: string;
+  answer: string;
+  triage: string;
+  warnings: string[];
+  confidence: string;
+}
+
+export async function sendImageChatMessage(
+  imageFile: File,
+  question: string,
+  language: string = "en",
+  sessionId: string = "",
+  history: any[] = [],
+  onUploadProgress?: (progress: number) => void
+): Promise<ImageChatApiResponse> {
+  const formData = new FormData();
+  formData.append("image", imageFile);
+  formData.append("question", question);
+  formData.append("language", language);
+  formData.append("session_id", sessionId);
+  formData.append("history", JSON.stringify(history));
+
+  console.log("========== SENDING IMAGE CHAT REQUEST ==========");
+
+  if (onUploadProgress) {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", `${API_BASE}/image-chat`, true);
+      
+      xhr.upload.onprogress = (event) => {
+        if (event.lengthComputable) {
+          const percentComplete = Math.round((event.loaded / event.total) * 100);
+          onUploadProgress(percentComplete);
+        }
+      };
+
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const data = JSON.parse(xhr.responseText);
+            resolve(data);
+          } catch (err) {
+            reject(new Error("Invalid JSON response from server"));
+          }
+        } else {
+          try {
+            const err = JSON.parse(xhr.responseText);
+            reject(new Error(err.detail ?? "Image chat request failed"));
+          } catch {
+            reject(new Error(`Server error: ${xhr.statusText}`));
+          }
+        }
+      };
+
+      xhr.onerror = () => {
+        reject(new Error("Network error occurred during image upload."));
+      };
+
+      xhr.send(formData);
+    });
+  }
+
+  const res = await fetch(`${API_BASE}/image-chat`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Unknown error" }));
+    throw new Error(err.detail ?? "Image chat request failed");
+  }
+
+  return res.json();
+}
+
+
 // ── Fallback mock (kept for offline/dev use) ──────────────────────────────────
 
 export async function getMockChatResponse(

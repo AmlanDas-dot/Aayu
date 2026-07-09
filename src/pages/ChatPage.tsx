@@ -4,7 +4,7 @@ import {
   sendChatMessage,
   submitScreeningAnswer,
   generateChatTitle,
-  //sendImageChatMessage,
+  sendImageChatMessage,
 } from "@/services/api";
 import { stopSpeaking } from "@/services/tts";
 import { EmergencyAlert } from "@/components/EmergencyAlert";
@@ -118,7 +118,7 @@ export function ChatPage() {
     imageThumbnail,
     //setImageThumbnail,
     uploadProgress,
-    //setUploadProgress,
+    setUploadProgress,
     fileInputRef,
     isCameraOpen,
     isDragging,
@@ -201,15 +201,15 @@ export function ChatPage() {
     const isDisease = /\b(fever|temperature|headache|ache|symptom|disease|dengue|malaria|flu|vomiting|diarrhea|cough)\b/i.test(lowerMsg);
 
     if (hasImage) {
-      setProcessingStage({ icon: "👁️", text: "Analyzing image with Gemini Vision..." });
+      setProcessingStage({ icon: "≡ƒæü∩╕Å", text: "Analyzing image with Gemini Vision..." });
     } else if (wasVoice) {
-      setProcessingStage({ icon: "🧠", text: "Thinking..." });
+      setProcessingStage({ icon: "≡ƒºá", text: "Thinking..." });
     } else {
-      if (isEmergency) setProcessingStage({ icon: "🚨", text: "Emergency detected" });
-      else if (isNutrition) setProcessingStage({ icon: "🍎", text: "Finding nutrition guidance..." });
-      else if (isSchemes) setProcessingStage({ icon: "📑", text: "Searching government schemes..." });
-      else if (isDisease) setProcessingStage({ icon: "🔍", text: "Searching verified medical knowledge..." });
-      else setProcessingStage({ icon: "📝", text: "Understanding your message..." });
+      if (isEmergency) setProcessingStage({ icon: "≡ƒÜ¿", text: "Emergency detected" });
+      else if (isNutrition) setProcessingStage({ icon: "≡ƒìÄ", text: "Finding nutrition guidance..." });
+      else if (isSchemes) setProcessingStage({ icon: "≡ƒôæ", text: "Searching government schemes..." });
+      else if (isDisease) setProcessingStage({ icon: "≡ƒöì", text: "Searching verified medical knowledge..." });
+      else setProcessingStage({ icon: "≡ƒô¥", text: "Understanding your message..." });
     }
 
     // Stop speaking currently reading message
@@ -253,10 +253,18 @@ export function ChatPage() {
     try {
       let apiResp: any;
       if (hasImage && imageFile) {
-        // TODO: Re-enable after camera/image upload API is integrated.
-        alert("Image upload is temporarily disabled while the camera integration is being merged.");
-        //setIsLoading(false);
-        return;
+        setUploadProgress(0);
+        apiResp = await sendImageChatMessage(
+          imageFile,
+          userMsgText,
+          language,
+          sessionId,
+          llmHistory,
+          (progress) => {
+            setUploadProgress(progress);
+          }
+        );
+        setUploadProgress(null);
       } else {
         const cachedDesc = findCachedImageDescription(messages);
         const payloadMessage = cachedDesc ? `${msg}\n[Image context: ${cachedDesc}]` : msg;
@@ -270,13 +278,13 @@ export function ChatPage() {
           },
           (event) => {
             if (event === "HEADERS_RECEIVED") {
-              if (isEmergency) setProcessingStage({ icon: "☎️", text: "Preparing emergency guidance..." });
-              else if (isDisease) setProcessingStage({ icon: "🧠", text: "Preparing evidence-based response..." });
-              else if (!isNutrition && !isSchemes) setProcessingStage({ icon: "🧠", text: "Thinking..." });
+              if (isEmergency) setProcessingStage({ icon: "ΓÿÄ∩╕Å", text: "Preparing emergency guidance..." });
+              else if (isDisease) setProcessingStage({ icon: "≡ƒºá", text: "Preparing evidence-based response..." });
+              else if (!isNutrition && !isSchemes) setProcessingStage({ icon: "≡ƒºá", text: "Thinking..." });
             } else if (event === "JSON_PARSED") {
-              if (isNutrition) setProcessingStage({ icon: "💬", text: "Preparing recommendations..." });
-              else if (isSchemes) setProcessingStage({ icon: "💬", text: "Preparing explanation..." });
-              else if (!isEmergency) setProcessingStage({ icon: "💬", text: "Preparing response..." });
+              if (isNutrition) setProcessingStage({ icon: "≡ƒÆ¼", text: "Preparing recommendations..." });
+              else if (isSchemes) setProcessingStage({ icon: "≡ƒÆ¼", text: "Preparing explanation..." });
+              else if (!isEmergency) setProcessingStage({ icon: "≡ƒÆ¼", text: "Preparing response..." });
             }
           }
         );
@@ -405,7 +413,7 @@ export function ChatPage() {
     } catch (err: any) {
       const isOffline = !navigator.onLine || err.message?.includes("fetch");
       const errMsg = isOffline
-        ? "⚠️ Cannot reach the AAYU server. Make sure the backend is running (`python -m uvicorn app.main:app --reload` in the backend folder), then try again."
+        ? "ΓÜá∩╕Å Cannot reach the AAYU server. Make sure the backend is running (`python -m uvicorn app.main:app --reload` in the backend folder), then try again."
         : `Error: ${err.message || "Something went wrong. Please try again."}`;
       setMessages((prev) =>
         prev.map((m) => (m.id === typingId ? { ...m, text: errMsg, isTyping: false } : m))
@@ -434,7 +442,7 @@ export function ChatPage() {
 
     // Set processing and typing state
     setIsProcessing(true);
-    setProcessingStage({ icon: "📋", text: "Preparing health screening..." });
+    setProcessingStage({ icon: "≡ƒôï", text: "Preparing health screening..." });
     const typingId = makeId();
 
     const updatedMsgs = [...messages, userMsg];
@@ -453,7 +461,7 @@ export function ChatPage() {
         answer,
         (event) => {
           if (event === "JSON_PARSED") {
-            setProcessingStage({ icon: "❓", text: "Preparing next question..." });
+            setProcessingStage({ icon: "Γ¥ô", text: "Preparing next question..." });
           }
         }
       );
@@ -508,7 +516,7 @@ export function ChatPage() {
     } catch (err: any) {
       const isOffline = !navigator.onLine || err.message?.includes("fetch");
       const errMsg = isOffline
-        ? "⚠️ Cannot reach the AAYU server. Make sure the backend is running."
+        ? "ΓÜá∩╕Å Cannot reach the AAYU server. Make sure the backend is running."
         : `Error: ${err.message || "Something went wrong."}`;
       setMessages((prev) =>
         prev.map((m) => (m.id === typingId ? { ...m, text: errMsg, isTyping: false } : m))
@@ -545,7 +553,7 @@ export function ChatPage() {
                   <h2>AI Screening &amp; Guidance</h2>
                   <div className="assistant-status">
                     <span className="status-dot"></span> Online
-                    <span className="status-sep">•</span>
+                    <span className="status-sep">ΓÇó</span>
                     Powered by Trusted Health Knowledge
                   </div>
                 </div>
