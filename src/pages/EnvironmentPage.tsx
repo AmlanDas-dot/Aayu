@@ -85,6 +85,58 @@ export function EnvironmentPage() {
                 timeline={data.heatTimeline}
               />
 
+              {/* Coming Soon Section */}
+              <div className="env-coming-soon mt-4">
+                <h3 className="env-section-title">Coming Soon</h3>
+                <div className="env-overview-grid disabled-grid">
+                  <div className="env-overview-card disabled">
+                    <div className="env-card-icon-wrap bg-gray-light">
+                      <span className="text-gray">💧</span>
+                    </div>
+                    <div className="env-card-content">
+                      <div className="env-card-label">Water Quality</div>
+                      <div className="env-card-status">Roadmap</div>
+                    </div>
+                  </div>
+                  <div className="env-overview-card disabled">
+                    <div className="env-card-icon-wrap bg-gray-light">
+                      <span className="text-gray">🦟</span>
+                    </div>
+                    <div className="env-card-content">
+                      <div className="env-card-label">Mosquito Risk</div>
+                      <div className="env-card-status">Roadmap</div>
+                    </div>
+                  </div>
+                  <div className="env-overview-card disabled">
+                    <div className="env-card-icon-wrap bg-gray-light">
+                      <span className="text-gray">🌼</span>
+                    </div>
+                    <div className="env-card-content">
+                      <div className="env-card-label">Pollen</div>
+                      <div className="env-card-status">Roadmap</div>
+                    </div>
+                  </div>
+                  <div className="env-overview-card disabled">
+                    <div className="env-card-icon-wrap bg-gray-light">
+                      <span className="text-gray">🌧️</span>
+                    </div>
+                    <div className="env-card-content">
+                      <div className="env-card-label">Flood Alerts</div>
+                      <div className="env-card-status">Roadmap</div>
+                    </div>
+                  </div>
+                  <div className="env-overview-card disabled">
+                    <div className="env-card-icon-wrap bg-gray-light">
+                      <span className="text-gray">🔊</span>
+                    </div>
+                    <div className="env-card-content">
+                      <div className="env-card-label">Noise Pollution</div>
+                      <div className="env-card-status">Roadmap</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Page Footer CTA */}
               <div className="talk-section mt-4" style={{ textAlign: 'center', padding: '32px' }}>
                 <Info size={32} className="text-teal" style={{ margin: '0 auto 16px auto' }} />

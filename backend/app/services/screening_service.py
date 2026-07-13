@@ -1,168 +1,72 @@
 """
-Screening Service — Hackathon MVP (v2).
+Screening Service — Clinical Reasoning Engine (v4).
 
-Lightweight, in-memory conversational screener for four febrile illness pathways:
-  • Dengue  • Malaria  • Influenza  • Typhoid
+Phase 4 redesign:
+  - Specialty routing before retrieval (targeted ChromaDB collections)
+  - Weighted disease ranking (vector + overlap + urgency + patient context)
+  - Maximum-information-gain question selection (differential diagnosis)
+  - Per-hypothesis confidence tracking across answers
+  - Intelligent stop conditions (convergence detection)
+  - Internal reasoning trace logged for debugging
 
-Changes vs v1:
-  - Improved scoring weights with proper per-answer deltas
-  - Question payload now includes running_scores for live narrowing
-  - calculate_result returns structured data (not just raw text)
-  - _build_summary_text produces rich, human-readable output
-  - Friendly conversational tone throughout
+Backward-compatible API preserved for chat.py.
 """
 
 from __future__ import annotations
 
-import time
 import logging
+import time
 from typing import Any
+
+from app.services.search_service import SearchService
+from app.services.clinical_reasoning_service import (
+    get_specialty_collections,
+    rank_candidates,
+    select_next_question,
+    update_hypothesis_scores,
+    should_stop_screening,
+    build_reasoning_trace,
+    format_question_text,
+    get_question_explanation,
+    normalize_symptom_concept,
+)
+from app.services.conversation_service import (
+    CLARIFYING,
+    LISTENING,
+    REASONING,
+    SUMMARIZING,
+    build_closing_line,
+    build_question_turn_intro,
+    build_summary_opening,
+    describe_symptom,
+    extract_clinical_findings,
+)
 
 logger = logging.getLogger(__name__)
 
-import os
-import json
-import glob
-
 # ---------------------------------------------------------------------------
-# Screening questions
+# Constants & backward-compat aliases
 # ---------------------------------------------------------------------------
+_SESSION_TTL   = 1800.0
+MAX_QUESTIONS  = 5           # increased from 4 for better differential resolution
+TOTAL_QUESTIONS = MAX_QUESTIONS   # legacy alias
+QUESTIONS: list[dict] = []        # dynamic system — kept empty for compat
+_DISEASE_META: dict = {}           # legacy stub; disease data lives in ChromaDB
 
-QUESTIONS: list[dict[str, Any]] = [
-    {
-        "id": "fever_duration",
-        "text": "Have you been experiencing a fever, and if so, for how long?",
-        "hint": "Fever duration helps narrow down the most likely cause.",
-        "options": ["Less than 24 hours", "1–3 days", "More than 3 days", "No fever"],
-    },
-    {
-        "id": "respiratory_symptoms",
-        "text": "Are you experiencing a cough, sore throat, runny nose, or difficulty breathing?",
-        "hint": "These indicate respiratory involvement.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-    {
-        "id": "gi_symptoms",
-        "text": "Are you experiencing nausea, vomiting, diarrhea, or stomach pain?",
-        "hint": "Gastrointestinal symptoms can indicate specific infections or conditions.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-    {
-        "id": "pain_symptoms",
-        "text": "Do you have a severe headache, body aches, joint pain, or pain behind your eyes?",
-        "hint": "These pains are hallmarks of certain viral and bacterial infections.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-    {
-        "id": "skin_systemic_symptoms",
-        "text": "Have you noticed any rashes, severe weakness, chills, or sudden sweating?",
-        "hint": "Systemic symptoms can point to generalized infections or specific diseases.",
-        "options": ["Yes", "No", "Not sure"],
-    },
-]
 
-TOTAL_QUESTIONS = len(QUESTIONS)
+def _compute_running_scores(answers: dict) -> dict:
+    """Legacy stub — superseded by update_hypothesis_scores."""
+    return {}
 
-# ---------------------------------------------------------------------------
-# Scoring system & Disease Metadata
-# ---------------------------------------------------------------------------
-_BASE_SCORES: dict[str, float] = {}
-_SCORE_MATRIX: dict[str, dict[str, dict[str, float]]] = {
-    "fever_duration": {
-        "less than 24 hours": {},
-        "1–3 days": {},
-        "more than 3 days": {},
-        "no fever": {},
-    },
-    "respiratory_symptoms": {"yes": {}, "no": {}, "not sure": {}},
-    "gi_symptoms": {"yes": {}, "no": {}, "not sure": {}},
-    "pain_symptoms": {"yes": {}, "no": {}, "not sure": {}},
-    "skin_systemic_symptoms": {"yes": {}, "no": {}, "not sure": {}},
-}
-_DISEASE_META: dict[str, dict[str, Any]] = {}
 
-def _init_screening_data():
-    global _BASE_SCORES, _DISEASE_META, _SCORE_MATRIX
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "data", "healthknowledge")
-    json_files = glob.glob(os.path.join(data_dir, "*.json"))
-    
-    # Mapping for keywords to our questions
-    respiratory_kw = {"cough", "sore throat", "runny nose", "congestion", "sneezing", "breathing", "shortness of breath", "wheezing"}
-    gi_kw = {"nausea", "vomiting", "diarrhea", "stomach", "abdominal pain", "cramps", "constipation"}
-    pain_kw = {"headache", "body ache", "joint pain", "muscle", "eye pain"}
-    skin_kw = {"rash", "itching", "redness", "weakness", "chills", "sweats", "fatigue"}
-    
-    for file_path in json_files:
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                for item in data:
-                    did = item.get("id")
-                    if not did:
-                        continue
-                    
-                    _BASE_SCORES[did] = 1.0
-                    
-                    # Create meta
-                    _DISEASE_META[did] = {
-                        "name": item.get("category", did.replace("_", " ").title()),
-                        "icon": "🩺",
-                        "urgency": item.get("urgency", "routine"),
-                        "risk_label": "🟡 Moderate Risk" if item.get("urgency") != "low" else "🟢 Low Risk",
-                        "actions": item.get("guidance", "Consult a doctor for further advice.").split(". ")[:3],
-                        "warning_signs": item.get("precautions", []),
-                    }
-                    
-                    # Update score matrix
-                    symptoms_list = item.get("symptoms", [])
-                    symptoms = " ".join(symptoms_list).lower() if isinstance(symptoms_list, list) else ""
-                    
-                    # Fever
-                    if "fever" in symptoms:
-                        _SCORE_MATRIX["fever_duration"]["less than 24 hours"][did] = 1.0
-                        _SCORE_MATRIX["fever_duration"]["1–3 days"][did] = 2.0
-                        _SCORE_MATRIX["fever_duration"]["more than 3 days"][did] = 3.0
-                    else:
-                        _SCORE_MATRIX["fever_duration"]["no fever"][did] = 1.0
-                        
-                    # Respiratory
-                    if any(kw in symptoms for kw in respiratory_kw):
-                        _SCORE_MATRIX["respiratory_symptoms"]["yes"][did] = 3.0
-                        _SCORE_MATRIX["respiratory_symptoms"]["not sure"][did] = 1.0
-                    else:
-                        _SCORE_MATRIX["respiratory_symptoms"]["no"][did] = 0.5
-                        
-                    # GI
-                    if any(kw in symptoms for kw in gi_kw):
-                        _SCORE_MATRIX["gi_symptoms"]["yes"][did] = 3.0
-                        _SCORE_MATRIX["gi_symptoms"]["not sure"][did] = 1.0
-                    else:
-                        _SCORE_MATRIX["gi_symptoms"]["no"][did] = 0.5
-                        
-                    # Pain
-                    if any(kw in symptoms for kw in pain_kw):
-                        _SCORE_MATRIX["pain_symptoms"]["yes"][did] = 3.0
-                        _SCORE_MATRIX["pain_symptoms"]["not sure"][did] = 1.0
-                    else:
-                        _SCORE_MATRIX["pain_symptoms"]["no"][did] = 0.5
-                        
-                    # Skin / Systemic
-                    if any(kw in symptoms for kw in skin_kw):
-                        _SCORE_MATRIX["skin_systemic_symptoms"]["yes"][did] = 3.0
-                        _SCORE_MATRIX["skin_systemic_symptoms"]["not sure"][did] = 1.0
-                    else:
-                        _SCORE_MATRIX["skin_systemic_symptoms"]["no"][did] = 0.5
-                        
-        except Exception as e:
-            logger.error(f"Failed to load {file_path}: {e}")
+def _rank_conditions(scores: dict) -> list:
+    """Legacy stub — superseded by rank_candidates."""
+    return []
 
-_init_screening_data()
 
 # ---------------------------------------------------------------------------
 # In-memory session store
 # ---------------------------------------------------------------------------
-_SESSION_TTL = 1800.0
-
 _sessions: dict[str, dict[str, Any]] = {}
 
 
@@ -173,74 +77,44 @@ def _cleanup() -> None:
         del _sessions[sid]
 
 
-def _compute_running_scores(answers: dict[str, str]) -> dict[str, float]:
-    """Compute current disease scores from answers collected so far."""
-    scores = dict(_BASE_SCORES)
-    for q_id, answer in answers.items():
-        answer_key = answer.lower()
-        q_matrix = _SCORE_MATRIX.get(q_id, {})
-        deltas = q_matrix.get(answer_key, {})
-        for disease, delta in deltas.items():
-            scores[disease] = scores.get(disease, 0.0) + delta
-    return scores
-
-
-def _rank_conditions(scores: dict[str, float]) -> list[dict[str, Any]]:
-    """Return ranked list of conditions with normalised scores and labels."""
-    max_score = max(scores.values()) if scores else 1.0
-    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    result = []
-    for disease_id, raw_score in ranked:
-        norm = raw_score / max_score
-        meta = _DISEASE_META[disease_id]
-        result.append({
-            "id": disease_id,
-            "name": meta["name"],
-            "icon": meta["icon"],
-            "score": round(norm, 3),
-            "raw_score": round(raw_score, 2),
-            "likelihood": _label_likelihood(norm),
-        })
-    return result
-
-
-def _label_likelihood(norm_score: float) -> str:
-    if norm_score >= 0.85:
-        return "High Confidence"
-    elif norm_score >= 0.60:
-        return "Moderate Confidence"
-    elif norm_score >= 0.35:
-        return "Low Confidence"
-    else:
-        return "Unlikely"
-
-
-def _confidence_label(ranked: list[dict]) -> str:
-    """Overall screening confidence based on spread between top two."""
-    if len(ranked) < 2:
-        return "High"
-    gap = ranked[0]["score"] - ranked[1]["score"]
-    if gap >= 0.30:
-        return "High"
-    elif gap >= 0.15:
-        return "Medium"
-    else:
-        return "Low"
-
-
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
-def start_screening(session_id: str, reported_symptoms: list[str]) -> dict[str, Any]:
+def start_screening(
+    session_id: str,
+    reported_symptoms: list[str],
+    patient_context: dict | None = None,
+    denied_symptoms: list[str] | None = None,
+) -> dict[str, Any]:
+    """
+    Begin a clinical reasoning session.
+
+    Args:
+        session_id        : Unique session identifier (from chat request)
+        reported_symptoms : Initial symptoms extracted from user message
+        patient_context   : Optional patient metadata (age, gender, conditions, etc.)
+    """
     _cleanup()
+    normalized_reported = _dedupe_concepts(reported_symptoms)
+    normalized_denied = _dedupe_concepts(denied_symptoms or [])
     _sessions[session_id] = {
-        "reported_symptoms": reported_symptoms,
-        "answers": {},
-        "current_index": 0,
-        "last_active": time.time(),
+        "initial_reported_symptoms": list(normalized_reported),
+        "initial_denied_symptoms": list(normalized_denied),
+        "reported_symptoms": normalized_reported,
+        "denied_symptoms":   [s for s in normalized_denied if s not in normalized_reported],
+        "answers":           {},
+        "current_index":     0,
+        "patient_context":   patient_context or {},
+        "conversation_state": LISTENING,
+        "controller_prompt": None,
+        # Clinical engine state
+        "top_diseases":      [],      # list[dict] — current ranked hypotheses
+        "hypothesis_scores": {},      # {disease_id: float} — confidence per hypothesis
+        "last_active":       time.time(),
     }
-    logger.info("[Screening] Started session %s — symptoms: %s", session_id, reported_symptoms)
+    logger.info("[Screening] Clinical session started: %s | symptoms=%s | context_keys=%s",
+                session_id, normalized_reported, list((patient_context or {}).keys()))
     return _build_question_payload(session_id)
 
 
@@ -248,23 +122,49 @@ def submit_answer(session_id: str, question_id: str, answer: str) -> dict[str, A
     _cleanup()
     if session_id not in _sessions:
         return {
-            "screening_mode": False,
-            "screening_complete": False,
+            "screening_mode": False, "screening_complete": False,
             "error": "Session expired. Please describe your symptoms again to restart.",
             "response": "Your screening session has expired. Please describe your symptoms again to start a new assessment.",
-            "risk_level": "routine",
-            "retrieved_documents": [],
-            "confidence": 0.0,
-            "matched_rules": [],
-            "disclaimer": "",
+            "risk_level": "routine", "retrieved_documents": [],
+            "confidence": 0.0, "matched_rules": [], "disclaimer": "",
         }
 
     sess = _sessions[session_id]
-    sess["answers"][question_id] = answer
-    sess["current_index"] += 1
+    concept_id = normalize_symptom_concept(question_id)
+    sess["answers"][concept_id] = answer
     sess["last_active"] = time.time()
+    sess["conversation_state"] = REASONING
 
-    if sess["current_index"] >= TOTAL_QUESTIONS:
+    ans_lower = answer.lower().strip()
+
+    # Update reported / denied lists
+    if ans_lower == "yes":
+        if concept_id not in sess["reported_symptoms"]:
+            sess["reported_symptoms"].append(concept_id)
+        sess["denied_symptoms"] = [sym for sym in sess["denied_symptoms"] if sym != concept_id]
+    elif ans_lower == "no":
+        if concept_id not in sess["denied_symptoms"]:
+            sess["denied_symptoms"].append(concept_id)
+        sess["reported_symptoms"] = [sym for sym in sess["reported_symptoms"] if sym != concept_id]
+
+    # --- Phase 4: Update hypothesis confidence scores ---
+    sess["hypothesis_scores"] = update_hypothesis_scores(
+        hypothesis_scores=sess["hypothesis_scores"],
+        question_id=concept_id,
+        answer=answer,
+        top_diseases=sess["top_diseases"],
+    )
+
+    sess["current_index"] += 1
+
+    # --- Phase 4: Intelligent stop conditions ---
+    stop, stop_reason = should_stop_screening(
+        hypothesis_scores=sess["hypothesis_scores"],
+        questions_asked=sess["current_index"],
+        max_questions=MAX_QUESTIONS,
+    )
+    if stop:
+        logger.info("[Screening] Stopping: %s | session=%s", stop_reason, session_id)
         result = calculate_result(session_id)
         _sessions.pop(session_id, None)
         return result
@@ -272,104 +172,240 @@ def submit_answer(session_id: str, question_id: str, answer: str) -> dict[str, A
     return _build_question_payload(session_id)
 
 
-def calculate_result(session_id: str) -> dict[str, Any]:
-    sess = _sessions.get(session_id, {})
-    answers: dict[str, str] = sess.get("answers", {})
-    reported: list[str] = sess.get("reported_symptoms", [])
-
-    scores = _compute_running_scores(answers)
-    ranked = _rank_conditions(scores)
-    top = ranked[0]
-    top_meta = _DISEASE_META[top["id"]]
-
-    # Build confirmed symptom list
-    confirmed_symptoms = [s.title() for s in reported]
-    
-    if answers.get("fever_duration", "").lower() in ["less than 24 hours", "1–3 days", "more than 3 days"]:
-        confirmed_symptoms.append("Fever")
-    if answers.get("respiratory_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Cough / Sore throat / Breathing issues")
-    if answers.get("gi_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Stomach pain / Nausea / Diarrhea")
-    if answers.get("pain_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Severe Headache / Body aches")
-    if answers.get("skin_systemic_symptoms", "").lower() == "yes":
-        confirmed_symptoms.append("Rashes / Weakness / Chills")
-
-    # Only show conditions that have meaningful likelihood
-    possible_conditions = [c for c in ranked if c["score"] >= 0.45]
-    if not possible_conditions:
-        possible_conditions = ranked[:2]
-
-    risk_level = "urgent" if top_meta["urgency"] == "urgent" else "routine"
-
-    # ── Mock referral facilities ─────────────────────────────────────────
-    # TODO: Replace with real data from Google Maps / OpenStreetMap /
-    #       NHM (National Health Mission) facility registry API.
-    referral_facilities = [
-        {
-            "name": "Primary Health Centre (PHC)",
-            "type": "PHC",
-            "icon": "🏥",
-            "distance_km": 3.2,
-            "address": "Nearest PHC — walk-in or consult",
-            "phone": "104",
-            "available": "Mon–Sat, 8 AM–2 PM",
-        },
-        {
-            "name": "Community Health Centre (CHC)",
-            "type": "CHC",
-            "icon": "🏨",
-            "distance_km": 7.5,
-            "address": "Block-level CHC — 24×7 emergency",
-            "phone": "108",
-            "available": "24 × 7",
-        },
-        {
-            "name": "District Hospital",
-            "type": "DH",
-            "icon": "🏛️",
-            "distance_km": 12.0,
-            "address": "District General Hospital",
-            "phone": "108",
-            "available": "24 × 7",
-        },
-    ]
-
-    return {
-        "screening_mode": False,
-        "screening_complete": True,
-        "risk_level": risk_level,
-        "reported_symptoms": confirmed_symptoms,
-        "possible_conditions": possible_conditions,
-        "primary_condition": {
-            "id": top["id"],
-            "name": top_meta["name"],
-            "icon": top_meta["icon"],
-            "risk_label": top_meta["risk_label"],
-            "actions": top_meta["actions"],
-            "warning_signs": top_meta["warning_signs"],
-        },
-        "running_scores": ranked,
-        "confidence_label": _confidence_label(ranked),
-        "response": _build_summary_text(confirmed_symptoms, possible_conditions, top_meta, risk_level),
-        "confidence": top["score"],
-        "matched_rules": [top["id"]],
-        "disclaimer": (
-            "⚠️ This assessment is informational only and does NOT replace a qualified "
-            "healthcare professional's diagnosis. Please seek medical care for testing and treatment."
-        ),
-        "retrieved_documents": [],
-        "referral_facilities": referral_facilities,
-    }
+def is_screening_active(session_id: str) -> bool:
+    return session_id in _sessions
 
 
 def get_session(session_id: str) -> dict[str, Any] | None:
     return _sessions.get(session_id)
 
 
-def is_screening_active(session_id: str) -> bool:
-    return session_id in _sessions
+def get_current_question_payload(session_id: str) -> dict[str, Any] | None:
+    """
+    Return the current question payload for an active session without advancing.
+    Used by chat.py when a user sends free-text mid-screening.
+    """
+    if session_id not in _sessions:
+        return None
+    controller_payload = _build_controller_payload(session_id)
+    if controller_payload is not None:
+        return controller_payload
+    return _build_question_payload(session_id)
+
+
+def clear_session(session_id: str) -> None:
+    _sessions.pop(session_id, None)
+
+
+def cancel_screening(session_id: str) -> None:
+    _sessions.pop(session_id, None)
+
+
+def restart_screening(
+    session_id: str,
+    reported_symptoms: list[str] | None = None,
+    patient_context: dict | None = None,
+    denied_symptoms: list[str] | None = None,
+) -> dict[str, Any]:
+    sess = _sessions.get(session_id, {})
+    next_reported = reported_symptoms if reported_symptoms is not None else sess.get("initial_reported_symptoms", [])
+    next_denied = denied_symptoms if denied_symptoms is not None else sess.get("initial_denied_symptoms", [])
+    next_context = patient_context if patient_context is not None else sess.get("patient_context")
+    return start_screening(session_id, list(next_reported), next_context, list(next_denied))
+
+
+def set_controller_prompt(
+    session_id: str,
+    prompt_type: str,
+    response: str,
+    options: list[str],
+    data: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    sess = _sessions.get(session_id)
+    if not sess:
+        return None
+    sess["controller_prompt"] = {
+        "type": prompt_type,
+        "response": response,
+        "options": options,
+        "data": data or {},
+    }
+    sess["last_active"] = time.time()
+    return _build_controller_payload(session_id)
+
+
+def clear_controller_prompt(session_id: str) -> None:
+    sess = _sessions.get(session_id)
+    if sess:
+        sess["controller_prompt"] = None
+
+
+def get_controller_prompt(session_id: str) -> dict[str, Any] | None:
+    sess = _sessions.get(session_id)
+    if not sess:
+        return None
+    return sess.get("controller_prompt")
+
+
+def resolve_controller_prompt(session_id: str, answer: str) -> dict[str, Any]:
+    sess = _sessions.get(session_id)
+    controller = get_controller_prompt(session_id) or {}
+    prompt_type = controller.get("type")
+    answer_lower = answer.lower().strip()
+
+    if not sess or not prompt_type:
+        return {
+            "screening_mode": False,
+            "screening_complete": False,
+            "response": "The current assessment session is no longer active.",
+            "risk_level": "routine",
+            "retrieved_documents": [],
+            "confidence": 0.0,
+            "matched_rules": [],
+            "disclaimer": "",
+        }
+
+    if prompt_type == "new_complaint_choice":
+        data = controller.get("data", {})
+        if "continue" in answer_lower:
+            clear_controller_prompt(session_id)
+            payload = _build_question_payload(session_id)
+            payload["response"] = (
+                "Understood.\n"
+                "We will continue the current assessment."
+            )
+            return payload
+
+        if "start" in answer_lower or "new assessment" in answer_lower:
+            payload = restart_screening(
+                session_id,
+                reported_symptoms=data.get("reported_symptoms", []),
+                patient_context=data.get("patient_context"),
+                denied_symptoms=data.get("denied_symptoms", []),
+            )
+            payload["response"] = (
+                "Understood.\n"
+                "I will start a new assessment for the new symptom."
+            )
+            return payload
+
+    return _build_controller_payload(session_id) or {
+        "screening_mode": False,
+        "screening_complete": False,
+        "response": "Please choose one of the available options to continue.",
+        "risk_level": "routine",
+        "retrieved_documents": [],
+        "confidence": 0.0,
+        "matched_rules": [],
+        "disclaimer": "",
+    }
+
+
+def calculate_result(session_id: str) -> dict[str, Any]:
+    sess = _sessions.get(session_id, {})
+    reported     = sess.get("reported_symptoms", [])
+    top_diseases = sess.get("top_diseases", [])
+    hyp_scores   = sess.get("hypothesis_scores", {})
+    patient_context = sess.get("patient_context", {})
+    sess["conversation_state"] = SUMMARIZING
+
+    # Re-rank using final hypothesis scores if available
+    if hyp_scores and top_diseases:
+        for d in top_diseases:
+            if d["id"] in hyp_scores:
+                d["clinical_score"] = hyp_scores[d["id"]]
+        top_diseases.sort(key=lambda x: x.get("clinical_score", 0), reverse=True)
+
+    # Fallback: fresh search if no candidates stored
+    if not top_diseases:
+        search_svc = SearchService.get_instance()
+        query = " ".join(reported) if reported else "general illness symptoms"
+        raw = search_svc.hybrid_search(query, collection="all", top_k=10)
+        top_diseases = rank_candidates(raw, reported, sess.get("patient_context"))
+
+    if not top_diseases:
+        return _empty_result(reported)
+
+    top = top_diseases[0]
+    confidence_score = top.get("clinical_score", top.get("score", 0.5))
+
+    # Build possible_conditions list (top 3–5 with >= 0.40 score)
+    possible_conditions = [
+        {
+            "id":         d["id"],
+            "name":       d.get("title", d["id"]),
+            "icon":       "\U0001fa7a",
+            "score":      round(d.get("clinical_score", d.get("score", 0)), 3),
+            "raw_score":  round(d.get("clinical_score", d.get("score", 0)), 2),
+            "likelihood": _likelihood_label(d.get("clinical_score", d.get("score", 0))),
+        }
+        for d in top_diseases[:5]
+        if d.get("clinical_score", d.get("score", 0)) >= 0.40
+    ]
+    if not possible_conditions:
+        possible_conditions = [
+            {
+                "id": d["id"], "name": d.get("title", d["id"]), "icon": "\U0001fa7a",
+                "score": round(d.get("clinical_score", d.get("score", 0)), 3),
+                "raw_score": round(d.get("clinical_score", d.get("score", 0)), 2),
+                "likelihood": _likelihood_label(d.get("clinical_score", d.get("score", 0))),
+            }
+            for d in top_diseases[:2]
+        ]
+
+    # Extract actions + warning signs from document content
+    content = top.get("content", "")
+    actions, warning_signs = _extract_from_content(content)
+
+    urgency = top.get("urgency", "").lower()
+    primary_condition = {
+        "id":           top["id"],
+        "name":         top.get("title", top["id"]),
+        "icon":         "\U0001fa7a",
+        "risk_label":   "Higher urgency" if urgency in ("high", "emergency") else "Moderate urgency",
+        "actions":      actions,
+        "warning_signs": warning_signs,
+    }
+
+    risk_level       = "urgent" if urgency in ("high", "emergency") else "routine"
+    confidence_label = "High" if confidence_score > 0.80 else ("Medium" if confidence_score > 0.60 else "Low")
+
+    running_scores = [
+        {
+            "id": d["id"], "name": d.get("title", d["id"]), "icon": "\U0001fa7a",
+            "score": round(d.get("clinical_score", d.get("score", 0)), 3),
+            "raw_score": round(d.get("clinical_score", d.get("score", 0)), 2),
+            "likelihood": _likelihood_label(d.get("clinical_score", d.get("score", 0))),
+        }
+        for d in top_diseases[:5]
+    ]
+
+    return {
+        "screening_mode":     False,
+        "screening_complete": True,
+        "risk_level":         risk_level,
+        "reported_symptoms":  reported,
+        "possible_conditions": possible_conditions,
+        "primary_condition":  primary_condition,
+        "running_scores":     running_scores,
+        "confidence_label":   confidence_label,
+        "response":           _build_summary_text(
+            symptoms=reported,
+            conditions=possible_conditions,
+            primary_meta=primary_condition,
+            risk_level=risk_level,
+            patient_context=patient_context,
+            top_disease=top,
+        ),
+        "confidence":         round(confidence_score, 3),
+        "matched_rules":      [top["id"]],
+        "disclaimer": (
+            "\u26a0\ufe0f This assessment is informational only and does NOT replace a qualified "
+            "healthcare professional\u2019s diagnosis. Please seek medical care for testing and treatment."
+        ),
+        "retrieved_documents": [],
+        "referral_facilities": _referral_facilities(),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -378,29 +414,156 @@ def is_screening_active(session_id: str) -> bool:
 
 def _build_question_payload(session_id: str) -> dict[str, Any]:
     sess = _sessions[session_id]
-    idx = sess["current_index"]
-    q = QUESTIONS[idx]
-    answers_so_far = sess["answers"]
+    sess["controller_prompt"] = None
+    idx              = sess["current_index"]
+    reported         = sess["reported_symptoms"]
+    denied           = sess["denied_symptoms"]
+    patient_context  = sess.get("patient_context", {})
 
-    # Compute running scores to enable live narrowing on frontend
-    running_scores = _rank_conditions(_compute_running_scores(answers_so_far))
-    confidence = _confidence_label(running_scores)
+    # Build search query from all confirmed symptoms
+    query = " ".join(reported) if reported else "general illness symptoms"
 
+    search_svc = SearchService.get_instance()
+
+    # --- Phase 4: Specialty routing ---
+    specialty_cols = get_specialty_collections(query)
+    logger.info("[Screening] Specialty collections: %s | query='%s'", specialty_cols, query[:50])
+
+    # Search targeted collections first, fallback to global if needed
+    results: list[dict] = []
+    if specialty_cols == ["all"]:
+        results = search_svc.hybrid_search(query, collection="all", top_k=20)
+    else:
+        # Targeted search across top 3 specialty collections
+        for col in specialty_cols[:3]:
+            try:
+                hits = search_svc.search(query, collection=col, top_k=8)
+                results.extend(hits)
+            except Exception as exc:
+                logger.warning("[Screening] Collection '%s' search failed: %s", col, exc)
+        # Dedup by id, keep highest score
+        seen: dict[str, dict] = {}
+        for r in results:
+            rid = r["id"]
+            if rid not in seen or r.get("score", 0) > seen[rid].get("score", 0):
+                seen[rid] = r
+        results = list(seen.values())
+        # If we got fewer than 10, supplement with global search
+        if len(results) < 10:
+            global_hits = search_svc.hybrid_search(query, collection="all", top_k=10)
+            for r in global_hits:
+                if r["id"] not in seen:
+                    results.append(r)
+                    seen[r["id"]] = r
+
+    if not results:
+        logger.warning("[Screening] No results found. Finishing early.")
+        result = calculate_result(session_id)
+        _sessions.pop(session_id, None)
+        return result
+
+    # --- Phase 4: Weighted disease ranking ---
+    ranked = rank_candidates(results, reported, patient_context)
+
+    # Store top candidates in session for confidence tracking
+    sess["top_diseases"] = ranked[:20]
+
+    # Initialize hypothesis_scores from clinical_score if not yet set
+    if not sess["hypothesis_scores"]:
+        sess["hypothesis_scores"] = {
+            d["id"]: d.get("clinical_score", d.get("score", 0.5))
+            for d in ranked[:10]
+        }
+
+    # --- Phase 4: Differential question selection ---
+    # Exclude: initial reported symptoms + denied answers + all prior question IDs
+    prior_question_ids = list(sess.get("answers", {}).keys())
+    top_for_diff = ranked[:5]   # compare top 5 hypotheses
+    next_question_data = select_next_question(
+        top_for_diff,
+        reported + prior_question_ids,   # already known / asked
+        denied,
+    )
+
+    if not next_question_data:
+        logger.info("[Screening] No differentiating question found. Finishing.")
+        result = calculate_result(session_id)
+        _sessions.pop(session_id, None)
+        return result
+        
+    next_symptom = next_question_data["symptom"]
+    question_reason = next_question_data["reason"]
+
+    # --- Phase 4: Reasoning trace ---
+    trace = build_reasoning_trace(
+        intent="clinical_screening",
+        symptoms=reported,
+        specialty_collections=specialty_cols,
+        top_diseases=ranked,
+        selected_question=next_symptom,
+        hypothesis_scores=sess["hypothesis_scores"],
+        patient_context=patient_context,
+        denied_symptoms=denied,
+    )
+    logger.info("[ClinicalReasoning] %s\nReasoning: %s", trace, question_reason)
+
+    # Build running_scores for frontend live display
+    running_scores = [
+        {
+            "id": d["id"], "name": d.get("title", d["id"]), "icon": "\U0001fa7a",
+            "score": round(d.get("clinical_score", d.get("score", 0)), 3),
+            "raw_score": round(d.get("clinical_score", d.get("score", 0)), 2),
+            "likelihood": _likelihood_label(d.get("clinical_score", d.get("score", 0))),
+        }
+        for d in ranked[:5]
+    ]
+
+    confidence_label = "High" if running_scores and running_scores[0]["score"] > 0.80 else "Medium"
+
+    sess["conversation_state"] = CLARIFYING
+    return {
+        "screening_mode":     True,
+        "screening_complete": False,
+        "question_index":     idx,
+        "total_questions":    MAX_QUESTIONS,
+        "question": {
+            "id":      next_symptom,
+            "text":    format_question_text(next_symptom),
+            "hint":    question_reason,
+            "options": ["Yes", "No", "Not sure"],
+        },
+        "running_scores":    running_scores,
+        "confidence_label":  confidence_label,
+        "response":          build_question_turn_intro(patient_context, idx + 1),
+        "risk_level":        "routine",
+        "retrieved_documents": [],
+        "confidence":        1.0,
+        "matched_rules":     [],
+        "disclaimer":        "",
+    }
+
+
+def _build_controller_payload(session_id: str) -> dict[str, Any] | None:
+    sess = _sessions.get(session_id)
+    if not sess:
+        return None
+    controller = sess.get("controller_prompt")
+    if not controller:
+        return None
     return {
         "screening_mode": True,
         "screening_complete": False,
-        "question_index": idx,
-        "total_questions": TOTAL_QUESTIONS,
+        "question_index": sess.get("current_index", 0),
+        "total_questions": MAX_QUESTIONS,
         "question": {
-            "id": q["id"],
-            "text": q["text"],
-            "hint": q.get("hint", ""),
-            "options": q["options"],
+            "id": f"controller:{controller['type']}",
+            "text": controller["response"],
+            "hint": "",
+            "options": controller.get("options", []),
         },
-        "running_scores": running_scores,
-        "confidence_label": confidence,
-        # Standard fields
-        "response": "",
+        "running_scores": [],
+        "confidence_label": "",
+        "response": controller["response"],
         "risk_level": "routine",
         "retrieved_documents": [],
         "confidence": 1.0,
@@ -409,41 +572,134 @@ def _build_question_payload(session_id: str) -> dict[str, Any]:
     }
 
 
+def _extract_from_content(content: str) -> tuple[list[str], list[str]]:
+    """Parse guidance/precautions from raw document text."""
+    actions: list[str] = []
+    warning_signs: list[str] = []
+
+    if "Guidance:" in content:
+        g = content.split("Guidance:")[1]
+        if "Precautions:" in g:
+            g = g.split("Precautions:")[0]
+        elif "First Aid:" in g:
+            g = g.split("First Aid:")[0]
+        actions = [a.strip() for a in g.split(".") if a.strip()][:3]
+
+    if "Precautions:" in content:
+        p = content.split("Precautions:")[1]
+        if "First Aid:" in p:
+            p = p.split("First Aid:")[0]
+        warning_signs = [w.strip() for w in p.split(".") if w.strip()][:3]
+
+    if not actions:
+        actions = ["Consult a doctor for further advice."]
+
+    return actions, warning_signs
+
+
+def _likelihood_label(score: float) -> str:
+    if score >= 0.85:
+        return "More likely"
+    if score >= 0.65:
+        return "Possible"
+    if score >= 0.45:
+        return "Less likely"
+    return "Lower possibility"
+
+
+def _empty_result(reported: list[str]) -> dict[str, Any]:
+    return {
+        "screening_mode": False, "screening_complete": True,
+        "risk_level": "routine", "reported_symptoms": reported,
+        "possible_conditions": [], "primary_condition": None,
+        "running_scores": [], "confidence_label": "Low",
+        "response": (
+            f"{build_summary_opening()}\n\n"
+            "I cannot narrow this down to one likely explanation from the available information.\n"
+            "Please arrange a clinical evaluation if the symptoms continue."
+        ),
+        "confidence": 0.0, "matched_rules": [],
+        "disclaimer": "\u26a0\ufe0f This assessment is informational only. Please seek medical care.",
+        "retrieved_documents": [], "referral_facilities": _referral_facilities(),
+    }
+
+
+def _referral_facilities() -> list[dict]:
+    return [
+        {"name": "Primary Health Centre (PHC)", "type": "PHC", "icon": "\U0001f3e5",
+         "distance_km": 3.2, "address": "Nearest PHC — walk-in or consult",
+         "phone": "104", "available": "Mon\u2013Sat, 8 AM\u20132 PM"},
+        {"name": "Community Health Centre (CHC)", "type": "CHC", "icon": "\U0001f3e8",
+         "distance_km": 7.5, "address": "Block-level CHC — 24\xd77 emergency",
+         "phone": "108", "available": "24 \xd7 7"},
+        {"name": "District Hospital", "type": "DH", "icon": "\U0001f3db\ufe0f",
+         "distance_km": 12.0, "address": "District General Hospital",
+         "phone": "108", "available": "24 \xd7 7"},
+    ]
+
+
 def _build_summary_text(
     symptoms: list[str],
     conditions: list[dict],
     primary_meta: dict,
     risk_level: str,
+    patient_context: dict | None = None,
+    top_disease: dict | None = None,
 ) -> str:
-    lines = ["🩺 Screening Summary", ""]
-    lines.append("Based on your responses, here is your assessment:\n")
-
-    lines.append("📋 Reported Symptoms:")
-    for s in symptoms:
-        lines.append(f"  ✓ {s}")
-
+    lines = [
+        "Based on everything you've told me, these are the most likely explanations.",
+        ""
+    ]
+    
+    if conditions:
+        lead_cond = conditions[0]
+        lines.append("1.")
+        lines.append(lead_cond["name"])
+        confidence = "High" if lead_cond.get("score", 0) > 0.8 else ("Medium" if lead_cond.get("score", 0) > 0.6 else "Low")
+        lines.append(f"Confidence: {confidence}")
+        
+        if symptoms:
+            lines.append("")
+            lines.append("Supporting symptoms")
+            for symptom in symptoms:
+                lines.append(f"✓ {symptom.capitalize()}")
+                
+        if top_disease:
+            from app.services.clinical_reasoning_service import _split_candidate_values, normalize_symptom_concept
+            
+            tags_raw = str(top_disease.get("question_candidates", "") or top_disease.get("tags", ""))
+            all_tags = [normalize_symptom_concept(t) for t in _split_candidate_values(tags_raw)]
+            
+            reported_norm = {normalize_symptom_concept(s) for s in symptoms}
+            unconfirmed = [t for t in all_tags if t not in reported_norm and len(t) > 3]
+            
+            if unconfirmed:
+                lines.append("")
+                lines.append("Need confirmation")
+                for u in unconfirmed[:3]:
+                    lines.append(f"• {u.capitalize().replace('_', ' ')}")
+                    
     lines.append("")
-    lines.append("🔍 Most Likely Conditions:")
-    for i, c in enumerate(conditions[:3], 1):
-        lines.append(f"  {i}. {c['icon']} {c['name']} — {c['likelihood']}")
-
-    risk_label = {
-        "urgent": "🟡 Moderate–High Risk — See a doctor within 24 hours",
-        "routine": "🟢 Low–Moderate Risk — Monitor at home",
-        "emergency": "🔴 Emergency — Seek immediate care",
-    }.get(risk_level, "🟡 Moderate Risk")
-
+    lines.append("Recommended next step")
+    for action in primary_meta.get("actions", [])[:1]:
+        lines.append(f"{action}")
+        
     lines.append("")
-    lines.append(f"⚡ Risk Level: {risk_label}")
-
-    lines.append("")
-    lines.append("💊 Recommended Actions:")
-    for action in primary_meta.get("actions", []):
-        lines.append(f"  • {action}")
-
-    lines.append("")
-    lines.append("🚨 Seek urgent care if you experience:")
-    for warning in primary_meta.get("warning_signs", []):
-        lines.append(f"  • {warning}")
-
+    lines.append("This is NOT a diagnosis.")
+    
     return "\n".join(lines)
+
+
+def _dedupe_concepts(symptoms: list[str]) -> list[str]:
+    unique: list[str] = []
+    seen: set[str] = set()
+    for symptom in symptoms:
+        text = str(symptom).strip()
+        extracted_reported, _ = extract_clinical_findings(text)
+        concepts = extracted_reported or [normalize_symptom_concept(text)]
+        for concept in concepts:
+            if concept in seen:
+                continue
+            seen.add(concept)
+            unique.append(concept)
+    return unique

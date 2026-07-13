@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HeatData, TimelineSlot } from '../../services/environmentMock';
-import { ThermometerSun, Droplets, AlertTriangle } from 'lucide-react';
+import { ThermometerSun } from 'lucide-react';
+import { Timeline } from './Timeline';
+import { RecommendationCard } from './RecommendationCard';
 
 interface HeatRiskCardProps {
   heat: HeatData;
@@ -8,8 +10,6 @@ interface HeatRiskCardProps {
 }
 
 export const HeatRiskCard: React.FC<HeatRiskCardProps> = ({ heat, timeline }) => {
-  const [selectedSlot, setSelectedSlot] = useState<TimelineSlot | null>(null);
-
   return (
     <div className="env-module-card mt-4">
       <div className="env-module-header">
@@ -65,43 +65,13 @@ export const HeatRiskCard: React.FC<HeatRiskCardProps> = ({ heat, timeline }) =>
         {/* Safe Outdoor Window */}
         <div className="env-section">
           <h3 className="env-section-title">Safe Outdoor Window</h3>
-          <div className="env-timeline">
-            {timeline.map((slot, idx) => (
-              <div
-                key={idx}
-                className={`timeline-slot slot-${slot.status.toLowerCase()} ${selectedSlot?.time === slot.time ? 'active' : ''}`}
-                onClick={() => setSelectedSlot(slot === selectedSlot ? null : slot)}
-              >
-                <div className="slot-bar"></div>
-                <div className="slot-time">{slot.time}</div>
-              </div>
-            ))}
-          </div>
-          
-          {selectedSlot && (
-            <div className="recommendation-drawer slide-down">
-              <h4 className="drawer-title">{selectedSlot.time}</h4>
-              <p className="drawer-desc">{selectedSlot.recommendation}</p>
-            </div>
-          )}
+          <Timeline timeline={timeline} />
         </div>
 
         {/* AI Recommendation */}
         <div className="env-section">
           <h3 className="env-section-title">Today's AI Recommendation</h3>
-          <div className="premium-insight-card">
-            <div className="insight-header">
-              <AlertTriangle size={20} className="text-orange" />
-              <span>Personalized Health Alert</span>
-            </div>
-            <div className="insight-body">
-              <p>{heat.recommendation}</p>
-            </div>
-            <div className="insight-footer">
-              <Droplets size={16} />
-              <span>Hydration Goal: 3.5L today</span>
-            </div>
-          </div>
+          <RecommendationCard recommendation={heat.recommendation} />
         </div>
       </div>
     </div>

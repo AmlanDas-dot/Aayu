@@ -44,7 +44,7 @@ export const getGreenZones = async (): Promise<GreenLocation[]> => {
 export const getRecommendations = async (): Promise<string> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(mockEnvironmentData.outdoorRecommendation.bestTime);
+      resolve(mockEnvironmentData.outdoorScore.status);
     }, 500);
   });
 };

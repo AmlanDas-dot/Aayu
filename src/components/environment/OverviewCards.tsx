@@ -53,10 +53,10 @@ export const OverviewCards: React.FC<OverviewCardsProps> = ({ data }) => {
           <Clock size={24} className="text-blue" />
         </div>
         <div className="env-card-content">
-          <div className="env-card-label">Outdoor Recommendation</div>
-          <div className="env-card-value">Best Time</div>
+          <div className="env-card-label">Outdoor Score</div>
+          <div className="env-card-value">{data.outdoorScore.score}</div>
           <div className="env-card-status highlight-blue">
-            {data.outdoorRecommendation.bestTime}
+            {data.outdoorScore.status}
           </div>
         </div>
       </div>

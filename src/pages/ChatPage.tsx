@@ -323,9 +323,11 @@ export function ChatPage() {
 
       const assistantId = makeId();
       setMessages((prev) => {
-        const afterMsgs = prev.map((m) =>
-          m.id === typingId
-            ? {
+        let found = false;
+        const afterMsgs = prev.map((m) => {
+          if (m.id === typingId) {
+            found = true;
+            return {
               ...m,
               id: assistantId,
               text: assistantText,
@@ -340,9 +342,30 @@ export function ChatPage() {
               imageDescription: imageDescription,
               warnings: warnings,
               confidence: confidence,
-            }
-            : m
-        );
+            };
+          }
+          return m;
+        });
+
+        if (!found) {
+          afterMsgs.push({
+            id: assistantId,
+            role: "assistant",
+            text: assistantText,
+            timestamp: new Date(),
+            isTyping: false,
+            risk_level: riskLevel,
+            retrieved_documents: retrievedDocs,
+            matched_rules: matchedRules,
+            disclaimer: disclaimer,
+            processing_time_ms: processingTimeMs,
+            mode: mode,
+            llm_provider: llmProvider,
+            imageDescription: imageDescription,
+            warnings: warnings,
+            confidence: confidence,
+          });
+        }
         updateConversations(afterMsgs);
 
         // Title Generation Hook
@@ -468,9 +491,11 @@ export function ChatPage() {
 
       const assistantId = makeId();
       setMessages((prev) => {
-        const nextMsgs = prev.map((m) =>
-          m.id === typingId
-            ? {
+        let found = false;
+        const nextMsgs = prev.map((m) => {
+          if (m.id === typingId) {
+            found = true;
+            return {
               ...m,
               id: assistantId,
               text: apiResp.response,
@@ -482,9 +507,28 @@ export function ChatPage() {
               processing_time_ms: apiResp.processing_time_ms,
               mode: apiResp.mode,
               llm_provider: apiResp.llm_provider,
-            }
-            : m
-        );
+            };
+          }
+          return m;
+        });
+
+        if (!found) {
+          nextMsgs.push({
+            id: assistantId,
+            role: "assistant",
+            text: apiResp.response,
+            timestamp: new Date(),
+            isTyping: false,
+            risk_level: apiResp.risk_level,
+            retrieved_documents: apiResp.retrieved_documents,
+            matched_rules: apiResp.matched_rules,
+            disclaimer: apiResp.disclaimer,
+            processing_time_ms: apiResp.processing_time_ms,
+            mode: apiResp.mode,
+            llm_provider: apiResp.llm_provider,
+          });
+        }
+
         updateConversations(nextMsgs);
         return nextMsgs;
       });

@@ -24,55 +24,51 @@ from app.services.llm_service import (
 )
 from app.services.emergency_service import EmergencyClassifier
 from app.services.screening_service import (
+    cancel_screening,
+    clear_controller_prompt,
+    get_session,
     start_screening,
+    restart_screening,
+    resolve_controller_prompt,
+    set_controller_prompt,
     submit_answer,
     is_screening_active,
+    get_current_question_payload,
     TOTAL_QUESTIONS,
-    _DISEASE_META
+)
+from app.services.conversation_service import (
+    build_active_screening_reminder,
+    build_general_chat_during_screening_message,
+    build_new_complaint_choice_message,
+    build_patient_switch_message,
+    build_question_clarification_response,
+    build_question_reason_response,
+    build_restart_screening_message,
+    build_stop_screening_message,
+    build_user_question_response,
+    classify_active_screening_message,
+    extract_clinical_findings,
+    extract_patient_context_from_message,
+    INTENT_CHANGE_PATIENT,
+    INTENT_CLARIFICATION_REQUEST,
+    INTENT_CONTROLLER_CONTINUE,
+    INTENT_CONTROLLER_START_NEW,
+    INTENT_GENERAL_CHAT,
+    INTENT_NEW_EMERGENCY,
+    INTENT_NEW_MEDICAL_COMPLAINT,
+    INTENT_NOT_SURE,
+    INTENT_NO,
+    INTENT_RESTART_SCREENING,
+    INTENT_STOP_SCREENING,
+    INTENT_USER_QUESTION,
+    INTENT_YES,
 )
 from app.services.nutrition_service import NutritionService
 from app.services.schemes_service import SchemesService
+from app.services.clinical_nlp_service import extract_clinical_entities
+import logging
 
 logger = logging.getLogger(__name__)
-
-# Build a dynamic set of disease keywords from _DISEASE_META
-_DISEASE_KEYWORDS = set()
-for m in _DISEASE_META.values():
-    n = m.get('name', '').lower()
-    n = re.sub(r'[^a-z ]', ' ', n)
-    words = n.split()
-    if len(words) == 1:
-        _DISEASE_KEYWORDS.add(words[0])
-    else:
-        _DISEASE_KEYWORDS.add(' '.join(words))
-        for w in words:
-            if len(w) > 4:
-                _DISEASE_KEYWORDS.add(w)
-
-_STOP_WORDS = {
-    'elderly', 'disease', 'disorder', 'syndrome', 'acute', 'chronic', 'severe', 'mild',
-    'pregnancy', 'child', 'infant', 'neonatal', 'adult', 'women', 'management', 'screening',
-    'prevention', 'health', 'care', 'treatment', 'symptoms', 'causes', 'what', 'about',
-    'explain', 'condition', 'effects', 'infections', 'infection', 'viral', 'bacterial', 'fungal',
-    'possible', 'suspected', 'probable', 'known', 'history', 'family', 'related', 'associated'
-}
-_DISEASE_KEYWORDS = _DISEASE_KEYWORDS - _STOP_WORDS
-
-# ---------------------------------------------------------------------------
-# Deterministic Keyword Detectors
-# ---------------------------------------------------------------------------
-
-_SCREENING_TRIGGER_PATTERN = re.compile(
-    r"\b(fever|temperature|bukhar|tez bukhar|headache|sir dard|body ache|chills|"
-    r"dengue|malaria|typhoid|flu|influenza|thanda lagana|sardard|vomiting|diarrhea|cough|breathing difficulty|dizzy|nauseous|nausea|weak|weakness|fatigue|pain|rash|rashes|stomach ache|stomach pain|chest pain|joint pain|muscle pain|eye pain|toothache|bleeding|swelling|itch|itching|sweating|sneezing|बुखार|सिरदर्द|दर्द|चकत्ते|खुजली|उल्टी|दस्त|खांसी)\b",
-    re.IGNORECASE,
-)
-
-_SICK_QUALIFIER = re.compile(
-    r"\b(have|having|has|feel|feeling|suffering|experiencing|getting|got|diagnosed|since|days|week|ill|sick|my|me|husband|wife|"
-    r"child|baby|mujhe|mujhko|hain|ho raha|lag raha|है|मुझे)\b",
-    re.IGNORECASE,
-)
 
 _NUTRITION_PATTERN = re.compile(
     r"\b(food|diet|nutrition|eat|protein|vitamin|calorie|meal|recipes|weight|lose weight|gain weight)\b",
@@ -100,36 +96,16 @@ _SCREENING_EXPLICIT_PATTERN = re.compile(
 )
 
 def _should_trigger_screening(text: str) -> tuple[bool, list[str]]:
-    text_lower = text.lower()
-    
     # Always trigger if they explicitly ask for a screening
     is_explicit = bool(_SCREENING_EXPLICIT_PATTERN.search(text))
     
-    trigger_matches = _SCREENING_TRIGGER_PATTERN.findall(text)
+    nlp_payload = extract_clinical_entities(text)
+    symptoms = nlp_payload.get("symptoms", [])
     
-    # Check dynamic backend disease keywords
-    text_words = set(re.findall(r'\b[a-z]+\b', text_lower))
-    matched_diseases = text_words.intersection(_DISEASE_KEYWORDS)
-    for dk in _DISEASE_KEYWORDS:
-        if ' ' in dk and dk in text_lower:
-            matched_diseases.add(dk)
-            
-    if is_explicit:
-        symptoms = [m.lower() for m in trigger_matches] if trigger_matches else []
-        symptoms.extend(list(matched_diseases))
-        return True, list(set(symptoms))
+    if is_explicit or symptoms:
+        return True, symptoms
         
-    if not trigger_matches and not matched_diseases:
-        return False, []
-        
-    has_qualifier = bool(_SICK_QUALIFIER.search(text))
-    total_triggers = len(trigger_matches) + len(matched_diseases)
-    
-    if not has_qualifier and total_triggers < 2:
-        return False, []
-        
-    symptoms = [m.lower() for m in trigger_matches] + list(matched_diseases)
-    return True, list(set(symptoms))
+    return False, []
 
 def _is_nutrition_query(text: str) -> bool:
     return bool(_NUTRITION_PATTERN.search(text))
@@ -159,6 +135,9 @@ class ChatRequest(BaseModel):
     collection: str = Field(default="all")
     session_id: str = Field(default="")
     history: list[dict[str, str]] = Field(default=[])
+    # Phase 4: Patient context from frontend HealthContext.
+    # Accepted fields: age, gender, conditions, allergies, medications, village, member_name
+    patient_context: dict | None = Field(default=None)
 
 class TitleRequest(BaseModel):
     message: str
@@ -210,6 +189,107 @@ class ChatResponse(BaseModel):
     referral_facilities: list[dict] | None = None
 
 
+def _screening_payload_to_chat_response(
+    payload: dict,
+    original_message: str,
+    english_message: str,
+    processing_time_ms: int,
+) -> ChatResponse:
+    q_data = payload.get("question")
+    return ChatResponse(
+        risk_level=payload.get("risk_level", "routine"),
+        response=payload.get("response", ""),
+        retrieved_documents=[],
+        confidence=payload.get("confidence", 1.0),
+        matched_rules=payload.get("matched_rules", []),
+        original_message=original_message,
+        english_message=english_message,
+        processing_time_ms=processing_time_ms,
+        disclaimer=payload.get("disclaimer", ""),
+        mode="offline",
+        llm_provider="template",
+        emergency=None,
+        screening_mode=payload.get("screening_mode", False),
+        screening_complete=payload.get("screening_complete", False),
+        question_index=payload.get("question_index"),
+        total_questions=payload.get("total_questions"),
+        question=ScreeningQuestion(
+            id=q_data["id"],
+            text=q_data["text"],
+            hint=q_data.get("hint", ""),
+            options=q_data["options"],
+        ) if q_data else None,
+        reported_symptoms=payload.get("reported_symptoms"),
+        possible_conditions=payload.get("possible_conditions"),
+        primary_condition=payload.get("primary_condition"),
+        running_scores=payload.get("running_scores"),
+        confidence_label=payload.get("confidence_label"),
+        referral_facilities=payload.get("referral_facilities"),
+    )
+
+
+def _build_emergency_chat_response(
+    emergency_result,
+    body: ChatRequest,
+    original_message: str,
+    english_message: str,
+    t_start: float,
+) -> ChatResponse:
+    processing_time_ms = round((time.time() - t_start) * 1000)
+    severity = emergency_result.severity
+    conditions = ", ".join(emergency_result.detected_conditions)
+
+    if severity == "CRITICAL":
+        emerg_response = (
+            "I am concerned that the symptoms you described could represent a medical emergency.\n"
+            f"This pattern can be seen in {conditions}.\n"
+            "Please seek immediate medical care or call 108 now.\n"
+            "Keep the person as still as possible.\n"
+            "If the person is unconscious or not breathing, start CPR only if you are trained."
+        )
+    elif severity == "URGENT":
+        emerg_response = (
+            "I am concerned that this needs urgent medical attention.\n"
+            f"This pattern can be seen in {conditions}.\n"
+            "Please go to the nearest PHC, CHC, or hospital now.\n"
+            "If the symptoms worsen on the way, call 108.\n"
+            "Keep the person seated and as comfortable as possible."
+        )
+    else:
+        emerg_response = (
+            "I am concerned that this should be assessed by a clinician soon.\n"
+            f"This pattern can be seen in {conditions}.\n"
+            "Please visit your nearest clinic or PHC as soon as possible.\n"
+            "If the symptoms worsen, call 104 or 108."
+        )
+
+    if body.language and body.language != "en":
+        try:
+            emerg_response = translate_from_english(emerg_response, body.language)
+        except Exception:
+            logger.error("[Emergency] Back-translation failed:\n%s", traceback.format_exc())
+
+    logger.warning(
+        "[Chat] EMERGENCY SHORT-CIRCUIT | severity=%s | session=%s | conditions=%s",
+        severity, body.session_id, conditions,
+    )
+
+    return ChatResponse(
+        risk_level=emergency_result.risk_level,
+        response=emerg_response,
+        retrieved_documents=[],
+        confidence=1.0,
+        matched_rules=emergency_result.detected_conditions,
+        original_message=original_message,
+        english_message=english_message,
+        processing_time_ms=processing_time_ms,
+        disclaimer="⚠️ AAYU is an AI assistant, NOT a substitute for emergency medical care. Call 108 immediately in a life-threatening situation.",
+        mode="offline",
+        llm_provider="emergency_template",
+        emergency=emergency_result.to_dict(),
+    )
+
+
 # ---------------------------------------------------------------------------
 # /chat  — main endpoint
 # ---------------------------------------------------------------------------
@@ -221,7 +301,11 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
     logger.info("Request body: %s", body.model_dump_json())
 
     # ── Step 1: Translation ──────────────────────────────────────────────────
-    original_message = body.message.strip()
+    raw_message = body.message.strip()
+    original_message, patient_context = extract_patient_context_from_message(
+        raw_message,
+        body.patient_context,
+    )
     english_message = original_message
 
     if body.language and body.language != "en":
@@ -232,61 +316,211 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
             logger.error("[Chat] Translation failed:\n%s", traceback.format_exc())
             english_message = original_message
 
-    # ── Step 1.5: Emergency pre-check ────────────────────────────────────────
+    # ── Step 1.5: Emergency Detection + Normalization ────────────────────────
+    # Phase 3: normalize lay phrases → canonical terms BEFORE classification.
+    from app.services.emergency_service import normalize_symptoms
+    normalized_message = normalize_symptoms(english_message)
     emergency_classifier = EmergencyClassifier.get_instance()
-    emergency_result = emergency_classifier.classify(english_message)
+    emergency_result = emergency_classifier.classify(normalized_message)
 
-    # ── Step 2: Active Screening check ────────────────────────────────────────
-    if body.session_id and is_screening_active(body.session_id):
-        processing_time_ms = round((time.time() - t_start) * 1000)
-        from app.services.screening_service import get_session, QUESTIONS, _rank_conditions, _compute_running_scores
-        sess = get_session(body.session_id)
-        idx = sess["current_index"] if sess else 0
-        q = QUESTIONS[idx] if idx < len(QUESTIONS) else QUESTIONS[-1]
-        running = _rank_conditions(_compute_running_scores(sess.get("answers", {}))) if sess else []
-        return ChatResponse(
-            risk_level="routine",
-            response="Please answer the current question using the options shown below.",
-            retrieved_documents=[],
-            confidence=1.0,
-            matched_rules=[],
+    # ── Step 1.6: Emergency Short-Circuit ────────────────────────────────────
+    # If ANY emergency is detected, return immediately.
+    # No screening, no hybrid search, no LLM reasoning, no casual chat.
+    if emergency_result.is_emergency:
+        if body.session_id and is_screening_active(body.session_id):
+            cancel_screening(body.session_id)
+        return _build_emergency_chat_response(
+            emergency_result=emergency_result,
+            body=body,
             original_message=original_message,
             english_message=english_message,
-            processing_time_ms=processing_time_ms,
-            disclaimer="",
-            mode="offline",
-            llm_provider="template",
-            emergency=None,
-            screening_mode=True,
-            screening_complete=False,
-            question_index=idx,
-            total_questions=len(QUESTIONS),
-            question=ScreeningQuestion(id=q["id"], text=q["text"], hint=q.get("hint", ""), options=q["options"]),
-            running_scores=running,
+            t_start=t_start,
         )
+
+
+    # ── Step 2: Active Screening Controller ───────────────────────────────────
+    if body.session_id and is_screening_active(body.session_id):
+        session = get_session(body.session_id) or {}
+        payload = get_current_question_payload(body.session_id)
+        processing_time_ms = round((time.time() - t_start) * 1000)
+        if payload is not None:
+            current_question = payload.get("question", {})
+            intent_result = classify_active_screening_message(
+                english_message,
+                session,
+                current_question,
+            )
+            logger.info(
+                "[ScreeningController] intent=%s | prev_state=%s | route=%s | reason=%s | session=%s",
+                intent_result.intent,
+                session.get("conversation_state"),
+                intent_result.intent,
+                intent_result.reason,
+                body.session_id,
+            )
+
+            if intent_result.intent == INTENT_NEW_EMERGENCY:
+                cancel_screening(body.session_id)
+                emergency_now = emergency_classifier.classify(english_message)
+                return _build_emergency_chat_response(
+                    emergency_result=emergency_now,
+                    body=body,
+                    original_message=original_message,
+                    english_message=english_message,
+                    t_start=t_start,
+                )
+
+            if intent_result.intent in {INTENT_YES, INTENT_NO, INTENT_NOT_SURE}:
+                clear_controller_prompt(body.session_id)
+                answer_payload = submit_answer(
+                    body.session_id,
+                    current_question.get("id", ""),
+                    intent_result.normalized_answer or "Not sure",
+                )
+                return _screening_payload_to_chat_response(
+                    answer_payload,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent in {INTENT_CONTROLLER_CONTINUE, INTENT_CONTROLLER_START_NEW}:
+                choice = "Continue current assessment" if intent_result.intent == INTENT_CONTROLLER_CONTINUE else "Start new assessment"
+                controller_payload = resolve_controller_prompt(body.session_id, choice)
+                return _screening_payload_to_chat_response(
+                    controller_payload,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent == INTENT_CLARIFICATION_REQUEST:
+                payload["response"] = build_question_clarification_response(current_question, english_message)
+                return _screening_payload_to_chat_response(
+                    payload,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent == INTENT_USER_QUESTION:
+                hint = current_question.get("hint", "")
+                if "why" in english_message.lower() and hint:
+                    payload["response"] = build_question_reason_response(hint)
+                else:
+                    payload["response"] = build_user_question_response(english_message, current_question)
+                return _screening_payload_to_chat_response(
+                    payload,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent == INTENT_STOP_SCREENING:
+                cancel_screening(body.session_id)
+                return ChatResponse(
+                    risk_level="routine",
+                    response=build_stop_screening_message(),
+                    retrieved_documents=[],
+                    confidence=1.0,
+                    matched_rules=[],
+                    original_message=original_message,
+                    english_message=english_message,
+                    processing_time_ms=processing_time_ms,
+                    disclaimer="",
+                    mode="offline",
+                    llm_provider="template",
+                    emergency=None,
+                    screening_mode=False,
+                    screening_complete=True,
+                )
+
+            if intent_result.intent == INTENT_RESTART_SCREENING:
+                restarted = restart_screening(body.session_id)
+                restarted["response"] = build_restart_screening_message()
+                return _screening_payload_to_chat_response(
+                    restarted,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent == INTENT_CHANGE_PATIENT:
+                next_context = dict(session.get("patient_context", {}))
+                next_context.update(intent_result.updated_patient_context or {})
+                restarted = restart_screening(body.session_id, patient_context=next_context)
+                restarted["response"] = build_patient_switch_message(next_context)
+                return _screening_payload_to_chat_response(
+                    restarted,
+                    original_message,
+                    english_message,
+                    processing_time_ms,
+                )
+
+            if intent_result.intent == INTENT_NEW_MEDICAL_COMPLAINT:
+                controller_payload = set_controller_prompt(
+                    body.session_id,
+                    prompt_type="new_complaint_choice",
+                    response=build_new_complaint_choice_message(),
+                    options=["Continue current assessment", "Start new assessment"],
+                    data={
+                        "reported_symptoms": intent_result.reported_findings or [english_message],
+                        "denied_symptoms": intent_result.denied_findings or [],
+                        "patient_context": patient_context or session.get("patient_context", {}),
+                    },
+                )
+                if controller_payload is not None:
+                    return _screening_payload_to_chat_response(
+                        controller_payload,
+                        original_message,
+                        english_message,
+                        processing_time_ms,
+                    )
+
+            payload["response"] = build_general_chat_during_screening_message()
+            return _screening_payload_to_chat_response(
+                payload,
+                original_message,
+                english_message,
+                processing_time_ms,
+            )
+
 
     # ── Step 3: Screening Trigger ────────────────────────────────────────────
     should_screen, detected_symptoms = _should_trigger_screening(english_message)
     if body.session_id and not emergency_result.is_emergency and should_screen:
-        symptoms = detected_symptoms if detected_symptoms else [english_message]
-        payload = start_screening(body.session_id, symptoms)
+        symptoms = detected_symptoms
+        if not symptoms:
+            symptoms = [english_message]
+            
+        # Get full NLP payload to pass demographic data if any
+        nlp_data = extract_clinical_entities(english_message)
+        
+        # Merge NLP age/gender into patient context if found
+        if patient_context is None:
+            patient_context = {}
+        if nlp_data.get("age"):
+            patient_context["age"] = nlp_data["age"]
+        if nlp_data.get("gender"):
+            patient_context["gender"] = nlp_data["gender"]
+        patient_context["nlp_data"] = nlp_data
+            
+        # Phase 4: pass patient_context to clinical reasoning engine
+        # Phase 10: Using NLP extracted denied symptoms
+        payload = start_screening(body.session_id, symptoms, patient_context, nlp_data.get("negated_symptoms", []))
         logger.info("[Chat] Screening started for session %s — %s", body.session_id, symptoms)
-        
-        intro = "It sounds like you're experiencing symptoms that are suitable for a structured health screening. I'll ask a few questions to better understand your situation."
-        
-        # Translate intro if needed
-        if body.language and body.language != "en":
+        response_text = payload.get("response", "")
+        if body.language and body.language != "en" and response_text:
             try:
-                intro = translate_from_english(intro, body.language)
+                response_text = translate_from_english(response_text, body.language)
             except Exception:
                 logger.error("[Chat] Intro translation failed:\n%s", traceback.format_exc())
-                pass
 
         processing_time_ms = round((time.time() - t_start) * 1000)
         q_data = payload.get("question", {})
         return ChatResponse(
             risk_level="routine",
-            response=intro,
+            response=response_text,
             retrieved_documents=[],
             confidence=1.0,
             matched_rules=[],
@@ -374,10 +608,73 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
             logger.error("[Chat] Hybrid search failed:\n%s", traceback.format_exc())
             llm_context = "No specific knowledge found."
             
-    # Step 8: Everything Else
+    # Step 8: Everything Else — Medical Intent Detection before falling to casual chat.
+    # Phase 4: Before giving up to casual chat, run a semantic search.
+    # If any result scores >= 0.55, the query is medical → enter clinical reasoning.
     else:
+        _MEDICAL_CONFIDENCE_THRESHOLD = 0.55
+        clinical_triggered = False
+
+        if body.session_id and not emergency_result.is_emergency:
+            try:
+                from app.services.clinical_reasoning_service import get_specialty_collections
+                svc = SearchService.get_instance()
+                specialty_cols = get_specialty_collections(english_message)
+                # Quick semantic probe: search top specialty collection
+                probe_col = specialty_cols[0] if specialty_cols != ["all"] else "all"
+                probe_results = svc.hybrid_search(english_message, collection=probe_col, top_k=5)
+                top_probe_score = probe_results[0].get("score", 0) if probe_results else 0
+
+                if top_probe_score >= _MEDICAL_CONFIDENCE_THRESHOLD:
+                    # Medical relevance detected — enter clinical reasoning
+                    intent = "clinical_screening"
+                    symptoms = reported_findings[:] or detected_symptoms[:] or [english_message]
+                    payload = start_screening(body.session_id, symptoms, patient_context, denied_findings)
+                    logger.info(
+                        "[Chat] Medical intent detected (score=%.3f) → clinical screening | session=%s",
+                        top_probe_score, body.session_id,
+                    )
+                    response_text = payload.get("response", "")
+                    if body.language and body.language != "en" and response_text:
+                        try:
+                            response_text = translate_from_english(response_text, body.language)
+                        except Exception:
+                            pass
+                    processing_time_ms = round((time.time() - t_start) * 1000)
+                    q_data = payload.get("question", {})
+                    return ChatResponse(
+                        risk_level="routine",
+                        response=response_text,
+                        retrieved_documents=[],
+                        confidence=1.0,
+                        matched_rules=[],
+                        original_message=original_message,
+                        english_message=english_message,
+                        processing_time_ms=processing_time_ms,
+                        disclaimer="",
+                        mode="offline",
+                        llm_provider="template",
+                        emergency=None,
+                        screening_mode=True,
+                        screening_complete=False,
+                        question_index=payload.get("question_index"),
+                        total_questions=payload.get("total_questions"),
+                        question=ScreeningQuestion(
+                            id=q_data["id"],
+                            text=q_data["text"],
+                            hint=q_data.get("hint", ""),
+                            options=q_data["options"],
+                        ) if q_data else None,
+                        running_scores=payload.get("running_scores"),
+                        confidence_label=payload.get("confidence_label"),
+                    )
+
+                clinical_triggered = True  # searched but score too low
+            except Exception:
+                logger.error("[Chat] Medical intent probe failed:\n%s", traceback.format_exc())
+
+        # Genuine non-medical query → casual chat
         intent = "general_chat"
-        # We can use mental health or casual chat based on keywords, or a unified prompt
         if any(w in english_message.lower() for w in ["scared", "anxious", "lonely", "sad", "failed", "lost", "die"]):
             system_prompt = PROMPT_MENTAL_HEALTH
         else:
@@ -478,7 +775,10 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
 async def screening_answer(body: ScreeningAnswerRequest) -> ChatResponse:
     t_start = time.time()
 
-    payload = submit_answer(body.session_id, body.question_id, body.answer)
+    if body.question_id.startswith("controller:"):
+        payload = resolve_controller_prompt(body.session_id, body.answer)
+    else:
+        payload = submit_answer(body.session_id, body.question_id, body.answer)
 
     processing_time_ms = round((time.time() - t_start) * 1000)
 

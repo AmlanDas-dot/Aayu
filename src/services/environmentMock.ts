@@ -37,8 +37,9 @@ export interface EnvironmentData {
   airQuality: AirQualityData;
   heat: HeatData;
   uv: UVData;
-  outdoorRecommendation: {
-    bestTime: string;
+  outdoorScore: {
+    score: number;
+    status: string;
   };
   airTimeline: TimelineSlot[];
   heatTimeline: TimelineSlot[];
@@ -64,8 +65,9 @@ export const mockEnvironmentData: EnvironmentData = {
     index: 7,
     status: "High",
   },
-  outdoorRecommendation: {
-    bestTime: "6–8 AM",
+  outdoorScore: {
+    score: 82,
+    status: "Excellent",
   },
   airTimeline: [
     {

@@ -24,3 +24,14 @@ node_modules/
 # Build outputs
 dist/
 build/
+
+# Chroma DB
+backend/chroma_db/
+
+# Test outputs
+*_results.json
+output_test.txt
+rest_output.json
+
+# TS cache
+*.tsbuildinfo

@@ -20,6 +20,7 @@ import logging
 import os
 from typing import Any
 
+from app.services.symptom_dictionary import build_question_candidates
 from app.services.vector_db_service import VectorDBService
 
 logger = logging.getLogger(__name__)
@@ -101,6 +102,9 @@ def _build_doc(entry: dict[str, Any], collection_name: str) -> tuple[str | None,
         tags = entry.get("tags", [])
         source = entry.get("source", "")
         urgency = entry.get("urgency", "")
+        question_candidates, candidate_issues = build_question_candidates(
+            [str(tag) for tag in tags] if isinstance(tags, list) else [str(tags)]
+        )
         
         # Build rich text for embedding
         full_text = f"{title}. {content}"
@@ -110,6 +114,11 @@ def _build_doc(entry: dict[str, Any], collection_name: str) -> tuple[str | None,
             "category": category,
             "source": source,
             "tags": ", ".join(tags) if tags else "",
+            "question_candidates": " || ".join(question_candidates),
+            "raw_symptoms": " || ".join(str(tag) for tag in tags) if tags else "",
+            "question_candidate_count": len(question_candidates),
+            "question_issue_count": len(candidate_issues),
+            "doc_schema": "document",
             "urgency": urgency,
             "collection": collection_name,
         }
@@ -121,12 +130,17 @@ def _build_doc(entry: dict[str, Any], collection_name: str) -> tuple[str | None,
         precautions = entry.get("precautions", [])
         urgency = entry.get("urgency", "")
         first_aid = entry.get("first_aid", "")
+        question_candidates, candidate_issues = build_question_candidates(
+            [str(symptom) for symptom in symptoms]
+        )
         
         # Build rich text for embedding
         symptoms_text = ". ".join(symptoms) if symptoms else ""
+        candidate_text = ". ".join(question_candidates) if question_candidates else symptoms_text
         precautions_text = ". ".join(precautions) if precautions else ""
         full_text = (
             f"{category}. Symptoms: {symptoms_text}. "
+            f"Observable findings: {candidate_text}. "
             f"Guidance: {guidance}. Precautions: {precautions_text}."
         )
         if first_aid:
@@ -136,7 +150,15 @@ def _build_doc(entry: dict[str, Any], collection_name: str) -> tuple[str | None,
             "title": category,
             "category": category,
             "source": "AAYU Health Knowledge Base",
-            "tags": ", ".join(symptoms[:3]) if symptoms else "",  # Top 3 symptoms as tags
+            "tags": ", ".join(question_candidates[:5]) if question_candidates else ", ".join(symptoms[:3]),
+            "raw_symptoms": " || ".join(symptoms),
+            "question_candidates": " || ".join(question_candidates),
+            "question_candidate_count": len(question_candidates),
+            "question_issue_count": len(candidate_issues),
+            "guidance_text": guidance,
+            "precautions_text": " || ".join(precautions),
+            "first_aid_text": first_aid,
+            "doc_schema": "structured",
             "urgency": urgency,
             "collection": collection_name,
         }

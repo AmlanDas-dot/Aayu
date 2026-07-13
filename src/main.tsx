@@ -6,8 +6,12 @@ import "./aayu.css";
 import "./aayu-home.css";
 import "./aayu-pages.css";
 
+import { HealthContextProvider } from "@/contexts/HealthContext";
+
 createRoot(document.getElementById("root")!).render(
   <ErrorBoundary>
-    <App />
+    <HealthContextProvider>
+      <App />
+    </HealthContextProvider>
   </ErrorBoundary>
 );

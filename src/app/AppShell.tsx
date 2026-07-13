@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { AayuSidebar } from "@/components/navigation/AayuSidebar";
 import { AayuHeader } from "@/components/navigation/AayuHeader";
+import { HealthcareBreadcrumbs } from "@/components/navigation/HealthcareBreadcrumbs";
 import { DisclaimerBanner } from "@/components/ui/DisclaimerBanner";
 
 interface AppShellProps {
@@ -25,6 +26,7 @@ export function AppShell({ children }: AppShellProps) {
           language={language}
           onLanguageChange={setLanguage}
         />
+        <HealthcareBreadcrumbs />
         <DisclaimerBanner />
         <main className="aayu-content">
           {children}

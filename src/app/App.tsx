@@ -11,6 +11,7 @@ import { AdminDashboardPage } from "@/pages/AdminDashboardPage";
 import { PlaceholderPages } from "@/pages/PlaceholderPages";
 import { RecordsPage } from "@/pages/RecordsPage";
 import { EnvironmentPage } from "@/pages/EnvironmentPage";
+import { FamilyPage } from "@/pages/FamilyPage";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
           <Route path="/records" element={<RecordsPage />} />
           <Route path="/resources" element={<PlaceholderPages page="resources" />} />
           <Route path="/alerts" element={<PlaceholderPages page="alerts" />} />
-          <Route path="/family" element={<PlaceholderPages page="family" />} />
+          <Route path="/family" element={<FamilyPage />} />
           <Route path="/disaster" element={<PlaceholderPages page="disaster" />} />
         </Routes>
       </AppShell>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useHealthContext } from "@/hooks/useHealthContext";
 import {
   findNearbyHospitals,
   getUserLocation,
@@ -21,6 +22,7 @@ export function HospitalPage() {
   const [coords, setCoords]         = useState<{ lat: number; lon: number } | null>(null);
   const [processingStage, setProcessingStage] = useState<{icon: string, text: string} | null>(null);
   const [selectedFacility, setSelectedFacility] = useState<HospitalFacility | null>(null);
+  const { selectedMember } = useHealthContext();
 
   async function handleFind() {
     setLoading(true);
@@ -92,6 +94,15 @@ export function HospitalPage() {
       {/* Main Tool Card */}
       <div className="nc-tool-card">
 
+        {selectedMember ? (
+          <div style={{ padding: '16px 24px', background: '#f0fdfa', color: '#0f766e', fontWeight: 600, borderBottom: '1px solid #ccfbf1', borderRadius: '12px 12px 0 0' }}>
+            Find Nearby Hospitals for {selectedMember.name}
+          </div>
+        ) : (
+           <div style={{ padding: '16px 24px', background: '#fef9c3', color: '#854d0e', fontWeight: 600, borderBottom: '1px solid #fef08a', borderRadius: '12px 12px 0 0' }}>
+            General Hospital Search (Select a member in Family for personalized routing)
+          </div>
+        )}
         <HospitalHero />
 
         <HospitalFilters 
