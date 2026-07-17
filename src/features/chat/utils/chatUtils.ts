@@ -55,8 +55,9 @@ export const getDefaultWelcomeSession = (): Conversation => ({
   ],
 });
 
-export function determineIcon(title: string, messages: ChatMessage[]): string {
-  const text = (title + " " + messages.map(m => m.text).join(" ")).toLowerCase();
+export function determineIcon(title: string, messages: ChatMessage[] = []): string {
+  const msgs = messages || [];
+  const text = ((title || "") + " " + msgs.map(m => m.text).join(" ")).toLowerCase();
   if (/\b(food|diet|nutrition|eat|protein|vitamin)\b/.test(text)) return "fa-seedling";
   if (/\b(fever|temperature|headache|ache|symptom|disease|dengue|malaria|flu)\b/.test(text)) return "fa-heart-pulse";
   if (/\b(scheme|ayushman|pmjay|government|insurance)\b/.test(text)) return "fa-file-medical";

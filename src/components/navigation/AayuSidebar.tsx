@@ -14,6 +14,7 @@ const NAV_ITEMS = [
   { path: "/schemes", label: "Schemes", icon: "fa-solid fa-file-medical" },
   { path: "/hospitals", label: "Nearby care", icon: "fa-solid fa-location-dot" },
   { path: "/records", label: "Records", icon: "fa-regular fa-file-lines" },
+  { path: "/medications", label: "Medications", icon: "fa-solid fa-pills" },
   { path: "/resources", label: "Resources", icon: "fa-solid fa-book-open" },
   { path: "/environment", label: "Environmental Health", icon: "fa-solid fa-leaf" },
   { path: "/alerts", label: "Alerts & Updates", icon: "fa-regular fa-bell" },

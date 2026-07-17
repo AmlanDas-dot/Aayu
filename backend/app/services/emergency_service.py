@@ -39,10 +39,10 @@ _NORMALIZATIONS: list[tuple[re.Pattern, str]] = [
     # Seizure
     (re.compile(r"\b(fits|convulsions?|shaking uncontrolled|jerking)\b", re.I), "seizure"),
     # Bleeding
-    (re.compile(r"\b(throwing up blood|blood in vomit|vomiting blood)\b", re.I), "hematemesis"),
+    (re.compile(r"\b(throwing up blood|blood in vomit|vomiting blood|coughing blood|coughing up blood)\b", re.I), "hematemesis"),
     (re.compile(r"\b(blood in stool|black stool|tarry stool|bloody stool)\b", re.I), "melena"),
     (re.compile(r"\b(blood in urine|red urine|pink urine)\b", re.I), "hematuria"),
-    (re.compile(r"\b(bleeding won'?t stop|heavy bleeding|severe bleeding|bleed(ing)? heavily|blood gushing)\b", re.I), "severe bleeding"),
+    (re.compile(r"\b(bleeding won'?t stop|heavy bleeding|severe bleeding|bleed(ing)? heavily|blood gushing|bleeding from ears|severe nose bleed|severe pregnancy bleeding)\b", re.I), "severe bleeding"),
     # Allergic
     (re.compile(r"\b(lips? (are |is )swelling|throat swelling|swollen throat|tongue swelling|face swelling after|swelling after medicine|allergic reaction)\b", re.I), "anaphylaxis"),
     # Burns
@@ -75,16 +75,17 @@ def normalize_symptoms(text: str) -> str:
 # ---------------------------------------------------------------------------
 
 _EMERGENCY_PATTERNS: list[tuple[str, str]] = [
-    (r"\b(heart attack|chest pain|chest tightness|myocardial|seene mein dard|chhati me dard|seena dard|छाती में दर्द|सीने में दर्द|dil ka daura|दिल का दौरा)\b", "Possible Heart Attack"),
-    (r"\b(possible stroke|stroke|sudden weakness|face drooping|arm weakness|sudden speech loss|lakwa|लकवा|paralysis)\b", "Possible Stroke"),
+    (r"\b(heart attack|chest pain|chest tightness|myocardial|severe chest pain|seene mein dard|chhati me dard|seena dard|छाती में दर्द|सीने में दर्द|dil ka daura|दिल का दौरा)\b", "Possible Heart Attack"),
+    (r"\b(possible stroke|stroke|stroke symptoms|sudden weakness|face drooping|arm weakness|sudden speech loss|lakwa|लकवा|paralysis)\b", "Possible Stroke"),
     (r"\b(snake bite|snakebite|snake bit|saamp ne kata|सांप ने काटा|सांप)\b", "Snake Bite"),
-    (r"\b(seizure|epilepsy attack|fits|convulsion|daura|दौरा|मिरगी)\b", "Seizure"),
-    (r"\b(loss of consciousness|unconscious|unresponsive|not breathing|no pulse|collapsed|behosh|बेहोश)\b", "Unconscious / Not Breathing"),
+    (r"\b(seizure|seizures|epilepsy attack|fits|convulsion|daura|दौरा|मिरगी)\b", "Seizure"),
+    (r"\b(loss of consciousness|unconscious|unresponsive|not breathing|severe breathing difficulty|no pulse|collapsed|behosh|बेहोश)\b", "Unconscious / Not Breathing"),
     (r"\b(hematemesis|severe bleeding|heavy blood loss|khoon|खून बह)\b", "Severe Bleeding"),
     (r"\b(anaphylaxis|severe allergic|throat swelling|swollen throat|can'?t breathe|difficulty breathing|saans lene mein|सांस लेने में)\b", "Anaphylaxis / Airway Emergency"),
     (r"\b(choking|can'?t swallow|airway blocked|gala rukh|गला रुंध)\b", "Choking"),
     (r"\b(drowning|near drowning|doob|डूब)\b", "Drowning"),
     (r"\b(severe burn|chemical burn|jal gaya|जल गया)\b", "Severe Burn"),
+    (r"\b(severe trauma|major trauma|car accident|hit by a car|fall from a height|head injury|severe head injury)\b", "Severe Trauma"),
     (r"\b(suicide|kill myself|end my life|want to die|आत्महत्या|मरना chahu)\b", "Mental Health Crisis"),
     (r"\b(labour|giving birth|baby coming|water broke|contractions|delivery pain|डिलीवरी|प्रसव)\b", "Emergency Childbirth"),
     (r"\b(melena|blood in stool|black stool|tarry stool)\b", "GI Bleed"),
@@ -99,6 +100,7 @@ _CRITICAL_CONDITIONS = {
     "Possible Heart Attack", "Possible Stroke", "Unconscious / Not Breathing",
     "Anaphylaxis / Airway Emergency", "Choking", "Drowning",
     "Emergency Childbirth", "Severe Bleeding", "GI Bleed",
+    "Severe Trauma",
 }
 
 # URGENT: serious, needs care within hours

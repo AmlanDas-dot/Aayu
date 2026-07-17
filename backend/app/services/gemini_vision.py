@@ -151,23 +151,14 @@ class GeminiVisionService:
         prompt = (
             "You are assisting a healthcare information chatbot.\n\n"
             "Carefully examine the uploaded image.\n\n"
-            "Only describe observable visual findings.\n\n"
-            "Do NOT diagnose.\n\n"
-            "Do NOT identify diseases as certain.\n\n"
-            "Mention uncertainty whenever appropriate.\n\n"
-            "Describe:\n"
-            "* Color\n"
-            "* Shape\n"
-            "* Size\n"
-            "* Texture\n"
-            "* Swelling\n"
-            "* Redness\n"
-            "* Bleeding\n"
-            "* Symmetry\n"
-            "* Visible abnormalities\n\n"
-            "If the image quality is poor, clearly mention that.\n\n"
-            "If the image is not medical in nature, state that.\n\n"
-            "Return only a concise description of observable findings."
+            "Only describe observable visual findings. Do NOT diagnose. "
+            "Do NOT identify diseases as certain. Mention uncertainty whenever appropriate.\n\n"
+            "If the image is a medical record (like a lab report, prescription, scan, bill, discharge summary), extract the key text and findings.\n\n"
+            "Return ONLY a valid JSON object matching this schema exactly:\n"
+            "{\n"
+            '  "description": "Concise description of observable findings, or transcription of the medical record text",\n'
+            '  "is_medical_record": true if it is a medical document/report/scan, false otherwise\n'
+            "}"
         )
 
         warnings = []
@@ -176,8 +167,6 @@ class GeminiVisionService:
             warnings.append("Image was resized to optimize transmission times.")
 
         # 4. Asynchronous Client Execution
-        # FIX: use asyncio.get_running_loop() instead of deprecated get_event_loop()
-        # inside an already-running async context (FastAPI/uvicorn event loop)
         loop = asyncio.get_running_loop()
         
         def call_gemini():
@@ -185,29 +174,31 @@ class GeminiVisionService:
             response = self.client.models.generate_content(
                 model='gemini-2.5-flash',
                 contents=[
-                    types.Part.from_bytes(
-                        data=opt_bytes,
-                        mime_type=opt_mime,
-                    ),
+                    types.Part.from_bytes(data=opt_bytes, mime_type=opt_mime),
                     prompt
-                ]
+                ],
+                config=types.GenerateContentConfig(response_mime_type="application/json")
             )
             logger.info("[GeminiVision] Gemini API responded.")
             return response.text
 
         try:
-            description = await loop.run_in_executor(None, call_gemini)
-            if not description:
+            result_json = await loop.run_in_executor(None, call_gemini)
+            if not result_json:
                 raise RuntimeError("Gemini returned an empty response.")
             
-            description_text = description.strip()
-            logger.info("[GeminiVision] Description received (%d chars).", len(description_text))
+            import json
+            data = json.loads(result_json)
+            description_text = data.get("description", "").strip()
+            is_medical_record = data.get("is_medical_record", False)
+            
+            logger.info(f"[GeminiVision] Description received ({len(description_text)} chars), is_medical_record={is_medical_record}")
 
             desc_lower = description_text.lower()
             if any(w in desc_lower for w in ["poor quality", "blurry", "low resolution", "out of focus", "dark"]):
                 warnings.append("Image quality may limit interpretation.")
                 
-            return description_text, warnings
+            return description_text, warnings, is_medical_record
         except Exception as e:
             logger.error("[GeminiVision] Gemini API call error: %s", e, exc_info=True)
             raise RuntimeError(f"Gemini API execution failed: {e}")

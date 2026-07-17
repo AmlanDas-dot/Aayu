@@ -46,6 +46,7 @@ export async function sendChatMessage(
       collection: req.collection || "all",
       session_id: req.session_id ?? "",
       history: req.history ?? [],
+      patient_records: req.patient_records ?? ""
   };
   console.log("========== SENDING CHAT REQUEST ==========");
   console.log("Request Payload:", payload);

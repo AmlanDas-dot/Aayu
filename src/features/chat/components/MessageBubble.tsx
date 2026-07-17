@@ -1,6 +1,7 @@
 import type { ChatMessage } from "../types/chat";
 import { RISK_CONFIG } from "../utils/chatUtils";
 import { KnowledgeCard } from "./KnowledgeCard";
+import { EmergencyNearbyCare } from "./EmergencyNearbyCare";
 import { LoadingStatus } from "@/components/LoadingStatus";
 import logoHeart from "@/assets/logo-heart.png";
 
@@ -30,16 +31,80 @@ export function MessageBubble({
           <LoadingStatus icon="fa-brain" status="🩺 AAYU is analyzing your request..." />
         ) : (
           <>
+
+            {/* temporary test portion*/}
+            {(() => {
+              console.log("risk_level =", msg.risk_level);
+              // levelConfig removed
+              return null;
+            })()}
+
             {/* Risk Level Badge */}
-            {msg.role === "assistant" && msg.risk_level && (
-              <div className={RISK_CONFIG[msg.risk_level].className}>
-                <i className={msg.risk_level === "emergency" ? "fa-solid fa-triangle-exclamation" : msg.risk_level === "urgent" ? "fa-solid fa-circle-exclamation" : "fa-solid fa-circle-check"}></i>
-                Risk Level: <strong>{RISK_CONFIG[msg.risk_level].label}</strong>
-              </div>
-            )}
+            {(() => {
+              if (msg.role !== "assistant") return null;
+
+              if (msg.screening_mode && !msg.show_risk_level) {
+                return (
+                  <div style={{
+                    padding: "4px 10px",
+                    borderRadius: "6px",
+                    background: "#f8fafc",
+                    color: "#475569",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    border: "1px solid #e2e8f0",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    marginBottom: "8px"
+                  }}>
+                    <i className="fa-solid fa-stethoscope" style={{ color: "#3b82f6" }}></i>
+                    Assessing your symptoms...
+                  </div>
+                );
+              }
+
+              if (!msg.show_risk_level) return null;
+
+              const level = String(msg.risk_level ?? "").toLowerCase().trim();
+              const risk = RISK_CONFIG[level as keyof typeof RISK_CONFIG];
+
+              if (!level) return null;
+
+              if (!risk) {
+                return (
+                  <div
+                    style={{
+                      padding: 8,
+                      background: "#fee2e2",
+                      border: "1px solid red",
+                      marginBottom: 8,
+                    }}
+                  >
+                    Risk level:
+                    <pre>{JSON.stringify(msg.risk_level)}</pre>
+                  </div>
+                );
+              }
+
+              return (
+                <div className={risk.className}>
+                  <i
+                    className={
+                      level === "emergency"
+                        ? "fa-solid fa-triangle-exclamation"
+                        : level === "urgent"
+                          ? "fa-solid fa-circle-exclamation"
+                          : "fa-solid fa-circle-check"
+                    }
+                  />
+                  Risk Level: <strong>{risk.label}</strong>
+                </div>
+              );
+            })()}
 
             {/* Verified Knowledge Badge */}
-            {msg.role === "assistant" && msg.retrieved_documents && msg.retrieved_documents.length > 0 && (
+            {msg.role === "assistant" && msg.retrieved_documents && Array.isArray(msg.retrieved_documents) && msg.retrieved_documents.length > 0 && (
               <div style={{
                 fontSize: "0.68rem",
                 padding: "2px 8px",
@@ -59,7 +124,7 @@ export function MessageBubble({
             )}
 
             {/* Warnings Badge */}
-            {msg.role === "assistant" && msg.warnings && msg.warnings.length > 0 && (
+            {msg.role === "assistant" && msg.warnings && (Array.isArray(msg.warnings) ? msg.warnings : [msg.warnings]).length > 0 && (
               <div style={{
                 fontSize: "0.72rem",
                 padding: "6px 10px",
@@ -76,9 +141,10 @@ export function MessageBubble({
               }}>
                 <i className="fa-solid fa-triangle-exclamation"></i>
                 <div>
-                  {msg.warnings.map((w, idx) => (
-                    <div key={idx}>{w}</div>
-                  ))}
+                  {(Array.isArray(msg.warnings) ? msg.warnings : [msg.warnings]).map((w: any, idx) => {
+                    const text = typeof w === 'string' ? w : (w?.text || w?.warning || JSON.stringify(w));
+                    return <div key={idx}>{text}</div>;
+                  })}
                 </div>
               </div>
             )}
@@ -103,7 +169,9 @@ export function MessageBubble({
             )}
 
             {/* Text Content */}
-            <p style={{ whiteSpace: "pre-line" }}>{msg.text}</p>
+            <p style={{ whiteSpace: "pre-line" }}>
+              {typeof msg.text === 'string' ? msg.text : JSON.stringify(msg.text)}
+            </p>
 
             {/* TTS Speaker playback */}
             {msg.role === "assistant" && msg.text && (
@@ -130,7 +198,7 @@ export function MessageBubble({
             )}
 
             {/* Knowledge Grounding Cards */}
-            {msg.retrieved_documents && msg.retrieved_documents.length > 0 && (
+            {msg.retrieved_documents && Array.isArray(msg.retrieved_documents) && msg.retrieved_documents.length > 0 && (
               <div style={{ marginTop: 12, borderTop: "1px solid #e2e8f0", paddingTop: 12 }}>
                 <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#64748b", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                   📚 Related Health Groundings ({msg.retrieved_documents.length})
@@ -148,9 +216,16 @@ export function MessageBubble({
                 {msg.disclaimer}
               </div>
             )}
+            
+            {/* Location-Aware Emergency Assistance */}
+            {msg.role === "assistant" && msg.healthcare_recommendation?.enabled && (
+               <EmergencyNearbyCare recommendation={msg.healthcare_recommendation} />
+            )}
 
             <span className="message-time">
-              {new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+              {msg.timestamp && !isNaN(new Date(msg.timestamp).getTime())
+                ? new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+                : ""}
               {msg.processing_time_ms != null && (
                 <span style={{ opacity: 0.7 }}> · {msg.processing_time_ms}ms</span>
               )}

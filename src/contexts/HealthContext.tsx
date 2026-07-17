@@ -1,5 +1,13 @@
-import React, { createContext, useState, ReactNode } from 'react';
-import { FamilyMember } from '../data/familyMock';
+import React, { createContext, useState, ReactNode, useContext } from 'react';
+import { FamilyMember } from '@/firebase/collections';
+
+export const useHealthContext = () => {
+  const context = useContext(HealthContext);
+  if (!context) {
+    throw new Error('useHealthContext must be used within a HealthContextProvider');
+  }
+  return context;
+};
 
 interface HealthContextState {
   selectedFamilyId: string | null;
@@ -32,7 +40,7 @@ export const HealthContextProvider: React.FC<{ children: ReactNode }> = ({ child
   };
 
   const value: HealthContextState = {
-    selectedFamilyId: 'f1', // Mock family ID for now
+    selectedFamilyId: selectedMember?.familyId || null,
     selectedMemberId: selectedMember?.id || null,
     selectedMember,
     selectedVillage,

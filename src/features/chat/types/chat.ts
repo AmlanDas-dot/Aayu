@@ -1,5 +1,14 @@
 import type { RiskLevel, RetrievedDocument } from "@/types/search";
 
+export interface HealthcareRecommendation {
+  enabled: boolean;
+  urgency: string;
+  facility_types: string[];
+  radius: number;
+  title: string;
+  message: string;
+}
+
 export interface ChatMessage {
   id: string;
   role: "user" | "assistant";
@@ -17,6 +26,10 @@ export interface ChatMessage {
   imageDescription?: string;
   warnings?: string[];
   confidence?: string;
+  healthcare_recommendation?: HealthcareRecommendation;
+  screening_mode?: boolean;
+  screening_complete?: boolean;
+  show_risk_level?: boolean;
 }
 
 export interface Conversation {

@@ -169,14 +169,14 @@ class NutritionService:
     def suggest_high_protein_foods(self, limit: int = 10) -> list[dict[str, Any]]:
         return sorted(
             (f for f in self._foods if f.get("protein", 0) >= 5),
-            key=lambda f: f["protein"],
+            key=lambda f: f.get("protein", 0),
             reverse=True,
         )[:limit]
 
     def suggest_low_calorie_foods(self, limit: int = 10) -> list[dict[str, Any]]:
         return sorted(
             (f for f in self._foods if f.get("calories", 0) <= 100),
-            key=lambda f: f["calories"],
+            key=lambda f: f.get("calories", 0),
         )[:limit]
 
     def suggest_diet_for_goal(self, goal: str, limit: int = 10) -> list[dict[str, Any]]:

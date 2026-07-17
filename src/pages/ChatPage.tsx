@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { FileText } from "lucide-react";
 import {
   sendChatMessage,
   submitScreeningAnswer,
@@ -18,6 +19,8 @@ import { useChatSession } from "@/features/chat/hooks/useChatSession";
 import { useVoiceInput } from "@/features/chat/hooks/useVoiceInput";
 import { useTTS } from "@/features/chat/hooks/useTTS";
 import { useImageCapture } from "@/features/chat/hooks/useImageCapture";
+import { useAuth } from "@/contexts/AuthContext";
+import { useHealthContext } from "@/contexts/HealthContext";
 
 import { ChatHistoryPanel } from "@/features/chat/components/ChatHistoryPanel";
 import { MessageBubble } from "@/features/chat/components/MessageBubble";
@@ -28,6 +31,8 @@ import type { RiskLevel, RetrievedDocument } from "@/types/search";
 export function ChatPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { currentUser } = useAuth();
+  const { selectedMember } = useHealthContext();
 
   // Custom Hooks
   const {
@@ -49,14 +54,64 @@ export function ChatPage() {
   const [input, setInput] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingStage, setProcessingStage] = useState<{ icon: string; text: string } | null>(null);
+  const [promptSaveRecordFile, setPromptSaveRecordFile] = useState<File | null>(null);
+  const [patientRecordsContext, setPatientRecordsContext] = useState<string>("");
 
   // Sync Messages with Active Session
   useEffect(() => {
     const active = conversations.find((c) => c.sessionId === sessionId);
     if (active) {
-      setMessages(active.messages);
+      setMessages(active.messages || []);
     }
   }, [sessionId, conversations]);
+
+  // Load Medical Records context for RAG
+  useEffect(() => {
+    async function loadRecords() {
+      if (currentUser) {
+        try {
+          const { getMedicalRecords } = await import("@/services/recordService");
+          // Fetch records for the selected family. If a specific member is selected, fetch only theirs.
+          if (!selectedMember || !selectedMember.familyId) return;
+          
+          const records = await getMedicalRecords(selectedMember.familyId, selectedMember.id);
+          
+          let contextStr = "";
+          
+          contextStr += `[SYSTEM NOTE: The user is currently talking on behalf of their family member: ${selectedMember.name} (Role: ${selectedMember.role}). Please address health concerns in relation to this family member and use the provided medical records if applicable.]\n\n`;
+
+          if (records.length > 0) {
+            contextStr += "PATIENT MEDICAL RECORDS:\n";
+            contextStr += records.map(r => {
+              let recStr = `Record: ${r.title}\nDate: ${r.recordDate || r.uploadedAt}\nType: ${r.category}\n`;
+              if (r.hospital) recStr += `Hospital: ${r.hospital}\n`;
+              if (r.doctor) recStr += `Doctor: ${r.doctor}\n`;
+              if (r.geminiSummary) recStr += `Summary: ${r.geminiSummary}\n`;
+              if (r.importantValues && Object.keys(r.importantValues).length > 0) {
+                recStr += `Metrics: ${Object.entries(r.importantValues).map(([k,v]) => `${k}: ${v}`).join(', ')}\n`;
+              }
+              return recStr;
+            }).join("\n---\n");
+          } else {
+            contextStr += "No specific medical records found for this patient.\n";
+          }
+          
+          try {
+            const { buildMedicationContextForChat } = await import("@/services/chatMedicationBridge");
+            const medContext = await buildMedicationContextForChat(selectedMember.familyId, selectedMember.id!);
+            contextStr += `\n\n${medContext}\n`;
+          } catch (err) {
+            console.error("Failed to load medication context", err);
+          }
+          
+          setPatientRecordsContext(contextStr);
+        } catch (e) {
+          console.error("Failed to load records context", e);
+        }
+      }
+    }
+    loadRecords();
+  }, [currentUser, selectedMember]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -252,20 +307,25 @@ export function ChatPage() {
 
     try {
       let apiResp: any;
-      if (hasImage && imageFile) {
-        setUploadProgress(0);
-        apiResp = await sendImageChatMessage(
-          imageFile,
-          userMsgText,
-          language,
-          sessionId,
-          llmHistory,
-          (progress) => {
-            setUploadProgress(progress);
+        if (hasImage && imageFile) {
+          setUploadProgress(0);
+          apiResp = await sendImageChatMessage(
+            imageFile,
+            userMsgText,
+            language,
+            sessionId,
+            llmHistory,
+            (progress) => {
+              setUploadProgress(progress);
+            }
+          );
+          setUploadProgress(null);
+          
+          if (apiResp.is_medical_record) {
+             // We'll set a state to show the save prompt
+             setPromptSaveRecordFile(imageFile);
           }
-        );
-        setUploadProgress(null);
-      } else {
+        } else {
         const cachedDesc = findCachedImageDescription(messages);
         const payloadMessage = cachedDesc ? `${msg}\n[Image context: ${cachedDesc}]` : msg;
 
@@ -275,6 +335,7 @@ export function ChatPage() {
             language,
             session_id: sessionId,
             history: llmHistory,
+            patient_records: patientRecordsContext,
           },
           (event) => {
             if (event === "HEADERS_RECEIVED") {
@@ -301,6 +362,10 @@ export function ChatPage() {
       let processingTimeMs: number = 0;
       let mode: "online" | "offline" = "offline";
       let llmProvider: any = "template";
+      let healthcareRec: any = undefined;
+      let screeningMode: boolean = false;
+      let screeningComplete: boolean = false;
+      let showRiskLevel: boolean = false;
 
       if (hasImage) {
         assistantText = apiResp.answer || apiResp.response || "";
@@ -310,6 +375,7 @@ export function ChatPage() {
         confidence = apiResp.confidence;
         mode = "online";
         llmProvider = "gemini";
+        showRiskLevel = true;
       } else {
         assistantText = apiResp.response;
         riskLevel = apiResp.risk_level;
@@ -319,6 +385,10 @@ export function ChatPage() {
         processingTimeMs = apiResp.processing_time_ms || 0;
         mode = apiResp.mode;
         llmProvider = apiResp.llm_provider;
+        healthcareRec = apiResp.healthcare_recommendation;
+        screeningMode = apiResp.screening_mode || false;
+        screeningComplete = apiResp.screening_complete || false;
+        showRiskLevel = apiResp.show_risk_level || false;
       }
 
       const assistantId = makeId();
@@ -342,6 +412,10 @@ export function ChatPage() {
               imageDescription: imageDescription,
               warnings: warnings,
               confidence: confidence,
+              healthcare_recommendation: healthcareRec,
+              screening_mode: screeningMode,
+              screening_complete: screeningComplete,
+              show_risk_level: showRiskLevel,
             };
           }
           return m;
@@ -364,6 +438,10 @@ export function ChatPage() {
             imageDescription: imageDescription,
             warnings: warnings,
             confidence: confidence,
+            healthcare_recommendation: healthcareRec,
+            screening_mode: screeningMode,
+            screening_complete: screeningComplete,
+            show_risk_level: showRiskLevel,
           });
         }
         updateConversations(afterMsgs);
@@ -644,7 +722,7 @@ export function ChatPage() {
               )}
               {emergencyAlert && <EmergencyAlert emergency={emergencyAlert} />}
 
-              {messages.map((msg) => (
+              {(messages || []).map((msg) => (
                 <MessageBubble
                   key={msg.id}
                   msg={msg}
@@ -671,6 +749,84 @@ export function ChatPage() {
               handleScreeningAnswer={handleScreeningAnswer}
               onNavigateToHospitals={() => navigate("/hospitals?autoSearch=true")}
             />
+
+            {promptSaveRecordFile && (
+              <div style={{ margin: '15px 24px', padding: '16px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <div style={{ padding: '8px', backgroundColor: '#dcfce7', borderRadius: '8px', color: '#16a34a' }}>
+                    <FileText size={24} />
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h4 style={{ margin: '0 0 6px 0', color: '#166534', fontSize: '15px' }}>Medical Record Detected</h4>
+                    <p style={{ margin: '0 0 12px 0', color: '#15803d', fontSize: '13px' }}>
+                      Would you like to save this {promptSaveRecordFile.name} to your health vault for future reference?
+                    </p>
+                    <div style={{ display: 'flex', gap: '10px' }}>
+                      <button
+                        onClick={async () => {
+                          if (!selectedMember || !selectedMember.familyId) {
+                            alert("Please select a family member first before saving.");
+                            return;
+                          }
+                          const { uploadMedicalRecord } = await import("@/services/storageService");
+                          const { createMedicalRecord, generateRecordId } = await import("@/services/recordService");
+                          const { analyzeMedicalDocument } = await import("@/services/geminiRecordService");
+                          
+                          setProcessingStage({ icon: "💾", text: "Saving to records..." });
+                          try {
+                            const recordId = generateRecordId();
+                            const url = await uploadMedicalRecord(selectedMember.familyId, selectedMember.id!, recordId, promptSaveRecordFile);
+                            
+                            const analysis = await analyzeMedicalDocument(url, promptSaveRecordFile.type);
+                            
+                            await createMedicalRecord({
+                              familyId: selectedMember.familyId,
+                              memberId: selectedMember.id!,
+                              uploadedBy: currentUser!.uid,
+                              uploadedAt: new Date().toISOString(),
+                              updatedAt: new Date().toISOString(),
+                              title: analysis.metadata?.documentTitle || promptSaveRecordFile.name,
+                              category: analysis.classification || "Other",
+                              tags: [],
+                              hospital: analysis.metadata?.hospitalName || null,
+                              doctor: analysis.metadata?.doctorName || null,
+                              recordDate: analysis.metadata?.visitDate || null,
+                              language: analysis.metadata?.language || null,
+                              geminiSummary: analysis.summaries?.aiSummary || null,
+                              extractedText: (analysis as any).extractedText || null,
+                              importantValues: analysis.metadata?.importantValues || {},
+                              fileType: promptSaveRecordFile.type,
+                              fileURL: url,
+                              thumbnailURL: null,
+                              pageCount: 1,
+                              searchable: true,
+                              shared: false
+                            }, recordId);
+                            
+                            setPromptSaveRecordFile(null);
+                          } catch(err) {
+                            console.error(err);
+                            alert("Failed to save record.");
+                          } finally {
+                            setProcessingStage(null);
+                          }
+                        }}
+                        style={{ padding: '8px 16px', backgroundColor: '#16a34a', color: 'white', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '13px' }}
+                      >
+                        Save for {selectedMember?.name || 'Member'}
+                      </button>
+                      <button
+                        onClick={() => setPromptSaveRecordFile(null)}
+                        style={{ padding: '8px 16px', backgroundColor: 'transparent', color: '#166534', border: '1px solid #166534', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '13px' }}
+                      >
+                        Discard
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
 
             {/* Bottom input area */}

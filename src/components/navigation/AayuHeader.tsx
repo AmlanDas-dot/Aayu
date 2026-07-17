@@ -1,5 +1,6 @@
 import { LANGUAGES } from "@/constants/languages";
 import { StatusBar } from "../StatusBar";
+import { AccountDropdown } from "./AccountDropdown";
 
 interface AayuHeaderProps {
   language: string;
@@ -20,7 +21,7 @@ export function AayuHeader({ language, onLanguageChange }: AayuHeaderProps) {
         </div>
       </div>
 
-      <div className="header-right">
+      <div className="header-right" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <StatusBar />
         <select
           className="header-lang-select"
@@ -33,8 +34,7 @@ export function AayuHeader({ language, onLanguageChange }: AayuHeaderProps) {
             </option>
           ))}
         </select>
-        <button className="header-settings-btn" title="Settings">⚙️</button>
-        <button className="header-account-btn" title="Account">👤</button>
+        <AccountDropdown />
       </div>
     </header>
   );

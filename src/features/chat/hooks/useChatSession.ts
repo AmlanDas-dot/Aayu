@@ -152,18 +152,21 @@ export function useChatSession() {
   };
 
   const filteredConversations = conversations.filter(
-    (c) =>
-      c.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      c.messages.some((m) => m.text.toLowerCase().includes(searchTerm.toLowerCase()))
+    (c) => {
+      const titleStr = c.title || "";
+      const msgs = c.messages || [];
+      return titleStr.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        msgs.some((m) => (m.text || "").toLowerCase().includes(searchTerm.toLowerCase()));
+    }
   ).sort((a, b) => {
     if (!searchTerm) {
-      return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+      return new Date(b.timestamp || 0).getTime() - new Date(a.timestamp || 0).getTime();
     }
-    const aTitleMatch = a.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const bTitleMatch = b.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const aTitleMatch = (a.title || "").toLowerCase().includes(searchTerm.toLowerCase());
+    const bTitleMatch = (b.title || "").toLowerCase().includes(searchTerm.toLowerCase());
     if (aTitleMatch && !bTitleMatch) return -1;
     if (!aTitleMatch && bTitleMatch) return 1;
-    return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+    return new Date(b.timestamp || 0).getTime() - new Date(a.timestamp || 0).getTime();
   });
 
   const groupedConversations: Record<string, Conversation[]> = {

@@ -70,14 +70,18 @@ _SPECIALTY_ROUTING: list[tuple[str, list[str]]] = [
     # Mental Health / Neurology
     (r"depress|anxious|anxiety|stress|mental|mood|sad|lonely|panic|sleep|insomnia|cannot sleep",
      ["mental_health", "chronic_diseases", "substance_abuse"]),
+     
+    # Neurology
+    (r"neuro|brain|seizure|paraly|stroke|numb|tingl|headache|migraine",
+     ["chronic_diseases", "emergency_conditions", "elderly_health"]),
 
     # Memory / Cognitive
     (r"memory|forget|dementia|cognit|alzheimer|confusion|disoriented",
      ["mental_health", "elderly_health", "chronic_diseases"]),
 
-    # GI / Digestive
-    (r"diarrh|vomit|stomach|nausea|gi\b|gastr|bowel|stool|constipat|bloat|abdomin|indigest|acid reflux|ulcer",
-     ["infectious_diseases", "child_health", "water_sanitation", "common_diseases"]),
+    # GI / Digestive / Abdomen
+    (r"diarrh|vomit|stomach|nausea|gi\b|gastr|bowel|stool|constipat|bloat|abdomin|indigest|acid reflux|ulcer|belly|navel|gut",
+     ["infectious_diseases", "water_sanitation", "common_diseases"]),
 
     # Edema / Fluid
     (r"feet? swoll|swollen feet|ankle swoll|edema|fluid retention|puffy",
@@ -95,9 +99,13 @@ _SPECIALTY_ROUTING: list[tuple[str, list[str]]] = [
     (r"nutrition|vitamin|mineral|deficien|iron|anemia|calci|supplement|malnourish",
      ["nutrition_diseases", "maternal_health", "child_health"]),
 
-    # Oral / Dental
-    (r"oral|tooth|teeth|gum|dental|toothache|cavity",
+    # Oral / Dental / Ear / ENT
+    (r"oral|tooth|teeth|gum|dental|toothache|cavity|ear|hear|deaf|tinnitus|vertigo|otitis|ent",
      ["oral_health", "infectious_diseases"]),
+
+    # Eye / Ophthalmology
+    (r"eye|vision|blind|blur|conjunctiv|sclera|cornea|pupil|ophthalm",
+     ["common_diseases", "infectious_diseases", "chronic_diseases"]),
 
     # Substance abuse
     (r"substance|alcohol|drink(ing)?|drug|addict|smoke|tobacco|withdrawal",
@@ -270,22 +278,36 @@ def normalize_symptom_concept(text: str) -> str:
     return _SYNONYMS.get(cleaned, cleaned)
 
 
-def format_question_text(tag: str) -> str:
-    """Map raw clinical tag to patient-friendly question."""
+def format_question_text(tag: str, patient_context: dict | None = None) -> str:
+    """Map raw clinical tag to patient-friendly question with proper perspective."""
     curated_question = question_text_for_phrase(tag)
-    if curated_question:
-        return curated_question
     lower_tag = normalize_symptom_concept(tag)
-    if lower_tag in _QUESTION_MAPPING:
-        return _QUESTION_MAPPING[lower_tag]
     
-    # Smarter prefix heuristic
-    if lower_tag.endswith("ing"):
-        return f"Are you {lower_tag}?"
-    if "pain" in lower_tag or "ache" in lower_tag:
-        return f"Are you experiencing any {lower_tag}?"
-    
-    return f"Have you been experiencing {lower_tag}?"
+    if not curated_question:
+        if lower_tag in _QUESTION_MAPPING:
+            curated_question = _QUESTION_MAPPING[lower_tag]
+        elif lower_tag.endswith("ing"):
+            curated_question = f"Are you {lower_tag}?"
+        elif "pain" in lower_tag or "ache" in lower_tag:
+            curated_question = f"Are you experiencing any {lower_tag}?"
+        else:
+            curated_question = f"Have you been experiencing {lower_tag}?"
+
+    from app.services.conversation_service import personalize_subject, get_pronouns
+    ctx = patient_context or {}
+    subject = personalize_subject(ctx)
+    pronouns = get_pronouns(ctx)
+
+    if subject.lower() != "you":
+        q = curated_question
+        q = re.sub(r"(?i)\bHave you\b", f"Has {subject}", q)
+        q = re.sub(r"(?i)\bAre you\b", f"Is {subject}", q)
+        q = re.sub(r"(?i)\bDo you\b", f"Does {subject}", q)
+        q = re.sub(r"(?i)\byour\b", pronouns["pos"], q)
+        q = re.sub(r"(?i)\byou\b", subject, q)
+        return q
+
+    return curated_question
 
 
 def get_question_explanation(tag: str) -> str:
@@ -348,6 +370,32 @@ _GENDER_COLLECTION_BOOST: dict[str, dict[str, float]] = {
 }
 
 
+def _apply_red_flag_overrides(scored: list[dict], symptoms: list[str], is_pregnant: bool, is_infant: bool) -> list[dict]:
+    has_abdominal_pain = any("abdominal pain" in s.lower() or "stomach pain" in s.lower() or "belly pain" in s.lower() for s in symptoms)
+    has_high_fever = any("104" in s or "high fever" in s.lower() or "very hot" in s.lower() for s in symptoms)
+    has_chest_pain = any("chest pain" in s.lower() or "crushing chest" in s.lower() for s in symptoms)
+    has_vision_loss = any("vision loss" in s.lower() or "blind" in s.lower() for s in symptoms)
+    has_altered_mental = any("unconscious" in s.lower() or "faint" in s.lower() or "lethargic" in s.lower() for s in symptoms)
+
+    for r in scored:
+        title = r.get("title", "").lower()
+        if is_pregnant and has_abdominal_pain:
+            if "ectopic" in title or "abruption" in title or "preeclampsia" in title or "hellp" in title or "preterm" in title:
+                r["clinical_score"] += 1.0 
+        if is_infant and has_high_fever:
+            if "meningitis" in title or "sepsis" in title or "bacterial" in title:
+                r["clinical_score"] += 1.0
+        if has_chest_pain and ("heart attack" in title or "myocardial" in title or "coronary" in title):
+            r["clinical_score"] += 1.0
+        if has_vision_loss and ("stroke" in title or "retinal" in title):
+            r["clinical_score"] += 1.0
+        if has_altered_mental and ("stroke" in title or "sepsis" in title or "poison" in title):
+            r["clinical_score"] += 1.0
+            
+    return scored
+
+
+
 def rank_candidates(
     results: list[dict],
     symptoms: list[str],
@@ -367,8 +415,17 @@ def rank_candidates(
     body_parts = nlp_data.get("body_parts", [])
 
     scored: list[dict] = []
+    
+    is_infant = age is not None and age <= 1
+    is_pregnant = bool(ctx.get("pregnancy_related"))
+    is_elderly = age is not None and age >= 65
+    
+    # Check for known conditions
+    has_diabetes = any("diabet" in c for c in conditions)
+    has_hypertension = any("hypertension" in c or "bp" in c or "blood pressure" in c for c in conditions)
+
     for r in results:
-        # Phase 10: De-weight pure embedding score (but not too much)
+        # De-weight pure embedding score
         score = float(r.get("score", 0.0)) * 0.4
         
         collection = r.get("collection", "")
@@ -378,7 +435,38 @@ def rank_candidates(
         title_lower = r.get("title", "").lower()
         combined_text = " ".join([title_lower, tags_raw, question_candidates, raw_symptoms])
 
-        # Phase 10: Heavy symptom overlap bonus
+        # Prior Probability based on Prevalence
+        is_rare = "rare" in combined_text or "uncommon" in combined_text or title_lower in ["kawasaki disease", "tularemia", "q fever", "leptospirosis", "yellow fever"]
+        is_common = "common" in combined_text or "viral" in combined_text or "bacterial" in combined_text
+        
+        if is_rare:
+            score -= 0.35 # Stronger prior penalty for rare diseases
+        elif is_common:
+            score += 0.20 # Stronger prior boost for common diseases
+
+        # Context Weighting
+        if is_pregnant:
+            if collection == "maternal_health":
+                score += 0.60  # Massive boost for obstetric causes
+            elif is_rare:
+                score -= 0.50  # Heavily penalize unrelated rare diseases in pregnancy
+        
+        if is_infant:
+            if collection == "child_health":
+                score += 0.30
+            if "sepsis" in title_lower or "meningitis" in title_lower or "bacterial infection" in title_lower:
+                score += 0.40  # Boost serious bacterial infections for infants
+                
+        if is_elderly:
+            if collection == "elderly_health" or collection == "chronic_diseases":
+                score += 0.20
+
+        # Heavy symptom overlap bonus and Evidence Penalty
+        matched_any = False
+        matched_essential = False
+        essential_matches = 0
+        total_symptoms = len(symptoms)
+        
         for sym in symptoms:
             sym_lower = sym.lower()
             sym_norm = normalize_symptom_concept(sym)
@@ -386,11 +474,22 @@ def rank_candidates(
             aliases = {alias.lower().strip() for alias in aliases if alias}
             
             if any(alias in title_lower for alias in aliases):
-                score += 0.30  # Title match is huge
+                score += 0.35
+                matched_any = True
+                matched_essential = True
+                essential_matches += 1
             elif any(alias in combined_text for alias in aliases):
                 score += 0.15
+                matched_any = True
+                essential_matches += 1
                 
-        # Phase 10: Body part match bonus
+        # Evidence Penalty: If the patient has multiple symptoms, and the disease only matches one vaguely
+        if not matched_any:
+            score -= 0.60
+        elif total_symptoms > 1 and essential_matches == 1 and not matched_essential:
+            score -= 0.30 # Substantial penalty if missing essential findings
+
+        # Body part match bonus
         for bp in body_parts:
             if bp.lower() in combined_text:
                 score += 0.05
@@ -420,9 +519,14 @@ def rank_candidates(
         elif age is not None and age > 18 and collection == "child_health":
             score = 0.0
         elif age is not None and age < 40 and collection == "elderly_health":
-            score *= 0.5  # Soft penalty for elderly diseases in young patients
+            score *= 0.5
 
-        scored.append({**r, "clinical_score": round(min(max(score, 0.0), 1.0), 4)})
+        final_score = round(min(max(score, 0.0), 1.0), 4)
+        if final_score >= 0.30:
+            scored.append({**r, "clinical_score": final_score})
+
+    # Red Flag Overrides (apply after scoring)
+    scored = _apply_red_flag_overrides(scored, symptoms, is_pregnant, is_infant)
 
     scored.sort(key=lambda x: x["clinical_score"], reverse=True)
     return scored
@@ -494,6 +598,12 @@ def select_next_question(
             if re.match(r"^[\d\s.,-]+$", tag):
                 continue
                 
+            # Phase 11: Enforce CANONICAL SYMPTOMS ONLY
+            # If the tag is not recognized as a canonical symptom, drop it.
+            # This completely prevents asking about disease names or database jargon.
+            if tag not in CANONICAL_QUESTION_TEXT:
+                continue
+
             is_redundant = any(
                 (tag in exc or exc in tag)
                 for exc in excluded
@@ -522,6 +632,11 @@ def select_next_question(
         if 0 < count < n:
             gain += 0.5
             
+        # Phase 11: Favor high-impact clinical symptoms early
+        high_impact_keywords = ["fever", "pain", "bleed", "vomit", "diarrhea", "swell", "numb", "weak", "breath", "vision"]
+        if any(kw in sym.lower() for kw in high_impact_keywords):
+            gain += 0.3
+            
         if gain > best_gain:
             best_gain = gain
             best_sym = sym
@@ -530,7 +645,7 @@ def select_next_question(
     if not best_sym:
         return None
         
-    reason = f"I'm asking because this helps distinguish {best_diseases[0]} from other possible causes." if best_diseases else "I'm asking to narrow down the possibilities."
+    reason = "I'm asking because it helps narrow down the cause of your symptoms."
         
     return {"symptom": best_sym, "reason": reason}
 
@@ -669,3 +784,77 @@ def build_reasoning_trace(
         "confidence_snapshot": sorted(hypothesis_scores.values(), reverse=True)[:5],
         "patient_context_fields": list((patient_context or {}).keys()),
     }
+
+
+import json
+
+async def evaluate_reasoning_with_llm(
+    patient_context: dict,
+    symptoms: list[str],
+    denied_symptoms: list[str],
+    top_diseases: list[dict],
+    llm_weight: float = 0.35
+) -> list[dict]:
+    from app.services.llm_service import get_llm_response
+    
+    if not top_diseases:
+        return top_diseases
+        
+    prompt = (
+        "You are an expert clinician reviewing an AI diagnostic engine's output.\n"
+        "Your task is to re-rank the top 5 hypotheses based on clinical plausibility, "
+        "strongly penalizing rare diseases unless specific findings demand them. "
+        "Boost common serious conditions if appropriate for age/context.\n\n"
+        f"PATIENT CONTEXT: {json.dumps(patient_context)}\n"
+        f"POSITIVE FINDINGS: {symptoms}\n"
+        f"NEGATIVE FINDINGS: {denied_symptoms}\n\n"
+        "CURRENT BAYESIAN TOP 5:\n"
+    )
+    for idx, d in enumerate(top_diseases[:5]):
+        prompt += f"{idx+1}. {d.get('title', d['id'])} (Score: {d.get('clinical_score', 0):.2f})\n"
+        
+    prompt += (
+        "\nProvide your output strictly in JSON format matching exactly:\n"
+        "{\n"
+        '  "ranking": [\n'
+        '    {"disease_id": "...", "confidence": 0.85, "reason": "..."}\n'
+        "  ],\n"
+        '  "recommended_emergency_level": "routine|urgent|emergency",\n'
+        '  "clinical_notes": "...",\n'
+        '  "contradictions": ["..."]\n'
+        "}\n"
+        "Do not invent new diseases not in the list unless the top 5 are fundamentally impossible. Use 'disease_id' matching the given titles or ids."
+    )
+    
+    try:
+        response, provider = await get_llm_response(
+            query="Evaluate clinical ranking",
+            context=prompt,
+            prefer_online=True,
+            system_prompt="You are an expert clinical reasoning API. Output ONLY valid JSON.",
+            max_tokens=800
+        )
+        
+        json_match = re.search(r'\{.*\}', response.strip(), re.DOTALL)
+        if json_match:
+            data = json.loads(json_match.group(0))
+            llm_ranking = {item.get("disease_id", "").lower(): float(item.get("confidence", 0.0)) for item in data.get("ranking", [])}
+            
+            bayesian_weight = 1.0 - llm_weight
+            for d in top_diseases:
+                title = d.get("title", d["id"]).lower()
+                llm_score = 0.0
+                for k, v in llm_ranking.items():
+                    if k in title or title in k:
+                        llm_score = v
+                        break
+                old_score = float(d.get("clinical_score", 0.0))
+                if llm_score > 0:
+                    d["clinical_score"] = round((old_score * bayesian_weight) + (llm_score * llm_weight), 3)
+                    
+            top_diseases.sort(key=lambda x: x["clinical_score"], reverse=True)
+            logger.info("[LLM Reasoning] Re-ranked candidates using %s.", provider)
+    except Exception as e:
+        logger.error("[LLM Reasoning] Failed or invalid JSON: %s", e)
+        
+    return top_diseases

@@ -129,12 +129,13 @@ router = APIRouter(tags=["chat"])
 # ---------------------------------------------------------------------------
 
 class ChatRequest(BaseModel):
-    message: str = Field(..., min_length=1, max_length=1000)
-    language: str = Field(default="en")
-    top_k: int = Field(default=5, ge=1, le=10)
-    collection: str = Field(default="all")
-    session_id: str = Field(default="")
-    history: list[dict[str, str]] = Field(default=[])
+    message: str = Field(..., description="The user's input message")
+    language: str = Field("en", description="Target language code")
+    top_k: int = Field(5, description="Number of results to retrieve from RAG")
+    collection: str = Field("all", description="ChromaDB collection to search")
+    session_id: str = Field("", description="Unique session identifier for contextual chat")
+    history: list[dict] = Field(default_factory=list, description="Recent conversation history")
+    patient_records: str = Field("", description="Serialized patient medical records context")
     # Phase 4: Patient context from frontend HealthContext.
     # Accepted fields: age, gender, conditions, allergies, medications, village, member_name
     patient_context: dict | None = Field(default=None)
@@ -146,6 +147,7 @@ class ScreeningAnswerRequest(BaseModel):
     session_id: str = Field(..., description="Session ID returned from /chat")
     question_id: str = Field(..., description="The id field from the question object")
     answer: str = Field(..., description="The selected option text")
+    language: str = Field(default="en")
 
 class RetrievedDocument(BaseModel):
     title: str
@@ -161,6 +163,14 @@ class ScreeningQuestion(BaseModel):
     hint: str = ""
     options: list[str]
 
+class HealthcareRecommendation(BaseModel):
+    enabled: bool = False
+    urgency: str = "routine"
+    facility_types: list[str] = ["hospital"]
+    radius: int = 5000
+    title: str = "Nearby Healthcare Facilities"
+    message: str = ""
+
 class ChatResponse(BaseModel):
     risk_level: str
     response: str
@@ -174,10 +184,12 @@ class ChatResponse(BaseModel):
     mode: str = "offline"
     llm_provider: str = "template"
     emergency: dict | None = None
+    healthcare_recommendation: HealthcareRecommendation | None = None
 
     # ── Screening fields ──────────
     screening_mode: bool = False
     screening_complete: bool = False
+    show_risk_level: bool = False
     question_index: int | None = None
     total_questions: int | None = None
     question: ScreeningQuestion | None = None
@@ -194,11 +206,26 @@ def _screening_payload_to_chat_response(
     original_message: str,
     english_message: str,
     processing_time_ms: int,
+    language: str = "en",
 ) -> ChatResponse:
     q_data = payload.get("question")
+    response_text = payload.get("response", "")
+    
+    if language != "en":
+        try:
+            if response_text:
+                response_text = translate_from_english(response_text, language)
+            if q_data:
+                q_data["text"] = translate_from_english(q_data["text"], language)
+                if q_data.get("hint"):
+                    q_data["hint"] = translate_from_english(q_data["hint"], language)
+                q_data["options"] = [translate_from_english(opt, language) for opt in q_data["options"]]
+        except Exception as e:
+            logger.error("[Chat] Translation failed in _screening_payload_to_chat_response: %s", str(e))
+
     return ChatResponse(
         risk_level=payload.get("risk_level", "routine"),
-        response=payload.get("response", ""),
+        response=response_text,
         retrieved_documents=[],
         confidence=payload.get("confidence", 1.0),
         matched_rules=payload.get("matched_rules", []),
@@ -211,6 +238,7 @@ def _screening_payload_to_chat_response(
         emergency=None,
         screening_mode=payload.get("screening_mode", False),
         screening_complete=payload.get("screening_complete", False),
+        show_risk_level=payload.get("show_risk_level", False),
         question_index=payload.get("question_index"),
         total_questions=payload.get("total_questions"),
         question=ScreeningQuestion(
@@ -263,15 +291,29 @@ def _build_emergency_chat_response(
             "If the symptoms worsen, call 104 or 108."
         )
 
+    rec_title = "Nearest Emergency Hospitals" if severity == "CRITICAL" else "Nearby Healthcare Facilities"
+    rec_message = "Please proceed to the nearest emergency hospital immediately." if severity == "CRITICAL" else "Please visit your nearest clinic or hospital soon."
+
     if body.language and body.language != "en":
         try:
             emerg_response = translate_from_english(emerg_response, body.language)
+            rec_title = translate_from_english(rec_title, body.language)
+            rec_message = translate_from_english(rec_message, body.language)
         except Exception:
             logger.error("[Emergency] Back-translation failed:\n%s", traceback.format_exc())
 
     logger.warning(
         "[Chat] EMERGENCY SHORT-CIRCUIT | severity=%s | session=%s | conditions=%s",
         severity, body.session_id, conditions,
+    )
+
+    recommendation = HealthcareRecommendation(
+        enabled=True,
+        urgency=severity.lower(),
+        facility_types=["hospital", "medical_clinic"],
+        radius=10000,
+        title=rec_title,
+        message=rec_message
     )
 
     return ChatResponse(
@@ -287,6 +329,8 @@ def _build_emergency_chat_response(
         mode="offline",
         llm_provider="emergency_template",
         emergency=emergency_result.to_dict(),
+        healthcare_recommendation=recommendation,
+        show_risk_level=True
     )
 
 
@@ -341,12 +385,12 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
     # ── Step 2: Active Screening Controller ───────────────────────────────────
     if body.session_id and is_screening_active(body.session_id):
         session = get_session(body.session_id) or {}
-        payload = get_current_question_payload(body.session_id)
+        payload = await get_current_question_payload(body.session_id)
         processing_time_ms = round((time.time() - t_start) * 1000)
         if payload is not None:
             current_question = payload.get("question", {})
             intent_result = classify_active_screening_message(
-                english_message,
+                normalized_message,
                 session,
                 current_question,
             )
@@ -372,7 +416,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
 
             if intent_result.intent in {INTENT_YES, INTENT_NO, INTENT_NOT_SURE}:
                 clear_controller_prompt(body.session_id)
-                answer_payload = submit_answer(
+                answer_payload = await submit_answer(
                     body.session_id,
                     current_question.get("id", ""),
                     intent_result.normalized_answer or "Not sure",
@@ -381,7 +425,8 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                     answer_payload,
                     original_message,
                     english_message,
-                    processing_time_ms,
+                    int((time.time() - t_start) * 1000),
+                    body.language,
                 )
 
             if intent_result.intent in {INTENT_CONTROLLER_CONTINUE, INTENT_CONTROLLER_START_NEW}:
@@ -391,7 +436,8 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                     controller_payload,
                     original_message,
                     english_message,
-                    processing_time_ms,
+                    int((time.time() - t_start) * 1000),
+                    body.language,
                 )
 
             if intent_result.intent == INTENT_CLARIFICATION_REQUEST:
@@ -401,6 +447,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                     original_message,
                     english_message,
                     processing_time_ms,
+                    body.language,
                 )
 
             if intent_result.intent == INTENT_USER_QUESTION:
@@ -414,6 +461,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                     original_message,
                     english_message,
                     processing_time_ms,
+                    body.language,
                 )
 
             if intent_result.intent == INTENT_STOP_SCREENING:
@@ -436,25 +484,27 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                 )
 
             if intent_result.intent == INTENT_RESTART_SCREENING:
-                restarted = restart_screening(body.session_id)
+                restarted = await restart_screening(body.session_id)
                 restarted["response"] = build_restart_screening_message()
                 return _screening_payload_to_chat_response(
                     restarted,
                     original_message,
                     english_message,
                     processing_time_ms,
+                    body.language,
                 )
 
             if intent_result.intent == INTENT_CHANGE_PATIENT:
                 next_context = dict(session.get("patient_context", {}))
                 next_context.update(intent_result.updated_patient_context or {})
-                restarted = restart_screening(body.session_id, patient_context=next_context)
+                restarted = await restart_screening(body.session_id, patient_context=next_context)
                 restarted["response"] = build_patient_switch_message(next_context)
                 return _screening_payload_to_chat_response(
                     restarted,
                     original_message,
                     english_message,
                     processing_time_ms,
+                    body.language,
                 )
 
             if intent_result.intent == INTENT_NEW_MEDICAL_COMPLAINT:
@@ -475,6 +525,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                         original_message,
                         english_message,
                         processing_time_ms,
+                        body.language,
                     )
 
             payload["response"] = build_general_chat_during_screening_message()
@@ -483,18 +534,19 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                 original_message,
                 english_message,
                 processing_time_ms,
+                body.language,
             )
 
 
     # ── Step 3: Screening Trigger ────────────────────────────────────────────
-    should_screen, detected_symptoms = _should_trigger_screening(english_message)
+    should_screen, detected_symptoms = _should_trigger_screening(normalized_message)
     if body.session_id and not emergency_result.is_emergency and should_screen:
         symptoms = detected_symptoms
         if not symptoms:
-            symptoms = [english_message]
+            symptoms = [normalized_message]
             
         # Get full NLP payload to pass demographic data if any
-        nlp_data = extract_clinical_entities(english_message)
+        nlp_data = extract_clinical_entities(normalized_message)
         
         # Merge NLP age/gender into patient context if found
         if patient_context is None:
@@ -507,7 +559,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
             
         # Phase 4: pass patient_context to clinical reasoning engine
         # Phase 10: Using NLP extracted denied symptoms
-        payload = start_screening(body.session_id, symptoms, patient_context, nlp_data.get("negated_symptoms", []))
+        payload = await start_screening(body.session_id, symptoms, patient_context, nlp_data.get("negated_symptoms", []))
         logger.info("[Chat] Screening started for session %s — %s", body.session_id, symptoms)
         response_text = payload.get("response", "")
         if body.language and body.language != "en" and response_text:
@@ -629,7 +681,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
                     # Medical relevance detected — enter clinical reasoning
                     intent = "clinical_screening"
                     symptoms = reported_findings[:] or detected_symptoms[:] or [english_message]
-                    payload = start_screening(body.session_id, symptoms, patient_context, denied_findings)
+                    payload = await start_screening(body.session_id, symptoms, patient_context, denied_findings)
                     logger.info(
                         "[Chat] Medical intent detected (score=%.3f) → clinical screening | session=%s",
                         top_probe_score, body.session_id,
@@ -692,6 +744,9 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
         raise HTTPException(status_code=500, detail="Triage classification failed.")
 
     # ── LLM Generation ────────────────────────────────────────────────────────
+    if body.patient_records:
+        llm_context = f"{llm_context}\n\n[USER'S MEDICAL RECORDS (USE ONLY IF RELEVANT)]:\n{body.patient_records}"
+
     is_online = await check_connectivity()
     history = body.history
     llm_response_text = ""
@@ -778,42 +833,16 @@ async def screening_answer(body: ScreeningAnswerRequest) -> ChatResponse:
     if body.question_id.startswith("controller:"):
         payload = resolve_controller_prompt(body.session_id, body.answer)
     else:
-        payload = submit_answer(body.session_id, body.question_id, body.answer)
+        payload = await submit_answer(body.session_id, body.question_id, body.answer)
 
     processing_time_ms = round((time.time() - t_start) * 1000)
 
-    docs = [RetrievedDocument(**d) for d in payload.get("retrieved_documents", [])]
-    question_data = payload.get("question")
-
-    return ChatResponse(
-        risk_level=payload.get("risk_level", "routine"),
-        response=payload.get("response", ""),
-        retrieved_documents=docs,
-        confidence=payload.get("confidence", 1.0),
-        matched_rules=payload.get("matched_rules", []),
-        original_message="",
-        english_message="",
-        processing_time_ms=processing_time_ms,
-        disclaimer=payload.get("disclaimer", ""),
-        mode="offline",
-        llm_provider="template",
-        emergency=None,
-        screening_mode=payload.get("screening_mode", False),
-        screening_complete=payload.get("screening_complete", False),
-        question_index=payload.get("question_index"),
-        total_questions=payload.get("total_questions"),
-        question=ScreeningQuestion(
-            id=question_data["id"],
-            text=question_data["text"],
-            hint=question_data.get("hint", ""),
-            options=question_data["options"],
-        ) if question_data else None,
-        reported_symptoms=payload.get("reported_symptoms"),
-        possible_conditions=payload.get("possible_conditions"),
-        primary_condition=payload.get("primary_condition"),
-        running_scores=payload.get("running_scores"),
-        confidence_label=payload.get("confidence_label"),
-        referral_facilities=payload.get("referral_facilities"),
+    return _screening_payload_to_chat_response(
+        payload,
+        "",
+        "",
+        processing_time_ms,
+        body.language,
     )
 
 # ---------------------------------------------------------------------------
@@ -862,6 +891,7 @@ class ImageChatResponse(BaseModel):
     triage: str
     warnings: list[str]
     confidence: str
+    is_medical_record: bool = False
 
 @router.post("/image-chat", response_model=ImageChatResponse, summary="Analyze image with Gemini Vision and answer using RAG")
 async def image_chat(
@@ -885,10 +915,12 @@ async def image_chat(
         
         # Call Gemini Vision Service
         vision_svc = GeminiVisionService.get_instance()
+        warnings = []
         try:
-            description, warnings = await vision_svc.generate_description(
+            description, warnings_list, is_medical_record = await vision_svc.generate_description(
                 image_bytes, image.filename, image.content_type
             )
+            warnings.extend(warnings_list)
         except ValueError as ve:
             logger.warning("[ImageChat] Image validation failed: %s", ve)
             raise HTTPException(status_code=400, detail=str(ve))
@@ -1029,11 +1061,11 @@ async def image_chat(
             answer=final_answer,
             triage=risk_level,
             warnings=warnings,
-            confidence=confidence_str
+            confidence=confidence_str,
+            is_medical_record=is_medical_record
         )
     except HTTPException:
         raise
     except Exception as e:
         logger.error("[ImageChat] Unhandled error during image chat execution: %s", e, exc_info=True)
         raise HTTPException(status_code=500, detail=f"Internal image chat server error: {e}")
-

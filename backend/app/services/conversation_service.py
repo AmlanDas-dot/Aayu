@@ -3,6 +3,16 @@ Conversation helpers for the clinical chat flow.
 
 Keeps the medical reasoning untouched while improving tone, memory, and
 patient-facing phrasing around the existing screening engine.
+
+Phase 11 additions (conversation layer only — no reasoning changes):
+  - Empathetic, position-aware question transitions (11.7, 11.8)
+  - build_transition_before_result()  — warm bridge before the consultation (11.7)
+  - natural_confidence_label()        — human-readable confidence (11.9)
+  - build_patient_answer_summary()    — reflects collected facts back (11.2)
+  - build_why_explanation()           — explains the top diagnosis (11.3)
+  - build_next_steps()                — urgency-aware action list (11.4)
+  - build_red_flags()                 — specialty-relevant warning signs (11.5)
+  - build_continuation_prompt()       — re-opens conversation (11.6)
 """
 
 from __future__ import annotations
@@ -229,10 +239,24 @@ def extract_patient_context_from_message(
             context["allergies"] = _parse_csv_list(match.group("allergies"))
 
     lowered = clean_message.lower()
-    if any(word in lowered for word in ["my child", "my baby", "my son", "my daughter"]):
+    if any(word in lowered for word in ["my child", "my baby", "my son", "my daughter", "my kid"]):
         context.setdefault("relationship", "child")
-    elif "my mother" in lowered or "my father" in lowered or "my grandmother" in lowered or "my grandfather" in lowered:
+        if "son" in lowered: context.setdefault("gender", "male")
+        if "daughter" in lowered: context.setdefault("gender", "female")
+    elif any(word in lowered for word in ["my mother", "my father", "my grandmother", "my grandfather", "my mom", "my dad"]):
         context.setdefault("relationship", "elder_family_member")
+        if any(word in lowered for word in ["father", "grandfather", "dad"]): context.setdefault("gender", "male")
+        if any(word in lowered for word in ["mother", "grandmother", "mom"]): context.setdefault("gender", "female")
+    elif any(word in lowered for word in ["my wife", "my husband", "my spouse", "my partner"]):
+        context.setdefault("relationship", "partner")
+        if "husband" in lowered: context.setdefault("gender", "male")
+        if "wife" in lowered: context.setdefault("gender", "female")
+    elif any(word in lowered for word in ["my brother", "my sister"]):
+        context.setdefault("relationship", "sibling")
+        if "brother" in lowered: context.setdefault("gender", "male")
+        if "sister" in lowered: context.setdefault("gender", "female")
+    elif "my friend" in lowered:
+        context.setdefault("relationship", "friend")
 
     if "pregnan" in lowered or "28 weeks" in lowered or "trimester" in lowered:
         context.setdefault("pregnancy_related", True)
@@ -288,12 +312,31 @@ def explain_symptom_concept(concept: str) -> str:
 
 def personalize_subject(patient_context: dict[str, Any] | None = None) -> str:
     ctx = patient_context or {}
-    if ctx.get("relationship") == "child":
+    rel = str(ctx.get("relationship", "")).lower()
+    if rel == "child":
         return "your child"
-    member_name = str(ctx.get("member_name", "")).strip()
-    if member_name:
-        return member_name
+    member = str(ctx.get("member_name", "")).strip()
+    if member:
+        return member
+    if rel:
+        return f"your {rel.replace('_', ' ')}"
     return "you"
+
+
+def get_pronouns(patient_context: dict[str, Any] | None = None) -> dict[str, str]:
+    ctx = patient_context or {}
+    gender = str(ctx.get("gender", "")).lower()
+    rel = str(ctx.get("relationship", "")).lower()
+    member = str(ctx.get("member_name", "")).strip()
+
+    if not rel and not member:
+        return {"pos": "your", "sub": "you", "obj": "you"}
+
+    if gender == "male":
+        return {"pos": "his", "sub": "he", "obj": "him"}
+    elif gender == "female":
+        return {"pos": "her", "sub": "she", "obj": "her"}
+    return {"pos": "their", "sub": "they", "obj": "them"}
 
 
 def build_screening_intro(patient_context: dict[str, Any] | None = None) -> str:
@@ -324,19 +367,48 @@ def build_screening_intro(patient_context: dict[str, Any] | None = None) -> str:
 def build_question_turn_intro(
     patient_context: dict[str, Any] | None = None,
     question_number: int = 1,
+    total_questions: int = 5,
 ) -> str:
+    """Return a warm, position-aware intro before each screening question."""
     if question_number <= 1:
         return build_screening_intro(patient_context)
-    return (
-        "Thank you. That helps.\n"
-        "I have another short question."
-    )
+
+    is_last = question_number >= total_questions
+
+    import random
+    if is_last:
+        return random.choice([
+            "I know answering several questions can feel like a lot — thank you for your patience. This last one helps me narrow things down further.",
+            "Thank you for bearing with me. This is the last question.",
+            "Almost done. This final question will help me complete the assessment."
+        ])
+
+    if question_number == 2:
+        return random.choice([
+            "Thank you. That helps me a great deal.\nI have just a couple more short questions.",
+            "Got it. That gives me a good starting point.\nLet's go through a few more details.",
+            "I understand. Thank you for sharing that.\nI have a few more questions to help clarify."
+        ])
+
+    if question_number == 3:
+        return random.choice([
+            "Good. I am getting a clearer picture.\nOne more thing I would like to clarify.",
+            "Thank you. That is very helpful.\nLet's check another detail.",
+            "Okay, I am tracking with you.\nJust a few more questions to go."
+        ])
+
+    # question_number == 4 or mid-session default
+    return random.choice([
+        "Almost there.\nJust a couple more things to check.",
+        "Thank you.\nWe are almost finished with these questions.",
+        "That is helpful to know.\nMoving on to the next question."
+    ])
 
 
 def build_active_screening_reminder() -> str:
     return (
         "I am still working through the current assessment.\n"
-        "Please choose the option that fits best below."
+        "Could you please choose the option that fits best below?"
     )
 
 
@@ -357,7 +429,7 @@ def build_stop_screening_message() -> str:
 def build_general_chat_during_screening_message() -> str:
     return (
         "You are welcome.\n"
-        "Whenever you are ready, please answer the current question so I can continue the assessment."
+        "Whenever you are ready, please choose an option so I can continue the assessment."
     )
 
 
@@ -378,7 +450,7 @@ def build_patient_switch_message(patient_context: dict[str, Any] | None = None) 
 def build_question_reason_response(question_hint: str) -> str:
     return (
         f"{question_hint}\n"
-        "Please answer the current question when you are ready."
+        "Please let me know which option fits best."
     )
 
 
@@ -391,7 +463,7 @@ def build_question_clarification_response(current_question: dict[str, Any] | Non
         explanation = explain_symptom_concept(mentioned_reported[0])
         return (
             f"{explanation}\n"
-            "Please answer the current question when you are ready."
+            "Please let me know which option fits best."
         )
     if question_id:
         explanation = explain_symptom_concept(question_id)
@@ -411,7 +483,7 @@ def build_user_question_response(message: str, current_question: dict[str, Any] 
     if "diabetes" in lowered:
         return (
             "In some situations it can, but I would like to finish these short questions first so I can judge whether it fits your symptoms.\n"
-            "Please answer the current question when you are ready."
+            "Whenever you are ready, please choose an option."
         )
     if "why" in lowered:
         hint = str((current_question or {}).get("hint", "")).strip()
@@ -420,7 +492,7 @@ def build_user_question_response(message: str, current_question: dict[str, Any] 
     return (
         "That is a reasonable question.\n"
         "I would like to finish this short assessment first so I can answer more safely in context.\n"
-        "Please answer the current question when you are ready."
+        "Whenever you are ready, please choose an option."
     )
 
 
@@ -434,6 +506,329 @@ def build_closing_line(risk_level: str) -> str:
     if risk_level == "emergency":
         return "Please seek immediate medical care or call 108 now."
     return "Please seek medical care sooner if the symptoms worsen or new symptoms appear."
+
+
+# ---------------------------------------------------------------------------
+# Phase 11 — Consultation layer builders
+# ---------------------------------------------------------------------------
+
+def build_transition_before_result(urgency: str = "") -> str:
+    """Short warm bridge shown just before the final consultation text (11.7)."""
+    if urgency in ("emergency", "high"):
+        return (
+            "Thank you for answering those questions.\n"
+            "I've finished reviewing everything you've shared, and I want to be direct with you about what this might mean."
+        )
+    if urgency == "urgent":
+        return (
+            "Thank you for answering those questions.\n"
+            "I know this might be worrying, and I've carefully reviewed everything you've shared. "
+            "Based on your symptoms and answers, here is my assessment."
+        )
+    return (
+        "Thank you for answering those questions.\n"
+        "I understand this has probably been uncomfortable.\n"
+        "I've finished reviewing everything you've shared, and based on your symptoms and answers, here is my assessment."
+    )
+
+
+def natural_confidence_label(score: float) -> str:
+    """Return a human, non-alarming confidence sentence (11.9)."""
+    if score >= 0.85:
+        return "This appears to be the most likely explanation based on everything you've told me."
+    if score >= 0.65:
+        return (
+            "This is a plausible explanation given your symptoms, though a clinical "
+            "evaluation would help confirm it."
+        )
+    return (
+        "There are a few possible explanations — a doctor's assessment with an "
+        "examination would help clarify which fits best."
+    )
+
+
+def build_patient_answer_summary(
+    reported_symptoms: list[str],
+    answers: dict[str, str],
+) -> str:
+    """
+    Reflect the patient's own reported facts back to them (11.2).
+    Only uses data actually collected — never invents information.
+    """
+    lines: list[str] = ["From our conversation I understand that:"]
+
+    # Initial reported symptoms — always positive
+    for sym in reported_symptoms[:4]:  # cap to avoid wall-of-text
+        display = describe_symptom(sym)
+        lines.append(f"  ✓  {display.capitalize()}")
+
+    # Answered questions
+    for q_id, answer in answers.items():
+        # Do not re-summarize things that were already in reported_symptoms
+        if q_id in reported_symptoms:
+            continue
+        display = describe_symptom(q_id)
+        ans_lower = answer.lower().strip()
+        if ans_lower == "yes":
+            lines.append(f"  ✓  {display.capitalize()}")
+        elif ans_lower == "no":
+            lines.append(f"  ✗  No {display}")
+        # "not sure" → omit (don't add noise)
+
+    if len(lines) == 1:
+        return ""  # nothing to summarise
+
+    return "\n".join(lines)
+
+
+# Red-flag banks keyed by ChromaDB collection name (11.5)
+_RED_FLAGS_BY_COLLECTION: dict[str, list[str]] = {
+    "chronic_diseases": [
+        "Chest pain or tightness",
+        "Sudden severe headache",
+        "Difficulty breathing at rest",
+        "Confusion or sudden disorientation",
+        "Swelling of the face, lips, or tongue",
+    ],
+    "emergency_conditions": [
+        "Loss of consciousness",
+        "Chest pain radiating to the arm or jaw",
+        "Difficulty breathing",
+        "Sudden paralysis or weakness on one side",
+        "Severe uncontrolled bleeding",
+    ],
+    "musculoskeletal": [
+        "Sudden severe swelling of a joint",
+        "Complete inability to move the affected limb",
+        "High fever alongside joint pain",
+        "Severe pain after a fall or injury",
+        "Numbness or tingling down the leg or arm",
+    ],
+    "respiratory_health": [
+        "Difficulty breathing at rest",
+        "Coughing up blood",
+        "Bluish colour around the lips or fingers",
+        "Severe chest pain when breathing",
+        "High fever with rapid breathing",
+    ],
+    "maternal_health": [
+        "Heavy vaginal bleeding",
+        "Severe abdominal cramping",
+        "Sudden severe headache or blurred vision",
+        "Decreased or no foetal movement",
+        "Leaking fluid before 37 weeks",
+    ],
+    "child_health": [
+        "High fever above 39 °C in a child under 3 months",
+        "Refusal to feed or drink",
+        "Sunken eyes, dry mouth, no tears — signs of dehydration",
+        "Difficulty breathing or fast breathing",
+        "Seizures or fits",
+    ],
+    "infectious_diseases": [
+        "Very high fever above 40 °C",
+        "Severe confusion or loss of consciousness",
+        "Rash that spreads rapidly",
+        "Difficulty breathing",
+        "Stiff neck with headache and fever",
+    ],
+    "mental_health": [
+        "Thoughts of harming yourself or others",
+        "Inability to care for yourself",
+        "Complete loss of contact with reality",
+        "Severe panic attacks that do not ease",
+        "Not eating or drinking for more than a day",
+    ],
+    "skin_diseases": [
+        "Rapidly spreading rash",
+        "Rash with high fever and difficulty breathing",
+        "Skin that looks infected — red, hot, swollen, with pus",
+        "Blistering rash near the eyes or mouth",
+        "Anaphylaxis — throat tightness, swelling of the face",
+    ],
+    "water_sanitation": [
+        "Profuse watery diarrhoea with rice-water appearance",
+        "Signs of severe dehydration — no urine, sunken eyes",
+        "Blood in the stool",
+        "High fever with diarrhoea",
+        "Multiple household members falling ill at the same time",
+    ],
+    "nutrition_diseases": [
+        "Sudden severe weakness or inability to stand",
+        "Difficulty breathing",
+        "Chest pain",
+        "Severe confusion",
+        "Rapid swelling of the limbs",
+    ],
+    "elderly_health": [
+        "Sudden confusion or disorientation",
+        "Unexplained fall with inability to stand",
+        "Chest pain or difficulty breathing",
+        "Sudden weakness on one side of the body",
+        "Loss of consciousness",
+    ],
+    "oral_health": [
+        "Difficulty swallowing or breathing due to swelling",
+        "Severe jaw swelling",
+        "High fever with severe facial swelling",
+        "Bleeding that does not stop after 30 minutes",
+        "Numbness spreading beyond the mouth",
+    ],
+    "menstrual_health": [
+        "Soaking more than one pad per hour for two or more hours",
+        "Severe pelvic pain that does not ease with painkillers",
+        "Fainting or extreme dizziness",
+        "Fever above 38.5 °C with pelvic pain",
+        "No period for more than 3 months when not pregnant",
+    ],
+    "mens_health": [
+        "Sudden severe scrotal pain or swelling",
+        "Difficulty urinating with severe pain",
+        "Blood in urine",
+        "Chest pain or difficulty breathing",
+        "Loss of consciousness",
+    ],
+    "substance_abuse": [
+        "Seizures during withdrawal",
+        "Severe confusion or hallucinations",
+        "Difficulty breathing",
+        "Loss of consciousness",
+        "Rapid irregular heartbeat",
+    ],
+}
+
+_DEFAULT_RED_FLAGS = [
+    "Chest pain or difficulty breathing",
+    "High fever above 39 °C",
+    "Sudden severe weakness or confusion",
+    "Uncontrolled bleeding",
+    "Loss of consciousness",
+]
+
+
+def build_red_flags(collection: str, urgency: str = "", disease_warning_signs: list[str] = None) -> str:
+    """
+    Return a formatted red-flags paragraph relevant to the disease category (11.5).
+    Falls back to universal flags if the collection is not recognised.
+    """
+    flags = disease_warning_signs
+    if not flags:
+        flags = _RED_FLAGS_BY_COLLECTION.get(collection, _DEFAULT_RED_FLAGS)
+
+    # Add emergency breathing/consciousness flags for urgent/emergency urgency level
+    if urgency in ("high", "emergency") and flags is not _DEFAULT_RED_FLAGS and not disease_warning_signs:
+        emergency_additions = [
+            f for f in ["Difficulty breathing", "Loss of consciousness"]
+            if f not in flags
+        ]
+        flags = list(flags) + emergency_additions
+
+    lines = ["Please seek urgent medical care immediately if you notice any of the following:"]
+    for flag in flags[:5]:
+        display_flag = flag.strip()
+        if display_flag:
+            display_flag = display_flag[0].upper() + display_flag[1:]
+            lines.append(f"  \u2022 {display_flag}")
+    return "\n".join(lines)
+
+
+
+def build_next_steps(risk_level: str, actions: list[str]) -> str:
+    """
+    Return urgency-appropriate next steps (11.4).
+    Reuses existing urgency logic from calculate_result().
+    """
+    if risk_level == "emergency":
+        return (
+            "What to do now:\n"
+            "  • Seek emergency care immediately\n"
+            "  • Call 108 or go to the nearest emergency room\n"
+            "  • Keep the person as calm and still as possible\n"
+            "  • Do not eat or drink anything until seen by a doctor"
+        )
+
+    if risk_level == "urgent":
+        lines = ["What to do now:"]
+        lines.append("  • Visit a doctor or clinic today — please do not wait")
+        lines.append("  • If symptoms worsen, call 108 immediately")
+        for action in actions[:2]:
+            cleaned = action.strip().rstrip(".")
+            if cleaned and len(cleaned) > 10:
+                lines.append(f"  • {cleaned}")
+        return "\n".join(lines)
+
+    # Routine
+    lines = ["Suggested next steps:"]
+    added = 0
+    for action in actions[:3]:
+        cleaned = action.strip().rstrip(".")
+        if cleaned and len(cleaned) > 10:
+            lines.append(f"  • {cleaned}")
+            added += 1
+    if added == 0:
+        lines.append("  • Rest and avoid activities that worsen the symptoms")
+        lines.append("  • Stay hydrated and monitor how you feel")
+    lines.append("  • See a doctor if the symptoms worsen or do not improve after a few days")
+    return "\n".join(lines)
+
+
+def build_why_explanation(
+    top_disease: dict[str, Any],
+    reported_symptoms: list[str],
+    answers: dict[str, str] = None,
+) -> str:
+    """
+    Explain in plain language why the top condition is being suggested (11.3).
+    """
+    name = top_disease.get("title", top_disease.get("id", "this condition"))
+    ans = answers or {}
+    
+    matched = [describe_symptom(s) for s in reported_symptoms[:3]]
+    yes_answers = [describe_symptom(k) for k, v in ans.items() if v.lower() == "yes"]
+    no_answers = [describe_symptom(k) for k, v in ans.items() if v.lower() == "no"]
+
+    unique_positives = []
+    for p in matched + yes_answers:
+        if p not in unique_positives:
+            unique_positives.append(p)
+            
+    parts = []
+    if unique_positives:
+        if len(unique_positives) == 1:
+            sym_str = unique_positives[0]
+        else:
+            sym_str = ", ".join(unique_positives[:-1]) + f" and {unique_positives[-1]}"
+        parts.append(f"Based on our clinical reasoning engine, which prioritises the most likely and urgent conditions for your specific profile, {name} is being considered. This is primarily because you mentioned {sym_str}")
+        
+    if no_answers:
+        if len(no_answers) == 1:
+            no_str = no_answers[0]
+        else:
+            no_str = ", ".join(no_answers[:-1]) + f" or {no_answers[-1]}"
+        if parts:
+            parts.append(f"while there are no signs of {no_str}")
+        else:
+            parts.append(f"Because there are no signs of {no_str}")
+            
+    if not parts:
+        return f"The pattern of your symptoms aligns with how {name} typically presents."
+        
+    reason = " ".join(parts)
+    return f"{reason}, {name} is being considered."
+
+
+def build_continuation_prompt(
+    condition_name: str,
+    risk_level: str,
+) -> str:
+    """
+    End with a natural, open invitation to continue the conversation (11.6).
+    Returns the chatbot to normal chat mode.
+    """
+    if risk_level in ("urgent", "emergency"):
+        return "Would you like to know what to expect when you see a doctor?"
+        
+    return f"Would you like me to explain {condition_name} in simple language, or would you prefer home-care advice?"
 
 
 def classify_active_screening_message(

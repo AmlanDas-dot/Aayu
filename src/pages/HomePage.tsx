@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AayuSidebar } from "@/components/navigation/AayuSidebar";
+import { AccountDropdown } from "@/components/navigation/AccountDropdown";
 import "@/aayu-home.css";
 
 import logoHeart from "@/assets/logo-heart.png";
@@ -43,20 +44,13 @@ export function HomePage() {
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
 
-                        <div className="profile">
+                        <div className="profile" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                             <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
                                 <i className="fa-solid fa-globe"></i>
                                 <span>English</span>
                                 <i className="fa-solid fa-chevron-down"></i>
                             </div>
-                            <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
-                                <i className="fa-solid fa-gear"></i>
-                            </div>
-                            <div className="profile-item" onClick={() => navigate('/settings')} style={{ cursor: 'pointer' }}>
-                                <i className="fa-regular fa-user"></i>
-                                <span>My Account</span>
-                                <i className="fa-solid fa-chevron-down"></i>
-                            </div>
+                            <AccountDropdown />
                         </div>
 
                     </div>

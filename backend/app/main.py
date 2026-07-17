@@ -53,6 +53,7 @@ from app.routers.chat import router as chat_router
 from app.routers.nutrition import router as nutrition_router
 from app.routers.schemes import router as schemes_router
 from app.routers.hospitals import router as hospitals_router
+from app.routers.records import router as records_router
 import httpx
 
 logger = logging.getLogger(__name__)
@@ -190,6 +191,7 @@ app.include_router(chat_router)
 app.include_router(nutrition_router)
 app.include_router(schemes_router)
 app.include_router(hospitals_router)
+app.include_router(records_router)
 
 
 # --------------------------------------------------------------------------- #

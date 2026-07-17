@@ -41,7 +41,10 @@ export interface ChatRequest {
   message: string;
   language?: string;
   top_k?: number;
-  collection?: string;
+  collection?: CollectionName;
+  session_id?: string;
+  history?: any[];
+  patient_records?: string;
 }
 
 export interface ChatApiResponse {
