@@ -16,10 +16,13 @@
 ![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?style=flat-square&logo=google&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-22c55e?style=flat-square)
 ![Version](https://img.shields.io/badge/Version-2.0.0--mvp-8b5cf6?style=flat-square)
+![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=flat-square)
 
 </div>
 
 ---
+
+> **Source Availability** — AAYU is publicly available to demonstrate software engineering, system architecture, and AI integration. The source code is shared for transparency and evaluation purposes only. Public availability does not grant permission to reuse, redistribute, or commercially exploit the project.
 
 ## Overview
 
@@ -335,15 +338,11 @@ firebase deploy --only storage:rules
 
 ## Contributing
 
-Contributions are welcome. Please follow these steps:
+This project is not accepting general open-source contributions at this time. Collaboration is welcome by invitation or prior discussion.
 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Make your changes, including tests where applicable.
-4. Ensure the frontend builds without errors: `npm run build`
-5. Open a Pull Request with a clear description of the change and its motivation.
-
-Please keep PRs focused. Large, wide-ranging changes should be discussed in an issue first.
+- If you have found a bug or have a suggestion, please open a GitHub Issue.
+- If you are interested in contributing code, please open an issue describing the change before submitting a Pull Request.
+- Commercial use or deployment of any part of this project requires explicit written permission from the author.
 
 ---
 
@@ -377,28 +376,24 @@ AAYU is built on the shoulders of the following technologies and their communiti
 
 ## License
 
-This project is licensed under the **MIT License**.
+Copyright &copy; 2026 Amlan Das. All Rights Reserved.
 
-```
-MIT License
+This repository is publicly available for **viewing, evaluation, and educational reference**.
 
-Copyright (c) 2026 Amlan Das
+Unless explicitly authorized in writing by the copyright holder, you may **not**:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+- Copy substantial portions of the source code.
+- Modify or create derivative works.
+- Redistribute the project or any part of it.
+- Deploy the software for personal or organizational use.
+- Use any part of this project for commercial purposes.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+If you are interested in collaborating, licensing the software, or using parts of this project, please contact the author directly via GitHub.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+---
+
+<div align="center">
+
+Copyright &copy; 2026 Amlan Das. All Rights Reserved.
+
+</div>
