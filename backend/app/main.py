@@ -18,13 +18,7 @@ Services loaded at startup (minimal VRAM):
 Future architecture plug-in points:
   Voice → STT → IndicTrans2 → ChromaDB → Triage Engine → Ollama → Response
 """
-#===========TEMP ADDITION===========#
-import sys
 
-print("=" * 60)
-print(sys.executable)
-print("=" * 60)
-#===========TEMP ADDITION===========#
 
 import logging
 import time
@@ -36,12 +30,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parents[1]
 load_dotenv(BASE_DIR / ".env")
 
-#========================REMOVE THIS==============================#
-print("=" * 60)
-print("Loaded .env from:", BASE_DIR / ".env")
-print("SARVAM_API_KEY:", os.getenv("SARVAM_API_KEY"))
-print("=" * 60)
-#========================REMOVE THIS==============================#
+
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -54,6 +43,8 @@ from app.routers.nutrition import router as nutrition_router
 from app.routers.schemes import router as schemes_router
 from app.routers.hospitals import router as hospitals_router
 from app.routers.records import router as records_router
+from app.routers.alerts import router as alerts_router
+from app.routers.recovery import router as recovery_router
 import httpx
 
 logger = logging.getLogger(__name__)
@@ -73,6 +64,40 @@ async def lifespan(app: FastAPI):
     _banner("AAYU Backend Starting")
 
     t_start = time.time()
+
+    # ── External APIs Validation ───────────────────────────────────────────
+    logger.info("┌─ External APIs & Services")
+    try:
+        from app.services.firebase_service import get_firestore_client
+        if get_firestore_client():
+            logger.info("│  ✓ Firebase Admin authenticated")
+        else:
+            logger.warning("│  ⚠ Firebase Admin failed to initialize")
+            
+        import os
+        if os.getenv("GEMINI_API_KEY"):
+            logger.info("│  ✓ Gemini API Key present")
+        else:
+            logger.warning("│  ⚠ Gemini API Key missing (AI services degraded)")
+            
+        if os.getenv("WEATHERAPI_KEY"):
+            logger.info("│  ✓ Weather API Key present")
+        else:
+            logger.warning("│  ⚠ Weather API Key missing (mock data will be used)")
+            
+        if os.getenv("NEWSDATA_API_KEY"):
+            logger.info("│  ✓ News API Key present")
+        else:
+            logger.warning("│  ⚠ News API Key missing (mock data will be used)")
+            
+        if os.getenv("VITE_GOOGLE_MAPS_API_KEY"):
+            logger.info("│  ✓ Google Maps API Key present")
+        else:
+            logger.warning("│  ⚠ Google Maps API Key missing")
+            
+    except Exception as exc:
+        logger.error("│  ✗ External API validation failed: %s", exc)
+    logger.info("└──────────────────────────────")
 
     # ── Vector DB + Embedding Model ─────────────────────────────────────────
     logger.info("┌─ Vector Database")
@@ -125,7 +150,17 @@ async def lifespan(app: FastAPI):
         logger.error("│  ✗ BM25 init failed: %s", exc)
     logger.info("└──────────────────────────────")
 
-    # ── Lazy-Loaded Services ─────────────────────────────────────────────────
+    # ── Alerts Scheduler ─────────────────────────────────────────────────────
+    logger.info("┌─ Public Health Intelligence")
+    try:
+        from app.services.alert_scheduler import AlertScheduler
+        AlertScheduler.start()
+        logger.info("│  ✓ Alert Scheduler started")
+    except Exception as exc:
+        logger.error("│  ✗ Alert Scheduler failed: %s", exc)
+    logger.info("└──────────────────────────────")
+
+    # ── Ready ─────────────────────────────────────────────────────────────────
     logger.info("┌─ Lazy-Loaded Services (zero VRAM until first request)")
     logger.info("│  ◌ IndicTrans2 .......... loads on first non-English audio")
     logger.info("└──────────────────────────────")
@@ -134,6 +169,14 @@ async def lifespan(app: FastAPI):
     _banner(f"AAYU Backend Ready  ({elapsed}s)")
 
     yield
+
+    try:
+        from app.services.alert_scheduler import AlertScheduler
+        AlertScheduler.stop()
+    except Exception as exc:
+        pass
+
+    _banner("AAYU Backend Shutdown Complete")
 
     logger.info("=" * 44)
     logger.info("  AAYU Backend shutting down.")
@@ -185,19 +228,22 @@ app.add_middleware(
 # Routers
 # --------------------------------------------------------------------------- #
 
-app.include_router(transcribe_router)
-app.include_router(search_router)
-app.include_router(chat_router)
-app.include_router(nutrition_router)
-app.include_router(schemes_router)
-app.include_router(hospitals_router)
-app.include_router(records_router)
+app.include_router(transcribe_router, prefix="/api")
+app.include_router(search_router, prefix="/api")
+app.include_router(chat_router, prefix="/api")
+app.include_router(nutrition_router, prefix="/api")
+app.include_router(schemes_router, prefix="/api", tags=["Schemes"])
+app.include_router(hospitals_router, prefix="/api", tags=["Hospitals"])
+app.include_router(records_router, prefix="/api", tags=["Records"])
+app.include_router(alerts_router, prefix="/api/alerts", tags=["Alerts"])
+app.include_router(recovery_router, prefix="/api/recovery", tags=["Recovery"])
 
 
 # --------------------------------------------------------------------------- #
 # Health check
 # --------------------------------------------------------------------------- #
 
+@app.get("/api/", tags=["health"])
 @app.get("/", tags=["health"])
 def root():
     return {
@@ -205,63 +251,21 @@ def root():
         "service": "AAYU Backend",
         "version": "0.4.0",
         "endpoints": {
-            "chat": "POST /chat",
-            "transcribe": "POST /transcribe",
-            "search_get": "GET /search?q=",
-            "search_post": "POST /search",
-            "search_collections": "GET /search/collections",
-            "search_status": "GET /search/status",
-            "nutrition_all": "GET /nutrition",
-            "nutrition_search": "GET /nutrition/search?q=",
-            "nutrition_food": "GET /nutrition/food/{name}",
-            "nutrition_diet": "GET /nutrition/diet-plan/{goal}",
-            "schemes_all": "GET /schemes",
-            "schemes_search": "GET /schemes/search?q=",
-            "schemes_by_name": "GET /schemes/{name}",
+            "chat": "POST /api/chat",
+            "transcribe": "POST /api/transcribe",
+            "search_get": "GET /api/search?q=",
+            "search_post": "POST /api/search",
         },
     }
 
 
+@app.get("/api/health", tags=["health"])
 @app.get("/health", tags=["health"])
 async def health_check():
-    """Detailed health check including ChromaDB, model status, and connectivity."""
-    from app.services.indexer import get_index_status
-    from app.services.translation_service import get_model_status, is_model_loaded
-    from app.services.nutrition_service import NutritionService
-    from app.services.schemes_service import SchemesService
-    from app.services.llm_service import check_connectivity, OLLAMA_BASE_URL, OPENAI_API_KEY
-
-    is_online = await check_connectivity()
-
-    # Check Ollama
-    ollama_status = "unavailable"
+    """Detailed health check for all platform services."""
     try:
-        async with httpx.AsyncClient(timeout=2.0) as client:
-            r = await client.get(f"{OLLAMA_BASE_URL}/api/tags")
-            ollama_status = "running" if r.status_code == 200 else "error"
-    except Exception:
-        pass
-
-    return {
-        "status": "healthy",
-        "knowledge_base": get_index_status(),
-        "translation": {
-            "state": get_model_status(),
-            "loaded": is_model_loaded(),
-            "note": "Lazy — loads on first non-English transcription",
-        },
-        "nutrition": {
-            "loaded": True,
-            "food_items": NutritionService.get_instance().count,
-        },
-        "schemes": {
-            "loaded": True,
-            "scheme_count": SchemesService.get_instance().count,
-        },
-        "connectivity": "online" if is_online else "offline",
-        "llm": {
-            "preferred": "openai" if is_online and OPENAI_API_KEY else "ollama",
-            "ollama": ollama_status,
-            "openai": "configured" if OPENAI_API_KEY else "no_key",
-        },
-    }
+        from app.services.system_health import get_system_health
+        return await get_system_health()
+    except Exception as e:
+        import traceback
+        return {"error": str(e), "traceback": traceback.format_exc()}

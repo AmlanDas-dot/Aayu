@@ -7,15 +7,23 @@ import logging
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
+UPLOAD_DIR = os.getenv("UPLOAD_DIR", tempfile.gettempdir())
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
 @router.post("/transcribe")
 async def transcribe_audio_route(
     file: UploadFile = File(...), 
     language: str = Form("en")
 ):
+    if not file.filename.endswith(".webm"):
+        # We'll just warn but continue in case other formats are passed
+        pass
+
     logger.info(f"Received file for transcription, language: {language}")
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as temp:
-        temp.write(await file.read())
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".webm", dir=UPLOAD_DIR) as temp:
+        content = await file.read()
+        temp.write(content)
         temp_path = temp.name
 
     try:

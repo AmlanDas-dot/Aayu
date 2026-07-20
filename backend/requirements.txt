@@ -6,6 +6,9 @@ chromadb
 rank-bm25
 httpx
 google-generativeai
+google-genai
 transformers
 torch
 IndicTransToolkit
+firebase-admin
+apscheduler

@@ -95,11 +95,10 @@ _SCREENING_EXPLICIT_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-def _should_trigger_screening(text: str) -> tuple[bool, list[str]]:
+def _should_trigger_screening(text: str, nlp_payload: dict) -> tuple[bool, list[str]]:
     # Always trigger if they explicitly ask for a screening
     is_explicit = bool(_SCREENING_EXPLICIT_PATTERN.search(text))
     
-    nlp_payload = extract_clinical_entities(text)
     symptoms = nlp_payload.get("symptoms", [])
     
     if is_explicit or symptoms:
@@ -539,15 +538,14 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
 
 
     # ── Step 3: Screening Trigger ────────────────────────────────────────────
-    should_screen, detected_symptoms = _should_trigger_screening(normalized_message)
+    # Phase 4: NLP extraction is now async and happens once
+    nlp_data = await extract_clinical_entities(normalized_message)
+    should_screen, detected_symptoms = _should_trigger_screening(normalized_message, nlp_data)
     if body.session_id and not emergency_result.is_emergency and should_screen:
         symptoms = detected_symptoms
         if not symptoms:
             symptoms = [normalized_message]
             
-        # Get full NLP payload to pass demographic data if any
-        nlp_data = extract_clinical_entities(normalized_message)
-        
         # Merge NLP age/gender into patient context if found
         if patient_context is None:
             patient_context = {}
