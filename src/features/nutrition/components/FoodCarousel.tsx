@@ -59,8 +59,8 @@ export function FoodCarousel() {
         {loading ? (
           <div style={{ padding: '20px', color: '#64748b' }}>Searching foods...</div>
         ) : foods.length > 0 ? (
-          foods.map((f) => (
-            <div key={f.id} className="local-food-card">
+          foods.map((f, i) => (
+            <div key={`${f.id}-${i}`} className="local-food-card">
               <div className="local-food-icon">🍏</div>
               <div className="local-food-name">{f.display_name}</div>
               <div className="local-food-cal" style={{fontSize: "0.8rem", color: "#64748b", marginTop: "4px"}}>{f.guidance.substring(0, 40)}...</div>

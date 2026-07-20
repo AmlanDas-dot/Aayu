@@ -1,0 +1,225 @@
+import { db } from "@/firebase/firebase";
+import { collection, doc, getDoc, getDocs, setDoc, updateDoc, addDoc, query, orderBy, serverTimestamp, limit, where } from "firebase/firestore";
+import { sendChatMessage } from "./api";
+
+// Types
+export interface RecoveryProfile {
+  uid: string;
+  type: string;
+  duration: string;
+  frequency: string;
+  lastUse: string;
+  motivation: string;
+  primaryTrigger: string;
+  stressLevel: number;
+  sleep: string;
+  medicalConditions: string;
+  supportSystem: string;
+  goal: string;
+  score: number;
+  startDate: string;
+  lastRelapse: string | null;
+  cravings: number;
+  resisted: number;
+  relapses: number;
+  status: "Not Started" | "Active" | "Relapsed" | "Recovered";
+}
+
+export interface RecoveryJournal {
+  id?: string;
+  entry: string;
+  mood: number;
+  sentiment: string;
+  aiInsight: string;
+  riskLevel: string;
+  timestamp: string;
+}
+
+export interface RecoveryMission {
+  id: string;
+  text: string;
+  category: "Physical" | "Mental" | "Habit";
+  completed: boolean;
+  date: string;
+}
+
+export interface RecoveryHabit {
+  id: string;
+  label: string;
+  days: number;
+  lastUpdated: string;
+  icon: string;
+  bg: string;
+}
+
+export const getRecoveryProfile = async (uid: string): Promise<RecoveryProfile | null> => {
+  try {
+    const docRef = doc(db, `users/${uid}/recovery/profile`);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return docSnap.data() as RecoveryProfile;
+    }
+    return null;
+  } catch (error) {
+    console.error("Error fetching recovery profile:", error);
+    return null;
+  }
+};
+
+export const startRecoveryJourney = async (uid: string, data: Partial<RecoveryProfile>): Promise<void> => {
+  const profileRef = doc(db, `users/${uid}/recovery/profile`);
+  
+  const initialProfile: RecoveryProfile = {
+    uid,
+    type: data.type || "Other",
+    duration: data.duration || "",
+    frequency: data.frequency || "",
+    lastUse: data.lastUse || new Date().toISOString(),
+    motivation: data.motivation || "",
+    primaryTrigger: data.primaryTrigger || "",
+    stressLevel: data.stressLevel || 5,
+    sleep: data.sleep || "",
+    medicalConditions: data.medicalConditions || "",
+    supportSystem: data.supportSystem || "",
+    goal: data.goal || "",
+    score: 10,
+    startDate: new Date().toISOString(),
+    lastRelapse: null,
+    cravings: 0,
+    resisted: 0,
+    relapses: 0,
+    status: "Active"
+  };
+
+  await setDoc(profileRef, initialProfile);
+
+  // Generate initial missions
+  await generateDailyMissions(uid);
+  
+  // Generate initial habits
+  const habitsRef = collection(db, `users/${uid}/recovery/habits`);
+  await setDoc(doc(habitsRef, "habit-1"), { id: "habit-1", label: "Smoke-Free", days: 1, lastUpdated: new Date().toISOString(), icon: "Flame", bg: "#fef2f2" });
+  await setDoc(doc(habitsRef, "habit-2"), { id: "habit-2", label: "Hydration", days: 1, lastUpdated: new Date().toISOString(), icon: "Droplets", bg: "#f0f9ff" });
+};
+
+export const getRecoveryMissions = async (uid: string): Promise<RecoveryMission[]> => {
+  const today = new Date().toISOString().split('T')[0];
+  const q = query(collection(db, `users/${uid}/recovery/missions`), where("date", "==", today));
+  const snap = await getDocs(q);
+  
+  if (snap.empty) {
+    await generateDailyMissions(uid);
+    return getRecoveryMissions(uid);
+  }
+
+  return snap.docs.map(d => d.data() as RecoveryMission);
+};
+
+export const generateDailyMissions = async (uid: string) => {
+  const today = new Date().toISOString().split('T')[0];
+  const missionsRef = collection(db, `users/${uid}/recovery/missions`);
+  
+  const missions: RecoveryMission[] = [
+    { id: `m1-${today}`, text: "Drink 2 liters of water", category: "Habit", completed: false, date: today },
+    { id: `m2-${today}`, text: "Write a journal entry about your triggers today", category: "Mental", completed: false, date: today },
+    { id: `m3-${today}`, text: "Take a 15-minute walk outside", category: "Physical", completed: false, date: today }
+  ];
+
+  for (const m of missions) {
+    await setDoc(doc(missionsRef, m.id), m);
+  }
+};
+
+export const toggleMissionStatus = async (uid: string, missionId: string, currentStatus: boolean) => {
+  const docRef = doc(db, `users/${uid}/recovery/missions/${missionId}`);
+  await updateDoc(docRef, { completed: !currentStatus });
+};
+
+export const getRecoveryHabits = async (uid: string): Promise<RecoveryHabit[]> => {
+  const snap = await getDocs(collection(db, `users/${uid}/recovery/habits`));
+  return snap.docs.map(d => d.data() as RecoveryHabit);
+};
+
+export const logJournalAndMood = async (uid: string, mood: number, journal: string): Promise<any> => {
+  try {
+    // 1. Get AI insight
+    let sentiment = "neutral";
+    let aiInsight = "Thank you for sharing your thoughts.";
+    let riskLevel = "Low";
+
+    try {
+      const prompt = `Act as an empathetic behavioral health AI. The user's mood today is ${mood}/100. They wrote this journal: "${journal}". Respond with JSON containing: {"sentiment": "positive|neutral|negative", "insight": "a short 2 sentence encouraging insight", "riskLevel": "Low|Medium|High"}`;
+      const chatRes = await sendChatMessage({ message: prompt, top_k: 1, language: "en" });
+      
+      // Parse JSON from chatRes.response
+      const match = chatRes.response.match(/\{[\s\S]*\}/);
+      if (match) {
+        const parsed = JSON.parse(match[0]);
+        sentiment = parsed.sentiment || "neutral";
+        aiInsight = parsed.insight || aiInsight;
+        riskLevel = parsed.riskLevel || "Low";
+      }
+    } catch (aiErr) {
+      console.warn("AI parsing failed, using fallbacks.", aiErr);
+    }
+
+    // 2. Save Mood
+    await addDoc(collection(db, `users/${uid}/recovery/moods`), {
+      score: mood,
+      timestamp: serverTimestamp()
+    });
+
+    // 3. Save Journal
+    const journalData = {
+      entry: journal,
+      mood,
+      sentiment,
+      aiInsight,
+      riskLevel,
+      timestamp: new Date().toISOString()
+    };
+    await addDoc(collection(db, `users/${uid}/recovery/journals`), journalData);
+    
+    // 4. Update Profile Score slightly if positive mood
+    const profile = await getRecoveryProfile(uid);
+    if (profile) {
+      const newScore = Math.min(100, profile.score + (mood > 50 ? 2 : 0));
+      await updateDoc(doc(db, `users/${uid}/recovery/profile`), { score: newScore });
+    }
+
+    return { sentiment, ai_insight: aiInsight, risk_level: riskLevel };
+  } catch (error) {
+    console.error("Journal log failed:", error);
+    throw error;
+  }
+};
+
+export const logRelapse = async (uid: string) => {
+  const profile = await getRecoveryProfile(uid);
+  if (!profile) return;
+
+  const newScore = Math.max(0, profile.score - 15);
+  await updateDoc(doc(db, `users/${uid}/recovery/profile`), {
+    score: newScore,
+    relapses: profile.relapses + 1,
+    lastRelapse: new Date().toISOString(),
+    status: "Relapsed"
+  });
+};
+
+export const getRecoveryTrends = async (uid: string) => {
+  const q = query(collection(db, `users/${uid}/recovery/moods`), orderBy("timestamp", "asc"), limit(7));
+  const snap = await getDocs(q);
+  
+  const trends: any[] = [];
+  snap.docs.forEach((docSnap, i) => {
+    const data = docSnap.data();
+    trends.push({
+      day: `Day ${i + 1}`,
+      mood: data.score,
+      score: 50 + (i * 5) // Proxy historical score for demo
+    });
+  });
+  
+  return trends;
+};

@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { APIProvider, Map, AdvancedMarker, Pin } from "@vis.gl/react-google-maps";
+import { LiveAlertsSidebar } from "@/components/dashboard/LiveAlertsSidebar";
 import { AayuSidebar } from "@/components/navigation/AayuSidebar";
 import { AccountDropdown } from "@/components/navigation/AccountDropdown";
 import "@/aayu-home.css";
@@ -25,6 +27,13 @@ import StepConsult from "@/assets/step_consult.png";
 export function HomePage() {
     const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(true);
+    const [mapCenter, setMapCenter] = useState({ lat: 19.816389349047885, lng: 85.83363572524317 });
+    const [mapZoom, setMapZoom] = useState(13);
+
+    const handleAlertClick = useCallback((lat: number, lng: number) => {
+        setMapCenter({ lat, lng });
+        setMapZoom(15);
+    }, []);
 
 
     return (
@@ -201,8 +210,23 @@ export function HomePage() {
                                     </div>
 
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: 0, minWidth: '320px', flex: 1, alignSelf: 'stretch' }}>
-                                        <div className="map-card" style={{ flex: 1, borderRadius: '20px 20px 0 0' }}>
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15489.039243794621!2d85.83363572524317!3d19.816389349047885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20%26%20clinics%20in%20puri!5e0!3m2!1sen!2sin!4v1781807694205!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                        <div className="map-card" style={{ flex: 1, borderRadius: '20px 20px 0 0', overflow: 'hidden' }}>
+                                            <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY_HERE'}>
+                                                <Map 
+                                                    defaultCenter={mapCenter} 
+                                                    center={mapCenter}
+                                                    defaultZoom={mapZoom} 
+                                                    zoom={mapZoom}
+                                                    mapId={import.meta.env.VITE_GOOGLE_MAP_ID || 'DEMO_MAP_ID'}
+                                                    onCenterChanged={(e) => setMapCenter(e.detail.center)}
+                                                    onZoomChanged={(e) => setMapZoom(e.detail.zoom)}
+                                                    disableDefaultUI={true}
+                                                >
+                                                    <AdvancedMarker position={mapCenter}>
+                                                        <Pin background={"#ef4444"} borderColor={"#b91c1c"} glyphColor={"#fff"} />
+                                                    </AdvancedMarker>
+                                                </Map>
+                                            </APIProvider>
                                         </div>
                                         <div style={{ background: 'white', borderRadius: '0 0 20px 20px', border: '1px solid #e5e7eb', borderTop: 'none', padding: '16px 18px', boxShadow: '0 5px 20px rgba(0,0,0,.04)' }}>
                                             <div className="healthcare-item">
@@ -228,106 +252,7 @@ export function HomePage() {
 
                             </div>
 
-                        </div>
 
-                        {/*  RIGHT SIDE  */}
-
-                        <aside className="right-panel">
-
-                            <div className="alerts-panel">
-
-                                <div className="panel-header">
-                                    <div className="panel-title">
-                                        <i className="fa-solid fa-circle-exclamation"></i>
-                                        <span>Health Alerts</span>
-                                    </div>
-                                    <span className="panel-link" style={{ cursor: 'pointer' }}>View all</span>
-                                </div>
-
-                                <div className="featured-alert">
-                                    <div className="featured-top">
-                                        <h4>Dengue cases rising in some districts</h4>
-                                        <span className="pill high">HIGH ALERT</span>
-                                    </div>
-
-                                    <p>
-                                        Stay safe and follow preventive measures. Use mosquito
-                                        repellents and keep surroundings clean.
-                                    </p>
-
-                                    <button className="featured-action">
-                                        See Advisory →
-                                    </button>
-                                </div>
-
-                                <div className="stack-card">
-                                    <div className="stack-icon blue">
-                                        <i className="fa-solid fa-circle-check"></i>
-                                    </div>
-                                    <div className="stack-copy">
-                                        <div className="stack-row">
-                                            <h5>Seasonal Flu</h5>
-                                            <span className="pill seasonal">SEASONAL</span>
-                                        </div>
-                                        <p>Cases tracking in some areas.</p>
-                                    </div>
-                                </div>
-
-                                <div className="stack-card">
-                                    <div className="stack-icon yellow">
-                                        <i className="fa-solid fa-sun"></i>
-                                    </div>
-                                    <div className="stack-copy">
-                                        <div className="stack-row">
-                                            <h5>Heat Wave Advisory</h5>
-                                            <span className="pill heat">HEAT</span>
-                                        </div>
-                                        <p>Stay hydrated and avoid direct sunlight.</p>
-                                    </div>
-                                </div>
-
-                                <div className="notify-card">
-                                    <div className="notify-copy">
-                                        <i className="fa-solid fa-bell"></i>
-                                        <div>
-                                            <h5>Enable notifications</h5>
-                                            <p>Get timely alerts and updates</p>
-                                        </div>
-                                    </div>
-                                    <div className="toggle"></div>
-                                </div>
-                            </div>
-
-                            <div className="health-banner">
-
-                                <h3>Stay Ahead,<br />Stay Healthy!</h3>
-
-                                <p>
-                                    Real-time updates on seasonal alerts and important
-                                    health news.
-                                </p>
-
-                                <button>
-                                    View All Updates →
-                                </button>
-
-                            </div>
-
-                            <div className="why-panel">
-
-                                <h3>Why AAYU?</h3>
-
-                                <ul>
-                                    <li>Verified medical knowledge from trusted sources</li>
-                                    <li>Voice based interaction for everyone</li>
-                                    <li>Works offline, your health always with you</li>
-                                </ul>
-
-                            </div>
-
-                        </aside>
-
-                    </div>
 
                     {/*  AI SCREENING & GUIDANCE  */}
                     <div className="screening-section" style={{ margin: '0 30px 30px' }}>
@@ -525,6 +450,11 @@ export function HomePage() {
                         </div>
                     </div>
 
+                        </div>
+                        <aside className="right-panel">
+                            <LiveAlertsSidebar onAlertClick={handleAlertClick} />
+                        </aside>
+                    </div>
                 </main>
 
             </div>

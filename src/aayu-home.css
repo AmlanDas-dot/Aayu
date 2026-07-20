@@ -193,7 +193,7 @@ body {
 
 .side-card {
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     padding: 20px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
@@ -211,7 +211,7 @@ body {
 
 .alert-item {
     padding: 14px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     margin-top: 12px;
 }
 
@@ -233,7 +233,7 @@ body {
     background: linear-gradient(135deg, #0f766e 0%, #115e59 55%, #0c4a44 100%);
     color: white;
     padding: 24px;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     min-height: 220px;
     display: flex;
     flex-direction: column;
@@ -246,7 +246,7 @@ body {
     color: #0f766e;
     border: none;
     padding: 10px 16px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
 }
 
@@ -254,8 +254,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 340px;
-    flex: 0 0 340px;
+    width: 400px;
+    flex: 0 0 400px;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
 }
 
 .alerts-panel {
@@ -356,7 +360,7 @@ body {
     border: 1px solid #f1c8c0;
     color: #9a3412;
     padding: 10px 14px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     font-weight: 700;
     cursor: pointer;
 }
@@ -372,7 +376,7 @@ body {
 .stack-icon {
     width: 38px;
     height: 38px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -587,7 +591,7 @@ body {
 .alert-card {
     background: white;
     padding: 16px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     margin-top: 12px;
     border: 1px solid #e2e8f0;
 }
@@ -597,7 +601,7 @@ body {
 .chat-box {
     margin-top: 25px;
     background: white;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 30px;
     box-shadow: 0 10px 30px rgba(15, 118, 110, .08);
     border: 1px solid #eef2f7;
@@ -621,7 +625,7 @@ body {
     align-items: center;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     padding: 8px;
     margin-top: 18px;
 }
@@ -639,7 +643,7 @@ body {
     width: 54px;
     height: 54px;
     border: none;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     background: #0f766e;
     color: white;
     font-size: 18px;
@@ -721,7 +725,7 @@ body {
 
 .card {
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     padding: 24px;
     flex: 0 0 calc(50% - 11px);
     min-height: 180px;
@@ -740,7 +744,7 @@ body {
     min-width: 320px;
     flex: 1;
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     padding: 14px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .04);
     border: 1px solid #e5e7eb;
@@ -752,7 +756,7 @@ body {
     height: 100%;
     min-height: 382px;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     display: block;
     flex: 1;
 }
@@ -829,7 +833,7 @@ body {
 .why-aayu div {
     background: white;
     padding: 18px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
 }
 
 .partners {
@@ -843,7 +847,7 @@ body {
     background: white;
     border: 1px solid #e2e8f0;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     text-align: center;
     font-weight: 700;
 }
@@ -851,7 +855,7 @@ body {
 /* AI SCREENING */
 .screening-section {
     background: white;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 36px 40px;
     margin: 0 0 30px;
     border: 1px solid #e8f5f3;
@@ -948,7 +952,7 @@ body {
     gap: 10px;
     background: #f0fdfa;
     border: 1px solid #ccfbf1;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 12px 18px;
     margin-top: 24px;
     font-size: 13px;
@@ -1008,7 +1012,7 @@ body {
     flex: 1 1 0;
     min-width: 180px;
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     padding: 20px 16px;
     text-align: center;
     border: 1px solid #e5e7eb;
@@ -1027,7 +1031,7 @@ body {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     margin-bottom: 10px;
 }
 
@@ -1088,7 +1092,7 @@ body {
 .healthcare-card {
     flex: 1;
     background: white;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 28px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 6px 22px rgba(0, 0, 0, .04);
@@ -1109,7 +1113,7 @@ body {
 .healthcare-map-placeholder {
     flex: 0 0 220px;
     height: 220px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     background: #e8f4f8;
     position: relative;
@@ -1134,7 +1138,7 @@ body {
 .hc-icon {
     width: 36px;
     height: 36px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1178,7 +1182,7 @@ body {
 .whatsapp-connect {
     flex: 0 0 340px;
     background: white;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 28px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 6px 22px rgba(0, 0, 0, .04);
@@ -1202,7 +1206,7 @@ body {
     align-items: center;
     gap: 12px;
     background: #dcfce7;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 14px 16px;
     margin: 14px 0;
 }
@@ -1258,7 +1262,7 @@ body {
     gap: 8px;
     margin-top: 14px;
     padding: 10px 20px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border: 1px solid #e5e7eb;
     background: white;
     font-weight: 700;
@@ -1296,7 +1300,7 @@ body {
     flex: 1 1 160px;
     background: white;
     border: 1px solid #e5e7eb;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: 18px 16px;
     display: flex;
     align-items: center;
@@ -1313,7 +1317,7 @@ body {
 .trusted-logo-icon {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1374,7 +1378,7 @@ body {
     gap: 10px;
     background: white;
     border: 1px solid #e5e7eb;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 14px 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
     transition: .2s;
@@ -1388,7 +1392,7 @@ body {
 .fb-icon {
     width: 34px;
     height: 34px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1416,7 +1420,7 @@ body {
     margin: 0 0 30px;
     background: #0f172a;
     color: white;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     padding: 32px 36px;
     display: flex;
     align-items: center;
@@ -1432,7 +1436,7 @@ body {
 .footer-logo {
     width: 56px;
     height: 56px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     background: #0f766e;
     display: flex;
     align-items: center;

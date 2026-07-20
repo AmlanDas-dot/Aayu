@@ -5,6 +5,7 @@ import "./index.css";
 import "./aayu.css";
 import "./aayu-home.css";
 import "./aayu-pages.css";
+import "./signup.css";
 
 import { HealthContextProvider } from "@/contexts/HealthContext";
 import { runHardeningMigration } from "@/services/migrationService";

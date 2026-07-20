@@ -17,6 +17,11 @@ huggingface/
 
 # Environment variables
 .env
+.env*
+!.env.example
+
+credentials/*.json
+/uploads/*
 
 # Node
 node_modules/
@@ -35,3 +40,5 @@ rest_output.json
 
 # TS cache
 *.tsbuildinfo
+
+backend/credentials/firebase-admin.json

@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_URL ?? "/api";
 
 import type {
   SearchResponse,
@@ -48,8 +48,6 @@ export async function sendChatMessage(
       history: req.history ?? [],
       patient_records: req.patient_records ?? ""
   };
-  console.log("========== SENDING CHAT REQUEST ==========");
-  console.log("Request Payload:", payload);
 
   const res = await fetch(`${API_BASE}/chat`, {
     method: "POST",
@@ -61,18 +59,8 @@ export async function sendChatMessage(
     const err = await res.json().catch(() => ({ detail: "Unknown error" }));
     throw new Error(err.detail ?? "Chat request failed");
   }
-  const rawText = await res.text();
-  console.log("Raw Response Body:", rawText);
+  const data = await res.json();
 
-  let data;
-  try {
-    data = JSON.parse(rawText);
-  } catch (err) {
-    console.error("Failed to parse response as JSON:", err);
-    throw new Error("Invalid JSON response from server");
-  }
-
-  console.log("Parsed Response:", data);
   onEvent?.("JSON_PARSED");
   return data;
 }
@@ -102,8 +90,6 @@ export async function sendImageChatMessage(
   formData.append("language", language);
   formData.append("session_id", sessionId);
   formData.append("history", JSON.stringify(history));
-
-  console.log("========== SENDING IMAGE CHAT REQUEST ==========");
 
   if (onUploadProgress) {
     return new Promise((resolve, reject) => {

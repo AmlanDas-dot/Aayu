@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { getAllSchemes, getStateSchemes, searchScheme, type GovernmentScheme } from "@/services/api";
+import { searchSchemes, evaluateSchemesWithAI, type EvaluatedScheme, getSchemes } from "@/services/schemeService";
+import { useAuth } from "@/contexts/AuthContext";
+import { useHealthContext } from "@/hooks/useHealthContext";
 import { SchemesHero } from "@/features/schemes/components/SchemesHero";
 import { SchemeCard } from "@/features/schemes/components/SchemeCard";
 import { TopSchemes } from "@/features/schemes/components/TopSchemes";
@@ -13,41 +15,73 @@ import { Lightbulb, RefreshCw, Bell, User, ClipboardList } from "lucide-react";
 import { LoadingStatus } from "@/components/LoadingStatus";
 
 export function SchemesPage() {
-  const [allSchemes, setAllSchemes] = useState<GovernmentScheme[]>([]);
-  const [displayed, setDisplayed] = useState<GovernmentScheme[]>([]);
+  const { userProfile } = useAuth();
+  const { selectedMember } = useHealthContext();
+  
+  const [allSchemes, setAllSchemes] = useState<EvaluatedScheme[]>([]);
+  const [displayed, setDisplayed] = useState<EvaluatedScheme[]>([]);
   const [query, setQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("all");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  
+  
   const [ageGroup, setAgeGroup] = useState("");
   const [gender, setGender] = useState("");
   const [userState, setUserState] = useState("");
-
   const [triggerFetch, setTriggerFetch] = useState(0);
 
   useEffect(() => {
     const load = async () => {
+      setLoading(true);
       try {
-        const res = await getAllSchemes(ageGroup, gender);
+        const res = await getSchemes();
         setAllSchemes(res);
-        if (stateFilter === "all") setDisplayed(res);
+        if (stateFilter === "all" && !query) setDisplayed(res);
       } catch (e) {
         setError("Failed to load schemes.");
+      } finally {
+        setLoading(false);
       }
     };
     load();
   }, [triggerFetch]);
+  
+  useEffect(() => {
+    const runAI = async () => {
+      if (allSchemes.length > 0 && userProfile) {
+        
+        // Combine auth profile and health vault context
+        const context = {
+          age: (userProfile as any).age || 30,
+          gender: userProfile.gender || "Male",
+          medicalConditions: ["Hypertension"], // Mock from Health Vault
+          location: "National"
+        };
+        const evaluated = await evaluateSchemesWithAI(userProfile.uid, context);
+        setAllSchemes(evaluated);
+        if (stateFilter === "all" && !query) setDisplayed(evaluated);
+        
+      }
+    };
+    runAI();
+  }, [userProfile, selectedMember]);
 
   useEffect(() => {
     let active = true;
     const run = async () => {
+      if (!query && stateFilter === "all") return;
+      
       setLoading(true); setError("");
       try {
-        let result: GovernmentScheme[];
-        if (query.trim().length >= 2) result = await searchScheme(query.trim());
-        else if (stateFilter === "all") result = allSchemes;
-        else result = await getStateSchemes(stateFilter.charAt(0).toUpperCase() + stateFilter.slice(1), ageGroup, gender);
+        let result: EvaluatedScheme[] = allSchemes;
+        if (query.trim().length >= 2) {
+           result = await searchSchemes(query.trim());
+        }
+        if (stateFilter !== "all") {
+           result = result.filter(s => s.location === stateFilter || s.location === "National");
+        }
         if (active) setDisplayed(result);
       } catch (e: any) {
         if (active) setError(e.message ?? "Search failed.");
@@ -57,7 +91,7 @@ export function SchemesPage() {
     };
     const t = setTimeout(run, query ? 300 : 0);
     return () => { active = false; clearTimeout(t); };
-  }, [query, stateFilter, allSchemes]);
+  }, [query, stateFilter]);
 
   return (
     <div className="schemes-page">
@@ -151,7 +185,7 @@ export function SchemesPage() {
 
           {!query.trim() && stateFilter === "all" && <TopSchemes schemes={allSchemes} />}
           <SchemeCategoryGrid />
-          <DocumentsRequired />
+          <DocumentsRequired userDocuments={["aadhaar", "photo"]} />
           <SchemesFooterBanner />
 
         </main>

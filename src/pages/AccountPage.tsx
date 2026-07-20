@@ -3,9 +3,9 @@ import { useAuth } from "@/contexts/AuthContext";
 import { updateUserProfile, updateUserPreferences } from "@/services/userProfileService";
 import { uploadAvatar, deleteAvatar } from "@/services/storageService";
 import { reauthenticate, changePassword, deleteAccount } from "@/services/authService";
-import { Settings, UserProfile, HealthProfile } from "@/firebase/collections";
+import { Settings, UserProfile, HealthProfile, ProfessionalProfile } from "@/firebase/collections";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { User, Shield, Download, Heart, Settings as SettingsIcon, RefreshCw, Cloud, CloudOff, X } from 'lucide-react';
+import { User, Shield, Download, Heart, Settings as SettingsIcon, RefreshCw, Cloud, CloudOff, X, Stethoscope } from 'lucide-react';
 import { generateEmergencyCardPDF } from "@/services/PdfService";
 
 export function AccountPage() {
@@ -33,6 +33,7 @@ export function AccountPage() {
 
   const [isHealthEditing, setIsHealthEditing] = useState(false);
   const [healthForm, setHealthForm] = useState<Partial<HealthProfile>>({});
+  const [profForm, setProfForm] = useState<Partial<ProfessionalProfile>>({});
   
   // Chip Inputs
   const [newAllergy, setNewAllergy] = useState("");
@@ -50,6 +51,7 @@ export function AccountPage() {
           emergencyContact: (userProfile as any)?.emergencyContact || { name: "", phone: "", relation: "" },
         });
       }
+      setProfForm(userProfile.professionalProfile || {});
     }
   }, [userProfile, isHealthEditing]);
 
@@ -143,6 +145,22 @@ export function AccountPage() {
       showMessage("Preferences updated successfully", "success");
     } catch (err: any) {
       console.error("Firebase Error (Preferences):", err.code, err.message);
+      showMessage(err.message, "error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Professional Profile Save
+  const handleProfSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!currentUser) return;
+    setLoading(true);
+    try {
+      await updateUserProfile(currentUser.uid, { professionalProfile: profForm });
+      showMessage("Professional information updated successfully", "success");
+    } catch (err: any) {
+      console.error("Firebase Error (Update Prof):", err.code, err.message);
       showMessage(err.message, "error");
     } finally {
       setLoading(false);
@@ -510,6 +528,14 @@ export function AccountPage() {
             >
               <Shield size={20} /> Security
             </button>
+            {userProfile?.role === 'doctor' && (
+              <button 
+                onClick={() => handleTabChange("professional")}
+                style={{ padding: '15px 20px', textAlign: 'left', backgroundColor: activeTab === 'professional' ? '#f1f5f9' : 'transparent', border: 'none', borderRadius: '8px', cursor: 'pointer', color: '#333', fontWeight: activeTab === 'professional' ? 'bold' : 'normal', display: 'flex', alignItems: 'center', gap: '10px' }}
+              >
+                <Stethoscope size={20} /> Professional Info
+              </button>
+            )}
           </div>
         </div>
 
@@ -800,15 +826,52 @@ export function AccountPage() {
                      <div style={{ padding: '15px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                        <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '5px' }}>Blood Group</div>
                        <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#dc2626' }}>{healthForm.bloodGroup || "Not Set"}</div>
-                     </div>
-                     <div style={{ padding: '15px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                       <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '5px' }}>BMI</div>
-                       <div style={{ fontSize: '18px', fontWeight: 'bold', color: getBMICategory(healthForm.bmi).color }}>{healthForm.bmi || "-"} <span style={{fontSize:'13px', fontWeight:'normal'}}>({getBMICategory(healthForm.bmi).label})</span></div>
+                <div style={{ fontSize: '18px', fontWeight: 'bold', color: getBMICategory(healthForm.bmi).color }}>{healthForm.bmi || "-"} <span style={{fontSize:'13px', fontWeight:'normal'}}>({getBMICategory(healthForm.bmi).label})</span></div>
                      </div>
                    </div>
                 </div>
               </div>
             )}
+          </div>
+        )}
+
+        {/* Professional Tab */}
+        {activeTab === 'professional' && userProfile?.role === 'doctor' && (
+          <div className="settings-card">
+            <h2 className="settings-section-title">Professional Information</h2>
+            <form onSubmit={handleProfSave} style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Medical Registration Number</label><input type="text" value={profForm.medicalRegistrationNumber || ""} onChange={e => setProfForm({...profForm, medicalRegistrationNumber: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., MCI-12345" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Qualification</label><input type="text" value={profForm.qualification || ""} onChange={e => setProfForm({...profForm, qualification: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., MBBS, MD" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Specialization</label><input type="text" value={profForm.specialization || ""} onChange={e => setProfForm({...profForm, specialization: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Cardiology" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Super-specialization</label><input type="text" value={profForm.superSpecialization || ""} onChange={e => setProfForm({...profForm, superSpecialization: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Interventional Cardiology" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Medical Council</label><input type="text" value={profForm.medicalCouncil || ""} onChange={e => setProfForm({...profForm, medicalCouncil: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., State Medical Council" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>College</label><input type="text" value={profForm.college || ""} onChange={e => setProfForm({...profForm, college: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., AIIMS" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Graduation Year</label><input type="text" value={profForm.graduationYear || ""} onChange={e => setProfForm({...profForm, graduationYear: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., 2010" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Hospital</label><input type="text" value={profForm.hospital || ""} onChange={e => setProfForm({...profForm, hospital: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Apollo" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Department</label><input type="text" value={profForm.department || ""} onChange={e => setProfForm({...profForm, department: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Internal Medicine" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Designation</label><input type="text" value={profForm.designation || ""} onChange={e => setProfForm({...profForm, designation: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Senior Consultant" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Languages</label><input type="text" value={profForm.languages || ""} onChange={e => setProfForm({...profForm, languages: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., English, Hindi" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Consultation Languages</label><input type="text" value={profForm.consultationLanguages || ""} onChange={e => setProfForm({...profForm, consultationLanguages: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., English, Hindi, Maithili" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Years of Experience</label><input type="text" value={profForm.yearsOfExperience || ""} onChange={e => setProfForm({...profForm, yearsOfExperience: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., 12" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Working District</label><input type="text" value={profForm.workingDistrict || ""} onChange={e => setProfForm({...profForm, workingDistrict: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Patna" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Working CHC/PHC</label><input type="text" value={profForm.workingCHC || ""} onChange={e => setProfForm({...profForm, workingCHC: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Phulwari CHC" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Assigned CHC</label><input type="text" value={profForm.assignedChc || ""} onChange={e => setProfForm({...profForm, assignedChc: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Phulwari CHC" /></div>
+                <div><label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Assigned PHC</label><input type="text" value={profForm.assignedPhc || ""} onChange={e => setProfForm({...profForm, assignedPhc: e.target.value})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} placeholder="e.g., Phulwari PHC" /></div>
+                <div>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', fontSize: '14px' }}>Verification Status</label>
+                  <select value={profForm.verificationStatus || ""} onChange={e => setProfForm({...profForm, verificationStatus: e.target.value as any})} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }}>
+                    <option value="">Select Status</option>
+                    <option value="Verified">Verified</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Unverified">Unverified</option>
+                  </select>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <button type="submit" disabled={loading} className="settings-save-btn">{loading ? "Saving..." : "Save Professional Info"}</button>
+              </div>
+            </form>
           </div>
         )}
 

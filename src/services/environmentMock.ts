@@ -31,6 +31,8 @@ export interface GreenLocation {
   cleanAirScore: number;
   distanceMeter: number;
   walkTimeMin: number;
+  latitude?: number;
+  longitude?: number;
 }
 
 export interface EnvironmentData {

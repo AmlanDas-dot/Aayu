@@ -9,9 +9,11 @@ interface AirSmartCardProps {
   airQuality: AirQualityData;
   timeline: TimelineSlot[];
   greenAreas: GreenLocation[];
+  userLat?: number;
+  userLon?: number;
 }
 
-export const AirSmartCard: React.FC<AirSmartCardProps> = ({ airQuality, timeline, greenAreas }) => {
+export const AirSmartCard: React.FC<AirSmartCardProps> = ({ airQuality, timeline, greenAreas, userLat, userLon }) => {
   return (
     <div className="env-module-card">
       <div className="env-module-header">
@@ -42,7 +44,7 @@ export const AirSmartCard: React.FC<AirSmartCardProps> = ({ airQuality, timeline
         {/* Section 3: Green Radius */}
         <div className="env-section">
           <h3 className="env-section-title">Green Radius</h3>
-          <GreenRadius greenAreas={greenAreas} />
+          <GreenRadius greenAreas={greenAreas} userLat={userLat} userLon={userLon} />
         </div>
       </div>
     </div>

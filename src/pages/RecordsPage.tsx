@@ -6,11 +6,11 @@ import { getMedicalRecords, createMedicalRecord, generateRecordId, checkDuplicat
 import { uploadMedicalRecord } from "@/services/storageService";
 import { createMedication } from "@/services/medicationService";
 import { analyzeMedicalDocument } from "@/services/geminiRecordService";
-import { MedicalRecord } from "@/firebase/collections";
 import { HealthTrends } from "@/features/records/components/HealthTrends";
+import { HealthTimeline } from "@/features/records/components/HealthTimeline";
 import { FileText, Upload, Search, Loader2, X, AlertCircle } from "lucide-react";
 import { getFamilyMembers } from "@/services/familyService";
-import { FamilyMember } from "@/firebase/collections";
+import { FamilyMember, MedicalRecord } from "@/firebase/collections";
 
 export function RecordsPage() {
   const { currentUser } = useAuth();
@@ -23,6 +23,7 @@ export function RecordsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterMember, setFilterMember] = useState(selectedMemberId || "all");
   const [filterType, setFilterType] = useState("all");
+  const [activeTab, setActiveTab] = useState<"records" | "timeline">("timeline");
 
   // Upload State
   const [isUploading, setIsUploading] = useState(false);
@@ -276,51 +277,76 @@ export function RecordsPage() {
       {/* Timeline View */}
       {loading ? (
         <div style={{ textAlign: 'center', padding: '60px', color: '#64748b' }}><Loader2 className="animate-spin" size={32} style={{ margin: '0 auto 10px' }}/> Loading records...</div>
-      ) : filteredRecords.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '60px', backgroundColor: 'white', borderRadius: '12px', border: '1px dashed #cbd5e1' }}>
-          <FileText size={48} style={{ color: '#94a3b8', margin: '0 auto 15px' }} />
-          <h3 style={{ margin: '0 0 10px 0', color: '#334155' }}>No records found</h3>
-          <p style={{ margin: 0, color: '#64748b' }}>Upload a medical report to securely store and analyze it.</p>
-        </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-          {Object.entries(groupedRecords).map(([month, monthRecords]) => (
-            <div key={month}>
-              <h3 style={{ fontSize: '18px', color: '#0f172a', marginBottom: '15px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>{month}</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
-                {monthRecords.map(record => {
-                  const memberName = members.find(m => m.id === record.memberId)?.name || 'Unknown Member';
-                  return (
-                    <div 
-                      key={record.id} 
-                      onClick={() => navigate(`/records/${record.id}`)}
-                      style={{ backgroundColor: 'white', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)'; }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
-                        <div style={{ padding: '4px 10px', backgroundColor: '#dbeafe', color: '#1d4ed8', borderRadius: '16px', fontSize: '12px', fontWeight: 'bold' }}>
-                          {record.category}
-                        </div>
-                        <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 'bold' }}>{memberName}</div>
-                      </div>
-                      <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {record.title}
-                      </h4>
-                      <p style={{ margin: '0 0 15px 0', fontSize: '13px', color: '#64748b', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {record.geminiSummary || "No summary available."}
-                      </p>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: '#94a3b8', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
-                        <span>{record.hospital || "Unknown facility"}</span>
-                        <span>{new Date(record.uploadedAt).toLocaleDateString()}</span>
+        <>
+          <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid #e2e8f0', marginBottom: '24px' }}>
+            <button 
+              onClick={() => setActiveTab("timeline")}
+              style={{ padding: '12px 16px', background: 'transparent', border: 'none', borderBottom: activeTab === 'timeline' ? '2px solid #0284c7' : '2px solid transparent', color: activeTab === 'timeline' ? '#0284c7' : '#64748b', fontWeight: activeTab === 'timeline' ? 'bold' : 'normal', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Unified Health Journey
+            </button>
+            <button 
+              onClick={() => setActiveTab("records")}
+              style={{ padding: '12px 16px', background: 'transparent', border: 'none', borderBottom: activeTab === 'records' ? '2px solid #0284c7' : '2px solid transparent', color: activeTab === 'records' ? '#0284c7' : '#64748b', fontWeight: activeTab === 'records' ? 'bold' : 'normal', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Medical Records
+            </button>
+          </div>
+
+          {activeTab === 'timeline' ? (
+            <HealthTimeline records={filteredRecords} />
+          ) : (
+            <>
+              {filteredRecords.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '60px', backgroundColor: 'white', borderRadius: '12px', border: '1px dashed #cbd5e1' }}>
+                  <FileText size={48} style={{ color: '#94a3b8', margin: '0 auto 15px' }} />
+                  <h3 style={{ margin: '0 0 10px 0', color: '#334155' }}>No records found</h3>
+                  <p style={{ margin: 0, color: '#64748b' }}>Upload a medical report to securely store and analyze it.</p>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                  {Object.entries(groupedRecords).map(([month, monthRecords]) => (
+                    <div key={month}>
+                      <h3 style={{ fontSize: '18px', color: '#0f172a', marginBottom: '15px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>{month}</h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
+                        {monthRecords.map(record => {
+                          const memberName = members.find(m => m.id === record.memberId)?.name || 'Unknown Member';
+                          return (
+                            <div 
+                              key={record.id} 
+                              onClick={() => navigate(`/records/${record.id}`)}
+                              style={{ backgroundColor: 'white', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)'; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)'; }}
+                            >
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
+                                <div style={{ padding: '4px 10px', backgroundColor: '#dbeafe', color: '#1d4ed8', borderRadius: '16px', fontSize: '12px', fontWeight: 'bold' }}>
+                                  {record.category}
+                                </div>
+                                <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 'bold' }}>{memberName}</div>
+                              </div>
+                              <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                {record.title}
+                              </h4>
+                              <p style={{ margin: '0 0 15px 0', fontSize: '13px', color: '#64748b', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                {record.geminiSummary || "No summary available."}
+                              </p>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: '#94a3b8', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
+                                <span>{record.hospital || "Unknown facility"}</span>
+                                <span>{new Date(record.uploadedAt).toLocaleDateString()}</span>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </>
       )}
 
       {/* Upload & Analyze Modal */}

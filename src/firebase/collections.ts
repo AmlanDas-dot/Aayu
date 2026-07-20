@@ -1,5 +1,6 @@
 import { collection, DocumentData, CollectionReference } from "firebase/firestore";
 import { db } from "./firebase";
+import type { UserRole, UserStatus } from "@/rbac/permissions";
 
 export interface EmergencyContact {
   name: string;
@@ -109,11 +110,35 @@ export interface TrendDataPoint {
 
 export type HealthTrend = Record<string, TrendDataPoint[]>;
 
+export interface ProfessionalProfile {
+  medicalRegistrationNumber?: string;
+  qualification?: string;
+  specialization?: string;
+  superSpecialization?: string;
+  medicalCouncil?: string;
+  college?: string;
+  graduationYear?: string;
+  hospital?: string;
+  department?: string;
+  designation?: string;
+  languages?: string;
+  yearsOfExperience?: string;
+  consultationLanguages?: string;
+  workingDistrict?: string;
+  workingCHC?: string;
+  assignedChc?: string;
+  assignedPhc?: string;
+  verificationStatus?: 'Pending' | 'Verified' | 'Rejected';
+}
+
+
 // Models
 export interface UserProfile {
   uid: string;
   name: string;
   email: string;
+  role: UserRole;
+  status: UserStatus;
   photoURL: string | null;
   language: string;
   createdAt: string; 
@@ -125,6 +150,7 @@ export interface UserProfile {
   address?: string;
   occupation?: string;
   healthProfile?: HealthProfile;
+  professionalProfile?: ProfessionalProfile;
   // deprecated: bloodGroup, emergencyContact
 }
 

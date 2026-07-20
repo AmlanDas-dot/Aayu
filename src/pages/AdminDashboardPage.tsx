@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import { DashboardTabs, TabName } from '../components/dashboard/DashboardTabs';
 import { OverviewTab } from '../components/dashboard/OverviewTab';

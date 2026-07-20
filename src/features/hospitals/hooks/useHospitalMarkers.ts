@@ -54,6 +54,7 @@ export function useHospitalMarkers({ userLocation, filter = "all" }: UseHospital
       if (filter === "clinic") return t.includes("clinic") || t.includes("doctor");
       if (filter === "health_centre") return t.includes("hospital") || t.includes("clinic");
       if (filter === "pharmacy") return t.includes("pharmacy");
+      if (filter === "rehab") return t.includes("rehab") || t.includes("psychiatric") || t.includes("mental") || t.includes("hospital") || t.includes("clinic");
       return true;
     });
   }, [allFacilities, filter]);
@@ -86,6 +87,8 @@ export function useHospitalMarkers({ userLocation, filter = "all" }: UseHospital
         emoji = "🩺"; bg = "#7c3aed"; border = "#6d28d9";
       } else if (typeLower.includes("pharmacy")) {
         emoji = "💊"; bg = "#059669"; border = "#047857";
+      } else if (typeLower.includes("rehab") || typeLower.includes("psychiatric") || typeLower.includes("mental")) {
+        emoji = "🧠"; bg = "#ec4899"; border = "#be185d";
       } else if (typeLower.includes("health")) {
         emoji = "🏨"; bg = "#d97706"; border = "#b45309";
       }

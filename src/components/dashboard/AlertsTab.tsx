@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { DashboardData } from '../../data/dashboardMock';
 import { ChevronDown, ChevronUp, AlertTriangle, MapPin } from 'lucide-react';
 
 interface AlertsTabProps {
-  alerts: DashboardData['alerts'];
+  alerts: any[];
 }
 
 export const AlertsTab: React.FC<AlertsTabProps> = ({ alerts }) => {
@@ -36,7 +35,7 @@ export const AlertsTab: React.FC<AlertsTabProps> = ({ alerts }) => {
                   {alert.title}
                 </div>
                 <div className="alert-location" style={{ marginTop: '8px' }}>
-                  <MapPin size={16} /> {alert.location}
+                  <MapPin size={16} /> {alert.district || alert.location}
                 </div>
               </div>
               <div>
@@ -49,8 +48,14 @@ export const AlertsTab: React.FC<AlertsTabProps> = ({ alerts }) => {
             
             {expandedCard === alert.id && (
               <div className="alert-action">
-                <div className="alert-action-title">Recommended Action Protocol</div>
-                <div style={{ color: 'var(--text)', lineHeight: 1.5 }}>{alert.recommendedAction}</div>
+                <div className="alert-recommendations">
+                  <h4 style={{ fontSize: '0.9rem', marginBottom: '8px' }}>Recommended Actions</h4>
+                  <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '0.9rem', color: 'var(--text)' }}>
+                    {alert.recommendations?.map((rec: string, index: number) => (
+                      <li key={index} style={{ marginBottom: '6px' }}>{rec}</li>
+                    )) || alert.recommendedAction}
+                  </ul>
+                </div>
                 <button className="btn-outline mt-4">Dispatch Broadcast Message</button>
               </div>
             )}

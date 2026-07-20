@@ -4,6 +4,7 @@ const FACILITY_FILTERS = [
   { id: "clinic",        label: "Clinics",      icon: "fa-solid fa-stethoscope" },
   { id: "health_centre", label: "PHCs",         icon: "fa-solid fa-house-medical" },
   { id: "pharmacy",      label: "Pharmacies",   icon: "fa-solid fa-pills" },
+  { id: "rehab",         label: "Rehab Centers",icon: "fa-solid fa-brain" },
 ];
 
 const RADIUS_OPTIONS = [

@@ -1,3 +1,4 @@
+import { type EvaluatedScheme } from "@/services/schemeService";
 import { ShieldCheck, Baby } from "lucide-react";
 
 const TOP_SCHEMES_STATIC = [
@@ -11,18 +12,16 @@ const TOP_SCHEMES_STATIC = [
   },
 ];
 
-import type { GovernmentScheme } from "@/services/api";
-
-export function TopSchemes({ schemes = [] }: { schemes?: GovernmentScheme[] }) {
+export function TopSchemes({ schemes }: { schemes: EvaluatedScheme[] }) {
   const dynamicItems = schemes.slice(0, 2).map((s, i) => ({
     icon: i === 0 ? ShieldCheck : Baby,
     name: s.name,
     desc: s.description.slice(0, 80) + (s.description.length > 80 ? "..." : ""),
-    tag: s.state,
+    tag: s.location || "National",
     who: s.eligibility.slice(0, 60) + (s.eligibility.length > 60 ? "..." : ""),
     tagColor: i === 0 ? "#10b981" : "#f59e0b",
     tagBg: i === 0 ? "rgba(16,185,129,0.12)" : "rgba(245,158,11,0.12)",
-    link: s.official_link
+    link: s.official_website
   }));
 
   const itemsToDisplay = dynamicItems.length > 0 ? dynamicItems : TOP_SCHEMES_STATIC.map(s => ({...s, link: "https://www.india.gov.in"}));

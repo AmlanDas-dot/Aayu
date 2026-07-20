@@ -51,9 +51,12 @@ service cloud.firestore {
       allow read, write: if false;
     }
     
-    // Users can only read/write their own profile & settings
+    // Users can only read/write their own profile, settings, and subcollections
     match /users/{userId} {
       allow read, write: if isCurrentUser(userId);
+      match /{document=**} {
+        allow read, write: if isCurrentUser(userId);
+      }
     }
     match /settings/{userId} {
       allow read, write: if isCurrentUser(userId);
@@ -85,8 +88,8 @@ service cloud.firestore {
       allow create: if isCurrentUser(request.resource.data.uid);
     }
     match /alerts/{docId} {
-      allow read, write: if isCurrentUser(resource.data.uid);
-      allow create: if isCurrentUser(request.resource.data.uid);
+      allow read: if true;
+      allow write: if false;
     }
     
     // ==========================================

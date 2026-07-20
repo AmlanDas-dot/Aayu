@@ -32,13 +32,6 @@ export function MessageBubble({
         ) : (
           <>
 
-            {/* temporary test portion*/}
-            {(() => {
-              console.log("risk_level =", msg.risk_level);
-              // levelConfig removed
-              return null;
-            })()}
-
             {/* Risk Level Badge */}
             {(() => {
               if (msg.role !== "assistant") return null;

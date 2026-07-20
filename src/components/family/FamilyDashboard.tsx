@@ -3,8 +3,7 @@ import { getFamilyMembers, removeMember, deleteFamily, approveMember } from '@/s
 import { Family, FamilyMember } from '@/firebase/collections';
 import { AddMemberModal } from './AddMemberModal';
 import { MemberDetailsModal } from './MemberDetailsModal';
-
-import { Users, Trash2, Shield, User, LogOut, UserPlus, Check, Clock } from 'lucide-react';
+import { Users, Trash2, Shield, User, LogOut, UserPlus, Check, Clock, HeartPulse, Trophy } from 'lucide-react';
 
 interface Props {
   family: Family;
@@ -171,6 +170,31 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
           </div>
         </div>
       )}
+
+      {/* Shared Recovery Goals */}
+      <div style={{ background: 'white', padding: '24px', borderRadius: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', marginBottom: '30px', border: '1px solid #e2e8f0' }}>
+        <h2 style={{ fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', color: '#0f172a' }}>
+          <HeartPulse size={20} color="#e11d48" /> Shared Recovery Goals
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', background: '#fff1f2', borderRadius: '12px', border: '1px solid #ffe4e6' }}>
+            <Trophy size={20} color="#e11d48" />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: '600', color: '#881337' }}>Dad's Smoke-Free Milestone</div>
+              <div style={{ fontSize: '14px', color: '#be123c' }}>42 Days streak! Let's celebrate.</div>
+            </div>
+            <button style={{ padding: '6px 12px', background: 'white', color: '#e11d48', border: '1px solid #fecdd3', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}>Send Encouragement</button>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', background: '#f0fdf4', borderRadius: '12px', border: '1px solid #dcfce7' }}>
+            <HeartPulse size={20} color="#16a34a" />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: '600', color: '#14532d' }}>Family Walk Goal</div>
+              <div style={{ fontSize: '14px', color: '#166534' }}>3/4 members completed today.</div>
+            </div>
+            <button style={{ padding: '6px 12px', background: 'white', color: '#16a34a', border: '1px solid #bbf7d0', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}>Join Walk</button>
+          </div>
+        </div>
+      </div>
 
       {/* Members List */}
       <div style={{ background: 'white', padding: '24px', borderRadius: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', marginBottom: '30px' }}>
