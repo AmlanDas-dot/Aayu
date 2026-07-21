@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { setDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
 import { doc, serverTimestamp } from "firebase/firestore";
 import { sendChatMessage } from "./api";

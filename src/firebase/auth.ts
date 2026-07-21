@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc } from "./firestoreLogger";
+import { setDoc, updateDoc, deleteDoc } from "./firestoreLogger";
 import {
   GoogleAuthProvider,
   signInWithPopup,

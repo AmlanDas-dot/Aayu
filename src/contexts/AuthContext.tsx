@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { updateDoc } from "@/firebase/firestoreLogger";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { onAuthStateChanged, User, signOut } from "firebase/auth";
 import { auth, db } from "@/firebase/firebase";

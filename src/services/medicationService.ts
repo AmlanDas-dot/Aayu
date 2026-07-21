@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { collections, Medication, MedicationLog } from "@/firebase/collections";
 import { getDocs, doc, query, where, orderBy } from "firebase/firestore";
 

@@ -1,4 +1,5 @@
-import { setDoc, addDoc, updateDoc, deleteDoc, runTransaction, writeBatch } from "@/firebase/firestoreLogger";
+import { setDoc, addDoc, updateDoc, deleteDoc, runTransaction } from "@/firebase/firestoreLogger";
+import { Transaction } from "firebase/firestore";
 import {
   collection,
   doc,
@@ -74,7 +75,7 @@ export async function createFamily(
     lastActive: now,
   };
 
-  await runTransaction(db, async (transaction) => {
+  await runTransaction(async (transaction: Transaction) => {
     transaction.set(doc(familiesCollection, familyId), newFamily);
     transaction.set(doc(familyMembersCollection, newMember.id!), newMember);
     transaction.set(doc(joinTokensCollection, joinToken), { familyId, ownerUid, createdAt: now });
@@ -238,7 +239,7 @@ export async function removeMember(memberId: string, performedByUid?: string): P
 export async function deleteFamily(familyId: string, ownerUid?: string): Promise<void> {
   // 1. Delete all members
   const members = await getFamilyMembers(familyId);
-  await runTransaction(db, async (transaction) => {
+  await runTransaction(async (transaction: Transaction) => {
     for (const m of members) {
       if (m.id) {
         transaction.delete(doc(familyMembersCollection, m.id));

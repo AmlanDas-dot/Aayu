@@ -1,7 +1,7 @@
 import { setDoc, addDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
 import { collection, doc, getDoc, getDocs, query, orderBy, serverTimestamp, where, Timestamp } from "firebase/firestore";
-import { sendChatMessage, sendImageChatMessage } from "./api";
+import { sendChatMessage } from "./api";
 import { type NutritionMeal } from "@/features/nutrition/types";
 
 export interface NutritionUserProfile {

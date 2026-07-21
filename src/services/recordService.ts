@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { setDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
 import { collection, doc, getDocs, getDoc, query, where } from "firebase/firestore";
 import { MedicalRecord } from "@/firebase/collections";
