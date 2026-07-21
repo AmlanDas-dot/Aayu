@@ -1,3 +1,4 @@
+import { setDoc, addDoc, updateDoc, deleteDoc } from "./firestoreLogger";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -6,9 +7,15 @@ import {
   signOut,
   sendPasswordResetEmail,
   User,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  updatePassword,
+  sendEmailVerification,
+  deleteUser as firebaseDeleteUser,
 } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { auth, db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { ref, deleteObject } from "firebase/storage";
+import { auth, db, storage } from "./firebase";
 import {
   DEFAULT_ROLE,
   DEFAULT_USER_STATUS,
@@ -109,3 +116,48 @@ export const logoutUser = async () => {
 export const resetPassword = async (email: string) => {
   await sendPasswordResetEmail(auth, email);
 };
+
+export const reauthenticate = async (currentPassword: string) => {
+  const user = auth.currentUser;
+  if (!user || !user.email) throw new Error("No authenticated user with an email found.");
+
+  const credential = EmailAuthProvider.credential(user.email, currentPassword);
+  await reauthenticateWithCredential(user, credential);
+};
+
+export const changePassword = async (newPassword: string) => {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No authenticated user.");
+
+  await updatePassword(user, newPassword);
+};
+
+export const verifyEmail = async () => {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No authenticated user.");
+
+  await sendEmailVerification(user);
+};
+
+export const deleteAccount = async () => {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No authenticated user.");
+
+  const uid = user.uid;
+
+  try {
+    await deleteDoc(doc(db, "users", uid));
+  } catch (err) {
+    console.error("Error deleting user doc:", err);
+  }
+
+  try {
+    const avatarRef = ref(storage, `users/${uid}/profile/avatar`);
+    await deleteObject(avatarRef);
+  } catch (err) {
+    console.warn("Avatar might not exist or error deleting avatar:", err);
+  }
+
+  await firebaseDeleteUser(user);
+};
+

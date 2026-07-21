@@ -15,14 +15,18 @@ import { NutritionLogWidget } from "@/features/nutrition/components/NutritionLog
 import { 
   getNutritionUserProfile, 
   createNutritionProfile, 
-  generateDailyPlan, 
+  getDailyGoals,
+  getLoggedMeals,
+  getLoggedWater,
+  getLatestWeeklyPlan,
+  generateWeeklyPlan,
   type NutritionUserProfile 
 } from "@/services/nutritionService";
-import { type NutritionProfile } from "@/features/nutrition/types";
-import { Apple } from "lucide-react";
+import { type NutritionProfile, type NutritionSwap } from "@/features/nutrition/types";
+
 
 export function NutritionPage() {
-  const { userProfile } = useAuth();
+  const { currentUser } = useAuth();
   const { selectedMember } = useHealthContext();
   
   const [profileType, setProfileType] = useState<"default" | "pregnant" | "child">("default");
@@ -36,15 +40,75 @@ export function NutritionPage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const uid = userProfile?.uid || 'demo-user';
-      const fetchedProfile = await getNutritionUserProfile(uid);
+      if (!currentUser?.uid) return;
+      const uid = currentUser.uid;
+      let fetchedProfile = await getNutritionUserProfile(uid);
+      
+      // Auto-create defaults if none exists
+      if (!fetchedProfile) {
+        await createNutritionProfile(uid, {});
+        fetchedProfile = await getNutritionUserProfile(uid);
+      }
       
       if (fetchedProfile) {
         setUserNutriProfile(fetchedProfile);
-        const plan = await generateDailyPlan(fetchedProfile);
-        setDailyPlan(plan);
-      } else {
-        setUserNutriProfile(null);
+        
+        // Fetch all components for dynamic computation
+        const goals = await getDailyGoals(uid);
+        const meals = await getLoggedMeals(uid);
+        const water = await getLoggedWater(uid);
+        let weeklyMeals = await getLatestWeeklyPlan(uid);
+        
+        if (!weeklyMeals || weeklyMeals.length === 0) {
+          weeklyMeals = await generateWeeklyPlan(uid, fetchedProfile);
+        }
+        
+        if (goals) {
+          // Compute totals
+          let totalCals = 0;
+          let totalProt = 0;
+          let totalCarbs = 0;
+          let totalFat = 0;
+          
+          meals.forEach(m => {
+            totalCals += m.calories || 0;
+            totalProt += m.protein || 0;
+            totalCarbs += m.carbs || 0;
+            totalFat += m.fat || 0;
+          });
+          
+          const calPct = Math.min(100, Math.round((totalCals / goals.calories) * 100)) || 0;
+          const protPct = Math.min(100, Math.round((totalProt / goals.protein) * 100)) || 0;
+          
+          // Dummy logic for Iron
+          const totalIron = 10; 
+          const targetIron = 18;
+          const ironPct = Math.round((totalIron / targetIron) * 100);
+          
+          // Calculate arbitrary dynamic score based on adherence
+          const score = Math.max(0, 100 - Math.abs(100 - calPct));
+          
+          const swaps: NutritionSwap[] = [
+             { from: { icon: "🍪", name: "Cookies", note: "High sugar" }, to: { icon: "🍎", name: "Apple", note: "Natural sugar & fiber" } }
+          ];
+
+          const plan: NutritionProfile = {
+            score,
+            calories: { val: totalCals.toString(), max: goals.calories, pct: calPct, remaining: Math.max(0, goals.calories - totalCals).toString() },
+            protein: { val: totalProt.toString(), max: goals.protein, pct: protPct },
+            iron: { val: totalIron.toString(), max: targetIron, pct: ironPct },
+            swaps,
+            mealPlan: weeklyMeals,
+            topNutrients: [
+              { name: "Carbs", current: `${totalCarbs}g`, target: `${goals.carbs}g`, pct: Math.min(100, Math.round((totalCarbs / goals.carbs) * 100)), color: "blue" },
+              { name: "Fat", current: `${totalFat}g`, target: `${goals.fat}g`, pct: Math.min(100, Math.round((totalFat / goals.fat) * 100)), color: "red" },
+              { name: "Water", current: `${water}ml`, target: `${goals.water}ml`, pct: Math.min(100, Math.round((water / goals.water) * 100)), color: "teal" }
+            ],
+            tip: `Focus on ${fetchedProfile.primaryGoal}. You've had ${water}ml of water!`
+          };
+          
+          setDailyPlan(plan);
+        }
       }
     } catch (e) {
       console.error("Failed to load nutrition profile:", e);
@@ -55,12 +119,13 @@ export function NutritionPage() {
 
   useEffect(() => {
     fetchData();
-  }, [userProfile]);
+  }, [currentUser]);
 
   const handleStartOnboarding = () => setShowOnboarding(true);
 
   const handleCompleteOnboarding = async (formData: any) => {
-    await createNutritionProfile(userProfile?.uid || 'demo-user', formData);
+    if (!currentUser?.uid) return;
+    await createNutritionProfile(currentUser.uid, formData);
     setShowOnboarding(false);
     fetchData();
   };
@@ -85,15 +150,6 @@ export function NutritionPage() {
             <div style={{ padding: '40px', textAlign: 'center', color: '#64748b' }}>
               Loading AI Nutrition Assistant...
             </div>
-          ) : !userNutriProfile && !showOnboarding ? (
-            <div style={{ padding: '40px', background: '#f8fafc', margin: '24px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-              <Apple size={48} color="#0d9488" style={{ margin: '0 auto 16px auto' }} />
-              <h2 style={{ margin: '0 0 8px 0', color: '#0f172a', fontSize: '24px' }}>Let's build your nutrition profile</h2>
-              <p style={{ margin: '0 0 24px 0', color: '#64748b' }}>Personalized meal plans, AI tracking, and health integration await.</p>
-              <button onClick={handleStartOnboarding} style={{ padding: '12px 24px', background: '#0d9488', color: 'white', borderRadius: '8px', border: 'none', fontSize: '16px', fontWeight: 'bold', cursor: 'pointer' }}>
-                Start Nutrition Onboarding
-              </button>
-            </div>
           ) : showOnboarding ? (
             <NutritionOnboarding onComplete={handleCompleteOnboarding} onCancel={() => setShowOnboarding(false)} />
           ) : userNutriProfile && dailyPlan ? (
@@ -106,7 +162,9 @@ export function NutritionPage() {
             </>
           ) : (
             <div style={{ padding: '40px', textAlign: 'center', color: '#ef4444' }}>
-              Failed to generate plan.
+              Failed to load profile.
+              <br/><br/>
+              <button onClick={handleStartOnboarding} style={{ padding: '8px 16px', background: '#0d9488', color: 'white', borderRadius: '4px', border: 'none', cursor: 'pointer' }}>Set Up Profile</button>
             </div>
           )}
 
@@ -114,7 +172,7 @@ export function NutritionPage() {
           <FooterBanner />
         </main>
         
-        <NutritionSideWidgets profileType={profileType} setProfileType={setProfileType} />
+        <NutritionSideWidgets profileType={profileType} setProfileType={setProfileType} onBudgetChange={() => fetchData()} />
       </div>
     </div>
   );

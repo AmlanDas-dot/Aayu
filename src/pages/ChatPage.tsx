@@ -6,6 +6,7 @@ import {
   submitScreeningAnswer,
   generateChatTitle,
   sendImageChatMessage,
+  logMedicalImageHistory,
 } from "@/services/api";
 import { stopSpeaking } from "@/services/tts";
 import { EmergencyAlert } from "@/components/EmergencyAlert";
@@ -21,6 +22,7 @@ import { useTTS } from "@/features/chat/hooks/useTTS";
 import { useImageCapture } from "@/features/chat/hooks/useImageCapture";
 import { useAuth } from "@/contexts/AuthContext";
 import { useHealthContext } from "@/contexts/HealthContext";
+import { useToast } from "@/contexts/ToastContext";
 
 import { ChatHistoryPanel } from "@/features/chat/components/ChatHistoryPanel";
 import { MessageBubble } from "@/features/chat/components/MessageBubble";
@@ -33,6 +35,7 @@ export function ChatPage() {
   const location = useLocation();
   const { currentUser } = useAuth();
   const { selectedMember } = useHealthContext();
+  const { addToast } = useToast();
 
   // Custom Hooks
   const {
@@ -314,6 +317,7 @@ export function ChatPage() {
             userMsgText,
             language,
             sessionId,
+            currentUser?.uid || "",
             llmHistory,
             (progress) => {
               setUploadProgress(progress);
@@ -367,15 +371,28 @@ export function ChatPage() {
       let screeningComplete: boolean = false;
       let showRiskLevel: boolean = false;
 
+      let possibleConditions: any = undefined;
+      let urgency: string | undefined = undefined;
+      let recommendations: string[] = [];
+      let redFlags: string[] = [];
+
       if (hasImage) {
-        assistantText = apiResp.answer || apiResp.response || "";
-        riskLevel = (apiResp.triage || "routine") as RiskLevel;
-        imageDescription = apiResp.image_description;
-        warnings = apiResp.warnings || [];
-        confidence = apiResp.confidence;
+        // Structured JSON mapped
+        imageDescription = apiResp.imageDescription;
+        possibleConditions = apiResp.possibleConditions;
+        urgency = apiResp.urgency;
+        recommendations = apiResp.recommendations || [];
+        redFlags = apiResp.redFlags || [];
+        disclaimer = apiResp.disclaimer || "This is not a diagnosis. Please consult a healthcare professional.";
+        riskLevel = urgency?.toLowerCase() as RiskLevel || "routine";
+        
         mode = "online";
-        llmProvider = "gemini";
+        llmProvider = "openai";
         showRiskLevel = true;
+
+        if (currentUser?.uid) {
+           logMedicalImageHistory(currentUser.uid, imagePreviewUrl || "", apiResp).catch(e => console.error(e));
+        }
       } else {
         assistantText = apiResp.response;
         riskLevel = apiResp.risk_level;
@@ -410,6 +427,10 @@ export function ChatPage() {
               mode: mode,
               llm_provider: llmProvider,
               imageDescription: imageDescription,
+              possibleConditions: possibleConditions,
+              urgency: urgency,
+              recommendations: recommendations,
+              redFlags: redFlags,
               warnings: warnings,
               confidence: confidence,
               healthcare_recommendation: healthcareRec,
@@ -436,6 +457,10 @@ export function ChatPage() {
             mode: mode,
             llm_provider: llmProvider,
             imageDescription: imageDescription,
+            possibleConditions: possibleConditions,
+            urgency: urgency,
+            recommendations: recommendations,
+            redFlags: redFlags,
             warnings: warnings,
             confidence: confidence,
             healthcare_recommendation: healthcareRec,
@@ -765,10 +790,10 @@ export function ChatPage() {
                       <button
                         onClick={async () => {
                           if (!selectedMember || !selectedMember.familyId) {
-                            alert("Please select a family member first before saving.");
+                            addToast("Please select a family member first before saving.", "error");
                             return;
                           }
-                          const { uploadMedicalRecord } = await import("@/services/storageService");
+                          const { uploadMedicalRecord } = await import("@/firebase/storage");
                           const { createMedicalRecord, generateRecordId } = await import("@/services/recordService");
                           const { analyzeMedicalDocument } = await import("@/services/geminiRecordService");
                           
@@ -806,7 +831,7 @@ export function ChatPage() {
                             setPromptSaveRecordFile(null);
                           } catch(err) {
                             console.error(err);
-                            alert("Failed to save record.");
+                            addToast("Failed to save record.", "error");
                           } finally {
                             setProcessingStage(null);
                           }
@@ -1319,3 +1344,4 @@ export function ChatPage() {
 }
 
 export default ChatPage;
+

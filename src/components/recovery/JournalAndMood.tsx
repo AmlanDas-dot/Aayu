@@ -8,18 +8,29 @@ interface JournalAndMoodProps {
 }
 
 export const JournalAndMood: React.FC<JournalAndMoodProps> = ({ onJournalLogged }) => {
-  const { userProfile } = useAuth();
+  const { currentUser } = useAuth();
   const [mood, setMood] = useState<number | null>(null);
   const [journal, setJournal] = useState('');
   const [loading, setLoading] = useState(false);
   const [insight, setInsight] = useState<{ sentiment: string, ai_insight: string, risk_level: string } | null>(null);
 
   const handleSubmit = async () => {
-    if (!journal.trim() || mood === null) return;
+    if (mood === null) {
+      alert("Please select a mood before logging.");
+      return;
+    }
+    if (!journal.trim()) {
+      alert("Please write a journal entry.");
+      return;
+    }
+    if (!currentUser) {
+      alert("Please log in to journal.");
+      return;
+    }
     setLoading(true);
     
     try {
-      const response = await logJournalAndMood(userProfile?.uid || 'demo-user', mood, journal);
+      const response = await logJournalAndMood(currentUser.uid, mood, journal);
       setInsight(response);
       setJournal('');
       if (onJournalLogged) {
@@ -69,8 +80,8 @@ export const JournalAndMood: React.FC<JournalAndMoodProps> = ({ onJournalLogged 
         
         <button 
           onClick={handleSubmit}
-          disabled={loading || !journal.trim() || mood === null}
-          style={{ width: '100%', padding: '14px', background: '#0284c7', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '16px', cursor: (loading || !journal.trim() || mood === null) ? 'not-allowed' : 'pointer', opacity: (loading || !journal.trim() || mood === null) ? 0.6 : 1 }}
+          disabled={loading}
+          style={{ width: '100%', padding: '14px', background: '#0284c7', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '16px', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.6 : 1 }}
         >
           {loading ? 'Analyzing with AI...' : 'Log & Analyze'}
         </button>

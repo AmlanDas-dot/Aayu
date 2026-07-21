@@ -3,8 +3,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useHealthContext } from '@/contexts/HealthContext';
 import { Medication, FamilyMember } from '@/firebase/collections';
 import { getMedications } from '@/services/medicationService';
-import { generateTodaySchedule } from '@/services/reminderService';
-import { logMedicationDose } from '@/services/adherenceService';
+import { generateTodaySchedule } from '@/services/medicationService';
+import { logMedicationDose } from '@/services/medicationService';
 import { getFamilyMembers } from '@/services/familyService';
 import { MedicationCard } from '@/features/medication/components/MedicationCard';
 import { TodaySchedule } from '@/features/medication/components/TodaySchedule';
@@ -143,3 +143,4 @@ export function MedicationsPage() {
     </div>
   );
 }
+

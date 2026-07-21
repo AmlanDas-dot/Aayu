@@ -18,7 +18,9 @@ from __future__ import annotations
 
 import logging
 import os
+import threading
 from typing import Any
+import torch
 
 import chromadb
 from chromadb.config import Settings
@@ -45,10 +47,15 @@ class _SentenceTransformerEmbeddingFn(chromadb.EmbeddingFunction):  # type: igno
     def __init__(self, model_name: str = _EMBEDDING_MODEL) -> None:
         logger.info("[VectorDB] Loading embedding model: %s", model_name)
         self._model = SentenceTransformer(model_name)
+        self._lock = threading.Lock()
         logger.info("[VectorDB] Embedding model loaded.")
 
     def __call__(self, input: list[str]) -> list[list[float]]:  # noqa: A002
-        embeddings = self._model.encode(input, convert_to_numpy=True)
+        with self._lock:
+            with torch.inference_mode():
+                embeddings = self._model.encode(input, convert_to_numpy=True)
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
         return embeddings.tolist()
 
 

@@ -1,4 +1,5 @@
-import { updateDoc, doc, setDoc } from "firebase/firestore";
+import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { doc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { UserProfile, Settings } from "@/firebase/collections";
 
@@ -12,3 +13,4 @@ export const updateUserPreferences = async (uid: string, data: Partial<Settings>
   // Using setDoc with merge to create it if it doesn't exist yet
   await setDoc(settingsRef, data, { merge: true });
 };
+

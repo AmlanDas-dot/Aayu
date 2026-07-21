@@ -99,7 +99,7 @@ def _build_prompt(query: str, context: str) -> str:
     )
 
 
-async def _ollama(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300) -> str:
+async def _ollama(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300, response_format: str = "text") -> str:
     """Call Ollama local API."""
     prompt = _build_prompt(query, context)
     messages = [{"role": "system", "content": system_prompt or _SYSTEM_PROMPT}]
@@ -113,6 +113,8 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
         "stream": False,
         "options": {"temperature": 0.3, "num_predict": max_tokens},
     }
+    if response_format == "json_object":
+        payload["format"] = "json"
     try:
         async with httpx.AsyncClient(timeout=60.0) as client:
             resp = await client.post(f"{OLLAMA_BASE_URL}/api/chat", json=payload)
@@ -127,7 +129,7 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
         raise RuntimeError(f"Ollama error: {exc}") from exc
 
 
-async def _openai(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300) -> str:
+async def _openai(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300, response_format: str = "text") -> str:
     """Call OpenAI API."""
     try:
         from openai import OpenAI
@@ -147,12 +149,16 @@ async def _openai(query: str, context: str, history: list[dict[str, str]] = None
         prompt = _build_prompt(query, context)
         messages.append({"role": "user", "content": prompt})
 
-        response = client.chat.completions.create(
-            model=OPENAI_MODEL,
-            messages=messages,
-            temperature=0.3,
-            max_tokens=max_tokens,
-        )
+        kwargs = {
+            "model": OPENAI_MODEL,
+            "messages": messages,
+            "temperature": 0.3,
+            "max_tokens": max_tokens,
+        }
+        if response_format == "json_object":
+            kwargs["response_format"] = {"type": "json_object"}
+            
+        response = client.chat.completions.create(**kwargs)
 
         response_text = response.choices[0].message.content
         if not response_text:
@@ -173,6 +179,7 @@ async def get_llm_response(
     history: list[dict[str, str]] = None,
     system_prompt: str = None,
     max_tokens: int = 300,
+    response_format: str = "text",
 ) -> tuple[str, str]:
     """
     Generate a response using OpenAI (online) or Ollama (offline).
@@ -189,9 +196,9 @@ async def get_llm_response(
             t0 = time.time()
             if provider == "openai":
                 logger.info("[LLM] Using OpenAI")
-                text = await _openai(query, context, history, system_prompt, max_tokens)
+                text = await _openai(query, context, history, system_prompt, max_tokens, response_format)
             else:
-                text = await _ollama(query, context, history, system_prompt, max_tokens)
+                text = await _ollama(query, context, history, system_prompt, max_tokens, response_format)
             elapsed_ms = round((time.time() - t0) * 1000)
             logger.info("[LLM] %s responded in %d ms.", provider, elapsed_ms)
             return text, provider

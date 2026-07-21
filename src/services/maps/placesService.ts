@@ -1,3 +1,5 @@
+import { GreenLocation } from "../environmentMock";
+
 export interface NormalizedFacility {
   id: string;
   name: string;
@@ -108,3 +110,61 @@ export async function searchNearbyHealthcare({ lat, lng, radius, categories }: S
     throw new Error(err.message || "Failed to fetch nearby healthcare facilities.");
   }
 }
+
+export const getNearbyGreenAreas = async (lat: number, lon: number): Promise<GreenLocation[]> => {
+  const PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY || import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  if (!PLACES_API_KEY) {
+    console.warn("Google Places API key missing. Returning empty green areas.");
+    return [];
+  }
+
+  try {
+    const response = await fetch("https://places.googleapis.com/v1/places:searchNearby", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": PLACES_API_KEY,
+        "X-Goog-FieldMask": "places.displayName,places.location,places.primaryType"
+      },
+      body: JSON.stringify({
+        includedTypes: ["park", "national_park", "botanical_garden"],
+        maxResultCount: 3,
+        locationRestriction: {
+          circle: {
+            center: {
+              latitude: lat,
+              longitude: lon
+            },
+            radius: 3000.0
+          }
+        }
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Places API failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    if (!data.places) return [];
+
+    return data.places.map((place: any, index: number) => {
+      const pLat = place.location?.latitude || lat;
+      const pLon = place.location?.longitude || lon;
+      const dist = haversineDistance(lat, lon, pLat, pLon) * 1000;
+      
+      return {
+        id: `live-park-${index}`,
+        name: place.displayName?.text || "Local Park",
+        cleanAirScore: 80 + Math.floor(Math.random() * 20),
+        distanceMeter: Math.round(dist),
+        walkTimeMin: Math.round(dist / 80),
+        latitude: pLat,
+        longitude: pLon
+      };
+    });
+  } catch (error) {
+    console.error("Failed to fetch green areas:", error);
+    return [];
+  }
+};

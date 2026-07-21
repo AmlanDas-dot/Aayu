@@ -24,6 +24,10 @@ export interface ChatMessage {
   llm_provider?: "openai" | "gemini" | "ollama" | "template" | "none";
   image?: string;
   imageDescription?: string;
+  possibleConditions?: Array<{ name: string; confidence: number }>;
+  urgency?: string;
+  recommendations?: string[];
+  redFlags?: string[];
   warnings?: string[];
   confidence?: string;
   healthcare_recommendation?: HealthcareRecommendation;

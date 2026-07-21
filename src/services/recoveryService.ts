@@ -1,5 +1,6 @@
+import { setDoc, addDoc, updateDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
-import { collection, doc, getDoc, getDocs, setDoc, updateDoc, addDoc, query, orderBy, serverTimestamp, limit, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, query, orderBy, serverTimestamp, limit, where } from "firebase/firestore";
 import { sendChatMessage } from "./api";
 
 // Types
@@ -97,14 +98,14 @@ export const startRecoveryJourney = async (uid: string, data: Partial<RecoveryPr
   await generateDailyMissions(uid);
   
   // Generate initial habits
-  const habitsRef = collection(db, `users/${uid}/recovery/habits`);
+  const habitsRef = collection(db, `users/${uid}/recovery/profile/habits`);
   await setDoc(doc(habitsRef, "habit-1"), { id: "habit-1", label: "Smoke-Free", days: 1, lastUpdated: new Date().toISOString(), icon: "Flame", bg: "#fef2f2" });
   await setDoc(doc(habitsRef, "habit-2"), { id: "habit-2", label: "Hydration", days: 1, lastUpdated: new Date().toISOString(), icon: "Droplets", bg: "#f0f9ff" });
 };
 
 export const getRecoveryMissions = async (uid: string): Promise<RecoveryMission[]> => {
   const today = new Date().toISOString().split('T')[0];
-  const q = query(collection(db, `users/${uid}/recovery/missions`), where("date", "==", today));
+  const q = query(collection(db, `users/${uid}/recovery/profile/missions`), where("date", "==", today));
   const snap = await getDocs(q);
   
   if (snap.empty) {
@@ -117,7 +118,7 @@ export const getRecoveryMissions = async (uid: string): Promise<RecoveryMission[
 
 export const generateDailyMissions = async (uid: string) => {
   const today = new Date().toISOString().split('T')[0];
-  const missionsRef = collection(db, `users/${uid}/recovery/missions`);
+  const missionsRef = collection(db, `users/${uid}/recovery/profile/missions`);
   
   const missions: RecoveryMission[] = [
     { id: `m1-${today}`, text: "Drink 2 liters of water", category: "Habit", completed: false, date: today },
@@ -131,12 +132,12 @@ export const generateDailyMissions = async (uid: string) => {
 };
 
 export const toggleMissionStatus = async (uid: string, missionId: string, currentStatus: boolean) => {
-  const docRef = doc(db, `users/${uid}/recovery/missions/${missionId}`);
+  const docRef = doc(db, `users/${uid}/recovery/profile/missions/${missionId}`);
   await updateDoc(docRef, { completed: !currentStatus });
 };
 
 export const getRecoveryHabits = async (uid: string): Promise<RecoveryHabit[]> => {
-  const snap = await getDocs(collection(db, `users/${uid}/recovery/habits`));
+  const snap = await getDocs(collection(db, `users/${uid}/recovery/profile/habits`));
   return snap.docs.map(d => d.data() as RecoveryHabit);
 };
 
@@ -164,7 +165,7 @@ export const logJournalAndMood = async (uid: string, mood: number, journal: stri
     }
 
     // 2. Save Mood
-    await addDoc(collection(db, `users/${uid}/recovery/moods`), {
+    await addDoc(collection(db, `users/${uid}/recovery/profile/moods`), {
       score: mood,
       timestamp: serverTimestamp()
     });
@@ -178,7 +179,7 @@ export const logJournalAndMood = async (uid: string, mood: number, journal: stri
       riskLevel,
       timestamp: new Date().toISOString()
     };
-    await addDoc(collection(db, `users/${uid}/recovery/journals`), journalData);
+    await addDoc(collection(db, `users/${uid}/recovery/profile/journals`), journalData);
     
     // 4. Update Profile Score slightly if positive mood
     const profile = await getRecoveryProfile(uid);
@@ -208,7 +209,7 @@ export const logRelapse = async (uid: string) => {
 };
 
 export const getRecoveryTrends = async (uid: string) => {
-  const q = query(collection(db, `users/${uid}/recovery/moods`), orderBy("timestamp", "asc"), limit(7));
+  const q = query(collection(db, `users/${uid}/recovery/profile/moods`), orderBy("timestamp", "asc"), limit(7));
   const snap = await getDocs(q);
   
   const trends: any[] = [];
@@ -223,3 +224,4 @@ export const getRecoveryTrends = async (uid: string) => {
   
   return trends;
 };
+

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { updateUserProfile, updateUserPreferences } from "@/services/userProfileService";
-import { uploadAvatar, deleteAvatar } from "@/services/storageService";
-import { reauthenticate, changePassword, deleteAccount } from "@/services/authService";
+import { uploadAvatar, deleteAvatar } from "@/firebase/storage";
+import { reauthenticate, changePassword, deleteAccount } from "@/firebase/auth";
 import { Settings, UserProfile, HealthProfile, ProfessionalProfile } from "@/firebase/collections";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { User, Shield, Download, Heart, Settings as SettingsIcon, RefreshCw, Cloud, CloudOff, X, Stethoscope } from 'lucide-react';
@@ -994,3 +994,5 @@ export function AccountPage() {
     </div>
   );
 }
+
+

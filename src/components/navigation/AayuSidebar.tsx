@@ -24,7 +24,7 @@ const NAV_ITEMS: NavItem[] = [
   { path: "/hospitals", label: "Nearby care", icon: "fa-solid fa-location-dot", requiredPermission: PERMISSION.HOSPITALS_NEARBY },
   { path: "/records", label: "Records", icon: "fa-regular fa-file-lines", requiredPermission: PERMISSION.RECORDS_READ },
   { path: "/medications", label: "Medications", icon: "fa-solid fa-pills", requiredPermission: PERMISSION.MEDICATIONS_MANAGE },
-  { path: "/recovery", label: "Behavioral Health", icon: "fa-solid fa-heart-pulse", requiredPermission: PERMISSION.ASSISTANT_USE },
+  { path: "/recovery", label: "Addiction Recovery", icon: "fa-solid fa-heart-pulse", requiredPermission: PERMISSION.ASSISTANT_USE },
   { path: "/environment", label: "Environmental Health", icon: "fa-solid fa-leaf", requiredPermission: PERMISSION.ENVIRONMENT_VIEW },
   { path: "/alerts", label: "Alerts & Updates", icon: "fa-regular fa-bell", requiredPermission: PERMISSION.EMERGENCY_USE },
   { path: "/family", label: "Family and sharing", icon: "fa-solid fa-users", requiredPermission: PERMISSION.FAMILY_MANAGE },

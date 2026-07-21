@@ -1,8 +1,9 @@
+import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
-import { collection, doc, setDoc, getDocs, getDoc, query, where, deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, doc, getDocs, getDoc, query, where } from "firebase/firestore";
 import { MedicalRecord } from "@/firebase/collections";
 
-const RECORDS_COLLECTION = "medical_records";
+const RECORDS_COLLECTION = "medicalRecords";
 
 export const generateRecordId = () => {
   return doc(collection(db, RECORDS_COLLECTION)).id;
@@ -72,3 +73,4 @@ export const checkDuplicateRecord = async (familyId: string, memberId: string, f
   }
   return null;
 };
+

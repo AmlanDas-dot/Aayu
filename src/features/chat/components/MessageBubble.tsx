@@ -161,6 +161,56 @@ export function MessageBubble({
               </div>
             )}
 
+            {/* Structured Medical Response */}
+            {msg.role === "assistant" && msg.possibleConditions && msg.possibleConditions.length > 0 && (
+              <div style={{
+                background: "#f8fafc",
+                border: "1px solid #e2e8f0",
+                borderRadius: "8px",
+                padding: "12px",
+                marginBottom: "12px",
+                marginTop: "8px"
+              }}>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#334155", marginBottom: "8px" }}>
+                  <i className="fa-solid fa-microscope" style={{ marginRight: "6px" }}></i> 
+                  Possible Matches (Not a Diagnosis)
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "12px" }}>
+                  {msg.possibleConditions.map((cond, idx) => (
+                    <div key={idx} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "white", padding: "6px 10px", borderRadius: "6px", border: "1px solid #e2e8f0" }}>
+                      <span style={{ fontSize: "0.8rem", fontWeight: 600, color: "#0f172a" }}>{cond.name}</span>
+                      <span style={{ fontSize: "0.7rem", color: "#64748b", background: "#f1f5f9", padding: "2px 6px", borderRadius: "4px" }}>
+                        {(cond.confidence * 100).toFixed(0)}% Match
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {msg.recommendations && msg.recommendations.length > 0 && (
+                  <div style={{ marginBottom: "12px" }}>
+                    <div style={{ fontSize: "0.8rem", fontWeight: 700, color: "#0f766e", marginBottom: "4px" }}>
+                      General Recommendations
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "20px", fontSize: "0.8rem", color: "#334155" }}>
+                      {msg.recommendations.map((r, i) => <li key={i} style={{ marginBottom: "2px" }}>{r}</li>)}
+                    </ul>
+                  </div>
+                )}
+
+                {msg.redFlags && msg.redFlags.length > 0 && (
+                  <div>
+                    <div style={{ fontSize: "0.8rem", fontWeight: 700, color: "#e11d48", marginBottom: "4px" }}>
+                      <i className="fa-solid fa-triangle-exclamation" style={{ marginRight: "4px" }}></i>
+                      Red Flags (Seek Medical Care)
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "20px", fontSize: "0.8rem", color: "#9f1239" }}>
+                      {msg.redFlags.map((r, i) => <li key={i} style={{ marginBottom: "2px" }}>{r}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Text Content */}
             <p style={{ whiteSpace: "pre-line" }}>
               {typeof msg.text === 'string' ? msg.text : JSON.stringify(msg.text)}

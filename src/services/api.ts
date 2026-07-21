@@ -65,15 +65,21 @@ export async function sendChatMessage(
   return data;
 }
 
+import { db } from "@/firebase/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 // ── Image Chat integration (Sprint 3) ─────────────────────────────────────────
 
 export interface ImageChatApiResponse {
-  success: boolean;
-  image_description: string;
-  answer: string;
-  triage: string;
-  warnings: string[];
-  confidence: string;
+  imageDescription: string;
+  possibleConditions: Array<{
+    name: string;
+    confidence: number;
+  }>;
+  urgency: string;
+  recommendations: string[];
+  redFlags: string[];
+  disclaimer: string;
 }
 
 export async function sendImageChatMessage(
@@ -81,6 +87,7 @@ export async function sendImageChatMessage(
   question: string,
   language: string = "en",
   sessionId: string = "",
+  uid: string = "",
   history: any[] = [],
   onUploadProgress?: (progress: number) => void
 ): Promise<ImageChatApiResponse> {
@@ -89,6 +96,7 @@ export async function sendImageChatMessage(
   formData.append("question", question);
   formData.append("language", language);
   formData.append("session_id", sessionId);
+  formData.append("uid", uid);
   formData.append("history", JSON.stringify(history));
 
   if (onUploadProgress) {
@@ -142,6 +150,26 @@ export async function sendImageChatMessage(
   return res.json();
 }
 
+export async function logMedicalImageHistory(
+  uid: string,
+  imageURL: string,
+  response: ImageChatApiResponse
+) {
+  try {
+    const colRef = collection(db, `users/${uid}/medicalImageHistory`);
+    await addDoc(colRef, {
+      timestamp: serverTimestamp(),
+      imageURL: imageURL || "",
+      description: response.imageDescription,
+      possibleConditions: response.possibleConditions,
+      urgency: response.urgency,
+      recommendations: response.recommendations,
+      redFlags: response.redFlags,
+    });
+  } catch (error) {
+    console.error("Failed to log medical image history", error);
+  }
+}
 
 // ── Fallback mock (kept for offline/dev use) ──────────────────────────────────
 

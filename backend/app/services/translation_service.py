@@ -255,11 +255,18 @@ def translate_to_english(text: str, source_lang: str) -> str:
             return_tensors="pt",
         ).to(_device)
 
-        with torch.no_grad():  # Disable gradient tracking — saves memory during inference
-            generated = _model.generate(**inputs, max_new_tokens=256)
+        with torch.inference_mode():
+            with torch.autocast("cuda", dtype=torch.float16) if _device == "cuda" else torch.autocast("cpu", enabled=False):
+                generated = _model.generate(**inputs, max_new_tokens=256)
 
         translations = _tokenizer.batch_decode(generated, skip_special_tokens=True)
         translations = _ip.postprocess_batch(translations, lang="eng_Latn")
+        
+        # Cleanup memory
+        del inputs, generated, batch
+        if _device == "cuda":
+            torch.cuda.empty_cache()
+            
         return translations[0]
 
     except Exception as exc:
@@ -305,21 +312,28 @@ def translate_from_english(text: str, target_lang: str) -> str:
                 return_tensors="pt",
                 return_attention_mask=True,
             ).to(_device)
-            with torch.no_grad():
-                generated_tokens = _model_en.generate(
-                    **inputs,
-                    use_cache=True,
-                    min_length=0,
-                    max_length=256,
-                    num_beams=5,
-                    num_return_sequences=1,
-                )
+            with torch.inference_mode():
+                with torch.autocast("cuda", dtype=torch.float16) if _device == "cuda" else torch.autocast("cpu", enabled=False):
+                    generated_tokens = _model_en.generate(
+                        **inputs,
+                        use_cache=True,
+                        min_length=0,
+                        max_length=256,
+                        num_beams=5,
+                        num_return_sequences=1,
+                    )
             with _tokenizer_en.as_target_tokenizer():
                 decoded = _tokenizer_en.batch_decode(
                     generated_tokens.detach().cpu().tolist(),
                     skip_special_tokens=True,
                     clean_up_tokenization_spaces=True,
                 )
+            
+            # Cleanup memory
+            del inputs, generated_tokens, batch
+            if _device == "cuda":
+                torch.cuda.empty_cache()
+                
             return _ip_en.postprocess_batch(decoded, lang=indic_lang)[0]
         except Exception as exc:
             _logger.error("[Translation] translate_from_english failed: %s", exc)

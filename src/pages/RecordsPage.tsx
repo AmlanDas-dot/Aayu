@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useHealthContext } from "@/contexts/HealthContext";
 import { getMedicalRecords, createMedicalRecord, generateRecordId, checkDuplicateRecord } from "@/services/recordService";
-import { uploadMedicalRecord } from "@/services/storageService";
+import { uploadMedicalRecord } from "@/firebase/storage";
 import { createMedication } from "@/services/medicationService";
 import { analyzeMedicalDocument } from "@/services/geminiRecordService";
 import { HealthTrends } from "@/features/records/components/HealthTrends";
@@ -470,3 +470,4 @@ export function RecordsPage() {
     </div>
   );
 }
+

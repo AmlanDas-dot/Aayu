@@ -1,0 +1,129 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ==========================================
+    // HELPER FUNCTIONS
+    // ==========================================
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isCurrentUser(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function getFamily(familyId) {
+      return get(/databases/$(database)/documents/families/$(familyId)).data;
+    }
+
+    function getFamilyMember(familyId, userId) {
+      return get(/databases/$(database)/documents/familyMembers/$(familyId + "_" + userId)).data;
+    }
+    
+    // Checks if the user is a member of the family
+    function isFamilyMember(familyId) {
+      return isSignedIn() && exists(/databases/$(database)/documents/familyMembers/$(familyId + "_" + request.auth.uid));
+    }
+
+    // Checks if the user has the 'owner' role in the family
+    function isFamilyOwner(familyId) {
+      return isSignedIn() && isFamilyMember(familyId) && getFamilyMember(familyId, request.auth.uid).role == 'owner';
+    }
+    
+    // Checks if the user has the 'admin' role in the family
+    function isFamilyAdmin(familyId) {
+      return isSignedIn() && isFamilyMember(familyId) && getFamilyMember(familyId, request.auth.uid).role == 'admin';
+    }
+    
+    // Checks if the user is owner OR admin
+    function isFamilyOwnerOrAdmin(familyId) {
+      return isFamilyOwner(familyId) || isFamilyAdmin(familyId);
+    }
+
+    // ==========================================
+    // GLOBAL RULES
+    // ==========================================
+    
+    // Deny all by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Users can only read/write their own profile & settings
+    match /users/{userId} {
+			 allow read, write: if isCurrentUser(userId);
+
+	  match /{document=**} {
+  	  allow read, write: if isCurrentUser(userId);
+  	}
+}
+
+    match /settings/{userId} {
+      allow read, write: if isCurrentUser(userId);
+    }
+    
+    // ==========================================
+    // HEALTH RECORDS & MEDICATIONS
+    // ==========================================
+    // Only family members can read/write their family's health records
+    match /medical_records/{docId} {
+      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow create: if isFamilyMember(request.resource.data.familyId);
+    }
+    match /medications/{docId} {
+      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow create: if isFamilyMember(request.resource.data.familyId);
+    }
+    match /medicationLogs/{docId} {
+      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow create: if isFamilyMember(request.resource.data.familyId);
+    }
+    
+    match /chatHistory/{docId} {
+      allow read, write: if isCurrentUser(resource.data.uid);
+      allow create: if isCurrentUser(request.resource.data.uid);
+    }
+    match /nutritionHistory/{docId} {
+      allow read, write: if isCurrentUser(resource.data.uid);
+      allow create: if isCurrentUser(request.resource.data.uid);
+    }
+    match /alerts/{docId} {
+      allow read, write: if isCurrentUser(resource.data.uid);
+      allow create: if isCurrentUser(request.resource.data.uid);
+    }
+    
+    // ==========================================
+    // JOIN TOKENS
+    // ==========================================
+    match /joinTokens/{tokenId} {
+      allow read: if isSignedIn();
+      allow create: if isCurrentUser(request.resource.data.ownerUid); // or just rely on family creation
+    }
+
+    // ==========================================
+    // FAMILIES (TEMPORARY MIGRATION RULES)
+    // ==========================================
+    match /families/{familyId} {
+      // TEMPORARY: Allow all authenticated users to read/write for migration
+      allow read, write: if isSignedIn();
+    }
+    
+    // ==========================================
+    // FAMILY MEMBERS (TEMPORARY MIGRATION RULES)
+    // ==========================================
+    match /familyMembers/{memberId} {
+      // TEMPORARY: Allow all authenticated users to read/write for migration
+      allow read, write: if isSignedIn();
+    }
+    
+    // ==========================================
+    // AUDIT LOGS (TEMPORARY MIGRATION RULES)
+    // ==========================================
+    match /auditLogs/{docId} {
+      // TEMPORARY: Allow all authenticated users to read/write for migration
+      allow read, write: if isSignedIn();
+    }
+  }
+}

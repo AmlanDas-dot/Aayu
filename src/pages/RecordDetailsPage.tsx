@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getMedicalRecordById, deleteMedicalRecord } from "@/services/recordService";
-import { deleteMedicalRecordFile } from "@/services/storageService";
+import { deleteMedicalRecordFile } from "@/firebase/storage";
 import { MedicalRecord } from "@/firebase/collections";
 import { ArrowLeft, Download, Trash2, Calendar, User, FileText, Activity, AlertTriangle, Share2, Type } from "lucide-react";
 
@@ -210,3 +210,4 @@ export function RecordDetailsPage() {
     </div>
   );
 }
+

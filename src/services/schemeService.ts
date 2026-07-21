@@ -1,5 +1,6 @@
+import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { doc, serverTimestamp } from "firebase/firestore";
 import { sendChatMessage } from "./api";
 
 export interface SchemeDefinition {
@@ -174,3 +175,4 @@ export const saveSchemeApplication = async (uid: string, schemeId: string, statu
     updatedAt: serverTimestamp()
   }, { merge: true });
 };
+

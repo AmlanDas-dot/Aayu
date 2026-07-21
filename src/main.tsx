@@ -8,30 +8,14 @@ import "./aayu-pages.css";
 import "./signup.css";
 
 import { HealthContextProvider } from "@/contexts/HealthContext";
-import { runHardeningMigration } from "@/services/migrationService";
-
-// TEMPORARY: Run the database migration once.
-// Remove this block after the migration completes successfully.
-(async () => {
-  try {
-    console.log("====================================");
-    console.log("Starting AAYU Hardening Migration...");
-    console.log("====================================");
-
-    await runHardeningMigration();
-
-    console.log("====================================");
-    console.log("Migration completed successfully!");
-    console.log("====================================");
-  } catch (error) {
-    console.error("Migration failed:", error);
-  }
-})();
+import { ToastProvider } from "@/contexts/ToastContext";
 
 createRoot(document.getElementById("root")!).render(
   <ErrorBoundary>
-    <HealthContextProvider>
-      <App />
-    </HealthContextProvider>
+    <ToastProvider>
+      <HealthContextProvider>
+        <App />
+      </HealthContextProvider>
+    </ToastProvider>
   </ErrorBoundary>
 );

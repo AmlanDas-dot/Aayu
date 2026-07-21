@@ -1,4 +1,4 @@
-import { DailySchedule } from '@/services/reminderService';
+import { DailySchedule } from '@/services/medicationService';
 import { CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 
 interface TodayScheduleProps {
@@ -74,3 +74,4 @@ export function TodaySchedule({ schedule, onTakeDose }: TodayScheduleProps) {
     </div>
   );
 }
+

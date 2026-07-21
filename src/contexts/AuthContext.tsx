@@ -1,7 +1,8 @@
+import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { onAuthStateChanged, User, signOut } from "firebase/auth";
 import { auth, db } from "@/firebase/firebase";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { UserProfile } from "@/firebase/collections";
 import {
   DEFAULT_ROLE,
@@ -129,3 +130,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     </AuthContext.Provider>
   );
 };
+

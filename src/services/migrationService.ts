@@ -1,4 +1,5 @@
-import { collection, getDocs, updateDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { setDoc, addDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
+import { collection, getDocs, doc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { Family } from "@/firebase/collections";
 import { logAuditAction } from "./familyService";
@@ -174,3 +175,4 @@ export async function runHardeningMigration() {
     alert("Migration failed. Check console.");
   }
 }
+

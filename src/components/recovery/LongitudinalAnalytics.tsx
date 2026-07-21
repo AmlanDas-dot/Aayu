@@ -5,14 +5,15 @@ import { useAuth } from '@/contexts/AuthContext';
 import { getRecoveryTrends } from '../../services/recoveryService';
 
 export const LongitudinalAnalytics: React.FC = () => {
-  const { userProfile } = useAuth();
+  const { currentUser } = useAuth();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTrends = async () => {
+      if (!currentUser) return;
       try {
-        const trends = await getRecoveryTrends(userProfile?.uid || 'demo-user');
+        const trends = await getRecoveryTrends(currentUser.uid);
         setData(trends);
       } catch (error) {
         console.error("Failed to fetch recovery trends", error);
@@ -21,7 +22,7 @@ export const LongitudinalAnalytics: React.FC = () => {
       }
     };
     fetchTrends();
-  }, [userProfile]);
+  }, [currentUser]);
 
   return (
     <div style={{ background: 'white', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>

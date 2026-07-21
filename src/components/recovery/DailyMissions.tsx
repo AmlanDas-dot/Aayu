@@ -4,14 +4,15 @@ import { useAuth } from '@/contexts/AuthContext';
 import { getRecoveryMissions, toggleMissionStatus, RecoveryMission } from '../../services/recoveryService';
 
 export const DailyMissions: React.FC = () => {
-  const { userProfile } = useAuth();
+  const { currentUser } = useAuth();
   const [missions, setMissions] = useState<RecoveryMission[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMissions = async () => {
+      if (!currentUser) return;
       try {
-        const data = await getRecoveryMissions(userProfile?.uid || 'demo-user');
+        const data = await getRecoveryMissions(currentUser.uid);
         setMissions(data);
       } catch (error) {
         console.error("Failed to fetch missions", error);
@@ -20,13 +21,13 @@ export const DailyMissions: React.FC = () => {
       }
     };
     fetchMissions();
-  }, [userProfile]);
+  }, [currentUser]);
 
   const toggleMission = async (id: string, currentStatus: boolean) => {
-    // Optimistic update
+    if (!currentUser) return;
     setMissions(missions.map(m => m.id === id ? { ...m, completed: !currentStatus } : m));
     try {
-      await toggleMissionStatus(userProfile?.uid || 'demo-user', id, currentStatus);
+      await toggleMissionStatus(currentUser.uid, id, currentStatus);
     } catch (e) {
       console.error(e);
       // Revert if fail

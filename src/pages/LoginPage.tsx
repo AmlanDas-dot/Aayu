@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { loginWithEmail, loginWithGoogle } from "@/firebase/auth";
-import { resetPassword } from "@/services/authService";
+import { resetPassword } from "@/firebase/auth";
 import { Mail, Lock, Eye, EyeOff, Sparkles, Users, FileText, Loader2 } from "lucide-react";
 import logoHeart from "@/assets/logo-heart.png";
 import styles from "./Login.module.css";
@@ -215,3 +215,4 @@ export const LoginPage = () => {
     </div>
   );
 };
+

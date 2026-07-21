@@ -160,6 +160,16 @@ async def lifespan(app: FastAPI):
         logger.error("│  ✗ Alert Scheduler failed: %s", exc)
     logger.info("└──────────────────────────────")
 
+    # ── FoodVisionService Pre-Loading ────────────────────────────────────────
+    logger.info("┌─ Food Vision Pipeline")
+    try:
+        from app.services.food_vision_service import FoodVisionService
+        await FoodVisionService.get_instance().load_model()
+        logger.info("│  ✓ FoodVisionService model loaded into GPU")
+    except Exception as exc:
+        logger.error("│  ✗ FoodVisionService init failed: %s", exc)
+    logger.info("└──────────────────────────────")
+
     # ── Ready ─────────────────────────────────────────────────────────────────
     logger.info("┌─ Lazy-Loaded Services (zero VRAM until first request)")
     logger.info("│  ◌ IndicTrans2 .......... loads on first non-English audio")

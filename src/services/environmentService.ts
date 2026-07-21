@@ -5,7 +5,7 @@ import {
   UVData,
   mockEnvironmentData
 } from "./environmentMock";
-import { getNearbyGreenAreas } from "./placesService";
+import { getNearbyGreenAreas } from "./maps/placesService";
 
 // Helper for Lung Load
 const calculateLungLoad = (pm25: number, pm10: number): number => {
@@ -120,3 +120,4 @@ export const getCurrentEnvironment = async (lat: number, lon: number): Promise<E
     return mockEnvironmentData;
   }
 };
+

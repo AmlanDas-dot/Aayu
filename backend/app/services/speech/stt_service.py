@@ -22,3 +22,10 @@ def transcribe_audio(file_path: str, language: str) -> str:
     
     logger.error(f"Unsupported language for backend STT: {language}")
     raise RuntimeError("Speech recognition failed")
+
+def get_whisper_status():
+    return {
+        "provider": "Sarvam API",
+        "loaded_in_memory": False,
+        "supported_langs": ["hi", "gu", "or"]
+    }

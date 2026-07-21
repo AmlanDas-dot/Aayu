@@ -1,6 +1,6 @@
 import { Medication } from '@/firebase/collections';
 import { Pill, CheckCircle2, Clock, XCircle, Calendar, Play } from 'lucide-react';
-import { logMedicationDose } from '@/services/adherenceService';
+import { logMedicationDose } from '@/services/medicationService';
 
 interface MedicationCardProps {
   medication: Medication;
@@ -104,3 +104,4 @@ export function MedicationCard({ medication, onUpdate }: MedicationCardProps) {
     </div>
   );
 }
+
