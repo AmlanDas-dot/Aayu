@@ -1,4 +1,4 @@
-import { setDoc, addDoc, updateDoc, deleteDoc, runTransaction } from "@/firebase/firestoreLogger";
+import { setDoc, updateDoc, deleteDoc, runTransaction } from "@/firebase/firestoreLogger";
 import { Transaction } from "firebase/firestore";
 import {
   collection,
