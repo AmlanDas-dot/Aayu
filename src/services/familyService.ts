@@ -8,9 +8,10 @@ import {
   query,
   where
 } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { db, auth } from "@/firebase/firebase";
 import { Family, FamilyMember, FamilyRole, AuditLog } from "@/firebase/collections";
 import { makeId } from "@/features/chat/utils/chatUtils";
+import { isDemoSession } from "@/utils/demoMode";
 
 const familiesCollection = collection(db, "families");
 const familyMembersCollection = collection(db, "familyMembers");
@@ -80,7 +81,7 @@ export async function createFamily(
     transaction.set(doc(familyMembersCollection, newMember.id!), newMember);
     transaction.set(doc(joinTokensCollection, joinToken), { familyId, ownerUid, createdAt: now });
   });
-  
+
   await logAuditAction(familyId, ownerUid, 'FAMILY_CREATED', { name: familyData.name });
 
   return familyId;
@@ -95,16 +96,90 @@ export async function getFamilyDetails(familyId: string): Promise<Family | null>
 }
 
 export async function getFamilyMembers(familyId: string): Promise<FamilyMember[]> {
+  if (isDemoSession()) {
+    const now = new Date().toISOString();
+    return [
+      {
+        id: "demo-member-owner",
+        familyId,
+        userId: "demo-judge-user",
+        isLinkedAccount: true,
+        name: auth.currentUser?.displayName || "Account Name",
+        relationship: "Self",
+        gender: "Female",
+        role: "owner",
+        status: "linked",
+        createdBy: "demo-judge-user",
+        createdAt: now,
+        updatedAt: now,
+        joinedAt: now,
+        lastActive: now,
+      },
+      {
+        id: "demo-member-child",
+        familyId,
+        userId: null,
+        isLinkedAccount: false,
+        name: "Anaya",
+        relationship: "Daughter",
+        gender: "Female",
+        bloodGroup: "B+",
+        role: "member",
+        status: "local",
+        joinedAt: now,
+        healthProfile: {
+          allergies: ["Dust"],
+          conditions: [],
+          medications: ["Vitamin D"],
+        },
+        createdBy: "demo-judge-user",
+        createdAt: now,
+        updatedAt: now,
+      },
+    ];
+  }
+
   const q = query(familyMembersCollection, where("familyId", "==", familyId));
   const snap = await getDocs(q);
   return snap.docs.map(doc => doc.data() as FamilyMember);
 }
 
 export async function getUserFamily(userId: string): Promise<{ family: Family | null; member: FamilyMember | null }> {
+  if (isDemoSession()) {
+    const now = new Date().toISOString();
+    const family: Family = {
+      id: "demo-family",
+      ownerUid: userId,
+      name: "Demo Household",
+      primaryCaregiver: auth.currentUser?.displayName || "Account Name",
+      address: "Your Area",
+      motto: "Shared care, clearer records.",
+      joinToken: "AAYU24",
+      createdAt: now,
+      updatedAt: now,
+    };
+    const member: FamilyMember = {
+      id: "demo-member-owner",
+      familyId: family.id!,
+      userId,
+      isLinkedAccount: true,
+      name: auth.currentUser?.displayName || "Account Name",
+      relationship: "Self",
+      role: "owner",
+      status: "linked",
+      createdBy: userId,
+      createdAt: now,
+      updatedAt: now,
+      joinedAt: now,
+      lastActive: now,
+    };
+    return { family, member };
+  }
+
   // First find the user's membership
   const memberQ = query(familyMembersCollection, where("userId", "==", userId));
   const memberSnap = await getDocs(memberQ);
-  
+
   if (memberSnap.empty) {
     return { family: null, member: null };
   }
@@ -122,11 +197,11 @@ export async function joinFamilyWithToken(
 ): Promise<string> {
   // 1. Find family by token
   const tokenDoc = await getDoc(doc(joinTokensCollection, joinToken));
-  
+
   if (!tokenDoc.exists()) {
     throw new Error("Invalid join code.");
   }
-  
+
   const familyId = tokenDoc.data().familyId;
 
   // 2. Check if already a member
@@ -155,7 +230,7 @@ export async function joinFamilyWithToken(
 
   await setDoc(doc(familyMembersCollection, newMember.id!), newMember);
   await logAuditAction(familyId, userId, 'MEMBER_JOIN_REQUESTED', { memberId: newMember.id }, newMember.id!);
-  
+
   return familyId;
 }
 
@@ -212,6 +287,11 @@ export async function updateFamily(familyId: string, updates: Partial<Family>): 
   await updateDoc(doc(familiesCollection, familyId), updates);
 }
 
+export async function updateMember(memberId: string, updates: Partial<FamilyMember>): Promise<void> {
+  updates.updatedAt = new Date().toISOString();
+  await updateDoc(doc(familyMembersCollection, memberId), updates);
+}
+
 export async function updateMemberRole(memberId: string, newRole: FamilyRole): Promise<void> {
   await updateDoc(doc(familyMembersCollection, memberId), { role: newRole, updatedAt: new Date().toISOString() });
 }
@@ -224,7 +304,7 @@ export async function removeMember(memberId: string, performedByUid?: string): P
   const memberDoc = await getDoc(doc(familyMembersCollection, memberId));
   if (!memberDoc.exists()) return;
   const member = memberDoc.data() as FamilyMember;
-  
+
   const family = await getFamilyDetails(member.familyId);
   if (family && family.ownerUid === member.userId) {
     throw new Error("The family owner cannot leave or be removed. Transfer ownership first or delete the family.");
@@ -248,7 +328,7 @@ export async function deleteFamily(familyId: string, ownerUid?: string): Promise
     // 2. Delete the family doc
     transaction.delete(doc(familiesCollection, familyId));
   });
-  
+
   if (ownerUid) {
     await logAuditAction(familyId, ownerUid, 'FAMILY_DELETED', {});
   }

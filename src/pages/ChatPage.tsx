@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FileText } from "lucide-react";
 import {
@@ -20,6 +21,9 @@ import { useChatSession } from "@/features/chat/hooks/useChatSession";
 import { useVoiceInput } from "@/features/chat/hooks/useVoiceInput";
 import { useTTS } from "@/features/chat/hooks/useTTS";
 import { useImageCapture } from "@/features/chat/hooks/useImageCapture";
+import { generateRecordId, createMedicalRecord } from "@/services/recordService";
+import { uploadMedicalRecord } from "@/firebase/storage";
+import { analyzeMedicalDocument } from "@/services/geminiRecordService";
 import { useAuth } from "@/contexts/AuthContext";
 import { useHealthContext } from "@/contexts/HealthContext";
 import { useToast } from "@/contexts/ToastContext";
@@ -58,7 +62,6 @@ export function ChatPage() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingStage, setProcessingStage] = useState<{ icon: string; text: string } | null>(null);
   const [promptSaveRecordFile, setPromptSaveRecordFile] = useState<File | null>(null);
-  const [patientRecordsContext, setPatientRecordsContext] = useState<string>("");
 
   // Sync Messages with Active Session
   useEffect(() => {
@@ -68,56 +71,17 @@ export function ChatPage() {
     }
   }, [sessionId, conversations]);
 
-  // Load Medical Records context for RAG
-  useEffect(() => {
-    async function loadRecords() {
-      if (currentUser) {
-        try {
-          const { getMedicalRecords } = await import("@/services/recordService");
-          // Fetch records for the selected family. If a specific member is selected, fetch only theirs.
-          if (!selectedMember || !selectedMember.familyId) return;
-          
-          const records = await getMedicalRecords(selectedMember.familyId, selectedMember.id);
-          
-          let contextStr = "";
-          
-          contextStr += `[SYSTEM NOTE: The user is currently talking on behalf of their family member: ${selectedMember.name} (Role: ${selectedMember.role}). Please address health concerns in relation to this family member and use the provided medical records if applicable.]\n\n`;
-
-          if (records.length > 0) {
-            contextStr += "PATIENT MEDICAL RECORDS:\n";
-            contextStr += records.map(r => {
-              let recStr = `Record: ${r.title}\nDate: ${r.recordDate || r.uploadedAt}\nType: ${r.category}\n`;
-              if (r.hospital) recStr += `Hospital: ${r.hospital}\n`;
-              if (r.doctor) recStr += `Doctor: ${r.doctor}\n`;
-              if (r.geminiSummary) recStr += `Summary: ${r.geminiSummary}\n`;
-              if (r.importantValues && Object.keys(r.importantValues).length > 0) {
-                recStr += `Metrics: ${Object.entries(r.importantValues).map(([k,v]) => `${k}: ${v}`).join(', ')}\n`;
-              }
-              return recStr;
-            }).join("\n---\n");
-          } else {
-            contextStr += "No specific medical records found for this patient.\n";
-          }
-          
-          try {
-            const { buildMedicationContextForChat } = await import("@/services/chatMedicationBridge");
-            const medContext = await buildMedicationContextForChat(selectedMember.familyId, selectedMember.id!);
-            contextStr += `\n\n${medContext}\n`;
-          } catch (err) {
-            console.error("Failed to load medication context", err);
-          }
-          
-          setPatientRecordsContext(contextStr);
-        } catch (e) {
-          console.error("Failed to load records context", e);
-        }
-      }
-    }
-    loadRecords();
-  }, [currentUser, selectedMember]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const rowVirtualizer = useVirtualizer({
+    count: messages?.length || 0,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => 150, // rough estimate for a message bubble
+    overscan: 5,
+  });
 
   // Auto-scroll
   useEffect(() => {
@@ -339,7 +303,7 @@ export function ChatPage() {
             language,
             session_id: sessionId,
             history: llmHistory,
-            patient_records: patientRecordsContext,
+            patient_context: selectedMember ? { familyId: selectedMember.familyId, memberId: selectedMember.id, name: selectedMember.name, role: selectedMember.role } : null,
           },
           (event) => {
             if (event === "HEADERS_RECEIVED") {
@@ -358,8 +322,8 @@ export function ChatPage() {
       let assistantText = "";
       let riskLevel: RiskLevel = "routine";
       let imageDescription: string | undefined = undefined;
-      let warnings: string[] = [];
-      let confidence: string | undefined = undefined;
+      const warnings: string[] = [];
+      const confidence: string | undefined = undefined;
       let retrievedDocs: RetrievedDocument[] = [];
       let matchedRules: string[] = [];
       let disclaimer: string = "";
@@ -716,6 +680,7 @@ export function ChatPage() {
             {/* Scrollable messages feed */}
             <div
               className="chat-messages"
+              ref={scrollRef}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
@@ -747,15 +712,38 @@ export function ChatPage() {
               )}
               {emergencyAlert && <EmergencyAlert emergency={emergencyAlert} />}
 
-              {(messages || []).map((msg) => (
-                <MessageBubble
-                  key={msg.id}
-                  msg={msg}
-                  processingStage={processingStage}
-                  speakingMsgId={speakingMsgId}
-                  handleToggleSpeak={handleToggleSpeak}
-                />
-              ))}
+              <div
+                style={{
+                  height: `${rowVirtualizer.getTotalSize()}px`,
+                  width: '100%',
+                  position: 'relative',
+                }}
+              >
+                {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+                  const msg = messages[virtualRow.index];
+                  return (
+                    <div
+                      key={virtualRow.index}
+                      data-index={virtualRow.index}
+                      ref={rowVirtualizer.measureElement}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        transform: `translateY(${virtualRow.start}px)`,
+                      }}
+                    >
+                      <MessageBubble
+                        msg={msg}
+                        processingStage={processingStage}
+                        speakingMsgId={speakingMsgId}
+                        handleToggleSpeak={handleToggleSpeak}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
               <div ref={bottomRef} />
             </div>
 
@@ -793,9 +781,6 @@ export function ChatPage() {
                             addToast("Please select a family member first before saving.", "error");
                             return;
                           }
-                          const { uploadMedicalRecord } = await import("@/firebase/storage");
-                          const { createMedicalRecord, generateRecordId } = await import("@/services/recordService");
-                          const { analyzeMedicalDocument } = await import("@/services/geminiRecordService");
                           
                           setProcessingStage({ icon: "💾", text: "Saving to records..." });
                           try {
@@ -829,8 +814,8 @@ export function ChatPage() {
                             }, recordId);
                             
                             setPromptSaveRecordFile(null);
-                          } catch(err) {
-                            console.error(err);
+                          } catch (e: any) {
+                            console.error(e);
                             addToast("Failed to save record.", "error");
                           } finally {
                             setProcessingStage(null);
@@ -853,6 +838,24 @@ export function ChatPage() {
             )}
 
             <div ref={messagesEndRef} />
+
+            {/* Suggested Prompts (Unified Omni-modal Assistant) */}
+            {messages.length === 0 && !screeningActive && (
+              <div style={{ padding: '0 24px 16px 24px', display: 'flex', gap: '12px', overflowX: 'auto', whiteSpace: 'nowrap' }} className="hide-scrollbar">
+                <button onClick={() => handleSend("What should I eat for a balanced diet?")} style={{ padding: '8px 16px', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: '99px', cursor: 'pointer', fontSize: '14px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                  🍎 Nutrition Advice
+                </button>
+                <button onClick={() => handleSend("What government health schemes am I eligible for?")} style={{ padding: '8px 16px', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: '99px', cursor: 'pointer', fontSize: '14px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                  📜 Gov. Schemes
+                </button>
+                <button onClick={() => handleSend("How can I recover from my recent illness?")} style={{ padding: '8px 16px', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: '99px', cursor: 'pointer', fontSize: '14px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                  ❤️ Recovery Plan
+                </button>
+                <button onClick={() => handleSend("What should I do in a medical emergency?")} style={{ padding: '8px 16px', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: '99px', cursor: 'pointer', fontSize: '14px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                  🚨 Emergency Guide
+                </button>
+              </div>
+            )}
 
             {/* Bottom input area */}
             <ChatInputBar
@@ -888,13 +891,18 @@ export function ChatPage() {
         * {
           box-sizing: border-box;
         }
+        .aayu-content {
+          overflow: hidden !important;
+        }
         .content-layout {
           display: flex;
           align-items: stretch;
           gap: 24px;
           padding: 24px 30px 30px;
           width: 100%;
-          height: calc(100vh - 120px);
+          height: 100%;
+          flex: 1;
+          min-height: 0;
           box-sizing: border-box;
           background: #f5f8fa;
           overflow: hidden;

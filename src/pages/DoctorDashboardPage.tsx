@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react';
 import { Search, UserPlus, Activity, Clock, ShieldAlert, FileText, Pill, UploadCloud, ChevronRight, Stethoscope, AlertTriangle, ArrowLeft, Brain } from 'lucide-react';
-import { mockDoctorSummary, mockPatientDatabase, PatientRecord } from '../data/doctorMock';
-import { DashboardData, generateDashboardData } from '../data/dashboardMock';
+import type { DoctorSummary, PatientRecord } from '../types/doctor';
+import { getDoctorSummary, getPatientDatabase } from '../services/doctorService';
 import { useAuth } from '@/contexts/AuthContext';
 import { CommunityDigitalTwin } from '../components/dashboard/CommunityDigitalTwin';
 
@@ -10,6 +10,7 @@ import { WorkspaceSelector } from '../components/dashboard/WorkspaceSelector';
 import { useCommunityTwin } from '../contexts/CommunityTwinContext';
 import { reverseGeocode, LocationInfo } from '../services/jurisdictionService';
 import { MapPin, Building2, RefreshCw } from 'lucide-react';
+import { useCurrentLocation } from '@/hooks/useCurrentLocation';
 import './DoctorDashboardPage.css';
 
 export function DoctorDashboardPage() {
@@ -29,26 +30,34 @@ export function DoctorDashboardPage() {
   const [currentLocation, setCurrentLocation] = useState<LocationInfo | null>(null);
   const [showWorkspaceSelector, setShowWorkspaceSelector] = useState(false);
 
-  const summary = mockDoctorSummary;
-  const activePatient: PatientRecord | null = activePatientId ? mockPatientDatabase[activePatientId] : null;
+  const [summary, setSummary] = useState<DoctorSummary | null>(null);
+  const [patientDb, setPatientDb] = useState<Record<string, PatientRecord> | null>(null);
+
+
+  const { location, loading: locationLoading } = useCurrentLocation();
+
+  useEffect(() => {
+    if (locationLoading) return;
+    Promise.all([getDoctorSummary(location?.lat || 0, location?.lng || 0), getPatientDatabase()]).then(([s, db]) => {
+      setSummary(s);
+      setPatientDb(db);
+      setLoadingDb(false);
+    });
+  }, [location, locationLoading]);
+
+  const activePatient: PatientRecord | null = activePatientId && patientDb ? patientDb[activePatientId] : null;
 
   // 1. Initial Location Detection
   useEffect(() => {
-    const detectLocation = async () => {
-      try {
-        const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-          if (!navigator.geolocation) reject(new Error('No geolocation'));
-          else navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000 });
+    if (location) {
+      reverseGeocode(location.lat, location.lng)
+        .then(setCurrentLocation)
+        .catch(err => {
+          console.warn('Reverse geocode failed', err);
+          setCurrentLocation(null);
         });
-        const info = await reverseGeocode(position.coords.latitude, position.coords.longitude);
-        setCurrentLocation(info);
-      } catch (err) {
-        console.warn('Geolocation denied or failed');
-        setCurrentLocation(null);
-      }
-    };
-    detectLocation();
-  }, []);
+    }
+  }, [location]);
 
 
 
@@ -93,27 +102,32 @@ export function DoctorDashboardPage() {
       </div>
 
       <div className="emr-top-section">
-        {/* Tasks & Queues */}
         <div className="emr-clinical-summary-card">
           <h2 className="emr-card-title"><Activity size={20} /> Clinical Queue</h2>
-          <div className="emr-metrics-grid">
-            <div className="emr-metric" style={{ background: '#eff6ff', borderColor: '#bfdbfe' }}>
-              <div className="emr-metric-value text-primary">{summary.todaysPatients}</div>
-              <div className="emr-metric-label">Upcoming Follow-ups</div>
+          {summary ? (
+            <div className="emr-metrics-grid">
+              <div className="emr-metric" style={{ background: '#eff6ff', borderColor: '#bfdbfe' }}>
+                <div className="emr-metric-value text-primary">{summary.todaysPatients}</div>
+                <div className="emr-metric-label">Upcoming Follow-ups</div>
+              </div>
+              <div className="emr-metric warning" style={{ background: '#fffbeb', borderColor: '#fde68a' }}>
+                <div className="emr-metric-value text-warning">{summary.pendingPrescriptions}</div>
+                <div className="emr-metric-label">Prescription Queue</div>
+              </div>
+              <div className="emr-metric danger" style={{ background: '#fef2f2', borderColor: '#fecaca' }}>
+                <div className="emr-metric-value text-danger">{summary.followUpsNeeded}</div>
+                <div className="emr-metric-label">Critical Alerts</div>
+              </div>
+              <div className="emr-metric">
+                <div className="emr-metric-value">0</div>
+                <div className="emr-metric-label">High Risk Patients</div>
+              </div>
             </div>
-            <div className="emr-metric warning" style={{ background: '#fffbeb', borderColor: '#fde68a' }}>
-              <div className="emr-metric-value text-warning">{summary.pendingPrescriptions}</div>
-              <div className="emr-metric-label">Prescription Queue</div>
+          ) : (
+            <div style={{ padding: '20px', textAlign: 'center', color: '#64748b' }}>
+              Live Clinical Queue Data Unavailable
             </div>
-            <div className="emr-metric danger" style={{ background: '#fef2f2', borderColor: '#fecaca' }}>
-              <div className="emr-metric-value text-danger">{summary.followUpsNeeded}</div>
-              <div className="emr-metric-label">Critical Alerts</div>
-            </div>
-            <div className="emr-metric">
-              <div className="emr-metric-value">12</div>
-              <div className="emr-metric-label">High Risk Patients</div>
-            </div>
-          </div>
+          )}
         </div>
 
         {/* Patient Access */}

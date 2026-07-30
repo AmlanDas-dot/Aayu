@@ -2,6 +2,7 @@ import { setDoc, updateDoc, deleteDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
 import { collection, doc, getDocs, getDoc, query, where } from "firebase/firestore";
 import { MedicalRecord } from "@/firebase/collections";
+import { logAuditEvent } from "@/services/AuditService";
 
 const RECORDS_COLLECTION = "medicalRecords";
 
@@ -35,6 +36,9 @@ export const getMedicalRecords = async (familyId: string, memberId?: string): Pr
   const snapshot = await getDocs(q);
   const records = snapshot.docs.map(doc => doc.data() as MedicalRecord);
   
+  // AUDIT LOG
+  logAuditEvent("ACCESS_LIST", "MEDICAL_RECORD", familyId, { memberId, count: records.length });
+
   return records.sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime());
 };
 
@@ -42,6 +46,10 @@ export const getMedicalRecordById = async (id: string): Promise<MedicalRecord | 
   const docRef = doc(db, RECORDS_COLLECTION, id);
   const snapshot = await getDoc(docRef);
   if (!snapshot.exists()) return null;
+  
+  // AUDIT LOG
+  logAuditEvent("ACCESS_READ", "MEDICAL_RECORD", id);
+  
   return snapshot.data() as MedicalRecord;
 };
 

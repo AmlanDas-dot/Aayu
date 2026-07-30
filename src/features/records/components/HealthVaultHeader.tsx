@@ -12,7 +12,7 @@ export function HealthVaultHeader() {
         <UploadButtons />
       </div>
       <div className="records-hero-img">
-        <img src={heroFamilyImg} alt="Family Health" className="records-family-img" />
+        <img src={heroFamilyImg} alt="Family Health" className="records-family-img" fetchPriority="high" />
       </div>
     </section>
   );

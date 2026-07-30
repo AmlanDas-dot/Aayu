@@ -52,7 +52,9 @@ export function HospitalPage() {
   async function handleFind() {
     try {
       setProcessingStage({ icon: "📍", text: "Obtaining your location..." });
+      console.log("[DEBUG LOCATION 4] HospitalPage handleFind calling getUserLocation()");
       const loc = await getUserLocation();
+      console.log("[DEBUG LOCATION 5] HospitalPage received callback from getUserLocation:", loc);
       setCoords(loc);
       setProcessingStage({ icon: "🏥", text: "Searching nearby healthcare..." });
       await searchHealthcare(radius);
@@ -72,6 +74,10 @@ export function HospitalPage() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log("[DEBUG LOCATION 6] HospitalPage React State Updated (coords):", coords);
+  }, [coords]);
+
   async function handleRefresh() {
     if (!coords) {
       return handleFind();
@@ -85,12 +91,6 @@ export function HospitalPage() {
 
   return (
     <div className="nc-page-container">
-      {/* Disclaimer Banner */}
-      <div className="nc-warning-banner">
-        <i className="fa-solid fa-triangle-exclamation"></i>
-        <p>AAYU provides general health information and guidance only. It does not diagnose conditions or replace professional medical advice. Always consult a qualified healthcare professional.</p>
-      </div>
-
       {/* Main Tool Card */}
       <div className="nc-tool-card">
         {selectedMember ? (
@@ -139,14 +139,16 @@ export function HospitalPage() {
                       📍 {locationError}
                     </div>
                   )}
-                  <GoogleMapView
-                    center={selectedFacility ? { lat: selectedFacility.latitude, lng: selectedFacility.longitude } : center}
-                    markers={markers}
-                    zoom={selectedFacility ? 16 : 14}
-                    height="100%"
-                    selectedMarkerId={selectedFacility?.id}
-                    onMarkerClick={handleMarkerClick}
-                  />
+                  {center && (
+                    <GoogleMapView
+                      center={selectedFacility ? { lat: selectedFacility.latitude, lng: selectedFacility.longitude } : center}
+                      markers={markers}
+                      zoom={selectedFacility ? 16 : 14}
+                      height="100%"
+                      selectedMarkerId={selectedFacility?.id}
+                      onMarkerClick={handleMarkerClick}
+                    />
+                  )}
                 </div>
               )}
             </div>

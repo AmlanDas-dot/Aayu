@@ -1,5 +1,9 @@
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends, Request
+from fastapi.concurrency import run_in_threadpool
+from app.core.auth import verify_firebase_token
+from app.core.rate_limit import limiter
 from app.services.speech.stt_service import transcribe_audio as hybrid_transcribe
+from app.core.config import settings
 import tempfile
 import os
 import logging
@@ -7,13 +11,16 @@ import logging
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-UPLOAD_DIR = os.getenv("UPLOAD_DIR", tempfile.gettempdir())
+UPLOAD_DIR = settings.UPLOAD_DIR
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @router.post("/transcribe")
+@limiter.limit("20/minute")
 async def transcribe_audio_route(
+    request: Request,
     file: UploadFile = File(...), 
-    language: str = Form("en")
+    language: str = Form("en"),
+    token: dict = Depends(verify_firebase_token)
 ):
     if not file.filename.endswith(".webm"):
         # We'll just warn but continue in case other formats are passed
@@ -27,7 +34,7 @@ async def transcribe_audio_route(
         temp_path = temp.name
 
     try:
-        text = hybrid_transcribe(temp_path, language)
+        text = await run_in_threadpool(hybrid_transcribe, temp_path, language)
         return {
             "transcript": text
         }

@@ -11,7 +11,7 @@ export const buildMedicationContextForChat = async (familyId: string, memberId: 
     const activeMeds = meds.filter(m => m.status === 'ACTIVE');
     const pastMeds = meds.filter(m => m.status === 'COMPLETED' || m.status === 'STOPPED');
     
-    let context = `MEDICATION HISTORY:\n`;
+    let context = `[CLINICAL DIRECTIVE: The following medications are active. Ensure any advice you give does not contraindicate with these drugs. Alert the user immediately if their current symptoms might be an adverse reaction to these medications.]\n\nMEDICATION HISTORY:\n`;
     
     if (activeMeds.length > 0) {
       context += `Active Medications:\n`;

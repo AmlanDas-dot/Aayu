@@ -6,6 +6,8 @@ import { getMedications } from '@/services/medicationService';
 import { generateTodaySchedule } from '@/services/medicationService';
 import { logMedicationDose } from '@/services/medicationService';
 import { getFamilyMembers } from '@/services/familyService';
+import { EmptyState } from '@/components/ui/EmptyState';
+import { LoadingState } from '@/components/ui/LoadingState';
 import { MedicationCard } from '@/features/medication/components/MedicationCard';
 import { TodaySchedule } from '@/features/medication/components/TodaySchedule';
 import { Pill, Activity } from 'lucide-react';
@@ -37,8 +39,8 @@ export function MedicationsPage() {
       ]);
       setMedications(meds);
       setMembers(membersData);
-    } catch (err) {
-      console.error(err);
+    } catch (e: any) {
+      console.error(e);
     } finally {
       setLoading(false);
     }
@@ -57,17 +59,21 @@ export function MedicationsPage() {
         status: 'TAKEN'
       }, med);
       loadData();
-    } catch (err) {
-      console.error(err);
+    } catch (e: any) {
+      console.error(e);
     }
   };
 
   if (!selectedFamilyId) {
     return (
-      <div style={{ textAlign: 'center', padding: '100px 20px' }}>
-        <h2>No Family Selected</h2>
-        <button onClick={() => navigate('/family')} className="btn-primary">Go to Family Hub</button>
-      </div>
+      <EmptyState
+        icon={Pill}
+        title="No Family Selected"
+        description="You must select or create a family to view Medications."
+        actionText="Go to Family Hub"
+        onAction={() => navigate('/family')}
+        className="page-container"
+      />
     );
   }
 
@@ -105,17 +111,20 @@ export function MedicationsPage() {
           </h2>
           
           {loading ? (
-            <p>Loading medications...</p>
-          ) : activeMeds.length > 0 ? (
+            <LoadingState message="Loading medications..." />
+          ) : activeMeds.length === 0 ? (
+            <EmptyState
+              icon={Pill}
+              title="No active medications"
+              description={filterMember === 'all' ? "No medications found for the family." : "No medications found for this member."}
+              actionText="Add Medication"
+              onAction={() => navigate('/records')}
+            />
+          ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px' }}>
               {activeMeds.map(med => (
                 <MedicationCard key={med.id} medication={med} onUpdate={loadData} />
               ))}
-            </div>
-          ) : (
-            <div style={{ background: 'white', padding: '40px', borderRadius: '16px', textAlign: 'center', border: '1px dashed #cbd5e1', marginBottom: '40px' }}>
-              <Pill size={40} color="#cbd5e1" style={{ margin: '0 auto 10px' }} />
-              <p style={{ color: '#64748b', margin: 0 }}>No active medications. Upload a prescription in Records to add medicines.</p>
             </div>
           )}
 

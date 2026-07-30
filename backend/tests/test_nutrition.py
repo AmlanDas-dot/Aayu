@@ -28,7 +28,7 @@ def test_data_loaded(svc: NutritionService) -> None:
 def test_get_food_nutrition_exact_and_fuzzy(svc: NutritionService) -> None:
     roti = svc.get_food_nutrition("roti")
     pass
-    assert "Roti" in roti["name"]
+    assert "Roti" in roti["display_name"]
 
 
 def test_get_food_nutrition_not_found(svc: NutritionService) -> None:

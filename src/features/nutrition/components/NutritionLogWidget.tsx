@@ -95,7 +95,7 @@ export const NutritionLogWidget = ({ onLog }: { onLog?: () => void }) => {
         setSuccess(false);
         setAnalyzedData(null);
       }, 2000);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       addToast("Failed to save meal.", "error");
     }
@@ -111,7 +111,7 @@ export const NutritionLogWidget = ({ onLog }: { onLog?: () => void }) => {
       await logWater(currentUser.uid, 250);
       addToast("Added 250ml of water!", "success");
       if (onLog) onLog();
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       addToast("Failed to log water.", "error");
     } finally {

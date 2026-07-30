@@ -31,8 +31,8 @@ export function RecordDetailsPage() {
         const m = members.find(m => m.id === data.memberId);
         setMemberName(m?.name || "Unknown Member");
       }
-    } catch (err) {
-      console.error("Failed to load record details:", err);
+    } catch (e: any) {
+      console.error("Failed to load record details:", e);
     } finally {
       setLoading(false);
     }
@@ -45,8 +45,8 @@ export function RecordDetailsPage() {
         await deleteMedicalRecordFile(record.fileURL);
         await deleteMedicalRecord(id);
         navigate("/records");
-      } catch (err) {
-        console.error("Failed to delete record:", err);
+      } catch (e: any) {
+        console.error("Failed to delete record:", e);
         alert("Failed to delete record.");
       }
     }

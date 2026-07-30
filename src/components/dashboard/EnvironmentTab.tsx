@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashboardData } from '../../data/dashboardMock';
+import type { DashboardData } from '../../types/dashboard';
 import { Cloud, Sun, Leaf, BellRing, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

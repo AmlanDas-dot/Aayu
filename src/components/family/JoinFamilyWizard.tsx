@@ -96,9 +96,7 @@ export const JoinFamilyWizard: React.FC<Props> = ({ onCancel, onSuccess }) => {
           {loading ? 'Joining...' : <><UserPlus size={20} /> Join Family</>}
         </button>
 
-        <div style={{ textAlign: 'center', marginTop: '20px', color: 'var(--text-muted)' }}>
-          <p>Or scan a QR code (Coming soon to mobile)</p>
-        </div>
+
       </form>
     </div>
   );

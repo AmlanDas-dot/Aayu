@@ -124,14 +124,24 @@ export const evaluateSchemesWithAI = async (uid: string, profileContext: any): P
   
   try {
     const prompt = `Evaluate eligibility for the following user profile against these government schemes.
+    
     User Profile: ${JSON.stringify(profileContext)}
     
     Schemes:
     ${schemes.map(s => `- ${s.name}: ${s.eligibility} (Age: ${s.age}, Gender: ${s.gender})`).join('\n')}
     
-    Return a JSON array of objects mapping scheme names to match levels and reasons.
-    Example: [{"schemeId": "AB-PMJAY", "matchLevel": "Highly Recommended", "reason": "You meet the age criteria..."}]
-    Valid matchLevels: "Highly Recommended", "Possibly Eligible", "Not Eligible", "Needs More Information".`;
+    CRITICAL RULES:
+    1. Reason step-by-step about each scheme before deciding the match level.
+    2. Respond ONLY with a valid JSON array matching this exact schema:
+    [
+      {
+        "schemeId": "string",
+        "schemeName": "string",
+        "matchLevel": "Highly Recommended" | "Possibly Eligible" | "Not Eligible" | "Needs More Information",
+        "reason": "string (brief explanation)"
+      }
+    ]
+    3. Do not include any text outside the JSON array, not even markdown code blocks.`;
 
     const chatRes = await sendChatMessage({ message: prompt, top_k: 1, language: "en" });
     const match = chatRes.response.match(/\[[\s\S]*\]/);

@@ -44,7 +44,7 @@ export interface ChatRequest {
   collection?: CollectionName;
   session_id?: string;
   history?: any[];
-  patient_records?: string;
+  patient_context?: any;
 }
 
 export interface ChatApiResponse {

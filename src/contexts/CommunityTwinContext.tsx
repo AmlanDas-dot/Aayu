@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo } from 'react';
 import { Jurisdiction } from '../types/Jurisdiction';
 import { WorkspaceFacility } from '../data/workspaceRegistry';
 import { getJurisdiction } from '../services/jurisdictionService';
-import { DashboardData, generateDashboardData } from '../data/dashboardMock';
+import type { DashboardData } from '../types/dashboard';
 
 interface CommunityTwinContextType {
   activeWorkspace: WorkspaceFacility | null;
@@ -37,18 +37,16 @@ export const CommunityTwinProvider: React.FC<{ children: ReactNode }> = ({ child
         const jur = await getJurisdiction(activeWorkspace.id);
         if (isMounted) {
           setJurisdiction(jur);
-          // For legacy compatibility in dashboards, generate dashboard data using new Jurisdiction villages
-          const genData = generateDashboardData({
-            villages: jur.villages,
-            facilities: jur.facilities,
-            geoJson: jur.geoJson
-          }, jur.workspace.district);
+          // For legacy compatibility in dashboards
+          let genData = null as DashboardData | null;
+          console.warn("Production backend API for /api/dashboard not implemented.");
           
           setDashboardData(genData);
 
           // Auto-select first village
-          if (genData.overview.priorityVillages.length > 0) {
-            setSelectedEntityId(genData.overview.priorityVillages[0].id);
+          const priorityVillages = genData?.overview?.priorityVillages ?? [];
+          if (priorityVillages.length > 0) {
+            setSelectedEntityId(priorityVillages[0].id);
           } else if (jur.villages.length > 0) {
             setSelectedEntityId(jur.villages[0].id);
           } else {
@@ -73,17 +71,19 @@ export const CommunityTwinProvider: React.FC<{ children: ReactNode }> = ({ child
     };
   }, [activeWorkspace]);
 
+  const value = useMemo(() => ({
+    activeWorkspace,
+    jurisdiction,
+    dashboardData,
+    selectedEntityId,
+    isLoading,
+    error,
+    setActiveWorkspace,
+    setSelectedEntityId
+  }), [activeWorkspace, jurisdiction, dashboardData, selectedEntityId, isLoading, error]);
+
   return (
-    <CommunityTwinContext.Provider value={{
-      activeWorkspace,
-      jurisdiction,
-      dashboardData,
-      selectedEntityId,
-      isLoading,
-      error,
-      setActiveWorkspace,
-      setSelectedEntityId
-    }}>
+    <CommunityTwinContext.Provider value={value}>
       {children}
     </CommunityTwinContext.Provider>
   );

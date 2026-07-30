@@ -15,9 +15,11 @@ import os
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query
+from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel, Field
 
 from app.services.search_service import SearchService, AVAILABLE_COLLECTIONS
+from app.core.rate_limit import limiter
 from app.services.indexer import get_index_status
 
 logger = logging.getLogger(__name__)
@@ -62,8 +64,10 @@ class SearchResponse(BaseModel):
 # --------------------------------------------------------------------------- #
 
 @router.get("", response_model=SearchResponse, summary="Semantic search via query string")
+@limiter.limit("30/minute")
 async def search_get(
-    q: str = Query(..., min_length=1, max_length=500, description="Search query"),
+    request: Request,
+    q: str = Query(..., min_length=2, description="Search query"),
     collection: str = Query(default="all", description="Collection name or 'all'"),
     top_k: int = Query(default=5, ge=1, le=20, description="Max results"),
     min_score: float = Query(default=0.0, ge=0.0, le=1.0, description="Min similarity score"),
@@ -77,7 +81,8 @@ async def search_get(
 
 
 @router.post("", response_model=SearchResponse, summary="Semantic search via request body")
-async def search_post(body: SearchRequest) -> SearchResponse:
+@limiter.limit("30/minute")
+async def search_post(request: Request, body: SearchRequest) -> SearchResponse:
     """
     POST /search
 
@@ -119,7 +124,7 @@ async def vector_db_status() -> dict[str, Any]:
 
     try:
         db = VectorDBService.get_instance()
-        index_status = get_index_status()
+        index_status = await run_in_threadpool(get_index_status)
 
         for col_name, col_info in index_status.items():
             count = col_info.get("document_count", 0)
@@ -166,7 +171,8 @@ async def _perform_search(
 
     try:
         svc = SearchService.get_instance()
-        results = svc.search(
+        results = await run_in_threadpool(
+            svc.search,
             query=query,
             collection=collection,
             top_k=top_k,

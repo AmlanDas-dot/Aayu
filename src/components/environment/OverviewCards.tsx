@@ -1,5 +1,5 @@
 import React from 'react';
-import { EnvironmentData } from '../../services/environmentMock';
+import type { EnvironmentData } from '../../types/environment';
 import { Wind, Thermometer, Sun, Clock } from 'lucide-react';
 
 interface OverviewCardsProps {

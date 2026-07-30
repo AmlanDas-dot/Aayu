@@ -75,7 +75,7 @@ export const deleteMedicalRecordFile = async (fileUrl: string): Promise<void> =>
     await deleteObject(fileRef);
   } catch (err: any) {
     if (err.code !== 'storage/object-not-found') {
-      console.error("Failed to delete record file:", err);
+      console.error("Failed to delete medical record file", err);
     }
   }
 };

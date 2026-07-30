@@ -29,7 +29,12 @@ export function AccountDropdown() {
 
   return (
     <div className="profile-item" style={{ position: 'relative', cursor: 'pointer' }} ref={dropdownRef}>
-      <div onClick={() => setIsOpen(!isOpen)} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <button 
+        onClick={() => setIsOpen(!isOpen)} 
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'transparent', border: 'none', color: 'inherit', padding: 0, cursor: 'pointer', font: 'inherit' }}
+      >
         {userProfile?.photoURL ? (
           <img
             src={userProfile.photoURL}
@@ -37,11 +42,11 @@ export function AccountDropdown() {
             style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
           />
         ) : (
-          <i className="fa-regular fa-user"></i>
+          <i className="fa-regular fa-user" aria-hidden="true"></i>
         )}
         <span>{displayName}</span>
-        <i className="fa-solid fa-chevron-down"></i>
-      </div>
+        <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </button>
 
       {isOpen && (
         <div style={{
@@ -62,32 +67,32 @@ export function AccountDropdown() {
             <div style={{ fontSize: '12px', color: '#666' }}>{currentUser?.email}</div>
           </div>
           
-          <div 
+          <button 
             onClick={() => { setIsOpen(false); navigate("/account"); }}
-            style={{ padding: '12px 16px', color: '#333', display: 'flex', alignItems: 'center', gap: '8px' }}
+            style={{ width: '100%', textAlign: 'left', padding: '12px 16px', color: '#333', display: 'flex', alignItems: 'center', gap: '8px', border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit' }}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#f5f5f5')}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
-            <i className="fa-regular fa-user" style={{ width: '16px' }}></i> My Account
-          </div>
+            <i className="fa-regular fa-user" style={{ width: '16px' }} aria-hidden="true"></i> My Account
+          </button>
           
-          <div 
+          <button 
             onClick={() => { setIsOpen(false); navigate("/account?tab=preferences"); }}
-            style={{ padding: '12px 16px', color: '#333', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid #eee' }}
+            style={{ width: '100%', textAlign: 'left', padding: '12px 16px', color: '#333', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid #eee', borderTop: 'none', borderLeft: 'none', borderRight: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit' }}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#f5f5f5')}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
-            <i className="fa-solid fa-gear" style={{ width: '16px' }}></i> Preferences
-          </div>
+            <i className="fa-solid fa-gear" style={{ width: '16px' }} aria-hidden="true"></i> Preferences
+          </button>
           
-          <div 
+          <button 
             onClick={handleLogout}
-            style={{ padding: '12px 16px', color: '#e53e3e', display: 'flex', alignItems: 'center', gap: '8px' }}
+            style={{ width: '100%', textAlign: 'left', padding: '12px 16px', color: '#e53e3e', display: 'flex', alignItems: 'center', gap: '8px', border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit' }}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#fef2f2')}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
-            <i className="fa-solid fa-arrow-right-from-bracket" style={{ width: '16px' }}></i> Sign out
-          </div>
+            <i className="fa-solid fa-arrow-right-from-bracket" style={{ width: '16px' }} aria-hidden="true"></i> Sign out
+          </button>
         </div>
       )}
     </div>

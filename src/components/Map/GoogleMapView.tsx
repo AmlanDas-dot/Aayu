@@ -1,8 +1,9 @@
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import { useState, useEffect } from "react";
 import type { MapMarker } from "@/types/MapMarker";
+import { config } from "../../config";
 
-const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string;
+const API_KEY = config.googleMaps.apiKey;
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 

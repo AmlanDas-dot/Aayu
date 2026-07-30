@@ -12,3 +12,5 @@ torch
 IndicTransToolkit
 firebase-admin
 apscheduler
+pytest
+slowapi

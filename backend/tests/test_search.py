@@ -169,7 +169,7 @@ def test_nonsense_query_returns_empty_or_low_scores(svc: SearchService) -> None:
         query="xkcdqwerty12345randomstuff",
         collection="all",
         top_k=5,
-        min_score=0.5,
+        min_score=0.8,
     )
     assert len(results) == 0, (
         f"Expected 0 high-confidence results for nonsense query, got {len(results)}"

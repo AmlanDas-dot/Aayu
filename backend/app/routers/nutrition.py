@@ -174,7 +174,10 @@ async def suggest_diet_for_goal(
         items=[_to_entry(f) for f in items],
     )
 
-from fastapi import UploadFile, File
+from fastapi import UploadFile, File, Depends, Request
+from pydantic import BaseModel
+from app.core.auth import verify_firebase_token
+from app.core.rate_limit import limiter
 import io
 from PIL import Image
 from app.services.food_vision_service import FoodVisionService
@@ -197,7 +200,8 @@ class NutritionAnalysisResponse(BaseModel):
     totalCarbs: int
 
 @router.post("/analyze-food", response_model=NutritionAnalysisResponse, summary="Analyze food image offline and get nutrition estimates")
-async def analyze_food(image: UploadFile = File(...)):
+@limiter.limit("10/minute")
+async def analyze_food(request: Request, image: UploadFile = File(...), token: dict = Depends(verify_firebase_token)):
     if not image or not image.filename:
         raise HTTPException(status_code=400, detail="No image file provided.")
 

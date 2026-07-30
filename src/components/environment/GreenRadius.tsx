@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigation } from 'lucide-react';
-import { GreenLocation } from '../../services/environmentMock';
+import type { GreenLocation } from '../../types/environment';
+import { config } from "../../config";
 import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
 
 interface GreenRadiusProps {
@@ -10,8 +11,8 @@ interface GreenRadiusProps {
 }
 
 export const GreenRadius: React.FC<GreenRadiusProps> = ({ greenAreas, userLat = 25.5941, userLon = 85.1376 }) => {
-  const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
-  const MAP_ID = import.meta.env.VITE_GOOGLE_MAP_ID || "DEMO_MAP_ID";
+  const MAPS_API_KEY = config.googleMaps.apiKey;
+  const MAP_ID = config.googleMaps.mapId;
 
   const [activeMarker, setActiveMarker] = useState<string | null>(null);
 

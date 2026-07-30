@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { EnvironmentData } from '../services/environmentMock';
+import type { EnvironmentData } from '../types/environment';
 import { getCurrentEnvironment } from '../services/environmentService';
 import { getPersonalizedRecommendation } from '../services/aiRecommendationService';
 import { OverviewCards } from '../components/environment/OverviewCards';
@@ -7,19 +7,9 @@ import { AirSmartCard } from '../components/environment/AirSmartCard';
 import { HeatRiskCard } from '../components/environment/HeatRiskCard';
 import { Leaf } from 'lucide-react';
 import { LoadingStatus } from '../components/LoadingStatus';
+import { useAuth } from '../contexts/AuthContext';
+import { useCurrentLocation } from '../hooks/useCurrentLocation';
 import './EnvironmentPage.css';
-
-// Mock user context hook if useAuth doesn't exist yet
-const useAuth = () => {
-  return {
-    userProfile: {
-      name: "User",
-      role: "Citizen",
-      medicalHistory: ["Asthma"],
-      chronicConditions: ["Hypertension"]
-    }
-  };
-};
 
 export function EnvironmentPage() {
   const { userProfile } = useAuth();
@@ -29,6 +19,17 @@ export function EnvironmentPage() {
   
   const [userLocation, setUserLocation] = useState<{lat: number, lon: number} | null>(null);
 
+  // Build a profile for the AI recommendation engine from real Firestore health data.
+  // Falls back to empty arrays if the user has not filled in their health profile yet.
+  const aiUserProfile = {
+    name: userProfile?.name || 'User',
+    role: userProfile?.role || 'citizen',
+    chronicConditions: userProfile?.healthProfile?.chronicConditions ?? [],
+    allergies: userProfile?.healthProfile?.allergies ?? [],
+  };
+
+  const { location, error: locationError } = useCurrentLocation();
+
   useEffect(() => {
     let active = true;
 
@@ -37,47 +38,35 @@ export function EnvironmentPage() {
         setLoading(true);
         const result = await getCurrentEnvironment(lat, lon);
         
-        // Generate Personalized Recommendation dynamically
-        const aiRec = await getPersonalizedRecommendation(result, userProfile);
+        // Generate Personalized Recommendation using real user health profile
+        const aiRec = await getPersonalizedRecommendation(result, aiUserProfile);
         result.heat.recommendation = aiRec; // Inject AI recommendation
 
         if (active) {
           setData(result);
+          setError('');
         }
-      } catch (e) {
+      } catch (e: any) {
         if (active) setError('Failed to load environmental data.');
       } finally {
         if (active) setLoading(false);
       }
     };
 
-    // Get Geolocation
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          if (active) setUserLocation({ lat, lon });
-          loadData(lat, lon);
-        },
-        (error) => {
-          console.warn("Geolocation blocked/failed. Using defaults.", error);
-          // Default to a central location (e.g., Patna) if blocked
-          const defaultLat = 25.5941;
-          const defaultLon = 85.1376;
-          if (active) setUserLocation({ lat: defaultLat, lon: defaultLon });
-          loadData(defaultLat, defaultLon);
-        }
-      );
-    } else {
-      // Fallback
-      loadData(25.5941, 85.1376);
+    if (location) {
+      if (active) setUserLocation({ lat: location.lat, lon: location.lng });
+      loadData(location.lat, location.lng);
+    } else if (locationError) {
+      if (active) {
+        setError("Location access is required to load live environmental data. Please enable location permissions in your browser and refresh.");
+        setLoading(false);
+      }
     }
 
     return () => {
       active = false;
     };
-  }, []);
+  }, [location, locationError]);
 
   return (
     <div className="environment-page page-container">
@@ -124,21 +113,7 @@ export function EnvironmentPage() {
                 timeline={data.heatTimeline}
               />
 
-              {/* Coming Soon Section */}
-              <div className="env-coming-soon mt-4">
-                <h3 className="env-section-title">Coming Soon</h3>
-                <div className="env-overview-grid disabled-grid">
-                  <div className="env-overview-card disabled">
-                    <div className="env-card-icon-wrap bg-gray-light">
-                      <span className="text-gray">💧</span>
-                    </div>
-                    <div className="env-card-content">
-                      <div className="env-card-label">Water Quality</div>
-                      <div className="env-card-status">Roadmap</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </>
           ) : null}
         </main>

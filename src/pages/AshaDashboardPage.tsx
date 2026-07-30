@@ -2,13 +2,13 @@
 import { useState, useEffect } from 'react';
 import { WorkspaceFacility } from '../data/workspaceRegistry';
 import { WorkspaceSelector } from '../components/dashboard/WorkspaceSelector';
-import { DashboardData } from '../data/dashboardMock';
 import { useCommunityTwin } from '../contexts/CommunityTwinContext';
 import { reverseGeocode, LocationInfo } from '../services/jurisdictionService';
 import { useAuth } from '@/contexts/AuthContext';
 import { MapPin, Users, Activity, Home, ShieldAlert } from 'lucide-react';
-import './DoctorDashboardPage.css'; // Reuse doctor dashboard styling
+import { useCurrentLocation } from '@/hooks/useCurrentLocation';
 import { AlertsTab } from '../components/dashboard/AlertsTab';
+import './DoctorDashboardPage.css'; // Reuse doctor dashboard styling
 import { CommunityDigitalTwin } from '../components/dashboard/CommunityDigitalTwin';
 
 export function AshaDashboardPage() {
@@ -26,22 +26,18 @@ export function AshaDashboardPage() {
   const [currentLocation, setCurrentLocation] = useState<LocationInfo | null>(null);
   const [showWorkspaceSelector, setShowWorkspaceSelector] = useState(false);
 
+  const { location } = useCurrentLocation();
+
   useEffect(() => {
-    const detectLocation = async () => {
-      try {
-        const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-          if (!navigator.geolocation) reject(new Error('No geolocation'));
-          else navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000 });
+    if (location) {
+      reverseGeocode(location.lat, location.lng)
+        .then(setCurrentLocation)
+        .catch(err => {
+          console.warn('Reverse geocode failed', err);
+          setCurrentLocation(null);
         });
-        const info = await reverseGeocode(position.coords.latitude, position.coords.longitude);
-        setCurrentLocation(info);
-      } catch (err) {
-        console.warn('Geolocation denied or failed');
-        setCurrentLocation(null);
-      }
-    };
-    detectLocation();
-  }, []);
+    }
+  }, [location]);
 
 
 

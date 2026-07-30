@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DashboardData } from '../../data/dashboardMock';
+import type { DashboardData } from '../../types/dashboard';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 
 interface SchemesTabProps {

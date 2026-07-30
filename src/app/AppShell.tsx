@@ -18,6 +18,8 @@ export function AppShell({ children }: AppShellProps) {
     return <>{children}</>;
   }
 
+  const showDisclaimer = ['/chat', '/schemes', '/nutrition', '/hospitals'].includes(location.pathname);
+
   return (
     <div className="aayu-shell">
       <AayuSidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen((o) => !o)} />
@@ -27,7 +29,7 @@ export function AppShell({ children }: AppShellProps) {
           onLanguageChange={setLanguage}
         />
         <HealthcareBreadcrumbs />
-        <DisclaimerBanner />
+        {showDisclaimer && <DisclaimerBanner />}
         <main className="aayu-content">
           {children}
         </main>

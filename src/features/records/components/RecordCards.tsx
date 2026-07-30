@@ -1,3 +1,4 @@
+import React from "react";
 import { FileText, Search } from "lucide-react";
 
 const RECENT_RECORDS = [
@@ -6,7 +7,7 @@ const RECENT_RECORDS = [
   { id: 3, name: "COVID-19 Booster", date: "10 Jan 2026", category: "Vaccination", size: "800 KB", by: "City Hospital" },
 ];
 
-export function RecordCards({ search, setSearch }: any) {
+export const RecordCards = React.memo(function RecordCards({ search, setSearch }: any) {
   return (
     <section className="recent-records-section">
       <div className="section-row">
@@ -45,4 +46,4 @@ export function RecordCards({ search, setSearch }: any) {
       </div>
     </section>
   );
-}
+});

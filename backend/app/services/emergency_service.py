@@ -51,6 +51,12 @@ _NORMALIZATIONS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\b(snake (bit|bite|attack)|bitten by (a )?snake|saamp)\b", re.I), "snake bite"),
     # Stroke shorthand
     (re.compile(r"\b(stroke|lakwa|paralysis|sudden (arm|leg|face) (numb|weak|droop))\b", re.I), "possible stroke"),
+    # Pediatric / Neonatal
+    (re.compile(r"\b(baby not waking|infant lethargic|baby unresponsive|bulging fontanelle|baby not feeding|infant very weak)\b", re.I), "neonatal lethargy"),
+    # Maternal / Obstetric
+    (re.compile(r"\b(pregnant (heavy bleeding|high blood pressure|severe headache|vision changes)|heavy vaginal bleeding|ectopic|severe abdominal pain pregnant)\b", re.I), "pregnancy complication"),
+    # Medication
+    (re.compile(r"\b(wrong medicine|wrong medication|accidental overdose|allergic to medicine|severe reaction to drug|took too much medicine)\b", re.I), "medication emergency"),
 ]
 
 
@@ -88,6 +94,9 @@ _EMERGENCY_PATTERNS: list[tuple[str, str]] = [
     (r"\b(severe trauma|major trauma|car accident|hit by a car|fall from a height|head injury|severe head injury)\b", "Severe Trauma"),
     (r"\b(suicide|kill myself|end my life|want to die|आत्महत्या|मरना chahu)\b", "Mental Health Crisis"),
     (r"\b(labour|giving birth|baby coming|water broke|contractions|delivery pain|डिलीवरी|प्रसव)\b", "Emergency Childbirth"),
+    (r"\b(pregnancy complication|ectopic|pregnant heavy bleeding|pregnant severe headache)\b", "Severe Pregnancy Complication"),
+    (r"\b(neonatal lethargy|baby unresponsive|bulging fontanelle)\b", "Neonatal Emergency"),
+    (r"\b(medication emergency|accidental overdose|wrong medicine)\b", "Medication Emergency"),
     (r"\b(melena|blood in stool|black stool|tarry stool)\b", "GI Bleed"),
 ]
 
@@ -100,7 +109,8 @@ _CRITICAL_CONDITIONS = {
     "Possible Heart Attack", "Possible Stroke", "Unconscious / Not Breathing",
     "Anaphylaxis / Airway Emergency", "Choking", "Drowning",
     "Emergency Childbirth", "Severe Bleeding", "GI Bleed",
-    "Severe Trauma",
+    "Severe Trauma", "Neonatal Emergency", "Severe Pregnancy Complication",
+    "Medication Emergency",
 }
 
 # URGENT: serious, needs care within hours

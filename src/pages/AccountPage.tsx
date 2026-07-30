@@ -233,7 +233,11 @@ export function AccountPage() {
 
   // Avatar Management
   const compressImage = (file: File): Promise<File> => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
+      if (!file.type.startsWith('image/')) {
+        reject(new Error("Invalid file type. Please upload a valid image file."));
+        return;
+      }
       const reader = new FileReader();
       reader.onload = (e) => {
         const img = new Image();
@@ -260,11 +264,13 @@ export function AccountPage() {
           ctx?.drawImage(img, 0, 0, width, height);
           canvas.toBlob((blob) => {
             if (blob) resolve(new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() }));
-            else resolve(file);
+            else reject(new Error("Canvas toBlob failed"));
           }, 'image/jpeg', 0.8);
         };
+        img.onerror = () => reject(new Error("Failed to decode image. The file might be corrupted."));
         img.src = e.target?.result as string;
       };
+      reader.onerror = () => reject(new Error("Failed to read file from disk."));
       reader.readAsDataURL(file);
     });
   };
@@ -310,8 +316,8 @@ export function AccountPage() {
     if (window.confirm("Are you sure you want to log out?")) {
       try {
         await logout();
-      } catch (err) {
-        console.error("Error logging out", err);
+      } catch (e: any) {
+        console.error("Error logging out", e);
       }
     }
   };
@@ -536,6 +542,12 @@ export function AccountPage() {
                 <Stethoscope size={20} /> Professional Info
               </button>
             )}
+            <button 
+              onClick={() => handleTabChange("family")}
+              style={{ padding: '15px 20px', textAlign: 'left', backgroundColor: activeTab === 'family' ? '#f1f5f9' : 'transparent', border: 'none', borderRadius: '8px', cursor: 'pointer', color: '#333', fontWeight: activeTab === 'family' ? 'bold' : 'normal', display: 'flex', alignItems: 'center', gap: '10px' }}
+            >
+              <User size={20} /> Family Profiles
+            </button>
           </div>
         </div>
 
@@ -544,8 +556,7 @@ export function AccountPage() {
           <div style={{ backgroundColor: '#f8fafc', padding: '20px', borderRadius: '8px', textAlign: 'center', border: '1px dashed #cbd5e1' }}>
             <p style={{ fontWeight: 'bold', color: '#64748b', margin: '0 0 15px 0' }}>No Family Connected</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <button onClick={() => navigate('/family')} style={{ padding: '8px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}>Create Family</button>
-              <button onClick={() => navigate('/family')} style={{ padding: '8px', backgroundColor: 'white', color: '#3b82f6', border: '1px solid #3b82f6', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer' }}>Join Family</button>
+              <button onClick={() => handleTabChange('family')} style={{ padding: '8px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}>Manage Family</button>
             </div>
           </div>
         </div>
@@ -594,6 +605,23 @@ export function AccountPage() {
                 <button type="submit" disabled={loading} className="settings-save-btn">{loading ? "Saving..." : "Save Changes"}</button>
               </div>
             </form>
+          </div>
+        )}
+
+        {/* Family Tab */}
+        {activeTab === 'family' && (
+          <div className="settings-card">
+            <h2 className="settings-section-title">Family Profiles</h2>
+            <div style={{ marginTop: '20px', backgroundColor: '#f8fafc', padding: '40px', borderRadius: '8px', textAlign: 'center', border: '1px dashed #cbd5e1' }}>
+              <User size={48} style={{ color: '#94a3b8', margin: '0 auto 15px' }} />
+              <h3 style={{ margin: '0 0 10px 0', color: '#0f172a' }}>Centralized Family Management</h3>
+              <p style={{ color: '#64748b', maxWidth: '400px', margin: '0 auto 20px' }}>
+                Manage all your family members' health profiles, medical records, and preferences from this unified dashboard.
+              </p>
+              <button style={{ padding: '10px 20px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', border: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <User size={18} /> Add Family Member
+              </button>
+            </div>
           </div>
         )}
 

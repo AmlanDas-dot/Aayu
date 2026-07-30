@@ -1,6 +1,7 @@
 import { Medication } from '@/firebase/collections';
 import { Pill, CheckCircle2, Clock, XCircle, Calendar, Play } from 'lucide-react';
 import { logMedicationDose } from '@/services/medicationService';
+import { useState } from 'react';
 
 interface MedicationCardProps {
   medication: Medication;
@@ -8,8 +9,11 @@ interface MedicationCardProps {
 }
 
 export function MedicationCard({ medication, onUpdate }: MedicationCardProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const handleAction = async (action: 'TAKEN' | 'SKIPPED') => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     try {
       await logMedicationDose({
         medicationId: medication.id!,
@@ -20,9 +24,11 @@ export function MedicationCard({ medication, onUpdate }: MedicationCardProps) {
         status: action
       }, medication);
       onUpdate();
-    } catch (err) {
-      console.error(err);
-      alert("Failed to log dose");
+    } catch (e: any) {
+      console.error(e);
+      alert("Failed to record dose: " + (e.message || "Unknown error"));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -89,15 +95,17 @@ export function MedicationCard({ medication, onUpdate }: MedicationCardProps) {
         <div style={{ display: 'flex', gap: '10px' }}>
           <button 
             onClick={() => handleAction('TAKEN')}
-            style={{ flex: 1, padding: '10px', background: '#22c55e', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px' }}
+            disabled={isSubmitting}
+            style={{ flex: 1, padding: '10px', background: isSubmitting ? '#86efac' : '#22c55e', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: isSubmitting ? 'not-allowed' : 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px' }}
           >
-            <CheckCircle2 size={18} /> Taken
+            <CheckCircle2 size={18} /> {isSubmitting ? 'Saving...' : 'Taken'}
           </button>
           <button 
             onClick={() => handleAction('SKIPPED')}
-            style={{ flex: 1, padding: '10px', background: 'white', color: '#ef4444', border: '1px solid #ef4444', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px' }}
+            disabled={isSubmitting}
+            style={{ flex: 1, padding: '10px', background: 'white', color: isSubmitting ? '#fca5a5' : '#ef4444', border: `1px solid ${isSubmitting ? '#fca5a5' : '#ef4444'}`, borderRadius: '8px', fontWeight: 600, cursor: isSubmitting ? 'not-allowed' : 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px' }}
           >
-            <XCircle size={18} /> Skip
+            <XCircle size={18} /> {isSubmitting ? 'Saving...' : 'Skip'}
           </button>
         </div>
       )}

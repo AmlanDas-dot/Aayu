@@ -13,60 +13,96 @@ from __future__ import annotations
 import sys
 print("Interpreter:", sys.executable)
 import logging
-import os
 import time
+import os
 import traceback
 from typing import Any
+import asyncio
+from functools import wraps
 
 import httpx
+from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
-OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL    = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+OLLAMA_BASE_URL = settings.OLLAMA_BASE_URL
+OLLAMA_MODEL    = settings.OLLAMA_MODEL
+OPENAI_API_KEY  = settings.OPENAI_API_KEY
+OPENAI_MODEL    = settings.OPENAI_MODEL
 
-_SYSTEM_PROMPT = """You are AAYU, an AI health assistant designed to help rural populations in India.
-You provide clear, simple, actionable health guidance in plain language.
-Always recommend consulting a healthcare professional for serious conditions.
-Keep responses concise — 3 to 5 sentences maximum unless the condition is an emergency.
-Never diagnose. Never prescribe specific medications by name."""
+_SYSTEM_PROMPT = """You are AAYU, an empathetic, AI-driven health assistant dedicated to supporting rural populations in India.
+Your primary goal is to provide clear, simple, and culturally appropriate health guidance.
+
+CRITICAL SAFETY & MEDICAL RULES:
+- DO NOT diagnose conditions.
+- DO NOT prescribe or recommend specific medications by name. 
+- ALWAYS advise the user to consult a qualified healthcare professional or visit a clinic for serious concerns.
+- WARNING: If a user shares their active medications, cross-reference symptoms for potential adverse interactions and warn them immediately.
+- WARNING: Do not suggest home remedies for critical symptoms (e.g., chest pain, severe bleeding, difficulty breathing). Instruct them to seek emergency care (104).
+
+REASONING & GROUNDING:
+- Think step-by-step before answering.
+- Stick to the provided medical context. If you do not know the answer or the context does not cover it, explicitly state: "I do not have enough information to answer that safely." DO NOT GUESS OR HALLUCINATE.
+
+FORMATTING & TONE:
+- Keep responses concise (3-5 sentences max), unless it is a life-threatening emergency.
+- Use plain, non-jargon language.
+- Use bullet points where appropriate for readability and token efficiency."""
 
 PROMPT_GENERAL_HEALTH = _SYSTEM_PROMPT
 
-PROMPT_MENTAL_HEALTH = """You are AAYU, a highly empathetic and supportive AI health assistant.
-The user is seeking emotional support or mental health guidance.
-Your tone must be warm, reassuring, and non-judgmental.
-Listen to them and validate their feelings.
-Do not diagnose mental health conditions.
-Encourage them to speak to loved ones or a mental health professional if they are in distress."""
+PROMPT_MENTAL_HEALTH = _SYSTEM_PROMPT + """\n\nROLE EXTENSION - MENTAL HEALTH:
+- You are providing emotional support and mental health guidance.
+- TONE: Deeply warm, reassuring, and non-judgmental. Validate their feelings first.
+- SAFETY: Do not diagnose mental health disorders. If distress is high or suicidal ideation is present, urgently encourage them to speak to a loved one or a professional helpline."""
 
-PROMPT_CASUAL_CHAT = """You are AAYU, a friendly and conversational AI health assistant.
-The user is making casual conversation or greeting you.
-Respond warmly and naturally. Keep it brief.
-If they ask how you are, reply cheerfully and ask how you can help them with their health, nutrition, or government schemes today."""
+PROMPT_CASUAL_CHAT = _SYSTEM_PROMPT + """\n\nROLE EXTENSION - CASUAL CONVERSATION:
+- The user is making casual conversation, greeting you, or checking in.
+- TONE: Friendly, cheerful, and brief.
+- If asked how you are, respond warmly and pivot gently to ask how you can help them with their health, nutrition, or government scheme queries today."""
 
-PROMPT_DISEASE_INFO = """You are AAYU, an AI health assistant.
-The user is asking about a specific disease or health condition.
-Use the provided knowledge base context to explain the disease simply and clearly.
-Avoid medical jargon. Keep responses concise — 3 to 5 sentences.
-Always recommend consulting a doctor for actual medical concerns."""
+PROMPT_DISEASE_INFO = _SYSTEM_PROMPT + """\n\nROLE EXTENSION - DISEASE INFORMATION:
+- The user is asking about a specific disease, symptom, or health condition.
+- GROUNDING: Use the provided medical knowledge base context exclusively. Explain it simply without complex medical jargon."""
 
-PROMPT_NUTRITION = """You are AAYU, an AI health assistant specializing in nutrition.
-The user is asking about food, diet, or nutrition.
-Use the provided nutrition context to give relevant dietary advice.
-Suggest specific local foods if they are in the context.
-Keep your response concise, practical, and easy to understand."""
+PROMPT_NUTRITION = _SYSTEM_PROMPT + """\n\nROLE EXTENSION - NUTRITION & DIET:
+- The user is asking for dietary advice, meal plans, or nutritional information.
+- GROUNDING: Use the provided nutrition context. Suggest locally available Indian foods where applicable.
+- SAFETY: Ensure dietary advice does not conflict with their known chronic conditions."""
 
-PROMPT_SCHEMES = """You are AAYU, an AI health assistant knowledgeable about government schemes.
-The user is asking about health or welfare schemes.
-Use the provided context to explain the scheme, its benefits, and basic eligibility.
-Keep the explanation clear and straightforward. Avoid bureaucratic jargon."""
+PROMPT_SCHEMES = _SYSTEM_PROMPT + """\n\nROLE EXTENSION - GOVERNMENT SCHEMES:
+- The user is inquiring about health or welfare government schemes.
+- GROUNDING: Use the provided scheme context to outline benefits, eligibility criteria, and application steps clearly. Avoid bureaucratic jargon."""
 
 
 _CONNECTIVITY_CACHE: dict[str, Any] = {"online": None, "checked_at": 0.0}
 _CONNECTIVITY_TTL = 30.0  # re-check every 30 seconds
+
+_http_client: httpx.AsyncClient | None = None
+
+def get_http_client() -> httpx.AsyncClient:
+    global _http_client
+    if _http_client is None:
+        limits = httpx.Limits(max_keepalive_connections=20, max_connections=100)
+        _http_client = httpx.AsyncClient(limits=limits, timeout=60.0)
+    return _http_client
+
+def async_retry(retries=3, delay=1.0, backoff=2.0):
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            current_delay = delay
+            for attempt in range(retries):
+                try:
+                    return await func(*args, **kwargs)
+                except Exception as e:
+                    if attempt == retries - 1:
+                        raise e
+                    logger.warning(f"[Retry] {func.__name__} failed (attempt {attempt + 1}/{retries}): {e}. Retrying in {current_delay}s...")
+                    await asyncio.sleep(current_delay)
+                    current_delay *= backoff
+        return wrapper
+    return decorator
 
 
 async def check_connectivity() -> bool:
@@ -79,8 +115,8 @@ async def check_connectivity() -> bool:
         return bool(_CONNECTIVITY_CACHE["online"])
 
     try:
-        async with httpx.AsyncClient(timeout=2.5) as client:
-            await client.get("https://dns.google")
+        client = get_http_client()
+        await client.get("https://dns.google", timeout=2.5)
         _CONNECTIVITY_CACHE["online"] = True
     except Exception:
         _CONNECTIVITY_CACHE["online"] = False
@@ -99,6 +135,7 @@ def _build_prompt(query: str, context: str) -> str:
     )
 
 
+@async_retry(retries=2, delay=1.0)
 async def _ollama(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300, response_format: str = "text") -> str:
     """Call Ollama local API."""
     prompt = _build_prompt(query, context)
@@ -116,11 +153,11 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
     if response_format == "json_object":
         payload["format"] = "json"
     try:
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            resp = await client.post(f"{OLLAMA_BASE_URL}/api/chat", json=payload)
-            resp.raise_for_status()
-            data = resp.json()
-            return data["message"]["content"].strip()
+        client = get_http_client()
+        resp = await client.post(f"{OLLAMA_BASE_URL}/api/chat", json=payload)
+        resp.raise_for_status()
+        data = resp.json()
+        return data["message"]["content"].strip()
     except httpx.ConnectError:
         raise RuntimeError(
             "Ollama is not running. Start it with: ollama serve"
@@ -129,6 +166,7 @@ async def _ollama(query: str, context: str, history: list[dict[str, str]] = None
         raise RuntimeError(f"Ollama error: {exc}") from exc
 
 
+@async_retry(retries=2, delay=1.0)
 async def _openai(query: str, context: str, history: list[dict[str, str]] = None, system_prompt: str = None, max_tokens: int = 300, response_format: str = "text") -> str:
     """Call OpenAI API."""
     try:

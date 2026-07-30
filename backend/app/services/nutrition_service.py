@@ -68,9 +68,12 @@ class NutritionService:
 
     def _normalise(self, item: dict, source: str) -> dict | None:
         """Convert any nutrition schema to a unified shape."""
-        item_id = str(item.get("id", ""))
+        item_id = str(item.get("id", item.get("name", item.get("disease", ""))))
         if not item_id:
             return None
+        
+        # Make id lowercased and slugified if it was derived from name
+        item_id = item_id.lower().replace(" ", "_").replace("(", "").replace(")", "").strip()
 
         # Schema 1: disease-diet
         if "disease" in item:

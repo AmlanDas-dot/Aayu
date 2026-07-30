@@ -125,6 +125,9 @@ class MockTriageService(BaseTriageService):
 # Factory
 # --------------------------------------------------------------------------- #
 
+from app.core.config import settings
+
 def get_triage_service() -> BaseTriageService:
-    # TODO: Replace with RuleBasedTriageService or LLMTriageService
-    return MockTriageService()
+    if settings.ENVIRONMENT == "development":
+        return MockTriageService()
+    raise NotImplementedError("Production TriageService is not yet implemented.")

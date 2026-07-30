@@ -1,6 +1,7 @@
 import { LANGUAGES } from "@/constants/languages";
-import { StatusBar } from "../StatusBar";
+
 import { AccountDropdown } from "./AccountDropdown";
+import { useNetwork } from "@/hooks/useNetwork";
 
 interface AayuHeaderProps {
   language: string;
@@ -8,8 +9,16 @@ interface AayuHeaderProps {
 }
 
 export function AayuHeader({ language, onLanguageChange }: AayuHeaderProps) {
+  const { isOnline } = useNetwork();
+  
   return (
-    <header className="aayu-header">
+    <>
+      {!isOnline && (
+        <div style={{ background: '#ef4444', color: 'white', textAlign: 'center', padding: '8px', fontSize: '14px', fontWeight: 'bold', zIndex: 1000, position: 'relative' }}>
+          You are offline. Features may be limited.
+        </div>
+      )}
+      <header className="aayu-header">
       <div className="header-left">
         <div className="header-search">
           <span className="header-search-icon">🔍</span>
@@ -22,7 +31,6 @@ export function AayuHeader({ language, onLanguageChange }: AayuHeaderProps) {
       </div>
 
       <div className="header-right" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <StatusBar />
         <select
           className="header-lang-select"
           value={language}
@@ -37,5 +45,6 @@ export function AayuHeader({ language, onLanguageChange }: AayuHeaderProps) {
         <AccountDropdown />
       </div>
     </header>
+    </>
   );
 }

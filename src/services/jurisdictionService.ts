@@ -1,9 +1,6 @@
 // @ts-nocheck
-import { workspaceRegistry } from '../data/workspaceRegistry';
-import { Jurisdiction } from '../types/Jurisdiction';
-import { generateDynamicJurisdiction } from '../data/demoData';
-import { loadJurisdictionGeoJson } from './gisLoaderService';
 
+import { Jurisdiction, LocationInfo } from '../types/Jurisdiction';
 export interface LocationInfo {
   state: string;
   district: string;
@@ -50,16 +47,5 @@ export const getJurisdiction = async (workspaceId: string): Promise<Jurisdiction
     throw new Error(`Workspace ${workspaceId} not found`);
   }
 
-  // Simulate network delay
-  await new Promise(r => setTimeout(r, 400));
-
-  // Generate the jurisdiction properties (villages, facilities, bounds)
-  const jurisdiction = generateDynamicJurisdiction(workspace);
-  
-  // Explicitly fetch real GeoJSON polygons via the new GIS Loader pipeline
-  // If the file doesn't exist, this cleanly sets geoJson to null, which skips polygon rendering.
-  const geoJsonData = await loadJurisdictionGeoJson(workspaceId);
-  jurisdiction.geoJson = geoJsonData;
-
-  return jurisdiction;
+  throw new Error("Production API for jurisdiction not implemented.");
 };

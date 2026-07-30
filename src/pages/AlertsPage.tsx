@@ -22,7 +22,7 @@ export function AlertsPage() {
       <header className="alerts-header-section">
         <div className="alerts-header-left">
           <ShieldAlert size={28} className="text-red-600" />
-          <h1>Public Health Intelligence</h1>
+          <h1>Local Alerts & Disaster Aid</h1>
         </div>
         <button className="alerts-refresh-btn" disabled={loading}>
           <RefreshCw size={18} className={loading ? 'animate-spin' : ''} />
@@ -68,6 +68,7 @@ export function AlertsPage() {
             <option value="Disease Outbreak">Disease Outbreaks</option>
             <option value="Weather">Weather</option>
             <option value="Air Quality">Air Quality</option>
+            <option value="Disaster">Disaster Aid & Relief</option>
           </select>
         </div>
       </div>

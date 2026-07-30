@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_URL ?? "/api";
+import { config } from "../config";
+const API_BASE = config.apiBaseUrl;
 
 import type {
   SearchResponse,
@@ -7,8 +8,27 @@ import type {
   ChatApiResponse,
 } from "../types/search";
 import type { NutritionProfile } from "@/features/nutrition/types";
+// import { isDemoSession } from "@/utils/demoMode";
 
 // ── Search ──────────────────────────────────────────────────────────────────
+
+import { auth } from "@/firebase/firebase";
+
+async function getAuthHeaders(isFormData = false): Promise<Record<string, string>> {
+  const headers: Record<string, string> = {};
+  if (!isFormData) {
+    headers["Content-Type"] = "application/json";
+  }
+  if (auth.currentUser) {
+    try {
+      const token = await auth.currentUser.getIdToken();
+      headers["Authorization"] = `Bearer ${token}`;
+    } catch (e) {
+      console.error("Failed to get token", e);
+    }
+  }
+  return headers;
+}
 
 export async function searchKnowledgeBase(
   query: string,
@@ -16,7 +36,8 @@ export async function searchKnowledgeBase(
   topK: number = 5
 ): Promise<SearchResponse> {
   const params = new URLSearchParams({ q: query, collection, top_k: String(topK) });
-  const res = await fetch(`${API_BASE}/search?${params}`);
+  const headers = await getAuthHeaders(false);
+  const res = await fetch(`${API_BASE}/search?${params}`, { headers });
   if (!res.ok) throw new Error("Search failed");
   return res.json();
 }
@@ -27,7 +48,7 @@ export async function checkBackendHealth(): Promise<boolean> {
   try {
     const res = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(3000) });
     return res.ok;
-  } catch {
+  } catch (e: any) {
     return false;
   }
 }
@@ -46,12 +67,14 @@ export async function sendChatMessage(
       collection: req.collection || "all",
       session_id: req.session_id ?? "",
       history: req.history ?? [],
-      patient_records: req.patient_records ?? ""
+      patient_context: req.patient_context ?? null
   };
+
+  const headers = await getAuthHeaders(false);
 
   const res = await fetch(`${API_BASE}/chat`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify(payload),
   });
   onEvent?.("HEADERS_RECEIVED");
@@ -116,14 +139,14 @@ export async function sendImageChatMessage(
           try {
             const data = JSON.parse(xhr.responseText);
             resolve(data);
-          } catch (err) {
+          } catch (e: any) {
             reject(new Error("Invalid JSON response from server"));
           }
         } else {
           try {
             const err = JSON.parse(xhr.responseText);
             reject(new Error(err.detail ?? "Image chat request failed"));
-          } catch {
+          } catch (e: any) {
             reject(new Error(`Server error: ${xhr.statusText}`));
           }
         }
@@ -137,8 +160,10 @@ export async function sendImageChatMessage(
     });
   }
 
+  const headers = await getAuthHeaders(true);
   const res = await fetch(`${API_BASE}/image-chat`, {
     method: "POST",
+    headers,
     body: formData,
   });
 
@@ -352,18 +377,49 @@ export async function findNearbyHospitals(
   return res.json();
 }
 
-export function getUserLocation(): Promise<{ lat: number; lon: number }> {
-  return new Promise((resolve, reject) => {
-    if (!navigator.geolocation) {
-      reject(new Error("Geolocation not supported by your browser."));
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
-      (err) => reject(new Error(`Location error: ${err.message}`)),
-      { timeout: 20000, maximumAge: 60000 }
-    );
-  });
+export async function getUserLocation(): Promise<{ lat: number; lon: number }> {
+  const getBrowserLocation = (): Promise<{ lat: number; lon: number }> => {
+    return new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        console.error("[DEBUG LOCATION 0] Geolocation API completely missing in browser.");
+        reject(new Error("Geolocation not supported by your browser."));
+        return;
+      }
+
+      console.log(`[DEBUG LOCATION 1] Before getCurrentPosition. Timestamp: ${new Date().toISOString()}, UserAgent: ${navigator.userAgent}`);
+      
+      if (navigator.permissions && navigator.permissions.query) {
+        navigator.permissions.query({ name: 'geolocation' as any }).then(result => {
+          console.log(`[DEBUG LOCATION 1b] Permission state: ${result.state}`);
+        }).catch(err => {
+          console.log(`[DEBUG LOCATION 1b] Permission query failed:`, err);
+        });
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          console.log("[DEBUG LOCATION 2] Success Callback:", {
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            accuracy: pos.coords.accuracy,
+            altitude: pos.coords.altitude,
+            speed: pos.coords.speed
+          });
+          resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+        },
+        (err) => {
+          console.error("[DEBUG LOCATION 3] Error Callback:", {
+            code: err.code,
+            message: err.message
+          });
+          reject(new Error(`Location error: ${err.message}`));
+        },
+        { timeout: 10000, maximumAge: 60000 }
+      );
+    });
+  };
+
+  return await getBrowserLocation();
 }
 
 export interface TranscribeResponse {
@@ -371,15 +427,18 @@ export interface TranscribeResponse {
 }
 
 export async function transcribeAudio(
-  audioBlob: Blob,
+  file: Blob,
   language: string = "en"
 ): Promise<TranscribeResponse> {
   const formData = new FormData();
-  formData.append("file", audioBlob, "recording.webm");
+  formData.append("file", file, "audio.webm");
   formData.append("language", language);
+
+  const headers = await getAuthHeaders(true);
 
   const res = await fetch(`${API_BASE}/transcribe`, {
     method: "POST",
+    headers,
     body: formData,
   });
   if (!res.ok) throw new Error("Transcription failed.");

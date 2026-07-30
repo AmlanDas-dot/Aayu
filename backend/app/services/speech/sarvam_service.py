@@ -1,6 +1,8 @@
 import os
+import requests
 import httpx
 import logging
+from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -8,7 +10,7 @@ SARVAM_URL = "https://api.sarvam.ai/speech-to-text"
 
 def transcribe(file_path: str, language: str) -> str:
     # Read API key dynamically at call time
-    SARVAM_API_KEY = os.getenv("SARVAM_API_KEY")
+    SARVAM_API_KEY = settings.SARVAM_API_KEY
     if not SARVAM_API_KEY:
         raise ValueError("SARVAM_API_KEY is not set in the environment.")
     

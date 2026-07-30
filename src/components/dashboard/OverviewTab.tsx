@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashboardData } from '../../data/dashboardMock';
+import type { DashboardData } from '../../types/dashboard';
 import { Brain, MapPin, Activity } from 'lucide-react';
 
 interface OverviewTabProps {

@@ -16,10 +16,28 @@ import {
 } from "firebase/firestore";
 
 import { auth, db } from "./firebase";
+import { logAuditEvent, AuditAction, ResourceType } from "@/services/AuditService";
+
+const getResourceTypeFromPath = (path: string): ResourceType => {
+  if (path.includes("medicalRecords")) return "MEDICAL_RECORD";
+  if (path.includes("users")) return "PATIENT_PROFILE";
+  if (path.includes("settings")) return "SYSTEM_SETTING";
+  return "UNKNOWN";
+};
 
 const logOperation = (operation: string, path: string) => {
   const uid = auth.currentUser?.uid || 'unauthenticated';
   console.log(`[Firestore Write] User: ${uid}, Operation: ${operation}, Path: ${path}`);
+  
+  // Exclude audit_logs themselves from circular logging
+  if (!path.includes("audit_logs")) {
+    let action: AuditAction = "ACCESS_WRITE";
+    if (operation === "deleteDoc") action = "ACCESS_DELETE";
+    
+    logAuditEvent(action, getResourceTypeFromPath(path), path, { operation }).catch(e => {
+      console.error("Failed to log audit event:", e);
+    });
+  }
 };
 
 export const setDoc = async <AppModelType, DbModelType extends DocumentData>(

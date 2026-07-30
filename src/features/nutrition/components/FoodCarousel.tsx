@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllFoods, searchNutrition, type FoodNutrition } from "@/services/api";
 
-const LOCAL_FOODS_MOCK = [
-  { name: "Spinach", icon: "🥬", price: "₹20/bunch", cal: "₹10 / 100g" },
-  { name: "Pumpkin", icon: "🎃", price: "₹15/kg", cal: "₹2/1kg" },
-  { name: "Banana", icon: "🍌", price: "₹40/dozen", cal: "₹15/doz" },
-  { name: "Moong Dal", icon: "🫘", price: "₹80/kg", cal: "₹13/100g" },
-  { name: "Groundnut", icon: "🥜", price: "₹120/kg", cal: "₹25/250g" },
-  { name: "Drumstick", icon: "🌿", price: "₹30/bunch", cal: "₹10/piece" },
-];
 
 export function FoodCarousel() {
   const [foods, setFoods] = useState<FoodNutrition[]>([]);
@@ -27,7 +19,7 @@ export function FoodCarousel() {
           res = await getAllFoods();
         }
         if (active) setFoods(res);
-      } catch (e) {
+      } catch (e: any) {
         // ignore
       } finally {
         if (active) setLoading(false);
@@ -66,20 +58,16 @@ export function FoodCarousel() {
               <div className="local-food-cal" style={{fontSize: "0.8rem", color: "#64748b", marginTop: "4px"}}>{f.guidance.substring(0, 40)}...</div>
             </div>
           ))
-        ) : query.trim().length >= 2 ? (
+        ) : (
           <div style={{ padding: '40px 20px', textAlign: 'center', color: '#64748b', width: '100%' }}>
             <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🥗</div>
             <p>Search foods, nutrients and healthy meal suggestions.</p>
+            {foods.length === 0 && !loading && !query && (
+              <div style={{ padding: "40px 20px", textAlign: "center", color: "#64748b" }}>
+                Start typing to discover healthy local foods.
+              </div>
+            )}
           </div>
-        ) : (
-          LOCAL_FOODS_MOCK.map((f) => (
-            <div key={f.name} className="local-food-card">
-              <div className="local-food-icon">{f.icon}</div>
-              <div className="local-food-name">{f.name}</div>
-              <div className="local-food-price">{f.price}</div>
-              <div className="local-food-cal">{f.cal}</div>
-            </div>
-          ))
         )}
       </div>
     </section>

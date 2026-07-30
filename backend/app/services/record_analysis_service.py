@@ -5,14 +5,18 @@ import httpx
 from pydantic import BaseModel
 from google import genai
 from google.genai import types
+from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
 # Prompt defining the exact JSON schema requested by the user
 RECORD_ANALYSIS_PROMPT = """
-You are a highly capable AI medical assistant. Analyze the provided medical document (which could be an image or PDF) and extract the following structured information.
+You are a highly capable AI medical assistant. Analyze the provided medical document (which could be an image or PDF) and extract the structured information requested below.
 
-Return ONLY a valid JSON object matching the schema exactly. Do not include markdown code blocks or any other text outside the JSON.
+CRITICAL RULES FOR EXTRACTION:
+1. Extract data EXACTLY as it appears in the document. DO NOT infer, guess, or calculate values.
+2. If a piece of information is not present or illegible, set its value to null or an empty array as per the schema.
+3. Return ONLY a valid JSON object matching the schema exactly. Do not include markdown code blocks (e.g., ```json) or any other text outside the JSON.
 
 SCHEMA:
 {
@@ -67,7 +71,7 @@ class RecordAnalysisService:
         return cls._instance
 
     def __init__(self):
-        self.api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        self.api_key = settings.GEMINI_API_KEY
         self.client = None
         if self.api_key:
             try:

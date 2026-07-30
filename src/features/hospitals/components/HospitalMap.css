@@ -64,6 +64,11 @@
   margin-bottom: 24px;
 }
 
+.nc-map-area {
+  height: 400px;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .nc-results-layout {
     flex-direction: row;

@@ -1,5 +1,5 @@
 import { sendChatMessage } from "./api";
-import { EnvironmentData } from "./environmentMock";
+import type { EnvironmentData } from "../types/environment";
 
 export const getPersonalizedRecommendation = async (
   environment: EnvironmentData,
@@ -10,12 +10,13 @@ export const getPersonalizedRecommendation = async (
     const history = userProfile?.medicalHistory?.join(", ") || "None";
     const conditions = userProfile?.chronicConditions?.join(", ") || "None";
     
-    let prompt = `As the AAYU AI, provide a short, single-paragraph personalized environmental health recommendation (max 3 sentences). `;
-    prompt += `Role: ${role}. `;
+    let prompt = `As AAYU AI, provide a 1-paragraph (max 3 sentences) personalized environmental health recommendation.\n`;
+    prompt += `User Context: Role: ${role}. `;
     if (role === "Citizen") {
       prompt += `Medical History: ${history}. Conditions: ${conditions}. `;
     }
-    prompt += `Current conditions - AQI: ${environment.airQuality.aqi} (${environment.airQuality.status}), Temp: ${environment.heat.temperature}C, UV Index: ${environment.uv.index}. `;
+    prompt += `\nEnvironmental Conditions: AQI: ${environment.airQuality.aqi} (${environment.airQuality.status}), Temp: ${environment.heat.temperature}C, UV Index: ${environment.uv.index}.\n`;
+    prompt += `CRITICAL RULES: Tailor the advice strictly to these environmental conditions and the user's medical profile. Do not diagnose. Keep it highly practical.`;
 
     // Since we don't want to show search references, just get the answer
     const response = await sendChatMessage({

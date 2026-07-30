@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import io
 import json
 import base64
@@ -29,8 +28,8 @@ class VisionService:
 
     def __init__(self):
         load_dotenv(_ENV_PATH, override=True)
-        self.groq_api_key = os.getenv("GROQ_API_KEY", "").strip()
-        self.gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        self.groq_api_key = settings.GROQ_API_KEY
+        self.gemini_api_key = settings.GEMINI_API_KEY
         self.gemini_client = None
         if self.gemini_api_key:
             try:
@@ -138,8 +137,8 @@ class VisionService:
         
         # Reload keys
         load_dotenv(_ENV_PATH, override=True)
-        self.groq_api_key = os.getenv("GROQ_API_KEY", "").strip()
-        self.gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        self.groq_api_key = settings.GROQ_API_KEY
+        self.gemini_api_key = settings.GEMINI_API_KEY
         
         if not self.groq_api_key and not self.gemini_api_key:
             raise RuntimeError("Neither GROQ_API_KEY nor GEMINI_API_KEY is configured.")

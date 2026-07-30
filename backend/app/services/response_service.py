@@ -124,6 +124,26 @@ _EMERGENCY_ACTIONS: dict[str, str] = {
         "• Have person sit up or lie with legs raised.\n"
         "• Do NOT give anything by mouth if swallowing is difficult."
     ),
+    "pregnancy_emergency": (
+        "🚨 Pregnancy Emergency — Emergency Action:\n"
+        "• Go to the nearest hospital with maternity care immediately.\n"
+        "• If there is heavy bleeding, severe abdominal pain, or water broke early, do NOT wait.\n"
+        "• Have the mother lie on her left side if possible.\n"
+        "• Bring any antenatal records or scan reports."
+    ),
+    "neonatal_emergency": (
+        "🚨 Infant/Neonatal Emergency — Emergency Action:\n"
+        "• Go to the emergency room immediately. Infants deteriorate very quickly.\n"
+        "• Do not attempt home remedies if the baby is lethargic, not feeding, or has a bulging soft spot.\n"
+        "• Keep the baby warm but do not overwrap if there is a fever."
+    ),
+    "medication_reaction": (
+        "💊 Medication Emergency — Emergency Action:\n"
+        "• Call 108 or go to the emergency room immediately.\n"
+        "• Stop taking the suspected medication immediately.\n"
+        "• Bring the pill bottles, strips, or prescriptions with you to the hospital.\n"
+        "• If unconscious, place the person in the recovery position."
+    ),
 }
 
 _URGENT_ACTIONS: dict[str, str] = {

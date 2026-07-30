@@ -3,7 +3,9 @@ import { getFamilyMembers, removeMember, deleteFamily, approveMember } from '@/s
 import { Family, FamilyMember } from '@/firebase/collections';
 import { AddMemberModal } from './AddMemberModal';
 import { MemberDetailsModal } from './MemberDetailsModal';
-import { Users, Trash2, Shield, User, LogOut, UserPlus, Check, Clock, HeartPulse, Trophy } from 'lucide-react';
+import { Users, Trash2, Shield, User, LogOut, UserPlus, Check, Clock, HeartPulse, Trophy, QrCode } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { QRCodeSVG } from 'qrcode.react';
 
 interface Props {
   family: Family;
@@ -25,6 +27,9 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
 
   const isAdmin = currentMember.role === 'owner' || currentMember.role === 'admin';
   const isOwner = currentMember.role === 'owner';
+  
+  const { userProfile } = useAuth();
+  const [showQR, setShowQR] = useState(false);
   useEffect(() => {
     loadMembers();
   }, [family.id]);
@@ -33,7 +38,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
     try {
       const data = await getFamilyMembers(family.id!);
       setMembers(data);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Failed to load members", e);
     } finally {
       setLoading(false);
@@ -44,7 +49,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
     try {
       await approveMember(memberId);
       loadMembers();
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       alert("Failed to approve member");
     }
@@ -56,7 +61,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
     try {
       await removeMember(memberId);
       loadMembers();
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       alert(isRejecting ? "Failed to reject request" : "Failed to remove member");
     }
@@ -71,7 +76,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
     try {
       await removeMember(currentMember.id!);
       onFamilyChange();
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       alert("Failed to leave family");
     } finally {
@@ -89,7 +94,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
     try {
       await deleteFamily(family.id!, currentMember.userId!);
       onFamilyChange();
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       alert("Failed to delete family");
       setDeleting(false);
@@ -116,10 +121,32 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
               <UserPlus size={18} /> Add Family Member
             </button>
           )}
+          <button 
+            onClick={() => setShowQR(true)}
+            style={{ padding: '10px 20px', background: 'rgba(255,255,255,0.2)', color: 'white', border: '1px solid rgba(255,255,255,0.4)', borderRadius: '8px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}
+          >
+            <QrCode size={18} /> Show Family QR
+          </button>
         </div>
 
         <Users size={120} style={{ position: 'absolute', right: '-20px', bottom: '-20px', opacity: 0.1 }} />
       </div>
+
+      {showQR && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: 'white', padding: '32px', borderRadius: '16px', width: '100%', maxWidth: '400px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', textAlign: 'center' }}>
+            <h3 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1.5rem' }}>Family QR Code</h3>
+            <p style={{ margin: '0 0 24px 0', color: '#64748b' }}>Scan this code or use the ID below to join this family.</p>
+            <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '12px', display: 'inline-block', marginBottom: '24px' }}>
+              <QRCodeSVG value={family.id!} size={200} />
+            </div>
+            <div style={{ marginBottom: '24px', background: '#f1f5f9', padding: '12px', borderRadius: '8px', userSelect: 'all', fontWeight: 'bold', letterSpacing: '1px', color: '#0f766e', border: '1px dashed #cbd5e1' }}>
+              ID: {family.id}
+            </div>
+            <button onClick={() => setShowQR(false)} style={{ padding: '12px 24px', width: '100%', background: '#0f766e', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>Close</button>
+          </div>
+        </div>
+      )}
 
       {showAddModal && (
         <AddMemberModal 
@@ -220,7 +247,7 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
                   </div>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '0 0 4px 0' }}>
-                      <h4 style={{ margin: 0, fontSize: '1.1rem' }}>{member.name} {member.id === currentMember.id && "(You)"}</h4>
+                      <h4 style={{ margin: 0, fontSize: '1.1rem' }}>{member.id === currentMember.id ? (userProfile?.name || member.name) : member.name} {member.id === currentMember.id && "(You)"}</h4>
                       <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: '12px', background: member.status === 'local' ? '#f1f5f9' : '#dcfce7', color: member.status === 'local' ? '#475569' : '#166534', border: `1px solid ${member.status === 'local' ? '#cbd5e1' : '#bbf7d0'}` }}>
                         {member.status === 'local' ? '⚪ Local Profile' : '🟢 Linked Account'}
                       </span>
@@ -338,7 +365,8 @@ export const FamilyDashboard: React.FC<Props> = ({ family, currentMember, onFami
       {selectedMember && (
         <MemberDetailsModal 
           member={selectedMember} 
-          onClose={() => setSelectedMember(null)} 
+          onClose={() => setSelectedMember(null)}
+          onUpdate={loadMembers}
         />
       )}
     </div>

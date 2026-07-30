@@ -6,10 +6,12 @@ from __future__ import annotations
 import logging
 import math
 import httpx
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Query, HTTPException, Request
 from pydantic import BaseModel
-import os
-GOOGLE_PLACES_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY")
+from app.core.config import settings
+from app.core.rate_limit import limiter
+
+GOOGLE_PLACES_API_KEY = settings.GOOGLE_PLACES_API_KEY
 
 router = APIRouter(prefix="/hospitals", tags=["hospitals"])
 logger = logging.getLogger(__name__)
@@ -41,7 +43,9 @@ def _haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return R * 2 * math.asin(math.sqrt(a))
 
 @router.get("/nearby", response_model=HospitalResponse, summary="Find nearby healthcare facilities")
+@limiter.limit("20/minute")
 async def find_nearby(
+    request: Request,
     lat: float = Query(..., description="Latitude (from GPS)"),
     lon: float = Query(..., description="Longitude (from GPS)"),
     radius: int = Query(default=10000, ge=500, le=50000, description="Search radius in metres"),

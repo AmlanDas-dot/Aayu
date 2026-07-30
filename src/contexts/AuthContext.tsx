@@ -1,8 +1,8 @@
 import { updateDoc } from "@/firebase/firestoreLogger";
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, useMemo, ReactNode } from "react";
 import { onAuthStateChanged, User, signOut } from "firebase/auth";
 import { auth, db } from "@/firebase/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import { UserProfile } from "@/firebase/collections";
 import {
   DEFAULT_ROLE,
@@ -47,14 +47,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    let profileUnsubscribe: (() => void) | null = null;
+
+    const authUnsubscribe = onAuthStateChanged(auth, (user) => {
       setLoading(true);
       setCurrentUser(user);
       
+      if (profileUnsubscribe) {
+        profileUnsubscribe();
+        profileUnsubscribe = null;
+      }
+      
       if (user) {
-        try {
-          const userRef = doc(db, "users", user.uid);
-          const userDoc = await getDoc(userRef);
+        const userRef = doc(db, "users", user.uid);
+        profileUnsubscribe = onSnapshot(userRef, async (userDoc) => {
           if (userDoc.exists()) {
             const profileData = userDoc.data();
             const resolvedRole = normalizeRole(profileData.role);
@@ -64,6 +70,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
               role: resolvedRole,
               status: resolvedStatus,
             } as UserProfile;
+            
             const roleNeedsBackfill = profileData.role !== resolvedRole;
             const statusNeedsBackfill = profileData.status !== resolvedStatus;
 
@@ -82,22 +89,28 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setRole(DEFAULT_ROLE);
             setStatus(DEFAULT_USER_STATUS);
           }
-        } catch (error) {
+          setLoading(false);
+        }, (error) => {
           console.error("Error fetching user profile:", error);
           setUserProfile(null);
           setRole(null);
           setStatus(null);
-        }
+          setLoading(false);
+        });
       } else {
         setUserProfile(null);
         setRole(null);
         setStatus(null);
+        setLoading(false);
       }
-      
-      setLoading(false);
     });
 
-    return unsubscribe;
+    return () => {
+      authUnsubscribe();
+      if (profileUnsubscribe) {
+        profileUnsubscribe();
+      }
+    };
   }, []);
 
   const logout = async () => {
@@ -106,14 +119,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       // Clear localStorage (chat history, selected member, etc.)
       localStorage.removeItem("aayu_chat_conversations");
       localStorage.removeItem("aayu_selected_family_member");
+      localStorage.removeItem("aayu_demo_session");
       // Force reload to completely wipe React context and in-memory caches
       window.location.href = "/login";
-    } catch (err) {
-      console.error("Logout failed:", err);
+    } catch (e: any) {
+      console.error("Logout failed:", e);
     }
   };
 
-  const value = {
+  const value = useMemo(() => ({
     user: currentUser,
     currentUser,
     userProfile,
@@ -122,7 +136,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     permissions: role ? getPermissionsForRole(role) : [],
     loading,
     logout,
-  };
+  }), [currentUser, userProfile, role, status, loading]);
 
   return (
     <AuthContext.Provider value={value}>

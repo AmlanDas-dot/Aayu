@@ -11,7 +11,7 @@ export function SchemesHero() {
         <button className="schemes-explore-btn">Explore Schemes</button>
       </div>
       <div className="schemes-hero-img">
-        <img src={heroFamilyImg} alt="Family at Health Centre" className="schemes-family-img" />
+        <img src={heroFamilyImg} alt="Family at Health Centre" className="schemes-family-img" fetchPriority="high" />
       </div>
     </section>
   );

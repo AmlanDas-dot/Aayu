@@ -15,7 +15,7 @@ export function useChatSession() {
       try {
         const parsed = JSON.parse(saved);
         if (parsed.length > 0) return parsed;
-      } catch (e) {
+      } catch (e: any) {
         console.error("Failed to parse saved conversations", e);
       }
     }
@@ -28,7 +28,7 @@ export function useChatSession() {
       try {
         const parsed = JSON.parse(saved);
         if (parsed.length > 0) return parsed[0].sessionId;
-      } catch (e) { }
+      } catch (e: any) { }
     }
     return DEFAULT_WELCOME_SESSION_ID;
   });

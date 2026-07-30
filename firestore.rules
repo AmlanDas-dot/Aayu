@@ -103,27 +103,31 @@ service cloud.firestore {
     }
 
     // ==========================================
-    // FAMILIES (TEMPORARY MIGRATION RULES)
+    // FAMILIES
     // ==========================================
     match /families/{familyId} {
-      // TEMPORARY: Allow all authenticated users to read/write for migration
-      allow read, write: if isSignedIn();
+      allow read: if isFamilyMember(familyId);
+      allow create: if isSignedIn();
+      allow update, delete: if isFamilyOwnerOrAdmin(familyId);
     }
     
     // ==========================================
-    // FAMILY MEMBERS (TEMPORARY MIGRATION RULES)
+    // FAMILY MEMBERS
     // ==========================================
-    match /familyMembers/{memberId} {
-      // TEMPORARY: Allow all authenticated users to read/write for migration
-      allow read, write: if isSignedIn();
+    match /familyMembers/{docId} {
+      allow read: if isFamilyMember(resource.data.familyId);
+      allow create: if isSignedIn();
+      allow update: if isFamilyMember(resource.data.familyId) && (isFamilyOwnerOrAdmin(resource.data.familyId) || resource.data.userId == request.auth.uid);
+      allow delete: if isFamilyOwnerOrAdmin(resource.data.familyId);
     }
     
     // ==========================================
-    // AUDIT LOGS (TEMPORARY MIGRATION RULES)
+    // AUDIT LOGS
     // ==========================================
     match /auditLogs/{docId} {
-      // TEMPORARY: Allow all authenticated users to read/write for migration
-      allow read, write: if isSignedIn();
+      allow read: if isFamilyMember(resource.data.familyId);
+      allow create: if isSignedIn();
+      allow update, delete: if false; // Audit logs should never be modified
     }
   }
 }

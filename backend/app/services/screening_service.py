@@ -353,8 +353,12 @@ async def calculate_result(session_id: str) -> dict[str, Any]:
     if not top_diseases:
         return _empty_result(sess.get("initial_reported_symptoms", reported))
         
-    from app.services.clinical_reasoning_service import evaluate_reasoning_with_llm
-    top_diseases = await evaluate_reasoning_with_llm(patient_context, reported, denied, top_diseases)
+    # Phase 9: LLM Diagnostic Verification
+    try:
+        from app.services.clinical_reasoning_service import evaluate_reasoning_with_llm
+        top_diseases = await evaluate_reasoning_with_llm(patient_context, reported, denied, top_diseases)
+    except Exception as e:
+        logger.error(f"[Screening] LLM diagnostic evaluation failed: {e}")
 
     top = top_diseases[0]
     confidence_score = top.get("clinical_score", top.get("score", 0.5))

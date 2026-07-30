@@ -74,5 +74,37 @@ export const workspaceRegistry: WorkspaceFacility[] = [
     latitude: 12.9625,
     longitude: 77.5746,
     catchmentArea: 'Central Bengaluru',
+  },
+  {
+    id: 'ws-rajkot-pdu',
+    name: 'PDU Medical College & Civil Hospital',
+    type: 'Medical College',
+    state: 'Gujarat',
+    district: 'Rajkot',
+    latitude: 22.2987,
+    longitude: 70.8022,
+    catchmentArea: 'Saurashtra Region',
+    supportedPHCs: ['Kotharia PHC', 'Kuvadva PHC']
+  },
+  {
+    id: 'ws-rajkot-padadhari',
+    name: 'Padadhari Community Health Centre',
+    type: 'Community Health Centre',
+    state: 'Gujarat',
+    district: 'Rajkot',
+    latitude: 22.4333,
+    longitude: 70.5833,
+    catchmentArea: 'Padadhari Block',
+    supportedVillages: ['Padadhari', 'Tarpeli', 'Mota Mava']
+  },
+  {
+    id: 'ws-rajkot-kotharia',
+    name: 'Kotharia Primary Health Centre',
+    type: 'Primary Health Centre',
+    state: 'Gujarat',
+    district: 'Rajkot',
+    latitude: 22.2500,
+    longitude: 70.8167,
+    catchmentArea: 'Kotharia Village',
   }
 ];

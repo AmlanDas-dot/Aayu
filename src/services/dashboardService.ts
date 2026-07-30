@@ -1,9 +1,4 @@
-import { DashboardData, mockDashboardData } from '../data/dashboardMock';
-
-export const getDashboardData = async (): Promise<DashboardData> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockDashboardData);
-    }, 600); // Simulate network latency
-  });
+export const getDashboardData = async (): Promise<any | null> => {
+  console.warn("Production backend API for /api/dashboard not implemented.");
+  return null;
 };

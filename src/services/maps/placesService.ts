@@ -1,4 +1,5 @@
-import { GreenLocation } from "../environmentMock";
+import { config } from "../../config";
+import type { GreenLocation } from "../../types/environment";
 
 export interface NormalizedFacility {
   id: string;
@@ -36,15 +37,41 @@ function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: numbe
   return Number((R * c).toFixed(2));
 }
 
+// Map of Table B types (or aliases) → closest valid Table A type for Places API (New).
+// Table B types cause a 400 error if used in includedTypes.
+const PLACE_TYPE_REMAP: Record<string, string> = {
+  doctor: "medical_clinic",
+  dentist: "dental_clinic",
+  physiotherapist: "physiotherapist",
+};
+
+const VALID_TABLE_A_TYPES = new Set([
+  "hospital", "medical_clinic", "pharmacy", "dental_clinic",
+  "physiotherapist", "ambulance_service", "blood_bank",
+  "medical_lab", "veterinary_care",
+]);
+
+function sanitizeTypes(categories: string[]): string[] {
+  return categories
+    .map(t => PLACE_TYPE_REMAP[t] ?? t)
+    .filter(t => VALID_TABLE_A_TYPES.has(t));
+}
+
 export async function searchNearbyHealthcare({ lat, lng, radius, categories }: SearchNearbyParams): Promise<NormalizedFacility[]> {
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const apiKey = config.googleMaps.apiKey;
   if (!apiKey) {
     throw new Error("Google Maps API key is missing.");
   }
 
+  const validTypes = sanitizeTypes(categories);
+  if (validTypes.length === 0) {
+    // Fallback to hospital if every requested type was invalid
+    validTypes.push("hospital");
+  }
+
   const url = 'https://places.googleapis.com/v1/places:searchNearby';
   const payload = {
-    includedTypes: categories,
+    includedTypes: validTypes,
     maxResultCount: 20,
     locationRestriction: {
       circle: {
@@ -112,7 +139,7 @@ export async function searchNearbyHealthcare({ lat, lng, radius, categories }: S
 }
 
 export const getNearbyGreenAreas = async (lat: number, lon: number): Promise<GreenLocation[]> => {
-  const PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY || import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const PLACES_API_KEY = config.googleMaps.placesApiKey;
   if (!PLACES_API_KEY) {
     console.warn("Google Places API key missing. Returning empty green areas.");
     return [];

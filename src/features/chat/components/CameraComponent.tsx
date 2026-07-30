@@ -114,8 +114,8 @@ export function CameraComponent({ isOpen, onClose, onCapture }: CameraComponentP
         const file = new File([blob], `camera_${Date.now()}.jpg`, { type: "image/jpeg" });
         onCapture(file);
         onClose();
-      } catch (err) {
-        console.error("Error creating image file:", err);
+      } catch (e: any) {
+        console.error("Error creating image file:", e);
       }
     };
     fetchBlob();

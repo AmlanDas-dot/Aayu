@@ -246,8 +246,7 @@ class FoodVisionService:
                         
         except Exception as e:
             logger.error(f"[FoodVision] Inference or parsing failed: {e}", exc_info=True)
-            # Fallback to a mock for robust error handling without crashing the app
-            foods_data = [{"name": "Unknown Food", "portion": "1 serving", "confidence": 0.45}]
+            raise RuntimeError(f"Food vision inference failed: {e}")
 
         # 3. Lookup Nutrition for each identified food
         structured_response = {

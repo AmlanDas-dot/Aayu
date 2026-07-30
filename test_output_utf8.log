@@ -1,0 +1,188 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.5, pytest-9.0.3, pluggy-1.6.0
+rootdir: D:\Aayu
+plugins: anyio-4.14.1
+Interpreter: C:\python.exe
+collected 30 items / 22 deselected / 8 selected
+
+backend\tests\test_phase7_conversation.py FFFF..F.
+
+================================== FAILURES ===================================
+_ test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_const_hunger-I am constantly hungry-patient_context0] _
+
+session_id = 'phase7_const_hunger', complaint = 'I am constantly hungry'
+patient_context = {'age': 45, 'gender': 'male'}
+
+    @pytest.mark.anyio
+    @pytest.mark.parametrize(('session_id', 'complaint', 'patient_context'), [('phase7_const_hunger', 'I am constantly hungry', {'age': 45, 'gender': 'male'}), ('phase7_child_diarrhea_case', 'My child has diarrhea', {'age': 5, 'gender': 'male', 'relationship': 'child'}), ('phase7_pregnancy_headache', 'I am 28 weeks pregnant and have a severe headache', {'age': 29, 'gender': 'female', 'pregnancy_related': True}), ('phase7_memory_loss', 'My grandfather is forgetting names and getting confused', {'age': 78, 'gender': 'male'}), ('phase7_joint_pain', 'My joints are stiff and painful every morning', {'age': 42, 'gender': 'female'}), ('phase7_persistent_cough', 'I have had a cough for 3 weeks', {'age': 40, 'gender': 'male'}), ('phase7_anxiety', 'I keep feeling anxious and worried all the time', {'age': 35, 'gender': 'male'}), ('phase7_depression', 'I have been very sad and do not want to do anything', {'age': 28, 'gender': 'female'})])
+    async def test_phase7_scenarios_have_natural_non_repetitive_flow(session_id: str, complaint: str, patient_context: dict[(str, object)]) -> None:
+        _sessions.pop(session_id, None)
+        (reported, denied) = extract_clinical_findings(complaint)
+        payload = (await (start_screening(session_id, (reported or [complaint]), patient_context, denied)))
+        assert payload['response']
+        assert (payload['response'].splitlines()[0] in {'I understand.', 'I am sorry your child is unwell.'})
+        seen_ids: set[str] = set()
+        seen_texts: set[str] = set()
+        for _ in range(4):
+            if payload.get('screening_complete'):
+                break
+            question = (payload.get('question') or {})
+            assert question.get('id')
+>           assert (question['id'] not in seen_ids)
+E           AssertionError: assert 'vision_blur' not in {'nausea', 'vision_blur', 'vomiting'}
+
+backend\tests\test_phase7_conversation.py:101: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  huggingface_hub.utils._http:_http.py:951 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING  app.services.screening_service:screening_service.py:494 [Screening] rank_candidates returned empty. Falling back to unpenalized results.
+_ test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_child_diarrhea_case-My child has diarrhea-patient_context1] _
+
+session_id = 'phase7_child_diarrhea_case', complaint = 'My child has diarrhea'
+patient_context = {'age': 5, 'gender': 'male', 'relationship': 'child'}
+
+    @pytest.mark.anyio
+    @pytest.mark.parametrize(('session_id', 'complaint', 'patient_context'), [('phase7_const_hunger', 'I am constantly hungry', {'age': 45, 'gender': 'male'}), ('phase7_child_diarrhea_case', 'My child has diarrhea', {'age': 5, 'gender': 'male', 'relationship': 'child'}), ('phase7_pregnancy_headache', 'I am 28 weeks pregnant and have a severe headache', {'age': 29, 'gender': 'female', 'pregnancy_related': True}), ('phase7_memory_loss', 'My grandfather is forgetting names and getting confused', {'age': 78, 'gender': 'male'}), ('phase7_joint_pain', 'My joints are stiff and painful every morning', {'age': 42, 'gender': 'female'}), ('phase7_persistent_cough', 'I have had a cough for 3 weeks', {'age': 40, 'gender': 'male'}), ('phase7_anxiety', 'I keep feeling anxious and worried all the time', {'age': 35, 'gender': 'male'}), ('phase7_depression', 'I have been very sad and do not want to do anything', {'age': 28, 'gender': 'female'})])
+    async def test_phase7_scenarios_have_natural_non_repetitive_flow(session_id: str, complaint: str, patient_context: dict[(str, object)]) -> None:
+        _sessions.pop(session_id, None)
+        (reported, denied) = extract_clinical_findings(complaint)
+        payload = (await (start_screening(session_id, (reported or [complaint]), patient_context, denied)))
+        assert payload['response']
+        assert (payload['response'].splitlines()[0] in {'I understand.', 'I am sorry your child is unwell.'})
+        seen_ids: set[str] = set()
+        seen_texts: set[str] = set()
+        for _ in range(4):
+            if payload.get('screening_complete'):
+                break
+            question = (payload.get('question') or {})
+            assert question.get('id')
+            assert (question['id'] not in seen_ids)
+            assert (question['text'] not in seen_texts)
+            assert question['hint'].startswith('I am asking because')
+            assert (not any(((term in question['text'].lower()) for term in JARGON_TERMS)))
+            seen_ids.add(question['id'])
+            seen_texts.add(question['text'])
+            payload = (await (submit_answer(session_id, question['id'], 'Yes')))
+            if (not payload.get('screening_complete')):
+                valid_intros = ['Thank you', 'Got it', 'I understand', 'Good', 'Okay', 'Almost', 'That is helpful', 'I know']
+                assert any(intro in payload['response'] for intro in valid_intros)
+        if payload.get('screening_complete'):
+>           assert ('Thank you. I have enough information now.' in payload['response'])
+E           assert 'Thank you. I have enough information now.' in "Thank you for answering those questions.\nI know this might be worrying, and I've carefully reviewed everything you'v...during illness\n  ò Drink only boiled or bottled water\n\nWould you like to know what to expect when you see a doctor?"
+
+backend\tests\test_phase7_conversation.py:112: AssertionError
+_ test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_pregnancy_headache-I am 28 weeks pregnant and have a severe headache-patient_context2] _
+
+session_id = 'phase7_pregnancy_headache'
+complaint = 'I am 28 weeks pregnant and have a severe headache'
+patient_context = {'age': 29, 'gender': 'female', 'pregnancy_related': True}
+
+    @pytest.mark.anyio
+    @pytest.mark.parametrize(('session_id', 'complaint', 'patient_context'), [('phase7_const_hunger', 'I am constantly hungry', {'age': 45, 'gender': 'male'}), ('phase7_child_diarrhea_case', 'My child has diarrhea', {'age': 5, 'gender': 'male', 'relationship': 'child'}), ('phase7_pregnancy_headache', 'I am 28 weeks pregnant and have a severe headache', {'age': 29, 'gender': 'female', 'pregnancy_related': True}), ('phase7_memory_loss', 'My grandfather is forgetting names and getting confused', {'age': 78, 'gender': 'male'}), ('phase7_joint_pain', 'My joints are stiff and painful every morning', {'age': 42, 'gender': 'female'}), ('phase7_persistent_cough', 'I have had a cough for 3 weeks', {'age': 40, 'gender': 'male'}), ('phase7_anxiety', 'I keep feeling anxious and worried all the time', {'age': 35, 'gender': 'male'}), ('phase7_depression', 'I have been very sad and do not want to do anything', {'age': 28, 'gender': 'female'})])
+    async def test_phase7_scenarios_have_natural_non_repetitive_flow(session_id: str, complaint: str, patient_context: dict[(str, object)]) -> None:
+        _sessions.pop(session_id, None)
+        (reported, denied) = extract_clinical_findings(complaint)
+        payload = (await (start_screening(session_id, (reported or [complaint]), patient_context, denied)))
+        assert payload['response']
+        assert (payload['response'].splitlines()[0] in {'I understand.', 'I am sorry your child is unwell.'})
+        seen_ids: set[str] = set()
+        seen_texts: set[str] = set()
+        for _ in range(4):
+            if payload.get('screening_complete'):
+                break
+            question = (payload.get('question') or {})
+            assert question.get('id')
+            assert (question['id'] not in seen_ids)
+            assert (question['text'] not in seen_texts)
+            assert question['hint'].startswith('I am asking because')
+            assert (not any(((term in question['text'].lower()) for term in JARGON_TERMS)))
+            seen_ids.add(question['id'])
+            seen_texts.add(question['text'])
+            payload = (await (submit_answer(session_id, question['id'], 'Yes')))
+            if (not payload.get('screening_complete')):
+                valid_intros = ['Thank you', 'Got it', 'I understand', 'Good', 'Okay', 'Almost', 'That is helpful', 'I know']
+                assert any(intro in payload['response'] for intro in valid_intros)
+        if payload.get('screening_complete'):
+>           assert ('Thank you. I have enough information now.' in payload['response'])
+E           assert 'Thank you. I have enough information now.' in "Thank you for answering those questions.\nI know this might be worrying, and I've carefully reviewed everything you'v...sion changes, or weakness, seek emergency (thrombosis)\n\nWould you like to know what to expect when you see a doctor?"
+
+backend\tests\test_phase7_conversation.py:112: AssertionError
+_ test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_memory_loss-My grandfather is forgetting names and getting confused-patient_context3] _
+
+session_id = 'phase7_memory_loss'
+complaint = 'My grandfather is forgetting names and getting confused'
+patient_context = {'age': 78, 'gender': 'male'}
+
+    @pytest.mark.anyio
+    @pytest.mark.parametrize(('session_id', 'complaint', 'patient_context'), [('phase7_const_hunger', 'I am constantly hungry', {'age': 45, 'gender': 'male'}), ('phase7_child_diarrhea_case', 'My child has diarrhea', {'age': 5, 'gender': 'male', 'relationship': 'child'}), ('phase7_pregnancy_headache', 'I am 28 weeks pregnant and have a severe headache', {'age': 29, 'gender': 'female', 'pregnancy_related': True}), ('phase7_memory_loss', 'My grandfather is forgetting names and getting confused', {'age': 78, 'gender': 'male'}), ('phase7_joint_pain', 'My joints are stiff and painful every morning', {'age': 42, 'gender': 'female'}), ('phase7_persistent_cough', 'I have had a cough for 3 weeks', {'age': 40, 'gender': 'male'}), ('phase7_anxiety', 'I keep feeling anxious and worried all the time', {'age': 35, 'gender': 'male'}), ('phase7_depression', 'I have been very sad and do not want to do anything', {'age': 28, 'gender': 'female'})])
+    async def test_phase7_scenarios_have_natural_non_repetitive_flow(session_id: str, complaint: str, patient_context: dict[(str, object)]) -> None:
+        _sessions.pop(session_id, None)
+        (reported, denied) = extract_clinical_findings(complaint)
+        payload = (await (start_screening(session_id, (reported or [complaint]), patient_context, denied)))
+        assert payload['response']
+        assert (payload['response'].splitlines()[0] in {'I understand.', 'I am sorry your child is unwell.'})
+        seen_ids: set[str] = set()
+        seen_texts: set[str] = set()
+        for _ in range(4):
+            if payload.get('screening_complete'):
+                break
+            question = (payload.get('question') or {})
+            assert question.get('id')
+            assert (question['id'] not in seen_ids)
+            assert (question['text'] not in seen_texts)
+            assert question['hint'].startswith('I am asking because')
+            assert (not any(((term in question['text'].lower()) for term in JARGON_TERMS)))
+            seen_ids.add(question['id'])
+            seen_texts.add(question['text'])
+            payload = (await (submit_answer(session_id, question['id'], 'Yes')))
+            if (not payload.get('screening_complete')):
+                valid_intros = ['Thank you', 'Got it', 'I understand', 'Good', 'Okay', 'Almost', 'That is helpful', 'I know']
+                assert any(intro in payload['response'] for intro in valid_intros)
+        if payload.get('screening_complete'):
+>           assert ('Thank you. I have enough information now.' in payload['response'])
+E           assert 'Thank you. I have enough information now.' in "Thank you for answering those questions.\nI know this might be worrying, and I've carefully reviewed everything you'v...t daily for any wounds or sores (do not walk barefoot)\n\nWould you like to know what to expect when you see a doctor?"
+
+backend\tests\test_phase7_conversation.py:112: AssertionError
+_ test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_anxiety-I keep feeling anxious and worried all the time-patient_context6] _
+
+session_id = 'phase7_anxiety'
+complaint = 'I keep feeling anxious and worried all the time'
+patient_context = {'age': 35, 'gender': 'male'}
+
+    @pytest.mark.anyio
+    @pytest.mark.parametrize(('session_id', 'complaint', 'patient_context'), [('phase7_const_hunger', 'I am constantly hungry', {'age': 45, 'gender': 'male'}), ('phase7_child_diarrhea_case', 'My child has diarrhea', {'age': 5, 'gender': 'male', 'relationship': 'child'}), ('phase7_pregnancy_headache', 'I am 28 weeks pregnant and have a severe headache', {'age': 29, 'gender': 'female', 'pregnancy_related': True}), ('phase7_memory_loss', 'My grandfather is forgetting names and getting confused', {'age': 78, 'gender': 'male'}), ('phase7_joint_pain', 'My joints are stiff and painful every morning', {'age': 42, 'gender': 'female'}), ('phase7_persistent_cough', 'I have had a cough for 3 weeks', {'age': 40, 'gender': 'male'}), ('phase7_anxiety', 'I keep feeling anxious and worried all the time', {'age': 35, 'gender': 'male'}), ('phase7_depression', 'I have been very sad and do not want to do anything', {'age': 28, 'gender': 'female'})])
+    async def test_phase7_scenarios_have_natural_non_repetitive_flow(session_id: str, complaint: str, patient_context: dict[(str, object)]) -> None:
+        _sessions.pop(session_id, None)
+        (reported, denied) = extract_clinical_findings(complaint)
+        payload = (await (start_screening(session_id, (reported or [complaint]), patient_context, denied)))
+        assert payload['response']
+>       assert (payload['response'].splitlines()[0] in {'I understand.', 'I am sorry your child is unwell.'})
+E       AssertionError: assert 'Thank you for answering those questions.' in {'I am sorry your child is unwell.', 'I understand.'}
+
+backend\tests\test_phase7_conversation.py:93: AssertionError
+============================== warnings summary ===============================
+C:\Lib\site-packages\opentelemetry\util\_importlib_metadata.py:32
+  C:\Lib\site-packages\opentelemetry\util\_importlib_metadata.py:32: DeprecationWarning: SelectableGroups dict interface is deprecated. Use select.
+    return EntryPoints(ep for group_eps in eps.values() for ep in group_eps)
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+backend/tests/test_phase7_conversation.py: 87 warnings
+  C:\Lib\site-packages\chromadb\api\types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+    self.name() is NotImplemented
+
+backend/tests/test_phase7_conversation.py: 87 warnings
+  C:\Lib\site-packages\chromadb\api\collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+    embedding_function.name() != "default"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/tests/test_phase7_conversation.py::test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_const_hunger-I am constantly hungry-patient_context0]
+FAILED backend/tests/test_phase7_conversation.py::test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_child_diarrhea_case-My child has diarrhea-patient_context1]
+FAILED backend/tests/test_phase7_conversation.py::test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_pregnancy_headache-I am 28 weeks pregnant and have a severe headache-patient_context2]
+FAILED backend/tests/test_phase7_conversation.py::test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_memory_loss-My grandfather is forgetting names and getting confused-patient_context3]
+FAILED backend/tests/test_phase7_conversation.py::test_phase7_scenarios_have_natural_non_repetitive_flow[asyncio-phase7_anxiety-I keep feeling anxious and worried all the time-patient_context6]
+========== 5 failed, 3 passed, 22 deselected, 177 warnings in 17.03s ==========

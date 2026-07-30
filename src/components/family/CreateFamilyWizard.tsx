@@ -72,6 +72,7 @@ export const CreateFamilyWizard: React.FC<Props> = ({ onCancel, onSuccess }) => 
             placeholder="e.g. The Sharma Family"
             style={{ padding: '12px', borderRadius: '8px', border: '1px solid #ccc' }}
             disabled={loading}
+            maxLength={100}
           />
         </div>
 
@@ -85,6 +86,7 @@ export const CreateFamilyWizard: React.FC<Props> = ({ onCancel, onSuccess }) => 
             placeholder="Name of main caregiver"
             style={{ padding: '12px', borderRadius: '8px', border: '1px solid #ccc' }}
             disabled={loading}
+            maxLength={100}
           />
         </div>
 
@@ -97,6 +99,7 @@ export const CreateFamilyWizard: React.FC<Props> = ({ onCancel, onSuccess }) => 
             placeholder="Full residential address"
             style={{ padding: '12px', borderRadius: '8px', border: '1px solid #ccc', minHeight: '80px' }}
             disabled={loading}
+            maxLength={500}
           />
         </div>
 
@@ -110,6 +113,7 @@ export const CreateFamilyWizard: React.FC<Props> = ({ onCancel, onSuccess }) => 
             placeholder="e.g. Health is Wealth"
             style={{ padding: '12px', borderRadius: '8px', border: '1px solid #ccc' }}
             disabled={loading}
+            maxLength={200}
           />
         </div>
 

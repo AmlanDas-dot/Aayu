@@ -1,5 +1,6 @@
 // Calls the Python backend to analyze a medical document via Gemini
-const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
+import { config } from "../config";
+const API_BASE_URL = config.apiBaseUrl;
 
 export interface AnalyzeRecordResponse {
   classification: string;

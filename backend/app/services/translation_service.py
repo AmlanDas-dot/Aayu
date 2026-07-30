@@ -53,8 +53,9 @@ import os
 # Priority: env var (set in .env or shell) → HuggingFace auto-download cache.
 # Set INDICTRANS2_MODEL_PATH to a local snapshot folder if you have it downloaded;
 # otherwise the model is downloaded from HuggingFace on first use.
-MODEL_PATH: str = os.getenv("INDICTRANS2_MODEL_PATH") or "ai4bharat/indictrans2-indic-en-1B"
-MODEL_PATH_EN: str = os.getenv("INDICTRANS2_MODEL_PATH_EN") or "ai4bharat/indictrans2-en-indic-1B"
+from app.core.config import settings
+MODEL_PATH: str = settings.INDICTRANS2_MODEL_PATH
+MODEL_PATH_EN: str = settings.INDICTRANS2_MODEL_PATH_EN
 _LOCAL_ONLY: bool = os.path.isabs(MODEL_PATH)  # True only if user gave a real path
 
 LANGUAGE_MAP: dict[str, str] = {

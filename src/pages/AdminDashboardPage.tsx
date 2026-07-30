@@ -9,7 +9,7 @@ import { WorkersTab } from '../components/dashboard/WorkersTab';
 import { SchemesTab } from '../components/dashboard/SchemesTab';
 import { AlertsTab } from '../components/dashboard/AlertsTab';
 import { getDashboardData } from '../services/dashboardService';
-import { DashboardData } from '../data/dashboardMock';
+import type { DashboardData } from '../types/dashboard';
 import './AdminDashboardPage.css';
 
 export function AdminDashboardPage() {

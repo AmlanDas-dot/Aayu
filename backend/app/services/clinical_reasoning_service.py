@@ -261,6 +261,8 @@ _QUESTION_EXPLANATIONS = {
 
 def normalize_symptom_concept(text: str) -> str:
     """Collapse synonymous symptom phrases into one concept id."""
+    if text in CANONICAL_QUESTION_TEXT:
+        return text
     curated = normalize_symptom_phrase(text)
     if curated in CANONICAL_QUESTION_TEXT:
         return curated
@@ -597,12 +599,6 @@ def select_next_question(
                 continue
             if re.match(r"^[\d\s.,-]+$", tag):
                 continue
-                
-            # Phase 11: Enforce CANONICAL SYMPTOMS ONLY
-            # If the tag is not recognized as a canonical symptom, drop it.
-            # This completely prevents asking about disease names or database jargon.
-            if tag not in CANONICAL_QUESTION_TEXT:
-                continue
 
             is_redundant = any(
                 (tag in exc or exc in tag)
@@ -645,7 +641,7 @@ def select_next_question(
     if not best_sym:
         return None
         
-    reason = "I'm asking because it helps narrow down the cause of your symptoms."
+    reason = "I am asking because it helps narrow down the cause of your symptoms."
         
     return {"symptom": best_sym, "reason": reason}
 
@@ -802,9 +798,8 @@ async def evaluate_reasoning_with_llm(
         
     prompt = (
         "You are an expert clinician reviewing an AI diagnostic engine's output.\n"
-        "Your task is to re-rank the top 5 hypotheses based on clinical plausibility, "
-        "strongly penalizing rare diseases unless specific findings demand them. "
-        "Boost common serious conditions if appropriate for age/context.\n\n"
+        "Your task is to re-rank the top 5 hypotheses based on clinical plausibility. "
+        "Strongly penalize rare diseases unless specific findings demand them, and boost common serious conditions if appropriate for the patient's age and context.\n\n"
         f"PATIENT CONTEXT: {json.dumps(patient_context)}\n"
         f"POSITIVE FINDINGS: {symptoms}\n"
         f"NEGATIVE FINDINGS: {denied_symptoms}\n\n"
@@ -814,16 +809,18 @@ async def evaluate_reasoning_with_llm(
         prompt += f"{idx+1}. {d.get('title', d['id'])} (Score: {d.get('clinical_score', 0):.2f})\n"
         
     prompt += (
-        "\nProvide your output strictly in JSON format matching exactly:\n"
+        "\nCRITICAL RULES:\n"
+        "1. Do not invent new diseases unless the top 5 are fundamentally impossible. Use 'disease_id' matching the given titles or ids exactly.\n"
+        "2. Provide your step-by-step reasoning in 'clinical_notes' first before finalizing the ranking.\n"
+        "3. Output ONLY valid JSON matching exactly:\n"
         "{\n"
+        '  "clinical_notes": "Your step-by-step clinical reasoning here...",\n'
         '  "ranking": [\n'
         '    {"disease_id": "...", "confidence": 0.85, "reason": "..."}\n'
         "  ],\n"
         '  "recommended_emergency_level": "routine|urgent|emergency",\n'
-        '  "clinical_notes": "...",\n'
         '  "contradictions": ["..."]\n'
         "}\n"
-        "Do not invent new diseases not in the list unless the top 5 are fundamentally impossible. Use 'disease_id' matching the given titles or ids."
     )
     
     try:

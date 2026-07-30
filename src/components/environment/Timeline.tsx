@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TimelineSlot } from '../../services/environmentMock';
+import type { TimelineSlot } from '../../types/environment';
 
 interface TimelineProps {
   timeline: TimelineSlot[];

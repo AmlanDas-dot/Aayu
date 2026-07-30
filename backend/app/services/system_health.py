@@ -1,79 +1,143 @@
+import traceback
+import asyncio
 from datetime import datetime, timezone
-import torch
-from app.services.food_vision_service import FoodVisionService
-from app.services.translation_service import _state as translation_state, _device as translation_device, _INDIC_AVAILABLE
-from app.services.speech.stt_service import get_whisper_status
-import app.services.llm_service as llm_service
-from app.services.vector_db_service import VectorDBService
+import os
 
 async def get_system_health():
-    # 1. GPU VRAM Monitoring
-    gpu_stats = {}
-    if torch.cuda.is_available():
-        gpu_stats = {
-            "available": True,
-            "device_name": torch.cuda.get_device_name(0),
-            "allocated_mb": round(torch.cuda.memory_allocated(0) / (1024 * 1024), 2),
-            "reserved_mb": round(torch.cuda.memory_reserved(0) / (1024 * 1024), 2),
-            "max_memory_mb": round(torch.cuda.get_device_properties(0).total_memory / (1024 * 1024), 2),
-        }
-    else:
-        gpu_stats = {"available": False}
-
-    # 2. Food Vision
-    try:
-        vision_svc = FoodVisionService.get_instance()
-        vision_status = vision_svc.get_status()
-        if hasattr(vision_svc, '_last_inference_time'):
-            vision_status['last_inference_time_ms'] = getattr(vision_svc, '_last_inference_time')
-    except Exception as e:
-        vision_status = {"error": str(e)}
-
-    # 3. Translation (IndicTrans2)
-    trans_status = {
-        "installed": _INDIC_AVAILABLE,
-        "state": translation_state,
-        "device": translation_device
-    }
-
-    # 4. Whisper (STT)
-    try:
-        whisper_status = get_whisper_status()
-    except Exception as e:
-        whisper_status = {"error": str(e)}
-
-    # 5. LLM Fallback Chain
-    try:
-        llm_status = {
-            "active_provider": "openai" if llm_service.OPENAI_API_KEY else "ollama",
-            "openai_enabled": bool(llm_service.OPENAI_API_KEY),
-            "local_enabled": bool(llm_service.OLLAMA_BASE_URL)
-        }
-    except Exception as e:
-        llm_status = {"error": str(e)}
-
-    # 6. RAG / Vector DB
-    try:
-        vdb = VectorDBService.get_instance()
-        vdb_status = {
-            "collections": len(vdb._collections) if hasattr(vdb, '_collections') else 0,
-            "initialized": True
-        }
-    except Exception as e:
-        vdb_status = {"error": str(e)}
-
-    return {
+    status = {
         "status": "healthy",
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "hardware": {
-            "gpu": gpu_stats
+        "database": "unhealthy",
+        "firebase": "unhealthy",
+        "vector_db": "unhealthy",
+        "llm": {
+            "groq": "offline",
+            "openai": "offline",
+            "ollama": "offline"
         },
-        "services": {
-            "api": "online",
-            "llm_chain": llm_status,
-            "vector_db": vdb_status,
-            "food_vision": vision_status,
-            "translation": trans_status,
-            "whisper_stt": whisper_status
-        }
+        "foodModel": "offline",
+        "medicalModel": "offline",
+        "translation": "offline",
+        "whisper_stt": "offline",
+        "gpu": "unhealthy",
+        "errors": {}
     }
+
+    # 1. GPU Check
+    try:
+        import torch
+        if torch.cuda.is_available():
+            status["gpu"] = "healthy"
+        else:
+            status["gpu"] = "offline"
+    except Exception as e:
+        status["gpu"] = "unhealthy"
+        status["errors"]["gpu"] = str(e)
+
+    # 2. Firebase / Database
+    try:
+        from app.services.firebase_service import get_firestore_client
+        db = get_firestore_client()
+        if db:
+            status["database"] = "healthy"
+            status["firebase"] = "healthy"
+        else:
+            status["database"] = "unhealthy"
+            status["firebase"] = "unhealthy"
+            status["errors"]["firebase"] = "Firebase Admin SDK failed to initialize"
+    except Exception as e:
+        status["database"] = "unhealthy"
+        status["firebase"] = "unhealthy"
+        status["errors"]["firebase"] = str(e)
+
+    # 3. Vector DB
+    try:
+        from app.services.vector_db_service import VectorDBService
+        # Check if instance is already created to avoid hanging on SQLite DB lock in concurrent environments
+        if VectorDBService._instance is not None:
+            status["vector_db"] = "healthy"
+        else:
+            status["vector_db"] = "degraded"
+            status["errors"]["vector_db"] = "VectorDB not initialized yet"
+    except Exception as e:
+        status["vector_db"] = "unhealthy"
+        status["errors"]["vector_db"] = str(e)
+
+    # 4. LLMs
+    try:
+        from app.core.config import settings
+        status["llm"]["openai"] = "healthy" if settings.OPENAI_API_KEY else "offline"
+        status["llm"]["groq"] = "healthy" if settings.GROQ_API_KEY else "offline"
+        status["llm"]["ollama"] = "healthy" if settings.OLLAMA_BASE_URL else "offline"
+    except Exception as e:
+        status["errors"]["llm"] = str(e)
+
+    # 5. FoodVision
+    try:
+        from app.services.food_vision_service import FoodVisionService
+        # Get instance doesn't load model immediately, it just returns singleton
+        vision_svc = FoodVisionService.get_instance()
+        if vision_svc.is_ready():
+            status["foodModel"] = "healthy"
+        else:
+            status["foodModel"] = "offline"
+    except Exception as e:
+        status["foodModel"] = "offline"
+        status["errors"]["foodModel"] = str(e)
+
+    # 6. MedicalVision
+    try:
+        from app.core.config import settings
+        if settings.OPENAI_API_KEY:
+            status["medicalModel"] = "healthy"
+        else:
+            status["medicalModel"] = "offline"
+    except Exception as e:
+        status["medicalModel"] = "offline"
+        status["errors"]["medicalModel"] = str(e)
+
+    # 7. Translation
+    try:
+        from app.services.translation_service import _state as translation_state, _INDIC_AVAILABLE
+        if _INDIC_AVAILABLE:
+            status["translation"] = "healthy" if translation_state == "loaded" else "offline"
+        else:
+            status["translation"] = "offline"
+    except Exception as e:
+        status["translation"] = "offline"
+        status["errors"]["translation"] = str(e)
+
+    # 8. Whisper / STT
+    try:
+        from app.core.config import settings
+        if settings.SARVAM_API_KEY:
+            status["whisper_stt"] = "healthy"
+        else:
+            status["whisper_stt"] = "offline"
+    except Exception as e:
+        status["whisper_stt"] = "offline"
+        status["errors"]["whisper_stt"] = str(e)
+
+    # Calculate overall status
+    is_critical_failure = (
+        status["database"] == "unhealthy" or 
+        status["firebase"] == "unhealthy" or 
+        status["vector_db"] == "unhealthy"
+    )
+    
+    is_degraded = (
+        status["foodModel"] == "offline" or
+        status["medicalModel"] == "offline" or
+        status["translation"] == "offline" or
+        status["whisper_stt"] == "offline" or
+        status["gpu"] == "unhealthy" or
+        status["vector_db"] == "degraded"
+    )
+    
+    if is_critical_failure:
+        status["status"] = "unhealthy"
+    elif is_degraded:
+        status["status"] = "degraded"
+    else:
+        status["status"] = "healthy"
+
+    return status

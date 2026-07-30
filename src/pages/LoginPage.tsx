@@ -28,7 +28,14 @@ export const LoginPage = () => {
       await loginWithEmail(email, password);
       navigate(from, { replace: true });
     } catch (err: any) {
-      setError(err.message || "Failed to login");
+      console.error("Login error:", err);
+      if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
+        setError("Invalid email or password. Please try again.");
+      } else if (err.code === 'auth/too-many-requests') {
+        setError("Too many failed attempts. Please try again later or reset your password.");
+      } else {
+        setError("Failed to sign in. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
@@ -42,7 +49,12 @@ export const LoginPage = () => {
       await loginWithGoogle();
       navigate(from, { replace: true });
     } catch (err: any) {
-      setError(err.message || "Failed to login with Google");
+      console.error("Google login error:", err);
+      if (err.code === 'auth/popup-closed-by-user') {
+        setError("Sign-in popup was closed before completing.");
+      } else {
+        setError("Failed to sign in with Google. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -59,12 +71,20 @@ export const LoginPage = () => {
       setResetMessage("Password reset email sent. Check your inbox.");
       setError("");
     } catch (err: any) {
-      setError(err.message || "Failed to send reset email.");
+      console.error("Password reset error:", err);
+      if (err.code === 'auth/user-not-found') {
+        setError("No account found with this email address.");
+      } else if (err.code === 'auth/invalid-email') {
+        setError("Please enter a valid email address.");
+      } else {
+        setError("Failed to send reset email. Please try again later.");
+      }
       setResetMessage("");
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <div className={styles.loginContainer}>
@@ -73,7 +93,7 @@ export const LoginPage = () => {
       <div className={styles.leftPanel}>
         <div className={styles.leftContent}>
           <div className={styles.brandLogo}>
-            <img src={logoHeart} alt="AAYU Logo" />
+            <img src={logoHeart} alt="AAYU Logo" fetchPriority="high" />
             <h1>AAYU</h1>
           </div>
           
@@ -201,6 +221,8 @@ export const LoginPage = () => {
             </svg>
             Sign in with Google
           </button>
+
+
 
           <div className={styles.createAccount}>
             Don't have an account? 

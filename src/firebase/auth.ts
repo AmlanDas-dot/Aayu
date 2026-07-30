@@ -147,15 +147,15 @@ export const deleteAccount = async () => {
 
   try {
     await deleteDoc(doc(db, "users", uid));
-  } catch (err) {
-    console.error("Error deleting user doc:", err);
+  } catch (e: any) {
+      console.error("Error setting up reCAPTCHA", e);
   }
 
   try {
     const avatarRef = ref(storage, `users/${uid}/profile/avatar`);
     await deleteObject(avatarRef);
-  } catch (err) {
-    console.warn("Avatar might not exist or error deleting avatar:", err);
+  } catch (e: any) {
+    console.warn("Avatar might not exist or error deleting avatar:", e);
   }
 
   await firebaseDeleteUser(user);

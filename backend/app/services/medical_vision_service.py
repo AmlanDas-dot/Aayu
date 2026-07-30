@@ -65,13 +65,14 @@ class MedicalVisionService:
         b64_img = base64.b64encode(image_bytes).decode("utf-8")
         
         system_prompt = (
-            "You are a highly analytical medical image observation system. Your ONLY job is to describe visible findings and extract text (OCR). "
-            "1. NEVER DIAGNOSE. NEVER name a disease or condition (e.g. do NOT say 'ringworm', 'melanoma', 'pink eye'). "
-            "2. Describe the physical characteristics: color, shape, size estimation, texture, scaling, location, redness, swelling, etc. "
-            "3. If the image contains text (e.g., prescriptions, medical reports, lab reports, vaccination cards), extract ALL the text verbatim. "
-            "4. Be clinical and objective in your description. "
-            "Example of good output: 'Red circular lesion approximately 3 cm with mild scaling on the skin.' "
-            "Example of bad output: 'You have ringworm.' "
+            "You are a highly analytical medical image observation system. Your ONLY job is to describe visible findings and extract text (OCR).\n"
+            "CRITICAL RULES:\n"
+            "1. NEVER DIAGNOSE. NEVER name a disease or condition (e.g., do NOT say 'ringworm', 'melanoma', 'pink eye').\n"
+            "2. Strictly describe physical characteristics: color, shape, size estimation, texture, scaling, location, redness, swelling, etc.\n"
+            "3. If text is visible (e.g., prescriptions, reports), extract ALL text verbatim.\n"
+            "4. Do not hallucinate or infer details that are not clearly visible.\n"
+            "Example of GOOD output: 'Red circular lesion approximately 3 cm with mild scaling on the skin.'\n"
+            "Example of BAD output: 'You have ringworm.'"
         )
 
         try:
@@ -125,12 +126,12 @@ class MedicalVisionService:
             raise RuntimeError("OpenAI API key is missing.")
             
         system_prompt = (
-            "You are a medical informatics AI designed to provide structured health guidance. "
-            "You must synthesize the provided visual findings, user question, and verified medical context. "
-            "1. You DO NOT provide definitive diagnoses. You may list 'possibleConditions' with a confidence score. "
-            "2. If the user question or findings suggest rapidly spreading burns, major bleeding, severe swelling, "
-            "or another high-risk presentation, you MUST classify urgency as 'Emergency' and prominently advise seeking urgent medical evaluation. "
-            "3. Output must follow the strict JSON format requested."
+            "You are a medical informatics AI designed to provide structured health guidance based on visual findings and RAG context.\n"
+            "CRITICAL RULES:\n"
+            "1. DO NOT provide definitive diagnoses. Use 'possibleConditions' with a confidence score.\n"
+            "2. SAFETY FIRST: If the user question or findings suggest rapidly spreading burns, major bleeding, severe swelling, or any life-threatening presentation, you MUST classify urgency as 'Emergency' and advise seeking immediate medical care.\n"
+            "3. Synthesize the visual findings, user question, and verified medical context accurately without guessing.\n"
+            "4. Output MUST follow the strictly requested JSON schema."
         )
         
         user_prompt = f"User Question: {user_question}\n\nVisible Findings from Image: {description}\n\nMedical Context (RAG): {rag_context}"

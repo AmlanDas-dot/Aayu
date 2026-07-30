@@ -58,7 +58,7 @@ export function useVoiceInput({
       try {
         setProcessingStage({ icon: "🎤", text: "Listening..." });
         recognition.start();
-      } catch (err) {
+      } catch (e: any) {
         alert("Microphone permission denied or not available.");
       }
       return;
@@ -105,7 +105,7 @@ export function useVoiceInput({
       mediaRecorder.start();
       setIsRecording(true);
       setProcessingStage({ icon: "🎤", text: "Listening..." });
-    } catch (err) {
+    } catch (e: any) {
       alert("Microphone permission denied or not available.");
     }
   }

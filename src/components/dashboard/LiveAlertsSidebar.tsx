@@ -87,7 +87,11 @@ export const LiveAlertsSidebar = ({ onAlertClick }: LiveAlertsSidebarProps = {})
                             
                             <div className="las-card-actions">
                                 <button className="las-btn-primary">View Details</button>
-                                <button className="las-btn-secondary" onClick={() => onAlertClick && onAlertClick((alert as any).lat || 19.816, (alert as any).lng || 85.833)}>Navigate</button>
+                                <button className="las-btn-secondary" onClick={() => {
+                                    const lat = (alert as any).lat;
+                                    const lng = (alert as any).lng;
+                                    if (onAlertClick && lat && lng) onAlertClick(lat, lng);
+                                }}>Navigate</button>
                                 <button className="las-btn-icon" title="Share"><i className="fa-solid fa-share-nodes"></i></button>
                             </div>
                         </div>

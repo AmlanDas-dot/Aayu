@@ -2,7 +2,9 @@ import { setDoc, addDoc } from "@/firebase/firestoreLogger";
 import { db } from "@/firebase/firebase";
 import { collection, doc, getDoc, getDocs, query, orderBy, serverTimestamp, where, Timestamp } from "firebase/firestore";
 import { sendChatMessage } from "./api";
+import { config } from "../config";
 import { type NutritionMeal } from "@/features/nutrition/types";
+import { isDemoSession } from "@/utils/demoMode";
 
 export interface NutritionUserProfile {
   uid: string;
@@ -60,6 +62,24 @@ export interface WaterLog {
 }
 
 export const getNutritionUserProfile = async (uid: string): Promise<NutritionUserProfile | null> => {
+  if (isDemoSession()) {
+    return {
+      uid,
+      age: 34,
+      gender: "Female",
+      height: 162,
+      weight: 58,
+      targetWeight: 58,
+      activityLevel: "Moderate",
+      dietPreference: "Vegetarian",
+      foodAllergies: "None",
+      medicalConditions: ["Iron deficiency risk"],
+      behavioralRecovery: [],
+      primaryGoal: "Healthy Eating",
+      createdAt: new Date().toISOString(),
+    };
+  }
+
   try {
     const docRef = doc(db, `users/${uid}/nutrition/profile`);
     const docSnap = await getDoc(docRef);
@@ -74,6 +94,17 @@ export const getNutritionUserProfile = async (uid: string): Promise<NutritionUse
 };
 
 export const getDailyGoals = async (uid: string): Promise<DailyGoals | null> => {
+  if (isDemoSession()) {
+    return {
+      calories: 2100,
+      protein: 82,
+      carbs: 210,
+      fat: 70,
+      water: 2500,
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
   try {
     const docRef = doc(db, `users/${uid}/nutrition/profile/goals/daily`);
     const docSnap = await getDoc(docRef);
@@ -121,6 +152,8 @@ const calculateGoals = (data: Partial<NutritionUserProfile>): DailyGoals => {
 };
 
 export const createNutritionProfile = async (uid: string, data: Partial<NutritionUserProfile>): Promise<void> => {
+  if (isDemoSession()) return;
+
   const profileRef = doc(db, `users/${uid}/nutrition/profile`);
   
   const newProfile: NutritionUserProfile = {
@@ -160,6 +193,35 @@ export const logWater = async (uid: string, amount: number = 250) => {
 };
 
 export const getLoggedMeals = async (uid: string): Promise<LoggedMeal[]> => {
+  if (isDemoSession()) {
+    return [
+      {
+        id: "demo-breakfast",
+        mealType: "Breakfast",
+        foodName: "Poha with peanuts",
+        calories: 360,
+        protein: 12,
+        fat: 11,
+        carbs: 54,
+        fiber: 6,
+        healthiness: "Balanced",
+        timestamp: new Date().toISOString(),
+      },
+      {
+        id: "demo-lunch",
+        mealType: "Lunch",
+        foodName: "Dal, rice, spinach sabzi",
+        calories: 620,
+        protein: 24,
+        fat: 16,
+        carbs: 92,
+        fiber: 12,
+        healthiness: "Good",
+        timestamp: new Date().toISOString(),
+      },
+    ];
+  }
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
@@ -174,6 +236,8 @@ export const getLoggedMeals = async (uid: string): Promise<LoggedMeal[]> => {
 };
 
 export const getLoggedWater = async (uid: string): Promise<number> => {
+  if (isDemoSession()) return 1500;
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
@@ -191,12 +255,42 @@ export const getLoggedWater = async (uid: string): Promise<number> => {
 };
 
 export const generateWeeklyPlan = async (uid: string, profile: NutritionUserProfile, budget: string = 'Standard'): Promise<any> => {
+  if (isDemoSession()) {
+    return [
+      { meal: "Breakfast", name: "Vegetable poha with curd", icon: "🥣", price: 45, note: "Iron and probiotics" },
+      { meal: "Lunch", name: "Dal, rice, spinach sabzi", icon: "🍛", price: 75, note: "Protein plus folate" },
+      { meal: "Dinner", name: "Chapati, paneer, mixed vegetables", icon: "🥗", price: 95, note: "Balanced and filling" },
+    ];
+  }
+
   let meals: NutritionMeal[] = [];
   try {
-    const prompt = `Generate a 1-day sample meal plan for a ${profile.age}yo ${profile.gender}, goal: ${profile.primaryGoal}, diet: ${profile.dietPreference}, budget tier: ${budget}.
-    Conditions: ${profile.medicalConditions.join(",") || "None"}. Recovery: ${profile.behavioralRecovery.join(",") || "None"}.
-    Provide a JSON response with:
-    {"meals": [{"meal": "Breakfast", "name": "...", "icon": "...", "price": 50, "note": "..."}]}`;
+    const prompt = `Act as an expert clinical nutritionist for rural and semi-urban India.
+    Generate a culturally appropriate, 1-day sample meal plan based on the following profile:
+    
+    - Age: ${profile.age}, Gender: ${profile.gender}
+    - Primary Goal: ${profile.primaryGoal}
+    - Diet Preference: ${profile.dietPreference}
+    - Budget Tier: ${budget}
+    - Medical Conditions: ${profile.medicalConditions.join(",") || "None"}
+    - Behavioral Recovery: ${profile.behavioralRecovery.join(",") || "None"}
+    
+    CRITICAL RULES:
+    1. The meals MUST NOT conflict with the user's medical conditions (e.g., no sugar for diabetes).
+    2. Focus on locally available Indian ingredients.
+    3. Respond ONLY with a valid JSON object matching this exact schema:
+    {
+      "meals": [
+        {
+          "meal": "Breakfast" | "Lunch" | "Dinner",
+          "name": "string (name of the dish)",
+          "icon": "string (single emoji)",
+          "price": number (estimated cost in INR),
+          "note": "string (brief nutritional reasoning)"
+        }
+      ]
+    }
+    4. Do not include markdown code blocks or any other text outside the JSON.`;
 
     const chatRes = await sendChatMessage({ message: prompt, top_k: 1, language: "en" });
     const match = chatRes.response.match(/\{[\s\S]*\}/);
@@ -226,6 +320,8 @@ export const generateWeeklyPlan = async (uid: string, profile: NutritionUserProf
 };
 
 export const getLatestWeeklyPlan = async (uid: string): Promise<NutritionMeal[]> => {
+  if (isDemoSession()) return [];
+
   const q = query(
     collection(db, `users/${uid}/nutrition/profile/weeklyPlans`),
     orderBy("generatedAt", "desc")
@@ -241,7 +337,7 @@ export const analyzeFoodImage = async (file: File): Promise<any> => {
   try {
     const formData = new FormData();
     formData.append("image", file);
-    const API_BASE = import.meta.env.VITE_API_URL ?? "/api";
+    const API_BASE = config.apiBaseUrl;
     
     const res = await fetch(`${API_BASE}/nutrition/analyze-food`, {
       method: "POST",

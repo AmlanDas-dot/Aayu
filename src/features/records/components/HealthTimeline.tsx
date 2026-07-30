@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, ShieldAlert, HeartPulse, Stethoscope, Activity } from 'lucide-react';
+import { FileText, Stethoscope } from 'lucide-react';
 import { MedicalRecord } from '@/firebase/collections';
 
 interface HealthTimelineProps {
@@ -7,15 +7,6 @@ interface HealthTimelineProps {
 }
 
 export const HealthTimeline: React.FC<HealthTimelineProps> = ({ records }) => {
-  // In a full implementation, we would merge records, moods, journals, and screenings.
-  // Here we mock a few behavioral events and interleave them with the medical records.
-  
-  const mockBehavioralEvents = [
-    { type: 'mood', date: new Date().toISOString(), title: 'Mood Logged: Great', icon: <HeartPulse size={16} color="#16a34a" />, bg: '#dcfce7', details: 'Felt positive' },
-    { type: 'journal', date: new Date(Date.now() - 86400000).toISOString(), title: 'Journal: Resisted cravings', icon: <Activity size={16} color="#0ea5e9" />, bg: '#e0f2fe', details: 'Risk: Low' },
-    { type: 'screening', date: new Date(Date.now() - 2*86400000).toISOString(), title: 'PHQ-9 Screening: Mild', icon: <ShieldAlert size={16} color="#f59e0b" />, bg: '#fef3c7', details: 'Score: 5' }
-  ];
-
   const allEvents = [
     ...records.map(r => ({
       type: 'record',
@@ -24,8 +15,7 @@ export const HealthTimeline: React.FC<HealthTimelineProps> = ({ records }) => {
       icon: <FileText size={16} color="#6366f1" />,
       bg: '#e0e7ff',
       details: r.category
-    })),
-    ...mockBehavioralEvents
+    }))
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (

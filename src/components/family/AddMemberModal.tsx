@@ -41,8 +41,8 @@ export const AddMemberModal: React.FC<AddMemberModalProps> = ({ family, adminUid
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Join AAYU Family', text: inviteText });
-      } catch (err) {
-        console.error("Error sharing:", err);
+      } catch (e: any) {
+        console.error("Error sharing:", e);
       }
     } else {
       handleCopyCode();

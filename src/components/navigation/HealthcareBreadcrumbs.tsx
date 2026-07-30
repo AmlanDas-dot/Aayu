@@ -1,10 +1,11 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useHealthContext } from '../../hooks/useHealthContext';
 import { ChevronRight } from 'lucide-react';
+import { FamilyMemberSelector } from './FamilyMemberSelector';
 
 export const HealthcareBreadcrumbs = () => {
   const location = useLocation();
-  const { selectedMember } = useHealthContext();
+  useHealthContext();
 
   const getPathName = (path: string) => {
     switch (path) {
@@ -26,20 +27,17 @@ export const HealthcareBreadcrumbs = () => {
 
   return (
     <div style={{ padding: '12px 24px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-muted)', borderBottom: '1px solid var(--border)', background: '#f8fafc' }}>
-      <Link to="/family" style={{ color: '#0d9488', textDecoration: 'none', fontWeight: 600 }}>Family</Link>
+      <Link to="/" style={{ color: '#0d9488', textDecoration: 'none', fontWeight: 600 }}>Home</Link>
       
-      {selectedMember && (
-        <>
-          <ChevronRight size={14} />
-          <Link to="/family" style={{ color: '#0f766e', textDecoration: 'none', fontWeight: 600 }}>{selectedMember.name}</Link>
-        </>
-      )}
-
-      {currentPath !== '/family' && (
+      {currentPath !== '/' && (
         <>
           <ChevronRight size={14} />
           <span style={{ color: 'var(--text)' }}>{getPathName(currentPath)}</span>
         </>
+      )}
+
+      {currentPath !== '/family' && (
+        <FamilyMemberSelector />
       )}
     </div>
   );

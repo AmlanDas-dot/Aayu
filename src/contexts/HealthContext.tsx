@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode, useContext } from 'react';
+import React, { createContext, useState, ReactNode, useContext, useMemo } from 'react';
 import { FamilyMember } from '@/firebase/collections';
 
 export const useHealthContext = () => {
@@ -39,9 +39,12 @@ export const HealthContextProvider: React.FC<{ children: ReactNode }> = ({ child
     setSelectedMemberState(null);
   };
 
-  const value: HealthContextState = {
-    selectedFamilyId: selectedMember?.familyId || null,
-    selectedMemberId: selectedMember?.id || null,
+  const selectedFamilyId = selectedMember?.familyId || null;
+  const selectedMemberId = selectedMember?.id || null;
+
+  const value = useMemo(() => ({
+    selectedFamilyId,
+    selectedMemberId,
     selectedMember,
     selectedVillage,
     selectedRole,
@@ -51,7 +54,7 @@ export const HealthContextProvider: React.FC<{ children: ReactNode }> = ({ child
     setVillage,
     setRole,
     setLastVisitedModule
-  };
+  }), [selectedFamilyId, selectedMemberId, selectedMember, selectedVillage, selectedRole, lastVisitedModule]);
 
   return <HealthContext.Provider value={value}>{children}</HealthContext.Provider>;
 };

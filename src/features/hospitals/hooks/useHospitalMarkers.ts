@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect } from "react";
 import type { MapMarker } from "@/types/MapMarker";
 import { useCurrentLocation } from "@/hooks/useCurrentLocation";
 import { searchNearbyHealthcare, type NormalizedFacility } from "@/services/maps/placesService";
@@ -14,22 +14,32 @@ export function useHospitalMarkers({ userLocation, filter = "all" }: UseHospital
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState("");
 
-  // Resolve the map center: explicit > browser > fallback
+  useEffect(() => {
+    console.log("[DEBUG LOCATION 7] useHospitalMarkers hook received props: userLocation=", userLocation, "browserLocation=", browserLocation);
+  }, [userLocation, browserLocation]);
+
   const center = useMemo(() => {
+    console.log("[DEBUG LOCATION 8] useHospitalMarkers computing center from userLocation:", userLocation);
     if (userLocation) return { lat: userLocation.lat, lng: userLocation.lon };
     if (browserLocation) return { lat: browserLocation.lat, lng: browserLocation.lng };
-    return { lat: 20.2961, lng: 85.8245 }; // Bhubaneswar fallback
+    return null; // Force null so the UI can handle the missing location properly.
   }, [userLocation, browserLocation]);
 
   const searchHealthcare = useCallback(async (radius: number) => {
-    if (!center.lat || !center.lng) return;
+    if (!center || !center.lat || !center.lng) {
+      setSearchError("Please enable location to find nearby healthcare facilities.");
+      return;
+    }
     setIsSearching(true);
     setSearchError("");
 
     // Always fetch a broad set of categories to allow local filtering
-    const categories = ["hospital", "medical_clinic", "pharmacy", "doctor"];
+    // Note: only Table A types are valid for includedTypes in Places API (New).
+    // "doctor" is Table B only and causes a 400 error — use "medical_clinic" instead.
+    const categories = ["hospital", "medical_clinic", "pharmacy"];
 
     try {
+      console.log("[DEBUG LOCATION 9] Coordinates sent to Google Places API (searchNearbyHealthcare):", center);
       const results = await searchNearbyHealthcare({
         lat: center.lat,
         lng: center.lng,
@@ -64,17 +74,19 @@ export function useHospitalMarkers({ userLocation, filter = "all" }: UseHospital
     const result: MapMarker[] = [];
 
     // User pin
-    result.push({
-      id: "user-location",
-      lat: center.lat,
-      lng: center.lng,
-      label: "You are here",
-      emoji: "📍",
-      bg: "#2563eb",
-      border: "#1d4ed8",
-      size: 36,
-      isUser: true,
-    });
+    if (center) {
+      result.push({
+        id: "user-location",
+        lat: center.lat,
+        lng: center.lng,
+        label: "You are here",
+        emoji: "📍",
+        bg: "#2563eb",
+        border: "#1d4ed8",
+        size: 36,
+        isUser: true,
+      });
+    }
 
     facilities.forEach((f, idx) => {
       const typeLower = f.type?.toLowerCase() || "";

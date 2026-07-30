@@ -67,16 +67,22 @@ service cloud.firestore {
     // ==========================================
     // Only family members can read/write their family's health records
     match /medicalRecords/{docId} {
-      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow read: if isFamilyMember(resource.data.familyId);
       allow create: if isFamilyMember(request.resource.data.familyId);
+      allow update: if isFamilyMember(resource.data.familyId) && request.resource.data.familyId == resource.data.familyId;
+      allow delete: if isFamilyMember(resource.data.familyId);
     }
     match /medications/{docId} {
-      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow read: if isFamilyMember(resource.data.familyId);
       allow create: if isFamilyMember(request.resource.data.familyId);
+      allow update: if isFamilyMember(resource.data.familyId) && request.resource.data.familyId == resource.data.familyId;
+      allow delete: if isFamilyMember(resource.data.familyId);
     }
     match /medicationLogs/{docId} {
-      allow read, write: if isFamilyMember(resource.data.familyId);
+      allow read: if isFamilyMember(resource.data.familyId);
       allow create: if isFamilyMember(request.resource.data.familyId);
+      allow update: if isFamilyMember(resource.data.familyId) && request.resource.data.familyId == resource.data.familyId;
+      allow delete: if isFamilyMember(resource.data.familyId);
     }
     
     match /chatHistory/{docId} {
@@ -96,7 +102,8 @@ service cloud.firestore {
     // JOIN TOKENS
     // ==========================================
     match /joinTokens/{tokenId} {
-      allow read: if isSignedIn();
+      allow get: if isSignedIn();
+      allow list: if false;
       allow create: if isCurrentUser(request.resource.data.ownerUid); // or just rely on family creation
     }
 
@@ -107,8 +114,8 @@ service cloud.firestore {
       // Any verified family member can read the family
       allow read: if isFamilyMember(familyId);
       
-      // Only owner/admin can update family settings
-      allow update: if isFamilyOwnerOrAdmin(familyId);
+      // Only owner/admin can update family settings, but cannot transfer ownership
+      allow update: if isFamilyOwnerOrAdmin(familyId) && request.resource.data.ownerUid == resource.data.ownerUid;
       
       // Only owner can delete the family
       allow delete: if isFamilyOwner(familyId);
@@ -142,11 +149,11 @@ service cloud.firestore {
       );
       
       allow update: if isSignedIn() && (
-        // Scenario C: Linked Profile updates (User updates their own profile)
-        isCurrentUser(resource.data.userId)
+        // Scenario C: Linked Profile updates (User updates their own profile without role escalation)
+        (isCurrentUser(resource.data.userId) && request.resource.data.role == resource.data.role)
         ||
-        // Scenario A & C Management: Owner/Admin manages any member of their family
-        isFamilyOwnerOrAdmin(resource.data.familyId)
+        // Scenario A & C Management: Owner/Admin manages any member of their family, cannot create new owners
+        (isFamilyOwnerOrAdmin(resource.data.familyId) && (request.resource.data.role != 'owner' || resource.data.role == 'owner'))
       );
 
       allow delete: if isSignedIn() && (
@@ -161,7 +168,7 @@ service cloud.firestore {
     // ==========================================
     // AUDIT LOGS
     // ==========================================
-    match /auditLogs/{docId} {
+    match /audit_logs/{docId} {
       // Only Family Members can read audit logs
       allow read: if isFamilyMember(resource.data.familyId);
       

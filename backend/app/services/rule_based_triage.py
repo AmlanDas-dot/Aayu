@@ -94,7 +94,17 @@ EMERGENCY_RULES: dict[str, list[str]] = {
     ],
     "pregnancy_emergency": [
         "labour pain", "labor pain", "water broke", "waters broke",
-        "baby coming", "miscarriage bleeding",
+        "baby coming", "miscarriage bleeding", "heavy vaginal bleeding",
+        "severe abdominal pain pregnant", "pregnant severe headache",
+        "ectopic", "preeclampsia",
+    ],
+    "neonatal_emergency": [
+        "baby not waking", "infant lethargic", "bulging fontanelle",
+        "baby not feeding", "infant very weak", "baby blue",
+    ],
+    "medication_reaction": [
+        "wrong medicine", "accidental overdose", "allergic to medicine",
+        "severe reaction to drug", "took too much medicine", "took wrong pill",
     ],
 }
 

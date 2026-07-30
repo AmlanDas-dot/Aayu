@@ -21,8 +21,9 @@ def test_phase9_complex_phrase_is_split_into_patient_safe_candidates() -> None:
 def test_phase9_question_selection_avoids_fragment_questions() -> None:
     top_diseases = [{'id': 'skin_diseases__ringworm', 'clinical_score': 0.88, 'question_candidates': 'a ring-shaped rash || a rash with a lighter center and a ring around it || itching', 'raw_symptoms': 'annular, scaly, erythematous plaque with central clearing || itching', 'tags': '', 'title': 'Ringworm'}, {'id': 'skin_diseases__granuloma_annulare', 'clinical_score': 0.82, 'question_candidates': 'a ring-shaped rash || redness', 'raw_symptoms': 'ring-shaped, skin-coloured or red papules || central clearing', 'tags': '', 'title': 'Granuloma Annulare'}, {'id': 'skin_diseases__eczema', 'clinical_score': 0.79, 'question_candidates': 'itching || peeling skin || redness', 'raw_symptoms': 'itchy, scaly rash', 'tags': '', 'title': 'Eczema'}]
     next_symptom = select_next_question(top_diseases, asked_symptoms=['ring_shaped_rash', 'itching', 'redness'], denied_symptoms=[])
-    question_text = format_question_text((next_symptom or ''))
-    assert (next_symptom == 'central_clearing')
+    symptom_id = next_symptom['symptom'] if next_symptom else ''
+    question_text = format_question_text(symptom_id)
+    assert (symptom_id == 'central_clearing')
     assert ('lighter center' in question_text.lower())
     assert ('central clearing' not in question_text.lower())
 

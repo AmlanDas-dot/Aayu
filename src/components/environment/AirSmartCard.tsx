@@ -1,5 +1,5 @@
 import React from 'react';
-import { AirQualityData, TimelineSlot, GreenLocation } from '../../services/environmentMock';
+import type { AirQualityData, TimelineSlot, GreenLocation } from '../../types/environment';
 import { Wind, Info } from 'lucide-react';
 import { LungGauge } from './LungGauge';
 import { Timeline } from './Timeline';

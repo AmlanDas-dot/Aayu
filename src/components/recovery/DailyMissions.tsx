@@ -28,7 +28,7 @@ export const DailyMissions: React.FC = () => {
     setMissions(missions.map(m => m.id === id ? { ...m, completed: !currentStatus } : m));
     try {
       await toggleMissionStatus(currentUser.uid, id, currentStatus);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       // Revert if fail
       setMissions(missions.map(m => m.id === id ? { ...m, completed: currentStatus } : m));

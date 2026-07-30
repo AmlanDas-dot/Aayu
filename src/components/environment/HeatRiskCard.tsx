@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeatData, TimelineSlot } from '../../services/environmentMock';
+import type { HeatData, TimelineSlot } from '../../types/environment';
 import { ThermometerSun } from 'lucide-react';
 import { Timeline } from './Timeline';
 import { RecommendationCard } from './RecommendationCard';

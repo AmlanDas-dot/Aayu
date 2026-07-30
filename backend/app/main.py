@@ -35,6 +35,12 @@ load_dotenv(BASE_DIR / ".env")
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
+
+from app.core.rate_limit import limiter
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
 
 from app.routers.transcribe import router as transcribe_router
 from app.routers.search import router as search_router
@@ -45,6 +51,8 @@ from app.routers.hospitals import router as hospitals_router
 from app.routers.records import router as records_router
 from app.routers.alerts import router as alerts_router
 from app.routers.recovery import router as recovery_router
+from app.routers.public_health import router as public_health_router
+from app.core.config import settings
 import httpx
 
 logger = logging.getLogger(__name__)
@@ -74,23 +82,22 @@ async def lifespan(app: FastAPI):
         else:
             logger.warning("│  ⚠ Firebase Admin failed to initialize")
             
-        import os
-        if os.getenv("GEMINI_API_KEY"):
+        if settings.GEMINI_API_KEY:
             logger.info("│  ✓ Gemini API Key present")
         else:
             logger.warning("│  ⚠ Gemini API Key missing (AI services degraded)")
             
-        if os.getenv("WEATHERAPI_KEY"):
+        if settings.WEATHERAPI_KEY:
             logger.info("│  ✓ Weather API Key present")
         else:
             logger.warning("│  ⚠ Weather API Key missing (mock data will be used)")
             
-        if os.getenv("NEWSDATA_API_KEY"):
+        if settings.NEWSDATA_API_KEY:
             logger.info("│  ✓ News API Key present")
         else:
             logger.warning("│  ⚠ News API Key missing (mock data will be used)")
             
-        if os.getenv("VITE_GOOGLE_MAPS_API_KEY"):
+        if settings.VITE_GOOGLE_MAPS_API_KEY:
             logger.info("│  ✓ Google Maps API Key present")
         else:
             logger.warning("│  ⚠ Google Maps API Key missing")
@@ -215,6 +222,15 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_middleware(SlowAPIMiddleware)
+
+
+from app.core.middleware import SecurityHeadersMiddleware, MaxUploadSizeMiddleware
+
+app.add_middleware(SecurityHeadersMiddleware)
+app.add_middleware(MaxUploadSizeMiddleware, max_upload_size=10 * 1024 * 1024)
 
 # --------------------------------------------------------------------------- #
 # CORS — allow Vite dev server and production origins
@@ -222,15 +238,15 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",   # Vite dev
-        "http://localhost:3000",   # Alternative dev port
-        "http://localhost:4173",   # Vite preview
-        "http://localhost:5174",   # Vite dev alternate
-    ],
+    allow_origins=settings.ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+app.add_middleware(
+    GZipMiddleware,
+    minimum_size=1000,
 )
 
 
@@ -247,6 +263,7 @@ app.include_router(hospitals_router, prefix="/api", tags=["Hospitals"])
 app.include_router(records_router, prefix="/api", tags=["Records"])
 app.include_router(alerts_router, prefix="/api/alerts", tags=["Alerts"])
 app.include_router(recovery_router, prefix="/api/recovery", tags=["Recovery"])
+app.include_router(public_health_router)
 
 
 # --------------------------------------------------------------------------- #
@@ -277,5 +294,5 @@ async def health_check():
         from app.services.system_health import get_system_health
         return await get_system_health()
     except Exception as e:
-        import traceback
-        return {"error": str(e), "traceback": traceback.format_exc()}
+        logger.error(f"Health check failed: {e}")
+        return {"error": "Internal Server Error"}

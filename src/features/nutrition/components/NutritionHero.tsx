@@ -17,7 +17,7 @@ export function NutritionHero() {
         <button className="nutrition-ask-btn">💬 Ask Nutrition Assistant</button>
       </div>
       <div className="nutrition-hero-img">
-        <img src={doctorImg} alt="Nutrition Assistant" className="nutrition-doc-img" />
+        <img src={doctorImg} alt="Nutrition Assistant" className="nutrition-doc-img" fetchPriority="high" />
       </div>
     </section>
   );

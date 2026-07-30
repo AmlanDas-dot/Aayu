@@ -36,7 +36,7 @@ export const JournalAndMood: React.FC<JournalAndMoodProps> = ({ onJournalLogged 
       if (onJournalLogged) {
         onJournalLogged();
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       setInsight({ sentiment: 'neutral', ai_insight: 'Thank you for sharing your thoughts today. Keep going, you are doing great.', risk_level: 'Low' });
     } finally {

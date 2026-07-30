@@ -1,3 +1,4 @@
+import React from 'react';
 import type { ChatMessage } from "../types/chat";
 import { RISK_CONFIG } from "../utils/chatUtils";
 import { KnowledgeCard } from "./KnowledgeCard";
@@ -12,7 +13,7 @@ interface MessageBubbleProps {
   handleToggleSpeak: (msgId: string, text: string) => void;
 }
 
-export function MessageBubble({
+export const MessageBubble = React.memo(function MessageBubble({
   msg,
   processingStage,
   speakingMsgId,
@@ -21,7 +22,7 @@ export function MessageBubble({
   return (
     <div className={`message-wrapper ${msg.role}`}>
       {msg.role === "assistant" && (
-        <img src={logoHeart} alt="AAYU avatar" className="message-avatar" />
+        <img src={logoHeart} alt="AAYU avatar" className="message-avatar" loading="lazy" decoding="async" />
       )}
 
       <div className="message-card">
@@ -145,7 +146,7 @@ export function MessageBubble({
             {/* Image display */}
             {msg.image && (
               <div style={{ marginBottom: "10px", marginTop: "4px" }}>
-                <img
+                <img loading="lazy" decoding="async"
                   src={msg.image}
                   alt="Symptom preview"
                   style={{
@@ -278,5 +279,5 @@ export function MessageBubble({
       </div>
     </div>
   );
-}
+});
 export default MessageBubble;

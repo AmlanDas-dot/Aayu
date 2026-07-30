@@ -12,15 +12,10 @@ export interface MapMarkerData {
   status: 'Operational' | 'Warning' | 'Critical' | 'Offline';
 }
 
-export const mockMarkers: MapMarkerData[] = [
-  { id: 'm1', type: 'DHH', position: { lat: 25.62, lng: 85.04 }, name: 'Patna District Hospital', details: 'Beds: 240/300 occupied. ICU full.', status: 'Warning' },
-  { id: 'm2', type: 'CHC', position: { lat: 25.59, lng: 85.09 }, name: 'Phulwari CHC', details: 'Beds: 45/50 occupied.', status: 'Operational' },
-  { id: 'm3', type: 'PHC', position: { lat: 25.57, lng: 85.06 }, name: 'Khagaul PHC', details: 'Beds: 12/20 occupied.', status: 'Operational' },
-  { id: 'm4', type: 'ASHA', position: { lat: 25.585, lng: 85.085 }, name: 'Geeta Devi (ASHA)', details: 'Currently visiting pregnant woman.', status: 'Operational' },
-  { id: 'm5', type: 'Ambulance', position: { lat: 25.60, lng: 85.08 }, name: 'Ambulance Unit 4', details: 'En route to Phulwari.', status: 'Operational' },
-  { id: 'm6', type: 'Water', position: { lat: 25.64, lng: 84.89 }, name: 'Maner Water Source', details: 'Contamination detected (E. coli).', status: 'Critical' },
-  { id: 'm7', type: 'School', position: { lat: 25.56, lng: 84.87 }, name: 'Bihta High School', details: 'Vaccination camp active today.', status: 'Operational' },
-];
+// In a production environment, markers should be fetched dynamically from the backend 
+// (e.g., via a /api/facilities endpoint) based on the user's actual jurisdiction or location.
+// Hardcoded development locations have been removed as per the audit policy.
+export const mockMarkers: MapMarkerData[] = [];
 
 const getMarkerIconSvg = (type: MarkerType) => {
   switch (type) {

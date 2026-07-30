@@ -11,6 +11,8 @@ import { HealthTimeline } from "@/features/records/components/HealthTimeline";
 import { FileText, Upload, Search, Loader2, X, AlertCircle } from "lucide-react";
 import { getFamilyMembers } from "@/services/familyService";
 import { FamilyMember, MedicalRecord } from "@/firebase/collections";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { LoadingState } from "@/components/ui/LoadingState";
 
 export function RecordsPage() {
   const { currentUser } = useAuth();
@@ -61,8 +63,8 @@ export function RecordsPage() {
           setUploadMemberId(membersData[0].id!);
         }
       }
-    } catch (err) {
-      console.error("Failed to load records data:", err);
+    } catch (e: any) {
+      console.error("Failed to load records data:", e);
     } finally {
       setLoading(false);
     }
@@ -103,8 +105,8 @@ export function RecordsPage() {
       const analysis = await analyzeMedicalDocument(fileUrl, selectedFile.type);
       setAnalysisResult({ ...analysis, generatedRecordId: recordId });
       setUploadStep('reviewing');
-    } catch (err) {
-      console.error("Analysis failed:", err);
+    } catch (e: any) {
+      console.error("Analysis failed:", e);
       alert("Failed to analyze the document. Please try again.");
       setUploadStep('idle');
     } finally {
@@ -183,8 +185,8 @@ export function RecordsPage() {
       setAnalysisResult(null);
       setDuplicateRecord(null);
       await loadData();
-    } catch (err) {
-      console.error("Failed to save record:", err);
+    } catch (e: any) {
+      console.error("Failed to save record:", e);
       alert("Failed to save the record.");
     } finally {
       setIsUploading(false);
@@ -219,11 +221,14 @@ export function RecordsPage() {
 
   if (!selectedFamilyId) {
     return (
-      <div style={{ textAlign: 'center', padding: '100px 20px' }}>
-        <h2 style={{ color: '#334155' }}>No Family Selected</h2>
-        <p style={{ color: '#64748b', marginBottom: '20px' }}>You must select or create a family to view Medical Records.</p>
-        <button onClick={() => navigate('/family')} style={{ padding: '10px 20px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>Go to Family Hub</button>
-      </div>
+      <EmptyState
+        icon={FileText}
+        title="No Family Selected"
+        description="You must select or create a family to view Medical Records."
+        actionText="Go to Family Hub"
+        onAction={() => navigate('/family')}
+        className="page-container"
+      />
     );
   }
 
@@ -276,7 +281,7 @@ export function RecordsPage() {
 
       {/* Timeline View */}
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '60px', color: '#64748b' }}><Loader2 className="animate-spin" size={32} style={{ margin: '0 auto 10px' }}/> Loading records...</div>
+        <LoadingState message="Loading records..." />
       ) : (
         <>
           <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid #e2e8f0', marginBottom: '24px' }}>
@@ -299,11 +304,13 @@ export function RecordsPage() {
           ) : (
             <>
               {filteredRecords.length === 0 ? (
-                <div style={{ textAlign: 'center', padding: '60px', backgroundColor: 'white', borderRadius: '12px', border: '1px dashed #cbd5e1' }}>
-                  <FileText size={48} style={{ color: '#94a3b8', margin: '0 auto 15px' }} />
-                  <h3 style={{ margin: '0 0 10px 0', color: '#334155' }}>No records found</h3>
-                  <p style={{ margin: 0, color: '#64748b' }}>Upload a medical report to securely store and analyze it.</p>
-                </div>
+                <EmptyState
+                  icon={FileText}
+                  title="No records found"
+                  description="Upload a medical report to securely store and analyze it."
+                  actionText="Upload Record"
+                  onAction={() => fileInputRef.current?.click()}
+                />
               ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                   {Object.entries(groupedRecords).map(([month, monthRecords]) => (
@@ -421,6 +428,14 @@ export function RecordsPage() {
                     <h4 style={{ margin: '0 0 5px 0', color: '#166534' }}>Analysis Complete</h4>
                     <p style={{ margin: 0, fontSize: '13px', color: '#15803d' }}>Please review the extracted information before saving to your vault.</p>
                   </div>
+                </div>
+
+                <div style={{ backgroundColor: '#fffbeb', border: '1px solid #fde68a', padding: '12px', borderRadius: '8px', marginBottom: '20px', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <AlertCircle size={16} color="#d97706" style={{ marginTop: '2px', flexShrink: 0 }} />
+                  <p style={{ margin: 0, fontSize: '12px', color: '#b45309', lineHeight: '1.4' }}>
+                    <strong>Medical Disclaimer:</strong> This summary is generated by AI and may contain inaccuracies. 
+                    It is not a substitute for professional medical advice. Always consult your doctor for medical decisions.
+                  </p>
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>

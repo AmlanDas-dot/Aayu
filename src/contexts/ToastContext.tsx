@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, ReactNode, useMemo } from 'react';
 
 type ToastType = 'success' | 'error' | 'info';
 
@@ -26,8 +26,10 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
     }, 3000);
   }, []);
 
+  const value = useMemo(() => ({ addToast }), [addToast]);
+
   return (
-    <ToastContext.Provider value={{ addToast }}>
+    <ToastContext.Provider value={value}>
       {children}
       <div style={{
         position: 'fixed',
